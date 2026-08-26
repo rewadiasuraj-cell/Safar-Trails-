@@ -73,6 +73,7 @@ export interface Destination {
   idealDays: string;
   rating?: number;
   reviewCount?: number;
+  isTrending?: boolean;
   highlights: string[];
   howToReach: {
     air: string;

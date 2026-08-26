@@ -22,7 +22,8 @@ import {
   ArrowRight, 
   ShieldCheck,
   CloudSun,
-  Star
+  Star,
+  Flame
 } from 'lucide-react';
 
 interface DestinationDetailViewProps {
@@ -93,6 +94,12 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
 
         <div className="absolute bottom-8 left-0 right-0 w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 text-white space-y-4">
           <div className="flex flex-wrap items-center gap-2">
+            {destination.isTrending && (
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#FF6B00] text-white shadow-md border border-orange-400/80">
+                <Flame className="w-3.5 h-3.5 text-white fill-white shrink-0" />
+                <span>Trending</span>
+              </span>
+            )}
             <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-black text-white border border-white/20">
               {destination.state}
             </span>

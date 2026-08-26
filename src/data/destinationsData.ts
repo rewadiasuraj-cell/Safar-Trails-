@@ -16,6 +16,7 @@ export const destinationsData: Destination[] = [
     idealDays: '5 to 7 Days',
     rating: 4.9,
     reviewCount: 1420,
+    isTrending: true,
     highlights: [
       'Overnight stay in a heritage cedarwood Houseboat on Nigeen / Dal Lake',
       'Gondola Cable Car Ride to Phase 1 & Phase 2 (13,780 ft) in Gulmarg',
@@ -105,6 +106,7 @@ export const destinationsData: Destination[] = [
     idealDays: '4 to 6 Days',
     rating: 4.8,
     reviewCount: 2180,
+    isTrending: true,
     highlights: [
       'Sunset Catamaran or Luxury Yacht cruise on the Mandovi River',
       'Walking photography tour through colorful Portuguese Fontainhas, Panjim',
@@ -179,6 +181,7 @@ export const destinationsData: Destination[] = [
     idealDays: '5 to 7 Days',
     rating: 4.9,
     reviewCount: 1890,
+    isTrending: true,
     highlights: [
       'Overnight cruise in a private air-conditioned Houseboat with traditional Kerala Karimeen meals',
       'Stroll through emerald tea gardens and visit Tea Museum in Munnar',
@@ -249,6 +252,7 @@ export const destinationsData: Destination[] = [
     idealDays: '6 to 9 Days',
     rating: 4.9,
     reviewCount: 1650,
+    isTrending: true,
     highlights: [
       'Sunset Boat Ride on Lake Pichola overlooking Udaipur City Palace and Jag Mandir',
       'Desert Jeep Safari, camel ride, and folk Kalbeliya dance on Sam Sand Dunes, Jaisalmer',
@@ -319,6 +323,7 @@ export const destinationsData: Destination[] = [
     idealDays: '5 to 8 Days',
     rating: 4.8,
     reviewCount: 1940,
+    isTrending: true,
     highlights: [
       'Drive through the engineering marvel Atal Tunnel into Lahaul Valley (Sissu)',
       'Paragliding, ziplining, and snow quad biking at Solang Valley',
@@ -383,6 +388,7 @@ export const destinationsData: Destination[] = [
     idealDays: '4 to 7 Days',
     rating: 4.9,
     reviewCount: 1530,
+    isTrending: true,
     highlights: [
       '16 km White Water River Rafting through Shivpuri to Rishikesh with cliff jumping',
       'Soulful sunset Ganga Aarti ceremony at Parmarth Niketan / Triveni Ghat',
@@ -447,6 +453,7 @@ export const destinationsData: Destination[] = [
     idealDays: '5 to 7 Days',
     rating: 4.9,
     reviewCount: 980,
+    isTrending: true,
     highlights: [
       'Sunset at Radhanagar Beach (Beach No. 7), consistently ranked among the world’s top beaches',
       'Discover scuba diving & sea walking at Elephant Beach, Havelock',

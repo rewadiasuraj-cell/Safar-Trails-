@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play, Compass, Sparkles, Star } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play, Compass, Sparkles, Star, Flame } from 'lucide-react';
 
 interface HandpickedExperiencesSectionProps {
   onSelectCategory?: (category: string) => void;
@@ -18,6 +18,7 @@ interface FeaturedDestination {
   startingPrice: string;
   rating: string;
   reviews: string;
+  isTrending?: boolean;
 }
 
 export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSectionProps> = ({
@@ -45,7 +46,8 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       duration: '5–7 Days',
       startingPrice: '₹16,999',
       rating: '4.9',
-      reviews: '1.4k'
+      reviews: '1.4k',
+      isTrending: true
     },
     {
       id: 'goa',
@@ -57,7 +59,8 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       duration: '4–6 Days',
       startingPrice: '₹14,499',
       rating: '4.8',
-      reviews: '2.1k'
+      reviews: '2.1k',
+      isTrending: true
     },
     {
       id: 'kerala',
@@ -69,7 +72,8 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       duration: '5–7 Days',
       startingPrice: '₹15,999',
       rating: '4.9',
-      reviews: '1.8k'
+      reviews: '1.8k',
+      isTrending: true
     },
     {
       id: 'rajasthan',
@@ -81,7 +85,8 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       duration: '6–8 Days',
       startingPrice: '₹17,999',
       rating: '4.9',
-      reviews: '1.6k'
+      reviews: '1.6k',
+      isTrending: true
     },
     {
       id: 'himachal-pradesh',
@@ -93,7 +98,8 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       duration: '5–7 Days',
       startingPrice: '₹14,999',
       rating: '4.8',
-      reviews: '1.9k'
+      reviews: '1.9k',
+      isTrending: true
     },
     {
       id: 'ladakh',
@@ -105,7 +111,8 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       duration: '6–8 Days',
       startingPrice: '₹22,999',
       rating: '4.9',
-      reviews: '1.1k'
+      reviews: '1.1k',
+      isTrending: true
     },
     {
       id: 'andaman',
@@ -117,7 +124,8 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       duration: '5–7 Days',
       startingPrice: '₹24,999',
       rating: '4.9',
-      reviews: '980'
+      reviews: '980',
+      isTrending: true
     },
     {
       id: 'meghalaya',
@@ -141,7 +149,8 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       duration: '4–6 Days',
       startingPrice: '₹13,999',
       rating: '4.9',
-      reviews: '1.5k'
+      reviews: '1.5k',
+      isTrending: true
     }
   ];
 
@@ -340,11 +349,19 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
                 {/* Multi-Stop Dark Gradient for Pristine Typography Contrast */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 pointer-events-none" />
 
-                {/* Top Row: Region & Rating Badge */}
+                {/* Top Row: Trending Badge / Region & Rating Badge */}
                 <div className="relative z-10 flex items-center justify-between gap-1.5 pointer-events-none">
-                  <span className="inline-flex items-center px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-[10.5px] font-bold uppercase tracking-wider text-white/95 bg-black/60 backdrop-blur-md border border-white/20 shadow-xs whitespace-nowrap leading-none">
-                    {dest.region}
-                  </span>
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    {dest.isTrending && (
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-[10.5px] font-extrabold uppercase tracking-wider text-white bg-[#FF6B00] shadow-md border border-orange-400/80 whitespace-nowrap leading-none">
+                        <Flame className="w-3 h-3 text-white fill-white shrink-0" />
+                        <span>Trending</span>
+                      </span>
+                    )}
+                    <span className="inline-flex items-center px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-[10.5px] font-bold uppercase tracking-wider text-white/95 bg-black/60 backdrop-blur-md border border-white/20 shadow-xs whitespace-nowrap leading-none">
+                      {dest.region}
+                    </span>
+                  </div>
                   
                   {/* Star Rating Badge with White Background, Yellow Star & Black Text */}
                   <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] sm:text-[11px] font-bold bg-white text-gray-900 shadow-md border border-white/90 backdrop-blur-md whitespace-nowrap leading-none">

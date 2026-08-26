@@ -9,7 +9,8 @@ import {
   ArrowRight, 
   Search,
   Heart,
-  Star
+  Star,
+  Flame
 } from 'lucide-react';
 
 /**
@@ -140,10 +141,18 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
 
                   {/* Top Badges */}
                   <div className="absolute top-2.5 left-2.5 right-2.5 sm:top-3.5 sm:left-3.5 sm:right-3.5 flex items-center justify-between gap-2 z-10">
-                    <span className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-wider bg-white/95 text-black shadow-xs whitespace-nowrap leading-none shrink-0 inline-flex items-center gap-1.5 border border-white/30">
-                      <Calendar className="w-3.5 h-3.5 text-[#FF6B00] shrink-0" />
-                      <span>{formatSeasonBadgeFull(dest.bestTime)}</span>
-                    </span>
+                    <div className="flex items-center gap-1.5 flex-wrap">
+                      {dest.isTrending && (
+                        <span className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider bg-[#FF6B00] text-white shadow-md border border-orange-400/80 whitespace-nowrap leading-none shrink-0 inline-flex items-center gap-1">
+                          <Flame className="w-3 h-3 text-white fill-white shrink-0" />
+                          <span>Trending</span>
+                        </span>
+                      )}
+                      <span className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-wider bg-white/95 text-black shadow-xs whitespace-nowrap leading-none shrink-0 inline-flex items-center gap-1.5 border border-white/30">
+                        <Calendar className="w-3.5 h-3.5 text-[#FF6B00] shrink-0" />
+                        <span>{formatSeasonBadgeFull(dest.bestTime)}</span>
+                      </span>
+                    </div>
                     <span className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-white text-gray-900 border border-white/90 shadow-md whitespace-nowrap leading-none shrink-0 inline-flex items-center gap-1">
                       <Star className="w-3 h-3 fill-amber-400 text-amber-400 shrink-0" />
                       <span className="text-black font-extrabold">{dest.rating ? dest.rating.toFixed(1) : '4.9'}</span>
