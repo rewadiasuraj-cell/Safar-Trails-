@@ -21,7 +21,8 @@ import {
   ChevronUp, 
   ArrowRight, 
   ShieldCheck,
-  CloudSun
+  CloudSun,
+  Star
 } from 'lucide-react';
 
 interface DestinationDetailViewProps {
@@ -97,6 +98,13 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
             </span>
             <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white/20 backdrop-blur-md text-white">
               Ideal: {destination.idealDays}
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white text-gray-900 border border-white/90 shadow-md">
+              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400 shrink-0" />
+              <span className="text-black font-extrabold">{destination.rating ? destination.rating.toFixed(1) : '4.9'} / 5.0</span>
+              {destination.reviewCount && (
+                <span className="text-[11px] font-medium text-gray-600">({destination.reviewCount.toLocaleString()} reviews)</span>
+              )}
             </span>
           </div>
 

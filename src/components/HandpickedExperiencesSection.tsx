@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play, Compass, Sparkles } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play, Compass, Sparkles, Star } from 'lucide-react';
 
 interface HandpickedExperiencesSectionProps {
   onSelectCategory?: (category: string) => void;
@@ -16,6 +16,8 @@ interface FeaturedDestination {
   image: string;
   duration: string;
   startingPrice: string;
+  rating: string;
+  reviews: string;
 }
 
 export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSectionProps> = ({
@@ -41,7 +43,9 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       tagline: 'Shikaras, Snow Peaks & Pine Valleys',
       image: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=1200&auto=format&fit=crop',
       duration: '5–7 Days',
-      startingPrice: '₹16,999'
+      startingPrice: '₹16,999',
+      rating: '4.9',
+      reviews: '1.4k'
     },
     {
       id: 'goa',
@@ -51,7 +55,9 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       tagline: 'Sun-Kissed Beaches & Latin Quarters',
       image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1200&auto=format&fit=crop',
       duration: '4–6 Days',
-      startingPrice: '₹14,499'
+      startingPrice: '₹14,499',
+      rating: '4.8',
+      reviews: '2.1k'
     },
     {
       id: 'kerala',
@@ -61,7 +67,9 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       tagline: 'Tranquil Backwaters & Misty Tea Hills',
       image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1200&auto=format&fit=crop',
       duration: '5–7 Days',
-      startingPrice: '₹15,999'
+      startingPrice: '₹15,999',
+      rating: '4.9',
+      reviews: '1.8k'
     },
     {
       id: 'rajasthan',
@@ -71,7 +79,9 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       tagline: 'Regal Forts, Palaces & Desert Dunes',
       image: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=1200&auto=format&fit=crop',
       duration: '6–8 Days',
-      startingPrice: '₹17,999'
+      startingPrice: '₹17,999',
+      rating: '4.9',
+      reviews: '1.6k'
     },
     {
       id: 'himachal-pradesh',
@@ -81,7 +91,9 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       tagline: 'Cedar Forests, Snow Passes & Paragliding',
       image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop',
       duration: '5–7 Days',
-      startingPrice: '₹14,999'
+      startingPrice: '₹14,999',
+      rating: '4.8',
+      reviews: '1.9k'
     },
     {
       id: 'ladakh',
@@ -91,7 +103,9 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       tagline: 'High Altitude Lakes & Ancient Gompas',
       image: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=1200&auto=format&fit=crop',
       duration: '6–8 Days',
-      startingPrice: '₹22,999'
+      startingPrice: '₹22,999',
+      rating: '4.9',
+      reviews: '1.1k'
     },
     {
       id: 'andaman',
@@ -101,7 +115,9 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       tagline: 'Turquoise Lagoons & Pristine Coral Reefs',
       image: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=1200&auto=format&fit=crop',
       duration: '5–7 Days',
-      startingPrice: '₹24,999'
+      startingPrice: '₹24,999',
+      rating: '4.9',
+      reviews: '980'
     },
     {
       id: 'meghalaya',
@@ -111,7 +127,9 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       tagline: 'Living Root Bridges & Crystal Waterfalls',
       image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop',
       duration: '5–7 Days',
-      startingPrice: '₹18,499'
+      startingPrice: '₹18,499',
+      rating: '4.8',
+      reviews: '860'
     },
     {
       id: 'uttarakhand',
@@ -121,7 +139,9 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       tagline: 'Ganga Aarti, Alpine Meadows & Sacred Peaks',
       image: '/Places-in-Uttarakhand.jpg',
       duration: '4–6 Days',
-      startingPrice: '₹13,999'
+      startingPrice: '₹13,999',
+      rating: '4.9',
+      reviews: '1.5k'
     }
   ];
 
@@ -296,7 +316,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
                 key={dest.id}
                 id={`featured-exp-${dest.slug}`}
                 onClick={() => handleCardClick(dest)}
-                className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 border border-gray-200/90 hover:border-orange-300"
+                className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] hover:scale-[1.02] transform will-change-transform transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 border border-gray-200/90 hover:border-orange-300"
               >
                 {/* Full-bleed Realistic Destination Photography */}
                 <img
@@ -320,25 +340,34 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
                 {/* Multi-Stop Dark Gradient for Pristine Typography Contrast */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 pointer-events-none" />
 
-                {/* Top Row: Region & Duration Pill */}
+                {/* Top Row: Region & Rating Badge */}
                 <div className="relative z-10 flex items-center justify-between gap-1.5 pointer-events-none">
                   <span className="inline-flex items-center px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-[10.5px] font-bold uppercase tracking-wider text-white/95 bg-black/60 backdrop-blur-md border border-white/20 shadow-xs whitespace-nowrap leading-none">
                     {dest.region}
                   </span>
-                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-semibold text-white/90 bg-white/20 backdrop-blur-xs">
-                    {dest.duration}
-                  </span>
+                  
+                  {/* Star Rating Badge with White Background, Yellow Star & Black Text */}
+                  <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] sm:text-[11px] font-bold bg-white text-gray-900 shadow-md border border-white/90 backdrop-blur-md whitespace-nowrap leading-none">
+                    <Star className="w-3 h-3 fill-amber-400 text-amber-400 shrink-0" />
+                    <span className="text-black font-extrabold">{dest.rating}</span>
+                    <span className="text-[9px] font-bold text-gray-500">/5.0</span>
+                  </div>
                 </div>
 
-                {/* Bottom Row: Destination Title, Starting Price, Accent, and Tagline */}
+                {/* Bottom Row: Destination Title, Starting Price, Duration, Accent, and Tagline */}
                 <div className="relative z-10 text-white pointer-events-none">
                   <div className="flex items-baseline justify-between gap-2">
                     <h3 className="font-serif text-2xl sm:text-[26px] lg:text-[26px] font-bold text-white tracking-tight leading-tight group-hover:text-orange-200 transition-colors">
                       {dest.name}
                     </h3>
-                    <span className="text-[11px] font-semibold text-orange-300">
-                      From {dest.startingPrice}
-                    </span>
+                    <div className="text-right shrink-0">
+                      <span className="text-[11px] font-bold text-orange-300 block leading-tight">
+                        From {dest.startingPrice}
+                      </span>
+                      <span className="text-[10px] text-white/75 font-medium">
+                        {dest.duration}
+                      </span>
+                    </div>
                   </div>
 
                   {/* Warm Orange Accent Line */}

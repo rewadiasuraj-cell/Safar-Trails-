@@ -71,6 +71,8 @@ export interface Destination {
   temperatureRange: string;
   startingPrice: number;
   idealDays: string;
+  rating?: number;
+  reviewCount?: number;
   highlights: string[];
   howToReach: {
     air: string;

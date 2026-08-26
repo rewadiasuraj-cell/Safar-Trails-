@@ -8,7 +8,8 @@ import {
   IndianRupee, 
   ArrowRight, 
   Search,
-  Heart
+  Heart,
+  Star
 } from 'lucide-react';
 
 /**
@@ -114,7 +115,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
           {filteredDestinations.map((dest) => (
             <div
               key={dest.slug}
-              className="group bg-white rounded-2xl overflow-hidden border border-gray-200/80 hover:border-black/30 shadow-xs hover:shadow-2xl transition-all duration-300 ease-out flex flex-col justify-between md:hover:scale-105 transform will-change-transform"
+              className="group bg-white rounded-2xl overflow-hidden border border-gray-200/80 hover:border-black/30 shadow-xs hover:shadow-2xl transition-all duration-300 ease-out flex flex-col justify-between hover:scale-[1.02] transform will-change-transform"
             >
               <div>
                 {/* Image Container - Compact on mobile (h-48), full on sm+ (h-64) */}
@@ -143,8 +144,10 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
                       <Calendar className="w-3.5 h-3.5 text-[#FF6B00] shrink-0" />
                       <span>{formatSeasonBadgeFull(dest.bestTime)}</span>
                     </span>
-                    <span className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-wider bg-black/75 backdrop-blur-md text-white border border-white/20 shadow-xs whitespace-nowrap leading-none shrink-0">
-                      {dest.idealDays}
+                    <span className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-white text-gray-900 border border-white/90 shadow-md whitespace-nowrap leading-none shrink-0 inline-flex items-center gap-1">
+                      <Star className="w-3 h-3 fill-amber-400 text-amber-400 shrink-0" />
+                      <span className="text-black font-extrabold">{dest.rating ? dest.rating.toFixed(1) : '4.9'}</span>
+                      <span className="text-[9px] font-bold text-gray-500">/5.0</span>
                     </span>
                   </div>
 

@@ -14,6 +14,8 @@ export const destinationsData: Destination[] = [
     temperatureRange: 'Summer: 12°C - 28°C | Winter: -5°C - 8°C',
     startingPrice: 16999,
     idealDays: '5 to 7 Days',
+    rating: 4.9,
+    reviewCount: 1420,
     highlights: [
       'Overnight stay in a heritage cedarwood Houseboat on Nigeen / Dal Lake',
       'Gondola Cable Car Ride to Phase 1 & Phase 2 (13,780 ft) in Gulmarg',
@@ -101,6 +103,8 @@ export const destinationsData: Destination[] = [
     temperatureRange: '22°C - 33°C',
     startingPrice: 12499,
     idealDays: '4 to 6 Days',
+    rating: 4.8,
+    reviewCount: 2180,
     highlights: [
       'Sunset Catamaran or Luxury Yacht cruise on the Mandovi River',
       'Walking photography tour through colorful Portuguese Fontainhas, Panjim',
@@ -173,6 +177,8 @@ export const destinationsData: Destination[] = [
     temperatureRange: '18°C - 32°C',
     startingPrice: 15499,
     idealDays: '5 to 7 Days',
+    rating: 4.9,
+    reviewCount: 1890,
     highlights: [
       'Overnight cruise in a private air-conditioned Houseboat with traditional Kerala Karimeen meals',
       'Stroll through emerald tea gardens and visit Tea Museum in Munnar',
@@ -241,6 +247,8 @@ export const destinationsData: Destination[] = [
     temperatureRange: '10°C - 28°C in winter',
     startingPrice: 14999,
     idealDays: '6 to 9 Days',
+    rating: 4.9,
+    reviewCount: 1650,
     highlights: [
       'Sunset Boat Ride on Lake Pichola overlooking Udaipur City Palace and Jag Mandir',
       'Desert Jeep Safari, camel ride, and folk Kalbeliya dance on Sam Sand Dunes, Jaisalmer',
@@ -309,6 +317,8 @@ export const destinationsData: Destination[] = [
     temperatureRange: '-2°C - 24°C',
     startingPrice: 13999,
     idealDays: '5 to 8 Days',
+    rating: 4.8,
+    reviewCount: 1940,
     highlights: [
       'Drive through the engineering marvel Atal Tunnel into Lahaul Valley (Sissu)',
       'Paragliding, ziplining, and snow quad biking at Solang Valley',
@@ -371,6 +381,8 @@ export const destinationsData: Destination[] = [
     temperatureRange: '5°C - 30°C',
     startingPrice: 11999,
     idealDays: '4 to 7 Days',
+    rating: 4.9,
+    reviewCount: 1530,
     highlights: [
       '16 km White Water River Rafting through Shivpuri to Rishikesh with cliff jumping',
       'Soulful sunset Ganga Aarti ceremony at Parmarth Niketan / Triveni Ghat',
@@ -433,6 +445,8 @@ export const destinationsData: Destination[] = [
     temperatureRange: '23°C - 31°C',
     startingPrice: 21999,
     idealDays: '5 to 7 Days',
+    rating: 4.9,
+    reviewCount: 980,
     highlights: [
       'Sunset at Radhanagar Beach (Beach No. 7), consistently ranked among the world’s top beaches',
       'Discover scuba diving & sea walking at Elephant Beach, Havelock',
@@ -490,6 +504,8 @@ export const destinationsData: Destination[] = [
     temperatureRange: '10°C - 26°C',
     startingPrice: 18499,
     idealDays: '6 to 9 Days',
+    rating: 4.8,
+    reviewCount: 860,
     highlights: [
       'Trek to the ancient Double Decker Living Root Bridge in Nongriat, Meghalaya',
       'Boating on the glass-transparent waters of the Umngot River in Dawki',
