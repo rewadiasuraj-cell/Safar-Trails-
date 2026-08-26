@@ -1,0 +1,7 @@
+{
+  "name": "SafarTrails - AI-Powered Travel Website",
+  "description": "Premium AI-powered Indian holiday package and travel discovery platform curated by expert travel concierges.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

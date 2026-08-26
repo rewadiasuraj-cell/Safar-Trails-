@@ -1,0 +1,197 @@
+export type TripType = 
+  | 'All'
+  | 'Couple'
+  | 'Honeymoon'
+  | 'Family'
+  | 'Friends'
+  | 'Solo'
+  | 'Group'
+  | 'Adventure'
+  | 'Luxury'
+  | 'Weekend'
+  | 'Spiritual';
+
+export type HotelCategory = 'Standard 3★' | 'Deluxe 4★' | 'Luxury 5★' | 'Heritage Boutique' | 'Houseboat & Resort';
+
+export type TransportType = 'Private Sedan' | 'Private SUV (Innova/Crysta)' | 'Tempo Traveller' | 'Self Drive / Flight + Cab';
+
+export interface ItineraryDay {
+  dayNumber: number;
+  title: string;
+  location: string;
+  description: string;
+  morningActivity?: string;
+  afternoonActivity?: string;
+  eveningActivity?: string;
+  stay?: string;
+  mealsIncluded?: string; // e.g. "Breakfast & Dinner"
+  transfers?: string;
+  image?: string;
+  insiderTip?: string;
+}
+
+export interface Package {
+  id: string;
+  slug: string;
+  title: string;
+  destination: string; // e.g. "Kashmir"
+  state: string;
+  durationDays: number;
+  durationNights: number;
+  startingPrice: number; // per person
+  originalPrice?: number;
+  tripType: TripType[];
+  hotelCategory: HotelCategory;
+  ratings: number;
+  reviewCount: number;
+  startingCity: string;
+  bestFor: string;
+  heroImage: string;
+  galleryImages: string[];
+  overview: string;
+  highlights: string[];
+  inclusions: string[];
+  exclusions: string[];
+  itinerary: ItineraryDay[];
+  season: 'All Season' | 'Summer' | 'Monsoon' | 'Winter' | 'Spring';
+  isFeatured?: boolean;
+  isPopular?: boolean;
+}
+
+export interface Destination {
+  slug: string;
+  name: string;
+  tagline: string;
+  state: string;
+  heroImage: string;
+  cardImage: string;
+  shortDescription: string;
+  fullOverview: string;
+  bestTime: string;
+  temperatureRange: string;
+  startingPrice: number;
+  idealDays: string;
+  highlights: string[];
+  howToReach: {
+    air: string;
+    rail: string;
+    road: string;
+  };
+  topAttractions: {
+    name: string;
+    description: string;
+    image: string;
+  }[];
+  stayCategories: {
+    category: string;
+    priceRange: string;
+    recommendation: string;
+  }[];
+  travelTips: string[];
+  faqs: {
+    question: string;
+    answer: string;
+  }[];
+  seoTitle: string;
+  seoDescription: string;
+}
+
+export interface TravelGuide {
+  slug: string;
+  destinationSlug: string;
+  destinationName: string;
+  title: string;
+  subtitle: string;
+  readTime: string;
+  author: {
+    name: string;
+    role: string;
+    avatar: string;
+  };
+  publishedDate: string;
+  heroImage: string;
+  category: 'Itinerary' | 'Cost Breakdown' | 'Best Time' | 'Offbeat' | 'Honeymoon' | 'Food & Culture';
+  excerpt: string;
+  contentSections: {
+    heading: string;
+    content: string;
+    bulletPoints?: string[];
+    highlightQuote?: string;
+  }[];
+  relatedPackageSlugs: string[];
+}
+
+export interface CustomerReview {
+  id: string;
+  authorName: string;
+  city: string;
+  tripName: string;
+  destination: string;
+  rating: number;
+  reviewText: string;
+  date: string;
+  travelType: string;
+  avatar: string;
+  verified: boolean;
+  userPhotos?: string[];
+}
+
+export interface AITripPlanRequest {
+  destination: string;
+  startCity?: string;
+  travelDates?: string;
+  durationDays: number;
+  travellers: number;
+  tripType: TripType;
+  budgetTotal?: number;
+  hotelCategory?: HotelCategory;
+  transportMode?: TransportType;
+  interests: string[];
+  specialRequests?: string;
+  userPrompt?: string;
+}
+
+export interface AITripPlanResult {
+  planId: string;
+  destination: string;
+  title: string;
+  summary: string;
+  durationDays: number;
+  durationNights: number;
+  travellersCount: number;
+  tripType: string;
+  hotelCategory: string;
+  transportType: string;
+  estimatedBudget: {
+    min: number;
+    max: number;
+    perPerson: number;
+    breakdown: {
+      hotels: number;
+      transport: number;
+      sightseeingAndPermits: number;
+      foodAndMisc: number;
+    };
+  };
+  itinerary: ItineraryDay[];
+  includedHighlights: string[];
+  expertTips: string[];
+  packingEssentials: string[];
+  bestTimeToVisitInfo: string;
+  disclaimer: string;
+}
+
+export interface LeadEnquiry {
+  id?: string;
+  name: string;
+  phone: string;
+  email: string;
+  destination: string;
+  travelDates: string;
+  travellers: string;
+  budget?: string;
+  tripType?: string;
+  itinerarySummary?: string;
+  specialNotes?: string;
+  source?: string;
+}
