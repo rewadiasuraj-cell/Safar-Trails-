@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { 
   X, 
@@ -18,19 +18,19 @@ interface QuoteRequestModalProps {
   isOpen: boolean;
   onClose: () => void;
   initialSummary?: string;
+  initialDestination?: string;
 }
 
 export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
   isOpen,
   onClose,
-  initialSummary = ''
+  initialSummary = '',
+  initialDestination = ''
 }) => {
-  if (!isOpen) return null;
-
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
-  const [destination, setDestination] = useState('Kashmir');
+  const [destination, setDestination] = useState(initialDestination || 'Kashmir');
   const [travelDates, setTravelDates] = useState('');
   const [travellers, setTravellers] = useState('2 Adults');
   const [budget, setBudget] = useState('Standard (₹15k–₹25k/person)');
@@ -39,6 +39,22 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedLead, setSubmittedLead] = useState<any>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  // Sync props when modal is opened or props change
+  useEffect(() => {
+    if (isOpen) {
+      if (initialDestination) {
+        setDestination(initialDestination);
+      }
+      if (initialSummary) {
+        setNotes(initialSummary);
+      }
+      setSubmittedLead(null);
+      setErrorMsg(null);
+    }
+  }, [isOpen, initialDestination, initialSummary]);
+
+  if (!isOpen) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -214,9 +230,14 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                   <option value="Kerala">Kerala</option>
                   <option value="Rajasthan">Rajasthan</option>
                   <option value="Himachal Pradesh">Himachal Pradesh</option>
-                  <option value="Andaman">Andaman & Nicobar</option>
-                  <option value="Northeast India">Northeast India</option>
+                  <option value="Ladakh">Ladakh</option>
                   <option value="Uttarakhand">Uttarakhand</option>
+                  <option value="Andaman">Andaman & Nicobar</option>
+                  <option value="Meghalaya">Meghalaya / Northeast</option>
+                  <option value="Northeast India">Northeast India</option>
+                  {destination && !['Kashmir', 'Goa', 'Kerala', 'Rajasthan', 'Himachal Pradesh', 'Ladakh', 'Uttarakhand', 'Andaman', 'Meghalaya', 'Northeast India', 'Custom Multi-City'].includes(destination) && (
+                    <option value={destination}>{destination}</option>
+                  )}
                   <option value="Custom Multi-City">Other Custom Tour</option>
                 </select>
               </div>

@@ -5,6 +5,7 @@ import { AIIcon } from '../AIIcon';
 import { DestinationInteractiveMap } from './DestinationInteractiveMap';
 import { SeasonalWeatherWidget } from './SeasonalWeatherWidget';
 import { FloatingShareButton } from '../FloatingShareButton';
+import { ExpertVerifiedBadge } from '../ExpertVerifiedBadge';
 import { 
   ArrowLeft, 
   MapPin, 
@@ -31,7 +32,7 @@ interface DestinationDetailViewProps {
   onBack: () => void;
   onSelectPackage: (pkg: Package) => void;
   onStartAIPlan: (destinationName: string) => void;
-  onOpenQuoteModal: (summary?: string) => void;
+  onOpenQuoteModal: (summary?: string, destinationName?: string) => void;
 }
 
 export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
@@ -106,6 +107,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
             <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white/20 backdrop-blur-md text-white">
               Ideal: {destination.idealDays}
             </span>
+            <ExpertVerifiedBadge variant="glass-dark" size="sm" showSubtitle={true} />
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white text-gray-900 border border-white/90 shadow-md">
               <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400 shrink-0" />
               <span className="text-black font-extrabold">{destination.rating ? destination.rating.toFixed(1) : '4.9'} / 5.0</span>
@@ -397,7 +399,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                 </button>
 
                 <button
-                  onClick={() => onOpenQuoteModal(`Interested in visiting ${destination.name}`)}
+                  onClick={() => onOpenQuoteModal(`Interested in customized tour package to ${destination.name}`, destination.name)}
                   className="w-full py-3.5 rounded-xl border border-gray-200 hover:border-black text-black font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <span>Request Custom Quote</span>

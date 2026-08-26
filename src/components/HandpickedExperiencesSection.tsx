@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play, Compass, Sparkles, Star, Flame } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play, Compass, Sparkles, Star, Flame, Zap, MoveHorizontal } from 'lucide-react';
 
 interface HandpickedExperiencesSectionProps {
   onSelectCategory?: (category: string) => void;
   onSelectDestination?: (slug: string) => void;
   onViewAll: () => void;
+  onOpenQuoteModal?: (summary?: string, destinationName?: string) => void;
 }
 
 interface FeaturedDestination {
@@ -24,15 +25,29 @@ interface FeaturedDestination {
 export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSectionProps> = ({
   onSelectCategory,
   onSelectDestination,
-  onViewAll
+  onViewAll,
+  onOpenQuoteModal
 }) => {
   const [isAutoScrolling, setIsAutoScrolling] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [hasInteracted, setHasInteracted] = useState(false);
+
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const animationFrameRef = useRef<number | null>(null);
   const lastScrollTimeRef = useRef<number>(Date.now());
   const userInteractedTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Touch & drag gesture tracking refs
+  const dragStartXRef = useRef<number>(0);
+  const dragStartYRef = useRef<number>(0);
+  const dragStartTimeRef = useRef<number>(0);
+  const dragStartScrollLeftRef = useRef<number>(0);
+  const dragDistanceRef = useRef<number>(0);
+  const isPointerDownRef = useRef<boolean>(false);
+  const isHorizontalGestureRef = useRef<boolean | null>(null);
 
   // Curated featured destinations with authentic photography & highlights
   const featuredDestinations: FeaturedDestination[] = [
@@ -154,7 +169,21 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
     }
   ];
 
-  // Update scroll progress
+  const totalItemsCount = featuredDestinations.length + 1; // +1 for "View All" card
+
+  // Helper to calculate card stride (width + gap)
+  const getCardStride = useCallback(() => {
+    if (!scrollContainerRef.current) return 320;
+    const firstChild = scrollContainerRef.current.children[0] as HTMLElement | undefined;
+    if (firstChild) {
+      const cardWidth = firstChild.offsetWidth;
+      const computedGap = window.innerWidth >= 640 ? 24 : 20;
+      return cardWidth + computedGap;
+    }
+    return window.innerWidth >= 640 ? 334 : 300;
+  }, []);
+
+  // Update scroll progress & compute active card index
   const updateScrollProgress = useCallback(() => {
     if (!scrollContainerRef.current) return;
     const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
@@ -162,7 +191,36 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
     if (maxScroll > 0) {
       setScrollProgress((scrollLeft / maxScroll) * 100);
     }
-  }, []);
+    const stride = getCardStride();
+    const currIndex = Math.min(
+      totalItemsCount - 1,
+      Math.max(0, Math.round(scrollLeft / stride))
+    );
+    setActiveIndex(currIndex);
+  }, [getCardStride, totalItemsCount]);
+
+  // Smooth scroll to a specific card index
+  const scrollToCard = useCallback((index: number, behavior: ScrollBehavior = 'smooth') => {
+    if (!scrollContainerRef.current) return;
+    const boundedIndex = Math.max(0, Math.min(totalItemsCount - 1, index));
+    const container = scrollContainerRef.current;
+    const targetChild = container.children[boundedIndex] as HTMLElement | undefined;
+
+    if (targetChild) {
+      const targetOffset = targetChild.offsetLeft - container.offsetLeft - (window.innerWidth < 640 ? 4 : 0);
+      container.scrollTo({
+        left: Math.max(0, targetOffset),
+        behavior
+      });
+    } else {
+      const stride = getCardStride();
+      container.scrollTo({
+        left: boundedIndex * stride,
+        behavior
+      });
+    }
+    setActiveIndex(boundedIndex);
+  }, [getCardStride, totalItemsCount]);
 
   // Automatic gentle continuous horizontal scrolling animation on desktop
   useEffect(() => {
@@ -173,7 +231,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
     const scrollSpeed = 0.65; // Gentle sub-pixel increment per frame
 
     const autoScrollLoop = () => {
-      if (isRunning && isAutoScrolling && !isHovered && container) {
+      if (isRunning && isAutoScrolling && !isHovered && !isDragging && container) {
         // Increment scroll position
         const currentScroll = container.scrollLeft;
         const maxScroll = container.scrollWidth - container.clientWidth;
@@ -197,7 +255,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [isAutoScrolling, isHovered, updateScrollProgress]);
+  }, [isAutoScrolling, isHovered, isDragging, updateScrollProgress]);
 
   // Handle user manual scroll / pause on interaction
   const handleUserScroll = () => {
@@ -208,20 +266,149 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
   // Scroll manually via buttons
   const handleManualScroll = (direction: 'left' | 'right') => {
     if (!scrollContainerRef.current) return;
-    const scrollAmount = 340;
-    scrollContainerRef.current.scrollBy({
-      left: direction === 'left' ? -scrollAmount : scrollAmount,
-      behavior: 'smooth'
-    });
+    setHasInteracted(true);
+    const targetIndex = direction === 'left' ? activeIndex - 1 : activeIndex + 1;
+    scrollToCard(targetIndex);
 
-    // Temporarily pause auto-scroll for 3.5 seconds after manual button click
+    // Pause auto-scroll after manual button click
     if (userInteractedTimeoutRef.current) clearTimeout(userInteractedTimeoutRef.current);
     userInteractedTimeoutRef.current = setTimeout(() => {
       updateScrollProgress();
-    }, 500);
+    }, 4000);
+  };
+
+  // Native Touch Swipe Gesture Handlers for Mobile Devices
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (!scrollContainerRef.current) return;
+    const touch = e.touches[0];
+    dragStartXRef.current = touch.clientX;
+    dragStartYRef.current = touch.clientY;
+    dragStartTimeRef.current = Date.now();
+    dragStartScrollLeftRef.current = scrollContainerRef.current.scrollLeft;
+    dragDistanceRef.current = 0;
+    isPointerDownRef.current = true;
+    isHorizontalGestureRef.current = null;
+    setIsDragging(true);
+    setHasInteracted(true);
+
+    if (userInteractedTimeoutRef.current) clearTimeout(userInteractedTimeoutRef.current);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isPointerDownRef.current || !scrollContainerRef.current) return;
+    const touch = e.touches[0];
+    const deltaX = touch.clientX - dragStartXRef.current;
+    const deltaY = touch.clientY - dragStartYRef.current;
+
+    dragDistanceRef.current = Math.abs(deltaX);
+
+    // Lock gesture orientation on initial movement
+    if (isHorizontalGestureRef.current === null) {
+      if (Math.abs(deltaX) > 8 || Math.abs(deltaY) > 8) {
+        isHorizontalGestureRef.current = Math.abs(deltaX) > Math.abs(deltaY);
+      }
+    }
+
+    // Direct 1:1 finger position tracking when horizontal swipe is active
+    if (isHorizontalGestureRef.current) {
+      scrollContainerRef.current.scrollLeft = dragStartScrollLeftRef.current - deltaX;
+      updateScrollProgress();
+    }
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (!isPointerDownRef.current || !scrollContainerRef.current) return;
+    isPointerDownRef.current = false;
+    setIsDragging(false);
+
+    const elapsed = Math.max(1, Date.now() - dragStartTimeRef.current);
+    const endX = e.changedTouches[0]?.clientX ?? dragStartXRef.current;
+    const deltaX = endX - dragStartXRef.current;
+    const velocity = deltaX / elapsed; // px per millisecond
+    const stride = getCardStride();
+
+    // Responsive swipe detection (flick velocity or drag distance)
+    const isFlickLeft = deltaX < -35 || velocity < -0.28;
+    const isFlickRight = deltaX > 35 || velocity > 0.28;
+
+    if (isHorizontalGestureRef.current) {
+      if (isFlickLeft) {
+        // Swipe to next card
+        scrollToCard(activeIndex + 1);
+      } else if (isFlickRight) {
+        // Swipe to previous card
+        scrollToCard(activeIndex - 1);
+      } else {
+        // Snap cleanly to nearest card boundary
+        const nearestIndex = Math.round(scrollContainerRef.current.scrollLeft / stride);
+        scrollToCard(nearestIndex);
+      }
+    }
+
+    // Reset gesture flags
+    isHorizontalGestureRef.current = null;
+
+    // Resume auto-scroll after idle timeout
+    if (userInteractedTimeoutRef.current) clearTimeout(userInteractedTimeoutRef.current);
+    userInteractedTimeoutRef.current = setTimeout(() => {
+      updateScrollProgress();
+    }, 4500);
+  };
+
+  // Mouse drag-to-swipe handlers for desktop & tablet trackpads
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollContainerRef.current) return;
+    dragStartXRef.current = e.clientX;
+    dragStartTimeRef.current = Date.now();
+    dragStartScrollLeftRef.current = scrollContainerRef.current.scrollLeft;
+    dragDistanceRef.current = 0;
+    isPointerDownRef.current = true;
+    setIsDragging(true);
+    setHasInteracted(true);
+
+    if (userInteractedTimeoutRef.current) clearTimeout(userInteractedTimeoutRef.current);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isPointerDownRef.current || !scrollContainerRef.current) return;
+    e.preventDefault();
+    const deltaX = e.clientX - dragStartXRef.current;
+    dragDistanceRef.current = Math.abs(deltaX);
+    scrollContainerRef.current.scrollLeft = dragStartScrollLeftRef.current - deltaX;
+    updateScrollProgress();
+  };
+
+  const handleMouseUpOrLeave = (e: React.MouseEvent) => {
+    if (!isPointerDownRef.current || !scrollContainerRef.current) return;
+    isPointerDownRef.current = false;
+    setIsDragging(false);
+
+    const elapsed = Math.max(1, Date.now() - dragStartTimeRef.current);
+    const deltaX = e.clientX - dragStartXRef.current;
+    const velocity = deltaX / elapsed;
+    const stride = getCardStride();
+
+    if (dragDistanceRef.current > 15) {
+      if (deltaX < -40 || velocity < -0.28) {
+        scrollToCard(activeIndex + 1);
+      } else if (deltaX > 40 || velocity > 0.28) {
+        scrollToCard(activeIndex - 1);
+      } else {
+        const nearestIndex = Math.round(scrollContainerRef.current.scrollLeft / stride);
+        scrollToCard(nearestIndex);
+      }
+    }
+
+    if (userInteractedTimeoutRef.current) clearTimeout(userInteractedTimeoutRef.current);
+    userInteractedTimeoutRef.current = setTimeout(() => {
+      updateScrollProgress();
+    }, 4500);
   };
 
   const handleCardClick = (dest: FeaturedDestination) => {
+    // Suppress card click if user was dragging/swiping
+    if (dragDistanceRef.current > 10) return;
+
     if (onSelectDestination) {
       onSelectDestination(dest.slug);
     } else if (onSelectCategory) {
@@ -299,23 +486,27 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
           </div>
         </div>
 
-        {/* Horizontal Scrolling Rail Wrapper with Edge Fades */}
+        {/* Horizontal Swipable Rail Wrapper */}
         <div 
           className="relative"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          {/* Subtle Left Fade Gradient on Desktop */}
-          <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white via-white/80 to-transparent z-20 pointer-events-none" />
-
-          {/* Subtle Right Fade Gradient on Desktop */}
-          <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white via-white/80 to-transparent z-20 pointer-events-none" />
-
-          {/* Scrollable Container */}
+          {/* Swipable / Scrollable Container */}
           <div
             ref={scrollContainerRef}
             onScroll={handleUserScroll}
-            className="flex gap-5 sm:gap-6 overflow-x-auto pb-4 pt-1 px-1 scroll-smooth select-none cursor-grab active:cursor-grabbing [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            onTouchCancel={handleTouchEnd}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUpOrLeave}
+            onMouseLeave={handleMouseUpOrLeave}
+            className={`flex gap-5 sm:gap-6 overflow-x-auto pb-4 pt-1 px-1 select-none touch-pan-y snap-x snap-mandatory ${
+              isDragging ? 'cursor-grabbing' : 'cursor-grab scroll-smooth'
+            } [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden`}
             style={{
               WebkitOverflowScrolling: 'touch',
             }}
@@ -325,7 +516,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
                 key={dest.id}
                 id={`featured-exp-${dest.slug}`}
                 onClick={() => handleCardClick(dest)}
-                className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] hover:scale-[1.02] transform will-change-transform transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 border border-gray-200/90 hover:border-orange-300"
+                className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] hover:scale-[1.02] transform will-change-transform transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 border border-gray-200/90 hover:border-orange-300 snap-start snap-always"
               >
                 {/* Full-bleed Realistic Destination Photography */}
                 <img
@@ -372,7 +563,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
                 </div>
 
                 {/* Bottom Row: Destination Title, Starting Price, Duration, Accent, and Tagline */}
-                <div className="relative z-10 text-white pointer-events-none">
+                <div className="relative z-10 text-white">
                   <div className="flex items-baseline justify-between gap-2">
                     <h3 className="font-serif text-2xl sm:text-[26px] lg:text-[26px] font-bold text-white tracking-tight leading-tight group-hover:text-orange-200 transition-colors">
                       {dest.name}
@@ -394,10 +585,28 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
                     {dest.tagline}
                   </p>
 
-                  {/* Discover Link on Hover */}
-                  <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-white/90 mt-3 pt-3 border-t border-white/15 group-hover:text-[#FF6B00] transition-colors">
-                    <span>Explore Trails</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform stroke-[2.2]" />
+                  {/* Actions Row: Quick Book + Discover Link */}
+                  <div className="flex items-center justify-between gap-2 mt-3 pt-3 border-t border-white/15">
+                    <button
+                      type="button"
+                      id={`quick-book-featured-${dest.slug}`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onOpenQuoteModal?.(
+                          `Quick booking enquiry for ${dest.name} (${dest.duration}). Please share custom pricing and hotel options.`,
+                          dest.name
+                        );
+                      }}
+                      className="px-2.5 sm:px-3 py-1.5 rounded-lg bg-[#FF6B00] hover:bg-[#e66000] active:scale-95 text-white font-bold text-[10px] sm:text-[11px] uppercase tracking-wider shadow-sm flex items-center gap-1 transition-all cursor-pointer pointer-events-auto"
+                    >
+                      <Zap className="w-3 h-3 fill-white text-white shrink-0" />
+                      <span>Quick Book</span>
+                    </button>
+
+                    <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-white/90 group-hover:text-orange-300 transition-colors">
+                      <span>Explore</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform stroke-[2.2]" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -406,8 +615,11 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
             {/* Final Card: View All Destinations CTA */}
             <div
               id="featured-exp-view-all"
-              onClick={onViewAll}
-              className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 bg-[#071322] border border-slate-800 hover:border-orange-500/50"
+              onClick={() => {
+                if (dragDistanceRef.current > 10) return;
+                onViewAll();
+              }}
+              className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 bg-[#071322] border border-slate-800 hover:border-orange-500/50 snap-start snap-always"
             >
               {/* Atmospheric Background Image with Deep Navy Overlay */}
               <img
@@ -452,17 +664,48 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
             </div>
           </div>
 
-          {/* Minimal Exploration Progress Bar */}
-          <div className="mt-4 flex items-center justify-between gap-4 px-1">
-            <div className="flex-1 h-1 bg-gray-100 rounded-full overflow-hidden">
-              <div 
-                className="h-full bg-gradient-to-r from-orange-400 to-[#FF6B00] rounded-full transition-all duration-150"
-                style={{ width: `${Math.max(12, scrollProgress)}%` }}
-              />
+          {/* Native Mobile Pagination & Interaction Bar */}
+          <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 px-1">
+            {/* Mobile Native Page Indicator Dots */}
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              {Array.from({ length: totalItemsCount }).map((_, idx) => (
+                <button
+                  key={`dot-${idx}`}
+                  onClick={() => scrollToCard(idx)}
+                  aria-label={`Go to slide ${idx + 1}`}
+                  className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                    activeIndex === idx
+                      ? 'w-6 bg-[#FF6B00]'
+                      : 'w-1.5 bg-gray-300 hover:bg-gray-400'
+                  }`}
+                />
+              ))}
+              <span className="text-[10.5px] font-bold text-slate-500 ml-1.5 tracking-wider">
+                {String(activeIndex + 1).padStart(2, '0')} / {String(totalItemsCount).padStart(2, '0')}
+              </span>
             </div>
-            <span className="text-[11px] font-medium text-slate-400 whitespace-nowrap">
-              {isHovered ? 'Hovered (Paused)' : isAutoScrolling ? 'Auto-scrolling' : 'Manual'}
-            </span>
+
+            {/* Mobile Swipe Hint or Status */}
+            <div className="flex items-center gap-2">
+              {!hasInteracted && (
+                <div className="flex items-center gap-1 text-[11px] font-medium text-orange-600 bg-orange-50 px-2.5 py-1 rounded-full border border-orange-200 animate-pulse">
+                  <MoveHorizontal className="w-3 h-3 text-[#FF6B00]" />
+                  <span>Swipe to navigate</span>
+                </div>
+              )}
+              
+              <div className="hidden sm:flex items-center gap-3">
+                <div className="w-32 h-1 bg-gray-100 rounded-full overflow-hidden">
+                  <div 
+                    className="h-full bg-gradient-to-r from-orange-400 to-[#FF6B00] rounded-full transition-all duration-150"
+                    style={{ width: `${Math.max(10, scrollProgress)}%` }}
+                  />
+                </div>
+                <span className="text-[11px] font-medium text-slate-400 whitespace-nowrap">
+                  {isDragging ? 'Swiping' : isHovered ? 'Paused' : isAutoScrolling ? 'Auto-Guiding' : 'Manual'}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 

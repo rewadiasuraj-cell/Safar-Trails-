@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { destinationsData } from '../../data/destinationsData';
 import { Destination } from '../../types';
 import { AIIcon } from '../AIIcon';
+import { ExpertVerifiedBadge } from '../ExpertVerifiedBadge';
 import { 
   MapPin, 
   Calendar, 
@@ -10,7 +11,8 @@ import {
   Search,
   Heart,
   Star,
-  Flame
+  Flame,
+  Zap
 } from 'lucide-react';
 
 /**
@@ -35,11 +37,13 @@ const formatDestinationName = (name: string): string => {
 interface DestinationsSectionProps {
   onSelectDestination: (slug: string) => void;
   onPlanDestinationWithAI: (destinationName: string) => void;
+  onOpenQuoteModal?: (summary?: string, destinationName?: string) => void;
 }
 
 export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
   onSelectDestination,
-  onPlanDestinationWithAI
+  onPlanDestinationWithAI,
+  onOpenQuoteModal
 }) => {
   const [selectedState, setSelectedState] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState('');
@@ -193,6 +197,13 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
 
                 {/* Card Body - Tightened vertical spacing on mobile */}
                 <div className="p-3.5 sm:p-5">
+                  <div className="flex items-center justify-between gap-2 mb-2.5">
+                    <ExpertVerifiedBadge variant="light" size="xs" />
+                    <span className="text-[10px] sm:text-[10.5px] font-semibold text-gray-400 uppercase tracking-wider">
+                      {dest.state}
+                    </span>
+                  </div>
+
                   <p className="text-xs sm:text-sm text-gray-600 leading-snug sm:leading-relaxed mb-2.5 sm:mb-4">
                     {dest.shortDescription}
                   </p>
@@ -227,24 +238,46 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
               </div>
 
               {/* Card Footer Actions */}
-              <div className="p-3.5 pt-0 sm:p-5 sm:pt-0 grid grid-cols-2 gap-1.5 sm:gap-2">
+              <div className="p-3.5 pt-0 sm:p-5 sm:pt-0 space-y-1.5 sm:space-y-2">
                 <button
-                  id={`explore-dest-${dest.slug}`}
-                  onClick={() => onSelectDestination(dest.slug)}
-                  className="w-full h-9 min-[380px]:h-9.5 sm:h-10 min-h-[36px] sm:min-h-[40px] px-1 sm:px-2.5 lg:px-3 rounded-xl border border-gray-200 hover:border-black hover:bg-gray-50 text-black font-bold text-[10px] min-[380px]:text-[11px] sm:text-[11.5px] lg:text-xs uppercase tracking-tight min-[380px]:tracking-wide lg:tracking-wider transition-colors inline-flex items-center justify-center gap-1 sm:gap-1.5 cursor-pointer text-center whitespace-nowrap select-none"
+                  id={`quick-book-dest-${dest.slug}`}
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (onOpenQuoteModal) {
+                      onOpenQuoteModal(
+                        `I would like to quickly book / inquire about a tour package to ${dest.name} (${dest.idealDays}). Please share detailed itemized pricing and available dates.`,
+                        dest.name
+                      );
+                    } else {
+                      onPlanDestinationWithAI(dest.name);
+                    }
+                  }}
+                  className="w-full h-9 min-[380px]:h-9.5 sm:h-10 min-h-[36px] sm:min-h-[40px] px-3 rounded-xl bg-[#FF6B00] hover:bg-[#e66000] active:scale-[0.99] text-white font-bold text-[11px] sm:text-xs uppercase tracking-wider shadow-xs hover:shadow-md transition-all inline-flex items-center justify-center gap-1.5 cursor-pointer text-center whitespace-nowrap select-none"
                 >
-                  <span>Explore Guide</span>
-                  <ArrowRight className="w-3 h-3 min-[380px]:w-3.5 min-[380px]:h-3.5 shrink-0" />
+                  <Zap className="w-3.5 h-3.5 fill-white text-white shrink-0" />
+                  <span>Quick Book</span>
                 </button>
 
-                <button
-                  id={`ai-plan-dest-${dest.slug}`}
-                  onClick={() => onPlanDestinationWithAI(dest.name)}
-                  className="w-full h-9 min-[380px]:h-9.5 sm:h-10 min-h-[36px] sm:min-h-[40px] px-1 sm:px-2.5 lg:px-3 rounded-xl bg-black hover:bg-gray-800 text-white font-bold text-[10px] min-[380px]:text-[11px] sm:text-[11.5px] lg:text-xs uppercase tracking-tight min-[380px]:tracking-wide lg:tracking-wider transition-all inline-flex items-center justify-center gap-1 sm:gap-1.5 cursor-pointer text-center whitespace-nowrap select-none"
-                >
-                  <AIIcon className="hidden lg:inline-block w-3.5 h-3.5 text-white shrink-0" />
-                  <span>Custom Itinerary</span>
-                </button>
+                <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
+                  <button
+                    id={`explore-dest-${dest.slug}`}
+                    onClick={() => onSelectDestination(dest.slug)}
+                    className="w-full h-8.5 min-[380px]:h-9 sm:h-9.5 min-h-[34px] sm:min-h-[38px] px-1 sm:px-2 rounded-xl border border-gray-200 hover:border-black hover:bg-gray-50 text-black font-bold text-[10px] min-[380px]:text-[10.5px] sm:text-[11px] uppercase tracking-tight min-[380px]:tracking-wide transition-colors inline-flex items-center justify-center gap-1 sm:gap-1.5 cursor-pointer text-center whitespace-nowrap select-none"
+                  >
+                    <span>Explore Guide</span>
+                    <ArrowRight className="w-3 h-3 min-[380px]:w-3.5 min-[380px]:h-3.5 shrink-0" />
+                  </button>
+
+                  <button
+                    id={`ai-plan-dest-${dest.slug}`}
+                    onClick={() => onPlanDestinationWithAI(dest.name)}
+                    className="w-full h-8.5 min-[380px]:h-9 sm:h-9.5 min-h-[34px] sm:min-h-[38px] px-1 sm:px-2 rounded-xl bg-black hover:bg-gray-800 text-white font-bold text-[10px] min-[380px]:text-[10.5px] sm:text-[11px] uppercase tracking-tight min-[380px]:tracking-wide transition-all inline-flex items-center justify-center gap-1 sm:gap-1.5 cursor-pointer text-center whitespace-nowrap select-none"
+                  >
+                    <AIIcon className="hidden sm:inline-block w-3 h-3 text-white shrink-0" />
+                    <span>Custom Plan</span>
+                  </button>
+                </div>
               </div>
             </div>
           ))}

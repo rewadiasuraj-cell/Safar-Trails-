@@ -37,6 +37,7 @@ export default function App() {
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [quoteModalInitialSummary, setQuoteModalInitialSummary] = useState<string>('');
+  const [quoteModalInitialDestination, setQuoteModalInitialDestination] = useState<string>('');
   const [activePolicyType, setActivePolicyType] = useState<'privacy' | 'terms' | 'cancellation' | null>(null);
 
   // AI Planner Context Seed
@@ -75,8 +76,9 @@ export default function App() {
     setCurrentView('ai-planner');
   };
 
-  const handleOpenQuoteModal = (summary?: string) => {
+  const handleOpenQuoteModal = (summary?: string, destinationName?: string) => {
     setQuoteModalInitialSummary(summary || '');
+    setQuoteModalInitialDestination(destinationName || '');
     setQuoteModalOpen(true);
   };
 
@@ -138,6 +140,7 @@ export default function App() {
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
                 else setCurrentView('destinations');
               }}
+              onOpenQuoteModal={handleOpenQuoteModal}
             />
 
             <AITripPlanner
@@ -149,6 +152,7 @@ export default function App() {
             <DestinationsSection
               onSelectDestination={handleSelectDestination}
               onPlanDestinationWithAI={(destName) => handleStartAIPlan(undefined, destName)}
+              onOpenQuoteModal={handleOpenQuoteModal}
             />
 
             <PackagesSection
@@ -192,6 +196,7 @@ export default function App() {
             <DestinationsSection
               onSelectDestination={handleSelectDestination}
               onPlanDestinationWithAI={(destName) => handleStartAIPlan(undefined, destName)}
+              onOpenQuoteModal={handleOpenQuoteModal}
             />
           </div>
         )}
@@ -304,6 +309,7 @@ export default function App() {
         isOpen={quoteModalOpen}
         onClose={() => setQuoteModalOpen(false)}
         initialSummary={quoteModalInitialSummary}
+        initialDestination={quoteModalInitialDestination}
       />
 
       {/* 4. Policy Modals */}
