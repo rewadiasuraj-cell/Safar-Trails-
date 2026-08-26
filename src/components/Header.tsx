@@ -83,13 +83,13 @@ export const Header: React.FC<HeaderProps> = ({
     <>
       <header
         id="main-header"
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-200 ${
+        className={`fixed top-0 left-0 right-0 w-full z-40 transition-all duration-200 ${
           isScrolled
             ? 'bg-white/95 backdrop-blur-md shadow-[0_2px_15px_-3px_rgba(0,0,0,0.06)] border-b border-gray-100 py-2 sm:py-2.5 md:py-3'
             : 'bg-white border-b border-gray-100 py-2.5 sm:py-3 md:py-3.5'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-3 sm:px-5 md:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-3 md:gap-4">
+        <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 flex items-center justify-between gap-2 sm:gap-3 md:gap-4">
           {/* Brand Logo (Clean left alignment on Mobile, Tablet & Desktop) */}
           <div className="flex items-center flex-shrink-0">
             <div

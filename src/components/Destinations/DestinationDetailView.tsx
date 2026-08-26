@@ -3,6 +3,7 @@ import { Destination, Package } from '../../types';
 import { packagesData } from '../../data/packagesData';
 import { AIIcon } from '../AIIcon';
 import { DestinationInteractiveMap } from './DestinationInteractiveMap';
+import { SeasonalWeatherWidget } from './SeasonalWeatherWidget';
 import { FloatingShareButton } from '../FloatingShareButton';
 import { 
   ArrowLeft, 
@@ -19,7 +20,8 @@ import {
   ChevronDown, 
   ChevronUp, 
   ArrowRight, 
-  ShieldCheck 
+  ShieldCheck,
+  CloudSun
 } from 'lucide-react';
 
 interface DestinationDetailViewProps {
@@ -47,10 +49,10 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
   );
 
   return (
-    <div id="destination-detail-page" className="pt-20 pb-24 bg-[#FAF9F6]">
+    <div id="destination-detail-page" className="w-full pt-20 pb-24 bg-[#FAF9F6]">
       {/* Top Breadcrumbs & Back Bar */}
-      <div className="bg-white border-b border-gray-200 py-3.5">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 flex items-center justify-between">
+      <div className="w-full bg-white border-b border-gray-200 py-3.5">
+        <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 flex items-center justify-between">
           <button
             onClick={onBack}
             className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-black hover:opacity-70 transition-opacity cursor-pointer"
@@ -79,7 +81,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
       </div>
 
       {/* Hero Visual Section */}
-      <section className="relative h-[420px] sm:h-[500px] overflow-hidden">
+      <section className="relative w-full h-[420px] sm:h-[500px] overflow-hidden">
         <img
           src={destination.heroImage}
           alt={destination.name}
@@ -88,7 +90,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
-        <div className="absolute bottom-8 left-0 right-0 max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 text-white space-y-4">
+        <div className="absolute bottom-8 left-0 right-0 w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 text-white space-y-4">
           <div className="flex flex-wrap items-center gap-2">
             <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-black text-white border border-white/20">
               {destination.state}
@@ -121,8 +123,8 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
       </section>
 
       {/* Floating CTA / AI Prompt Bar */}
-      <div className="bg-[#0A0A0A] text-white py-4 border-y border-gray-800">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div className="w-full bg-[#0A0A0A] text-white py-4 border-y border-gray-800">
+        <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2 text-xs sm:text-sm font-normal">
             <AIIcon className="w-4 h-4 text-white" />
             <span>Customize a bespoke {destination.name} itinerary in 10 seconds.</span>
@@ -146,7 +148,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
       </div>
 
       {/* Main Content Layout */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 pt-10">
+      <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Left 2 Cols: Main Editorial Content */}
           <div className="lg:col-span-2 space-y-12">
@@ -174,6 +176,13 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                 </div>
               </div>
             </section>
+
+            {/* Seasonal Weather Summary & Best Time to Visit Widget */}
+            <SeasonalWeatherWidget
+              destination={destination}
+              onStartAIPlan={onStartAIPlan}
+              onOpenQuoteModal={onOpenQuoteModal}
+            />
 
             {/* Interactive Mock Map with Major Attractions & Package Pins */}
             <DestinationInteractiveMap
@@ -348,6 +357,17 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                 </div>
                 <div className="text-[11px] text-emerald-600 font-semibold mt-1">
                   ✓ Includes Stay, Private Cab & Daily Meals
+                </div>
+
+                {/* Best Season Quick Pill */}
+                <div className="mt-3.5 pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
+                  <span className="text-gray-500 font-medium flex items-center gap-1.5">
+                    <CloudSun className="w-3.5 h-3.5 text-orange-500" />
+                    <span>Best Time:</span>
+                  </span>
+                  <span className="font-bold text-slate-900 text-[11px] text-right truncate max-w-[170px]" title={destination.bestTime}>
+                    {destination.bestTime.split('|')[0].trim()}
+                  </span>
                 </div>
               </div>
 

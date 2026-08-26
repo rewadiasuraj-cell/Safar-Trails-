@@ -10,8 +10,8 @@ export const FAQSection: React.FC = () => {
   };
 
   return (
-    <section id="faq-section" className="py-16 lg:py-24 bg-white border-t border-b border-gray-100">
-      <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
+    <section id="faq-section" className="w-full py-16 lg:py-24 bg-white border-t border-b border-gray-100">
+      <div className="w-full max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-800 text-[10px] font-bold uppercase tracking-widest mb-3">
             <HelpCircle className="w-3.5 h-3.5 text-black" />

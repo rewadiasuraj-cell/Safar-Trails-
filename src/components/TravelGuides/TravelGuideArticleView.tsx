@@ -41,10 +41,10 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
   };
 
   return (
-    <article id="travel-guide-article-page" className="pt-20 pb-24 bg-[#FAF9F6]">
+    <article id="travel-guide-article-page" className="w-full pt-20 pb-24 bg-[#FAF9F6]">
       {/* Top Breadcrumb Bar */}
-      <div className="bg-white border-b border-gray-200 py-3.5">
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10 flex items-center justify-between">
+      <div className="w-full bg-white border-b border-gray-200 py-3.5">
+        <div className="w-full max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 flex items-center justify-between">
           <button
             onClick={onBack}
             className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-black hover:opacity-70 transition-opacity cursor-pointer"
@@ -64,7 +64,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
       </div>
 
       {/* Article Header */}
-      <header className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10 pt-10 pb-8">
+      <header className="w-full max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-10 pb-8">
         <div className="flex items-center gap-2 mb-4">
           <span className="px-3 py-1 rounded-full text-[10px] font-bold bg-black text-white uppercase tracking-widest">
             {guide.category}
@@ -113,7 +113,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
       </header>
 
       {/* Hero Image */}
-      <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10 mb-10">
+      <div className="w-full max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 mb-10">
         <div className="rounded-2xl overflow-hidden shadow-xs h-[360px] sm:h-[460px] border border-gray-200">
           <img
             src={guide.heroImage}
@@ -124,7 +124,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
       </div>
 
       {/* Article Content Sections */}
-      <div className="max-w-3xl mx-auto px-6 sm:px-8 lg:px-10 space-y-8">
+      <div className="w-full max-w-3xl xl:max-w-4xl 2xl:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 space-y-8">
         {/* Intro Excerpt */}
         <p className="text-lg sm:text-xl text-black font-serif leading-relaxed italic border-l-2 border-black pl-4">
           "{guide.excerpt}"

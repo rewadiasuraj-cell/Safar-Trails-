@@ -201,8 +201,8 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
   };
 
   return (
-    <section id="handpicked-experiences-section" className="py-16 sm:py-20 lg:py-24 bg-white border-b border-gray-100 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="handpicked-experiences-section" className="w-full py-16 sm:py-20 lg:py-24 bg-white border-b border-gray-100 overflow-hidden">
+      <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         
         {/* Section Header & Controls */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-6">

@@ -5,6 +5,9 @@ import {
   Mail, 
   MapPin, 
   ShieldCheck, 
+  Users,
+  Award,
+  Headphones,
   Heart,
   Globe,
   Lock
@@ -32,24 +35,69 @@ export const Footer: React.FC<FooterProps> = ({
   ];
 
   return (
-    <footer id="main-footer" className="bg-[#0A0A0A] text-gray-400 pt-16 pb-24 lg:pb-12 border-t border-gray-800">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+    <footer id="main-footer" className="w-full bg-[#0A0A0A] text-gray-400 pt-16 pb-24 lg:pb-12 border-t border-gray-800">
+      <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+        {/* Top Trust Indicators Bar */}
+        <div className="pb-12 mb-12 border-b border-gray-800 grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          {/* Trust Item 1 */}
+          <div className="flex items-center gap-3.5">
+            <div className="w-11 h-11 rounded-full border border-gray-800 bg-white/5 flex items-center justify-center flex-shrink-0">
+              <Users className="w-5 h-5 text-white stroke-[1.8]" />
+            </div>
+            <div>
+              <div className="text-sm font-bold text-white tracking-wide">100% Custom</div>
+              <div className="text-xs text-gray-400">Trips tailored for you</div>
+            </div>
+          </div>
+
+          {/* Trust Item 2 */}
+          <div className="flex items-center gap-3.5">
+            <div className="w-11 h-11 rounded-full border border-gray-800 bg-white/5 flex items-center justify-center flex-shrink-0">
+              <Award className="w-5 h-5 text-white stroke-[1.8]" />
+            </div>
+            <div>
+              <div className="text-sm font-bold text-white tracking-wide">Verified Partners</div>
+              <div className="text-xs text-gray-400">Handpicked stays & cabs</div>
+            </div>
+          </div>
+
+          {/* Trust Item 3 */}
+          <div className="flex items-center gap-3.5">
+            <div className="w-11 h-11 rounded-full border border-gray-800 bg-white/5 flex items-center justify-center flex-shrink-0">
+              <ShieldCheck className="w-5 h-5 text-white stroke-[1.8]" />
+            </div>
+            <div>
+              <div className="text-sm font-bold text-white tracking-wide">Transparent Quotes</div>
+              <div className="text-xs text-gray-400">Zero hidden charges</div>
+            </div>
+          </div>
+
+          {/* Trust Item 4 */}
+          <div className="flex items-center gap-3.5">
+            <div className="w-11 h-11 rounded-full border border-gray-800 bg-white/5 flex items-center justify-center flex-shrink-0">
+              <Headphones className="w-5 h-5 text-white stroke-[1.8]" />
+            </div>
+            <div>
+              <div className="text-sm font-bold text-white tracking-wide">24/7 Concierge</div>
+              <div className="text-xs text-gray-400">Dedicated on-trip specialist</div>
+            </div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-gray-800">
           {/* Column 1: Brand & Identity */}
           <div className="lg:col-span-2 space-y-4">
-            <SafarLogo 
-              variant="dark" 
-              size="md" 
-              imgStyle={{
-                paddingLeft: '0px',
-                marginLeft: '-23px',
-                marginTop: '1px',
-                height: '52.9943px',
-                width: '198px'
-              }}
-            />
+            <div 
+              onClick={() => onNavigate('home')}
+              className="cursor-pointer inline-flex items-center"
+            >
+              <SafarLogo 
+                variant="dark" 
+                size="lg" 
+              />
+            </div>
             
-            <p className="text-xs sm:text-sm text-gray-400 leading-relaxed max-w-sm pt-2">
+            <p className="text-xs sm:text-sm text-gray-400 leading-relaxed max-w-sm pt-1">
               SafarTrails is India’s premier AI-powered domestic travel agency. We combine instant AI itinerary generation with verified boutique stays, private sanitized cabs, and 24/7 dedicated human concierge.
             </p>
 
@@ -136,7 +184,9 @@ export const Footer: React.FC<FooterProps> = ({
             <ul className="space-y-2.5 text-gray-400">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#FF6B00] flex-shrink-0 mt-0.5" />
-                <span>1st Floor, Plot No. 2, Metro Pillar 786, Dwarka Mor, New Delhi</span>
+                <span className="leading-relaxed">
+                  First Floor, Plot No. 02, Jai Bharat Enclave, Bhagwati Garden, Metro Pillar No. 786, Dwarka Mor, New Delhi 110059
+                </span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#FF6B00] flex-shrink-0" />
@@ -150,10 +200,10 @@ export const Footer: React.FC<FooterProps> = ({
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#FF6B00] flex-shrink-0" />
                 <a 
-                  href="mailto:safartrail2104@gmail.com"
+                  href="mailto:info.safartrails@gmail.com"
                   className="hover:text-white transition-colors"
                 >
-                  safartrail2104@gmail.com
+                  info.safartrails@gmail.com
                 </a>
               </li>
               <li className="pt-2">

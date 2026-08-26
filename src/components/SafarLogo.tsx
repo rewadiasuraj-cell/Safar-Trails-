@@ -18,13 +18,13 @@ export const SafarLogo: React.FC<SafarLogoProps> = ({
   const isDark = variant === 'dark';
   const logoSrc = isDark ? '/logo-dark.svg' : '/logo.svg';
 
-  // Sizing: Desktop 200x40px, Tablet ~180x36px, Mobile ~140x28px (maintains exact 5:1 ratio)
+  // Sizing: Maintains clean 560:135 (approx 4.15:1) ratio for full brand logo + tagline
   const sizeClasses = {
-    sm: 'w-[130px] h-[26px] sm:w-[150px] sm:h-[30px]',
-    md: 'w-[160px] h-[32px] sm:w-[180px] sm:h-[36px]',
-    lg: 'w-[200px] h-[40px] md:w-[240px] md:h-[48px]',
-    responsive: 'w-[140px] h-[28px] sm:w-[165px] sm:h-[33px] md:w-[180px] md:h-[36px] lg:w-[200px] lg:h-[40px]'
-  }[size] || 'w-[200px] h-[40px]';
+    sm: 'w-[130px] h-[31px] sm:w-[150px] sm:h-[36px]',
+    md: 'w-[160px] h-[38px] sm:w-[185px] sm:h-[44px]',
+    lg: 'w-[200px] h-[48px] md:w-[230px] md:h-[55px]',
+    responsive: 'w-[135px] h-[33px] sm:w-[155px] sm:h-[37px] md:w-[175px] md:h-[42px] lg:w-[195px] lg:h-[47px]'
+  }[size] || 'w-[195px] h-[47px]';
 
   return (
     <div 
@@ -36,8 +36,8 @@ export const SafarLogo: React.FC<SafarLogoProps> = ({
         alt="Safar Trails - Travel With Trust"
         className={`${sizeClasses} ${imgClassName} object-contain transition-transform duration-200 group-hover:scale-[1.01]`}
         style={imgStyle}
-        width={200}
-        height={40}
+        width={560}
+        height={135}
         loading="eager"
       />
     </div>

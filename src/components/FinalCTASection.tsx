@@ -18,8 +18,8 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
   };
 
   return (
-    <section id="final-cta-section" className="py-16 lg:py-24 bg-[#0A0A0A] text-white relative overflow-hidden border-t border-gray-800">
-      <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-10 text-center space-y-6">
+    <section id="final-cta-section" className="w-full py-16 lg:py-24 bg-[#0A0A0A] text-white relative overflow-hidden border-t border-gray-800">
+      <div className="relative z-10 w-full max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 text-center space-y-6">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-gray-300 text-xs font-bold uppercase tracking-widest backdrop-blur-xs">
           <AIIcon className="w-3.5 h-3.5 text-white" />
           <span>Start Your Bespoke Journey</span>

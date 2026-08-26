@@ -24,8 +24,8 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
   });
 
   return (
-    <section id="travel-guides-section" className="py-16 lg:py-24 bg-[#FAF9F6] border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+    <section id="travel-guides-section" className="w-full py-16 lg:py-24 bg-[#FAF9F6] border-t border-gray-200">
+      <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
           <div>

@@ -327,8 +327,8 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
     : allTripTypes.filter(t => t.isPrimary);
 
   return (
-    <section id="ai-trip-planner-section" className="py-12 sm:py-16 bg-[#FAF9F6] border-t border-b border-gray-200/80">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="ai-trip-planner-section" className="w-full py-12 sm:py-16 bg-[#FAF9F6] border-t border-b border-gray-200/80">
+      <div className="w-full max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         
         {/* Top Centered Mode Toggle Pill */}
         <div className="flex justify-center mb-6 sm:mb-8">

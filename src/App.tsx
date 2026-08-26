@@ -103,7 +103,7 @@ export default function App() {
   );
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-slate-900 font-sans selection:bg-orange-500 selection:text-white">
+    <div className="min-h-screen w-full flex flex-col bg-white text-slate-900 font-sans selection:bg-orange-500 selection:text-white">
       {/* Primary Desktop & Mobile Header */}
       <Header
         currentView={currentView}
@@ -113,7 +113,7 @@ export default function App() {
       />
 
       {/* Main Content Router */}
-      <main className="flex-grow">
+      <main className="w-full flex-grow">
         {/* VIEW 1: HOME (Master Editorial Layout) */}
         {currentView === 'home' && (
           <>

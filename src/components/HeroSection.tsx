@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import { 
-  MapPin, 
-  Users, 
-  Award, 
-  ShieldCheck, 
-  Headphones 
-} from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import { AIIcon } from './AIIcon';
 
 interface HeroSectionProps {
@@ -28,9 +22,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   };
 
   return (
-    <section id="hero-section" className="relative pt-24 sm:pt-28 pb-14 sm:pb-18 lg:pt-32 lg:pb-20 overflow-hidden bg-[#0A1626] text-white">
+    <section id="hero-section" className="relative w-full pt-24 sm:pt-28 pb-16 sm:pb-20 lg:pt-32 lg:pb-24 overflow-hidden bg-[#0A1626] text-white">
       {/* Background Image: Stunning Kashmir Dal Lake Shikara Houseboat with Snow Mountains */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 w-full h-full">
         <img
           src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=85&w=2600&auto=format&fit=crop"
           alt="Scenic Kashmir Dal Lake Houseboats with Snow Mountains"
@@ -42,7 +36,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="absolute inset-0 bg-gradient-to-t from-[#071322] via-transparent to-[#071322]/30 lg:hidden" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <div className="max-w-2xl lg:max-w-3xl">
           {/* Eyebrow: AI PLANS. EXPERTS PERFECT. */}
           <div className="mb-3">
@@ -98,53 +92,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 <AIIcon className="w-3.5 h-3.5 text-white shrink-0" />
               </button>
             </form>
-          </div>
-        </div>
-
-        {/* Hero Bottom Trust Indicators Bar */}
-        <div className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-white/15 grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-          {/* Trust Item 1 */}
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full border border-white/25 flex items-center justify-center flex-shrink-0 bg-black/20 backdrop-blur-xs">
-              <Users className="w-4 h-4 text-white stroke-[1.8]" />
-            </div>
-            <div>
-              <div className="text-xs sm:text-sm font-bold text-white tracking-wide">100% Custom</div>
-              <div className="text-[11px] text-gray-300">Trips tailored for you</div>
-            </div>
-          </div>
-
-          {/* Trust Item 2 */}
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full border border-white/25 flex items-center justify-center flex-shrink-0 bg-black/20 backdrop-blur-xs">
-              <Award className="w-4 h-4 text-white stroke-[1.8]" />
-            </div>
-            <div>
-              <div className="text-xs sm:text-sm font-bold text-white tracking-wide">Verified Partners</div>
-              <div className="text-[11px] text-gray-300">Handpicked stays & cabs</div>
-            </div>
-          </div>
-
-          {/* Trust Item 3 */}
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full border border-white/25 flex items-center justify-center flex-shrink-0 bg-black/20 backdrop-blur-xs">
-              <ShieldCheck className="w-4 h-4 text-white stroke-[1.8]" />
-            </div>
-            <div>
-              <div className="text-xs sm:text-sm font-bold text-white tracking-wide">Transparent Quotes</div>
-              <div className="text-[11px] text-gray-300">Zero hidden charges</div>
-            </div>
-          </div>
-
-          {/* Trust Item 4 */}
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full border border-white/25 flex items-center justify-center flex-shrink-0 bg-black/20 backdrop-blur-xs">
-              <Headphones className="w-4 h-4 text-white stroke-[1.8]" />
-            </div>
-            <div>
-              <div className="text-xs sm:text-sm font-bold text-white tracking-wide">24/7 Concierge</div>
-              <div className="text-[11px] text-gray-300">Dedicated on-trip specialist</div>
-            </div>
           </div>
         </div>
       </div>

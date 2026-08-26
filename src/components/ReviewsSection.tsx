@@ -4,8 +4,8 @@ import { Star, ShieldCheck, CheckCircle2 } from 'lucide-react';
 
 export const ReviewsSection: React.FC = () => {
   return (
-    <section id="reviews-section" className="py-16 lg:py-24 bg-[#FAF9F6] border-t border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+    <section id="reviews-section" className="w-full py-16 lg:py-24 bg-[#FAF9F6] border-t border-b border-gray-200">
+      <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-200 text-gray-800 text-[10px] font-bold uppercase tracking-widest mb-3">
             <ShieldCheck className="w-3.5 h-3.5 text-black" />
