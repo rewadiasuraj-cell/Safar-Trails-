@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play, Compass, Sparkles, Star, Flame, Zap, MoveHorizontal } from 'lucide-react';
+import { ArrowRight, Compass, Sparkles, Star, Flame, Zap, MoveHorizontal } from 'lucide-react';
 
 interface HandpickedExperiencesSectionProps {
   onSelectCategory?: (category: string) => void;
@@ -440,48 +440,6 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
               <p className="text-sm text-slate-500 font-sans-ui ml-1">
                 Scroll to discover curated holidays across India
               </p>
-            </div>
-          </div>
-
-          {/* Desktop Interactive Animation & Navigation Bar */}
-          <div className="flex items-center gap-3 self-start md:self-end">
-            {/* Auto-scroll toggle pill */}
-            <button
-              onClick={() => setIsAutoScrolling(!isAutoScrolling)}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors cursor-pointer border border-slate-200"
-              title={isAutoScrolling ? 'Pause auto-scroll' : 'Resume auto-scroll'}
-              aria-label={isAutoScrolling ? 'Pause auto-scroll' : 'Resume auto-scroll'}
-            >
-              {isAutoScrolling ? (
-                <>
-                  <Pause className="w-3.5 h-3.5 text-[#FF6B00] fill-[#FF6B00]" />
-                  <span className="text-[11px] font-semibold text-slate-700">Auto-Guiding</span>
-                </>
-              ) : (
-                <>
-                  <Play className="w-3.5 h-3.5 text-slate-600 fill-slate-600" />
-                  <span className="text-[11px] font-semibold text-slate-600">Resume Scroll</span>
-                </>
-              )}
-            </button>
-
-            {/* Left & Right Chevron Arrows */}
-            <div className="flex items-center gap-1.5">
-              <button
-                onClick={() => handleManualScroll('left')}
-                className="w-9 h-9 rounded-full bg-white border border-gray-200 hover:border-slate-400 hover:bg-slate-50 text-slate-700 flex items-center justify-center transition-all shadow-xs active:scale-95 cursor-pointer"
-                aria-label="Scroll left"
-              >
-                <ChevronLeft className="w-4 h-4 stroke-[2.2]" />
-              </button>
-
-              <button
-                onClick={() => handleManualScroll('right')}
-                className="w-9 h-9 rounded-full bg-white border border-gray-200 hover:border-slate-400 hover:bg-slate-50 text-slate-700 flex items-center justify-center transition-all shadow-xs active:scale-95 cursor-pointer"
-                aria-label="Scroll right"
-              >
-                <ChevronRight className="w-4 h-4 stroke-[2.2]" />
-              </button>
             </div>
           </div>
         </div>
