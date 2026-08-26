@@ -109,7 +109,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       name: 'Meghalaya',
       region: 'NORTHEAST WONDERS',
       tagline: 'Living Root Bridges & Crystal Waterfalls',
-      image: 'https://images.unsplash.com/photo-1608658804968-3e4b78648c66?q=80&w=1200&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop',
       duration: '5–7 Days',
       startingPrice: '₹18,499'
     },
@@ -119,7 +119,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       name: 'Uttarakhand',
       region: 'DEV BHOOMI',
       tagline: 'Ganga Aarti, Alpine Meadows & Sacred Peaks',
-      image: 'https://images.unsplash.com/photo-1600100397608-f010f4441584?q=80&w=1200&auto=format&fit=crop',
+      image: '/Places-in-Uttarakhand.jpg',
       duration: '4–6 Days',
       startingPrice: '₹13,999'
     }
@@ -304,6 +304,17 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
                   alt={`${dest.name} - ${dest.tagline}`}
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out pointer-events-none"
                   loading="lazy"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    if (dest.id === 'uttarakhand') {
+                      target.src = 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop';
+                    } else if (dest.id === 'meghalaya') {
+                      target.src = 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop';
+                    } else {
+                      target.src = 'https://images.unsplash.com/photo-1506461883276-594a12b11cf3?q=80&w=1200&auto=format&fit=crop';
+                    }
+                  }}
                 />
 
                 {/* Multi-Stop Dark Gradient for Pristine Typography Contrast */}

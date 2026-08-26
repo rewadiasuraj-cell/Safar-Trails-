@@ -363,8 +363,8 @@ export const destinationsData: Destination[] = [
     name: 'Uttarakhand',
     tagline: 'Devbhoomi — Ganga Aarti, Clifftop Hill Stations & Tiger Safaris',
     state: 'Uttarakhand',
-    heroImage: '/Uttrakhand.jpg',
-    cardImage: '/Uttrakhand.jpg',
+    heroImage: '/Places-in-Uttarakhand.jpg',
+    cardImage: '/Places-in-Uttarakhand.jpg',
     shortDescription: 'White water river rafting in Rishikesh, mesmerizing evening Ganga Aarti at Triveni Ghat, scenic walks in Mussoorie, and tiger safaris in Jim Corbett.',
     fullOverview: 'From the adrenaline rush of Grade IV rapids in Rishikesh and tranquil yoga ashrams along the sacred Ganges to the misty colonial promenades of Mussoorie and Nainital’s emerald lakes, Uttarakhand balances rejuvenation with thrilling mountain wilderness.',
     bestTime: 'October to June (Great for rafting & hill stations) | November to February (Jim Corbett tiger safaris & Auli skiing)',
@@ -387,7 +387,7 @@ export const destinationsData: Destination[] = [
       {
         name: 'Rishikesh & Ganga Riverbank',
         description: 'Global capital of Yoga, iconic suspension bridges (Lakshman & Ram Jhula), and cafes.',
-        image: '/Uttrakhand.jpg'
+        image: '/Places-in-Uttarakhand.jpg'
       },
       {
         name: 'Jim Corbett Tiger Reserve',
