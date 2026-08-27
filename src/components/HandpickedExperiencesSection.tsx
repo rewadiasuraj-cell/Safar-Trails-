@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ArrowRight, Compass, Sparkles, Star, Flame, Zap, MoveHorizontal } from 'lucide-react';
+import { ArrowRight, Compass, Sparkles, Star, Flame, Zap } from 'lucide-react';
 
 interface HandpickedExperiencesSectionProps {
   onSelectCategory?: (category: string) => void;
@@ -474,18 +474,15 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
                 {/* Multi-Stop Dark Gradient for Pristine Typography Contrast */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 pointer-events-none" />
 
-                {/* Top Row: Trending Badge / Region & Rating Badge */}
+                {/* Top Row: Trending Badge & Rating Badge */}
                 <div className="relative z-10 flex items-center justify-between gap-1.5 pointer-events-none">
-                  <div className="flex items-center gap-1.5 flex-wrap">
+                  <div>
                     {dest.isTrending && (
                       <span className="inline-flex items-center gap-1 px-2.5 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-[10.5px] font-extrabold uppercase tracking-wider text-white bg-[#FF6B00] shadow-md border border-orange-400/80 whitespace-nowrap leading-none">
                         <Flame className="w-3 h-3 text-white fill-white shrink-0" />
                         <span>Trending</span>
                       </span>
                     )}
-                    <span className="inline-flex items-center px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-[10.5px] font-bold uppercase tracking-wider text-white/95 bg-black/60 backdrop-blur-md border border-white/20 shadow-xs whitespace-nowrap leading-none">
-                      {dest.region}
-                    </span>
                   </div>
                   
                   {/* Star Rating Badge with White Background, Yellow Star & Black Text */}
@@ -496,17 +493,14 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
                   </div>
                 </div>
 
-                {/* Bottom Row: Destination Title, Starting Price, Duration, Accent, and Tagline */}
+                {/* Bottom Row: Destination Title, Duration, Accent, and Tagline */}
                 <div className="relative z-10 text-white">
                   <div className="flex items-baseline justify-between gap-2">
                     <h3 className="font-serif text-2xl sm:text-[26px] lg:text-[26px] font-bold text-white tracking-tight leading-tight group-hover:text-orange-200 transition-colors">
                       {dest.name}
                     </h3>
                     <div className="text-right shrink-0">
-                      <span className="text-[11px] font-bold text-orange-300 block leading-tight">
-                        From {dest.startingPrice}
-                      </span>
-                      <span className="text-[10px] text-white/75 font-medium">
+                      <span className="text-[11px] sm:text-xs text-white/80 font-medium bg-black/30 backdrop-blur-xs px-2.5 py-1 rounded-full border border-white/15 inline-block leading-none">
                         {dest.duration}
                       </span>
                     </div>
@@ -598,9 +592,9 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
             </div>
           </div>
 
-          {/* Native Mobile Pagination & Interaction Bar */}
-          <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 px-1">
-            {/* Mobile Native Page Indicator Dots */}
+          {/* Pagination & Indicator Bar */}
+          <div className="mt-4 flex items-center justify-between gap-3 px-1">
+            {/* Page Indicator Dots */}
             <div className="flex items-center gap-1.5 sm:gap-2">
               {Array.from({ length: totalItemsCount }).map((_, idx) => (
                 <button
@@ -619,25 +613,13 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
               </span>
             </div>
 
-            {/* Mobile Swipe Hint or Status */}
-            <div className="flex items-center gap-2">
-              {!hasInteracted && (
-                <div className="flex items-center gap-1 text-[11px] font-medium text-orange-600 bg-orange-50 px-2.5 py-1 rounded-full border border-orange-200 animate-pulse">
-                  <MoveHorizontal className="w-3 h-3 text-[#FF6B00]" />
-                  <span>Swipe to navigate</span>
-                </div>
-              )}
-              
-              <div className="hidden sm:flex items-center gap-3">
-                <div className="w-32 h-1 bg-gray-100 rounded-full overflow-hidden">
-                  <div 
-                    className="h-full bg-gradient-to-r from-orange-400 to-[#FF6B00] rounded-full transition-all duration-150"
-                    style={{ width: `${Math.max(10, scrollProgress)}%` }}
-                  />
-                </div>
-                <span className="text-[11px] font-medium text-slate-400 whitespace-nowrap">
-                  {isDragging ? 'Swiping' : isHovered ? 'Paused' : isAutoScrolling ? 'Auto-Guiding' : 'Manual'}
-                </span>
+            {/* Subtle Progress Bar */}
+            <div className="hidden sm:flex items-center gap-3">
+              <div className="w-32 h-1 bg-gray-100 rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-gradient-to-r from-orange-400 to-[#FF6B00] rounded-full transition-all duration-150"
+                  style={{ width: `${Math.max(10, scrollProgress)}%` }}
+                />
               </div>
             </div>
           </div>

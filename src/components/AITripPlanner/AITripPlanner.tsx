@@ -26,10 +26,12 @@ import {
   Headphones,
   CheckCircle2,
   SlidersHorizontal,
-  Leaf
+  Leaf,
+  Sparkles
 } from 'lucide-react';
 import { TripType, HotelCategory, TransportType, AITripPlanResult } from '../../types';
 import { AITripResultView } from './AITripResultView';
+import { parseTripPrompt } from '../../utils/promptParser';
 
 interface AITripPlannerProps {
   initialPrompt?: string;
@@ -238,18 +240,55 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
     setGenerationError(null);
     setGeneratedPlan(null);
 
+    let effectiveDestination = destination;
+    let effectiveDuration = durationDays;
+    let effectiveTravellers = travellers;
+    let effectiveTripType = tripType;
+    let effectiveHotel = hotelCategory;
+    let effectiveTransport = transportMode;
+    let effectiveInterests = selectedInterests;
+    let effectiveBudget = undefined;
+
+    if (useCustomPrompt && naturalPrompt.trim()) {
+      const parsed = parseTripPrompt(naturalPrompt, {
+        destination,
+        durationDays,
+        travellers,
+        tripType,
+        hotelCategory,
+        transportMode
+      });
+      effectiveDestination = parsed.destination;
+      effectiveDuration = parsed.durationDays;
+      effectiveTravellers = parsed.travellers;
+      effectiveTripType = parsed.tripType;
+      effectiveHotel = parsed.hotelCategory;
+      effectiveTransport = parsed.transportMode;
+      effectiveInterests = parsed.interests.length > 0 ? parsed.interests : selectedInterests;
+      effectiveBudget = parsed.budgetTotal;
+
+      // Synchronize component state for consistency
+      setDestination(effectiveDestination);
+      setDurationDays(effectiveDuration);
+      setTravellers(effectiveTravellers);
+      setTripType(effectiveTripType);
+      setHotelCategory(effectiveHotel);
+      setTransportMode(effectiveTransport);
+    }
+
     const payload = {
-      destination,
-      durationDays,
-      travellers,
-      tripType,
-      hotelCategory,
-      transportMode,
-      interests: selectedInterests,
+      destination: effectiveDestination,
+      durationDays: effectiveDuration,
+      travellers: effectiveTravellers,
+      tripType: effectiveTripType,
+      hotelCategory: effectiveHotel,
+      transportMode: effectiveTransport,
+      interests: effectiveInterests,
+      budgetTotal: effectiveBudget,
       startCity,
       userPrompt: useCustomPrompt 
         ? naturalPrompt 
-        : `Plan a ${durationDays}-day holiday in ${destination} for ${travellers} travellers (${tripType}) with ${hotelCategory} accommodation and ${transportMode} transport.`
+        : `Plan a ${effectiveDuration}-day holiday in ${effectiveDestination} for ${effectiveTravellers} travellers (${effectiveTripType}) with ${effectiveHotel} accommodation and ${effectiveTransport} transport.`
     };
 
     try {
@@ -266,41 +305,49 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
         throw new Error(data.error || 'Failed to generate itinerary');
       }
     } catch (err: any) {
-      // Create seamless instant fallback plan for the user
-      const estMin = Math.round(17500 * travellers * (durationDays / 6));
-      const estMax = Math.round(estMin * 1.18);
+      // Create seamless instant fallback plan for the user using effective parsed parameters
+      const estMin = effectiveBudget 
+        ? Math.round(effectiveBudget * 0.9) 
+        : Math.round(17500 * effectiveTravellers * (effectiveDuration / 6));
+      const estMax = effectiveBudget 
+        ? Math.round(effectiveBudget * 1.1) 
+        : Math.round(estMin * 1.18);
       const days = [];
-      for (let i = 1; i <= durationDays; i++) {
+      for (let i = 1; i <= effectiveDuration; i++) {
         days.push({
           dayNumber: i,
-          title: i === 1 ? `Arrival in ${destination} & Leisure Check-in` : i === durationDays ? `Souvenir Walk & Departure from ${destination}` : `Day ${i}: Signature ${destination} Sightseeing & Experiences`,
-          location: destination,
-          description: `Curated exploration designed for ${travellers} travellers (${tripType}), combining prime highlights, relaxed pacing, and scenic photo stops.`,
+          title: i === 1 
+            ? `Arrival in ${effectiveDestination} & Leisure Check-in` 
+            : i === effectiveDuration 
+            ? `Souvenir Walk & Departure from ${effectiveDestination}` 
+            : `Day ${i}: Signature ${effectiveDestination} Sightseeing & Experiences`,
+          location: effectiveDestination,
+          description: `Curated exploration designed for ${effectiveTravellers} travellers (${effectiveTripType}), combining prime highlights, relaxed pacing, and scenic photo stops.`,
           morningActivity: i === 1 ? 'Airport/Station pickup and private check-in' : 'Morning scenic sightseeing and heritage visit',
           afternoonActivity: 'Local cuisine tasting and leisure exploration',
           eveningActivity: 'Sunset viewpoint, cultural stroll, and authentic dinner',
-          stay: `${hotelCategory} Resort / Cottage`,
+          stay: `${effectiveHotel} Resort / Cottage`,
           mealsIncluded: 'Breakfast & Dinner Included',
-          transfers: transportMode,
+          transfers: effectiveTransport,
           insiderTip: 'Keep a lightweight day-pack and save your offline itinerary.'
         });
       }
 
       setGeneratedPlan({
         planId: `AI-${Date.now().toString(36).toUpperCase()}`,
-        destination,
-        title: `${durationDays}-Day Bespoke ${destination} Journey`,
-        summary: `A carefully paced, high-comfort ${durationDays}-day holiday designed for ${travellers} travellers (${tripType}), combining premier stays in ${hotelCategory} with dedicated ${transportMode} transport.`,
-        durationDays,
-        durationNights: durationDays - 1,
-        travellersCount: travellers,
-        tripType,
-        hotelCategory,
-        transportType: transportMode,
+        destination: effectiveDestination,
+        title: `${effectiveDuration}-Day Bespoke ${effectiveDestination} Journey`,
+        summary: `A carefully paced, high-comfort ${effectiveDuration}-day holiday in ${effectiveDestination} designed for ${effectiveTravellers} travellers (${effectiveTripType}), combining premier stays in ${effectiveHotel} with dedicated ${effectiveTransport} transport.`,
+        durationDays: effectiveDuration,
+        durationNights: Math.max(1, effectiveDuration - 1),
+        travellersCount: effectiveTravellers,
+        tripType: effectiveTripType,
+        hotelCategory: effectiveHotel,
+        transportType: effectiveTransport,
         estimatedBudget: {
           min: estMin,
           max: estMax,
-          perPerson: Math.round(estMin / travellers),
+          perPerson: Math.round(estMin / effectiveTravellers),
           breakdown: {
             hotels: Math.round(estMin * 0.45),
             transport: Math.round(estMin * 0.30),
@@ -310,24 +357,24 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
         },
         itinerary: days,
         includedHighlights: [
-          `Private dedicated ${transportMode} throughout the trip with verified driver`,
-          `${durationDays - 1} Nights handpicked stay in ${hotelCategory}`,
+          `Private dedicated ${effectiveTransport} throughout the trip with verified driver`,
+          `${Math.max(1, effectiveDuration - 1)} Nights handpicked stay in ${effectiveHotel}`,
           'Daily freshly prepared breakfast & regional dinners included',
           'All toll taxes, parking fees, and driver allowances covered',
           '24/7 SafarTrails on-trip concierge assistance'
         ],
         expertTips: [
-          'Book entry permits and cable car slots in advance during peak holiday seasons.',
-          'Always dress in comfortable layers for fluctuating mountain and coastal temperatures.',
-          'Carry cash for remote village shops and local services.'
+          `Book entry permits and top attractions in ${effectiveDestination} in advance during peak holiday seasons.`,
+          'Always dress in comfortable layers suited to local weather conditions.',
+          'Carry some cash for remote local shops and artisan markets.'
         ],
         packingEssentials: [
           'Valid Government Photo ID (Aadhaar / Passport / Driving License)',
-          'Comfortable walking shoes with good grip',
+          'Comfortable footwear for daily sightseeing',
           'Sunscreen, polarized sunglasses, and essential personal medicines',
           'Universal power bank and camera chargers'
         ],
-        bestTimeToVisitInfo: 'Optimal travel season spans throughout the year with pleasant weather and seasonal highlights.',
+        bestTimeToVisitInfo: `Optimal travel season for ${effectiveDestination} spans throughout the year with pleasant weather and seasonal highlights.`,
         disclaimer: 'All prices and durations are estimated indicative figures based on standard travel rates. Exact package costs depend on live hotel availability, seasonality, and custom upgrades. Final quotes are confirmed by a SafarTrails Travel Specialist.'
       });
     } finally {
@@ -402,25 +449,75 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
               /* Conversational Natural Prompt Mode */
               <div className="space-y-5">
                 <div>
-                  <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2 flex items-center gap-2">
-                    <FileText className="w-3.5 h-3.5 text-[#FF6B00] stroke-[2]" />
-                    <span>Describe your dream trip in plain words</span>
+                  <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2 flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <FileText className="w-3.5 h-3.5 text-[#FF6B00] stroke-[2]" />
+                      <span>Describe your dream trip in plain words</span>
+                    </div>
+                    <span className="text-[11px] text-slate-400 font-normal">Any destination • Any duration • Any budget</span>
                   </label>
                   <textarea
                     rows={3}
                     value={naturalPrompt}
                     onChange={(e) => setNaturalPrompt(e.target.value)}
-                    placeholder="e.g. 6-day honeymoon in Kashmir with 1 night on Dal Lake luxury houseboat, Gondola in Gulmarg, and riverside cottage in Pahalgam under ₹80,000."
+                    placeholder="e.g. Couple honeymoon in Goa, 5 days, beach resort, private cab & candlelight dinner"
                     className="w-full p-3.5 rounded-xl border border-gray-200 text-slate-900 focus:border-[#071322] focus:outline-none text-sm resize-none bg-[#FAF9F6]"
                   />
                 </div>
 
+                {/* Real-time Extracted Parameters Pill Badges */}
+                {(() => {
+                  const preview = naturalPrompt.trim() 
+                    ? parseTripPrompt(naturalPrompt, { destination, durationDays, travellers, tripType, hotelCategory, transportMode })
+                    : null;
+                  
+                  if (!preview) return null;
+
+                  return (
+                    <div className="p-3 bg-orange-50/70 rounded-xl border border-orange-200/80 animate-in fade-in duration-200">
+                      <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-orange-900 mb-1.5">
+                        <Sparkles className="w-3.5 h-3.5 text-[#FF6B00]" />
+                        <span>AI Detected Preferences:</span>
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white border border-orange-200 text-slate-800 text-xs font-bold shadow-2xs">
+                          <MapPin className="w-3 h-3 text-[#FF6B00]" />
+                          <span>{preview.destination}</span>
+                        </span>
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white border border-orange-200 text-slate-800 text-xs font-bold shadow-2xs">
+                          <Calendar className="w-3 h-3 text-[#FF6B00]" />
+                          <span>{preview.durationDays} Days ({preview.durationNights}N)</span>
+                        </span>
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white border border-orange-200 text-slate-800 text-xs font-bold shadow-2xs">
+                          <Users className="w-3 h-3 text-[#FF6B00]" />
+                          <span>{preview.travellers} {preview.travellers === 1 ? 'Person' : 'People'} ({preview.tripType})</span>
+                        </span>
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white border border-orange-200 text-slate-800 text-xs font-bold shadow-2xs">
+                          <Building2 className="w-3 h-3 text-[#FF6B00]" />
+                          <span>{preview.hotelCategory}</span>
+                        </span>
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white border border-orange-200 text-slate-800 text-xs font-bold shadow-2xs">
+                          <Car className="w-3 h-3 text-[#FF6B00]" />
+                          <span>{preview.transportMode}</span>
+                        </span>
+                        {preview.budgetTotal && (
+                          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white border border-orange-200 text-[#071322] text-xs font-bold shadow-2xs">
+                            <span>Budget: ₹{preview.budgetTotal.toLocaleString('en-IN')}</span>
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })()}
+
                 <div className="flex flex-wrap items-center gap-1.5 text-xs">
-                  <span className="text-gray-400 font-bold uppercase tracking-wider text-[10px]">Popular:</span>
+                  <span className="text-gray-400 font-bold uppercase tracking-wider text-[10px]">Try Prompts:</span>
                   {[
-                    '4 people, Kashmir, 6 days, ₹80k budget',
                     'Couple honeymoon in Goa, 5 days, beach resort',
-                    'Family Kerala backwaters & Munnar, 6 days'
+                    '4 friends, Manali & Solang, 5 days, adventure & snow',
+                    'Family Kerala backwaters & Munnar, 6 days, 4-star stay',
+                    'Kashmir romantic getaway, 6 days, luxury houseboat',
+                    'Andaman 5 days scuba, Radhanagar beach, couple'
                   ].map((p, idx) => (
                     <button
                       key={idx}
