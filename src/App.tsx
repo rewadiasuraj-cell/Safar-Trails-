@@ -1,5 +1,5 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
-import { Routes, Route, Navigate, useNavigate, useLocation, useParams } from 'react-router-dom';
+import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
 import { MobileBottomNav } from './components/MobileBottomNav';
 import { HeroSection } from './components/HeroSection';
@@ -8,12 +8,7 @@ import { StickyContactWidget } from './components/StickyContactWidget';
 import { Footer } from './components/Footer';
 import { ContactUs } from './components/ContactUs';
 
-import { destinationsData } from './data/destinationsData';
-import { guidesData } from './data/guidesData';
-import { Package, Destination, TravelGuide } from './types';
-
-import { DestinationDetailView } from './components/Destinations/DestinationDetailView';
-import { TravelGuideArticleView } from './components/TravelGuides/TravelGuideArticleView';
+import { Package, TravelGuide } from './types';
 
 // Code-split below-the-fold sections to eliminate unused JS on initial mobile paint
 const AITripPlanner = lazy(() => import('./components/AITripPlanner/AITripPlanner').then(m => ({ default: m.AITripPlanner })));
@@ -32,6 +27,15 @@ const PackageDetailModal = lazy(() => import('./components/Packages/PackageDetai
 const GlobalSearchModal = lazy(() => import('./components/GlobalSearchModal').then(m => ({ default: m.GlobalSearchModal })));
 const QuoteRequestModal = lazy(() => import('./components/QuoteRequestModal').then(m => ({ default: m.QuoteRequestModal })));
 const PolicyModals = lazy(() => import('./components/PolicyModals').then(m => ({ default: m.PolicyModals })));
+
+// Sanity-backed pages: the standalone Destinations/Packages/Guides pages fetch
+// live content from the Sanity Studio, replacing the hardcoded data files.
+// The curated Home-page teaser sections above keep using the static mock data.
+const SanityDestinationsPage = lazy(() => import('./components/Sanity/DestinationsPage').then(m => ({ default: m.DestinationsPage })));
+const SanityDestinationDetailPage = lazy(() => import('./components/Sanity/DestinationDetailPage').then(m => ({ default: m.DestinationDetailPage })));
+const SanityPackagesPage = lazy(() => import('./components/Sanity/PackagesPage').then(m => ({ default: m.PackagesPage })));
+const SanityGuidesPage = lazy(() => import('./components/Sanity/GuidesPage').then(m => ({ default: m.GuidesPage })));
+const SanityGuideDetailPage = lazy(() => import('./components/Sanity/GuideDetailPage').then(m => ({ default: m.GuideDetailPage })));
 
 // Lightweight section skeleton for smooth progressive hydration
 function SectionSkeleton() {
@@ -61,56 +65,6 @@ function pathToView(pathname: string): string {
   if (pathname === '/about-us') return 'why-us';
   if (pathname === '/contact-us') return 'contact-us';
   return 'home';
-}
-
-interface DestinationDetailRouteProps {
-  onSelectPackage: (pkg: Package) => void;
-  onStartAIPlan: (destinationName: string) => void;
-  onOpenQuoteModal: (summary?: string, destinationName?: string) => void;
-}
-
-function DestinationDetailRoute({ onSelectPackage, onStartAIPlan, onOpenQuoteModal }: DestinationDetailRouteProps) {
-  const { slug } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
-
-  const destination: Destination = destinationsData.find((d) => d.slug === slug) || destinationsData[0];
-
-  return (
-    <Suspense fallback={<SectionSkeleton />}>
-      <DestinationDetailView
-        destination={destination}
-        onBack={() => navigate('/destinations')}
-        onSelectPackage={onSelectPackage}
-        onStartAIPlan={onStartAIPlan}
-        onOpenQuoteModal={onOpenQuoteModal}
-      />
-    </Suspense>
-  );
-}
-
-interface GuideDetailRouteProps {
-  onSelectPackage: (pkg: Package) => void;
-  onStartAIPlan: (destinationName: string) => void;
-  onOpenQuoteModal: (summary?: string) => void;
-}
-
-function GuideDetailRoute({ onSelectPackage, onStartAIPlan, onOpenQuoteModal }: GuideDetailRouteProps) {
-  const { slug } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
-
-  const guide: TravelGuide = guidesData.find((g) => g.slug === slug) || guidesData[0];
-
-  return (
-    <Suspense fallback={<SectionSkeleton />}>
-      <TravelGuideArticleView
-        guide={guide}
-        onBack={() => navigate('/guides')}
-        onSelectPackage={onSelectPackage}
-        onStartAIPlan={onStartAIPlan}
-        onOpenQuoteModal={onOpenQuoteModal}
-      />
-    </Suspense>
-  );
 }
 
 export default function App() {
@@ -270,13 +224,13 @@ export default function App() {
             }
           />
 
-          {/* ROUTE: ALL DESTINATIONS */}
+          {/* ROUTE: ALL DESTINATIONS (live from Sanity) */}
           <Route
             path="/destinations"
             element={
               <div className="pt-20">
                 <Suspense fallback={<SectionSkeleton />}>
-                  <DestinationsSection
+                  <SanityDestinationsPage
                     onSelectDestination={handleSelectDestination}
                     onPlanDestinationWithAI={(destName) => handleStartAIPlan(undefined, destName)}
                     onOpenQuoteModal={handleOpenQuoteModal}
@@ -286,29 +240,26 @@ export default function App() {
             }
           />
 
-          {/* ROUTE: SINGLE DESTINATION DETAIL */}
+          {/* ROUTE: SINGLE DESTINATION DETAIL (live from Sanity) */}
           <Route
             path="/destinations/:slug"
             element={
-              <DestinationDetailRoute
-                onSelectPackage={handleSelectPackage}
-                onStartAIPlan={(destName) => handleStartAIPlan(undefined, destName)}
-                onOpenQuoteModal={handleOpenQuoteModal}
-              />
+              <Suspense fallback={<SectionSkeleton />}>
+                <SanityDestinationDetailPage
+                  onStartAIPlan={(destName) => handleStartAIPlan(undefined, destName)}
+                  onOpenQuoteModal={handleOpenQuoteModal}
+                />
+              </Suspense>
             }
           />
 
-          {/* ROUTE: ALL PACKAGES */}
+          {/* ROUTE: ALL PACKAGES (live from Sanity) */}
           <Route
             path="/packages"
             element={
               <div className="pt-20">
                 <Suspense fallback={<SectionSkeleton />}>
-                  <PackagesSection
-                    onSelectPackage={handleSelectPackage}
-                    onCustomizePackageWithAI={(title, dest) => handleStartAIPlan(`Customize ${title} in ${dest}`, dest)}
-                    onOpenQuoteModal={handleOpenQuoteModal}
-                  />
+                  <SanityPackagesPage onOpenQuoteModal={handleOpenQuoteModal} />
                 </Suspense>
               </div>
             }
@@ -330,29 +281,25 @@ export default function App() {
             }
           />
 
-          {/* ROUTE: TRAVEL GUIDES HUB */}
+          {/* ROUTE: TRAVEL GUIDES HUB (live from Sanity) */}
           <Route
             path="/guides"
             element={
               <div className="pt-20">
                 <Suspense fallback={<SectionSkeleton />}>
-                  <TravelGuidesSection
-                    onSelectGuide={handleSelectGuide}
-                  />
+                  <SanityGuidesPage onSelectGuide={(slug) => navigate(`/guides/${slug}`)} />
                 </Suspense>
               </div>
             }
           />
 
-          {/* ROUTE: SINGLE TRAVEL GUIDE ARTICLE */}
+          {/* ROUTE: SINGLE TRAVEL GUIDE ARTICLE (live from Sanity) */}
           <Route
             path="/guides/:slug"
             element={
-              <GuideDetailRoute
-                onSelectPackage={handleSelectPackage}
-                onStartAIPlan={(destName) => handleStartAIPlan(undefined, destName)}
-                onOpenQuoteModal={handleOpenQuoteModal}
-              />
+              <Suspense fallback={<SectionSkeleton />}>
+                <SanityGuideDetailPage />
+              </Suspense>
             }
           />
 
