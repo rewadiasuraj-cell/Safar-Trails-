@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ArrowRight, Compass, Sparkles, Star, Flame, Zap, MoveHorizontal } from 'lucide-react';
+import { ArrowRight, Compass, Sparkles, Star, Flame, Zap, MoveHorizontal, Download } from 'lucide-react';
 
 interface HandpickedExperiencesSectionProps {
   onSelectCategory?: (category: string) => void;
@@ -15,6 +15,7 @@ interface FeaturedDestination {
   region: string;
   tagline: string;
   image: string;
+  video?: string;
   duration: string;
   startingPrice: string;
   rating: string;
@@ -58,6 +59,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       region: 'JAMMU & KASHMIR',
       tagline: 'Shikaras, Snow Peaks & Pine Valleys',
       image: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=1200&auto=format&fit=crop',
+      video: '/videos/kashmir.mp4',
       duration: '5–7 Days',
       startingPrice: '₹16,999',
       rating: '4.9',
@@ -71,6 +73,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       region: 'GOA COAST',
       tagline: 'Sun-Kissed Beaches & Latin Quarters',
       image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1200&auto=format&fit=crop',
+      video: '/videos/goa.mp4',
       duration: '4–6 Days',
       startingPrice: '₹14,499',
       rating: '4.8',
@@ -84,6 +87,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       region: 'GHATS & BACKWATERS',
       tagline: 'Tranquil Backwaters & Misty Tea Hills',
       image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1200&auto=format&fit=crop',
+      video: '/videos/kerala.mp4',
       duration: '5–7 Days',
       startingPrice: '₹15,999',
       rating: '4.9',
@@ -97,6 +101,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       region: 'ROYAL RAJASTHAN',
       tagline: 'Regal Forts, Palaces & Desert Dunes',
       image: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=1200&auto=format&fit=crop',
+      video: '/videos/rajasthan.mp4',
       duration: '6–8 Days',
       startingPrice: '₹17,999',
       rating: '4.9',
@@ -110,6 +115,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       region: 'WESTERN HIMALAYAS',
       tagline: 'Cedar Forests, Snow Passes & Paragliding',
       image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop',
+      video: '/videos/himachal.mp4',
       duration: '5–7 Days',
       startingPrice: '₹14,999',
       rating: '4.8',
@@ -123,6 +129,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       region: 'TRANS-HIMALAYAS',
       tagline: 'High Altitude Lakes & Ancient Gompas',
       image: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=1200&auto=format&fit=crop',
+      video: '/videos/ladakh.mp4',
       duration: '6–8 Days',
       startingPrice: '₹22,999',
       rating: '4.9',
@@ -136,6 +143,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       region: 'BAY OF BENGAL',
       tagline: 'Turquoise Lagoons & Pristine Coral Reefs',
       image: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=1200&auto=format&fit=crop',
+      video: '/videos/andaman.mp4',
       duration: '5–7 Days',
       startingPrice: '₹24,999',
       rating: '4.9',
@@ -149,6 +157,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       region: 'NORTHEAST WONDERS',
       tagline: 'Living Root Bridges & Crystal Waterfalls',
       image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop',
+      video: '/videos/meghalaya.mp4',
       duration: '5–7 Days',
       startingPrice: '₹18,499',
       rating: '4.8',
@@ -161,6 +170,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       region: 'DEV BHOOMI',
       tagline: 'Ganga Aarti, Alpine Meadows & Sacred Peaks',
       image: '/Places-in-Uttarakhand.jpg',
+      video: '/videos/uttarakhand.mp4',
       duration: '4–6 Days',
       startingPrice: '₹13,999',
       rating: '4.9',
@@ -183,7 +193,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
     return window.innerWidth >= 640 ? 334 : 300;
   }, []);
 
-  // Update scroll progress & compute active card index
+  // Update scroll progress & compute active card index with animation frame optimization
   const updateScrollProgress = useCallback(() => {
     if (!scrollContainerRef.current) return;
     const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
@@ -222,22 +232,20 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
     setActiveIndex(boundedIndex);
   }, [getCardStride, totalItemsCount]);
 
-  // Automatic gentle continuous horizontal scrolling animation on desktop
+  // Automatic gentle continuous horizontal scrolling animation on desktop (pauses on interaction)
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
 
     let isRunning = true;
-    const scrollSpeed = 0.65; // Gentle sub-pixel increment per frame
+    const scrollSpeed = 0.55; // Gentle sub-pixel increment per frame
 
     const autoScrollLoop = () => {
-      if (isRunning && isAutoScrolling && !isHovered && !isDragging && container) {
-        // Increment scroll position
+      if (isRunning && isAutoScrolling && !isHovered && !isDragging && !hasInteracted && container) {
         const currentScroll = container.scrollLeft;
         const maxScroll = container.scrollWidth - container.clientWidth;
 
         if (currentScroll >= maxScroll - 1) {
-          // Gently loop back to beginning
           container.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
           container.scrollLeft += scrollSpeed;
@@ -255,111 +263,69 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [isAutoScrolling, isHovered, isDragging, updateScrollProgress]);
+  }, [isAutoScrolling, isHovered, isDragging, hasInteracted, updateScrollProgress]);
 
-  // Handle user manual scroll / pause on interaction
+  // Handle user manual scroll / throttle progress updates
   const handleUserScroll = () => {
     lastScrollTimeRef.current = Date.now();
     updateScrollProgress();
   };
 
-  // Scroll manually via buttons
+  // Scroll manually via navigation buttons
   const handleManualScroll = (direction: 'left' | 'right') => {
     if (!scrollContainerRef.current) return;
     setHasInteracted(true);
     const targetIndex = direction === 'left' ? activeIndex - 1 : activeIndex + 1;
-    scrollToCard(targetIndex);
+    scrollToCard(targetIndex, 'smooth');
 
-    // Pause auto-scroll after manual button click
     if (userInteractedTimeoutRef.current) clearTimeout(userInteractedTimeoutRef.current);
     userInteractedTimeoutRef.current = setTimeout(() => {
-      updateScrollProgress();
-    }, 4000);
+      setHasInteracted(false);
+    }, 6000);
   };
 
-  // Native Touch Swipe Gesture Handlers for Mobile Devices
+  // Native Mobile Touch Handlers - lets browser GPU handle smooth 120Hz/60Hz physics
   const handleTouchStart = (e: React.TouchEvent) => {
-    if (!scrollContainerRef.current) return;
+    setHasInteracted(true);
+    setIsDragging(true);
     const touch = e.touches[0];
     dragStartXRef.current = touch.clientX;
     dragStartYRef.current = touch.clientY;
     dragStartTimeRef.current = Date.now();
-    dragStartScrollLeftRef.current = scrollContainerRef.current.scrollLeft;
     dragDistanceRef.current = 0;
-    isPointerDownRef.current = true;
-    isHorizontalGestureRef.current = null;
-    setIsDragging(true);
-    setHasInteracted(true);
 
     if (userInteractedTimeoutRef.current) clearTimeout(userInteractedTimeoutRef.current);
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isPointerDownRef.current || !scrollContainerRef.current) return;
     const touch = e.touches[0];
-    const deltaX = touch.clientX - dragStartXRef.current;
-    const deltaY = touch.clientY - dragStartYRef.current;
-
-    dragDistanceRef.current = Math.abs(deltaX);
-
-    // Lock gesture orientation on initial movement
-    if (isHorizontalGestureRef.current === null) {
-      if (Math.abs(deltaX) > 8 || Math.abs(deltaY) > 8) {
-        isHorizontalGestureRef.current = Math.abs(deltaX) > Math.abs(deltaY);
-      }
-    }
-
-    // Direct 1:1 finger position tracking when horizontal swipe is active
-    if (isHorizontalGestureRef.current) {
-      scrollContainerRef.current.scrollLeft = dragStartScrollLeftRef.current - deltaX;
-      updateScrollProgress();
-    }
+    const deltaX = Math.abs(touch.clientX - dragStartXRef.current);
+    dragDistanceRef.current = deltaX;
   };
 
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (!isPointerDownRef.current || !scrollContainerRef.current) return;
-    isPointerDownRef.current = false;
+  const handleTouchEnd = () => {
     setIsDragging(false);
 
-    const elapsed = Math.max(1, Date.now() - dragStartTimeRef.current);
-    const endX = e.changedTouches[0]?.clientX ?? dragStartXRef.current;
-    const deltaX = endX - dragStartXRef.current;
-    const velocity = deltaX / elapsed; // px per millisecond
-    const stride = getCardStride();
-
-    // Responsive swipe detection (flick velocity or drag distance)
-    const isFlickLeft = deltaX < -35 || velocity < -0.28;
-    const isFlickRight = deltaX > 35 || velocity > 0.28;
-
-    if (isHorizontalGestureRef.current) {
-      if (isFlickLeft) {
-        // Swipe to next card
-        scrollToCard(activeIndex + 1);
-      } else if (isFlickRight) {
-        // Swipe to previous card
-        scrollToCard(activeIndex - 1);
-      } else {
-        // Snap cleanly to nearest card boundary
-        const nearestIndex = Math.round(scrollContainerRef.current.scrollLeft / stride);
-        scrollToCard(nearestIndex);
-      }
-    }
-
-    // Reset gesture flags
-    isHorizontalGestureRef.current = null;
-
-    // Resume auto-scroll after idle timeout
     if (userInteractedTimeoutRef.current) clearTimeout(userInteractedTimeoutRef.current);
     userInteractedTimeoutRef.current = setTimeout(() => {
-      updateScrollProgress();
-    }, 4500);
+      setHasInteracted(false);
+    }, 6000);
   };
 
-  // Mouse drag-to-swipe handlers for desktop & tablet trackpads
+  // Desktop Mouse Drag Momentum Handlers
+  const mouseVelocityRef = useRef<number>(0);
+  const lastMouseXRef = useRef<number>(0);
+  const lastMouseTimeRef = useRef<number>(0);
+  const momentumRafRef = useRef<number | null>(null);
+
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!scrollContainerRef.current) return;
+    if (momentumRafRef.current) cancelAnimationFrame(momentumRafRef.current);
+
     dragStartXRef.current = e.clientX;
-    dragStartTimeRef.current = Date.now();
+    lastMouseXRef.current = e.clientX;
+    lastMouseTimeRef.current = performance.now();
+    mouseVelocityRef.current = 0;
     dragStartScrollLeftRef.current = scrollContainerRef.current.scrollLeft;
     dragDistanceRef.current = 0;
     isPointerDownRef.current = true;
@@ -372,37 +338,53 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!isPointerDownRef.current || !scrollContainerRef.current) return;
     e.preventDefault();
-    const deltaX = e.clientX - dragStartXRef.current;
-    dragDistanceRef.current = Math.abs(deltaX);
-    scrollContainerRef.current.scrollLeft = dragStartScrollLeftRef.current - deltaX;
+    const now = performance.now();
+    const dt = Math.max(1, now - lastMouseTimeRef.current);
+    const currentX = e.clientX;
+    const deltaX = currentX - lastMouseXRef.current;
+    
+    mouseVelocityRef.current = deltaX / dt;
+    lastMouseXRef.current = currentX;
+    lastMouseTimeRef.current = now;
+
+    dragDistanceRef.current = Math.abs(currentX - dragStartXRef.current);
+    scrollContainerRef.current.scrollLeft = dragStartScrollLeftRef.current - (currentX - dragStartXRef.current);
     updateScrollProgress();
   };
 
+  const applyMomentumInertia = () => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    let vel = mouseVelocityRef.current * 16; // velocity per frame
+    const friction = 0.94;
+
+    const step = () => {
+      if (Math.abs(vel) > 0.4 && container) {
+        container.scrollLeft -= vel;
+        vel *= friction;
+        updateScrollProgress();
+        momentumRafRef.current = requestAnimationFrame(step);
+      } else {
+        updateScrollProgress();
+      }
+    };
+    momentumRafRef.current = requestAnimationFrame(step);
+  };
+
   const handleMouseUpOrLeave = (e: React.MouseEvent) => {
-    if (!isPointerDownRef.current || !scrollContainerRef.current) return;
+    if (!isPointerDownRef.current) return;
     isPointerDownRef.current = false;
     setIsDragging(false);
 
-    const elapsed = Math.max(1, Date.now() - dragStartTimeRef.current);
-    const deltaX = e.clientX - dragStartXRef.current;
-    const velocity = deltaX / elapsed;
-    const stride = getCardStride();
-
-    if (dragDistanceRef.current > 15) {
-      if (deltaX < -40 || velocity < -0.28) {
-        scrollToCard(activeIndex + 1);
-      } else if (deltaX > 40 || velocity > 0.28) {
-        scrollToCard(activeIndex - 1);
-      } else {
-        const nearestIndex = Math.round(scrollContainerRef.current.scrollLeft / stride);
-        scrollToCard(nearestIndex);
-      }
+    if (dragDistanceRef.current > 8 && Math.abs(mouseVelocityRef.current) > 0.15) {
+      applyMomentumInertia();
     }
 
     if (userInteractedTimeoutRef.current) clearTimeout(userInteractedTimeoutRef.current);
     userInteractedTimeoutRef.current = setTimeout(() => {
-      updateScrollProgress();
-    }, 4500);
+      setHasInteracted(false);
+    }, 6000);
   };
 
   const handleCardClick = (dest: FeaturedDestination) => {
@@ -442,6 +424,20 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
               </p>
             </div>
           </div>
+
+          {/* Action buttons & Video package download */}
+          <div className="flex items-center gap-3 self-start md:self-auto">
+            <a
+              href="/safartrails-videos.zip"
+              download="safartrails-videos.zip"
+              id="download-all-videos-btn"
+              title="Download all 9 destination video files in a single .zip"
+              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-medium text-slate-700 bg-slate-100 hover:bg-orange-50 hover:text-[#FF6B00] border border-slate-200 hover:border-orange-200 rounded-xl transition-all shadow-sm active:scale-95"
+            >
+              <Download className="w-3.5 h-3.5 text-orange-500" />
+              <span>Download Videos (.zip)</span>
+            </a>
+          </div>
         </div>
 
         {/* Horizontal Swipable Rail Wrapper */}
@@ -462,11 +458,13 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUpOrLeave}
             onMouseLeave={handleMouseUpOrLeave}
-            className={`flex gap-5 sm:gap-6 overflow-x-auto pb-4 pt-1 px-1 select-none touch-pan-y snap-x snap-mandatory ${
-              isDragging ? 'cursor-grabbing' : 'cursor-grab scroll-smooth'
+            className={`flex gap-4 sm:gap-6 overflow-x-auto pb-4 pt-1 px-1 select-none snap-x snap-proximity overscroll-x-contain ${
+              isDragging ? 'cursor-grabbing' : 'cursor-grab'
             } [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden`}
             style={{
               WebkitOverflowScrolling: 'touch',
+              overscrollBehaviorX: 'contain',
+              scrollBehavior: isDragging ? 'auto' : 'smooth'
             }}
           >
             {featuredDestinations.map((dest) => (
@@ -474,26 +472,48 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
                 key={dest.id}
                 id={`featured-exp-${dest.slug}`}
                 onClick={() => handleCardClick(dest)}
-                className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] hover:scale-[1.02] transform will-change-transform transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 border border-gray-200/90 hover:border-orange-300 snap-start snap-always"
+                className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] hover:scale-[1.02] transform will-change-transform transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 border border-gray-200/90 hover:border-orange-300 snap-start"
               >
-                {/* Full-bleed Realistic Destination Photography */}
-                <img
-                  src={dest.image}
-                  alt={`${dest.name} - ${dest.tagline}`}
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out pointer-events-none"
-                  loading="lazy"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    if (dest.id === 'uttarakhand') {
-                      target.src = 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop';
-                    } else if (dest.id === 'meghalaya') {
-                      target.src = 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop';
-                    } else {
-                      target.src = 'https://images.unsplash.com/photo-1506461883276-594a12b11cf3?q=80&w=1200&auto=format&fit=crop';
-                    }
-                  }}
-                />
+                {/* Cinematic Ambient Looping Video or Photography Background */}
+                {dest.video ? (
+                  <video
+                    src={dest.video}
+                    poster={dest.image}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    ref={(el) => {
+                      if (el) {
+                        el.defaultMuted = true;
+                        el.muted = true;
+                        if (el.paused) {
+                          el.play().catch(() => {});
+                        }
+                      }
+                    }}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out pointer-events-none"
+                  />
+                ) : (
+                  <img
+                    src={dest.image}
+                    alt={`${dest.name} - ${dest.tagline}`}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out pointer-events-none"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      if (dest.id === 'uttarakhand') {
+                        target.src = 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop';
+                      } else if (dest.id === 'meghalaya') {
+                        target.src = 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop';
+                      } else {
+                        target.src = 'https://images.unsplash.com/photo-1506461883276-594a12b11cf3?q=80&w=1200&auto=format&fit=crop';
+                      }
+                    }}
+                  />
+                )}
 
                 {/* Multi-Stop Dark Gradient for Pristine Typography Contrast */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 pointer-events-none" />
@@ -543,23 +563,38 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
                     {dest.tagline}
                   </p>
 
-                  {/* Actions Row: Quick Book + Discover Link */}
+                  {/* Actions Row: Quick Book + Video Download + Discover Link */}
                   <div className="flex items-center justify-between gap-2 mt-3 pt-3 border-t border-white/15">
-                    <button
-                      type="button"
-                      id={`quick-book-featured-${dest.slug}`}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onOpenQuoteModal?.(
-                          `Quick booking enquiry for ${dest.name} (${dest.duration}). Please share custom pricing and hotel options.`,
-                          dest.name
-                        );
-                      }}
-                      className="px-2.5 sm:px-3 py-1.5 rounded-lg bg-[#FF6B00] hover:bg-[#e66000] active:scale-95 text-white font-bold text-[10px] sm:text-[11px] uppercase tracking-wider shadow-sm flex items-center gap-1 transition-all cursor-pointer pointer-events-auto"
-                    >
-                      <Zap className="w-3 h-3 fill-white text-white shrink-0" />
-                      <span>Quick Book</span>
-                    </button>
+                    <div className="flex items-center gap-1.5">
+                      <button
+                        type="button"
+                        id={`quick-book-featured-${dest.slug}`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onOpenQuoteModal?.(
+                            `Quick booking enquiry for ${dest.name} (${dest.duration}). Please share custom pricing and hotel options.`,
+                            dest.name
+                          );
+                        }}
+                        className="px-2.5 sm:px-3 py-1.5 rounded-lg bg-[#FF6B00] hover:bg-[#e66000] active:scale-95 text-white font-bold text-[10px] sm:text-[11px] uppercase tracking-wider shadow-sm flex items-center gap-1 transition-all cursor-pointer pointer-events-auto"
+                      >
+                        <Zap className="w-3 h-3 fill-white text-white shrink-0" />
+                        <span>Quick Book</span>
+                      </button>
+
+                      {dest.video && (
+                        <a
+                          href={dest.video}
+                          download={`${dest.slug}.mp4`}
+                          id={`download-video-${dest.slug}`}
+                          onClick={(e) => e.stopPropagation()}
+                          title={`Download ${dest.name} video (.mp4)`}
+                          className="p-1.5 rounded-lg bg-black/40 hover:bg-black/80 text-white/80 hover:text-white border border-white/20 transition-all pointer-events-auto flex items-center justify-center"
+                        >
+                          <Download className="w-3 h-3" />
+                        </a>
+                      )}
+                    </div>
 
                     <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-white/90 group-hover:text-orange-300 transition-colors">
                       <span>Explore</span>
@@ -577,7 +612,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
                 if (dragDistanceRef.current > 10) return;
                 onViewAll();
               }}
-              className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 bg-[#071322] border border-slate-800 hover:border-orange-500/50 snap-start snap-always"
+              className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 bg-[#071322] border border-slate-800 hover:border-orange-500/50 snap-start"
             >
               {/* Atmospheric Background Image with Deep Navy Overlay */}
               <img
