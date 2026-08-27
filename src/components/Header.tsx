@@ -241,11 +241,15 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               id="nav-link-contact-us"
               onClick={() => {
+                onNavigate('contact-us');
                 setDestinationsDropdown(false);
                 setMoreDropdown(false);
-                onOpenQuoteModal('Contact & General Inquiries');
               }}
-              className="py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap text-slate-800 hover:text-[#FF6B00]"
+              className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
+                currentView === 'contact-us'
+                  ? 'text-[#FF6B00] font-semibold'
+                  : 'text-slate-800 hover:text-[#FF6B00]'
+              }`}
             >
               <span className="whitespace-nowrap">Contact Us</span>
             </button>
@@ -375,10 +379,12 @@ export const Header: React.FC<HeaderProps> = ({
                 </button>
                 <button
                   onClick={() => {
+                    onNavigate('contact-us');
                     setMobileMenuOpen(false);
-                    onOpenQuoteModal('Contact Us & Custom Trip Inquiries');
                   }}
-                  className="w-full text-left px-4 py-2.5 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
+                  className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
+                    currentView === 'contact-us' ? 'bg-orange-50 text-[#FF6B00]' : 'hover:bg-gray-50'
+                  }`}
                 >
                   Contact Us
                 </button>

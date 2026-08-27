@@ -1,10 +1,12 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
+import { Routes, Route, Navigate, useNavigate, useLocation, useParams } from 'react-router-dom';
 import { Header } from './components/Header';
 import { MobileBottomNav } from './components/MobileBottomNav';
 import { HeroSection } from './components/HeroSection';
 import { HandpickedExperiencesSection } from './components/HandpickedExperiencesSection';
 import { StickyContactWidget } from './components/StickyContactWidget';
 import { Footer } from './components/Footer';
+import { ContactUs } from './components/ContactUs';
 
 import { destinationsData } from './data/destinationsData';
 import { guidesData } from './data/guidesData';
@@ -36,12 +38,86 @@ function SectionSkeleton() {
   return <div className="w-full py-12 flex items-center justify-center min-h-[140px]" />;
 }
 
+// Maps a legacy view id (still used by Header/Footer/MobileBottomNav) to its route path
+const VIEW_TO_PATH: Record<string, string> = {
+  home: '/',
+  destinations: '/destinations',
+  packages: '/packages',
+  'ai-planner': '/ai-planner',
+  guides: '/guides',
+  'why-us': '/about-us',
+  'contact-us': '/contact-us',
+};
+
+// Maps the current URL back to the legacy view id used for nav active-state highlighting
+function pathToView(pathname: string): string {
+  if (pathname === '/') return 'home';
+  if (pathname === '/destinations') return 'destinations';
+  if (pathname.startsWith('/destinations/')) return 'destination-detail';
+  if (pathname === '/packages') return 'packages';
+  if (pathname === '/ai-planner') return 'ai-planner';
+  if (pathname === '/guides') return 'guides';
+  if (pathname.startsWith('/guides/')) return 'guide-detail';
+  if (pathname === '/about-us') return 'why-us';
+  if (pathname === '/contact-us') return 'contact-us';
+  return 'home';
+}
+
+interface DestinationDetailRouteProps {
+  onSelectPackage: (pkg: Package) => void;
+  onStartAIPlan: (destinationName: string) => void;
+  onOpenQuoteModal: (summary?: string, destinationName?: string) => void;
+}
+
+function DestinationDetailRoute({ onSelectPackage, onStartAIPlan, onOpenQuoteModal }: DestinationDetailRouteProps) {
+  const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
+
+  const destination: Destination = destinationsData.find((d) => d.slug === slug) || destinationsData[0];
+
+  return (
+    <Suspense fallback={<SectionSkeleton />}>
+      <DestinationDetailView
+        destination={destination}
+        onBack={() => navigate('/destinations')}
+        onSelectPackage={onSelectPackage}
+        onStartAIPlan={onStartAIPlan}
+        onOpenQuoteModal={onOpenQuoteModal}
+      />
+    </Suspense>
+  );
+}
+
+interface GuideDetailRouteProps {
+  onSelectPackage: (pkg: Package) => void;
+  onStartAIPlan: (destinationName: string) => void;
+  onOpenQuoteModal: (summary?: string) => void;
+}
+
+function GuideDetailRoute({ onSelectPackage, onStartAIPlan, onOpenQuoteModal }: GuideDetailRouteProps) {
+  const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
+
+  const guide: TravelGuide = guidesData.find((g) => g.slug === slug) || guidesData[0];
+
+  return (
+    <Suspense fallback={<SectionSkeleton />}>
+      <TravelGuideArticleView
+        guide={guide}
+        onBack={() => navigate('/guides')}
+        onSelectPackage={onSelectPackage}
+        onStartAIPlan={onStartAIPlan}
+        onOpenQuoteModal={onOpenQuoteModal}
+      />
+    </Suspense>
+  );
+}
+
 export default function App() {
-  // Navigation State
-  const [currentView, setCurrentView] = useState<string>('home');
-  const [activeDestinationSlug, setActiveDestinationSlug] = useState<string | null>(null);
-  const [activeGuideSlug, setActiveGuideSlug] = useState<string | null>(null);
-  
+  const navigate = useNavigate();
+  const location = useLocation();
+  const currentView = pathToView(location.pathname);
+
   // Modals & Overlays
   const [selectedPackageForModal, setSelectedPackageForModal] = useState<Package | null>(null);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
@@ -54,35 +130,33 @@ export default function App() {
   const [aiPlannerSeedPrompt, setAiPlannerSeedPrompt] = useState<string>('');
   const [aiPlannerSeedDestination, setAiPlannerSeedDestination] = useState<string>('');
 
-  // Scroll to top on view changes
+  // Scroll to top on route changes
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [currentView, activeDestinationSlug, activeGuideSlug]);
+  }, [location.pathname]);
 
   const handleNavigate = (view: string, param?: string) => {
     if (view === 'destination-detail' && param) {
-      setActiveDestinationSlug(param);
-      setCurrentView('destination-detail');
+      navigate(`/destinations/${param}`);
     } else if (view === 'guide-detail' && param) {
-      setActiveGuideSlug(param);
-      setCurrentView('guide-detail');
+      navigate(`/guides/${param}`);
     } else {
-      setCurrentView(view);
+      navigate(VIEW_TO_PATH[view] || '/');
     }
   };
 
   const handleStartAIPlan = (promptText?: string, destinationName?: string) => {
     if (promptText) setAiPlannerSeedPrompt(promptText);
     if (destinationName) setAiPlannerSeedDestination(destinationName);
-    
-    if (currentView === 'home') {
+
+    if (location.pathname === '/') {
       const el = document.getElementById('ai-trip-planner-section');
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' });
         return;
       }
     }
-    setCurrentView('ai-planner');
+    navigate('/ai-planner');
   };
 
   const handleOpenQuoteModal = (summary?: string, destinationName?: string) => {
@@ -96,22 +170,12 @@ export default function App() {
   };
 
   const handleSelectDestination = (slug: string) => {
-    setActiveDestinationSlug(slug);
-    setCurrentView('destination-detail');
+    navigate(`/destinations/${slug}`);
   };
 
   const handleSelectGuide = (guide: TravelGuide) => {
-    setActiveGuideSlug(guide.slug);
-    setCurrentView('guide-detail');
+    navigate(`/guides/${guide.slug}`);
   };
-
-  const activeDestination: Destination = destinationsData.find(
-    (d) => d.slug === activeDestinationSlug
-  ) || destinationsData[0];
-
-  const activeGuide: TravelGuide = guidesData.find(
-    (g) => g.slug === activeGuideSlug
-  ) || guidesData[0];
 
   return (
     <div className="min-h-screen w-full flex flex-col bg-white text-slate-900 font-sans selection:bg-orange-500 selection:text-white">
@@ -125,173 +189,204 @@ export default function App() {
 
       {/* Main Content Router */}
       <main className="w-full flex-grow">
-        {/* VIEW 1: HOME (Master Editorial Layout) */}
-        {currentView === 'home' && (
-          <>
-            <HeroSection
-              onStartAIPlan={(prompt) => handleStartAIPlan(prompt)}
-              onExplorePackages={() => {
-                const el = document.getElementById('packages-section');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-                else setCurrentView('packages');
-              }}
-            />
+        <Routes>
+          {/* ROUTE: HOME (Master Editorial Layout) */}
+          <Route
+            path="/"
+            element={
+              <>
+                <HeroSection
+                  onStartAIPlan={(prompt) => handleStartAIPlan(prompt)}
+                  onExplorePackages={() => {
+                    const el = document.getElementById('packages-section');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else navigate('/packages');
+                  }}
+                />
 
-            <HandpickedExperiencesSection
-              onSelectDestination={(slug) => handleSelectDestination(slug)}
-              onSelectCategory={() => {
-                const el = document.getElementById('destinations-section');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-                else setCurrentView('destinations');
-              }}
-              onViewAll={() => {
-                const el = document.getElementById('destinations-section');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-                else setCurrentView('destinations');
-              }}
-              onOpenQuoteModal={handleOpenQuoteModal}
-            />
+                <HandpickedExperiencesSection
+                  onSelectDestination={(slug) => handleSelectDestination(slug)}
+                  onSelectCategory={() => {
+                    const el = document.getElementById('destinations-section');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else navigate('/destinations');
+                  }}
+                  onViewAll={() => {
+                    const el = document.getElementById('destinations-section');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    else navigate('/destinations');
+                  }}
+                  onOpenQuoteModal={handleOpenQuoteModal}
+                />
 
-            <Suspense fallback={<SectionSkeleton />}>
-              <AITripPlanner
-                initialPrompt={aiPlannerSeedPrompt}
-                initialDestination={aiPlannerSeedDestination}
-                onOpenQuoteModal={handleOpenQuoteModal}
-              />
+                <Suspense fallback={<SectionSkeleton />}>
+                  <AITripPlanner
+                    initialPrompt={aiPlannerSeedPrompt}
+                    initialDestination={aiPlannerSeedDestination}
+                    onOpenQuoteModal={handleOpenQuoteModal}
+                  />
 
-              <DestinationsSection
-                onSelectDestination={handleSelectDestination}
-                onPlanDestinationWithAI={(destName) => handleStartAIPlan(undefined, destName)}
-                onOpenQuoteModal={handleOpenQuoteModal}
-              />
+                  <DestinationsSection
+                    onSelectDestination={handleSelectDestination}
+                    onPlanDestinationWithAI={(destName) => handleStartAIPlan(undefined, destName)}
+                    onOpenQuoteModal={handleOpenQuoteModal}
+                  />
 
-              <PackagesSection
+                  <PackagesSection
+                    onSelectPackage={handleSelectPackage}
+                    onCustomizePackageWithAI={(title, dest) => handleStartAIPlan(`Customize ${title} in ${dest}`, dest)}
+                    onOpenQuoteModal={handleOpenQuoteModal}
+                  />
+
+                  <TravelStylesSection
+                    onSelectStyle={() => {
+                      const el = document.getElementById('packages-section');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    onExploreStyleWithAI={(style) => handleStartAIPlan(`Plan a ${style} vacation in India`)}
+                  />
+
+                  <SeasonalTripsSection
+                    onSelectDestinationSlug={handleSelectDestination}
+                    onStartAIPlan={(prompt) => handleStartAIPlan(prompt)}
+                  />
+
+                  <TravelGuidesSection
+                    onSelectGuide={handleSelectGuide}
+                  />
+
+                  <TrustSection />
+
+                  <ReviewsSection />
+
+                  <FAQSection />
+
+                  <FinalCTASection
+                    onStartAIPlan={() => handleStartAIPlan()}
+                    onOpenQuoteModal={() => handleOpenQuoteModal()}
+                  />
+                </Suspense>
+              </>
+            }
+          />
+
+          {/* ROUTE: ALL DESTINATIONS */}
+          <Route
+            path="/destinations"
+            element={
+              <div className="pt-20">
+                <Suspense fallback={<SectionSkeleton />}>
+                  <DestinationsSection
+                    onSelectDestination={handleSelectDestination}
+                    onPlanDestinationWithAI={(destName) => handleStartAIPlan(undefined, destName)}
+                    onOpenQuoteModal={handleOpenQuoteModal}
+                  />
+                </Suspense>
+              </div>
+            }
+          />
+
+          {/* ROUTE: SINGLE DESTINATION DETAIL */}
+          <Route
+            path="/destinations/:slug"
+            element={
+              <DestinationDetailRoute
                 onSelectPackage={handleSelectPackage}
-                onCustomizePackageWithAI={(title, dest) => handleStartAIPlan(`Customize ${title} in ${dest}`, dest)}
+                onStartAIPlan={(destName) => handleStartAIPlan(undefined, destName)}
                 onOpenQuoteModal={handleOpenQuoteModal}
               />
+            }
+          />
 
-              <TravelStylesSection
-                onSelectStyle={() => {
-                  const el = document.getElementById('packages-section');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }}
-                onExploreStyleWithAI={(style) => handleStartAIPlan(`Plan a ${style} vacation in India`)}
-              />
+          {/* ROUTE: ALL PACKAGES */}
+          <Route
+            path="/packages"
+            element={
+              <div className="pt-20">
+                <Suspense fallback={<SectionSkeleton />}>
+                  <PackagesSection
+                    onSelectPackage={handleSelectPackage}
+                    onCustomizePackageWithAI={(title, dest) => handleStartAIPlan(`Customize ${title} in ${dest}`, dest)}
+                    onOpenQuoteModal={handleOpenQuoteModal}
+                  />
+                </Suspense>
+              </div>
+            }
+          />
 
-              <SeasonalTripsSection
-                onSelectDestinationSlug={handleSelectDestination}
-                onStartAIPlan={(prompt) => handleStartAIPlan(prompt)}
-              />
+          {/* ROUTE: STANDALONE AI TRIP PLANNER */}
+          <Route
+            path="/ai-planner"
+            element={
+              <div className="pt-20 pb-16">
+                <Suspense fallback={<SectionSkeleton />}>
+                  <AITripPlanner
+                    initialPrompt={aiPlannerSeedPrompt}
+                    initialDestination={aiPlannerSeedDestination}
+                    onOpenQuoteModal={handleOpenQuoteModal}
+                  />
+                </Suspense>
+              </div>
+            }
+          />
 
-              <TravelGuidesSection
-                onSelectGuide={handleSelectGuide}
-              />
+          {/* ROUTE: TRAVEL GUIDES HUB */}
+          <Route
+            path="/guides"
+            element={
+              <div className="pt-20">
+                <Suspense fallback={<SectionSkeleton />}>
+                  <TravelGuidesSection
+                    onSelectGuide={handleSelectGuide}
+                  />
+                </Suspense>
+              </div>
+            }
+          />
 
-              <TrustSection />
-
-              <ReviewsSection />
-
-              <FAQSection />
-
-              <FinalCTASection
-                onStartAIPlan={() => handleStartAIPlan()}
-                onOpenQuoteModal={() => handleOpenQuoteModal()}
-              />
-            </Suspense>
-          </>
-        )}
-
-        {/* VIEW 2: ALL DESTINATIONS */}
-        {currentView === 'destinations' && (
-          <div className="pt-20">
-            <Suspense fallback={<SectionSkeleton />}>
-              <DestinationsSection
-                onSelectDestination={handleSelectDestination}
-                onPlanDestinationWithAI={(destName) => handleStartAIPlan(undefined, destName)}
-                onOpenQuoteModal={handleOpenQuoteModal}
-              />
-            </Suspense>
-          </div>
-        )}
-
-        {/* VIEW 3: SINGLE DESTINATION DETAIL */}
-        {currentView === 'destination-detail' && activeDestination && (
-          <Suspense fallback={<SectionSkeleton />}>
-            <DestinationDetailView
-              destination={activeDestination}
-              onBack={() => setCurrentView('destinations')}
-              onSelectPackage={handleSelectPackage}
-              onStartAIPlan={(destName) => handleStartAIPlan(undefined, destName)}
-              onOpenQuoteModal={handleOpenQuoteModal}
-            />
-          </Suspense>
-        )}
-
-        {/* VIEW 4: ALL PACKAGES */}
-        {currentView === 'packages' && (
-          <div className="pt-20">
-            <Suspense fallback={<SectionSkeleton />}>
-              <PackagesSection
+          {/* ROUTE: SINGLE TRAVEL GUIDE ARTICLE */}
+          <Route
+            path="/guides/:slug"
+            element={
+              <GuideDetailRoute
                 onSelectPackage={handleSelectPackage}
-                onCustomizePackageWithAI={(title, dest) => handleStartAIPlan(`Customize ${title} in ${dest}`, dest)}
+                onStartAIPlan={(destName) => handleStartAIPlan(undefined, destName)}
                 onOpenQuoteModal={handleOpenQuoteModal}
               />
-            </Suspense>
-          </div>
-        )}
+            }
+          />
 
-        {/* VIEW 5: STANDALONE AI TRIP PLANNER */}
-        {currentView === 'ai-planner' && (
-          <div className="pt-20 pb-16">
-            <Suspense fallback={<SectionSkeleton />}>
-              <AITripPlanner
-                initialPrompt={aiPlannerSeedPrompt}
-                initialDestination={aiPlannerSeedDestination}
-                onOpenQuoteModal={handleOpenQuoteModal}
-              />
-            </Suspense>
-          </div>
-        )}
+          {/* ROUTE: ABOUT US / WHY SAFARTRAILS */}
+          <Route
+            path="/about-us"
+            element={
+              <div className="pt-20">
+                <Suspense fallback={<SectionSkeleton />}>
+                  <TrustSection />
+                  <ReviewsSection />
+                  <FAQSection />
+                  <FinalCTASection
+                    onStartAIPlan={() => handleStartAIPlan()}
+                    onOpenQuoteModal={() => handleOpenQuoteModal()}
+                  />
+                </Suspense>
+              </div>
+            }
+          />
 
-        {/* VIEW 6: TRAVEL GUIDES HUB */}
-        {currentView === 'guides' && (
-          <div className="pt-20">
-            <Suspense fallback={<SectionSkeleton />}>
-              <TravelGuidesSection
-                onSelectGuide={handleSelectGuide}
-              />
-            </Suspense>
-          </div>
-        )}
+          {/* ROUTE: CONTACT US */}
+          <Route
+            path="/contact-us"
+            element={
+              <div className="pt-20">
+                <ContactUs onOpenQuoteModal={handleOpenQuoteModal} />
+              </div>
+            }
+          />
 
-        {/* VIEW 7: SINGLE TRAVEL GUIDE ARTICLE */}
-        {currentView === 'guide-detail' && activeGuide && (
-          <Suspense fallback={<SectionSkeleton />}>
-            <TravelGuideArticleView
-              guide={activeGuide}
-              onBack={() => setCurrentView('guides')}
-              onSelectPackage={handleSelectPackage}
-              onStartAIPlan={(destName) => handleStartAIPlan(undefined, destName)}
-              onOpenQuoteModal={handleOpenQuoteModal}
-            />
-          </Suspense>
-        )}
-
-        {/* VIEW 8: WHY SAFARTRAILS / TRUST */}
-        {currentView === 'why-us' && (
-          <div className="pt-20">
-            <Suspense fallback={<SectionSkeleton />}>
-              <TrustSection />
-              <ReviewsSection />
-              <FAQSection />
-              <FinalCTASection
-                onStartAIPlan={() => handleStartAIPlan()}
-                onOpenQuoteModal={() => handleOpenQuoteModal()}
-              />
-            </Suspense>
-          </div>
-        )}
+          {/* Unknown paths fall back to Home */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </main>
 
       {/* Global Footer */}
