@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React from 'react';
 import { ArrowRight, Compass, Sparkles, Star, Flame, Zap } from 'lucide-react';
 
 interface HandpickedExperiencesSectionProps {
@@ -29,27 +29,6 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
   onViewAll,
   onOpenQuoteModal
 }) => {
-  const [isAutoScrolling, setIsAutoScrolling] = useState(true);
-  const [isHovered, setIsHovered] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [hasInteracted, setHasInteracted] = useState(false);
-
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const animationFrameRef = useRef<number | null>(null);
-  const lastScrollTimeRef = useRef<number>(Date.now());
-  const userInteractedTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  // Touch & drag gesture tracking refs
-  const dragStartXRef = useRef<number>(0);
-  const dragStartYRef = useRef<number>(0);
-  const dragStartTimeRef = useRef<number>(0);
-  const dragStartScrollLeftRef = useRef<number>(0);
-  const dragDistanceRef = useRef<number>(0);
-  const isPointerDownRef = useRef<boolean>(false);
-  const isHorizontalGestureRef = useRef<boolean | null>(null);
-
   // Curated featured destinations with authentic photography & highlights
   const featuredDestinations: FeaturedDestination[] = [
     {
@@ -170,218 +149,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
     }
   ];
 
-  const totalItemsCount = featuredDestinations.length + 1; // +1 for "View All" card
-
-  // Helper to calculate card stride (width + gap)
-  const getCardStride = useCallback(() => {
-    if (!scrollContainerRef.current) return 320;
-    const firstChild = scrollContainerRef.current.children[0] as HTMLElement | undefined;
-    if (firstChild) {
-      const cardWidth = firstChild.offsetWidth;
-      const computedGap = window.innerWidth >= 640 ? 24 : 20;
-      return cardWidth + computedGap;
-    }
-    return window.innerWidth >= 640 ? 334 : 300;
-  }, []);
-
-  // Update scroll progress & compute active card index with animation frame optimization
-  const updateScrollProgress = useCallback(() => {
-    if (!scrollContainerRef.current) return;
-    const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-    const maxScroll = scrollWidth - clientWidth;
-    if (maxScroll > 0) {
-      setScrollProgress((scrollLeft / maxScroll) * 100);
-    }
-    const stride = getCardStride();
-    const currIndex = Math.min(
-      totalItemsCount - 1,
-      Math.max(0, Math.round(scrollLeft / stride))
-    );
-    setActiveIndex(currIndex);
-  }, [getCardStride, totalItemsCount]);
-
-  // Smooth scroll to a specific card index
-  const scrollToCard = useCallback((index: number, behavior: ScrollBehavior = 'smooth') => {
-    if (!scrollContainerRef.current) return;
-    const boundedIndex = Math.max(0, Math.min(totalItemsCount - 1, index));
-    const container = scrollContainerRef.current;
-    const targetChild = container.children[boundedIndex] as HTMLElement | undefined;
-
-    if (targetChild) {
-      const targetOffset = targetChild.offsetLeft - container.offsetLeft - (window.innerWidth < 640 ? 4 : 0);
-      container.scrollTo({
-        left: Math.max(0, targetOffset),
-        behavior
-      });
-    } else {
-      const stride = getCardStride();
-      container.scrollTo({
-        left: boundedIndex * stride,
-        behavior
-      });
-    }
-    setActiveIndex(boundedIndex);
-  }, [getCardStride, totalItemsCount]);
-
-  // Automatic gentle continuous horizontal scrolling animation on desktop (pauses on interaction)
-  useEffect(() => {
-    const container = scrollContainerRef.current;
-    if (!container) return;
-
-    let isRunning = true;
-    const scrollSpeed = 0.55; // Gentle sub-pixel increment per frame
-
-    const autoScrollLoop = () => {
-      if (isRunning && isAutoScrolling && !isHovered && !isDragging && !hasInteracted && container) {
-        const currentScroll = container.scrollLeft;
-        const maxScroll = container.scrollWidth - container.clientWidth;
-
-        if (currentScroll >= maxScroll - 1) {
-          container.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          container.scrollLeft += scrollSpeed;
-        }
-        updateScrollProgress();
-      }
-      animationFrameRef.current = requestAnimationFrame(autoScrollLoop);
-    };
-
-    animationFrameRef.current = requestAnimationFrame(autoScrollLoop);
-
-    return () => {
-      isRunning = false;
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
-    };
-  }, [isAutoScrolling, isHovered, isDragging, hasInteracted, updateScrollProgress]);
-
-  // Handle user manual scroll / throttle progress updates
-  const handleUserScroll = () => {
-    lastScrollTimeRef.current = Date.now();
-    updateScrollProgress();
-  };
-
-  // Scroll manually via navigation buttons
-  const handleManualScroll = (direction: 'left' | 'right') => {
-    if (!scrollContainerRef.current) return;
-    setHasInteracted(true);
-    const targetIndex = direction === 'left' ? activeIndex - 1 : activeIndex + 1;
-    scrollToCard(targetIndex, 'smooth');
-
-    if (userInteractedTimeoutRef.current) clearTimeout(userInteractedTimeoutRef.current);
-    userInteractedTimeoutRef.current = setTimeout(() => {
-      setHasInteracted(false);
-    }, 6000);
-  };
-
-  // Native Mobile Touch Handlers - lets browser GPU handle smooth 120Hz/60Hz physics
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setHasInteracted(true);
-    setIsDragging(true);
-    const touch = e.touches[0];
-    dragStartXRef.current = touch.clientX;
-    dragStartYRef.current = touch.clientY;
-    dragStartTimeRef.current = Date.now();
-    dragDistanceRef.current = 0;
-
-    if (userInteractedTimeoutRef.current) clearTimeout(userInteractedTimeoutRef.current);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    const touch = e.touches[0];
-    const deltaX = Math.abs(touch.clientX - dragStartXRef.current);
-    dragDistanceRef.current = deltaX;
-  };
-
-  const handleTouchEnd = () => {
-    setIsDragging(false);
-
-    if (userInteractedTimeoutRef.current) clearTimeout(userInteractedTimeoutRef.current);
-    userInteractedTimeoutRef.current = setTimeout(() => {
-      setHasInteracted(false);
-    }, 6000);
-  };
-
-  // Desktop Mouse Drag Momentum Handlers
-  const mouseVelocityRef = useRef<number>(0);
-  const lastMouseXRef = useRef<number>(0);
-  const lastMouseTimeRef = useRef<number>(0);
-  const momentumRafRef = useRef<number | null>(null);
-
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (!scrollContainerRef.current) return;
-    if (momentumRafRef.current) cancelAnimationFrame(momentumRafRef.current);
-
-    dragStartXRef.current = e.clientX;
-    lastMouseXRef.current = e.clientX;
-    lastMouseTimeRef.current = performance.now();
-    mouseVelocityRef.current = 0;
-    dragStartScrollLeftRef.current = scrollContainerRef.current.scrollLeft;
-    dragDistanceRef.current = 0;
-    isPointerDownRef.current = true;
-    setIsDragging(true);
-    setHasInteracted(true);
-
-    if (userInteractedTimeoutRef.current) clearTimeout(userInteractedTimeoutRef.current);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isPointerDownRef.current || !scrollContainerRef.current) return;
-    e.preventDefault();
-    const now = performance.now();
-    const dt = Math.max(1, now - lastMouseTimeRef.current);
-    const currentX = e.clientX;
-    const deltaX = currentX - lastMouseXRef.current;
-    
-    mouseVelocityRef.current = deltaX / dt;
-    lastMouseXRef.current = currentX;
-    lastMouseTimeRef.current = now;
-
-    dragDistanceRef.current = Math.abs(currentX - dragStartXRef.current);
-    scrollContainerRef.current.scrollLeft = dragStartScrollLeftRef.current - (currentX - dragStartXRef.current);
-    updateScrollProgress();
-  };
-
-  const applyMomentumInertia = () => {
-    const container = scrollContainerRef.current;
-    if (!container) return;
-
-    let vel = mouseVelocityRef.current * 16; // velocity per frame
-    const friction = 0.94;
-
-    const step = () => {
-      if (Math.abs(vel) > 0.4 && container) {
-        container.scrollLeft -= vel;
-        vel *= friction;
-        updateScrollProgress();
-        momentumRafRef.current = requestAnimationFrame(step);
-      } else {
-        updateScrollProgress();
-      }
-    };
-    momentumRafRef.current = requestAnimationFrame(step);
-  };
-
-  const handleMouseUpOrLeave = (e: React.MouseEvent) => {
-    if (!isPointerDownRef.current) return;
-    isPointerDownRef.current = false;
-    setIsDragging(false);
-
-    if (dragDistanceRef.current > 8 && Math.abs(mouseVelocityRef.current) > 0.15) {
-      applyMomentumInertia();
-    }
-
-    if (userInteractedTimeoutRef.current) clearTimeout(userInteractedTimeoutRef.current);
-    userInteractedTimeoutRef.current = setTimeout(() => {
-      setHasInteracted(false);
-    }, 6000);
-  };
-
   const handleCardClick = (dest: FeaturedDestination) => {
-    // Suppress card click if user was dragging/swiping
-    if (dragDistanceRef.current > 10) return;
-
     if (onSelectDestination) {
       onSelectDestination(dest.slug);
     } else if (onSelectCategory) {
@@ -389,11 +157,159 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
     }
   };
 
+  // Render a single destination card
+  const renderCard = (dest: FeaturedDestination, indexSuffix: string | number) => (
+    <div
+      key={`${dest.id}-${indexSuffix}`}
+      id={`featured-exp-${dest.slug}-${indexSuffix}`}
+      onClick={() => handleCardClick(dest)}
+      className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] hover:scale-[1.02] transform will-change-transform transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 border border-gray-200/90 hover:border-orange-300 select-none"
+    >
+      {/* Photography Background with Zoom Hover & Fallback */}
+      <img
+        src={dest.image}
+        alt={`${dest.name} - ${dest.tagline}`}
+        className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out pointer-events-none"
+        loading="lazy"
+        decoding="async"
+        referrerPolicy="no-referrer"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          if (dest.id === 'uttarakhand') {
+            target.src = 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=75&w=600&auto=format&fit=crop';
+          } else if (dest.id === 'meghalaya') {
+            target.src = 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=75&w=600&auto=format&fit=crop';
+          } else {
+            target.src = 'https://images.unsplash.com/photo-1506461883276-594a12b11cf3?q=75&w=600&auto=format&fit=crop';
+          }
+        }}
+      />
+
+      {/* Multi-Stop Dark Gradient for Pristine Typography Contrast */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 pointer-events-none" />
+
+      {/* Top Row: Trending Badge & Rating Badge */}
+      <div className="relative z-10 flex items-center justify-between gap-1.5 pointer-events-none">
+        <div>
+          {dest.isTrending && (
+            <span className="inline-flex items-center gap-1 px-2.5 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-[10.5px] font-extrabold uppercase tracking-wider text-white bg-[#FF6B00] shadow-md border border-orange-400/80 whitespace-nowrap leading-none">
+              <Flame className="w-3 h-3 text-white fill-white shrink-0" />
+              <span>Trending</span>
+            </span>
+          )}
+        </div>
+        
+        {/* Star Rating Badge with White Background, Yellow Star & Black Text */}
+        <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] sm:text-[11px] font-bold bg-white text-gray-900 shadow-md border border-white/90 backdrop-blur-md whitespace-nowrap leading-none">
+          <Star className="w-3 h-3 fill-amber-400 text-amber-400 shrink-0" />
+          <span className="text-black font-extrabold">{dest.rating}</span>
+          <span className="text-[9px] font-bold text-gray-500">/5.0</span>
+        </div>
+      </div>
+
+      {/* Bottom Row: Destination Title, Duration, Accent, and Tagline */}
+      <div className="relative z-10 text-white">
+        <div className="flex items-baseline justify-between gap-2">
+          <h3 className="font-serif text-2xl sm:text-[26px] lg:text-[26px] font-bold text-white tracking-tight leading-tight group-hover:text-orange-200 transition-colors">
+            {dest.name}
+          </h3>
+          <div className="text-right shrink-0">
+            <span className="text-[11px] sm:text-xs text-white/80 font-medium bg-black/30 backdrop-blur-xs px-2.5 py-1 rounded-full border border-white/15 inline-block leading-none">
+              {dest.duration}
+            </span>
+          </div>
+        </div>
+
+        {/* Warm Orange Accent Line */}
+        <div className="w-8 h-1 bg-[#FF6B00] rounded-full my-2.5 group-hover:w-14 transition-all duration-300" />
+
+        <p className="text-xs sm:text-[13px] text-white/85 line-clamp-2 leading-relaxed font-normal">
+          {dest.tagline}
+        </p>
+
+        {/* Actions Row: Quick Book + Discover Link */}
+        <div className="flex items-center justify-between gap-2 mt-3 pt-3 border-t border-white/15">
+          <button
+            type="button"
+            id={`quick-book-featured-${dest.slug}-${indexSuffix}`}
+            onClick={(e) => {
+              e.stopPropagation();
+              onOpenQuoteModal?.(
+                `Quick booking enquiry for ${dest.name} (${dest.duration}). Please share custom pricing and hotel options.`,
+                dest.name
+              );
+            }}
+            className="px-2.5 sm:px-3 py-1.5 rounded-lg bg-[#FF6B00] hover:bg-[#e66000] active:scale-95 text-white font-bold text-[10px] sm:text-[11px] uppercase tracking-wider shadow-sm flex items-center gap-1 transition-all cursor-pointer pointer-events-auto"
+          >
+            <Zap className="w-3 h-3 fill-white text-white shrink-0" />
+            <span>Quick Book</span>
+          </button>
+
+          <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-white/90 group-hover:text-orange-300 transition-colors">
+            <span>Explore</span>
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform stroke-[2.2]" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  // Render View All CTA card
+  const renderViewAllCard = (indexSuffix: string | number) => (
+    <div
+      key={`view-all-${indexSuffix}`}
+      id={`featured-exp-view-all-${indexSuffix}`}
+      onClick={() => onViewAll()}
+      className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 bg-[#071322] border border-slate-800 hover:border-orange-500/50 select-none"
+    >
+      {/* Atmospheric Background Image with Deep Navy Overlay */}
+      <img
+        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop"
+        alt="View all destinations"
+        className="absolute inset-0 w-full h-full object-cover opacity-35 group-hover:scale-108 transition-transform duration-700 ease-out pointer-events-none"
+        loading="lazy"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#071322] via-[#071322]/85 to-[#071322]/50 pointer-events-none" />
+
+      {/* Top Row: Badges with responsive spacing */}
+      <div className="relative z-10 flex items-center justify-between gap-1.5 pointer-events-none">
+        <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] sm:text-[10.5px] font-bold uppercase tracking-wider text-white/95 bg-white/15 backdrop-blur-md border border-white/20 shadow-xs whitespace-nowrap leading-none">
+          ALL REGIONS
+        </span>
+        <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-wide text-orange-400 bg-orange-500/15 border border-orange-500/25 px-2.5 py-1 rounded-full whitespace-nowrap">
+          10+ DESTINATIONS
+        </span>
+      </div>
+
+      {/* Middle/Bottom Call-To-Action */}
+      <div className="relative z-10 text-white pointer-events-none">
+        <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/10 border border-white/20 group-hover:bg-[#FF6B00] group-hover:border-[#FF6B00] flex items-center justify-center text-white mb-3.5 transition-all duration-300 shadow-md">
+          <Compass className="w-5 h-5 group-hover:rotate-45 transition-transform stroke-[2]" />
+        </div>
+
+        <h3 className="font-serif text-xl sm:text-2xl font-bold text-white tracking-tight leading-tight">
+          View All Destinations
+        </h3>
+
+        <div className="w-8 h-1 bg-[#FF6B00] rounded-full my-2.5 group-hover:w-14 transition-all duration-300" />
+
+        <p className="text-xs sm:text-[13px] text-white/75 leading-relaxed font-normal mb-3.5">
+          Browse our full catalog of handcrafted holidays across North, South, West & Northeast India.
+        </p>
+
+        <span className="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-orange-400 group-hover:text-white transition-colors">
+          <span>Browse All Trails</span>
+          <ArrowRight className="w-3.5 h-3.5 stroke-[2.5] group-hover:translate-x-1 transition-transform" />
+        </span>
+      </div>
+    </div>
+  );
+
   return (
     <section id="handpicked-experiences-section" className="w-full py-16 sm:py-20 lg:py-24 bg-white border-b border-gray-100 overflow-hidden">
       <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         
-        {/* Section Header & Controls */}
+        {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-6">
           <div>
             <div className="flex items-center gap-2 mb-2.5">
@@ -411,217 +327,36 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
               <div className="w-10 h-[1.5px] bg-orange-400 rounded-full" />
               <div className="w-1.5 h-1.5 rounded-full bg-[#FF6B00]" />
               <p className="text-sm text-slate-500 font-sans-ui ml-1">
-                Scroll to discover curated holidays across India
+                Hover to pause and explore curated holidays across India
               </p>
             </div>
           </div>
         </div>
 
-        {/* Horizontal Swipable Rail Wrapper */}
+        {/* Seamless Pure CSS Infinite Auto-Scroll Wrapper with Edge Fade Mask */}
         <div 
-          className="relative"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          className="relative w-full overflow-hidden mask-fade-edges py-2"
+          style={{
+            maskImage: 'linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%)'
+          }}
         >
-          {/* Swipable / Scrollable Container */}
-          <div
-            ref={scrollContainerRef}
-            onScroll={handleUserScroll}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-            onTouchCancel={handleTouchEnd}
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={handleMouseUpOrLeave}
-            onMouseLeave={handleMouseUpOrLeave}
-            className={`flex gap-4 sm:gap-6 overflow-x-auto pb-4 pt-1 px-1 select-none snap-x snap-proximity overscroll-x-contain ${
-              isDragging ? 'cursor-grabbing' : 'cursor-grab'
-            } [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden`}
+          {/* Duplicated Track (Set 1 & Set 2) for Seamless 0% to -50% CSS Translate Loop */}
+          <div 
+            className="flex gap-4 sm:gap-6 animate-infinite-scroll hover:[animation-play-state:paused] py-2 w-max"
             style={{
-              WebkitOverflowScrolling: 'touch',
-              overscrollBehaviorX: 'contain',
-              scrollBehavior: isDragging ? 'auto' : 'smooth'
+              animationDuration: '34s',
+              animationTimingFunction: 'linear',
+              animationIterationCount: 'infinite'
             }}
           >
-            {featuredDestinations.map((dest) => (
-              <div
-                key={dest.id}
-                id={`featured-exp-${dest.slug}`}
-                onClick={() => handleCardClick(dest)}
-                className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] hover:scale-[1.02] transform will-change-transform transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 border border-gray-200/90 hover:border-orange-300 snap-start"
-              >
-                {/* Photography Background with Zoom Hover & Fallback */}
-                <img
-                  src={dest.image}
-                  alt={`${dest.name} - ${dest.tagline}`}
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out pointer-events-none"
-                  loading="lazy"
-                  decoding="async"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    if (dest.id === 'uttarakhand') {
-                      target.src = 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=75&w=600&auto=format&fit=crop';
-                    } else if (dest.id === 'meghalaya') {
-                      target.src = 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=75&w=600&auto=format&fit=crop';
-                    } else {
-                      target.src = 'https://images.unsplash.com/photo-1506461883276-594a12b11cf3?q=75&w=600&auto=format&fit=crop';
-                    }
-                  }}
-                />
+            {/* First Set of Cards */}
+            {featuredDestinations.map((dest) => renderCard(dest, 'set1'))}
+            {renderViewAllCard('set1')}
 
-                {/* Multi-Stop Dark Gradient for Pristine Typography Contrast */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 pointer-events-none" />
-
-                {/* Top Row: Trending Badge & Rating Badge */}
-                <div className="relative z-10 flex items-center justify-between gap-1.5 pointer-events-none">
-                  <div>
-                    {dest.isTrending && (
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-[10.5px] font-extrabold uppercase tracking-wider text-white bg-[#FF6B00] shadow-md border border-orange-400/80 whitespace-nowrap leading-none">
-                        <Flame className="w-3 h-3 text-white fill-white shrink-0" />
-                        <span>Trending</span>
-                      </span>
-                    )}
-                  </div>
-                  
-                  {/* Star Rating Badge with White Background, Yellow Star & Black Text */}
-                  <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] sm:text-[11px] font-bold bg-white text-gray-900 shadow-md border border-white/90 backdrop-blur-md whitespace-nowrap leading-none">
-                    <Star className="w-3 h-3 fill-amber-400 text-amber-400 shrink-0" />
-                    <span className="text-black font-extrabold">{dest.rating}</span>
-                    <span className="text-[9px] font-bold text-gray-500">/5.0</span>
-                  </div>
-                </div>
-
-                {/* Bottom Row: Destination Title, Duration, Accent, and Tagline */}
-                <div className="relative z-10 text-white">
-                  <div className="flex items-baseline justify-between gap-2">
-                    <h3 className="font-serif text-2xl sm:text-[26px] lg:text-[26px] font-bold text-white tracking-tight leading-tight group-hover:text-orange-200 transition-colors">
-                      {dest.name}
-                    </h3>
-                    <div className="text-right shrink-0">
-                      <span className="text-[11px] sm:text-xs text-white/80 font-medium bg-black/30 backdrop-blur-xs px-2.5 py-1 rounded-full border border-white/15 inline-block leading-none">
-                        {dest.duration}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Warm Orange Accent Line */}
-                  <div className="w-8 h-1 bg-[#FF6B00] rounded-full my-2.5 group-hover:w-14 transition-all duration-300" />
-
-                  <p className="text-xs sm:text-[13px] text-white/85 line-clamp-2 leading-relaxed font-normal">
-                    {dest.tagline}
-                  </p>
-
-                  {/* Actions Row: Quick Book + Discover Link */}
-                  <div className="flex items-center justify-between gap-2 mt-3 pt-3 border-t border-white/15">
-                    <button
-                      type="button"
-                      id={`quick-book-featured-${dest.slug}`}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onOpenQuoteModal?.(
-                          `Quick booking enquiry for ${dest.name} (${dest.duration}). Please share custom pricing and hotel options.`,
-                          dest.name
-                        );
-                      }}
-                      className="px-2.5 sm:px-3 py-1.5 rounded-lg bg-[#FF6B00] hover:bg-[#e66000] active:scale-95 text-white font-bold text-[10px] sm:text-[11px] uppercase tracking-wider shadow-sm flex items-center gap-1 transition-all cursor-pointer pointer-events-auto"
-                    >
-                      <Zap className="w-3 h-3 fill-white text-white shrink-0" />
-                      <span>Quick Book</span>
-                    </button>
-
-                    <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-white/90 group-hover:text-orange-300 transition-colors">
-                      <span>Explore</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform stroke-[2.2]" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-
-            {/* Final Card: View All Destinations CTA */}
-            <div
-              id="featured-exp-view-all"
-              onClick={() => {
-                if (dragDistanceRef.current > 10) return;
-                onViewAll();
-              }}
-              className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 bg-[#071322] border border-slate-800 hover:border-orange-500/50 snap-start"
-            >
-              {/* Atmospheric Background Image with Deep Navy Overlay */}
-              <img
-                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop"
-                alt="View all destinations"
-                className="absolute inset-0 w-full h-full object-cover opacity-35 group-hover:scale-108 transition-transform duration-700 ease-out pointer-events-none"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#071322] via-[#071322]/85 to-[#071322]/50 pointer-events-none" />
-
-              {/* Top Row: Badges with responsive spacing */}
-              <div className="relative z-10 flex items-center justify-between gap-1.5 pointer-events-none">
-                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] sm:text-[10.5px] font-bold uppercase tracking-wider text-white/95 bg-white/15 backdrop-blur-md border border-white/20 shadow-xs whitespace-nowrap leading-none">
-                  ALL REGIONS
-                </span>
-                <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-wide text-orange-400 bg-orange-500/15 border border-orange-500/25 px-2.5 py-1 rounded-full whitespace-nowrap">
-                  10+ DESTINATIONS
-                </span>
-              </div>
-
-              {/* Middle/Bottom Call-To-Action */}
-              <div className="relative z-10 text-white pointer-events-none">
-                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/10 border border-white/20 group-hover:bg-[#FF6B00] group-hover:border-[#FF6B00] flex items-center justify-center text-white mb-3.5 transition-all duration-300 shadow-md">
-                  <Compass className="w-5 h-5 group-hover:rotate-45 transition-transform stroke-[2]" />
-                </div>
-
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-white tracking-tight leading-tight">
-                  View All Destinations
-                </h3>
-
-                <div className="w-8 h-1 bg-[#FF6B00] rounded-full my-2.5 group-hover:w-14 transition-all duration-300" />
-
-                <p className="text-xs sm:text-[13px] text-white/75 leading-relaxed font-normal mb-3.5">
-                  Browse our full catalog of handcrafted holidays across North, South, West & Northeast India.
-                </p>
-
-                <span className="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-orange-400 group-hover:text-white transition-colors">
-                  <span>Browse All Trails</span>
-                  <ArrowRight className="w-3.5 h-3.5 stroke-[2.5] group-hover:translate-x-1 transition-transform" />
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Pagination & Indicator Bar */}
-          <div className="mt-4 flex items-center justify-between gap-3 px-1">
-            {/* Page Indicator Dots */}
-            <div className="flex items-center gap-1.5 sm:gap-2">
-              {Array.from({ length: totalItemsCount }).map((_, idx) => (
-                <button
-                  key={`dot-${idx}`}
-                  onClick={() => scrollToCard(idx)}
-                  aria-label={`Go to slide ${idx + 1}`}
-                  className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                    activeIndex === idx
-                      ? 'w-6 bg-[#FF6B00]'
-                      : 'w-1.5 bg-gray-300 hover:bg-gray-400'
-                  }`}
-                />
-              ))}
-              <span className="text-[10.5px] font-bold text-slate-500 ml-1.5 tracking-wider">
-                {String(activeIndex + 1).padStart(2, '0')} / {String(totalItemsCount).padStart(2, '0')}
-              </span>
-            </div>
-
-            {/* Subtle Progress Bar */}
-            <div className="hidden sm:flex items-center gap-3">
-              <div className="w-32 h-1 bg-gray-100 rounded-full overflow-hidden">
-                <div 
-                  className="h-full bg-gradient-to-r from-orange-400 to-[#FF6B00] rounded-full transition-all duration-150"
-                  style={{ width: `${Math.max(10, scrollProgress)}%` }}
-                />
-              </div>
-            </div>
+            {/* Second Set of Cards (Exact Duplicate for seamless continuous looping) */}
+            {featuredDestinations.map((dest) => renderCard(dest, 'set2'))}
+            {renderViewAllCard('set2')}
           </div>
         </div>
 

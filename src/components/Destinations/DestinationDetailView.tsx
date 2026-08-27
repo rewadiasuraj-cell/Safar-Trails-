@@ -452,3 +452,5 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
     </div>
   );
 };
+
+export default DestinationDetailView;

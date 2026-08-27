@@ -259,3 +259,5 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
     </article>
   );
 };
+
+export default TravelGuideArticleView;

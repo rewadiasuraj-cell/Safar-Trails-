@@ -10,6 +10,9 @@ import { destinationsData } from './data/destinationsData';
 import { guidesData } from './data/guidesData';
 import { Package, Destination, TravelGuide } from './types';
 
+import { DestinationDetailView } from './components/Destinations/DestinationDetailView';
+import { TravelGuideArticleView } from './components/TravelGuides/TravelGuideArticleView';
+
 // Code-split below-the-fold sections to eliminate unused JS on initial mobile paint
 const AITripPlanner = lazy(() => import('./components/AITripPlanner/AITripPlanner').then(m => ({ default: m.AITripPlanner })));
 const DestinationsSection = lazy(() => import('./components/Destinations/DestinationsSection').then(m => ({ default: m.DestinationsSection })));
@@ -21,10 +24,6 @@ const TrustSection = lazy(() => import('./components/TrustSection').then(m => ({
 const ReviewsSection = lazy(() => import('./components/ReviewsSection').then(m => ({ default: m.ReviewsSection })));
 const FAQSection = lazy(() => import('./components/FAQSection').then(m => ({ default: m.FAQSection })));
 const FinalCTASection = lazy(() => import('./components/FinalCTASection').then(m => ({ default: m.FinalCTASection })));
-
-// Code-split route detail views
-const DestinationDetailView = lazy(() => import('./components/Destinations/DestinationDetailView').then(m => ({ default: m.DestinationDetailView })));
-const TravelGuideArticleView = lazy(() => import('./components/TravelGuides/TravelGuideArticleView').then(m => ({ default: m.TravelGuideArticleView })));
 
 // Code-split modals so their JS is only downloaded when opened by user
 const PackageDetailModal = lazy(() => import('./components/Packages/PackageDetailModal').then(m => ({ default: m.PackageDetailModal })));
