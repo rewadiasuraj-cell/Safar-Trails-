@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://safartrails.co.in/sitemap.xml
+Sitemap: https://safartrails.com/sitemap.xml

@@ -262,10 +262,10 @@ export const AITripResultView: React.FC<AITripResultViewProps> = ({
         {/* Highlights & Inclusions Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
           <div className="bg-[#FAF9F6] rounded-2xl p-5 border border-gray-200">
-            <h4 className="text-xs font-bold text-black uppercase tracking-widest mb-3 flex items-center gap-2">
+            <h3 className="text-xs font-bold text-black uppercase tracking-widest mb-3 flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-600" />
               <span>Standard Package Inclusions</span>
-            </h4>
+            </h3>
             <ul className="space-y-2 text-xs sm:text-sm text-gray-600 font-normal">
               {plan.includedHighlights.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-2">
@@ -277,10 +277,10 @@ export const AITripResultView: React.FC<AITripResultViewProps> = ({
           </div>
 
           <div className="bg-[#FAF9F6] rounded-2xl p-5 border border-gray-200">
-            <h4 className="text-xs font-bold text-black uppercase tracking-widest mb-3 flex items-center gap-2">
+            <h3 className="text-xs font-bold text-black uppercase tracking-widest mb-3 flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-black" />
               <span>Specialist Tips & Packing Advice</span>
-            </h4>
+            </h3>
             <ul className="space-y-2 text-xs sm:text-sm text-gray-600 font-normal">
               {plan.expertTips.map((tip, idx) => (
                 <li key={idx} className="flex items-start gap-2">
@@ -298,9 +298,9 @@ export const AITripResultView: React.FC<AITripResultViewProps> = ({
             <div className="text-[10px] uppercase font-bold text-gray-400 tracking-widest mb-1">
               Ready to Lock Your Dates?
             </div>
-            <h4 className="text-xl sm:text-2xl font-serif font-bold text-white">
+            <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">
               Get an exact finalized quote with hotel room photos
-            </h4>
+            </h3>
             <p className="text-xs sm:text-sm text-gray-400 mt-1 max-w-xl font-normal">
               A dedicated SafarTrails destination specialist will review your plan, verify live room availability, and assist with customization on WhatsApp.
             </p>

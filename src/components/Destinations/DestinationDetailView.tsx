@@ -121,10 +121,6 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
             {destination.name}
           </h1>
 
-          <p className="text-sm sm:text-lg text-gray-200 max-w-3xl leading-relaxed font-normal">
-            {destination.tagline}
-          </p>
-
           {/* Quick Stats Bar */}
           <div className="pt-2 flex flex-wrap items-center gap-4 sm:gap-8 text-xs text-gray-300">
             <div className="flex items-center gap-1.5">
@@ -225,7 +221,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                       <img src={att.image} alt={att.name} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                     </div>
                     <div className="p-4 space-y-1">
-                      <h4 className="font-serif font-bold text-base text-black">{att.name}</h4>
+                      <h3 className="font-serif font-bold text-base text-black">{att.name}</h3>
                       <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed font-normal">{att.description}</p>
                     </div>
                   </div>
@@ -306,21 +302,32 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                         </span>
                       </div>
                       <div className="p-4 space-y-2">
-                        <h4 className="font-serif font-bold text-base text-black line-clamp-1">{pkg.title}</h4>
+                        <h3 className="font-serif font-bold text-base text-black line-clamp-1">{pkg.title}</h3>
                         <p className="text-xs text-gray-500 line-clamp-2 font-normal">{pkg.overview}</p>
-                        <div className="flex items-center justify-between pt-2 border-t border-gray-100">
-                          <div>
-                            <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 block">Starting from</span>
-                            <span className="text-xs font-extrabold text-black">
-                              ₹{pkg.startingPrice.toLocaleString('en-IN')}/person
-                            </span>
+                        <div className="pt-2 border-t border-gray-100 space-y-3">
+                          <div className="flex items-baseline justify-between">
+                            <div>
+                              <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 block">Starting from</span>
+                              <span className="text-sm font-extrabold text-black">
+                                ₹{pkg.startingPrice.toLocaleString('en-IN')}/person
+                              </span>
+                            </div>
                           </div>
-                          <button
-                            onClick={() => onSelectPackage(pkg)}
-                            className="px-3 py-1.5 rounded-xl bg-black hover:bg-gray-800 text-white text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
-                          >
-                            View Itinerary
-                          </button>
+
+                          <div className="grid grid-cols-2 gap-2">
+                            <button
+                              onClick={() => onSelectPackage(pkg)}
+                              className="py-2 px-2.5 rounded-xl border border-gray-200 hover:border-black text-black font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer text-center"
+                            >
+                              More Info
+                            </button>
+                            <button
+                              onClick={() => onOpenQuoteModal(`Booking Inquiry: ${pkg.title} (${pkg.durationDays}D/${pkg.durationNights}N)`, destination.name)}
+                              className="py-2 px-2.5 rounded-xl bg-[#FF6B00] hover:bg-[#e05e00] text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-2xs cursor-pointer text-center"
+                            >
+                              Book Now
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>

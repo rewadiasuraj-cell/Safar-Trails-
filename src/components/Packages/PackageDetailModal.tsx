@@ -216,7 +216,7 @@ export const PackageDetailModal: React.FC<PackageDetailModalProps> = ({
                           {day.dayNumber}
                         </span>
                         <div>
-                          <h4 className="text-sm font-serif font-bold text-black">{day.title}</h4>
+                          <h3 className="text-sm font-serif font-bold text-black">{day.title}</h3>
                           <span className="text-xs text-gray-500 font-normal">{day.location}</span>
                         </div>
                       </div>
@@ -255,10 +255,10 @@ export const PackageDetailModal: React.FC<PackageDetailModalProps> = ({
           {activeTab === 'inclusions' && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="bg-emerald-50/40 p-5 rounded-2xl border border-emerald-200">
-                <h4 className="text-xs font-bold uppercase tracking-widest text-emerald-900 mb-3 flex items-center gap-2">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-emerald-900 mb-3 flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                   <span>What’s Included</span>
-                </h4>
+                </h3>
                 <ul className="space-y-2 text-xs sm:text-sm text-gray-700">
                   {packageData.inclusions.map((inc, i) => (
                     <li key={i} className="flex items-start gap-2">
@@ -270,10 +270,10 @@ export const PackageDetailModal: React.FC<PackageDetailModalProps> = ({
               </div>
 
               <div className="bg-red-50/30 p-5 rounded-2xl border border-red-200">
-                <h4 className="text-xs font-bold uppercase tracking-widest text-red-900 mb-3 flex items-center gap-2">
+                <h3 className="text-xs font-bold uppercase tracking-widest text-red-900 mb-3 flex items-center gap-2">
                   <XCircle className="w-4 h-4 text-red-500" />
                   <span>What’s Excluded</span>
-                </h4>
+                </h3>
                 <ul className="space-y-2 text-xs sm:text-sm text-gray-700">
                   {packageData.exclusions.map((exc, i) => (
                     <li key={i} className="flex items-start gap-2">
@@ -289,13 +289,13 @@ export const PackageDetailModal: React.FC<PackageDetailModalProps> = ({
           {activeTab === 'stays' && (
             <div className="space-y-4 text-xs sm:text-sm text-gray-700">
               <div className="p-4 rounded-2xl bg-[#FAF9F6] border border-gray-200">
-                <h4 className="font-serif font-bold text-black mb-1">Handpicked Stays & Houseboats</h4>
+                <h3 className="font-serif font-bold text-black mb-1">Handpicked Stays & Houseboats</h3>
                 <p className="text-gray-600 leading-relaxed font-normal">
                   We partner directly with boutique properties rated 4.5+ on cleanliness and hospitality. Central heating / electric blankets provided in high altitude mountain stays.
                 </p>
               </div>
               <div className="p-4 rounded-2xl bg-[#FAF9F6] border border-gray-200">
-                <h4 className="font-serif font-bold text-black mb-1">Dedicated Chauffeur & Sanitized Fleet</h4>
+                <h3 className="font-serif font-bold text-black mb-1">Dedicated Chauffeur & Sanitized Fleet</h3>
                 <p className="text-gray-600 leading-relaxed font-normal">
                   Private commercial tourist cab with experienced mountain driver. Includes all fuel, toll taxes, parking fees, driver night allowances, and state permits.
                 </p>

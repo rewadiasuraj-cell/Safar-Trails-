@@ -556,5 +556,74 @@ export const destinationsData: Destination[] = [
     ],
     seoTitle: 'Meghalaya & Northeast Tour Packages 2026 | Dawki, Cherrapunji & Kaziranga',
     seoDescription: 'Handcrafted Northeast India holidays with Shillong cloud hills, Dawki crystal boating, living root bridges, and Kaziranga wildlife safaris.'
+  },
+  {
+    slug: 'ladakh',
+    name: 'Ladakh',
+    tagline: 'Land of High Passes — Pangong Tso, Nubra Dunes & Ancient Monasteries',
+    state: 'UT of Ladakh',
+    heroImage: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=1600&auto=format&fit=crop',
+    cardImage: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=800&auto=format&fit=crop',
+    shortDescription: 'Witness the surreal color shifts of Pangong Tso, ride double-humped Bactrian camels in Nubra Valley, cross Khardung La pass, and find solace in Hemis & Thiksey monasteries.',
+    fullOverview: 'Ladakh is a realm of stark, awe-inspiring Himalayan desert beauty. Soaring high above the clouds at 11,500+ feet, it offers turquoise glacial lakes, high-altitude motorable passes, centuries-old Buddhist gompas, and starlit night skies like nowhere else on Earth.',
+    bestTime: 'May to September (Warm sunny days & clear high-altitude mountain passes)',
+    temperatureRange: 'Summer: 10°C - 25°C | Night: 2°C - 10°C',
+    startingPrice: 22999,
+    idealDays: '6 to 8 Days',
+    rating: 4.9,
+    reviewCount: 1120,
+    isTrending: true,
+    highlights: [
+      'Stunning sunrise and sunset by the turquoise waters of Pangong Lake',
+      'Drive across Khardung La Pass (17,982 ft) — one of the highest motorable roads in the world',
+      'Double-humped Bactrian camel safari in Hunder White Sand Dunes, Nubra Valley',
+      'Spiritual peace at Thiksey and Hemis Gompas with traditional butter lamp lighting',
+      'Defy gravity at Magnetic Hill and witness Indus & Zanskar River Sangam'
+    ],
+    howToReach: {
+      air: 'Kushok Bakula Rimpochee Airport, Leh (IXL) with daily flights from Delhi, Mumbai, Srinagar, and Chandigarh.',
+      rail: 'Jammu Tawi (JAT) or Chandigarh (CDG) stations, followed by scenic road drive.',
+      road: 'Manali-Leh Highway (via Atal Tunnel) or Srinagar-Leh Highway (via Zoji La), open from late May to October.'
+    },
+    topAttractions: [
+      {
+        name: 'Pangong Tso & Spangmik',
+        description: 'World’s highest saltwater lake spanning India and Tibet, shifting from cobalt blue to emerald green.',
+        image: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=600&auto=format&fit=crop'
+      },
+      {
+        name: 'Nubra Valley & Hunder Dunes',
+        description: 'Cold desert valley flanked by jagged snow peaks, home to the Diskit Monastery Buddha and Bactrian camels.',
+        image: 'https://images.unsplash.com/photo-1506461883276-594a12b11cf3?q=80&w=600&auto=format&fit=crop'
+      }
+    ],
+    stayCategories: [
+      {
+        category: 'Deluxe Swiss Cottage Camps (Pangong & Nubra)',
+        priceRange: '₹3,800 – ₹8,500 / night (with buffet dinner)',
+        recommendation: 'Insulated luxury tents with attached washrooms and private sit-outs under the Milky Way.'
+      },
+      {
+        category: 'Heritage Boutique Hotels (Leh Town)',
+        priceRange: '₹4,500 – ₹12,000 / night',
+        recommendation: 'Ladakhi mud-brick architecture equipped with oxygen backup, heated floors, and mountain view balconies.'
+      }
+    ],
+    travelTips: [
+      'Mandatory 24-48 hours rest and acclimatization in Leh on Day 1 to prevent Acute Mountain Sickness (AMS). Drink plenty of water.',
+      'Protected Area Permits (PAP / Inner Line Permits) for Nubra, Pangong, and Tso Moriri are arranged automatically by SafarTrails.'
+    ],
+    faqs: [
+      {
+        question: 'Do I need special permits for Pangong and Nubra Valley?',
+        answer: 'Yes, all domestic and international travelers require Inner Line Permits (ILP), which are completely arranged and included in all SafarTrails Ladakh packages.'
+      },
+      {
+        question: 'Is oxygen cylinder support provided in the cab?',
+        answer: 'Yes! All SafarTrails private vehicles touring Nubra and Pangong carry emergency medical portable oxygen cans and first aid kits.'
+      }
+    ],
+    seoTitle: 'Ladakh Tour Packages 2026 | Pangong Lake, Nubra Valley & Leh Monasteries',
+    seoDescription: 'Handcrafted Leh Ladakh tour packages. Complete with acclimatization care, Nubra luxury camps, Pangong Tso stay, and Khardung La pass drive.'
   }
 ];

@@ -4,7 +4,7 @@ export const packagesData: Package[] = [
   {
     id: 'pkg-kashmir-escape',
     slug: 'kashmir-escape-houseboat-bliss',
-    title: 'Kashmir Escape & Houseboat Bliss',
+    title: 'Kashmir: Srinagar, Gulmarg & Houseboat 6D/5N Holiday Tour',
     destination: 'Kashmir',
     state: 'Jammu & Kashmir',
     durationDays: 6,
@@ -133,7 +133,7 @@ export const packagesData: Package[] = [
   {
     id: 'pkg-kerala-grand-nature',
     slug: 'kerala-nature-munnar-alleppey-houseboat',
-    title: 'Kerala Backwaters & Misty Munnar Retreat',
+    title: 'Kerala: Munnar Tea Hills & Alleppey Houseboat 6D/5N Tour Package',
     destination: 'Kerala',
     state: 'Kerala',
     durationDays: 6,
@@ -253,7 +253,7 @@ export const packagesData: Package[] = [
   {
     id: 'pkg-royal-rajasthan',
     slug: 'royal-rajasthan-heritage-desert-dunes',
-    title: 'Royal Rajasthan: Palaces & Desert Dunes',
+    title: 'Rajasthan: Jaipur Forts, Jodhpur & Jaisalmer Desert Dunes 7D/6N Tour',
     destination: 'Rajasthan',
     state: 'Rajasthan',
     durationDays: 7,
@@ -383,7 +383,7 @@ export const packagesData: Package[] = [
   {
     id: 'pkg-andaman-turquoise',
     slug: 'andaman-turquoise-havelock-scuba-dream',
-    title: 'Andaman Turquoise Dreams & Havelock Island',
+    title: 'Andaman: Havelock Island, Scuba Diving & Radhanagar Beach 6D/5N Tour',
     destination: 'Andaman',
     state: 'Andaman & Nicobar',
     durationDays: 6,
@@ -499,7 +499,7 @@ export const packagesData: Package[] = [
   {
     id: 'pkg-romantic-goa-boutique',
     slug: 'romantic-goa-boutique-beach-backwater',
-    title: 'Goa Boutique Beach, Sunsets & Latin Quarters',
+    title: 'Goa: South Goa Beaches, Sunsets & Fontainhas Latin Quarter 5D/4N Tour',
     destination: 'Goa',
     state: 'Goa',
     durationDays: 5,
@@ -604,7 +604,7 @@ export const packagesData: Package[] = [
   {
     id: 'pkg-himachal-highs',
     slug: 'himachal-manali-solang-sissu-retreat',
-    title: 'Himachal Alpine Wonderland: Manali & Atal Tunnel',
+    title: 'Himachal: Manali, Solang Valley & Atal Tunnel Sissu 6D/5N Tour Package',
     destination: 'Himachal Pradesh',
     state: 'Himachal Pradesh',
     durationDays: 6,
@@ -720,7 +720,7 @@ export const packagesData: Package[] = [
   {
     id: 'pkg-meghalaya-living-roots',
     slug: 'meghalaya-living-root-bridges-dawki-shillong',
-    title: 'Meghalaya: Living Root Bridges & Crystal Waters',
+    title: 'Meghalaya: Cherrapunji, Living Root Bridges & Dawki River 6D/5N Tour',
     destination: 'Northeast India',
     state: 'Meghalaya',
     durationDays: 6,
@@ -830,6 +830,238 @@ export const packagesData: Package[] = [
       }
     ],
     season: 'All Season',
+    isFeatured: true,
+    isPopular: true
+  },
+  {
+    id: 'pkg-uttarakhand-rishikesh-corbett',
+    slug: 'uttarakhand-rishikesh-mussoorie-corbett',
+    title: 'Uttarakhand: Rishikesh Rafting, Mussoorie & Jim Corbett Safari 6D/5N Tour',
+    destination: 'Uttarakhand',
+    state: 'Uttarakhand',
+    durationDays: 6,
+    durationNights: 5,
+    startingPrice: 13999,
+    originalPrice: 18500,
+    tripType: ['Adventure', 'Family', 'Group', 'Couple'],
+    hotelCategory: 'Deluxe 4★',
+    ratings: 4.9,
+    reviewCount: 310,
+    startingCity: 'Delhi / Dehradun (Pickup)',
+    bestFor: 'Rafters, Wildlife Lovers & Families',
+    heroImage: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1561731216-c3a4d99437d5?q=80&w=800&auto=format&fit=crop'
+    ],
+    overview: 'The ultimate Garhwal & Kumaon getaway: experience thrilling Grade-III white water rafting in Rishikesh, attend the divine sunset Ganga Aarti at Triveni Ghat, take leisurely strolls on the Mall Road in Mussoorie, and embark on an open 4x4 Jeep Safari in Jim Corbett National Park.',
+    highlights: [
+      '16 km White Water River Rafting through Shivpuri rapids with cliff jumping',
+      'Soulful sunset Ganga Aarti at Parmarth Niketan / Triveni Ghat',
+      'Open 4x4 Jeep Safari in Jim Corbett National Park (Bijrani / Jhirna zone)',
+      'Scenic Kempty Falls & Gun Hill cable car in Mussoorie',
+      'Stay in luxury riverside glamping tents & jungle wilderness lodges'
+    ],
+    inclusions: [
+      '5 Nights accommodation in 3★/4★ luxury resorts & riverside camps',
+      'Daily breakfast & dinner (MAP plan)',
+      '16 km River Rafting session with certified river guides & safety gear',
+      '1 Open 4x4 Jeep Safari in Jim Corbett with naturalist guide & park permits',
+      'Dedicated private Sedan/Innova for all transfers and sightseeing'
+    ],
+    exclusions: [
+      'Personal expenses, cafe visits, and adventure activities not mentioned above',
+      'Monument and ropeway tickets'
+    ],
+    itinerary: [
+      {
+        dayNumber: 1,
+        title: 'Delhi to Rishikesh & Sunset Ganga Aarti',
+        location: 'Rishikesh',
+        description: 'Morning pickup from Delhi/NCR or Dehradun Airport and drive to Rishikesh. Check in to your riverside resort. In the evening, witness the iconic sunset Ganga Aarti ceremony.',
+        morningActivity: 'Drive via Delhi-Meerut expressway to Rishikesh',
+        afternoonActivity: 'Check-in to resort and explore Ram Jhula / Lakshman Jhula',
+        eveningActivity: 'Spiritual Ganga Aarti ceremony with floating lamps',
+        stay: 'Riverside Glamping Resort 4★, Rishikesh',
+        mealsIncluded: 'Dinner',
+        transfers: 'Private AC Cab'
+      },
+      {
+        dayNumber: 2,
+        title: 'White Water Rafting & Cliff Jumping',
+        location: 'Rishikesh (Shivpuri to Nim Beach)',
+        description: 'Gear up for an exhilarating 16 km white water rafting expedition tackling rapids like Roller Coaster, Golf Course, and Club House. Enjoy cliff jumping and body surfing.',
+        morningActivity: 'Safety briefing and 16 km rafting from Shivpuri',
+        afternoonActivity: 'Cafe hopping at Little Buddha Cafe or Beatles Ashram',
+        eveningActivity: 'Bonfire by the river stream at your camp',
+        stay: 'Riverside Glamping Resort 4★, Rishikesh',
+        mealsIncluded: 'Breakfast & Dinner',
+        transfers: 'Private AC Cab'
+      },
+      {
+        dayNumber: 3,
+        title: 'Rishikesh to Mussoorie ("Queen of the Hills")',
+        location: 'Mussoorie',
+        description: 'Scenic hill drive to Mussoorie. Visit Kempty Falls and enjoy the cool mountain mist. Take a cable car to Gun Hill for panoramic views of Doon Valley and Himalayan ranges.',
+        morningActivity: 'Drive from Rishikesh up to Mussoorie',
+        afternoonActivity: 'Kempty Falls & Gun Hill ropeway',
+        eveningActivity: 'Stroll along the historic Mall Road and Library Bazaar',
+        stay: 'Fortune Resort Grace / Jaypee Residency 4★, Mussoorie',
+        mealsIncluded: 'Breakfast & Dinner',
+        transfers: 'Private AC Cab'
+      },
+      {
+        dayNumber: 4,
+        title: 'Mussoorie to Jim Corbett National Park',
+        location: 'Jim Corbett',
+        description: 'Drive down from Mussoorie to the wilderness fringes of Jim Corbett National Park. Check in to your nature lodge by the Kosi River.',
+        morningActivity: 'Scenic downhill drive through foothills',
+        afternoonActivity: 'Check in to Corbett resort & Garjiya Devi temple visit',
+        eveningActivity: 'Nature walk along Kosi River and wildlife documentary screening',
+        stay: 'Corbett River Creek / The Den Resort 4★, Jim Corbett',
+        mealsIncluded: 'Breakfast & Dinner',
+        transfers: 'Private AC Cab'
+      },
+      {
+        dayNumber: 5,
+        title: 'Jim Corbett Open 4x4 Jeep Safari',
+        location: 'Jim Corbett Tiger Reserve',
+        description: 'Early morning open 4x4 Gypsy safari into the dense Sal forests of Bijrani/Jhirna zone to track Royal Bengal Tigers, Asiatic elephants, spotted deer, and rare birds.',
+        morningActivity: 'Dawn 4x4 Jeep Safari with forest naturalist',
+        afternoonActivity: 'Corbett Waterfall visit and Corbett Museum in Kaladhungi',
+        eveningActivity: 'Barbecue dinner and leisure by the resort pool',
+        stay: 'Corbett River Creek / The Den Resort 4★, Jim Corbett',
+        mealsIncluded: 'Breakfast & Dinner',
+        transfers: 'Private AC Cab'
+      },
+      {
+        dayNumber: 6,
+        title: 'Corbett to Delhi / Dehradun Departure',
+        location: 'Delhi Departure',
+        description: 'After a relaxed breakfast, drive back to Delhi or Dehradun Airport for your onward journey with unforgettable mountain memories.',
+        morningActivity: 'Leisurely breakfast and check out',
+        afternoonActivity: 'Highway drive back to Delhi Airport / Railway Station',
+        mealsIncluded: 'Breakfast',
+        transfers: 'Private AC Cab'
+      }
+    ],
+    season: 'All Season',
+    isFeatured: true,
+    isPopular: true
+  },
+  {
+    id: 'pkg-ladakh-high-passes-pangong',
+    slug: 'ladakh-pangong-nubra-khardungla',
+    title: 'Ladakh: Pangong Lake, Nubra Valley & Khardung La Pass 6D/5N Tour',
+    destination: 'Ladakh',
+    state: 'Ladakh',
+    durationDays: 6,
+    durationNights: 5,
+    startingPrice: 22999,
+    originalPrice: 29000,
+    tripType: ['Adventure', 'Couple', 'Group'],
+    hotelCategory: 'Deluxe 4★',
+    ratings: 4.9,
+    reviewCount: 228,
+    startingCity: 'Leh (Airport Pickup)',
+    bestFor: 'Couples, Road Trippers & Adventure Seekers',
+    heroImage: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=1200&auto=format&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1506461883276-594a12b11cf3?q=80&w=800&auto=format&fit=crop'
+    ],
+    overview: 'Embark on the ultimate Trans-Himalayan odyssey: cross Khardung La (17,982 ft), ride double-humped camels through the cold desert dunes of Nubra Valley, gaze upon the shifting blue hues of Pangong Tso, and find tranquility in ancient Buddhist gompas with emergency oxygen backup throughout.',
+    highlights: [
+      '1 Night in Luxury Swiss Camp at Pangong Tso (14,270 ft)',
+      '1 Night in Organic Farm Cottages at Nubra Valley + 3 Nights in Leh',
+      'Drive across world’s legendary Khardung La and Chang La passes',
+      'Bactrian Camel Safari in Hunder Sand Dunes & Diskit Giant Buddha',
+      'Inner Line Permits and portable medical oxygen cylinder in vehicle'
+    ],
+    inclusions: [
+      '5 Nights accommodation in 3★/4★ boutique hotels & luxury heated camps',
+      'Daily Breakfast & Dinner at all hotels and camps',
+      'Dedicated private Non-AC Innova / Scorpio with seasoned mountain driver',
+      'All Protected Area Inner Line Permits and wildlife environmental fees',
+      'Emergency Oxygen Cylinder and first-aid medical kit in vehicle'
+    ],
+    exclusions: [
+      'Airfare to Leh',
+      'Camel ride charges at Hunder and monument entrance fees',
+      'Personal snacks, hot drinks outside meals, and tipping'
+    ],
+    itinerary: [
+      {
+        dayNumber: 1,
+        title: 'Leh Arrival & Mandatory Acclimatization',
+        location: 'Leh Town',
+        description: 'Land at Kushok Bakula Rimpochee Airport, Leh (11,562 ft). Transfer to your hotel. Strict complete rest for the entire day to acclimatize to high altitude. Evening gentle walk to Leh Main Market.',
+        morningActivity: 'Airport pickup and warm reception with traditional Khatak',
+        afternoonActivity: 'Complete rest and hydration in hotel room',
+        eveningActivity: 'Gentle stroll in Leh Market & Shanti Stupa sunset viewpoint',
+        stay: 'The Grand Dragon / Spic N Span 4★, Leh',
+        mealsIncluded: 'Dinner',
+        transfers: 'Private Mountain Cab'
+      },
+      {
+        dayNumber: 2,
+        title: 'Sham Valley: Magnetic Hill, Sangam & Hall of Fame',
+        location: 'Sham Valley & Leh',
+        description: 'Excursion along the Indus River: experience the optical illusion at Magnetic Hill, witness the confluence (Sangam) of turquoise Indus and muddy Zanskar rivers, and visit the Hall of Fame war museum.',
+        morningActivity: 'Drive to Magnetic Hill and Gurudwara Pathar Sahib',
+        afternoonActivity: 'Indus-Zanskar Sangam and Spituk Monastery',
+        eveningActivity: 'Visit Hall of Fame and local Ladakhi tea cafe',
+        stay: 'The Grand Dragon / Spic N Span 4★, Leh',
+        mealsIncluded: 'Breakfast & Dinner',
+        transfers: 'Private Mountain Cab'
+      },
+      {
+        dayNumber: 3,
+        title: 'Leh to Nubra Valley via Khardung La Pass (17,982 ft)',
+        location: 'Nubra Valley (Hunder / Diskit)',
+        description: 'Scale one of the highest motorable passes on earth — Khardung La. Descend into the picturesque Nubra Valley. Visit the 106-ft Maitreya Buddha at Diskit Monastery and ride double-humped camels in Hunder Dunes.',
+        morningActivity: 'Epic drive over snow-draped Khardung La Pass',
+        afternoonActivity: 'Diskit Monastery & Maitreya Buddha statue',
+        eveningActivity: 'Double-humped Bactrian camel safari in Hunder Sand Dunes',
+        stay: 'Organic Apple Orchard Resort / Luxury Swiss Camp 4★, Nubra',
+        mealsIncluded: 'Breakfast & Dinner',
+        transfers: 'Private Mountain Cab'
+      },
+      {
+        dayNumber: 4,
+        title: 'Nubra Valley to Pangong Tso via Shyok River Route',
+        location: 'Pangong Tso (Spangmik)',
+        description: 'Drive along the rugged, scenic Shyok River gorge directly to Pangong Tso. Arrive at the high-altitude lake as its waters transition between turquoise, royal blue, and indigo. Stargaze under zero light pollution.',
+        morningActivity: 'Scenic off-road drive along Shyok River canyon',
+        afternoonActivity: 'Arrive at Pangong Lake (14,270 ft) & photography session',
+        eveningActivity: 'Witness dramatic sunset over the lake & stargazing',
+        stay: 'Deluxe Swiss Cottage Camp with attached heated bath, Pangong',
+        mealsIncluded: 'Breakfast & Dinner',
+        transfers: 'Private Mountain Cab'
+      },
+      {
+        dayNumber: 5,
+        title: 'Pangong Sunrise & Return to Leh via Chang La Pass',
+        location: 'Leh via Chang La',
+        description: 'Witness an unforgettable sunrise reflecting off Pangong Lake. Journey back to Leh crossing Chang La Pass (17,590 ft). Visit the majestic 12-storey Thiksey Monastery on the return.',
+        morningActivity: 'Golden hour sunrise walk along Pangong shoreline',
+        afternoonActivity: 'Cross Chang La pass and visit Thiksey Monastery & Shey Palace',
+        eveningActivity: 'Farewell dinner and souvenir shopping in Leh',
+        stay: 'The Grand Dragon / Spic N Span 4★, Leh',
+        mealsIncluded: 'Breakfast & Dinner',
+        transfers: 'Private Mountain Cab'
+      },
+      {
+        dayNumber: 6,
+        title: 'Leh Airport Departure',
+        location: 'Leh Departure',
+        description: 'Early morning transfer to Leh Airport for your scenic flight over the snow-capped Himalayan ranges.',
+        morningActivity: 'Transfer to Leh Airport with cherished memories',
+        mealsIncluded: 'Breakfast',
+        transfers: 'Private Mountain Cab'
+      }
+    ],
+    season: 'Summer',
     isFeatured: true,
     isPopular: true
   }

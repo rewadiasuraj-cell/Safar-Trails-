@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import dotenv from 'dotenv';
+import compression from 'compression';
 import { GoogleGenAI, Type } from '@google/genai';
 
 dotenv.config();
@@ -8,6 +9,7 @@ dotenv.config();
 const app = express();
 const PORT = 3000;
 
+app.use(compression());
 app.use(express.json());
 
 // In-memory leads storage for demo & export
@@ -32,28 +34,6 @@ function getGeminiClient(): GoogleGenAI | null {
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', brand: 'SafarTrails', timestamp: new Date().toISOString() });
-});
-
-// Direct Download endpoints for travel videos
-app.get('/api/download-videos-zip', (req, res) => {
-  const zipPath = path.join(process.cwd(), 'public', 'safartrails-videos.zip');
-  res.download(zipPath, 'safartrails-videos.zip', (err) => {
-    if (err) {
-      console.error('Error downloading zip:', err);
-      res.status(404).send('Archive not found');
-    }
-  });
-});
-
-app.get('/api/download-video/:filename', (req, res) => {
-  const safeFilename = path.basename(req.params.filename);
-  const videoPath = path.join(process.cwd(), 'public', 'videos', safeFilename);
-  res.download(videoPath, safeFilename, (err) => {
-    if (err) {
-      console.error('Error downloading video:', err);
-      res.status(404).send('Video file not found');
-    }
-  });
 });
 
 // Lead Submission / Quote Request endpoint
@@ -585,6 +565,17 @@ function generateFallbackPlan(params: any) {
   };
 }
 
+// Explicit Robots.txt and Sitemap.xml routes (100% standard compliance, no HTML fallback)
+app.get('/robots.txt', (req, res) => {
+  res.type('text/plain');
+  res.sendFile(path.join(process.cwd(), 'public', 'robots.txt'));
+});
+
+app.get('/sitemap.xml', (req, res) => {
+  res.type('application/xml');
+  res.sendFile(path.join(process.cwd(), 'public', 'sitemap.xml'));
+});
+
 // Start Server with Vite Middleware
 async function startServer() {
   if (process.env.NODE_ENV !== 'production') {
@@ -596,7 +587,11 @@ async function startServer() {
     app.use(vite.middlewares);
   } else {
     const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath));
+    app.use(express.static(distPath, {
+      maxAge: '1y',
+      immutable: true,
+      index: false
+    }));
     app.get('*', (req, res) => {
       res.sendFile(path.join(distPath, 'index.html'));
     });

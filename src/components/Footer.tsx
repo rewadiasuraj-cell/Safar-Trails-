@@ -59,9 +59,9 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Column 2: Popular Destinations */}
           <div className="space-y-3 text-xs">
-            <h4 className="text-[11px] font-bold text-white uppercase tracking-widest">
+            <h3 className="text-[11px] font-bold text-white uppercase tracking-widest">
               Destinations
-            </h4>
+            </h3>
             <ul className="space-y-2 text-gray-400">
               {popularDestinations.slice(0, 6).map((d) => (
                 <li key={d.slug}>
@@ -78,9 +78,9 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Column 3: Quick Navigation */}
           <div className="space-y-3 text-xs">
-            <h4 className="text-[11px] font-bold text-white uppercase tracking-widest">
+            <h3 className="text-[11px] font-bold text-white uppercase tracking-widest">
               Explore
-            </h4>
+            </h3>
             <ul className="space-y-2 text-gray-400">
               <li>
                 <button
@@ -128,9 +128,9 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Column 4: Contact & Concierge */}
           <div className="space-y-3 text-xs">
-            <h4 className="text-[11px] font-bold text-white uppercase tracking-widest">
+            <h3 className="text-[11px] font-bold text-white uppercase tracking-widest">
               Contact Concierge
-            </h4>
+            </h3>
             <ul className="space-y-2.5 text-gray-400">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#FF6B00] flex-shrink-0 mt-0.5" />

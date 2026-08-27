@@ -101,12 +101,29 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
           </div>
 
-          {/* Desktop & Tablet Navigation Links - Strict Single Line with Smart Overflow */}
+          {/* Desktop & Tablet Navigation Links - Exactly Home / Destination / Tour Packages / Blogs / About Us / Contact Us */}
           <nav 
             ref={navContainerRef}
             className="hidden lg:flex items-center gap-4 xl:gap-7 text-[14px] xl:text-[14.5px] font-medium text-slate-800 whitespace-nowrap"
           >
-            {/* 1. Destinations with Mega Dropdown */}
+            {/* 1. Home */}
+            <button
+              id="nav-link-home"
+              onClick={() => {
+                onNavigate('home');
+                setDestinationsDropdown(false);
+                setMoreDropdown(false);
+              }}
+              className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
+                currentView === 'home'
+                  ? 'text-[#FF6B00] font-semibold'
+                  : 'text-slate-800 hover:text-[#FF6B00]'
+              }`}
+            >
+              <span className="whitespace-nowrap">Home</span>
+            </button>
+
+            {/* 2. Destination with Dropdown */}
             <div className="relative group">
               <button
                 id="nav-link-destinations"
@@ -124,7 +141,7 @@ export const Header: React.FC<HeaderProps> = ({
                     : 'text-slate-800 hover:text-[#FF6B00]'
                 }`}
               >
-                <span className="whitespace-nowrap">Destinations</span>
+                <span className="whitespace-nowrap">Destination</span>
                 <ChevronDown className="w-3.5 h-3.5 text-slate-500 group-hover:text-[#FF6B00] group-hover:rotate-180 transition-transform duration-200 flex-shrink-0" />
               </button>
 
@@ -169,7 +186,7 @@ export const Header: React.FC<HeaderProps> = ({
               )}
             </div>
 
-            {/* 2. Packages */}
+            {/* 3. Tour Packages */}
             <button
               id="nav-link-packages"
               onClick={() => {
@@ -183,122 +200,55 @@ export const Header: React.FC<HeaderProps> = ({
                   : 'text-slate-800 hover:text-[#FF6B00]'
               }`}
             >
-              <span className="whitespace-nowrap">Packages</span>
+              <span className="whitespace-nowrap">Tour Packages</span>
             </button>
 
-            {/* 3. AI Trip Planner with NEW badge */}
+            {/* 4. Blogs */}
             <button
-              id="nav-link-ai-planner"
-              onClick={() => {
-                onNavigate('ai-planner');
-                setDestinationsDropdown(false);
-                setMoreDropdown(false);
-              }}
-              className={`py-1.5 transition-colors inline-flex items-center gap-1.5 cursor-pointer select-none whitespace-nowrap ${
-                currentView === 'ai-planner'
-                  ? 'text-[#FF6B00] font-semibold'
-                  : 'text-slate-800 hover:text-[#FF6B00]'
-              }`}
-            >
-              <span className="whitespace-nowrap">AI Trip Planner</span>
-              <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-[#FF6B00] text-white shadow-2xs whitespace-nowrap">
-                NEW
-              </span>
-            </button>
-
-            {/* 4. Travel Guides (Visible on XL, in dropdown on LG) */}
-            <button
-              id="nav-link-guides"
+              id="nav-link-blogs"
               onClick={() => {
                 onNavigate('guides');
                 setDestinationsDropdown(false);
                 setMoreDropdown(false);
               }}
-              className={`hidden xl:inline-flex py-1.5 transition-colors items-center cursor-pointer select-none whitespace-nowrap ${
-                currentView === 'guides'
+              className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
+                currentView === 'guides' || currentView === 'guide-detail'
                   ? 'text-[#FF6B00] font-semibold'
                   : 'text-slate-800 hover:text-[#FF6B00]'
               }`}
             >
-              <span className="whitespace-nowrap">Travel Guides</span>
+              <span className="whitespace-nowrap">Blogs</span>
             </button>
 
-            {/* 5. Why Us (Visible on XL, in dropdown on LG) */}
+            {/* 5. About Us */}
             <button
-              id="nav-link-why-us"
+              id="nav-link-about-us"
               onClick={() => {
                 onNavigate('why-us');
                 setDestinationsDropdown(false);
                 setMoreDropdown(false);
               }}
-              className={`hidden xl:inline-flex py-1.5 transition-colors items-center cursor-pointer select-none whitespace-nowrap ${
+              className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
                 currentView === 'why-us'
                   ? 'text-[#FF6B00] font-semibold'
                   : 'text-slate-800 hover:text-[#FF6B00]'
               }`}
             >
-              <span className="whitespace-nowrap">Why Us</span>
+              <span className="whitespace-nowrap">About Us</span>
             </button>
 
-            {/* 6. More / Explore Dropdown (Visible on Tablet landscape / LG, optional helper on XL) */}
-            <div className="relative xl:hidden">
-              <button
-                id="nav-link-more"
-                onClick={() => {
-                  setMoreDropdown(!moreDropdown);
-                  setDestinationsDropdown(false);
-                }}
-                onMouseEnter={() => {
-                  setMoreDropdown(true);
-                  setDestinationsDropdown(false);
-                }}
-                className={`py-1.5 transition-colors inline-flex items-center gap-1 cursor-pointer select-none whitespace-nowrap ${
-                  currentView === 'guides' || currentView === 'why-us' || moreDropdown
-                    ? 'text-[#FF6B00] font-semibold'
-                    : 'text-slate-800 hover:text-[#FF6B00]'
-                }`}
-              >
-                <span className="whitespace-nowrap">More</span>
-                <ChevronDown className="w-3.5 h-3.5 text-slate-500 group-hover:text-[#FF6B00] transition-transform duration-200 flex-shrink-0" />
-              </button>
-
-              {/* More Dropdown Menu */}
-              {moreDropdown && (
-                <div
-                  onMouseLeave={() => setMoreDropdown(false)}
-                  className="absolute top-full right-0 mt-2 w-72 bg-white rounded-2xl shadow-xl border border-gray-100 p-3 grid grid-cols-1 gap-1 z-50 animate-in fade-in slide-in-from-top-2 duration-150"
-                >
-                  <div className="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-gray-400 border-b border-gray-100 mb-1">
-                    Explore More
-                  </div>
-                  {moreNavItems.map((item) => {
-                    const IconComponent = item.icon;
-                    return (
-                      <button
-                        key={item.id}
-                        onClick={() => {
-                          onNavigate(item.id);
-                          setMoreDropdown(false);
-                        }}
-                        className={`text-left px-3 py-2 rounded-xl transition-colors flex items-start gap-2.5 group/item cursor-pointer ${
-                          currentView === item.id ? 'bg-orange-50/70 text-[#FF6B00]' : 'hover:bg-[#FAF9F6] text-slate-800'
-                        }`}
-                      >
-                        <IconComponent className="w-4 h-4 mt-0.5 text-slate-500 group-hover/item:text-[#FF6B00] flex-shrink-0" />
-                        <div className="flex flex-col">
-                          <span className="text-sm font-semibold group-hover/item:text-[#FF6B00] whitespace-nowrap">
-                            {item.label}
-                          </span>
-                          <span className="text-[11px] text-gray-500 leading-tight">
-                            {item.desc}
-                          </span>
-                        </div>
-                      </button>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
+            {/* 6. Contact Us */}
+            <button
+              id="nav-link-contact-us"
+              onClick={() => {
+                setDestinationsDropdown(false);
+                setMoreDropdown(false);
+                onOpenQuoteModal('Contact & General Inquiries');
+              }}
+              className="py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap text-slate-800 hover:text-[#FF6B00]"
+            >
+              <span className="whitespace-nowrap">Contact Us</span>
+            </button>
           </nav>
 
           {/* Right Action CTAs (Desktop & Mobile view matching reference image) */}
@@ -373,7 +323,9 @@ export const Header: React.FC<HeaderProps> = ({
                     onNavigate('home');
                     setMobileMenuOpen(false);
                   }}
-                  className="w-full text-left px-4 py-2.5 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
+                  className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
+                    currentView === 'home' ? 'bg-orange-50 text-[#FF6B00]' : 'hover:bg-gray-50'
+                  }`}
                 >
                   Home
                 </button>
@@ -382,46 +334,53 @@ export const Header: React.FC<HeaderProps> = ({
                     onNavigate('destinations');
                     setMobileMenuOpen(false);
                   }}
-                  className="w-full text-left px-4 py-2.5 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
+                  className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
+                    currentView === 'destinations' ? 'bg-orange-50 text-[#FF6B00]' : 'hover:bg-gray-50'
+                  }`}
                 >
-                  Destinations
+                  Destination
                 </button>
                 <button
                   onClick={() => {
                     onNavigate('packages');
                     setMobileMenuOpen(false);
                   }}
-                  className="w-full text-left px-4 py-2.5 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
+                  className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
+                    currentView === 'packages' ? 'bg-orange-50 text-[#FF6B00]' : 'hover:bg-gray-50'
+                  }`}
                 >
-                  Packages
-                </button>
-                <button
-                  onClick={() => {
-                    onNavigate('ai-planner');
-                    setMobileMenuOpen(false);
-                  }}
-                  className="w-full text-left px-4 py-2.5 rounded-xl font-semibold text-slate-900 bg-orange-50/70 border border-orange-100 transition-colors flex items-center justify-between"
-                >
-                  <span className="text-[#FF6B00] font-bold">AI Trip Planner</span>
-                  <span className="text-[9px] uppercase font-black bg-[#FF6B00] text-white px-2 py-0.5 rounded-full">NEW</span>
+                  Tour Packages
                 </button>
                 <button
                   onClick={() => {
                     onNavigate('guides');
                     setMobileMenuOpen(false);
                   }}
-                  className="w-full text-left px-4 py-2.5 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
+                  className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
+                    currentView === 'guides' || currentView === 'guide-detail' ? 'bg-orange-50 text-[#FF6B00]' : 'hover:bg-gray-50'
+                  }`}
                 >
-                  Travel Guides
+                  Blogs
                 </button>
                 <button
                   onClick={() => {
                     onNavigate('why-us');
                     setMobileMenuOpen(false);
                   }}
+                  className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
+                    currentView === 'why-us' ? 'bg-orange-50 text-[#FF6B00]' : 'hover:bg-gray-50'
+                  }`}
+                >
+                  About Us
+                </button>
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenQuoteModal('Contact Us & Custom Trip Inquiries');
+                  }}
                   className="w-full text-left px-4 py-2.5 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
                 >
-                  Why Us
+                  Contact Us
                 </button>
               </div>
 

@@ -126,9 +126,9 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
             <span>Direct Specialist Connection</span>
           </div>
 
-          <h3 className="text-xl sm:text-2xl font-serif font-bold text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl font-serif font-bold text-white tracking-tight">
             Get Your Custom Trip Quote
-          </h3>
+          </h2>
           <p className="text-xs text-gray-400 mt-1 font-normal">
             Zero commitment. 100% itemized pricing with hotel room categories.
           </p>
@@ -149,9 +149,9 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
               <div className="text-2xl font-black text-black tracking-widest mt-0.5">
                 #{submittedLead.leadId}
               </div>
-              <h4 className="text-lg font-serif font-bold text-black mt-2">
+              <h3 className="text-lg font-serif font-bold text-black mt-2">
                 Thank you, {name}!
-              </h4>
+              </h3>
               <p className="text-xs sm:text-sm text-gray-600 mt-1 font-normal">
                 Your request has been routed to our senior destination coordinator. We will reach out on WhatsApp within 3 hours.
               </p>

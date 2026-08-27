@@ -26,10 +26,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Background Image: Stunning Kashmir Dal Lake Shikara Houseboat with Snow Mountains */}
       <div className="absolute inset-0 z-0 w-full h-full">
         <img
-          src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=85&w=2600&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=75&w=1400&auto=format&fit=crop"
           alt="Scenic Kashmir Dal Lake Houseboats with Snow Mountains"
           className="w-full h-full object-cover object-right md:object-center transform scale-100 transition-transform duration-1000"
           loading="eager"
+          fetchPriority="high"
         />
         {/* Editorial Gradient Overlays for optimal text contrast */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#071322]/95 via-[#071322]/75 to-transparent sm:w-3/4 lg:w-3/5" />

@@ -70,6 +70,19 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
   const [generatedPlan, setGeneratedPlan] = useState<AITripPlanResult | null>(null);
   const [, setGenerationError] = useState<string | null>(null);
 
+  React.useEffect(() => {
+    if (initialPrompt) {
+      setNaturalPrompt(initialPrompt);
+      setActiveTab('conversational');
+    }
+  }, [initialPrompt]);
+
+  React.useEffect(() => {
+    if (initialDestination) {
+      setDestination(initialDestination);
+    }
+  }, [initialDestination]);
+
   const destinationsList = [
     'Kashmir',
     'Goa',
@@ -77,6 +90,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
     'Rajasthan',
     'Himachal Pradesh',
     'Uttarakhand',
+    'Ladakh',
     'Andaman & Nicobar',
     'Northeast India'
   ];
@@ -330,6 +344,20 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
     <section id="ai-trip-planner-section" className="w-full py-12 sm:py-16 bg-[#FAF9F6] border-t border-b border-gray-200/80">
       <div className="w-full max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         
+        {/* Section Heading */}
+        <div className="text-center max-w-3xl mx-auto mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gray-200 text-slate-800 text-xs font-bold uppercase tracking-widest mb-3">
+            <SlidersHorizontal className="w-3.5 h-3.5 text-[#FF6B00]" />
+            <span>Instant Custom Itineraries</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-tight">
+            AI-Powered Custom Trip Planner
+          </h2>
+          <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal">
+            Choose your destination, dates, and stay preferences for a curated day-by-day itinerary with exact price estimates.
+          </p>
+        </div>
+
         {/* Top Centered Mode Toggle Pill */}
         <div className="flex justify-center mb-6 sm:mb-8">
           <div className="inline-flex p-1 rounded-full bg-white border border-gray-200 shadow-2xs">

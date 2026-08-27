@@ -945,9 +945,9 @@ export const DestinationInteractiveMap: React.FC<DestinationInteractiveMapProps>
               </div>
 
               <div className="space-y-1 overflow-hidden">
-                <h4 className="font-serif font-bold text-base text-black leading-snug line-clamp-1">
+                <h3 className="font-serif font-bold text-base text-black leading-snug line-clamp-1">
                   {activePin.name}
-                </h4>
+                </h3>
                 <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed font-normal">
                   {activePin.description}
                 </p>

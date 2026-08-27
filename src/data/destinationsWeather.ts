@@ -679,6 +679,70 @@ export const destinationsWeatherData: Record<string, DestinationWeatherSummary> 
       'Windbreaker / light fleece for high altitude hill stations like Shillong and Tawang.',
       'Cash in Indian Rupees for remote tribal village stops in Mawlynnong and Dawki.'
     ]
+  },
+  ladakh: {
+    destinationSlug: 'ladakh',
+    overallBestTime: 'May to September (Warm Sunny Days & Open High-Altitude Passes)',
+    currentTrendAdvice: {
+      status: 'Prime Mountain Travel Window',
+      headline: 'Best Time for Pangong Tso, Nubra Dunes & High Mountain Passes',
+      advice: 'Warm daylight, clear blue skies, and fully accessible mountain passes (Khardung La & Chang La). High altitude UV protection and gradual Day-1 acclimatization are strongly advised.',
+      recommendedMonths: 'May – September'
+    },
+    seasons: [
+      {
+        id: 'summer-peak',
+        name: 'Himalayan Summer & Peak Season',
+        period: 'June to August',
+        tag: 'Peak Season',
+        rating: 5,
+        tempSummary: '15°C to 25°C (Day) | 5°C to 10°C (Night)',
+        weatherDescription: 'Pleasant warm daytime sun, stark blue skies, blooming apricot orchards, and accessible high-altitude lakes.',
+        highlights: [
+          'Crystal-clear turquoise views at Pangong Tso and Tso Moriri',
+          'Camel safari in Hunder Sand Dunes and Diskit Monastery festival',
+          'Scenic road trips via Manali-Leh and Srinagar-Leh highways'
+        ],
+        clothingAdvice: 'Cotton shirts for daytime sun, warm fleece / windproof jacket for evenings and high passes.',
+        idealFor: ['Couples', 'Adventure Enthusiasts', 'Road Trippers', 'Photographers']
+      },
+      {
+        id: 'autumn-shoulder',
+        name: 'Autumn Golden Season',
+        period: 'September to October',
+        tag: 'Shoulder Season',
+        rating: 4.6,
+        tempSummary: '8°C to 18°C (Day) | -2°C to 5°C (Night)',
+        weatherDescription: 'Golden poplar trees lining Indus riverbanks, quiet uncrowded monasteries, and crisp transparent mountain air.',
+        highlights: [
+          'Golden autumn foliage throughout Sham Valley and Nubra',
+          'Uncrowded serene monastery visits with butter lamp ceremonies',
+          'Stargazing under crisp dark skies'
+        ],
+        clothingAdvice: 'Thermal innerwear, down jacket, woolen gloves, and warm beanie.',
+        idealFor: ['Peace Seekers', 'Stargazers', 'Landscape Photographers']
+      }
+    ],
+    monthlyData: [
+      { month: 'Jan', fullName: 'January', tempHigh: -2, tempLow: -14, rainfallMm: 8, condition: 'Heavy Snow', crowdLevel: 'Low (Value)', isRecommended: false, activityHighlight: 'Chadar Frozen River Trek' },
+      { month: 'Feb', fullName: 'February', tempHigh: 1, tempLow: -12, rainfallMm: 6, condition: 'Snowfall', crowdLevel: 'Low (Value)', isRecommended: false, activityHighlight: 'Snow Leopard spotting in Hemis' },
+      { month: 'Mar', fullName: 'March', tempHigh: 6, tempLow: -5, rainfallMm: 7, condition: 'Snowfall', crowdLevel: 'Low (Value)', isRecommended: false, activityHighlight: 'Late winter monastery festivals' },
+      { month: 'Apr', fullName: 'April', tempHigh: 12, tempLow: 0, rainfallMm: 5, condition: 'Pleasant', crowdLevel: 'Moderate', isRecommended: true, activityHighlight: 'Apricot blossom festival in Kargil & Sham' },
+      { month: 'May', fullName: 'May', tempHigh: 17, tempLow: 4, rainfallMm: 4, condition: 'Sunny', crowdLevel: 'High (Peak)', isRecommended: true, activityHighlight: 'Season opening & Zoji La pass clears' },
+      { month: 'Jun', fullName: 'June', tempHigh: 21, tempLow: 8, rainfallMm: 3, condition: 'Sunny', crowdLevel: 'High (Peak)', isRecommended: true, activityHighlight: 'Manali-Leh highway opens & Pangong camps' },
+      { month: 'Jul', fullName: 'July', tempHigh: 25, tempLow: 12, rainfallMm: 12, condition: 'Sunny', crowdLevel: 'High (Peak)', isRecommended: true, activityHighlight: 'Hemis Festival & Nubra Valley safaris' },
+      { month: 'Aug', fullName: 'August', tempHigh: 24, tempLow: 11, rainfallMm: 15, condition: 'Sunny', crowdLevel: 'High (Peak)', isRecommended: true, activityHighlight: 'Warmest month & pristine lake reflections' },
+      { month: 'Sep', fullName: 'September', tempHigh: 20, tempLow: 6, rainfallMm: 6, condition: 'Sunny', crowdLevel: 'High (Peak)', isRecommended: true, activityHighlight: 'Ladakh Festival & golden autumn leaves' },
+      { month: 'Oct', fullName: 'October', tempHigh: 13, tempLow: -1, rainfallMm: 3, condition: 'Sunny', crowdLevel: 'Moderate', isRecommended: true, activityHighlight: 'Crisp mountain air & quiet gompas' },
+      { month: 'Nov', fullName: 'November', tempHigh: 6, tempLow: -7, rainfallMm: 2, condition: 'Snowfall', crowdLevel: 'Low (Value)', isRecommended: false, activityHighlight: 'Early winter freeze on lakes' },
+      { month: 'Dec', fullName: 'December', tempHigh: 0, tempLow: -12, rainfallMm: 5, condition: 'Heavy Snow', crowdLevel: 'Low (Value)', isRecommended: false, activityHighlight: 'Losar (Ladakhi New Year) celebrations' }
+    ],
+    packingTips: [
+      'High SPF 50+ Sunscreen and UV-400 polarized sunglasses (UV radiation is intense at 11,000+ ft).',
+      'Hydration bottle and ORS / electrolyte packets for altitude acclimatization.',
+      'Windproof thermal jacket and comfortable broken-in walking shoes.',
+      'Moisturizing cream, lip balm, and personal medications.'
+    ]
   }
 };
 

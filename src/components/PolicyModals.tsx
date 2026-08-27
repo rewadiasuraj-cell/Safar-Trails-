@@ -21,15 +21,15 @@ export const PolicyModals: React.FC<PolicyModalsProps> = ({ type, onClose }) => 
           <p>
             At SafarTrails (SafarTrails Private Limited), we respect your personal data and privacy. This Privacy Policy details how we collect, handle, and protect your information when using our website and holiday booking services.
           </p>
-          <h4 className="font-bold text-[#0B2545] text-sm">1. Information We Collect</h4>
+          <h3 className="font-bold text-[#0B2545] text-sm">1. Information We Collect</h3>
           <p>
             We collect personal contact details (Name, Phone Number/WhatsApp, Email Address) solely to prepare travel itineraries, book verified hotel stays, and assign transport chauffeurs.
           </p>
-          <h4 className="font-bold text-[#0B2545] text-sm">2. Zero Third-Party Spam</h4>
+          <h3 className="font-bold text-[#0B2545] text-sm">2. Zero Third-Party Spam</h3>
           <p>
             We do NOT sell, rent, or lease your phone number or email to third-party telemarketers. All interactions remain strictly between you and your assigned SafarTrails Destination Specialist.
           </p>
-          <h4 className="font-bold text-[#0B2545] text-sm">3. Data Security</h4>
+          <h3 className="font-bold text-[#0B2545] text-sm">3. Data Security</h3>
           <p>
             All submitted enquiries and payment records are encrypted with industry-standard 256-bit SSL protocols.
           </p>
@@ -44,15 +44,15 @@ export const PolicyModals: React.FC<PolicyModalsProps> = ({ type, onClose }) => 
           <p>
             <strong>Terms & Conditions of SafarTrails.com</strong>
           </p>
-          <h4 className="font-bold text-[#0B2545] text-sm">1. Scope of Service</h4>
+          <h3 className="font-bold text-[#0B2545] text-sm">1. Scope of Service</h3>
           <p>
             SafarTrails acts as an AI-powered holiday curator and tour organizer. All website package prices are estimated indicative figures based on standard season rates. Exact quotes are finalized with the customer before advance token payment.
           </p>
-          <h4 className="font-bold text-[#0B2545] text-sm">2. Hotel Check-in & Identification</h4>
+          <h3 className="font-bold text-[#0B2545] text-sm">2. Hotel Check-in & Identification</h3>
           <p>
             All guests must present valid Government-issued photo ID cards (Aadhaar, Passport, Driving License) at hotel check-in. PAN cards are not accepted by hotels as proof of address.
           </p>
-          <h4 className="font-bold text-[#0B2545] text-sm">3. Force Majeure</h4>
+          <h3 className="font-bold text-[#0B2545] text-sm">3. Force Majeure</h3>
           <p>
             SafarTrails is not liable for weather-related flight cancellations, landslide road blocks, or government-imposed curfews. In such events, our 24/7 concierge will make reasonable efforts to reschedule stays and reroute transport.
           </p>
@@ -67,7 +67,7 @@ export const PolicyModals: React.FC<PolicyModalsProps> = ({ type, onClose }) => 
           <p>
             We believe in fair, transparent cancellation terms for our travelers.
           </p>
-          <h4 className="font-bold text-[#0B2545] text-sm">Standard Domestic Package Cancellation Schedule:</h4>
+          <h3 className="font-bold text-[#0B2545] text-sm">Standard Domestic Package Cancellation Schedule:</h3>
           <ul className="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-200">
             <li>• <strong>30+ Days Prior to Travel:</strong> 100% Refund of deposit (minus a modest ₹1,000 administrative processing fee).</li>
             <li>• <strong>15 to 29 Days Prior to Travel:</strong> 75% Refund of total package cost.</li>
@@ -91,9 +91,9 @@ export const PolicyModals: React.FC<PolicyModalsProps> = ({ type, onClose }) => 
         <div className="bg-[#0A0A0A] p-5 text-white flex items-center justify-between border-b border-gray-800">
           <div className="flex items-center gap-2.5">
             <Icon className="w-5 h-5 text-white" />
-            <h3 className="font-serif font-bold text-base sm:text-lg tracking-tight">
+            <h2 className="font-serif font-bold text-base sm:text-lg tracking-tight">
               {active.title}
-            </h3>
+            </h2>
           </div>
           <button
             onClick={onClose}

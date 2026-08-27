@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ArrowRight, Compass, Sparkles, Star, Flame, Zap, MoveHorizontal, Download } from 'lucide-react';
+import { ArrowRight, Compass, Sparkles, Star, Flame, Zap, MoveHorizontal } from 'lucide-react';
 
 interface HandpickedExperiencesSectionProps {
   onSelectCategory?: (category: string) => void;
@@ -58,8 +58,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       name: 'Kashmir',
       region: 'JAMMU & KASHMIR',
       tagline: 'Shikaras, Snow Peaks & Pine Valleys',
-      image: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=1200&auto=format&fit=crop',
-      video: '/videos/kashmir.mp4',
+      image: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=75&w=600&auto=format&fit=crop',
       duration: '5–7 Days',
       startingPrice: '₹16,999',
       rating: '4.9',
@@ -72,8 +71,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       name: 'Goa',
       region: 'GOA COAST',
       tagline: 'Sun-Kissed Beaches & Latin Quarters',
-      image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1200&auto=format&fit=crop',
-      video: '/videos/goa.mp4',
+      image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=75&w=600&auto=format&fit=crop',
       duration: '4–6 Days',
       startingPrice: '₹14,499',
       rating: '4.8',
@@ -86,8 +84,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       name: 'Kerala',
       region: 'GHATS & BACKWATERS',
       tagline: 'Tranquil Backwaters & Misty Tea Hills',
-      image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1200&auto=format&fit=crop',
-      video: '/videos/kerala.mp4',
+      image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=75&w=600&auto=format&fit=crop',
       duration: '5–7 Days',
       startingPrice: '₹15,999',
       rating: '4.9',
@@ -100,8 +97,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       name: 'Rajasthan',
       region: 'ROYAL RAJASTHAN',
       tagline: 'Regal Forts, Palaces & Desert Dunes',
-      image: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=1200&auto=format&fit=crop',
-      video: '/videos/rajasthan.mp4',
+      image: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?q=75&w=600&auto=format&fit=crop',
       duration: '6–8 Days',
       startingPrice: '₹17,999',
       rating: '4.9',
@@ -114,8 +110,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       name: 'Himachal',
       region: 'WESTERN HIMALAYAS',
       tagline: 'Cedar Forests, Snow Passes & Paragliding',
-      image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop',
-      video: '/videos/himachal.mp4',
+      image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=75&w=600&auto=format&fit=crop',
       duration: '5–7 Days',
       startingPrice: '₹14,999',
       rating: '4.8',
@@ -128,8 +123,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       name: 'Ladakh',
       region: 'TRANS-HIMALAYAS',
       tagline: 'High Altitude Lakes & Ancient Gompas',
-      image: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=1200&auto=format&fit=crop',
-      video: '/videos/ladakh.mp4',
+      image: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=75&w=600&auto=format&fit=crop',
       duration: '6–8 Days',
       startingPrice: '₹22,999',
       rating: '4.9',
@@ -142,8 +136,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       name: 'Andaman Islands',
       region: 'BAY OF BENGAL',
       tagline: 'Turquoise Lagoons & Pristine Coral Reefs',
-      image: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=1200&auto=format&fit=crop',
-      video: '/videos/andaman.mp4',
+      image: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=75&w=600&auto=format&fit=crop',
       duration: '5–7 Days',
       startingPrice: '₹24,999',
       rating: '4.9',
@@ -152,12 +145,11 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
     },
     {
       id: 'meghalaya',
-      slug: 'meghalaya',
-      name: 'Meghalaya',
+      slug: 'northeast-india',
+      name: 'Meghalaya & Northeast',
       region: 'NORTHEAST WONDERS',
       tagline: 'Living Root Bridges & Crystal Waterfalls',
-      image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop',
-      video: '/videos/meghalaya.mp4',
+      image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=75&w=600&auto=format&fit=crop',
       duration: '5–7 Days',
       startingPrice: '₹18,499',
       rating: '4.8',
@@ -169,8 +161,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       name: 'Uttarakhand',
       region: 'DEV BHOOMI',
       tagline: 'Ganga Aarti, Alpine Meadows & Sacred Peaks',
-      image: '/Places-in-Uttarakhand.jpg',
-      video: '/videos/uttarakhand.mp4',
+      image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=75&w=600&auto=format&fit=crop',
       duration: '4–6 Days',
       startingPrice: '₹13,999',
       rating: '4.9',
@@ -424,20 +415,6 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
               </p>
             </div>
           </div>
-
-          {/* Action buttons & Video package download */}
-          <div className="flex items-center gap-3 self-start md:self-auto">
-            <a
-              href="/safartrails-videos.zip"
-              download="safartrails-videos.zip"
-              id="download-all-videos-btn"
-              title="Download all 9 destination video files in a single .zip"
-              className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-medium text-slate-700 bg-slate-100 hover:bg-orange-50 hover:text-[#FF6B00] border border-slate-200 hover:border-orange-200 rounded-xl transition-all shadow-sm active:scale-95"
-            >
-              <Download className="w-3.5 h-3.5 text-orange-500" />
-              <span>Download Videos (.zip)</span>
-            </a>
-          </div>
         </div>
 
         {/* Horizontal Swipable Rail Wrapper */}
@@ -474,46 +451,25 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
                 onClick={() => handleCardClick(dest)}
                 className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] hover:scale-[1.02] transform will-change-transform transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 border border-gray-200/90 hover:border-orange-300 snap-start"
               >
-                {/* Cinematic Ambient Looping Video or Photography Background */}
-                {dest.video ? (
-                  <video
-                    src={dest.video}
-                    poster={dest.image}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                    ref={(el) => {
-                      if (el) {
-                        el.defaultMuted = true;
-                        el.muted = true;
-                        if (el.paused) {
-                          el.play().catch(() => {});
-                        }
-                      }
-                    }}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out pointer-events-none"
-                  />
-                ) : (
-                  <img
-                    src={dest.image}
-                    alt={`${dest.name} - ${dest.tagline}`}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out pointer-events-none"
-                    loading="lazy"
-                    referrerPolicy="no-referrer"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      if (dest.id === 'uttarakhand') {
-                        target.src = 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop';
-                      } else if (dest.id === 'meghalaya') {
-                        target.src = 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop';
-                      } else {
-                        target.src = 'https://images.unsplash.com/photo-1506461883276-594a12b11cf3?q=80&w=1200&auto=format&fit=crop';
-                      }
-                    }}
-                  />
-                )}
+                {/* Photography Background with Zoom Hover & Fallback */}
+                <img
+                  src={dest.image}
+                  alt={`${dest.name} - ${dest.tagline}`}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out pointer-events-none"
+                  loading="lazy"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    if (dest.id === 'uttarakhand') {
+                      target.src = 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=75&w=600&auto=format&fit=crop';
+                    } else if (dest.id === 'meghalaya') {
+                      target.src = 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=75&w=600&auto=format&fit=crop';
+                    } else {
+                      target.src = 'https://images.unsplash.com/photo-1506461883276-594a12b11cf3?q=75&w=600&auto=format&fit=crop';
+                    }
+                  }}
+                />
 
                 {/* Multi-Stop Dark Gradient for Pristine Typography Contrast */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 pointer-events-none" />
@@ -563,38 +519,23 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
                     {dest.tagline}
                   </p>
 
-                  {/* Actions Row: Quick Book + Video Download + Discover Link */}
+                  {/* Actions Row: Quick Book + Discover Link */}
                   <div className="flex items-center justify-between gap-2 mt-3 pt-3 border-t border-white/15">
-                    <div className="flex items-center gap-1.5">
-                      <button
-                        type="button"
-                        id={`quick-book-featured-${dest.slug}`}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          onOpenQuoteModal?.(
-                            `Quick booking enquiry for ${dest.name} (${dest.duration}). Please share custom pricing and hotel options.`,
-                            dest.name
-                          );
-                        }}
-                        className="px-2.5 sm:px-3 py-1.5 rounded-lg bg-[#FF6B00] hover:bg-[#e66000] active:scale-95 text-white font-bold text-[10px] sm:text-[11px] uppercase tracking-wider shadow-sm flex items-center gap-1 transition-all cursor-pointer pointer-events-auto"
-                      >
-                        <Zap className="w-3 h-3 fill-white text-white shrink-0" />
-                        <span>Quick Book</span>
-                      </button>
-
-                      {dest.video && (
-                        <a
-                          href={dest.video}
-                          download={`${dest.slug}.mp4`}
-                          id={`download-video-${dest.slug}`}
-                          onClick={(e) => e.stopPropagation()}
-                          title={`Download ${dest.name} video (.mp4)`}
-                          className="p-1.5 rounded-lg bg-black/40 hover:bg-black/80 text-white/80 hover:text-white border border-white/20 transition-all pointer-events-auto flex items-center justify-center"
-                        >
-                          <Download className="w-3 h-3" />
-                        </a>
-                      )}
-                    </div>
+                    <button
+                      type="button"
+                      id={`quick-book-featured-${dest.slug}`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onOpenQuoteModal?.(
+                          `Quick booking enquiry for ${dest.name} (${dest.duration}). Please share custom pricing and hotel options.`,
+                          dest.name
+                        );
+                      }}
+                      className="px-2.5 sm:px-3 py-1.5 rounded-lg bg-[#FF6B00] hover:bg-[#e66000] active:scale-95 text-white font-bold text-[10px] sm:text-[11px] uppercase tracking-wider shadow-sm flex items-center gap-1 transition-all cursor-pointer pointer-events-auto"
+                    >
+                      <Zap className="w-3 h-3 fill-white text-white shrink-0" />
+                      <span>Quick Book</span>
+                    </button>
 
                     <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-white/90 group-hover:text-orange-300 transition-colors">
                       <span>Explore</span>

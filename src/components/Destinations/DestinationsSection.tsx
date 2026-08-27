@@ -167,12 +167,9 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
                   {/* Bottom Image Info & Heart Button */}
                   <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-3.5 sm:left-3.5 sm:right-3.5 flex items-end justify-between z-10 text-white gap-2">
                     <div className="flex-1 pr-1.5 sm:pr-2 min-w-0">
-                      <h3 className="text-lg min-[380px]:text-xl sm:text-2xl font-serif font-bold tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">
+                      <h3 className="text-xl min-[380px]:text-2xl font-serif font-bold tracking-tight whitespace-nowrap overflow-hidden text-ellipsis text-white drop-shadow-sm">
                         {formatDestinationName(dest.name)}
                       </h3>
-                      <p className="text-[11px] sm:text-xs text-gray-300 line-clamp-1 mt-0.5">
-                        {dest.tagline}
-                      </p>
                     </div>
 
                     {/* Interactive Heart Wishlist Toggle Button */}
