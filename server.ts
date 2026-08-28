@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import compression from 'compression';
 import { GoogleGenAI, Type } from '@google/genai';
 import { parseTripPrompt } from './src/utils/promptParser';
+import { sendQuoteEmail } from './src/lib/email/sendQuoteEmail';
 
 dotenv.config();
 
@@ -15,6 +16,8 @@ app.use(express.json());
 
 // In-memory leads storage for demo & export
 const submittedLeads: any[] = [];
+
+const QUOTE_NOTIFY_EMAIL = 'info.safartrails@gmail.com';
 
 // Lazy Gemini client helper
 let aiClient: GoogleGenAI | null = null;
@@ -72,6 +75,30 @@ app.post('/api/quotes', (req, res) => {
       `Please provide the final verified quote & hotel options.`
     );
     const whatsappUrl = `https://wa.me/918076665782?text=${encodedMsg}`;
+
+    // Fire-and-forget: never awaited, and a failure here must never affect the
+    // response below - the enquiry itself and the WhatsApp link already succeeded.
+    if (process.env.RESEND_API_KEY) {
+      sendQuoteEmail({
+        apiKey: process.env.RESEND_API_KEY,
+        fromEmail: process.env.RESEND_FROM_EMAIL,
+        toEmail: QUOTE_NOTIFY_EMAIL,
+        lead: {
+          leadId: lead.id,
+          name: lead.name,
+          phone: lead.phone,
+          email: lead.email,
+          destination: lead.destination,
+          travelDates: lead.travelDates,
+          travellers: lead.travellers,
+          budget: lead.budget,
+          specialNotes: lead.specialNotes,
+          itinerarySummary: lead.itinerarySummary,
+        },
+      }).then((result) => {
+        if (!result.ok) console.error('[SafarTrails Quote Email] Failed to send:', result.error);
+      });
+    }
 
     return res.json({
       success: true,

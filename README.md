@@ -77,12 +77,21 @@ anywhere.
 When someone submits the "Get Your Custom Trip Quote" form, an email with
 every field (name, phone, destination, dates, travellers, budget, notes, and
 the enquiry reference ID) is sent to `info.safartrails@gmail.com` via
-[Resend](https://resend.com). This runs in `functions/api/send-quote-email.ts`,
-a **Cloudflare Pages Function** — it only executes when the site is served
-through Cloudflare Pages, since that's what builds and routes files under
-`functions/` into serverless endpoints. It's a plain addition alongside the
-existing `/api/quotes` submission and WhatsApp link: if the email fails or
-isn't reachable, the form and WhatsApp flow are unaffected either way.
+[Resend](https://resend.com). The actual Resend call lives in
+`src/lib/email/sendQuoteEmail.ts`, a small dependency-free module shared by
+two entry points so this works regardless of how the app is hosted:
+
+- `functions/api/send-quote-email.ts` — a **Cloudflare Pages Function**,
+  called from the browser as a separate request after the enquiry is
+  submitted. Only executes when the site is served through Cloudflare Pages.
+- `server.ts`'s existing `/api/quotes` handler — calls it directly (Node's
+  built-in `fetch`) whenever `RESEND_API_KEY` is set, for the current Express
+  host. This is the path that's actually live today.
+
+Both are pure additions alongside the existing `/api/quotes` submission and
+WhatsApp link, and neither is awaited before responding to the user: if
+Resend is unreachable, misconfigured, or `RESEND_API_KEY` is unset entirely,
+the enquiry and WhatsApp flow are completely unaffected either way.
 
 ### One-time setup on Resend
 
@@ -97,15 +106,16 @@ isn't reachable, the form and WhatsApp flow are unaffected either way.
 
 ### Configuring the API key
 
-- **Production (Cloudflare Pages):** Pages project → **Settings → Environment
-  variables** → add `RESEND_API_KEY` as a secret. Optionally add
-  `RESEND_FROM_EMAIL` once you've verified your own domain (defaults to the
-  Resend sandbox sender otherwise).
-- **Local testing:** copy `.dev.vars.example` to `.dev.vars` and fill in your
-  key, then run `npx wrangler pages dev -- bun run dev` (or `npx wrangler
-  pages dev dist` after building) to exercise the function locally. `.dev.vars`
-  is gitignored.
+- **Current host (Express / `server.ts`):** copy `.env.example` to `.env` and
+  fill in `RESEND_API_KEY` (and optionally `RESEND_FROM_EMAIL`). Read via
+  `dotenv`/`process.env`, same as `GEMINI_API_KEY`. This is what makes the
+  email actually go out today.
+- **If you later deploy on Cloudflare Pages:** Pages project → **Settings →
+  Environment variables** → add `RESEND_API_KEY` as a secret (+ optionally
+  `RESEND_FROM_EMAIL`). For local testing of the Pages Function specifically,
+  copy `.dev.vars.example` to `.dev.vars` and run `npx wrangler pages dev`.
 
-Neither variable is a `VITE_`-prefixed var and neither belongs in `.env` —
-they're read via the Pages Function's `env` binding, not `import.meta.env`,
-so the key never reaches the browser bundle.
+Neither variable is a `VITE_`-prefixed var, so neither ever reaches the
+browser bundle — `server.ts` reads it from `process.env`, the Pages Function
+reads it from its own `env` binding, and Vite's client-side `import.meta.env`
+never sees it either way.
