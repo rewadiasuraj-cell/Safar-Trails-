@@ -96,11 +96,10 @@ the enquiry and WhatsApp flow are completely unaffected either way.
 ### One-time setup on Resend
 
 1. Create a free account at [resend.com](https://resend.com).
-2. You can start sending immediately using Resend's shared sandbox address
-   (`onboarding@resend.dev`) — no domain setup required. When you're ready to
-   send from your own address, go to **Domains → Add Domain**, enter your
-   domain, and add the DNS records (SPF/DKIM) Resend shows you at your
-   registrar. Verification is usually automatic once the DNS propagates.
+2. Domain verified: `safartrails.co.in` is live in Resend, so emails send
+   from `noreply@safartrails.co.in` (`DEFAULT_FROM_EMAIL` in
+   `src/lib/email/sendQuoteEmail.ts`). Override per-environment with
+   `RESEND_FROM_EMAIL` if you ever need a different sender on this domain.
 3. Go to **API Keys → Create API Key**, name it (e.g. `safartrails-quotes`),
    and copy the key — Resend only shows it once.
 

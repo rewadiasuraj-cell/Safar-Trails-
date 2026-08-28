@@ -30,9 +30,8 @@ export interface SendQuoteEmailResult {
   error?: string;
 }
 
-// Resend's shared sandbox sender - works immediately with no domain setup.
-// Once you verify your own domain in Resend, pass fromEmail to send from it instead.
-export const DEFAULT_FROM_EMAIL = 'SafarTrails Enquiries <onboarding@resend.dev>';
+// safartrails.co.in is verified in Resend. Override via fromEmail/RESEND_FROM_EMAIL if needed.
+export const DEFAULT_FROM_EMAIL = 'SafarTrails Enquiries <noreply@safartrails.co.in>';
 
 function escapeHtml(value: string): string {
   return value
