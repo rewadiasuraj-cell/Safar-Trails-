@@ -9,6 +9,7 @@ import { Footer } from './components/Footer';
 import { ContactUs } from './components/ContactUs';
 
 import { Package, TravelGuide } from './types';
+import { initGA, trackPageView } from './lib/analytics';
 
 // Code-split below-the-fold sections to eliminate unused JS on initial mobile paint
 const AITripPlanner = lazy(() => import('./components/AITripPlanner/AITripPlanner').then(m => ({ default: m.AITripPlanner })));
@@ -84,9 +85,15 @@ export default function App() {
   const [aiPlannerSeedPrompt, setAiPlannerSeedPrompt] = useState<string>('');
   const [aiPlannerSeedDestination, setAiPlannerSeedDestination] = useState<string>('');
 
-  // Scroll to top on route changes
+  // Initialize GA4 once (auto-pageview disabled; page_view is sent per-route below)
+  useEffect(() => {
+    initGA();
+  }, []);
+
+  // Scroll to top and record a GA4 page_view on every route change (including initial load)
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    trackPageView(location.pathname);
   }, [location.pathname]);
 
   const handleNavigate = (view: string, param?: string) => {
