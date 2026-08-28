@@ -71,3 +71,41 @@ This publishes it to `https://<your-chosen-name>.sanity.studio`, a
 standalone URL separate from the main site, where you (or teammates you
 invite as collaborators on sanity.io) can log in and edit content from
 anywhere.
+
+## Email Notifications (Resend)
+
+When someone submits the "Get Your Custom Trip Quote" form, an email with
+every field (name, phone, destination, dates, travellers, budget, notes, and
+the enquiry reference ID) is sent to `info.safartrails@gmail.com` via
+[Resend](https://resend.com). This runs in `functions/api/send-quote-email.ts`,
+a **Cloudflare Pages Function** — it only executes when the site is served
+through Cloudflare Pages, since that's what builds and routes files under
+`functions/` into serverless endpoints. It's a plain addition alongside the
+existing `/api/quotes` submission and WhatsApp link: if the email fails or
+isn't reachable, the form and WhatsApp flow are unaffected either way.
+
+### One-time setup on Resend
+
+1. Create a free account at [resend.com](https://resend.com).
+2. You can start sending immediately using Resend's shared sandbox address
+   (`onboarding@resend.dev`) — no domain setup required. When you're ready to
+   send from your own address, go to **Domains → Add Domain**, enter your
+   domain, and add the DNS records (SPF/DKIM) Resend shows you at your
+   registrar. Verification is usually automatic once the DNS propagates.
+3. Go to **API Keys → Create API Key**, name it (e.g. `safartrails-quotes`),
+   and copy the key — Resend only shows it once.
+
+### Configuring the API key
+
+- **Production (Cloudflare Pages):** Pages project → **Settings → Environment
+  variables** → add `RESEND_API_KEY` as a secret. Optionally add
+  `RESEND_FROM_EMAIL` once you've verified your own domain (defaults to the
+  Resend sandbox sender otherwise).
+- **Local testing:** copy `.dev.vars.example` to `.dev.vars` and fill in your
+  key, then run `npx wrangler pages dev -- bun run dev` (or `npx wrangler
+  pages dev dist` after building) to exercise the function locally. `.dev.vars`
+  is gitignored.
+
+Neither variable is a `VITE_`-prefixed var and neither belongs in `.env` —
+they're read via the Pages Function's `env` binding, not `import.meta.env`,
+so the key never reaches the browser bundle.

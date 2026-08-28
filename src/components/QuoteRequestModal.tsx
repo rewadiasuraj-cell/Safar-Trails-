@@ -56,6 +56,30 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
 
   if (!isOpen) return null;
 
+  // Fire-and-forget: notifies info.safartrails@gmail.com via the Resend-backed
+  // /api/send-quote-email function. Never awaited and never throws into the
+  // caller, so a failure here can't block the enquiry or the WhatsApp flow.
+  const sendQuoteEmailNotification = (leadId: string) => {
+    fetch('/api/send-quote-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        leadId,
+        name,
+        phone,
+        email,
+        destination,
+        travelDates: travelDates || 'Flexible',
+        travellers,
+        budget,
+        specialNotes: notes,
+        itinerarySummary: initialSummary
+      })
+    }).catch((err) => {
+      console.error('Quote email notification failed (enquiry was still submitted):', err);
+    });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !phone.trim()) {
@@ -86,6 +110,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
       const data = await response.json();
       if (data.success) {
         setSubmittedLead(data);
+        sendQuoteEmailNotification(data.leadId);
       } else {
         throw new Error(data.error || 'Failed to submit quote request');
       }
@@ -104,6 +129,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
         leadId: fallbackId,
         whatsappUrl: `https://wa.me/918076665782?text=${encodedMsg}`
       });
+      sendQuoteEmailNotification(fallbackId);
     } finally {
       setIsSubmitting(false);
     }
