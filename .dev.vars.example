@@ -1,0 +1,13 @@
+# Local secrets for Cloudflare Pages Functions (functions/**).
+# Copy this file to `.dev.vars` and fill in real values to test functions
+# locally with `npx wrangler pages dev`. This file is NOT read by `bun run dev`
+# (the Express server) or by Vite - it only applies to Pages Functions.
+#
+# In production, set these in the Cloudflare dashboard instead:
+# Pages project -> Settings -> Environment variables (mark RESEND_API_KEY as a secret).
+
+# Required. Get this from resend.com -> API Keys.
+RESEND_API_KEY="re_your_api_key_here"
+
+# Optional. Defaults to noreply@safartrails.co.in (verified in Resend) if unset.
+# RESEND_FROM_EMAIL="SafarTrails Enquiries <noreply@safartrails.co.in>"

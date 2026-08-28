@@ -1,0 +1,95 @@
+import React, { useState } from 'react';
+import { Package as PackageIcon, Clock } from 'lucide-react';
+import { useSanityQuery } from '../../lib/sanity/useSanityQuery';
+import { urlFor } from '../../lib/sanity/image';
+import { PACKAGES_QUERY } from '../../lib/sanity/queries';
+import { SanityTourPackage } from '../../lib/sanity/types';
+import { SanityLoadingState, SanityErrorState, SanityEmptyState } from './SanityStateViews';
+import { PackageDetailModal } from './PackageDetailModal';
+
+interface PackagesPageProps {
+  onOpenQuoteModal: (summary?: string, destinationName?: string) => void;
+}
+
+export const PackagesPage: React.FC<PackagesPageProps> = ({ onOpenQuoteModal }) => {
+  const { data, loading, error } = useSanityQuery<SanityTourPackage[]>(PACKAGES_QUERY);
+  const [selectedPackage, setSelectedPackage] = useState<SanityTourPackage | null>(null);
+
+  const packages = data || [];
+
+  return (
+    <section id="packages-section" className="w-full py-16 lg:py-24 bg-white">
+      <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+        <div className="mb-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-800 text-xs font-bold uppercase tracking-widest mb-3">
+            <PackageIcon className="w-3.5 h-3.5 text-[#FF6B00]" />
+            <span>Curated Holiday Packages</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-serif text-black tracking-tight">Tour Packages</h2>
+          <p className="mt-2 text-gray-500 text-sm sm:text-base max-w-2xl">
+            Ready-to-book itineraries, managed from our Sanity Studio.
+          </p>
+        </div>
+
+        {loading && <SanityLoadingState label="Loading packages…" />}
+        {!loading && error && <SanityErrorState message={error} />}
+        {!loading && !error && packages.length === 0 && (
+          <SanityEmptyState
+            title="No tour packages yet"
+            description="Add a Tour Package document in the Sanity Studio and it will show up here automatically."
+          />
+        )}
+
+        {!loading && !error && packages.length > 0 && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {packages.map((pkg) => (
+              <button
+                key={pkg._id}
+                onClick={() => setSelectedPackage(pkg)}
+                className="text-left group bg-white rounded-2xl overflow-hidden border border-gray-200/80 hover:border-black/30 shadow-xs hover:shadow-2xl transition-all duration-300 cursor-pointer"
+              >
+                <div className="relative h-48 overflow-hidden bg-gray-100">
+                  {pkg.images && pkg.images[0] && (
+                    <img
+                      src={urlFor(pkg.images[0]).width(700).height(500).fit('crop').url()}
+                      alt={pkg.images[0].alt || pkg.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                  )}
+                </div>
+                <div className="p-5">
+                  {pkg.destination && (
+                    <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF6B00] mb-1.5">
+                      {pkg.destination.title}
+                    </div>
+                  )}
+                  <h3 className="font-serif font-bold text-lg text-slate-900">{pkg.name}</h3>
+                  <div className="mt-2 flex items-center gap-1.5 text-xs text-gray-500 font-semibold">
+                    <Clock className="w-3.5 h-3.5" />
+                    <span>{pkg.duration}</span>
+                  </div>
+                  <div className="mt-3 pt-3 border-t border-gray-100 text-sm font-extrabold text-black">
+                    ₹{pkg.price?.toLocaleString('en-IN')}{' '}
+                    <span className="text-xs font-normal text-gray-500">/ person</span>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {selectedPackage && (
+        <PackageDetailModal
+          pkg={selectedPackage}
+          onClose={() => setSelectedPackage(null)}
+          onOpenQuoteModal={(summary, destinationName) => {
+            setSelectedPackage(null);
+            onOpenQuoteModal(summary, destinationName);
+          }}
+        />
+      )}
+    </section>
+  );
+};
