@@ -109,8 +109,10 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
 
       const data = await response.json();
       if (data.success) {
+        // /api/quotes already sends the notification email itself (server.ts
+        // and the Cloudflare Pages Function both do) - no separate call here,
+        // or it would double-send on hosts where that endpoint works.
         setSubmittedLead(data);
-        sendQuoteEmailNotification(data.leadId);
       } else {
         throw new Error(data.error || 'Failed to submit quote request');
       }
@@ -129,6 +131,9 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
         leadId: fallbackId,
         whatsappUrl: `https://wa.me/918076665782?text=${encodedMsg}`
       });
+      // /api/quotes itself failed/unreachable, so no server-side email was
+      // ever attempted - this is the one remaining path where the separate
+      // notification call is still needed.
       sendQuoteEmailNotification(fallbackId);
     } finally {
       setIsSubmitting(false);
