@@ -227,7 +227,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
                       onPlanDestinationWithAI(dest.name);
                     }
                   }}
-                  className="w-full h-9 min-[380px]:h-9.5 sm:h-10 min-h-[36px] sm:min-h-[40px] px-3 rounded-xl bg-warm-orange hover:brightness-95 active:scale-[0.99] text-white font-bold text-[11px] sm:text-xs uppercase tracking-wider shadow-xs hover:shadow-md transition-all inline-flex items-center justify-center gap-1.5 cursor-pointer text-center whitespace-nowrap select-none"
+                  className="w-full h-9 min-[380px]:h-9.5 sm:h-10 min-h-[36px] sm:min-h-[40px] px-3 rounded-xl bg-deep-emerald hover:bg-forest-green active:scale-[0.99] text-white font-bold text-[11px] sm:text-xs uppercase tracking-wider shadow-xs hover:shadow-md transition-all inline-flex items-center justify-center gap-1.5 cursor-pointer text-center whitespace-nowrap select-none"
                 >
                   <Zap className="w-3.5 h-3.5 fill-white text-white shrink-0" />
                   <span>Quick Book</span>
@@ -246,7 +246,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
                   <button
                     id={`ai-plan-dest-${dest.slug}`}
                     onClick={() => onPlanDestinationWithAI(dest.name)}
-                    className="w-full h-8.5 min-[380px]:h-9 sm:h-9.5 min-h-[34px] sm:min-h-[38px] px-1 sm:px-2 rounded-xl bg-deep-emerald hover:bg-forest-green text-white font-bold text-[10px] min-[380px]:text-[10.5px] sm:text-[11px] uppercase tracking-tight min-[380px]:tracking-wide transition-all inline-flex items-center justify-center gap-1 sm:gap-1.5 cursor-pointer text-center whitespace-nowrap select-none"
+                    className="w-full h-8.5 min-[380px]:h-9 sm:h-9.5 min-h-[34px] sm:min-h-[38px] px-1 sm:px-2 rounded-xl bg-warm-orange hover:brightness-95 text-white font-bold text-[10px] min-[380px]:text-[10.5px] sm:text-[11px] uppercase tracking-tight min-[380px]:tracking-wide transition-all inline-flex items-center justify-center gap-1 sm:gap-1.5 cursor-pointer text-center whitespace-nowrap select-none"
                   >
                     <AIIcon className="hidden sm:inline-block w-3 h-3 text-white shrink-0" />
                     <span>Custom Plan</span>
