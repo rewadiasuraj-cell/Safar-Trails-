@@ -12,6 +12,12 @@ export const tourPackage = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'displayOrder',
+      title: 'Display Order',
+      description: 'Lower numbers show first on the packages listing. Leave blank to sort alphabetically after ordered packages.',
+      type: 'number',
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
