@@ -58,14 +58,14 @@ export const Header: React.FC<HeaderProps> = ({
   }, []);
 
   const popularDestinations = [
-    { name: 'Kashmir', slug: 'kashmir', tag: 'Paradise on Earth • Houseboats & Snow' },
-    { name: 'Goa', slug: 'goa', tag: 'Beaches, Heritage & Latin Quarters' },
-    { name: 'Kerala', slug: 'kerala', tag: 'Backwaters, Tea Hills & Ayurveda' },
-    { name: 'Rajasthan', slug: 'rajasthan', tag: 'Royal Palaces & Thar Desert' },
-    { name: 'Himachal Pradesh', slug: 'himachal-pradesh', tag: 'Alpine Valleys & Snow Peaks' },
-    { name: 'Andaman & Nicobar', slug: 'andaman', tag: 'Emerald Isles & Coral Reefs' },
-    { name: 'Northeast India', slug: 'northeast-india', tag: 'Living Root Bridges & Tea Gardens' },
-    { name: 'Uttarakhand', slug: 'uttarakhand', tag: 'Ganga Ghats & Himalayan Treks' }
+    { name: 'Kashmir', slug: 'kashmir' },
+    { name: 'Goa', slug: 'goa' },
+    { name: 'Kerala', slug: 'kerala' },
+    { name: 'Rajasthan', slug: 'rajasthan' },
+    { name: 'Himachal Pradesh', slug: 'himachal-pradesh' },
+    { name: 'Andaman & Nicobar', slug: 'andaman' },
+    { name: 'Northeast India', slug: 'northeast-india' },
+    { name: 'Uttarakhand', slug: 'uttarakhand' }
   ];
 
   const moreNavItems = [
@@ -180,13 +180,10 @@ export const Header: React.FC<HeaderProps> = ({
                         onNavigate('destination-detail', dest.slug);
                         setDestinationsDropdown(false);
                       }}
-                      className="text-left px-3 py-2 rounded-xl hover:bg-[#FAF9F6] transition-colors flex flex-col group/item cursor-pointer"
+                      className="text-left px-3 py-2 rounded-xl hover:bg-[#FAF9F6] transition-colors flex group/item cursor-pointer"
                     >
                       <span className="text-sm font-semibold text-slate-900 group-hover/item:text-[#FF6B00] transition-colors whitespace-nowrap">
                         {dest.name}
-                      </span>
-                      <span className="text-[11px] text-gray-500 truncate">
-                        {dest.tag}
                       </span>
                     </button>
                   ))}
