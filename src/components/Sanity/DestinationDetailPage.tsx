@@ -140,10 +140,10 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
             Plan {destination.title} with AI
           </button>
           <button
-            onClick={() => onOpenQuoteModal(`I'd like a custom quote for ${destination.title}.`, destination.title)}
+            onClick={() => onOpenQuoteModal(`Booking Request: ${destination.title}`, destination.title)}
             className="flex-1 py-3.5 rounded-full bg-[#FF6B00] hover:bg-[#E55F00] text-white font-bold text-sm text-center transition-colors cursor-pointer"
           >
-            Get a Custom Quote
+            Book Now
           </button>
         </div>
       </div>
