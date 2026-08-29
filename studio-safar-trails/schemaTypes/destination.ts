@@ -12,6 +12,12 @@ export const destination = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'displayOrder',
+      title: 'Display Order',
+      description: 'Lower numbers show first on the destinations listing. Leave blank to sort alphabetically after ordered destinations.',
+      type: 'number',
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
