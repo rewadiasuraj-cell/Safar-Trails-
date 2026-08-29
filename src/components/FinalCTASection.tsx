@@ -34,8 +34,8 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
               <Users className="w-5 h-5 text-white stroke-[1.8]" />
             </div>
             <div>
-              <div className="text-sm font-bold text-white tracking-wide">100% Custom</div>
-              <div className="text-xs text-gray-400">Trips tailored for you</div>
+              <div className="text-sm font-bold text-white tracking-wide">Fully Customized</div>
+              <div className="text-xs text-gray-400">Packages</div>
             </div>
           </div>
 
@@ -45,8 +45,8 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
               <Award className="w-5 h-5 text-white stroke-[1.8]" />
             </div>
             <div>
-              <div className="text-sm font-bold text-white tracking-wide">Verified Partners</div>
-              <div className="text-xs text-gray-400">Handpicked stays & cabs</div>
+              <div className="text-sm font-bold text-white tracking-wide">Trusted</div>
+              <div className="text-xs text-gray-400">Travel Partners</div>
             </div>
           </div>
 
@@ -56,8 +56,8 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
               <ShieldCheck className="w-5 h-5 text-white stroke-[1.8]" />
             </div>
             <div>
-              <div className="text-sm font-bold text-white tracking-wide">Transparent Quotes</div>
-              <div className="text-xs text-gray-400">Zero hidden charges</div>
+              <div className="text-sm font-bold text-white tracking-wide">Clear</div>
+              <div className="text-xs text-gray-400">Pricing</div>
             </div>
           </div>
 
@@ -67,8 +67,8 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
               <Headphones className="w-5 h-5 text-white stroke-[1.8]" />
             </div>
             <div>
-              <div className="text-sm font-bold text-white tracking-wide">24/7 Concierge</div>
-              <div className="text-xs text-gray-400">Dedicated on-trip specialist</div>
+              <div className="text-sm font-bold text-white tracking-wide">24/7</div>
+              <div className="text-xs text-gray-400">Travel Support</div>
             </div>
           </div>
         </div>
