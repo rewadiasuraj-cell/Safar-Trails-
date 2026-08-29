@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Package as PackageIcon, Clock } from 'lucide-react';
+import { Clock } from 'lucide-react';
 import { useSanityQuery } from '../../lib/sanity/useSanityQuery';
 import { urlFor } from '../../lib/sanity/image';
 import { PACKAGES_QUERY } from '../../lib/sanity/queries';
@@ -17,14 +17,7 @@ export const PackagesPage: React.FC = () => {
     <section id="packages-section" className="w-full py-16 lg:py-24 bg-white">
       <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <div className="mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-800 text-xs font-bold uppercase tracking-widest mb-3">
-            <PackageIcon className="w-3.5 h-3.5 text-[#FF6B00]" />
-            <span>Curated Holiday Packages</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl font-serif text-black tracking-tight">Tour Packages</h2>
-          <p className="mt-2 text-gray-500 text-sm sm:text-base max-w-2xl">
-            Ready-to-book itineraries, managed from our Sanity Studio.
-          </p>
         </div>
 
         {loading && <SanityLoadingState label="Loading packages…" />}
