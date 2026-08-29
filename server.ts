@@ -348,6 +348,7 @@ function generateFallbackPlan(params: any) {
   const isHimachal = dLower.includes('himachal') || dLower.includes('manali') || dLower.includes('shimla') || dLower.includes('kasol') || dLower.includes('dharamshala');
   const isLadakh = dLower.includes('ladakh') || dLower.includes('leh') || dLower.includes('nubra') || dLower.includes('pangong');
   const isUttarakhand = dLower.includes('uttarakhand') || dLower.includes('rishikesh') || dLower.includes('nainital') || dLower.includes('mussoorie') || dLower.includes('corbett');
+  const isChardham = dLower.includes('chardham') || dLower.includes('char dham') || dLower.includes('kedarnath') || dLower.includes('badrinath') || dLower.includes('gangotri') || dLower.includes('yamunotri');
   const isNortheast = dLower.includes('meghalaya') || dLower.includes('shillong') || dLower.includes('northeast') || dLower.includes('sikkim') || dLower.includes('gangtok') || dLower.includes('darjeeling');
 
   let baseRatePerPerson = 16500;
@@ -359,6 +360,7 @@ function generateFallbackPlan(params: any) {
   else if (isHimachal) baseRatePerPerson = 15000;
   else if (isLadakh) baseRatePerPerson = 22000;
   else if (isUttarakhand) baseRatePerPerson = 14500;
+  else if (isChardham) baseRatePerPerson = 15999;
   else if (isNortheast) baseRatePerPerson = 19000;
 
   // Calculate pricing
