@@ -1,4 +1,4 @@
-export const DESTINATIONS_QUERY = `*[_type == "destination"] | order(title asc) {
+export const DESTINATIONS_QUERY = `*[_type == "destination"] | order(displayOrder asc, title asc) {
   _id,
   title,
   "slug": slug.current,
