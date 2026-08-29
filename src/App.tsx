@@ -35,6 +35,7 @@ const PolicyModals = lazy(() => import('./components/PolicyModals').then(m => ({
 const SanityDestinationsPage = lazy(() => import('./components/Sanity/DestinationsPage').then(m => ({ default: m.DestinationsPage })));
 const SanityDestinationDetailPage = lazy(() => import('./components/Sanity/DestinationDetailPage').then(m => ({ default: m.DestinationDetailPage })));
 const SanityPackagesPage = lazy(() => import('./components/Sanity/PackagesPage').then(m => ({ default: m.PackagesPage })));
+const SanityPackageDetailPage = lazy(() => import('./components/Sanity/PackageDetailPage').then(m => ({ default: m.PackageDetailPage })));
 const SanityGuidesPage = lazy(() => import('./components/Sanity/GuidesPage').then(m => ({ default: m.GuidesPage })));
 const SanityGuideDetailPage = lazy(() => import('./components/Sanity/GuideDetailPage').then(m => ({ default: m.GuideDetailPage })));
 
@@ -266,9 +267,19 @@ export default function App() {
             element={
               <div className="pt-20">
                 <Suspense fallback={<SectionSkeleton />}>
-                  <SanityPackagesPage onOpenQuoteModal={handleOpenQuoteModal} />
+                  <SanityPackagesPage />
                 </Suspense>
               </div>
+            }
+          />
+
+          {/* ROUTE: SINGLE PACKAGE DETAIL (live from Sanity) */}
+          <Route
+            path="/packages/:slug"
+            element={
+              <Suspense fallback={<SectionSkeleton />}>
+                <SanityPackageDetailPage onOpenQuoteModal={handleOpenQuoteModal} />
+              </Suspense>
             }
           />
 
