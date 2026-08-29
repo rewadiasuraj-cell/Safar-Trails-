@@ -17,12 +17,12 @@ export const packagesData: Package[] = [
     reviewCount: 96,
     startingCity: 'Delhi / Haridwar (Pickup available)',
     bestFor: 'Families, Pilgrims, Senior Citizens & Spiritual Seekers',
-    heroImage: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=1200&auto=format&fit=crop',
+    heroImage: 'https://images.unsplash.com/photo-1601821139366-eb14f3628e26?q=80&w=1200&auto=format&fit=crop',
     galleryImages: [
-      'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1506461883276-594a12b11cf3?q=80&w=800&auto=format&fit=crop'
+      'https://images.unsplash.com/photo-1601821139366-eb14f3628e26?q=80&w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1698574996391-73f103113f60?q=80&w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1696465889052-6c8921536920?q=80&w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1695236547282-7f927fe12197?q=80&w=800&auto=format&fit=crop'
     ],
     overview: 'Chardham Yatra is one of the most sacred and spiritually significant pilgrimages in India. This 9 Nights / 10 Days journey takes you to all four revered Himalayan shrines — Yamunotri, Gangotri, Kedarnath and Badrinath — combining deep spirituality and devotion with breathtaking Garhwal Himalayan landscapes, comfortable stays and dedicated pilgrimage assistance throughout.',
     highlights: [
@@ -60,7 +60,7 @@ export const packagesData: Package[] = [
         stay: 'Hotel Ganga Kinare / Hotel Alpana or similar, Haridwar',
         mealsIncluded: 'Dinner',
         transfers: 'Private Vehicle',
-        image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=600&auto=format&fit=crop'
+        image: 'https://images.unsplash.com/photo-1724432799555-6414c4a669b9?q=80&w=600&auto=format&fit=crop'
       },
       {
         dayNumber: 2,
@@ -83,7 +83,7 @@ export const packagesData: Package[] = [
         stay: 'Hotel Hill Prince / Hotel Apaar or similar, Barkot',
         mealsIncluded: 'Breakfast & Dinner',
         transfers: 'Private Vehicle',
-        image: 'https://images.unsplash.com/photo-1506461883276-594a12b11cf3?q=80&w=600&auto=format&fit=crop',
+        image: 'https://images.unsplash.com/photo-1695236547282-7f927fe12197?q=80&w=600&auto=format&fit=crop',
         insiderTip: 'Pony, palki and helicopter arrangements to Yamunotri are subject to availability and weather — book them in advance where possible.'
       },
       {
@@ -95,7 +95,7 @@ export const packagesData: Package[] = [
         stay: 'Hotel Shivlinga / Hotel Hari Ganga or similar, Uttarkashi',
         mealsIncluded: 'Breakfast & Dinner',
         transfers: 'Private Vehicle',
-        image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop'
+        image: 'https://images.unsplash.com/photo-1696465889052-6c8921536920?q=80&w=600&auto=format&fit=crop'
       },
       {
         dayNumber: 5,
@@ -107,7 +107,7 @@ export const packagesData: Package[] = [
         stay: 'Hotel Shivlinga / Hotel Hari Ganga or similar, Uttarkashi',
         mealsIncluded: 'Breakfast & Dinner',
         transfers: 'Private Vehicle',
-        image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop'
+        image: 'https://images.unsplash.com/photo-1696465889052-6c8921536920?q=80&w=600&auto=format&fit=crop'
       },
       {
         dayNumber: 6,
@@ -130,7 +130,7 @@ export const packagesData: Package[] = [
         stay: 'GMVN / Basic Guest House or similar, Kedarnath',
         mealsIncluded: 'Breakfast & Dinner',
         transfers: 'Trek / Pony / Helicopter (as selected, at additional cost)',
-        image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=600&auto=format&fit=crop',
+        image: 'https://images.unsplash.com/photo-1698574996391-73f103113f60?q=80&w=600&auto=format&fit=crop',
         insiderTip: 'Helicopter tickets for Kedarnath sell out fast in peak season — confirm your preferred mode of travel well in advance.'
       },
       {
@@ -154,7 +154,7 @@ export const packagesData: Package[] = [
         stay: 'Hotel Narayan Palace / Hotel Snow Crest or similar, Badrinath',
         mealsIncluded: 'Breakfast & Dinner',
         transfers: 'Private Vehicle',
-        image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=600&auto=format&fit=crop'
+        image: 'https://images.unsplash.com/photo-1601821139366-eb14f3628e26?q=80&w=600&auto=format&fit=crop'
       },
       {
         dayNumber: 10,

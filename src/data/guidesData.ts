@@ -14,7 +14,7 @@ export const guidesData: TravelGuide[] = [
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop'
     },
     publishedDate: 'August 2026',
-    heroImage: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=1200&auto=format&fit=crop',
+    heroImage: 'https://images.unsplash.com/photo-1601821139366-eb14f3628e26?q=80&w=1200&auto=format&fit=crop',
     category: 'Best Time',
     excerpt: 'The ideal time for the Chardham Yatra depends on temple opening dates, weather conditions, road accessibility, crowd levels and official travel advisories. Here is a season-by-season breakdown to help you plan.',
     contentSections: [
@@ -61,7 +61,7 @@ export const guidesData: TravelGuide[] = [
       avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop'
     },
     publishedDate: 'August 2026',
-    heroImage: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1200&auto=format&fit=crop',
+    heroImage: 'https://images.unsplash.com/photo-1724432799555-6414c4a669b9?q=80&w=1200&auto=format&fit=crop',
     category: 'Cost Breakdown',
     excerpt: 'The cost of a Chardham Yatra package depends on the itinerary, travel dates, number of travellers and the level of services selected. Here is exactly what drives the price, and what’s included in your package.',
     contentSections: [

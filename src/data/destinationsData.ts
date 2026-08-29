@@ -6,8 +6,8 @@ export const destinationsData: Destination[] = [
     name: 'Chardham Yatra',
     tagline: 'Devbhoomi’s Holy Circuit — Yamunotri, Gangotri, Kedarnath & Badrinath',
     state: 'Uttarakhand',
-    heroImage: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=1600&auto=format&fit=crop',
-    cardImage: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=800&auto=format&fit=crop',
+    heroImage: 'https://images.unsplash.com/photo-1601821139366-eb14f3628e26?q=80&w=1600&auto=format&fit=crop',
+    cardImage: 'https://images.unsplash.com/photo-1601821139366-eb14f3628e26?q=80&w=800&auto=format&fit=crop',
     shortDescription: 'Sacred darshan at all four Himalayan dhams, the soul-stirring Ganga Aarti at Har Ki Pauri, and breathtaking mountain drives through Devbhoomi Uttarakhand.',
     fullOverview: 'Chardham Yatra is one of the most sacred and spiritually significant pilgrimages in India. Located in the beautiful Himalayan region of Uttarakhand, the yatra takes devotees to four revered Hindu shrines — Yamunotri, Gangotri, Kedarnath, and Badrinath. Each dham holds deep religious importance and is associated with ancient traditions, mythology, and divine blessings. The journey offers a unique combination of spirituality, devotion, and breathtaking Himalayan landscapes.',
     bestTime: 'May to June (Pleasant weather, most popular) | September to October (Clearer skies, cooler weather)',
@@ -33,22 +33,22 @@ export const destinationsData: Destination[] = [
       {
         name: 'Yamunotri Temple',
         description: 'The sacred source of the Yamuna River, dedicated to Goddess Yamuna, known for scenic mountain trails and natural hot springs.',
-        image: 'https://images.unsplash.com/photo-1506461883276-594a12b11cf3?q=80&w=600&auto=format&fit=crop'
+        image: 'https://images.unsplash.com/photo-1695236547282-7f927fe12197?q=80&w=600&auto=format&fit=crop'
       },
       {
         name: 'Gangotri Temple',
         description: 'Dedicated to Goddess Ganga beside the Bhagirathi River, where Hindu belief holds she descended to Earth to cleanse humanity.',
-        image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop'
+        image: 'https://images.unsplash.com/photo-1696465889052-6c8921536920?q=80&w=600&auto=format&fit=crop'
       },
       {
         name: 'Kedarnath Temple',
         description: 'One of the twelve Jyotirlingas of Lord Shiva, set amidst the breathtaking snow-covered Garhwal Himalayas.',
-        image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=600&auto=format&fit=crop'
+        image: 'https://images.unsplash.com/photo-1698574996391-73f103113f60?q=80&w=600&auto=format&fit=crop'
       },
       {
         name: 'Badrinath Temple',
         description: 'A sacred abode of Lord Vishnu along the Alaknanda River, surrounded by the majestic Himalayas.',
-        image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=600&auto=format&fit=crop'
+        image: 'https://images.unsplash.com/photo-1601821139366-eb14f3628e26?q=80&w=600&auto=format&fit=crop'
       }
     ],
     stayCategories: [
