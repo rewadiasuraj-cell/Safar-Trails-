@@ -4,7 +4,7 @@ export const packagesData: Package[] = [
   {
     id: 'pkg-chardham-yatra',
     slug: 'chardham-yatra-haridwar-yamunotri-gangotri-kedarnath-badrinath-10d9n',
-    title: 'Chardham Yatra: Haridwar, Yamunotri, Gangotri, Kedarnath & Badrinath 10D/9N Pilgrimage Tour',
+    title: 'Chardham Yatra Tour Package',
     destination: 'Chardham Yatra, Uttarakhand',
     state: 'Uttarakhand',
     durationDays: 10,
@@ -175,7 +175,7 @@ export const packagesData: Package[] = [
   {
     id: 'pkg-kashmir-escape',
     slug: 'kashmir-escape-houseboat-bliss',
-    title: 'Kashmir: Srinagar, Gulmarg & Houseboat 6D/5N Holiday Tour',
+    title: 'Kashmir Tour Package',
     destination: 'Kashmir',
     state: 'Jammu & Kashmir',
     durationDays: 6,
@@ -304,7 +304,7 @@ export const packagesData: Package[] = [
   {
     id: 'pkg-kerala-grand-nature',
     slug: 'kerala-nature-munnar-alleppey-houseboat',
-    title: 'Kerala: Munnar Tea Hills & Alleppey Houseboat 6D/5N Tour Package',
+    title: 'Kerala Tour Package',
     destination: 'Kerala',
     state: 'Kerala',
     durationDays: 6,
@@ -424,7 +424,7 @@ export const packagesData: Package[] = [
   {
     id: 'pkg-royal-rajasthan',
     slug: 'royal-rajasthan-heritage-desert-dunes',
-    title: 'Rajasthan: Jaipur Forts, Jodhpur & Jaisalmer Desert Dunes 7D/6N Tour',
+    title: 'Rajasthan Tour Package',
     destination: 'Rajasthan',
     state: 'Rajasthan',
     durationDays: 7,
@@ -554,7 +554,7 @@ export const packagesData: Package[] = [
   {
     id: 'pkg-romantic-goa-boutique',
     slug: 'romantic-goa-boutique-beach-backwater',
-    title: 'Goa: South Goa Beaches, Sunsets & Fontainhas Latin Quarter 5D/4N Tour',
+    title: 'Goa Tour Package',
     destination: 'Goa',
     state: 'Goa',
     durationDays: 5,
@@ -659,7 +659,7 @@ export const packagesData: Package[] = [
   {
     id: 'pkg-himachal-highs',
     slug: 'himachal-manali-solang-sissu-retreat',
-    title: 'Himachal: Manali, Solang Valley & Atal Tunnel Sissu 6D/5N Tour Package',
+    title: 'Himachal Pradesh Tour Package',
     destination: 'Himachal Pradesh',
     state: 'Himachal Pradesh',
     durationDays: 6,
@@ -775,7 +775,7 @@ export const packagesData: Package[] = [
   {
     id: 'pkg-meghalaya-living-roots',
     slug: 'meghalaya-living-root-bridges-dawki-shillong',
-    title: 'Meghalaya: Cherrapunji, Living Root Bridges & Dawki River 6D/5N Tour',
+    title: 'Meghalaya Tour Package',
     destination: 'Northeast India',
     state: 'Meghalaya',
     durationDays: 6,
@@ -891,7 +891,7 @@ export const packagesData: Package[] = [
   {
     id: 'pkg-uttarakhand-rishikesh-corbett',
     slug: 'uttarakhand-rishikesh-mussoorie-corbett',
-    title: 'Uttarakhand: Rishikesh Rafting, Mussoorie & Jim Corbett Safari 6D/5N Tour',
+    title: 'Uttarakhand Tour Package',
     destination: 'Uttarakhand',
     state: 'Uttarakhand',
     durationDays: 6,
@@ -1007,7 +1007,7 @@ export const packagesData: Package[] = [
   {
     id: 'pkg-ladakh-high-passes-pangong',
     slug: 'ladakh-pangong-nubra-khardungla',
-    title: 'Ladakh: Pangong Lake, Nubra Valley & Khardung La Pass 6D/5N Tour',
+    title: 'Ladakh Tour Package',
     destination: 'Ladakh',
     state: 'Ladakh',
     durationDays: 6,
@@ -1123,7 +1123,7 @@ export const packagesData: Package[] = [
   {
     id: 'pkg-andaman-turquoise',
     slug: 'andaman-turquoise-havelock-scuba-dream',
-    title: 'Andaman: Havelock Island, Scuba Diving & Radhanagar Beach 6D/5N Tour',
+    title: 'Andaman Tour Package',
     destination: 'Andaman',
     state: 'Andaman & Nicobar',
     durationDays: 6,
