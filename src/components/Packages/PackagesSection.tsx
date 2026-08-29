@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { packagesData } from '../../data/packagesData';
 import { Package } from '../../types';
-import { 
+import {
   Building2,
   Car,
   Utensils,
-  Star,
   Info,
   Send
 } from 'lucide-react';
@@ -178,14 +177,9 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
                     </span>
                   </div>
 
-                  {/* Ratings & Best for */}
-                  <div className="absolute bottom-3 left-3.5 right-3.5 flex items-center justify-between text-white text-xs">
-                    <div className="flex items-center gap-1 bg-black/60 backdrop-blur-xs px-2 py-0.5 rounded-md font-bold text-[11px]">
-                      <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                      <span>{pkg.ratings}</span>
-                      <span className="text-[10px] text-gray-300">({pkg.reviewCount})</span>
-                    </div>
-                    <span className="text-[11px] text-gray-200 line-clamp-1 max-w-[170px]">
+                  {/* Best for */}
+                  <div className="absolute bottom-3 left-3.5 right-3.5 flex items-center text-white text-xs">
+                    <span className="text-[11px] text-gray-200 line-clamp-1">
                       {pkg.bestFor}
                     </span>
                   </div>
