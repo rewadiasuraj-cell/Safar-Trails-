@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { MapPin, Calendar, Search, ArrowRight } from 'lucide-react';
+import { MapPin, Search, ArrowRight } from 'lucide-react';
 import { useSanityQuery } from '../../lib/sanity/useSanityQuery';
 import { urlFor } from '../../lib/sanity/image';
 import { DESTINATIONS_QUERY } from '../../lib/sanity/queries';
@@ -90,12 +90,6 @@ export const DestinationsPage: React.FC<DestinationsPageProps> = ({
                       />
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
-                    {dest.bestTimeToVisit && (
-                      <span className="absolute top-3.5 left-3.5 px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-white/95 text-black shadow-xs inline-flex items-center gap-1.5">
-                        <Calendar className="w-3.5 h-3.5 text-[#FF6B00]" />
-                        <span>{dest.bestTimeToVisit}</span>
-                      </span>
-                    )}
                     <h3 className="absolute bottom-3.5 left-3.5 right-3.5 text-2xl font-serif font-bold tracking-tight text-white drop-shadow-sm">
                       {dest.title}
                     </h3>

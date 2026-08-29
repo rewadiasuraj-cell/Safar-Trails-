@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { ArrowLeft, Calendar, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 import { useSanityQuery } from '../../lib/sanity/useSanityQuery';
 import { urlFor } from '../../lib/sanity/image';
 import { DESTINATION_BY_SLUG_QUERY, PACKAGES_BY_DESTINATION_SLUG_QUERY } from '../../lib/sanity/queries';
@@ -61,12 +61,6 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
           <h1 className="text-3xl sm:text-5xl font-serif font-bold text-white tracking-tight drop-shadow-sm">
             {destination.title}
           </h1>
-          {destination.bestTimeToVisit && (
-            <span className="mt-4 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/95 text-black text-xs font-bold uppercase tracking-wide">
-              <Calendar className="w-3.5 h-3.5 text-[#FF6B00]" />
-              Best time: {destination.bestTimeToVisit}
-            </span>
-          )}
         </div>
       </div>
 
