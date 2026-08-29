@@ -80,7 +80,7 @@ export const PackageDetailModal: React.FC<PackageDetailModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 lg:p-6 animate-in fade-in duration-200">
-      <div className="bg-white w-full max-w-4xl rounded-2xl shadow-2xl border border-gray-200 overflow-hidden max-h-[92vh] flex flex-col my-auto">
+      <div className="bg-white w-full max-w-[1100px] rounded-2xl shadow-2xl border border-gray-200 overflow-hidden max-h-[92vh] flex flex-col my-auto">
         {/* Sticky Header / Hero */}
         <div className="relative h-64 sm:h-72 flex-shrink-0">
           <img
