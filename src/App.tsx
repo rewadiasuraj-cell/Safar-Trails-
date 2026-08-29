@@ -1,5 +1,6 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 import { Header } from './components/Header';
 import { MobileBottomNav } from './components/MobileBottomNav';
 import { HeroSection } from './components/HeroSection';
@@ -7,6 +8,7 @@ import { HandpickedExperiencesSection } from './components/HandpickedExperiences
 import { StickyContactWidget } from './components/StickyContactWidget';
 import { Footer } from './components/Footer';
 import { ContactUs } from './components/ContactUs';
+import { AIPlannerTeaser } from './components/AIPlannerTeaser';
 
 import { Package, TravelGuide } from './types';
 import { initGA, trackPageView } from './lib/analytics';
@@ -110,14 +112,6 @@ export default function App() {
   const handleStartAIPlan = (promptText?: string, destinationName?: string) => {
     if (promptText) setAiPlannerSeedPrompt(promptText);
     if (destinationName) setAiPlannerSeedDestination(destinationName);
-
-    if (location.pathname === '/') {
-      const el = document.getElementById('ai-trip-planner-section');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-        return;
-      }
-    }
     navigate('/ai-planner');
   };
 
@@ -181,13 +175,9 @@ export default function App() {
                   onOpenQuoteModal={handleOpenQuoteModal}
                 />
 
-                <Suspense fallback={<SectionSkeleton />}>
-                  <AITripPlanner
-                    initialPrompt={aiPlannerSeedPrompt}
-                    initialDestination={aiPlannerSeedDestination}
-                    onOpenQuoteModal={handleOpenQuoteModal}
-                  />
+                <AIPlannerTeaser />
 
+                <Suspense fallback={<SectionSkeleton />}>
                   <DestinationsSection
                     onSelectDestination={handleSelectDestination}
                     onPlanDestinationWithAI={(destName) => handleStartAIPlan(undefined, destName)}
@@ -288,6 +278,15 @@ export default function App() {
             path="/ai-planner"
             element={
               <div className="pt-20 pb-16">
+                <div className="w-full max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-4">
+                  <button
+                    onClick={() => navigate('/')}
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-gray-200 hover:border-black text-slate-800 hover:text-black text-xs font-bold uppercase tracking-wide transition-colors cursor-pointer"
+                  >
+                    <ArrowLeft className="w-3.5 h-3.5" />
+                    <span>Back to Home</span>
+                  </button>
+                </div>
                 <Suspense fallback={<SectionSkeleton />}>
                   <AITripPlanner
                     initialPrompt={aiPlannerSeedPrompt}
