@@ -33,9 +33,48 @@ const PACKAGE_PROJECTION = `{
   "destination": destination->{ _id, title, "slug": slug.current }
 }`;
 
+const PACKAGE_DETAIL_PROJECTION = `{
+  _id,
+  name,
+  "slug": slug.current,
+  price,
+  duration,
+  images,
+  itinerary,
+  inclusions,
+  exclusions,
+  "destination": destination->{ _id, title, "slug": slug.current },
+  seoTitle,
+  seoDescription,
+  tagline,
+  startingPoint,
+  travelType,
+  overview,
+  whatIsSection,
+  stopsCovered,
+  placesCovered,
+  bestTimeSections,
+  howToReach,
+  costNote,
+  costFactors,
+  highlights,
+  accommodationNote,
+  accommodationOptions,
+  transportationOptions,
+  customizeOptions,
+  whoCanBook,
+  travelTips,
+  whyChooseUs,
+  faqs,
+  bottomCtaHeading,
+  bottomCtaText
+}`;
+
 export const PACKAGES_QUERY = `*[_type == "tourPackage"] | order(name asc) ${PACKAGE_PROJECTION}`;
 
 export const PACKAGES_BY_DESTINATION_SLUG_QUERY = `*[_type == "tourPackage" && destination->slug.current == $slug] | order(name asc) ${PACKAGE_PROJECTION}`;
+
+export const PACKAGE_BY_SLUG_QUERY = `*[_type == "tourPackage" && slug.current == $slug][0] ${PACKAGE_DETAIL_PROJECTION}`;
 
 export const GUIDES_QUERY = `*[_type == "guide"] | order(publishedDate desc) {
   _id,

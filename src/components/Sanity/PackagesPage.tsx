@@ -1,19 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Package as PackageIcon, Clock } from 'lucide-react';
 import { useSanityQuery } from '../../lib/sanity/useSanityQuery';
 import { urlFor } from '../../lib/sanity/image';
 import { PACKAGES_QUERY } from '../../lib/sanity/queries';
 import { SanityTourPackage } from '../../lib/sanity/types';
 import { SanityLoadingState, SanityErrorState, SanityEmptyState } from './SanityStateViews';
-import { PackageDetailModal } from './PackageDetailModal';
 
-interface PackagesPageProps {
-  onOpenQuoteModal: (summary?: string, destinationName?: string) => void;
-}
-
-export const PackagesPage: React.FC<PackagesPageProps> = ({ onOpenQuoteModal }) => {
+export const PackagesPage: React.FC = () => {
   const { data, loading, error } = useSanityQuery<SanityTourPackage[]>(PACKAGES_QUERY);
-  const [selectedPackage, setSelectedPackage] = useState<SanityTourPackage | null>(null);
+  const navigate = useNavigate();
 
   const packages = data || [];
 
@@ -45,7 +41,7 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onOpenQuoteModal }) 
             {packages.map((pkg) => (
               <button
                 key={pkg._id}
-                onClick={() => setSelectedPackage(pkg)}
+                onClick={() => navigate(`/packages/${pkg.slug}`)}
                 className="text-left group bg-white rounded-2xl overflow-hidden border border-gray-200/80 hover:border-black/30 shadow-xs hover:shadow-2xl transition-all duration-300 cursor-pointer"
               >
                 <div className="relative h-48 overflow-hidden bg-gray-100">
@@ -79,17 +75,6 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onOpenQuoteModal }) 
           </div>
         )}
       </div>
-
-      {selectedPackage && (
-        <PackageDetailModal
-          pkg={selectedPackage}
-          onClose={() => setSelectedPackage(null)}
-          onOpenQuoteModal={(summary, destinationName) => {
-            setSelectedPackage(null);
-            onOpenQuoteModal(summary, destinationName);
-          }}
-        />
-      )}
     </section>
   );
 };

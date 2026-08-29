@@ -29,6 +29,27 @@ export interface SanityItineraryDay {
   description?: string;
 }
 
+export interface SanityStopCovered {
+  name: string;
+  description?: string;
+}
+
+export interface SanityBestTimeSection {
+  heading: string;
+  description?: string;
+}
+
+export interface SanityHowToReach {
+  road?: string;
+  rail?: string;
+  air?: string;
+}
+
+export interface SanityFAQ {
+  question: string;
+  answer?: string;
+}
+
 export interface SanityTourPackage {
   _id: string;
   name: string;
@@ -40,6 +61,30 @@ export interface SanityTourPackage {
   itinerary?: SanityItineraryDay[];
   inclusions?: string[];
   exclusions?: string[];
+  seoTitle?: string;
+  seoDescription?: string;
+  tagline?: string;
+  startingPoint?: string;
+  travelType?: string;
+  overview?: string;
+  whatIsSection?: string;
+  stopsCovered?: SanityStopCovered[];
+  placesCovered?: string[];
+  bestTimeSections?: SanityBestTimeSection[];
+  howToReach?: SanityHowToReach;
+  costNote?: string;
+  costFactors?: string[];
+  highlights?: string[];
+  accommodationNote?: string;
+  accommodationOptions?: string[];
+  transportationOptions?: string[];
+  customizeOptions?: string[];
+  whoCanBook?: string[];
+  travelTips?: string[];
+  whyChooseUs?: string[];
+  faqs?: SanityFAQ[];
+  bottomCtaHeading?: string;
+  bottomCtaText?: string;
 }
 
 export interface SanityGuide {
