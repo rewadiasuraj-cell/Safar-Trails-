@@ -26,7 +26,6 @@ const FAQSection = lazy(() => import('./components/FAQSection').then(m => ({ def
 const FinalCTASection = lazy(() => import('./components/FinalCTASection').then(m => ({ default: m.FinalCTASection })));
 
 // Code-split modals so their JS is only downloaded when opened by user
-const PackageDetailModal = lazy(() => import('./components/Packages/PackageDetailModal').then(m => ({ default: m.PackageDetailModal })));
 const GlobalSearchModal = lazy(() => import('./components/GlobalSearchModal').then(m => ({ default: m.GlobalSearchModal })));
 const QuoteRequestModal = lazy(() => import('./components/QuoteRequestModal').then(m => ({ default: m.QuoteRequestModal })));
 const PolicyModals = lazy(() => import('./components/PolicyModals').then(m => ({ default: m.PolicyModals })));
@@ -38,6 +37,7 @@ const SanityDestinationsPage = lazy(() => import('./components/Sanity/Destinatio
 const SanityDestinationDetailPage = lazy(() => import('./components/Sanity/DestinationDetailPage').then(m => ({ default: m.DestinationDetailPage })));
 const SanityPackagesPage = lazy(() => import('./components/Sanity/PackagesPage').then(m => ({ default: m.PackagesPage })));
 const SanityPackageDetailPage = lazy(() => import('./components/Sanity/PackageDetailPage').then(m => ({ default: m.PackageDetailPage })));
+const LocalPackageDetailPage = lazy(() => import('./components/Packages/PackageDetailPage').then(m => ({ default: m.PackageDetailPage })));
 const SanityGuidesPage = lazy(() => import('./components/Sanity/GuidesPage').then(m => ({ default: m.GuidesPage })));
 const SanityGuideDetailPage = lazy(() => import('./components/Sanity/GuideDetailPage').then(m => ({ default: m.GuideDetailPage })));
 
@@ -77,7 +77,6 @@ export default function App() {
   const currentView = pathToView(location.pathname);
 
   // Modals & Overlays
-  const [selectedPackageForModal, setSelectedPackageForModal] = useState<Package | null>(null);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [searchModalMounted, setSearchModalMounted] = useState(false);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -123,7 +122,7 @@ export default function App() {
   };
 
   const handleSelectPackage = (pkg: Package) => {
-    setSelectedPackageForModal(pkg);
+    navigate(`/tour-packages/${pkg.slug}`);
   };
 
   const handleSelectDestination = (slug: string) => {
@@ -277,6 +276,19 @@ export default function App() {
             }
           />
 
+          {/* ROUTE: SINGLE PACKAGE DETAIL (curated Home-page teaser packages, static data) */}
+          <Route
+            path="/tour-packages/:slug"
+            element={
+              <Suspense fallback={<SectionSkeleton />}>
+                <LocalPackageDetailPage
+                  onStartAIPlan={handleStartAIPlan}
+                  onOpenQuoteModal={handleOpenQuoteModal}
+                />
+              </Suspense>
+            }
+          />
+
           {/* ROUTE: STANDALONE AI TRIP PLANNER */}
           <Route
             path="/ai-planner"
@@ -376,20 +388,6 @@ export default function App() {
 
       {/* LAZY LOADED MODALS (Only fetched when triggered) */}
       <Suspense fallback={null}>
-        {selectedPackageForModal && (
-          <PackageDetailModal
-            packageData={selectedPackageForModal}
-            onClose={() => setSelectedPackageForModal(null)}
-            onStartAIPlanWithPackage={(pkg) => {
-              setSelectedPackageForModal(null);
-              handleStartAIPlan(`Customize ${pkg.title}`, pkg.destination);
-            }}
-            onOpenQuoteModal={(summary) => {
-              setSelectedPackageForModal(null);
-              handleOpenQuoteModal(summary);
-            }}
-          />
-        )}
 
         {searchModalMounted && (
           <GlobalSearchModal
