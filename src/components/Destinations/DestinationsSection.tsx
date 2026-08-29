@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
 import { destinationsData } from '../../data/destinationsData';
 import { Destination } from '../../types';
 import { AIIcon } from '../AIIcon';
@@ -158,13 +159,21 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
                       className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-slate-900/60 hover:bg-slate-900/85 backdrop-blur-md flex items-center justify-center text-white border border-white/20 shadow-md cursor-pointer transition-all active:scale-90 hover:scale-105 flex-shrink-0"
                       title={wishlistedSlugs[dest.slug] ? 'Remove from wishlist' : 'Save to wishlist'}
                     >
-                      <Heart
-                        className={`w-3.5 h-3.5 sm:w-5 sm:h-5 transition-colors ${
-                          wishlistedSlugs[dest.slug]
-                            ? 'fill-rose-500 text-rose-500'
-                            : 'text-white stroke-[2]'
-                        }`}
-                      />
+                      <motion.span
+                        key={wishlistedSlugs[dest.slug] ? 'liked' : 'unliked'}
+                        initial={{ scale: 0.5 }}
+                        animate={{ scale: 1 }}
+                        transition={{ type: 'spring', stiffness: 500, damping: 15 }}
+                        className="inline-flex"
+                      >
+                        <Heart
+                          className={`w-3.5 h-3.5 sm:w-5 sm:h-5 transition-colors ${
+                            wishlistedSlugs[dest.slug]
+                              ? 'fill-rose-500 text-rose-500'
+                              : 'text-white stroke-[2]'
+                          }`}
+                        />
+                      </motion.span>
                     </button>
                   </div>
                 </div>

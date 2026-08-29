@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
 import { SafarLogo } from './SafarLogo';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { AIIcon } from './AIIcon';
 import {
   Search,
-  Menu,
   X,
   ChevronDown,
   BookOpen,
@@ -165,41 +165,48 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
 
               {/* Destinations Mega Dropdown */}
-              {destinationsDropdown && (
-                <div
-                  onMouseLeave={() => setDestinationsDropdown(false)}
-                  className="absolute top-full left-0 mt-2 w-80 bg-white rounded-2xl shadow-xl border border-gray-100 p-4 grid grid-cols-1 gap-1 z-50 animate-in fade-in slide-in-from-top-2 duration-150"
-                >
-                  <div className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-gray-400 border-b border-gray-100 mb-1">
-                    Popular Domestic Destinations
-                  </div>
-                  {popularDestinations.map((dest) => (
-                    <button
-                      key={dest.slug}
-                      onClick={() => {
-                        onNavigate('destination-detail', dest.slug);
-                        setDestinationsDropdown(false);
-                      }}
-                      className="text-left px-3 py-2 rounded-xl hover:bg-[#FAF9F6] transition-colors flex group/item cursor-pointer"
-                    >
-                      <span className="text-sm font-semibold text-slate-900 group-hover/item:text-luxury-gold transition-colors whitespace-nowrap">
-                        {dest.name}
-                      </span>
-                    </button>
-                  ))}
-                  <div className="pt-2 border-t border-gray-100 mt-1">
-                    <button
-                      onClick={() => {
-                        onNavigate('destinations');
-                        setDestinationsDropdown(false);
-                      }}
-                      className="w-full text-center py-1.5 text-xs font-bold text-slate-900 hover:text-luxury-gold uppercase tracking-wider cursor-pointer whitespace-nowrap"
-                    >
-                      View All Destinations →
-                    </button>
-                  </div>
-                </div>
-              )}
+              <AnimatePresence>
+                {destinationsDropdown && (
+                  <motion.div
+                    onMouseLeave={() => setDestinationsDropdown(false)}
+                    initial={{ opacity: 0, scale: 0.96, y: -8 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.96, y: -8 }}
+                    transition={{ type: 'spring', stiffness: 420, damping: 32 }}
+                    style={{ transformOrigin: 'top left' }}
+                    className="absolute top-full left-0 mt-2 w-80 bg-white rounded-2xl shadow-xl border border-gray-100 p-4 grid grid-cols-1 gap-1 z-50"
+                  >
+                    <div className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-gray-400 border-b border-gray-100 mb-1">
+                      Popular Domestic Destinations
+                    </div>
+                    {popularDestinations.map((dest) => (
+                      <button
+                        key={dest.slug}
+                        onClick={() => {
+                          onNavigate('destination-detail', dest.slug);
+                          setDestinationsDropdown(false);
+                        }}
+                        className="text-left px-3 py-2 rounded-xl hover:bg-[#FAF9F6] transition-colors flex group/item cursor-pointer"
+                      >
+                        <span className="text-sm font-semibold text-slate-900 group-hover/item:text-luxury-gold transition-colors whitespace-nowrap">
+                          {dest.name}
+                        </span>
+                      </button>
+                    ))}
+                    <div className="pt-2 border-t border-gray-100 mt-1">
+                      <button
+                        onClick={() => {
+                          onNavigate('destinations');
+                          setDestinationsDropdown(false);
+                        }}
+                        className="w-full text-center py-1.5 text-xs font-bold text-slate-900 hover:text-luxury-gold uppercase tracking-wider cursor-pointer whitespace-nowrap"
+                      >
+                        View All Destinations →
+                      </button>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             {/* 3. Tour Packages */}
@@ -312,20 +319,49 @@ export const Header: React.FC<HeaderProps> = ({
               aria-label="Toggle navigation menu"
               title="Menu"
             >
-              {mobileMenuOpen ? (
-                <X className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[2.2] text-white" />
-              ) : (
-                <Menu className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[2.2] text-white" />
-              )}
+              <span className="relative w-4.5 h-4.5 sm:w-5 sm:h-5">
+                <motion.span
+                  className="absolute left-0 w-full h-[2.2px] bg-white rounded-full"
+                  style={{ top: 'calc(50% - 1.1px)' }}
+                  animate={mobileMenuOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: -4 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 28 }}
+                />
+                <motion.span
+                  className="absolute left-0 w-full h-[2.2px] bg-white rounded-full"
+                  style={{ top: 'calc(50% - 1.1px)' }}
+                  animate={mobileMenuOpen ? { opacity: 0, scale: 0.5 } : { opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.15 }}
+                />
+                <motion.span
+                  className="absolute left-0 w-full h-[2.2px] bg-white rounded-full"
+                  style={{ top: 'calc(50% - 1.1px)' }}
+                  animate={mobileMenuOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: 4 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 28 }}
+                />
+              </span>
             </button>
           </div>
         </div>
       </header>
 
       {/* Mobile Drawer Menu */}
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm lg:hidden animate-in fade-in duration-200">
-          <div className="fixed inset-y-0 right-0 w-4/5 max-w-sm bg-white shadow-2xl p-6 flex flex-col justify-between overflow-y-auto">
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm lg:hidden"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', stiffness: 320, damping: 34 }}
+              onClick={(e) => e.stopPropagation()}
+              className="fixed inset-y-0 right-0 w-4/5 max-w-sm bg-white shadow-2xl p-6 flex flex-col justify-between overflow-y-auto">
             <div>
               <div className="flex items-center justify-between pb-4 border-b border-gray-100">
                 <SafarLogo size="sm" />
@@ -459,9 +495,10 @@ export const Header: React.FC<HeaderProps> = ({
                 <span>Expert Help on WhatsApp</span>
               </button>
             </div>
-          </div>
-        </div>
-      )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

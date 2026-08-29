@@ -79,6 +79,7 @@ export default function App() {
   // Modals & Overlays
   const [selectedPackageForModal, setSelectedPackageForModal] = useState<Package | null>(null);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
+  const [searchModalMounted, setSearchModalMounted] = useState(false);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [quoteModalInitialSummary, setQuoteModalInitialSummary] = useState<string>('');
   const [quoteModalInitialDestination, setQuoteModalInitialDestination] = useState<string>('');
@@ -139,7 +140,10 @@ export default function App() {
       <Header
         currentView={currentView}
         onNavigate={handleNavigate}
-        onOpenSearch={() => setSearchModalOpen(true)}
+        onOpenSearch={() => {
+          setSearchModalMounted(true);
+          setSearchModalOpen(true);
+        }}
         onOpenQuoteModal={handleOpenQuoteModal}
       />
 
@@ -387,7 +391,7 @@ export default function App() {
           />
         )}
 
-        {searchModalOpen && (
+        {searchModalMounted && (
           <GlobalSearchModal
             isOpen={searchModalOpen}
             onClose={() => setSearchModalOpen(false)}
