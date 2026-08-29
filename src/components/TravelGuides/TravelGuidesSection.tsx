@@ -98,24 +98,8 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
                   </div>
                 </div>
 
-                {/* Author & Read CTA */}
-                <div className="p-6 pt-0 border-t border-gray-100 flex items-center justify-between mt-2">
-                  <div className="flex items-center gap-2.5">
-                    <img
-                      src={guide.author.avatar}
-                      alt={guide.author.name}
-                      className="w-8 h-8 rounded-full object-cover border border-gray-200"
-                    />
-                    <div>
-                      <div className="text-xs font-bold text-slate-900 leading-tight">
-                        {guide.author.name}
-                      </div>
-                      <div className="text-[10.5px] text-gray-400">
-                        {guide.publishedDate}
-                      </div>
-                    </div>
-                  </div>
-
+                {/* Read CTA */}
+                <div className="p-6 pt-0 border-t border-gray-100 flex items-center justify-end mt-2">
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-900 group-hover:text-[#FF6B00] group-hover:translate-x-1 transition-transform flex items-center gap-1">
                     <span>Read Guide</span>
                     <ArrowRight className="w-3.5 h-3.5" />
