@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
 import { Search, X, MapPin, Package as PackageIcon, BookOpen, ArrowRight } from 'lucide-react';
 import { destinationsData } from '../data/destinationsData';
 import { packagesData } from '../data/packagesData';
@@ -33,8 +34,6 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [onClose]);
 
-  if (!isOpen) return null;
-
   const matchedDestinations = destinationsData.filter(d =>
     d.name.toLowerCase().includes(query.toLowerCase()) ||
     d.tagline.toLowerCase().includes(query.toLowerCase()) ||
@@ -54,8 +53,24 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
   );
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-sm flex items-start justify-center p-4 pt-16 sm:pt-24 animate-in fade-in duration-200">
-      <div className="bg-white w-full max-w-2xl rounded-2xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col max-h-[80vh]">
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-sm flex items-start justify-center p-4 pt-16 sm:pt-24"
+          onClick={onClose}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: -12 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: -12 }}
+            transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+            onClick={(e) => e.stopPropagation()}
+            className="bg-white w-full max-w-2xl rounded-2xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col max-h-[80vh]"
+          >
         {/* Search Input Box */}
         <div className="p-4 sm:p-5 border-b border-gray-100 flex items-center gap-3 bg-[#FAF9F6]">
           <Search className="w-5 h-5 text-black flex-shrink-0" />
@@ -216,7 +231,9 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
             </div>
           )}
         </div>
-      </div>
-    </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
