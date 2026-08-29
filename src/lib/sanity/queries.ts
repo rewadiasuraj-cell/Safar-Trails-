@@ -70,9 +70,9 @@ const PACKAGE_DETAIL_PROJECTION = `{
   bottomCtaText
 }`;
 
-export const PACKAGES_QUERY = `*[_type == "tourPackage"] | order(name asc) ${PACKAGE_PROJECTION}`;
+export const PACKAGES_QUERY = `*[_type == "tourPackage"] | order(displayOrder asc, name asc) ${PACKAGE_PROJECTION}`;
 
-export const PACKAGES_BY_DESTINATION_SLUG_QUERY = `*[_type == "tourPackage" && destination->slug.current == $slug] | order(name asc) ${PACKAGE_PROJECTION}`;
+export const PACKAGES_BY_DESTINATION_SLUG_QUERY = `*[_type == "tourPackage" && destination->slug.current == $slug] | order(displayOrder asc, name asc) ${PACKAGE_PROJECTION}`;
 
 export const PACKAGE_BY_SLUG_QUERY = `*[_type == "tourPackage" && slug.current == $slug][0] ${PACKAGE_DETAIL_PROJECTION}`;
 
