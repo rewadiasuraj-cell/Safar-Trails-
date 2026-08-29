@@ -67,7 +67,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
               Tour Packages
             </h1>
             <p className="mt-1.5 text-slate-500 text-sm max-w-xl font-normal">
-              Handcrafted holiday itineraries with verified stays, sanitized private cabs, and 24/7 concierge.
+              Expertly curated itineraries, trusted stays, private cabs, and 24/7 travel support.
             </p>
           </div>
 
