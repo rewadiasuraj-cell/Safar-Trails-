@@ -2,6 +2,108 @@ import { TravelGuide } from '../types';
 
 export const guidesData: TravelGuide[] = [
   {
+    slug: 'best-time-for-chardham-yatra',
+    destinationSlug: 'chardham-yatra',
+    destinationName: 'Chardham Yatra',
+    title: 'Best Time for Chardham Yatra: Season-by-Season Guide (2026)',
+    subtitle: 'From peak summer darshan crowds to golden post-monsoon skies — find the ideal window for your Yamunotri, Gangotri, Kedarnath & Badrinath pilgrimage.',
+    readTime: '5 min read',
+    author: {
+      name: 'Priya Rawat',
+      role: 'Senior Pilgrimage Travel Specialist, Uttarakhand',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop'
+    },
+    publishedDate: 'August 2026',
+    heroImage: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=1200&auto=format&fit=crop',
+    category: 'Best Time',
+    excerpt: 'The ideal time for the Chardham Yatra depends on temple opening dates, weather conditions, road accessibility, crowd levels and official travel advisories. Here is a season-by-season breakdown to help you plan.',
+    contentSections: [
+      {
+        heading: 'Summer Season (May–June): Peak Pilgrimage Window',
+        content: 'May and June are among the most popular months for Chardham Yatra. The weather is generally pleasant and suitable for travelling through the Himalayan region. However, these months can experience higher pilgrim crowds, especially during weekends and holidays.',
+        bulletPoints: [
+          'Ideal for: First-time pilgrims, families, senior citizens.',
+          'Expect: Pleasant daytime weather with cooler evenings at higher altitudes.',
+          'SafarTrails Pro-Tip: Advance hotel and transport bookings are strongly recommended for this window.'
+        ]
+      },
+      {
+        heading: 'Monsoon Season (July–August): Proceed with Flexibility',
+        content: 'July and August bring heavy rainfall to Uttarakhand, which may cause landslides, road blockages and travel delays in some areas. Pilgrims should be prepared for changing weather and follow official travel advisories.',
+        bulletPoints: [
+          'Ideal for: Pilgrims comfortable with a flexible itinerary.',
+          'Expect: Heavy rainfall, possible road disruptions and route delays.',
+          'SafarTrails Pro-Tip: Build extra buffer days into your itinerary during the monsoon season.'
+        ]
+      },
+      {
+        heading: 'Post-Monsoon Season (September–October): Clear Skies, Fewer Crowds',
+        content: 'September and October are generally considered a favourable period for the Chardham Yatra, with clearer skies, cooler weather and beautiful Himalayan views. Road conditions usually improve after the monsoon, although temperatures can drop at higher altitudes.',
+        bulletPoints: [
+          'Ideal for: Pilgrims seeking clearer views and comparatively lighter crowds.',
+          'Expect: Cooler temperatures, especially at Kedarnath and Badrinath.',
+          'SafarTrails Pro-Tip: Booking in advance is still recommended as this remains a popular season.'
+        ]
+      }
+    ],
+    relatedPackageSlugs: ['chardham-yatra-haridwar-yamunotri-gangotri-kedarnath-badrinath-10d9n']
+  },
+  {
+    slug: 'chardham-yatra-package-cost-guide-2026',
+    destinationSlug: 'chardham-yatra',
+    destinationName: 'Chardham Yatra',
+    title: 'Chardham Yatra Package Cost 2026: What Affects Pricing & What’s Included',
+    subtitle: 'A transparent breakdown of what drives your Chardham Yatra package cost, plus exactly what’s included and excluded.',
+    readTime: '7 min read',
+    author: {
+      name: 'Aditi Sharma',
+      role: 'Head of Travel Planning, SafarTrails',
+      avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop'
+    },
+    publishedDate: 'August 2026',
+    heroImage: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1200&auto=format&fit=crop',
+    category: 'Cost Breakdown',
+    excerpt: 'The cost of a Chardham Yatra package depends on the itinerary, travel dates, number of travellers and the level of services selected. Here is exactly what drives the price, and what’s included in your package.',
+    contentSections: [
+      {
+        heading: 'What Affects Your Chardham Yatra Package Cost',
+        content: 'At Safar Trails, packages can be customised according to your travel requirements, preferred accommodation and transportation. The final package cost may vary based on several factors.',
+        bulletPoints: [
+          'Number of Travellers: Pricing depends on the total number of adults and children travelling.',
+          'Travel Dates: Peak season, weekends and holidays may affect hotel and transport rates.',
+          'Number of Days: Longer itineraries generally have higher accommodation and transportation costs.',
+          'Vehicle Type: Sedan, SUV, Tempo Traveller or other vehicles can be selected according to group size.',
+          'Hotel Category: Budget, standard, deluxe and premium accommodation options have different rates.',
+          'Meal Plan, Pickup & Drop Location, and whether you travel Private or in a Group.',
+          'Additional Services: Helicopter services, pony/palki arrangements and special transfers may involve additional charges.'
+        ]
+      },
+      {
+        heading: 'What’s Included in the Package',
+        content: 'Depending on the package selected, your Chardham Yatra typically includes the following services.',
+        bulletPoints: [
+          'Accommodation in selected hotels, guesthouses or camps as mentioned in the itinerary',
+          'Transportation as per the selected vehicle and itinerary, with an experienced driver',
+          'Sightseeing & transfers mentioned in the itinerary, plus pickup & drop',
+          'Meals such as breakfast and dinner, where specifically mentioned',
+          'Travel assistance and pilgrimage route coordination throughout the journey'
+        ]
+      },
+      {
+        heading: 'What’s Not Included',
+        content: 'Unless specifically included, the following expenses are generally not covered in the package.',
+        bulletPoints: [
+          'Personal expenses, additional meals, and entry fees or permits where applicable',
+          'Additional sightseeing or activities not included in the confirmed itinerary',
+          'Travel or medical insurance unless specifically mentioned',
+          'Pony, palki and helicopter services unless specifically included',
+          'Unforeseen expenses due to weather, road closures or circumstances beyond our control'
+        ]
+      }
+    ],
+    relatedPackageSlugs: ['chardham-yatra-haridwar-yamunotri-gangotri-kedarnath-badrinath-10d9n']
+  },
+  {
     slug: 'best-time-to-visit-kashmir',
     destinationSlug: 'kashmir',
     destinationName: 'Kashmir',

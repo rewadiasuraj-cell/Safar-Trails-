@@ -57,7 +57,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
     }));
   };
 
-  const states = ['All', 'Jammu & Kashmir', 'Goa', 'Kerala', 'Rajasthan', 'Himachal Pradesh', 'Andaman & Nicobar', 'Meghalaya'];
+  const states = ['All', 'Uttarakhand', 'Jammu & Kashmir', 'Goa', 'Kerala', 'Rajasthan', 'Himachal Pradesh', 'Andaman & Nicobar', 'Meghalaya'];
 
   const filteredDestinations = destinationsData.filter((dest) => {
     const matchesState = selectedState === 'All' || dest.state.toLowerCase().includes(selectedState.toLowerCase());

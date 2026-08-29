@@ -2,6 +2,177 @@ import { Package } from '../types';
 
 export const packagesData: Package[] = [
   {
+    id: 'pkg-chardham-yatra',
+    slug: 'chardham-yatra-haridwar-yamunotri-gangotri-kedarnath-badrinath-10d9n',
+    title: 'Chardham Yatra: Haridwar, Yamunotri, Gangotri, Kedarnath & Badrinath 10D/9N Pilgrimage Tour',
+    destination: 'Chardham Yatra, Uttarakhand',
+    state: 'Uttarakhand',
+    durationDays: 10,
+    durationNights: 9,
+    startingPrice: 24999,
+    originalPrice: 29999,
+    tripType: ['Family', 'Group', 'Spiritual'],
+    hotelCategory: 'Standard 3★',
+    ratings: 4.8,
+    reviewCount: 96,
+    startingCity: 'Delhi / Haridwar (Pickup available)',
+    bestFor: 'Families, Pilgrims, Senior Citizens & Spiritual Seekers',
+    heroImage: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=1200&auto=format&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1506461883276-594a12b11cf3?q=80&w=800&auto=format&fit=crop'
+    ],
+    overview: 'Chardham Yatra is one of the most sacred and spiritually significant pilgrimages in India. This 9 Nights / 10 Days journey takes you to all four revered Himalayan shrines — Yamunotri, Gangotri, Kedarnath and Badrinath — combining deep spirituality and devotion with breathtaking Garhwal Himalayan landscapes, comfortable stays and dedicated pilgrimage assistance throughout.',
+    highlights: [
+      'Darshan at all four sacred dhams — Yamunotri, Gangotri, Kedarnath & Badrinath',
+      'Evening Ganga Aarti at Har Ki Pauri, Haridwar',
+      'Scenic Himalayan drives through Barkot, Uttarkashi, Guptkashi/Sitapur and the Garhwal range',
+      'Comfortable overnight stays selected along the pilgrimage route',
+      'Dedicated driver and travel assistance for the full 10-day circuit'
+    ],
+    inclusions: [
+      'Accommodation in selected hotels, guesthouses or camps as per the itinerary',
+      'Transportation as per the selected vehicle and itinerary',
+      'Experienced driver and applicable driver charges',
+      'Sightseeing & transfers mentioned in the itinerary',
+      'Pickup & drop from the agreed starting and ending location',
+      'Meals such as breakfast and dinner, where specifically mentioned',
+      'Travel assistance and pilgrimage route coordination throughout the journey'
+    ],
+    exclusions: [
+      'Personal expenses such as laundry, telephone calls, tips and room service',
+      'Any meals, snacks or beverages not specifically mentioned in the package',
+      'Entry tickets, permits or charges for attractions where applicable',
+      'Pony, palki and helicopter services unless specifically included in the selected package',
+      'Travel or medical insurance unless specifically mentioned',
+      'Additional costs due to weather conditions, road closures, landslides or circumstances beyond our control'
+    ],
+    itinerary: [
+      {
+        dayNumber: 1,
+        title: 'Delhi – Haridwar',
+        location: 'Haridwar',
+        description: 'Begin your sacred Chardham Yatra with a comfortable journey from Delhi to Haridwar. On arrival, check in to your hotel and relax. In the evening, visit Har Ki Pauri and witness the spiritually uplifting Ganga Aarti, subject to timing.',
+        morningActivity: 'Comfortable drive from Delhi to Haridwar',
+        eveningActivity: 'Visit Har Ki Pauri for the evening Ganga Aarti',
+        stay: 'Hotel Ganga Kinare / Hotel Alpana or similar, Haridwar',
+        mealsIncluded: 'Dinner',
+        transfers: 'Private Vehicle',
+        image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=600&auto=format&fit=crop'
+      },
+      {
+        dayNumber: 2,
+        title: 'Haridwar – Barkot',
+        location: 'Barkot',
+        description: 'After breakfast, depart from Haridwar for Barkot, a beautiful Himalayan town and the base for the Yamunotri pilgrimage. Enjoy scenic mountain roads, lush valleys and picturesque landscapes throughout the journey.',
+        morningActivity: 'Drive from Haridwar to Barkot through scenic mountain roads',
+        stay: 'Hotel Hill Prince / Hotel Apaar or similar, Barkot',
+        mealsIncluded: 'Breakfast & Dinner',
+        transfers: 'Private Vehicle',
+        image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=600&auto=format&fit=crop'
+      },
+      {
+        dayNumber: 3,
+        title: 'Barkot – Yamunotri – Barkot',
+        location: 'Yamunotri',
+        description: 'Start early for the sacred Yamunotri Dham. Drive towards Janki Chatti, from where the pilgrimage route continues towards Yamunotri by trek, pony, palki or other available arrangements at your own cost. Visit the Yamunotri Temple and seek blessings of Goddess Yamuna, then return to Barkot.',
+        morningActivity: 'Early drive to Janki Chatti and onward pilgrimage to Yamunotri Temple',
+        eveningActivity: 'Return to Barkot for overnight stay',
+        stay: 'Hotel Hill Prince / Hotel Apaar or similar, Barkot',
+        mealsIncluded: 'Breakfast & Dinner',
+        transfers: 'Private Vehicle',
+        image: 'https://images.unsplash.com/photo-1506461883276-594a12b11cf3?q=80&w=600&auto=format&fit=crop',
+        insiderTip: 'Pony, palki and helicopter arrangements to Yamunotri are subject to availability and weather — book them in advance where possible.'
+      },
+      {
+        dayNumber: 4,
+        title: 'Barkot – Uttarkashi',
+        location: 'Uttarkashi',
+        description: 'After breakfast, proceed towards Uttarkashi. Enjoy the beautiful Himalayan scenery and winding mountain roads along the way. On arrival, check in to your hotel and take some time to relax ahead of the Gangotri Dham visit.',
+        morningActivity: 'Drive from Barkot to Uttarkashi',
+        stay: 'Hotel Shivlinga / Hotel Hari Ganga or similar, Uttarkashi',
+        mealsIncluded: 'Breakfast & Dinner',
+        transfers: 'Private Vehicle',
+        image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop'
+      },
+      {
+        dayNumber: 5,
+        title: 'Uttarkashi – Gangotri – Uttarkashi',
+        location: 'Gangotri',
+        description: 'After an early breakfast, begin your journey towards Gangotri Dham. Visit the sacred Gangotri Temple, dedicated to Goddess Ganga, and spend some peaceful moments near the holy Bhagirathi River, then return to Uttarkashi through the scenic Himalayan route.',
+        morningActivity: 'Early drive to Gangotri Temple and darshan by the Bhagirathi River',
+        eveningActivity: 'Return to Uttarkashi',
+        stay: 'Hotel Shivlinga / Hotel Hari Ganga or similar, Uttarkashi',
+        mealsIncluded: 'Breakfast & Dinner',
+        transfers: 'Private Vehicle',
+        image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop'
+      },
+      {
+        dayNumber: 6,
+        title: 'Uttarkashi – Guptkashi / Sitapur',
+        location: 'Guptkashi / Sitapur',
+        description: 'After breakfast, continue your journey towards Guptkashi or Sitapur through beautiful mountain valleys, rivers and picturesque Himalayan landscapes. On arrival, check in to your hotel, relax and prepare for the upcoming Kedarnath Yatra.',
+        morningActivity: 'Drive from Uttarkashi to Guptkashi / Sitapur',
+        stay: 'Kedar Valley Resort / Hotel Raj Palace or similar, Guptkashi/Sitapur',
+        mealsIncluded: 'Breakfast & Dinner',
+        transfers: 'Private Vehicle',
+        image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=600&auto=format&fit=crop'
+      },
+      {
+        dayNumber: 7,
+        title: 'Guptkashi / Sitapur – Kedarnath',
+        location: 'Kedarnath',
+        description: 'Early morning, proceed towards the designated point for your Kedarnath Yatra. Depending on the selected travel arrangement and prevailing conditions, continue the journey by trek, helicopter or other permitted options at additional cost. Upon reaching Kedarnath, visit the magnificent Kedarnath Temple, one of the twelve Jyotirlingas of Lord Shiva.',
+        morningActivity: 'Journey to Kedarnath by trek, pony or helicopter (at additional cost)',
+        eveningActivity: 'Darshan at Kedarnath Temple',
+        stay: 'GMVN / Basic Guest House or similar, Kedarnath',
+        mealsIncluded: 'Breakfast & Dinner',
+        transfers: 'Trek / Pony / Helicopter (as selected, at additional cost)',
+        image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=600&auto=format&fit=crop',
+        insiderTip: 'Helicopter tickets for Kedarnath sell out fast in peak season — confirm your preferred mode of travel well in advance.'
+      },
+      {
+        dayNumber: 8,
+        title: 'Kedarnath – Guptkashi / Sitapur',
+        location: 'Guptkashi / Sitapur',
+        description: 'After completing your Kedarnath pilgrimage, begin your return journey towards Guptkashi or Sitapur as per the selected travel arrangement. After reaching the hotel, relax and recover from the journey amidst the beautiful Himalayan surroundings.',
+        morningActivity: 'Return journey from Kedarnath',
+        stay: 'Kedar Valley Resort / Hotel Raj Palace or similar, Guptkashi/Sitapur',
+        mealsIncluded: 'Breakfast & Dinner',
+        transfers: 'Private Vehicle',
+        image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=600&auto=format&fit=crop'
+      },
+      {
+        dayNumber: 9,
+        title: 'Guptkashi / Sitapur – Badrinath',
+        location: 'Badrinath',
+        description: 'After breakfast, proceed towards the final major pilgrimage destination — Badrinath. Enjoy the scenic journey through the Garhwal Himalayas. On arrival, check in to the hotel and proceed for Badrinath Temple darshan, subject to temple timings and local conditions.',
+        morningActivity: 'Drive to Badrinath through the Garhwal Himalayas',
+        eveningActivity: 'Darshan at Badrinath Temple',
+        stay: 'Hotel Narayan Palace / Hotel Snow Crest or similar, Badrinath',
+        mealsIncluded: 'Breakfast & Dinner',
+        transfers: 'Private Vehicle',
+        image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=600&auto=format&fit=crop'
+      },
+      {
+        dayNumber: 10,
+        title: 'Badrinath – Haridwar',
+        location: 'Haridwar',
+        description: 'After breakfast, check out and begin your return journey from Badrinath towards Haridwar. Enjoy the final views of the beautiful Himalayan landscape as your sacred pilgrimage comes to an end, concluding with cherished memories and divine blessings.',
+        morningActivity: 'Return drive from Badrinath to Haridwar',
+        stay: 'Trip concludes with drop at Haridwar',
+        mealsIncluded: 'Breakfast',
+        transfers: 'Private Vehicle',
+        image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=600&auto=format&fit=crop'
+      }
+    ],
+    season: 'Summer',
+    isFeatured: true,
+    isPopular: true
+  },
+  {
     id: 'pkg-kashmir-escape',
     slug: 'kashmir-escape-houseboat-bliss',
     title: 'Kashmir: Srinagar, Gulmarg & Houseboat 6D/5N Holiday Tour',
