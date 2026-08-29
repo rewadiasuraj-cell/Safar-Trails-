@@ -79,15 +79,15 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
         <div className="relative z-10 w-full max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 text-center space-y-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-gray-300 text-xs font-bold uppercase tracking-widest backdrop-blur-xs">
             <AIIcon className="w-3.5 h-3.5 text-white" />
-            <span>Start Your Bespoke Journey</span>
+            <span>Design Your Journey, with Safar Trails</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-serif font-bold tracking-tight max-w-3xl mx-auto">
-            Ready to Explore India Your Way?
+            Let's Plan Your Perfect Journey
           </h2>
 
           <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-normal">
-            From snowy Himalayan passes to tropical palm-fringed backwaters, let SafarTrails design your unforgettable escape.
+            Smart AI planning, expert refinement, and personalized travel—crafted for your perfect journey.
           </p>
 
           {/* Action Buttons */}
@@ -97,7 +97,7 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
               className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white hover:bg-gray-200 text-black font-bold text-xs uppercase tracking-wider shadow-lg transition-all inline-flex items-center justify-center gap-2 cursor-pointer text-center"
             >
               <AIIcon className="w-4 h-4 text-black shrink-0" />
-              <span className="whitespace-nowrap">Launch Itinerary Studio</span>
+              <span className="whitespace-nowrap">Create Customized Itinerary</span>
               <ArrowRight className="w-4 h-4 ml-1 shrink-0" />
             </button>
 
@@ -113,7 +113,7 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
               onClick={onOpenQuoteModal}
               className="w-full sm:w-auto px-6 py-4 rounded-xl bg-transparent hover:bg-gray-900 text-white font-bold text-xs uppercase tracking-wider border border-gray-700 hover:border-gray-500 transition-all cursor-pointer"
             >
-              Request Custom Quote
+              Request Custom Package
             </button>
           </div>
         </div>
