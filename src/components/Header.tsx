@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { SafarLogo } from './SafarLogo';
 import { WhatsAppIcon } from './WhatsAppIcon';
-import { 
-  Search, 
-  Menu, 
-  X, 
+import { AIIcon } from './AIIcon';
+import {
+  Search,
+  Menu,
+  X,
   ChevronDown,
   BookOpen,
   ShieldCheck,
@@ -121,6 +122,24 @@ export const Header: React.FC<HeaderProps> = ({
               }`}
             >
               <span className="whitespace-nowrap">Home</span>
+            </button>
+
+            {/* Plan with AI */}
+            <button
+              id="nav-link-ai-planner"
+              onClick={() => {
+                onNavigate('ai-planner');
+                setDestinationsDropdown(false);
+                setMoreDropdown(false);
+              }}
+              className={`py-1.5 transition-colors inline-flex items-center gap-1.5 cursor-pointer select-none whitespace-nowrap ${
+                currentView === 'ai-planner'
+                  ? 'text-[#FF6B00] font-semibold'
+                  : 'text-slate-800 hover:text-[#FF6B00]'
+              }`}
+            >
+              <AIIcon className="w-3.5 h-3.5" />
+              <span className="whitespace-nowrap">Plan with AI</span>
             </button>
 
             {/* 2. Destination with Dropdown */}
@@ -332,6 +351,18 @@ export const Header: React.FC<HeaderProps> = ({
                   }`}
                 >
                   Home
+                </button>
+                <button
+                  onClick={() => {
+                    onNavigate('ai-planner');
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors flex items-center gap-2 ${
+                    currentView === 'ai-planner' ? 'bg-orange-50 text-[#FF6B00]' : 'hover:bg-gray-50'
+                  }`}
+                >
+                  <AIIcon className="w-4 h-4" />
+                  <span>Plan with AI</span>
                 </button>
                 <button
                   onClick={() => {
