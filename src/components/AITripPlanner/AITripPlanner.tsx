@@ -92,6 +92,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
     'Rajasthan',
     'Himachal Pradesh',
     'Uttarakhand',
+    'Chardham Yatra',
     'Ladakh',
     'Andaman & Nicobar',
     'Northeast India'

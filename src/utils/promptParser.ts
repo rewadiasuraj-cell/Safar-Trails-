@@ -93,10 +93,18 @@ const DESTINATION_DICTIONARY: { [key: string]: string } = {
   'jim corbett': 'Uttarakhand',
   auli: 'Uttarakhand',
   dehradun: 'Uttarakhand',
-  kedarnath: 'Uttarakhand',
-  badrinath: 'Uttarakhand',
   chopta: 'Uttarakhand',
   kausani: 'Uttarakhand',
+
+  // Chardham Yatra
+  chardham: 'Chardham Yatra',
+  'chardham yatra': 'Chardham Yatra',
+  'char dham': 'Chardham Yatra',
+  'char dham yatra': 'Chardham Yatra',
+  kedarnath: 'Chardham Yatra',
+  badrinath: 'Chardham Yatra',
+  gangotri: 'Chardham Yatra',
+  yamunotri: 'Chardham Yatra',
 
   // Ladakh
   ladakh: 'Ladakh',
