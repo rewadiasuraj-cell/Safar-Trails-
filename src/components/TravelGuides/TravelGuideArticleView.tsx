@@ -52,7 +52,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
         <div className="w-full max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <button
             onClick={onBack}
-            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-900 hover:text-[#FF6B00] transition-colors cursor-pointer self-start sm:self-auto"
+            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-900 hover:text-luxury-gold transition-colors cursor-pointer self-start sm:self-auto"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to All Blogs & Guides</span>
@@ -71,7 +71,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
                   }
                 }}
                 placeholder="Search blogs..."
-                className="w-full pl-9 pr-3 py-1.5 rounded-lg border border-gray-200 text-xs text-slate-800 placeholder:text-gray-400 focus:outline-none focus:border-[#FF6B00] bg-gray-50"
+                className="w-full pl-9 pr-3 py-1.5 rounded-lg border border-gray-200 text-xs text-slate-800 placeholder:text-gray-400 focus:outline-none focus:border-luxury-gold bg-gray-50"
               />
             </div>
           </div>
@@ -80,7 +80,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
 
       {/* Article Header - ONLY ONE SINGLE HEADING */}
       <header className="w-full max-w-4xl xl:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-6">
-        <div className="flex items-center gap-2 text-xs text-[#FF6B00] font-bold uppercase tracking-wider mb-3">
+        <div className="flex items-center gap-2 text-xs text-luxury-gold font-bold uppercase tracking-wider mb-3">
           <span>{guide.destinationName} Travel Guide</span>
         </div>
 
@@ -130,7 +130,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
       {/* Article Content Sections */}
       <div className="w-full max-w-3xl xl:max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Intro Excerpt */}
-        <p className="text-lg sm:text-xl text-slate-800 font-serif leading-relaxed italic border-l-3 border-[#FF6B00] pl-4">
+        <p className="text-lg sm:text-xl text-slate-800 font-serif leading-relaxed italic border-l-3 border-luxury-gold pl-4">
           "{guide.excerpt}"
         </p>
 
@@ -147,7 +147,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
               <ul className="space-y-2 bg-white p-5 rounded-2xl border border-gray-200 text-sm text-slate-700 font-normal shadow-2xs">
                 {sec.bulletPoints.map((bp, i) => (
                   <li key={i} className="flex items-start gap-2.5">
-                    <span className="text-[#FF6B00] font-bold text-base">•</span>
+                    <span className="text-luxury-gold font-bold text-base">•</span>
                     <span>{bp}</span>
                   </li>
                 ))}
@@ -155,7 +155,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
             )}
 
             {sec.highlightQuote && (
-              <div className="p-4 rounded-xl bg-orange-50/70 text-slate-900 text-sm font-semibold border-l-3 border-[#FF6B00]">
+              <div className="p-4 rounded-xl bg-orange-50/70 text-slate-900 text-sm font-semibold border-l-3 border-luxury-gold">
                 💡 {sec.highlightQuote}
               </div>
             )}
@@ -206,7 +206,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
             {displayPackages.map((pkg) => (
               <div
                 key={pkg.id}
-                className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-xs hover:border-[#FF6B00] transition-all flex flex-col justify-between group"
+                className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-xs hover:border-luxury-gold transition-all flex flex-col justify-between group"
               >
                 <div>
                   <div className="relative h-44 overflow-hidden">

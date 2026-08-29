@@ -18,7 +18,7 @@ export const SeasonalTripsSection: React.FC<SeasonalTripsSectionProps> = ({
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-800 text-xs font-bold uppercase tracking-widest mb-3">
-              <Calendar className="w-3.5 h-3.5 text-[#FF6B00] stroke-[2.2]" />
+              <Calendar className="w-3.5 h-3.5 text-luxury-gold stroke-[2.2]" />
               <span>Timely Domestic Escapes</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-serif text-black tracking-tight">

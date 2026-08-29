@@ -24,14 +24,14 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
   };
 
   return (
-    <section id="final-cta-section" className="w-full bg-[#0A0A0A] text-white relative overflow-hidden border-t border-gray-800">
+    <section id="final-cta-section" className="w-full bg-midnight-blue text-white relative overflow-hidden border-t border-luxury-gold/30">
       {/* Top Trust Indicators Bar */}
-      <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-12 sm:pt-14 pb-10 sm:pb-12 border-b border-gray-800">
+      <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-12 sm:pt-14 pb-10 sm:pb-12 border-b border-white/10">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Trust Item 1 */}
           <div className="flex items-center gap-3.5">
-            <div className="w-11 h-11 rounded-full border border-gray-800 bg-white/5 flex items-center justify-center flex-shrink-0">
-              <Users className="w-5 h-5 text-white stroke-[1.8]" />
+            <div className="w-11 h-11 rounded-full border border-luxury-gold/40 bg-white/5 flex items-center justify-center flex-shrink-0">
+              <Users className="w-5 h-5 text-luxury-gold stroke-[1.8]" />
             </div>
             <div>
               <div className="text-sm font-bold text-white tracking-wide">Fully Customized</div>
@@ -41,8 +41,8 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
 
           {/* Trust Item 2 */}
           <div className="flex items-center gap-3.5">
-            <div className="w-11 h-11 rounded-full border border-gray-800 bg-white/5 flex items-center justify-center flex-shrink-0">
-              <Award className="w-5 h-5 text-white stroke-[1.8]" />
+            <div className="w-11 h-11 rounded-full border border-luxury-gold/40 bg-white/5 flex items-center justify-center flex-shrink-0">
+              <Award className="w-5 h-5 text-luxury-gold stroke-[1.8]" />
             </div>
             <div>
               <div className="text-sm font-bold text-white tracking-wide">Trusted</div>
@@ -52,8 +52,8 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
 
           {/* Trust Item 3 */}
           <div className="flex items-center gap-3.5">
-            <div className="w-11 h-11 rounded-full border border-gray-800 bg-white/5 flex items-center justify-center flex-shrink-0">
-              <ShieldCheck className="w-5 h-5 text-white stroke-[1.8]" />
+            <div className="w-11 h-11 rounded-full border border-luxury-gold/40 bg-white/5 flex items-center justify-center flex-shrink-0">
+              <ShieldCheck className="w-5 h-5 text-luxury-gold stroke-[1.8]" />
             </div>
             <div>
               <div className="text-sm font-bold text-white tracking-wide">Clear</div>
@@ -63,8 +63,8 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
 
           {/* Trust Item 4 */}
           <div className="flex items-center gap-3.5">
-            <div className="w-11 h-11 rounded-full border border-gray-800 bg-white/5 flex items-center justify-center flex-shrink-0">
-              <Headphones className="w-5 h-5 text-white stroke-[1.8]" />
+            <div className="w-11 h-11 rounded-full border border-luxury-gold/40 bg-white/5 flex items-center justify-center flex-shrink-0">
+              <Headphones className="w-5 h-5 text-luxury-gold stroke-[1.8]" />
             </div>
             <div>
               <div className="text-sm font-bold text-white tracking-wide">24/7</div>
@@ -77,8 +77,8 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
       {/* Main CTA Section */}
       <div className="py-16 lg:py-20">
         <div className="relative z-10 w-full max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-gray-300 text-xs font-bold uppercase tracking-widest backdrop-blur-xs">
-            <AIIcon className="w-3.5 h-3.5 text-white" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 border border-luxury-gold/30 text-luxury-gold text-xs font-bold uppercase tracking-widest backdrop-blur-xs">
+            <AIIcon className="w-3.5 h-3.5 text-luxury-gold" />
             <span>Design Your Journey, with Safar Trails</span>
           </div>
 
@@ -94,9 +94,9 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5">
             <button
               onClick={onStartAIPlan}
-              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white hover:bg-gray-200 text-black font-bold text-xs uppercase tracking-wider shadow-lg transition-all inline-flex items-center justify-center gap-2 cursor-pointer text-center"
+              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-deep-emerald hover:bg-forest-green text-white font-bold text-xs uppercase tracking-wider shadow-lg transition-all inline-flex items-center justify-center gap-2 cursor-pointer text-center"
             >
-              <AIIcon className="w-4 h-4 text-black shrink-0" />
+              <AIIcon className="w-4 h-4 text-white shrink-0" />
               <span className="whitespace-nowrap">Create Customized Itinerary</span>
               <ArrowRight className="w-4 h-4 ml-1 shrink-0" />
             </button>
@@ -111,7 +111,7 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
 
             <button
               onClick={onOpenQuoteModal}
-              className="w-full sm:w-auto px-6 py-4 rounded-xl bg-transparent hover:bg-gray-900 text-white font-bold text-xs uppercase tracking-wider border border-gray-700 hover:border-gray-500 transition-all cursor-pointer"
+              className="w-full sm:w-auto px-6 py-4 rounded-xl bg-warm-orange hover:brightness-95 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer"
             >
               Request Custom Package
             </button>

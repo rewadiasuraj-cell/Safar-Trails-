@@ -22,7 +22,7 @@ const portableTextComponents: PortableTextComponents = {
     h2: ({ children }) => <h2 className="text-2xl font-serif font-bold text-slate-900 mt-8 mb-3">{children}</h2>,
     h3: ({ children }) => <h3 className="text-xl font-serif font-bold text-slate-900 mt-6 mb-2">{children}</h3>,
     blockquote: ({ children }) => (
-      <blockquote className="border-l-4 border-[#FF6B00] pl-4 my-6 italic text-slate-700">{children}</blockquote>
+      <blockquote className="border-l-4 border-luxury-gold pl-4 my-6 italic text-slate-700">{children}</blockquote>
     ),
     normal: ({ children }) => <p className="text-base text-slate-700 leading-relaxed mb-4">{children}</p>,
   },
@@ -90,7 +90,7 @@ export const GuideDetailPage: React.FC = () => {
           {guide.relatedDestination && (
             <Link
               to={`/destinations/${guide.relatedDestination.slug}`}
-              className="inline-flex items-center gap-1 text-[#FF6B00] font-semibold hover:underline"
+              className="inline-flex items-center gap-1 text-luxury-gold font-semibold hover:underline"
             >
               <MapPin className="w-3.5 h-3.5" />
               {guide.relatedDestination.title}

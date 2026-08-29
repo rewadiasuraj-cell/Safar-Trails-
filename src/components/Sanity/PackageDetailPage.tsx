@@ -96,13 +96,13 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({ onOpenQuot
         <div className="flex flex-col sm:flex-row gap-3 mb-10">
           <button
             onClick={() => requestQuote(`I'd like the free itinerary for ${pkg.name}.`)}
-            className="flex-1 py-3.5 rounded-full bg-black hover:bg-gray-800 text-white font-bold text-sm text-center transition-colors cursor-pointer"
+            className="flex-1 py-3.5 rounded-full bg-deep-emerald hover:bg-forest-green text-white font-bold text-sm text-center transition-colors cursor-pointer"
           >
             Get Free Itinerary
           </button>
           <button
             onClick={() => requestQuote(`I'd like to enquire about ${pkg.name}.`)}
-            className="flex-1 py-3.5 rounded-full bg-[#FF6B00] hover:bg-[#E55F00] text-white font-bold text-sm text-center transition-colors cursor-pointer"
+            className="flex-1 py-3.5 rounded-full bg-warm-orange hover:brightness-95 text-white font-bold text-sm text-center transition-colors cursor-pointer"
           >
             Enquire Now
           </button>
@@ -223,21 +223,21 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({ onOpenQuot
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {pkg.howToReach.road && (
                 <div className="p-5 rounded-2xl border border-gray-200">
-                  <Car className="w-5 h-5 text-[#FF6B00] mb-2" />
+                  <Car className="w-5 h-5 text-luxury-gold mb-2" />
                   <div className="font-bold text-slate-900 mb-1">By Road</div>
                   <p className="text-sm text-slate-600 leading-relaxed">{pkg.howToReach.road}</p>
                 </div>
               )}
               {pkg.howToReach.rail && (
                 <div className="p-5 rounded-2xl border border-gray-200">
-                  <Train className="w-5 h-5 text-[#FF6B00] mb-2" />
+                  <Train className="w-5 h-5 text-luxury-gold mb-2" />
                   <div className="font-bold text-slate-900 mb-1">By Train</div>
                   <p className="text-sm text-slate-600 leading-relaxed">{pkg.howToReach.rail}</p>
                 </div>
               )}
               {pkg.howToReach.air && (
                 <div className="p-5 rounded-2xl border border-gray-200">
-                  <Plane className="w-5 h-5 text-[#FF6B00] mb-2" />
+                  <Plane className="w-5 h-5 text-luxury-gold mb-2" />
                   <div className="font-bold text-slate-900 mb-1">By Air</div>
                   <p className="text-sm text-slate-600 leading-relaxed">{pkg.howToReach.air}</p>
                 </div>
@@ -254,7 +254,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({ onOpenQuot
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {pkg.costFactors.map((factor, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-sm text-slate-700">
-                    <CheckCircle2 className="w-4.5 h-4.5 text-[#FF6B00] flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4.5 h-4.5 text-luxury-gold flex-shrink-0 mt-0.5" />
                     <span>{factor}</span>
                   </li>
                 ))}
@@ -300,7 +300,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({ onOpenQuot
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {pkg.highlights.map((h, i) => (
                 <li key={i} className="flex items-start gap-2.5 text-sm text-slate-700">
-                  <CheckCircle2 className="w-4.5 h-4.5 text-[#FF6B00] flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4.5 h-4.5 text-luxury-gold flex-shrink-0 mt-0.5" />
                   <span>{h}</span>
                 </li>
               ))}
@@ -332,7 +332,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({ onOpenQuot
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {pkg.transportationOptions.map((opt, i) => (
                 <li key={i} className="flex items-start gap-2.5 text-sm text-slate-700">
-                  <CheckCircle2 className="w-4.5 h-4.5 text-[#FF6B00] flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4.5 h-4.5 text-luxury-gold flex-shrink-0 mt-0.5" />
                   <span>{opt}</span>
                 </li>
               ))}
@@ -352,7 +352,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({ onOpenQuot
             </div>
             <button
               onClick={() => requestQuote(`I'd like a customized version of ${pkg.name}.`)}
-              className="px-6 py-3 rounded-full bg-black hover:bg-gray-800 text-white font-bold text-sm transition-colors cursor-pointer"
+              className="px-6 py-3 rounded-full bg-deep-emerald hover:bg-forest-green text-white font-bold text-sm transition-colors cursor-pointer"
             >
               Request Customized Package
             </button>
@@ -378,7 +378,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({ onOpenQuot
             <ul className="space-y-2.5">
               {pkg.travelTips.map((tip, i) => (
                 <li key={i} className="flex items-start gap-2.5 text-sm text-slate-700">
-                  <CheckCircle2 className="w-4.5 h-4.5 text-[#FF6B00] flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4.5 h-4.5 text-luxury-gold flex-shrink-0 mt-0.5" />
                   <span>{tip}</span>
                 </li>
               ))}
@@ -392,7 +392,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({ onOpenQuot
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {pkg.whyChooseUs.map((reason, i) => (
                 <li key={i} className="flex items-start gap-2.5 text-sm text-slate-700">
-                  <CheckCircle2 className="w-4.5 h-4.5 text-[#FF6B00] flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4.5 h-4.5 text-luxury-gold flex-shrink-0 mt-0.5" />
                   <span>{reason}</span>
                 </li>
               ))}
@@ -425,13 +425,13 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({ onOpenQuot
             <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
               <button
                 onClick={() => requestQuote(`I'd like the free itinerary for ${pkg.name}.`)}
-                className="flex-1 py-3.5 rounded-full bg-black hover:bg-gray-800 text-white font-bold text-sm text-center transition-colors cursor-pointer"
+                className="flex-1 py-3.5 rounded-full bg-deep-emerald hover:bg-forest-green text-white font-bold text-sm text-center transition-colors cursor-pointer"
               >
                 Get Free Itinerary
               </button>
               <button
                 onClick={() => requestQuote(`I'd like to enquire about ${pkg.name}.`)}
-                className="flex-1 py-3.5 rounded-full bg-[#FF6B00] hover:bg-[#E55F00] text-white font-bold text-sm text-center transition-colors cursor-pointer"
+                className="flex-1 py-3.5 rounded-full bg-warm-orange hover:brightness-95 text-white font-bold text-sm text-center transition-colors cursor-pointer"
               >
                 Enquire Now
               </button>

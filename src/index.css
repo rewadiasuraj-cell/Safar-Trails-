@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@theme {
+  --color-midnight-blue: #071A33;
+  --color-royal-navy: #102B4E;
+  --color-deep-emerald: #164A41;
+  --color-forest-green: #1F5D50;
+  --color-luxury-gold: #C6A15B;
+  --color-warm-orange: #EB7D00;
+  --color-light-blue: #E6F3FA;
+  --color-soft-blue: #DCEFF8;
+  --color-ivory: #F4FAFD;
+}
+
 @layer base {
   :root {
     --brand-primary: #0A0A0A;

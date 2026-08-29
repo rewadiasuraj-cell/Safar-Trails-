@@ -30,13 +30,13 @@ export const DestinationsPage: React.FC<DestinationsPageProps> = ({
   }, [data, searchQuery]);
 
   return (
-    <section id="destinations-section" className="w-full py-16 lg:py-24 bg-[#FAF9F6]">
+    <section id="destinations-section" className="w-full py-16 lg:py-24 bg-soft-blue">
       <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-800 text-xs font-bold uppercase tracking-widest mb-3">
-              <MapPin className="w-3.5 h-3.5 text-[#FF6B00]" />
+              <MapPin className="w-3.5 h-3.5 text-luxury-gold" />
               <span>Iconic Indian Destinations</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-serif text-black tracking-tight">
@@ -130,7 +130,7 @@ export const DestinationsPage: React.FC<DestinationsPageProps> = ({
                         ? onOpenQuoteModal(`I'd like a custom quote for ${dest.title}.`, dest.title)
                         : onPlanDestinationWithAI(dest.title)
                     }
-                    className="w-full h-9.5 px-2 rounded-xl bg-[#FF6B00] hover:bg-[#E55F00] text-white font-bold text-[11px] uppercase tracking-wide transition-all cursor-pointer"
+                    className="w-full h-9.5 px-2 rounded-xl bg-warm-orange hover:brightness-95 text-white font-bold text-[11px] uppercase tracking-wide transition-all cursor-pointer"
                   >
                     Get a Quote
                   </button>

@@ -84,10 +84,10 @@ export const Header: React.FC<HeaderProps> = ({
     <>
       <header
         id="main-header"
-        className={`fixed top-0 left-0 right-0 w-full z-40 transition-all duration-200 ${
+        className={`fixed top-0 left-0 right-0 w-full z-40 transition-all duration-200 bg-midnight-blue border-b border-white/10 ${
           isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-[0_2px_15px_-3px_rgba(0,0,0,0.06)] border-b border-gray-100 py-2 sm:py-2.5 md:py-3'
-            : 'bg-white border-b border-gray-100 py-2.5 sm:py-3 md:py-3.5'
+            ? 'shadow-[0_2px_15px_-3px_rgba(0,0,0,0.25)] py-2 sm:py-2.5 md:py-3'
+            : 'py-2.5 sm:py-3 md:py-3.5'
         }`}
       >
         <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 flex items-center justify-between gap-2 sm:gap-3 md:gap-4">
@@ -105,7 +105,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Desktop & Tablet Navigation Links - Exactly Home / Destination / Tour Packages / Blogs / About Us / Contact Us */}
           <nav 
             ref={navContainerRef}
-            className="hidden lg:flex items-center gap-4 xl:gap-7 text-[14px] xl:text-[14.5px] font-medium text-slate-800 whitespace-nowrap"
+            className="hidden lg:flex items-center gap-4 xl:gap-7 text-[14px] xl:text-[14.5px] font-medium text-ivory whitespace-nowrap"
           >
             {/* 1. Home */}
             <button
@@ -117,8 +117,8 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
                 currentView === 'home'
-                  ? 'text-[#FF6B00] font-semibold'
-                  : 'text-slate-800 hover:text-[#FF6B00]'
+                  ? 'text-luxury-gold font-semibold'
+                  : 'text-ivory hover:text-luxury-gold'
               }`}
             >
               <span className="whitespace-nowrap">Home</span>
@@ -134,8 +134,8 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className={`py-1.5 transition-colors inline-flex items-center gap-1.5 cursor-pointer select-none whitespace-nowrap ${
                 currentView === 'ai-planner'
-                  ? 'text-[#FF6B00] font-semibold'
-                  : 'text-slate-800 hover:text-[#FF6B00]'
+                  ? 'text-luxury-gold font-semibold'
+                  : 'text-ivory hover:text-luxury-gold'
               }`}
             >
               <AIIcon className="w-3.5 h-3.5" />
@@ -156,12 +156,12 @@ export const Header: React.FC<HeaderProps> = ({
                 }}
                 className={`py-1.5 transition-colors inline-flex items-center gap-1 cursor-pointer select-none whitespace-nowrap ${
                   currentView === 'destinations' || currentView === 'destination-detail'
-                    ? 'text-[#FF6B00] font-semibold'
-                    : 'text-slate-800 hover:text-[#FF6B00]'
+                    ? 'text-luxury-gold font-semibold'
+                    : 'text-ivory hover:text-luxury-gold'
                 }`}
               >
                 <span className="whitespace-nowrap">Destination</span>
-                <ChevronDown className="w-3.5 h-3.5 text-slate-500 group-hover:text-[#FF6B00] group-hover:rotate-180 transition-transform duration-200 flex-shrink-0" />
+                <ChevronDown className="w-3.5 h-3.5 text-ivory/60 group-hover:text-luxury-gold group-hover:rotate-180 transition-transform duration-200 flex-shrink-0" />
               </button>
 
               {/* Destinations Mega Dropdown */}
@@ -182,7 +182,7 @@ export const Header: React.FC<HeaderProps> = ({
                       }}
                       className="text-left px-3 py-2 rounded-xl hover:bg-[#FAF9F6] transition-colors flex group/item cursor-pointer"
                     >
-                      <span className="text-sm font-semibold text-slate-900 group-hover/item:text-[#FF6B00] transition-colors whitespace-nowrap">
+                      <span className="text-sm font-semibold text-slate-900 group-hover/item:text-luxury-gold transition-colors whitespace-nowrap">
                         {dest.name}
                       </span>
                     </button>
@@ -193,7 +193,7 @@ export const Header: React.FC<HeaderProps> = ({
                         onNavigate('destinations');
                         setDestinationsDropdown(false);
                       }}
-                      className="w-full text-center py-1.5 text-xs font-bold text-slate-900 hover:text-[#FF6B00] uppercase tracking-wider cursor-pointer whitespace-nowrap"
+                      className="w-full text-center py-1.5 text-xs font-bold text-slate-900 hover:text-luxury-gold uppercase tracking-wider cursor-pointer whitespace-nowrap"
                     >
                       View All Destinations →
                     </button>
@@ -212,8 +212,8 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
                 currentView === 'packages'
-                  ? 'text-[#FF6B00] font-semibold'
-                  : 'text-slate-800 hover:text-[#FF6B00]'
+                  ? 'text-luxury-gold font-semibold'
+                  : 'text-ivory hover:text-luxury-gold'
               }`}
             >
               <span className="whitespace-nowrap">Tour Packages</span>
@@ -229,8 +229,8 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
                 currentView === 'guides' || currentView === 'guide-detail'
-                  ? 'text-[#FF6B00] font-semibold'
-                  : 'text-slate-800 hover:text-[#FF6B00]'
+                  ? 'text-luxury-gold font-semibold'
+                  : 'text-ivory hover:text-luxury-gold'
               }`}
             >
               <span className="whitespace-nowrap">Blogs</span>
@@ -246,8 +246,8 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
                 currentView === 'why-us'
-                  ? 'text-[#FF6B00] font-semibold'
-                  : 'text-slate-800 hover:text-[#FF6B00]'
+                  ? 'text-luxury-gold font-semibold'
+                  : 'text-ivory hover:text-luxury-gold'
               }`}
             >
               <span className="whitespace-nowrap">About Us</span>
@@ -263,8 +263,8 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
                 currentView === 'contact-us'
-                  ? 'text-[#FF6B00] font-semibold'
-                  : 'text-slate-800 hover:text-[#FF6B00]'
+                  ? 'text-luxury-gold font-semibold'
+                  : 'text-ivory hover:text-luxury-gold'
               }`}
             >
               <span className="whitespace-nowrap">Contact Us</span>
@@ -277,7 +277,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               id="global-search-btn"
               onClick={onOpenSearch}
-              className="w-7 h-7 sm:w-8.5 sm:h-8.5 md:w-9.5 md:h-9.5 rounded-full flex items-center justify-center text-slate-800 hover:text-black hover:bg-gray-100 transition-colors cursor-pointer flex-shrink-0"
+              className="w-7 h-7 sm:w-8.5 sm:h-8.5 md:w-9.5 md:h-9.5 rounded-full flex items-center justify-center text-white hover:text-white hover:bg-white/10 transition-colors cursor-pointer flex-shrink-0"
               title="Search destinations & packages (Cmd+K)"
               aria-label="Search"
             >
@@ -288,7 +288,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               id="header-whatsapp-btn"
               onClick={handleWhatsAppClick}
-              className="w-7 h-7 sm:w-8.5 sm:h-8.5 md:w-9.5 md:h-9.5 rounded-full border border-gray-200 hover:border-emerald-300 bg-white hover:bg-emerald-50/50 flex items-center justify-center transition-all shadow-2xs cursor-pointer flex-shrink-0"
+              className="w-7 h-7 sm:w-8.5 sm:h-8.5 md:w-9.5 md:h-9.5 rounded-full border border-white/20 hover:border-forest-green bg-white hover:bg-white flex items-center justify-center transition-all shadow-2xs cursor-pointer flex-shrink-0"
               title="Chat with an Expert on WhatsApp"
               aria-label="WhatsApp Expert Help"
             >
@@ -299,7 +299,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               id="header-plan-trip-cta"
               onClick={() => onOpenQuoteModal()}
-              className="inline-flex items-center justify-center bg-[#FF6B00] hover:bg-[#E55F00] text-white text-[11px] sm:text-xs md:text-sm font-bold px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5 rounded-full transition-all duration-200 active:scale-95 shadow-xs cursor-pointer whitespace-nowrap flex-shrink-0"
+              className="inline-flex items-center justify-center bg-warm-orange hover:brightness-95 text-white text-[11px] sm:text-xs md:text-sm font-bold px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5 rounded-full transition-all duration-200 active:scale-95 shadow-xs cursor-pointer whitespace-nowrap flex-shrink-0"
             >
               <span>Plan My Trip</span>
             </button>
@@ -308,14 +308,14 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               id="mobile-menu-toggle-btn"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-1.5 sm:p-2 rounded-xl text-slate-800 hover:bg-gray-100 hover:text-black border border-gray-200/80 focus:outline-none cursor-pointer flex items-center justify-center flex-shrink-0 transition-colors"
+              className="lg:hidden p-1.5 sm:p-2 rounded-xl text-white hover:bg-white/10 hover:text-white border border-white/20 focus:outline-none cursor-pointer flex items-center justify-center flex-shrink-0 transition-colors"
               aria-label="Toggle navigation menu"
               title="Menu"
             >
               {mobileMenuOpen ? (
-                <X className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[2.2] text-slate-900" />
+                <X className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[2.2] text-white" />
               ) : (
-                <Menu className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[2.2] text-slate-900" />
+                <Menu className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[2.2] text-white" />
               )}
             </button>
           </div>
@@ -344,7 +344,7 @@ export const Header: React.FC<HeaderProps> = ({
                     setMobileMenuOpen(false);
                   }}
                   className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'home' ? 'bg-orange-50 text-[#FF6B00]' : 'hover:bg-gray-50'
+                    currentView === 'home' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
                   }`}
                 >
                   Home
@@ -355,7 +355,7 @@ export const Header: React.FC<HeaderProps> = ({
                     setMobileMenuOpen(false);
                   }}
                   className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors flex items-center gap-2 ${
-                    currentView === 'ai-planner' ? 'bg-orange-50 text-[#FF6B00]' : 'hover:bg-gray-50'
+                    currentView === 'ai-planner' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
                   }`}
                 >
                   <AIIcon className="w-4 h-4" />
@@ -367,7 +367,7 @@ export const Header: React.FC<HeaderProps> = ({
                     setMobileMenuOpen(false);
                   }}
                   className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'destinations' ? 'bg-orange-50 text-[#FF6B00]' : 'hover:bg-gray-50'
+                    currentView === 'destinations' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
                   }`}
                 >
                   Destination
@@ -378,7 +378,7 @@ export const Header: React.FC<HeaderProps> = ({
                     setMobileMenuOpen(false);
                   }}
                   className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'packages' ? 'bg-orange-50 text-[#FF6B00]' : 'hover:bg-gray-50'
+                    currentView === 'packages' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
                   }`}
                 >
                   Tour Packages
@@ -389,7 +389,7 @@ export const Header: React.FC<HeaderProps> = ({
                     setMobileMenuOpen(false);
                   }}
                   className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'guides' || currentView === 'guide-detail' ? 'bg-orange-50 text-[#FF6B00]' : 'hover:bg-gray-50'
+                    currentView === 'guides' || currentView === 'guide-detail' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
                   }`}
                 >
                   Blogs
@@ -400,7 +400,7 @@ export const Header: React.FC<HeaderProps> = ({
                     setMobileMenuOpen(false);
                   }}
                   className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'why-us' ? 'bg-orange-50 text-[#FF6B00]' : 'hover:bg-gray-50'
+                    currentView === 'why-us' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
                   }`}
                 >
                   About Us
@@ -411,7 +411,7 @@ export const Header: React.FC<HeaderProps> = ({
                     setMobileMenuOpen(false);
                   }}
                   className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'contact-us' ? 'bg-orange-50 text-[#FF6B00]' : 'hover:bg-gray-50'
+                    currentView === 'contact-us' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
                   }`}
                 >
                   Contact Us
@@ -431,7 +431,7 @@ export const Header: React.FC<HeaderProps> = ({
                         onNavigate('destination-detail', d.toLowerCase().replace(/\s+/g, '-'));
                         setMobileMenuOpen(false);
                       }}
-                      className="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 text-gray-800 hover:bg-[#FF6B00] hover:text-white transition-colors cursor-pointer"
+                      className="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 text-gray-800 hover:bg-luxury-gold hover:text-white transition-colors cursor-pointer"
                     >
                       {d}
                     </button>
@@ -447,7 +447,7 @@ export const Header: React.FC<HeaderProps> = ({
                   onOpenQuoteModal();
                   setMobileMenuOpen(false);
                 }}
-                className="w-full py-3 rounded-full bg-[#FF6B00] text-white font-bold text-sm shadow-xs text-center flex items-center justify-center cursor-pointer"
+                className="w-full py-3 rounded-full bg-warm-orange text-white font-bold text-sm shadow-xs text-center flex items-center justify-center cursor-pointer"
               >
                 <span>Plan My Trip</span>
               </button>

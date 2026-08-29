@@ -49,7 +49,7 @@ export const PackagesPage: React.FC = () => {
                 </div>
                 <div className="p-5">
                   {pkg.destination && (
-                    <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF6B00] mb-1.5">
+                    <div className="text-[11px] font-bold uppercase tracking-wider text-deep-emerald mb-1.5">
                       {pkg.destination.title}
                     </div>
                   )}

@@ -163,7 +163,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       key={`${dest.id}-${indexSuffix}`}
       id={`featured-exp-${dest.slug}-${indexSuffix}`}
       onClick={() => handleCardClick(dest)}
-      className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] hover:scale-[1.02] transform will-change-transform transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 border border-gray-200/90 hover:border-orange-300 select-none"
+      className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] hover:scale-[1.02] transform will-change-transform transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 border border-gray-200/90 hover:border-luxury-gold select-none"
     >
       {/* Photography Background with Zoom Hover & Fallback */}
       <img
@@ -192,7 +192,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       <div className="relative z-10 flex items-center justify-between gap-1.5 pointer-events-none">
         <div>
           {dest.isTrending && (
-            <span className="inline-flex items-center gap-1 px-2.5 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-[10.5px] font-extrabold uppercase tracking-wider text-white bg-[#FF6B00] shadow-md border border-orange-400/80 whitespace-nowrap leading-none">
+            <span className="inline-flex items-center gap-1 px-2.5 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-[10.5px] font-extrabold uppercase tracking-wider text-white bg-midnight-blue shadow-md border border-luxury-gold/60 whitespace-nowrap leading-none">
               <Flame className="w-3 h-3 text-white fill-white shrink-0" />
               <span>Trending</span>
             </span>
@@ -210,7 +210,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       {/* Bottom Row: Destination Title, Duration, Accent, and Tagline */}
       <div className="relative z-10 text-white">
         <div className="flex items-baseline justify-between gap-2">
-          <h3 className="font-serif text-2xl sm:text-[26px] lg:text-[26px] font-bold text-white tracking-tight leading-tight group-hover:text-orange-200 transition-colors">
+          <h3 className="font-serif text-2xl sm:text-[26px] lg:text-[26px] font-bold text-white tracking-tight leading-tight group-hover:text-luxury-gold transition-colors">
             {dest.name}
           </h3>
           <div className="text-right shrink-0">
@@ -220,8 +220,8 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
           </div>
         </div>
 
-        {/* Warm Orange Accent Line */}
-        <div className="w-8 h-1 bg-[#FF6B00] rounded-full my-2.5 group-hover:w-14 transition-all duration-300" />
+        {/* Luxury Gold Accent Line */}
+        <div className="w-8 h-1 bg-luxury-gold rounded-full my-2.5 group-hover:w-14 transition-all duration-300" />
 
         <p className="text-xs sm:text-[13px] text-white/85 line-clamp-2 leading-relaxed font-normal">
           {dest.tagline}
@@ -239,13 +239,13 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
                 dest.name
               );
             }}
-            className="px-2.5 sm:px-3 py-1.5 rounded-lg bg-[#FF6B00] hover:bg-[#e66000] active:scale-95 text-white font-bold text-[10px] sm:text-[11px] uppercase tracking-wider shadow-sm flex items-center gap-1 transition-all cursor-pointer pointer-events-auto"
+            className="px-2.5 sm:px-3 py-1.5 rounded-lg bg-warm-orange hover:brightness-95 active:scale-95 text-white font-bold text-[10px] sm:text-[11px] uppercase tracking-wider shadow-sm flex items-center gap-1 transition-all cursor-pointer pointer-events-auto"
           >
             <Zap className="w-3 h-3 fill-white text-white shrink-0" />
             <span>Quick Book</span>
           </button>
 
-          <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-white/90 group-hover:text-orange-300 transition-colors">
+          <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-white/90 group-hover:text-luxury-gold transition-colors">
             <span>Explore</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform stroke-[2.2]" />
           </div>
@@ -260,7 +260,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       key={`view-all-${indexSuffix}`}
       id={`featured-exp-view-all-${indexSuffix}`}
       onClick={() => onViewAll()}
-      className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 bg-[#071322] border border-slate-800 hover:border-orange-500/50 select-none"
+      className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 bg-midnight-blue border border-slate-800 hover:border-luxury-gold/60 select-none"
     >
       {/* Atmospheric Background Image with Deep Navy Overlay */}
       <img
@@ -269,21 +269,21 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
         className="absolute inset-0 w-full h-full object-cover opacity-35 group-hover:scale-108 transition-transform duration-700 ease-out pointer-events-none"
         loading="lazy"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#071322] via-[#071322]/85 to-[#071322]/50 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-midnight-blue via-midnight-blue/85 to-midnight-blue/50 pointer-events-none" />
 
       {/* Top Row: Badges with responsive spacing */}
       <div className="relative z-10 flex items-center justify-between gap-1.5 pointer-events-none">
         <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] sm:text-[10.5px] font-bold uppercase tracking-wider text-white/95 bg-white/15 backdrop-blur-md border border-white/20 shadow-xs whitespace-nowrap leading-none">
           ALL REGIONS
         </span>
-        <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-wide text-orange-400 bg-orange-500/15 border border-orange-500/25 px-2.5 py-1 rounded-full whitespace-nowrap">
+        <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-wide text-luxury-gold bg-luxury-gold/15 border border-luxury-gold/25 px-2.5 py-1 rounded-full whitespace-nowrap">
           10+ DESTINATIONS
         </span>
       </div>
 
       {/* Middle/Bottom Call-To-Action */}
       <div className="relative z-10 text-white pointer-events-none">
-        <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/10 border border-white/20 group-hover:bg-[#FF6B00] group-hover:border-[#FF6B00] flex items-center justify-center text-white mb-3.5 transition-all duration-300 shadow-md">
+        <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/10 border border-white/20 group-hover:bg-luxury-gold group-hover:border-luxury-gold group-hover:text-midnight-blue flex items-center justify-center text-white mb-3.5 transition-all duration-300 shadow-md">
           <Compass className="w-5 h-5 group-hover:rotate-45 transition-transform stroke-[2]" />
         </div>
 
@@ -291,13 +291,13 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
           View All Destinations
         </h3>
 
-        <div className="w-8 h-1 bg-[#FF6B00] rounded-full my-2.5 group-hover:w-14 transition-all duration-300" />
+        <div className="w-8 h-1 bg-luxury-gold rounded-full my-2.5 group-hover:w-14 transition-all duration-300" />
 
         <p className="text-xs sm:text-[13px] text-white/75 leading-relaxed font-normal mb-3.5">
           Browse our full catalog of handcrafted holidays across North, South, West & Northeast India.
         </p>
 
-        <span className="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-orange-400 group-hover:text-white transition-colors">
+        <span className="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-luxury-gold group-hover:text-white transition-colors">
           <span>Browse All Trails</span>
           <ArrowRight className="w-3.5 h-3.5 stroke-[2.5] group-hover:translate-x-1 transition-transform" />
         </span>
@@ -306,15 +306,15 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
   );
 
   return (
-    <section id="handpicked-experiences-section" className="w-full py-16 sm:py-20 lg:py-24 bg-white border-b border-gray-100 overflow-hidden">
+    <section id="handpicked-experiences-section" className="w-full py-16 sm:py-20 lg:py-24 bg-ivory border-b border-gray-100 overflow-hidden">
       <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-6">
           <div>
             <div className="flex items-center gap-2 mb-2.5">
-              <span className="text-[#FF6B00] text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-[#FF6B00]" />
+              <span className="text-luxury-gold text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-luxury-gold" />
                 Explore Your Dream Destination
               </span>
             </div>
@@ -324,8 +324,8 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
             </h2>
 
             <div className="flex items-center gap-2 mt-3">
-              <div className="w-10 h-[1.5px] bg-orange-400 rounded-full" />
-              <div className="w-1.5 h-1.5 rounded-full bg-[#FF6B00]" />
+              <div className="w-10 h-[1.5px] bg-luxury-gold rounded-full" />
+              <div className="w-1.5 h-1.5 rounded-full bg-luxury-gold" />
               <p className="text-sm text-slate-500 font-sans-ui ml-1">
                 Hover to pause and explore curated holidays across India
               </p>
