@@ -25,19 +25,19 @@ export const TrustSection: React.FC = () => {
     {
       icon: IndianRupee,
       color: 'text-amber-800 bg-amber-50 border-amber-200',
-      title: '100% Transparent Quotes',
+      title: 'Clear Pricing. No Hidden Costs.',
       description: 'Clear itemized budgets with zero hidden surcharges on ground. What you see is what you pay, with realistic indicative starting prices.'
     },
     {
       icon: Clock,
       color: 'text-indigo-700 bg-indigo-50 border-indigo-200',
-      title: '24/7 On-Trip Concierge',
+      title: '24/7 Expert Travel Support.',
       description: 'A dedicated trip coordinator stays reachable on WhatsApp throughout your journey to coordinate driver pickups, hotel check-ins, and activity slots.'
     },
     {
       icon: HeartHandshake,
       color: 'text-rose-700 bg-rose-50 border-rose-200',
-      title: 'Hassle-Free Flexibility',
+      title: 'Freedom to Customize.',
       description: 'Need to add an extra day, swap a hotel, or request Jain/halal meals? Every SafarTrails itinerary is 100% tailored to your specific family preferences.'
     }
   ];
@@ -50,7 +50,7 @@ export const TrustSection: React.FC = () => {
             <span>The SafarTrails Promise</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-serif text-black tracking-tight">
-            Why Discerning Travelers Choose SafarTrails
+            Why Experienced Travelers Choose Safar Trails
           </h2>
           <p className="mt-2 text-gray-500 text-sm sm:text-base font-normal">
             We bridge modern artificial intelligence with trusted human hospitality to deliver memorable Indian holidays.
