@@ -26,8 +26,8 @@ export const AIPlannerTeaser: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-luxury-gold flex items-center justify-center flex-shrink-0 group-hover:translate-x-0.5 transition-transform">
-            <ArrowRight className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-midnight-blue" />
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0 group-hover:translate-x-0.5 transition-transform">
+            <ArrowRight className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-deep-emerald" />
           </div>
         </button>
       </div>

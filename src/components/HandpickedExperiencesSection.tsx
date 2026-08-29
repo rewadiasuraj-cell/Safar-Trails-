@@ -239,7 +239,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
                 dest.name
               );
             }}
-            className="px-2.5 sm:px-3 py-1.5 rounded-lg bg-warm-orange hover:brightness-95 active:scale-95 text-white font-bold text-[10px] sm:text-[11px] uppercase tracking-wider shadow-sm flex items-center gap-1 transition-all cursor-pointer pointer-events-auto"
+            className="px-2.5 sm:px-3 py-1.5 rounded-lg bg-deep-emerald hover:bg-forest-green active:scale-95 text-white font-bold text-[10px] sm:text-[11px] uppercase tracking-wider shadow-sm flex items-center gap-1 transition-all cursor-pointer pointer-events-auto"
           >
             <Zap className="w-3 h-3 fill-white text-white shrink-0" />
             <span>Quick Book</span>
