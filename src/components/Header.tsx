@@ -98,7 +98,7 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={() => onNavigate('home')}
               className="cursor-pointer flex items-center flex-shrink-0"
             >
-              <SafarLogo size="responsive" />
+              <SafarLogo variant="dark" size="responsive" />
             </div>
           </div>
 
