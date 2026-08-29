@@ -10,21 +10,9 @@ import {
   ArrowRight, 
   Search,
   Heart,
-  Star,
   Flame,
   Zap
 } from 'lucide-react';
-
-/**
- * Formats season / month range for cards with full month names (e.g. "October to April", "April to October").
- * Strips secondary clauses, parenthetical notes like "(Flowers & Lush Green)", and descriptive text.
- */
-const formatSeasonBadgeFull = (bestTimeStr: string): string => {
-  if (!bestTimeStr) return '';
-  const primary = bestTimeStr.split('|')[0].trim();
-  const clean = primary.replace(/\(.*?\)/g, '').trim();
-  return clean;
-};
 
 /**
  * Formats destination name for display.
@@ -144,24 +132,13 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
 
                   {/* Top Badges */}
-                  <div className="absolute top-2.5 left-2.5 right-2.5 sm:top-3.5 sm:left-3.5 sm:right-3.5 flex items-center justify-between gap-2 z-10">
-                    <div className="flex items-center gap-1.5 flex-wrap">
-                      {dest.isTrending && (
-                        <span className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider bg-[#FF6B00] text-white shadow-md border border-orange-400/80 whitespace-nowrap leading-none shrink-0 inline-flex items-center gap-1">
-                          <Flame className="w-3 h-3 text-white fill-white shrink-0" />
-                          <span>Trending</span>
-                        </span>
-                      )}
-                      <span className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-wider bg-white/95 text-black shadow-xs whitespace-nowrap leading-none shrink-0 inline-flex items-center gap-1.5 border border-white/30">
-                        <Calendar className="w-3.5 h-3.5 text-[#FF6B00] shrink-0" />
-                        <span>{formatSeasonBadgeFull(dest.bestTime)}</span>
+                  <div className="absolute top-2.5 left-2.5 right-2.5 sm:top-3.5 sm:left-3.5 sm:right-3.5 flex items-center gap-2 z-10">
+                    {dest.isTrending && (
+                      <span className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider bg-[#FF6B00] text-white shadow-md border border-orange-400/80 whitespace-nowrap leading-none shrink-0 inline-flex items-center gap-1">
+                        <Flame className="w-3 h-3 text-white fill-white shrink-0" />
+                        <span>Trending</span>
                       </span>
-                    </div>
-                    <span className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-white text-gray-900 border border-white/90 shadow-md whitespace-nowrap leading-none shrink-0 inline-flex items-center gap-1">
-                      <Star className="w-3 h-3 fill-amber-400 text-amber-400 shrink-0" />
-                      <span className="text-black font-extrabold">{dest.rating ? dest.rating.toFixed(1) : '4.9'}</span>
-                      <span className="text-[9px] font-bold text-gray-500">/5.0</span>
-                    </span>
+                    )}
                   </div>
 
                   {/* Bottom Image Info & Heart Button */}
@@ -262,7 +239,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
                     onClick={() => onSelectDestination(dest.slug)}
                     className="w-full h-8.5 min-[380px]:h-9 sm:h-9.5 min-h-[34px] sm:min-h-[38px] px-1 sm:px-2 rounded-xl border border-gray-200 hover:border-black hover:bg-gray-50 text-black font-bold text-[10px] min-[380px]:text-[10.5px] sm:text-[11px] uppercase tracking-tight min-[380px]:tracking-wide transition-colors inline-flex items-center justify-center gap-1 sm:gap-1.5 cursor-pointer text-center whitespace-nowrap select-none"
                   >
-                    <span>Explore Guide</span>
+                    <span>More Info</span>
                     <ArrowRight className="w-3 h-3 min-[380px]:w-3.5 min-[380px]:h-3.5 shrink-0" />
                   </button>
 
