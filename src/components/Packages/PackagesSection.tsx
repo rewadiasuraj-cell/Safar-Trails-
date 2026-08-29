@@ -57,7 +57,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
   };
 
   return (
-    <section id="packages-section" className="w-full py-14 lg:py-20 bg-white border-t border-gray-100">
+    <section id="packages-section" className="w-full py-14 lg:py-20 bg-light-blue border-t border-gray-100">
       <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Single Clean Section Heading - No Redundant Subheaders */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
@@ -150,7 +150,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
           {filteredPackages.map((pkg) => (
             <div
               key={pkg.id}
-              className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#FF6B00] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-luxury-gold shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 {/* Hero Image */}
@@ -187,7 +187,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
 
                 {/* Card Details */}
                 <div className="p-5 space-y-3">
-                  <h2 className="text-lg font-serif font-bold text-slate-900 group-hover:text-[#FF6B00] transition-colors line-clamp-2 leading-snug">
+                  <h2 className="text-lg font-serif font-bold text-slate-900 group-hover:text-luxury-gold transition-colors line-clamp-2 leading-snug">
                     {pkg.title}
                   </h2>
 
@@ -247,7 +247,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
 
                   <button
                     onClick={() => handleBookNow(pkg)}
-                    className="w-full h-10 rounded-xl bg-[#FF6B00] hover:bg-[#e05e00] text-white font-bold text-xs uppercase tracking-wider transition-all inline-flex items-center justify-center gap-1.5 cursor-pointer text-center whitespace-nowrap shadow-2xs"
+                    className="w-full h-10 rounded-xl bg-warm-orange hover:brightness-95 text-white font-bold text-xs uppercase tracking-wider transition-all inline-flex items-center justify-center gap-1.5 cursor-pointer text-center whitespace-nowrap shadow-2xs"
                   >
                     <Send className="w-3.5 h-3.5 text-white" />
                     <span>Book Now</span>

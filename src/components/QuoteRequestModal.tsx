@@ -343,7 +343,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
             >
               {isSubmitting ? (
                 <>
-                  <Loader2 className="w-4 h-4 animate-spin text-[#FF6B00]" />
+                  <Loader2 className="w-4 h-4 animate-spin text-luxury-gold" />
                   <span>Submitting Enquiry...</span>
                 </>
               ) : (

@@ -25,9 +25,9 @@ export const ContactUs: React.FC<ContactUsProps> = ({ onOpenQuoteModal }) => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="space-y-6 bg-[#FAF9F6] rounded-2xl p-6 sm:p-8 border border-gray-100">
+        <div className="space-y-6 bg-soft-blue rounded-2xl p-6 sm:p-8 border border-gray-100">
           <div className="flex items-start gap-3">
-            <MapPin className="w-5 h-5 text-[#FF6B00] flex-shrink-0 mt-0.5" />
+            <MapPin className="w-5 h-5 text-luxury-gold flex-shrink-0 mt-0.5" />
             <div>
               <div className="text-sm font-bold text-slate-900">Office Address</div>
               <div className="text-sm text-slate-600 mt-1">
@@ -38,27 +38,27 @@ export const ContactUs: React.FC<ContactUsProps> = ({ onOpenQuoteModal }) => {
           </div>
 
           <div className="flex items-start gap-3">
-            <Phone className="w-5 h-5 text-[#FF6B00] flex-shrink-0 mt-0.5" />
+            <Phone className="w-5 h-5 text-luxury-gold flex-shrink-0 mt-0.5" />
             <div>
               <div className="text-sm font-bold text-slate-900">Phone</div>
-              <a href="tel:+918076665782" className="text-sm text-slate-600 hover:text-[#FF6B00] transition-colors">
+              <a href="tel:+918076665782" className="text-sm text-slate-600 hover:text-luxury-gold transition-colors">
                 +91 80766 65782 (24/7 Helpline)
               </a>
             </div>
           </div>
 
           <div className="flex items-start gap-3">
-            <Mail className="w-5 h-5 text-[#FF6B00] flex-shrink-0 mt-0.5" />
+            <Mail className="w-5 h-5 text-luxury-gold flex-shrink-0 mt-0.5" />
             <div>
               <div className="text-sm font-bold text-slate-900">Email</div>
-              <a href="mailto:info.safartrails@gmail.com" className="text-sm text-slate-600 hover:text-[#FF6B00] transition-colors">
+              <a href="mailto:info.safartrails@gmail.com" className="text-sm text-slate-600 hover:text-luxury-gold transition-colors">
                 info.safartrails@gmail.com
               </a>
             </div>
           </div>
 
           <div className="flex items-start gap-3">
-            <Clock className="w-5 h-5 text-[#FF6B00] flex-shrink-0 mt-0.5" />
+            <Clock className="w-5 h-5 text-luxury-gold flex-shrink-0 mt-0.5" />
             <div>
               <div className="text-sm font-bold text-slate-900">Response Time</div>
               <div className="text-sm text-slate-600 mt-1">
@@ -78,7 +78,7 @@ export const ContactUs: React.FC<ContactUsProps> = ({ onOpenQuoteModal }) => {
           </p>
           <button
             onClick={() => onOpenQuoteModal('Contact & General Inquiries')}
-            className="w-full py-3 rounded-full bg-[#FF6B00] hover:bg-[#E55F00] text-white font-bold text-sm shadow-xs transition-all active:scale-95 cursor-pointer"
+            className="w-full py-3 rounded-full bg-warm-orange hover:brightness-95 text-white font-bold text-sm shadow-xs transition-all active:scale-95 cursor-pointer"
           >
             Request a Free Quote
           </button>

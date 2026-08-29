@@ -41,7 +41,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   }, []);
 
   return (
-    <section id="hero-section" className="relative w-full pt-24 sm:pt-28 pb-16 sm:pb-20 lg:pt-32 lg:pb-24 overflow-hidden bg-[#0A1626] text-white">
+    <section id="hero-section" className="relative w-full pt-24 sm:pt-28 pb-16 sm:pb-20 lg:pt-32 lg:pb-24 overflow-hidden bg-midnight-blue text-white">
       {/* Background Slider: full-bleed, edge-to-edge autoplay carousel */}
       <div className="absolute inset-0 z-0 w-full h-full">
         {HERO_SLIDES.map((slide, i) => (
@@ -57,15 +57,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           />
         ))}
         {/* Editorial Gradient Overlays for optimal text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071322]/95 via-[#071322]/75 to-transparent sm:w-3/4 lg:w-3/5" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#071322] via-transparent to-[#071322]/30 lg:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-r from-midnight-blue/95 via-midnight-blue/75 to-transparent sm:w-3/4 lg:w-3/5" />
+        <div className="absolute inset-0 bg-gradient-to-t from-midnight-blue via-transparent to-midnight-blue/30 lg:hidden" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <div className="max-w-2xl lg:max-w-3xl">
           {/* Eyebrow: AI PLANS. EXPERTS PERFECT. */}
           <div className="mb-3">
-            <span className="text-[#FF6B00] text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.25em]">
+            <span className="text-luxury-gold text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.25em]">
               AI PLANS. EXPERTS PERFECT.
             </span>
           </div>
@@ -74,7 +74,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-serif text-white tracking-tight leading-[1.08] mb-4">
             <span>Your Journey.</span>
             <br />
-            <span className="text-[#FF6B00] italic font-serif">
+            <span className="text-luxury-gold italic font-serif">
               Our Passion.
             </span>
           </h1>
@@ -90,8 +90,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </p>
 
           {/* Plan with AI Card */}
-          <div className="bg-[#FAF7F0] rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-2xl text-slate-900 max-w-xl border border-white/10">
-            <div className="inline-flex items-center gap-1.5 text-[#0F5132] text-[11px] sm:text-xs font-extrabold uppercase tracking-[0.15em] mb-2.5">
+          <div className="bg-ivory rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-2xl text-slate-900 max-w-xl border border-luxury-gold/30">
+            <div className="inline-flex items-center gap-1.5 text-deep-emerald text-[11px] sm:text-xs font-extrabold uppercase tracking-[0.15em] mb-2.5">
               <Plane className="w-3.5 h-3.5" />
               <span>Let's Plan Your Next Adventure</span>
             </div>
@@ -108,7 +108,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               id="hero-plan-with-ai-btn"
               type="button"
               onClick={() => onStartAIPlan()}
-              className="w-full bg-[#0F5132] hover:bg-[#0B3D26] text-white px-5 sm:px-6 py-3.5 rounded-xl sm:rounded-2xl transition-all cursor-pointer active:scale-[0.98] shadow-xs flex items-center justify-between gap-3"
+              className="w-full bg-deep-emerald hover:bg-forest-green text-white px-5 sm:px-6 py-3.5 rounded-xl sm:rounded-2xl transition-all cursor-pointer active:scale-[0.98] shadow-xs flex items-center justify-between gap-3"
             >
               <span className="text-left min-w-0">
                 <span className="flex items-center gap-2 font-bold text-sm sm:text-base">

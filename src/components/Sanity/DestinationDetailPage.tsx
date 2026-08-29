@@ -77,7 +77,7 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {destination.highlights.map((h, i) => (
                 <li key={i} className="flex items-start gap-2.5 text-sm text-slate-700">
-                  <CheckCircle2 className="w-4.5 h-4.5 text-[#FF6B00] flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4.5 h-4.5 text-luxury-gold flex-shrink-0 mt-0.5" />
                   <span>{h}</span>
                 </li>
               ))}
@@ -112,7 +112,7 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
               {packages.map((pkg) => (
                 <div
                   key={pkg._id}
-                  className="p-5 rounded-2xl border border-gray-200 hover:border-black/30 transition-colors"
+                  className="p-5 rounded-2xl border border-gray-200 hover:border-luxury-gold transition-colors"
                 >
                   <div className="font-bold text-slate-900">{pkg.name}</div>
                   <div className="text-sm text-gray-500 mt-1">{pkg.duration}</div>
@@ -121,7 +121,7 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
                   </div>
                   <Link
                     to="/packages"
-                    className="mt-3 inline-block text-xs font-bold uppercase tracking-wide text-[#FF6B00] hover:underline"
+                    className="mt-3 inline-block text-xs font-bold uppercase tracking-wide text-deep-emerald hover:underline"
                   >
                     View in Packages →
                   </Link>
@@ -135,13 +135,13 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
         <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-gray-100">
           <button
             onClick={() => onStartAIPlan(destination.title)}
-            className="flex-1 py-3.5 rounded-full bg-black hover:bg-gray-800 text-white font-bold text-sm text-center transition-colors cursor-pointer"
+            className="flex-1 py-3.5 rounded-full bg-deep-emerald hover:bg-forest-green text-white font-bold text-sm text-center transition-colors cursor-pointer"
           >
             Plan {destination.title} with AI
           </button>
           <button
             onClick={() => onOpenQuoteModal(`Booking Request: ${destination.title}`, destination.title)}
-            className="flex-1 py-3.5 rounded-full bg-[#FF6B00] hover:bg-[#E55F00] text-white font-bold text-sm text-center transition-colors cursor-pointer"
+            className="flex-1 py-3.5 rounded-full bg-warm-orange hover:brightness-95 text-white font-bold text-sm text-center transition-colors cursor-pointer"
           >
             Book Now
           </button>

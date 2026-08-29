@@ -41,7 +41,7 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search blogs & travel guides..."
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 text-sm text-slate-900 placeholder:text-gray-400 focus:outline-none focus:border-[#FF6B00] bg-white shadow-xs"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 text-sm text-slate-900 placeholder:text-gray-400 focus:outline-none focus:border-luxury-gold bg-white shadow-xs"
             />
           </div>
         </div>
@@ -52,7 +52,7 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
             <p className="text-gray-500 text-sm font-medium">No guides or blogs found matching "{searchQuery}".</p>
             <button
               onClick={() => setSearchQuery('')}
-              className="mt-3 px-4 py-1.5 text-xs font-semibold text-[#FF6B00] hover:underline"
+              className="mt-3 px-4 py-1.5 text-xs font-semibold text-luxury-gold hover:underline"
             >
               Clear Search
             </button>
@@ -62,7 +62,7 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
             {filteredGuides.map((guide) => (
               <article
                 key={guide.slug}
-                className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#FF6B00] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between cursor-pointer"
+                className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-luxury-gold shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between cursor-pointer"
                 onClick={() => onSelectGuide(guide)}
               >
                 <div>
@@ -88,7 +88,7 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
                   </div>
 
                   <div className="p-6 space-y-3">
-                    <h2 className="text-lg sm:text-xl font-serif font-bold text-slate-900 group-hover:text-[#FF6B00] transition-colors line-clamp-2 leading-snug">
+                    <h2 className="text-lg sm:text-xl font-serif font-bold text-slate-900 group-hover:text-luxury-gold transition-colors line-clamp-2 leading-snug">
                       {guide.title}
                     </h2>
 
@@ -100,7 +100,7 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
 
                 {/* Read CTA */}
                 <div className="p-6 pt-0 border-t border-gray-100 flex items-center justify-end mt-2">
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-900 group-hover:text-[#FF6B00] group-hover:translate-x-1 transition-transform flex items-center gap-1">
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-900 group-hover:text-luxury-gold group-hover:translate-x-1 transition-transform flex items-center gap-1">
                     <span>Read Guide</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </span>

@@ -2,7 +2,7 @@ import React from 'react';
 
 export const SanityLoadingState: React.FC<{ label?: string }> = ({ label }) => (
   <div className="w-full py-24 flex flex-col items-center justify-center text-gray-400">
-    <div className="w-8 h-8 border-2 border-gray-200 border-t-[#FF6B00] rounded-full animate-spin mb-3" />
+    <div className="w-8 h-8 border-2 border-gray-200 border-t-luxury-gold rounded-full animate-spin mb-3" />
     <p className="text-sm">{label || 'Loading content…'}</p>
   </div>
 );

@@ -329,7 +329,7 @@ export const PackageDetailModal: React.FC<PackageDetailModalProps> = ({
             className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-black hover:bg-gray-800 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
             <span>Get Exact Final Quote</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#FF6B00]" />
+            <ArrowRight className="w-3.5 h-3.5 text-luxury-gold" />
           </button>
         </div>
       </div>
