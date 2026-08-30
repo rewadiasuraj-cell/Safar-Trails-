@@ -25,6 +25,11 @@ export const destination = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'seo',
+      title: 'SEO & Metadata',
+      type: 'seo',
+    }),
+    defineField({
       name: 'description',
       title: 'Description',
       type: 'text',

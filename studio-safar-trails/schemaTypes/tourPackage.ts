@@ -113,14 +113,20 @@ export const tourPackage = defineType({
       of: [{ type: 'string' }],
     }),
     defineField({
+      name: 'seo',
+      title: 'SEO & Metadata',
+      type: 'seo',
+      group: 'seo',
+    }),
+    defineField({
       name: 'seoTitle',
-      title: 'SEO: Meta Title',
+      title: 'SEO: Meta Title (Legacy)',
       type: 'string',
       group: 'seo',
     }),
     defineField({
       name: 'seoDescription',
-      title: 'SEO: Meta Description',
+      title: 'SEO: Meta Description (Legacy)',
       type: 'text',
       rows: 2,
       group: 'seo',
