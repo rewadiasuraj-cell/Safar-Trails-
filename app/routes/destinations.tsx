@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate, useOutletContext } from 'react-router';
 import { DestinationsPage as SanityDestinationsPage } from '../../src/components/Sanity/DestinationsPage';
 import type { Route } from './+types/destinations';
 
@@ -15,12 +15,18 @@ export const meta: Route.MetaFunction = () => [
 
 export default function DestinationsRoute() {
   const navigate = useNavigate();
+  const outletContext = useOutletContext<{
+    handleOpenQuoteModal?: (summary?: string, destinationName?: string) => void;
+  }>();
+
+  const handleOpenQuoteModal = outletContext?.handleOpenQuoteModal || (() => {});
+
   return (
     <div className="pt-20">
       <SanityDestinationsPage
         onSelectDestination={(slug) => navigate(`/destinations/${slug}`)}
         onPlanDestinationWithAI={(destName) => navigate(`/ai-planner?dest=${encodeURIComponent(destName)}`)}
-        onOpenQuoteModal={() => {}}
+        onOpenQuoteModal={handleOpenQuoteModal}
       />
     </div>
   );

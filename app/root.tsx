@@ -200,7 +200,7 @@ export default function AppRoot() {
       />
 
       <main className="w-full flex-grow">
-        <Outlet />
+        <Outlet context={{ handleOpenQuoteModal, handleStartAIPlan, setSearchModalOpen }} />
       </main>
 
       <Footer

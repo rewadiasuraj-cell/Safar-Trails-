@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate, useOutletContext } from 'react-router';
 import { TrustSection } from '../../src/components/TrustSection';
 import { ReviewsSection } from '../../src/components/ReviewsSection';
 import { FAQSection } from '../../src/components/FAQSection';
@@ -18,6 +18,12 @@ export const meta: Route.MetaFunction = () => [
 
 export default function AboutUsRoute() {
   const navigate = useNavigate();
+  const outletContext = useOutletContext<{
+    handleOpenQuoteModal?: (summary?: string, destinationName?: string) => void;
+  }>();
+
+  const handleOpenQuoteModal = outletContext?.handleOpenQuoteModal || (() => {});
+
   return (
     <div className="pt-20">
       <TrustSection />
@@ -25,7 +31,7 @@ export default function AboutUsRoute() {
       <FAQSection />
       <FinalCTASection
         onStartAIPlan={() => navigate('/ai-planner')}
-        onOpenQuoteModal={() => {}}
+        onOpenQuoteModal={handleOpenQuoteModal}
       />
     </div>
   );

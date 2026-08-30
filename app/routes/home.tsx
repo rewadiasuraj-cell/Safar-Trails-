@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate, useOutletContext } from 'react-router';
 import { HeroSection } from '../../src/components/HeroSection';
 import { HandpickedExperiencesSection } from '../../src/components/HandpickedExperiencesSection';
 import { AIPlannerTeaser } from '../../src/components/AIPlannerTeaser';
@@ -32,6 +32,11 @@ export const meta: Route.MetaFunction = () => [
 
 export default function HomeRoute() {
   const navigate = useNavigate();
+  const outletContext = useOutletContext<{
+    handleOpenQuoteModal?: (summary?: string, destinationName?: string) => void;
+  }>();
+
+  const handleOpenQuoteModal = outletContext?.handleOpenQuoteModal || (() => {});
 
   const handleStartAIPlan = (promptText?: string, destinationName?: string) => {
     const params = new URLSearchParams();
@@ -87,7 +92,7 @@ export default function HomeRoute() {
             navigate('/destinations');
           }
         }}
-        onOpenQuoteModal={() => {}}
+        onOpenQuoteModal={handleOpenQuoteModal}
       />
 
       <AIPlannerTeaser />
@@ -95,13 +100,13 @@ export default function HomeRoute() {
       <DestinationsSection
         onSelectDestination={handleSelectDestination}
         onPlanDestinationWithAI={(destName) => handleStartAIPlan(undefined, destName)}
-        onOpenQuoteModal={() => {}}
+        onOpenQuoteModal={handleOpenQuoteModal}
       />
 
       <PackagesSection
         onSelectPackage={handleSelectPackage}
         onCustomizePackageWithAI={(title, dest) => handleStartAIPlan(`Customize ${title} in ${dest}`, dest)}
-        onOpenQuoteModal={() => {}}
+        onOpenQuoteModal={handleOpenQuoteModal}
       />
 
       <TravelStylesSection
@@ -131,7 +136,7 @@ export default function HomeRoute() {
 
       <FinalCTASection
         onStartAIPlan={() => handleStartAIPlan()}
-        onOpenQuoteModal={() => {}}
+        onOpenQuoteModal={handleOpenQuoteModal}
       />
     </>
   );

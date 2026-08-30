@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate, useOutletContext } from 'react-router';
 import { ArrowLeft } from 'lucide-react';
 import { AITripPlanner } from '../../src/components/AITripPlanner/AITripPlanner';
 import type { Route } from './+types/ai-planner';
@@ -16,6 +16,12 @@ export const meta: Route.MetaFunction = () => [
 
 export default function AIPlannerRoute() {
   const navigate = useNavigate();
+  const outletContext = useOutletContext<{
+    handleOpenQuoteModal?: (summary?: string, destinationName?: string) => void;
+  }>();
+
+  const handleOpenQuoteModal = outletContext?.handleOpenQuoteModal || (() => {});
+
   return (
     <div className="pt-20 pb-16">
       <div className="w-full max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-4">
@@ -27,7 +33,7 @@ export default function AIPlannerRoute() {
           <span>Back to Home</span>
         </button>
       </div>
-      <AITripPlanner onOpenQuoteModal={() => {}} />
+      <AITripPlanner onOpenQuoteModal={handleOpenQuoteModal} />
     </div>
   );
 }

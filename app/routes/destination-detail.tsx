@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate, useOutletContext } from 'react-router';
 import { destinationsData } from '../../src/data/destinationsData';
 import { DestinationDetailPage as SanityDestinationDetailPage } from '../../src/components/Sanity/DestinationDetailPage';
 import type { Route } from './+types/destination-detail';
@@ -42,6 +42,11 @@ export const meta: Route.MetaFunction = (arg) => {
 
 export default function DestinationDetailRoute({ params }: Route.ComponentProps) {
   const navigate = useSafeNavigate();
+  const outletContext = useOutletContext<{
+    handleOpenQuoteModal?: (summary?: string, destinationName?: string) => void;
+  }>();
+
+  const handleOpenQuoteModal = outletContext?.handleOpenQuoteModal || (() => {});
   const slug = params?.slug || '';
   const dest = destinationsData.find(d => d.slug === slug);
   const name = dest?.name || slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
@@ -97,7 +102,7 @@ export default function DestinationDetailRoute({ params }: Route.ComponentProps)
       />
       <SanityDestinationDetailPage
         onStartAIPlan={(destName) => navigate(`/ai-planner?dest=${encodeURIComponent(destName)}`)}
-        onOpenQuoteModal={() => {}}
+        onOpenQuoteModal={handleOpenQuoteModal}
       />
     </>
   );
