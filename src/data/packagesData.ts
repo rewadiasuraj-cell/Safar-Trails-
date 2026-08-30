@@ -1235,5 +1235,428 @@ export const packagesData: Package[] = [
     season: 'All Season',
     isFeatured: true,
     isPopular: true
+  },
+
+  /* ADDITIONAL PACKAGES FOR FULL 9-DESTINATION COVERAGE */
+  {
+    id: 'pkg-chardham-yatra-premium',
+    slug: 'chardham-yatra-premium',
+    title: 'Chardham Yatra Premium with Helicopter Options',
+    destination: 'Chardham Yatra, Uttarakhand',
+    state: 'Uttarakhand',
+    durationDays: 10,
+    durationNights: 9,
+    startingPrice: 39999,
+    originalPrice: 48000,
+    tripType: ['Spiritual', 'Family', 'Luxury'],
+    hotelCategory: 'Luxury 5★',
+    ratings: 4.9,
+    reviewCount: 54,
+    startingCity: 'Delhi / Dehradun',
+    bestFor: 'Senior Citizens & Premium Pilgrims',
+    heroImage: 'https://images.unsplash.com/photo-1698574996391-73f103113f60?q=80&w=1200&auto=format&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1698574996391-73f103113f60?q=80&w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1601821139366-eb14f3628e26?q=80&w=800&auto=format&fit=crop'
+    ],
+    overview: 'Premium 10-day Chardham Yatra experience with luxury stays, priority VIP darshan assistance, dedicated Innova Crysta transfers, and optional helicopter booking for Kedarnath.',
+    highlights: [
+      'VIP Darshan assistance at Kedarnath & Badrinath',
+      'Priority Helicopter ticket assistance for Phata/Sersi to Kedarnath',
+      'Luxury 4★/5★ hotel & luxury cottage accommodations',
+      'Dedicated Innova Crysta vehicle throughout the pilgrimage'
+    ],
+    inclusions: [
+      '9 Nights stay in premium hotels and luxury resort camps',
+      'Daily breakfast & dinner at all properties',
+      'Private Innova Crysta with experienced mountain driver',
+      'Special VIP Yatra registration and priest coordination'
+    ],
+    exclusions: [
+      'Helicopter ticket cost (unless added as optional package add-on)',
+      'Pony and palki charges'
+    ],
+    itinerary: [
+      {
+        dayNumber: 1,
+        title: 'Delhi/Dehradun to Haridwar',
+        location: 'Haridwar',
+        description: 'Luxury transfer to Haridwar with evening VIP seating for Ganga Aarti at Har Ki Pauri.',
+        morningActivity: 'Pickup in private Innova Crysta',
+        eveningActivity: 'VIP Ganga Aarti experience',
+        stay: 'Haveli Hari Ganga / Radisson Blu Haridwar 5★',
+        mealsIncluded: 'Dinner',
+        transfers: 'Private Innova Crysta'
+      }
+    ],
+    season: 'Summer',
+    isFeatured: true,
+    isPopular: true
+  },
+  {
+    id: 'pkg-kashmir-premium-escape',
+    slug: 'kashmir-premium-escape',
+    title: 'Kashmir Premium Luxury Escape',
+    destination: 'Kashmir',
+    state: 'Jammu & Kashmir',
+    durationDays: 7,
+    durationNights: 6,
+    startingPrice: 24999,
+    originalPrice: 32000,
+    tripType: ['Honeymoon', 'Couple', 'Luxury'],
+    hotelCategory: 'Luxury 5★',
+    ratings: 5.0,
+    reviewCount: 112,
+    startingCity: 'Srinagar',
+    bestFor: 'Honeymooners & Luxury Travellers',
+    heroImage: 'https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1200&auto=format&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=800&auto=format&fit=crop'
+    ],
+    overview: '7 Days of unmatched Kashmiri luxury: Stay at Khyber Himalayan Resort in Gulmarg, heritage houseboat on Nigeen Lake, and luxury pine cottages in Pahalgam.',
+    highlights: [
+      '1 Night Khyber Himalayan Resort & Spa, Gulmarg',
+      'Confirmed Gondola Phase 1 & Phase 2 tickets included',
+      'Romantic Shikara ride with flower decor & Wazwan dinner'
+    ],
+    inclusions: [
+      '6 Nights stay in 5★ Luxury resorts & heritage houseboats',
+      'Daily breakfast & dinner with traditional Kashmiri Wazwan',
+      'Private Innova Crysta with luxury chauffeur'
+    ],
+    exclusions: ['Airfare to Srinagar'],
+    itinerary: [
+      {
+        dayNumber: 1,
+        title: 'Arrival in Srinagar & Nigeen Lake Houseboat',
+        location: 'Srinagar',
+        description: 'VIP pickup from Srinagar Airport and check-in to heritage houseboat on Nigeen Lake.',
+        morningActivity: 'Airport pickup',
+        eveningActivity: 'Shikara sunset ride',
+        stay: 'Sukhoon Heritage Houseboat, Nigeen Lake',
+        mealsIncluded: 'Dinner',
+        transfers: 'Private Innova Crysta'
+      }
+    ],
+    season: 'All Season',
+    isFeatured: true,
+    isPopular: true
+  },
+  {
+    id: 'pkg-goa-premium-holiday',
+    slug: 'goa-premium-holiday',
+    title: 'Goa Premium Beach Resort Retreat',
+    destination: 'Goa',
+    state: 'Goa',
+    durationDays: 6,
+    durationNights: 5,
+    startingPrice: 18500,
+    originalPrice: 24000,
+    tripType: ['Couple', 'Family', 'Luxury'],
+    hotelCategory: 'Luxury 5★',
+    ratings: 4.9,
+    reviewCount: 88,
+    startingCity: 'Goa (MOPA / Dabolim Airport)',
+    bestFor: 'Beach Lovers & Families',
+    heroImage: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1200&auto=format&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=800&auto=format&fit=crop'
+    ],
+    overview: '5 Nights in 5★ South Goa beachfront resort with private beach access, sunset yacht cruise, and spice plantation tour with authentic Goan buffet.',
+    highlights: [
+      '5 Nights in 5★ Taj / Alila Diwa South Goa Beach Resort',
+      'Private luxury sunset yacht cruise on Mandovi River',
+      'Private AC transfers for North & South Goa sightseeing'
+    ],
+    inclusions: ['5 Nights 5★ Resort stay with breakfast', 'Private AC SUV transfers'],
+    exclusions: ['Flight tickets to Goa'],
+    itinerary: [
+      {
+        dayNumber: 1,
+        title: 'Goa Arrival & Beachfront Welcome',
+        location: 'South Goa',
+        description: 'Airport pickup and transfer to 5★ South Goa beachfront resort.',
+        morningActivity: 'Airport pickup',
+        eveningActivity: 'Sunset cocktail at resort beach lounge',
+        stay: 'Alila Diwa / Taj Exotica South Goa 5★',
+        mealsIncluded: 'Breakfast',
+        transfers: 'Private AC SUV'
+      }
+    ],
+    season: 'All Season',
+    isFeatured: true,
+    isPopular: true
+  },
+  {
+    id: 'pkg-kerala-complete-holiday',
+    slug: 'kerala-complete-holiday',
+    title: 'Kerala Complete Grand Tour',
+    destination: 'Kerala',
+    state: 'Kerala',
+    durationDays: 7,
+    durationNights: 6,
+    startingPrice: 22499,
+    originalPrice: 28000,
+    tripType: ['Family', 'Couple', 'Nature'],
+    hotelCategory: 'Deluxe 4★',
+    ratings: 4.9,
+    reviewCount: 164,
+    startingCity: 'Cochin',
+    bestFor: 'Families & Nature Lovers',
+    heroImage: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1200&auto=format&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=800&auto=format&fit=crop'
+    ],
+    overview: 'Grand Kerala 7-Day Experience: Cochin Chinese Fishing Nets, tea gardens of Munnar, Periyar Wildlife Sanctuary in Thekkady, Alleppey Private Houseboat cruise, and Kovalam cliff beaches.',
+    highlights: [
+      '2 Nights Munnar + 1 Night Thekkady + 1 Night Alleppey Houseboat + 2 Nights Kovalam',
+      'Exclusive private AC Deluxe Houseboat with traditional Kerala meals',
+      'Periyar boat safari & spice plantation walk'
+    ],
+    inclusions: ['6 Nights 4★ Resort & Houseboat stay', 'Daily Breakfast & Dinner', 'Private AC Sedan'],
+    exclusions: ['Airfare to Cochin / Trivandrum'],
+    itinerary: [
+      {
+        dayNumber: 1,
+        title: 'Cochin Arrival & Scenic Drive to Munnar',
+        location: 'Munnar',
+        description: 'Pickup from Cochin Airport and drive through Cheeyappara & Valara waterfalls to Munnar.',
+        morningActivity: 'Cochin pickup & waterfall stops',
+        eveningActivity: 'Check in to Munnar tea resort',
+        stay: 'Blanket Hotel & Spa / Tea County 4★, Munnar',
+        mealsIncluded: 'Dinner',
+        transfers: 'Private AC Cab'
+      }
+    ],
+    season: 'All Season',
+    isFeatured: true,
+    isPopular: true
+  },
+  {
+    id: 'pkg-rajasthan-heritage-tour',
+    slug: 'rajasthan-heritage-tour',
+    title: 'Grand Rajasthan Heritage Tour',
+    destination: 'Rajasthan',
+    state: 'Rajasthan',
+    durationDays: 9,
+    durationNights: 8,
+    startingPrice: 24500,
+    originalPrice: 32000,
+    tripType: ['Heritage', 'Family', 'Cultural'],
+    hotelCategory: 'Deluxe 4★',
+    ratings: 4.9,
+    reviewCount: 198,
+    startingCity: 'Jaipur',
+    bestFor: 'Culture Enthusiasts & Families',
+    heroImage: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1200&auto=format&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800&auto=format&fit=crop'
+    ],
+    overview: 'Explore the Pink City Jaipur, Blue City Jodhpur, Golden Desert City Jaisalmer, Lake City Udaipur, and sacred Pushkar lake over 9 memorable days.',
+    highlights: [
+      'Sam Sand Dunes luxury desert glamping with camel safari & Kalbeliya folk dance',
+      'Elephant / Jeep ride at Amber Fort Jaipur & City Palace Udaipur lake view',
+      'Visit Mehrangarh Fort, Umaid Bhawan Palace, and Jaisalmer Fort'
+    ],
+    inclusions: ['8 Nights 4★ Heritage Hotels & Desert Camp stay', 'Daily Breakfast & Dinner', 'Private AC Cab'],
+    exclusions: ['Monument entry fees'],
+    itinerary: [
+      {
+        dayNumber: 1,
+        title: 'Jaipur Arrival & Pink City Heritage Walk',
+        location: 'Jaipur',
+        description: 'Pickup at Jaipur Airport / Station. Visit Hawa Mahal, City Palace, and local bazaar.',
+        morningActivity: 'Jaipur pickup',
+        eveningActivity: 'Hawa Mahal photo stop and bazaar shopping',
+        stay: 'Shahpura House / Alsisar Haveli 4★, Jaipur',
+        mealsIncluded: 'Dinner',
+        transfers: 'Private AC Cab'
+      }
+    ],
+    season: 'All Season',
+    isFeatured: true,
+    isPopular: true
+  },
+  {
+    id: 'pkg-himachal-adventure-tour',
+    slug: 'himachal-adventure-tour',
+    title: 'Himachal Grand Adventure Tour',
+    destination: 'Himachal Pradesh',
+    state: 'Himachal Pradesh',
+    durationDays: 8,
+    durationNights: 7,
+    startingPrice: 19500,
+    originalPrice: 26000,
+    tripType: ['Adventure', 'Group', 'Family'],
+    hotelCategory: 'Deluxe 4★',
+    ratings: 4.8,
+    reviewCount: 156,
+    startingCity: 'Chandigarh / Delhi',
+    bestFor: 'Mountain Lovers & Adventure Enthusiasts',
+    heroImage: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=800&auto=format&fit=crop'
+    ],
+    overview: 'Comprehensive Himachal circuit: Shimla Mall Road, Kufri pine forests, Kullu river rafting, Solang Valley paragliding, Atal Tunnel to Sissu waterfall, and Dharamshala Dalai Lama Temple.',
+    highlights: [
+      '2 Nights Shimla + 3 Nights Manali + 2 Nights Dharamshala / McLeod Ganj',
+      'Atal Tunnel 9.02 km mountain drive to Sissu, Lahaul Valley',
+      'Paragliding in Solang Valley & River Rafting in Kullu'
+    ],
+    inclusions: ['7 Nights 3★/4★ Resort stays', 'Daily Breakfast & Dinner', 'Private AC Cab'],
+    exclusions: ['Adventure activities tickets'],
+    itinerary: [
+      {
+        dayNumber: 1,
+        title: 'Delhi/Chandigarh to Shimla',
+        location: 'Shimla',
+        description: 'Highway drive up Shivalik hills to Shimla.',
+        morningActivity: 'Highway pickup',
+        eveningActivity: 'Shimla Ridge walk',
+        stay: 'Snow Valley Resorts 4★, Shimla',
+        mealsIncluded: 'Dinner',
+        transfers: 'Private AC Cab'
+      }
+    ],
+    season: 'All Season',
+    isFeatured: true,
+    isPopular: true
+  },
+  {
+    id: 'pkg-andaman-premium',
+    slug: 'andaman-premium',
+    title: 'Andaman Premium Island Retreat',
+    destination: 'Andaman',
+    state: 'Andaman & Nicobar',
+    durationDays: 7,
+    durationNights: 6,
+    startingPrice: 29999,
+    originalPrice: 38000,
+    tripType: ['Honeymoon', 'Luxury', 'Couple'],
+    hotelCategory: 'Luxury 5★',
+    ratings: 5.0,
+    reviewCount: 92,
+    startingCity: 'Port Blair',
+    bestFor: 'Luxury Island Honeymooners',
+    heroImage: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1200&auto=format&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&auto=format&fit=crop'
+    ],
+    overview: '7-Day Ultra-Luxury Andaman Experience: Barefoot Resort Havelock, private sunset cruise, complimentary Scuba Diving session, and candlelight beach dinner.',
+    highlights: [
+      'Complimentary Discover Scuba Diving session with PADI instructor',
+      '3 Nights Havelock Island Barefoot Resort + 1 Night Neil Island + 2 Nights Port Blair',
+      'Confirmed Executive Class Makruzz Catamaran ferry seats'
+    ],
+    inclusions: ['6 Nights 5★ Beach Resort Stays', 'Daily Breakfast & Dinner', 'Private AC Cabs & Ferry'],
+    exclusions: ['Airfare to Port Blair'],
+    itinerary: [
+      {
+        dayNumber: 1,
+        title: 'Port Blair Arrival & Beachfront Resort Welcome',
+        location: 'Port Blair',
+        description: 'Private luxury transfer to 5★ oceanfront resort in Port Blair.',
+        morningActivity: 'Airport pickup',
+        eveningActivity: 'Cellular Jail VIP Light & Sound show',
+        stay: 'Symphony Samudra 5★, Port Blair',
+        mealsIncluded: 'Dinner',
+        transfers: 'Private Luxury SUV'
+      }
+    ],
+    season: 'All Season',
+    isFeatured: true,
+    isPopular: true
+  },
+  {
+    id: 'pkg-sikkim-explorer',
+    slug: 'sikkim-explorer',
+    title: 'Sikkim & Gangtok Himalayan Explorer',
+    destination: 'Northeast India',
+    state: 'Sikkim',
+    durationDays: 7,
+    durationNights: 6,
+    startingPrice: 22999,
+    originalPrice: 29000,
+    tripType: ['Adventure', 'Family', 'Nature'],
+    hotelCategory: 'Deluxe 4★',
+    ratings: 4.9,
+    reviewCount: 135,
+    startingCity: 'Bagdogra (IXB) / NJP',
+    bestFor: 'Couples, Families & Nature Enthusiasts',
+    heroImage: 'https://images.unsplash.com/photo-1622308644420-a757e2fa722a?q=80&w=1200&auto=format&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1622308644420-a757e2fa722a?q=80&w=800&auto=format&fit=crop'
+    ],
+    overview: 'Experience the mystical Eastern Himalayas: Gangtok MG Marg, sacred high-altitude Tsomgo Lake (12,400 ft), Nathula Pass (Indo-China border), Pelling glass skywalk, and Darjeeling tea garden sunrise over Kanchenjunga.',
+    highlights: [
+      '3 Nights Gangtok + 1 Night Pelling + 2 Nights Darjeeling',
+      'Excursion to Tsomgo Lake & Nathula Pass (Indo-China Border)',
+      'Darjeeling Tiger Hill early morning Kanchenjunga sunrise view'
+    ],
+    inclusions: ['6 Nights 4★ Resort Stay', 'Daily Breakfast & Dinner', 'Private SUV Transfer & Permits'],
+    exclusions: ['Airfare to Bagdogra'],
+    itinerary: [
+      {
+        dayNumber: 1,
+        title: 'Bagdogra / NJP to Gangtok',
+        location: 'Gangtok',
+        description: 'Drive along Teesta River valley up to Gangtok.',
+        morningActivity: 'Bagdogra pickup',
+        eveningActivity: 'Stroll along MG Marg Gangtok',
+        stay: 'The Elgin Nor-Khill / Lemon Tree 4★, Gangtok',
+        mealsIncluded: 'Dinner',
+        transfers: 'Private SUV'
+      }
+    ],
+    season: 'All Season',
+    isFeatured: true,
+    isPopular: true
+  },
+  {
+    id: 'pkg-auli-himalayan-retreat',
+    slug: 'auli-himalayan-retreat',
+    title: 'Auli Skiing & Himalayan Retreat',
+    destination: 'Uttarakhand',
+    state: 'Uttarakhand',
+    durationDays: 6,
+    durationNights: 5,
+    startingPrice: 19999,
+    originalPrice: 26000,
+    tripType: ['Adventure', 'Couple', 'Nature'],
+    hotelCategory: 'Deluxe 4★',
+    ratings: 4.9,
+    reviewCount: 114,
+    startingCity: 'Dehradun / Haridwar',
+    bestFor: 'Skiers, Couples & Snow Enthusiasts',
+    heroImage: 'https://images.unsplash.com/photo-1601821139366-eb14f3628e26?q=80&w=1200&auto=format&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1601821139366-eb14f3628e26?q=80&w=800&auto=format&fit=crop'
+    ],
+    overview: 'Ascend to India’s premier ski resort: take the Joshimath-Auli cable car (longest ropeway in Asia) surrounded by 180° views of Nanda Devi peak (25,645 ft) and artificial lake.',
+    highlights: [
+      'Asia’s longest 4 km cable car ride from Joshimath to Auli',
+      'Panoramic 180-degree view of snow-capped Nanda Devi & Mana Parvat peaks',
+      'Skiing lessons and snow activities on slopes'
+    ],
+    inclusions: ['5 Nights 4★ Resort stay in Auli & Rishikesh', 'Daily Breakfast & Dinner', 'Private Mountain SUV'],
+    exclusions: ['Skiing gear rental'],
+    itinerary: [
+      {
+        dayNumber: 1,
+        title: 'Dehradun / Haridwar to Rishikesh',
+        location: 'Rishikesh',
+        description: 'Pickup and drive to Rishikesh for evening Ganga Aarti.',
+        morningActivity: 'Pickup in private SUV',
+        eveningActivity: 'Ganga Aarti',
+        stay: 'Aloft / Taj Rishikesh 4★',
+        mealsIncluded: 'Dinner',
+        transfers: 'Private Mountain SUV'
+      }
+    ],
+    season: 'All Season',
+    isFeatured: true,
+    isPopular: true
   }
 ];
+

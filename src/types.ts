@@ -58,9 +58,17 @@ export interface Package {
   isPopular?: boolean;
 }
 
+export interface DestinationHighlight {
+  icon?: string;
+  title: string;
+  description?: string;
+}
+
 export interface Destination {
   slug: string;
   name: string;
+  displayName?: string;
+  category?: string;
   tagline: string;
   state: string;
   heroImage: string;
@@ -74,7 +82,7 @@ export interface Destination {
   rating?: number;
   reviewCount?: number;
   isTrending?: boolean;
-  highlights: string[];
+  highlights: (string | DestinationHighlight)[];
   howToReach: {
     air: string;
     rail: string;

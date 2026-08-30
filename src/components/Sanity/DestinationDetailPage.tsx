@@ -8,6 +8,9 @@ import { SanityDestination, SanityTourPackage } from '../../lib/sanity/types';
 import { SanityLoadingState, SanityErrorState, SanityEmptyState } from './SanityStateViews';
 import { AIIcon } from '../AIIcon';
 
+import { destinationsData } from '../../data/destinationsData';
+import { DestinationDetailView } from '../Destinations/DestinationDetailView';
+
 interface DestinationDetailPageProps {
   onStartAIPlan: (destinationName: string) => void;
   onOpenQuoteModal: (summary?: string, destinationName?: string) => void;
@@ -20,19 +23,36 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
   const { slug = '' } = useParams<{ slug: string }>();
   const navigate = useNavigate();
 
-  const { data: destination, loading, error } = useSanityQuery<SanityDestination | null>(
+  const { data: destination, loading } = useSanityQuery<SanityDestination | null>(
     DESTINATION_BY_SLUG_QUERY,
     { slug }
   );
   const { data: packages } = useSanityQuery<SanityTourPackage[]>(PACKAGES_BY_DESTINATION_SLUG_QUERY, { slug });
 
-  if (loading) return <SanityLoadingState label="Loading destination…" />;
-  if (error) return <SanityErrorState message={error} />;
+  // Normalize slug for aliases (e.g. andaman-nicobar <-> andaman)
+  const normalizedSlug = slug === 'andaman-nicobar' ? 'andaman' : slug === 'andaman' ? 'andaman-nicobar' : slug;
+  const localDest = destinationsData.find(d => d.slug === slug || d.slug === normalizedSlug);
+
+  if (loading && !localDest) return <SanityLoadingState label="Loading destination…" />;
+
+  // If local destination exists, use the rich DestinationDetailView system
+  if (localDest) {
+    return (
+      <DestinationDetailView
+        destination={localDest}
+        onBack={() => navigate('/destinations')}
+        onSelectPackage={(pkg) => navigate(`/destinations/${localDest.slug}/packages/${pkg.slug}`)}
+        onStartAIPlan={onStartAIPlan}
+        onOpenQuoteModal={onOpenQuoteModal}
+      />
+    );
+  }
+
   if (!destination) {
     return (
       <SanityEmptyState
         title="Destination not found"
-        description={`No destination with slug "${slug}" exists yet in the Sanity Studio.`}
+        description={`No destination with slug "${slug}" exists yet.`}
       />
     );
   }

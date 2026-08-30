@@ -45,11 +45,27 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
   const [activeTab, setActiveTab] = useState<'overview' | 'attractions' | 'packages' | 'travel-guide'>('overview');
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  // Filter packages for this destination
-  const destinationPackages = packagesData.filter(
-    (p) => p.destination.toLowerCase() === destination.name.toLowerCase() ||
-      p.state.toLowerCase().includes(destination.state.toLowerCase())
-  );
+  // Filter packages for this destination dynamically
+  const destNameLower = destination.name.toLowerCase();
+  const destSlugLower = destination.slug.toLowerCase();
+  const destStateLower = destination.state.toLowerCase();
+
+  const destinationPackages = packagesData.filter((p) => {
+    const pDest = p.destination.toLowerCase();
+    const pState = p.state.toLowerCase();
+    const pSlug = p.slug.toLowerCase();
+
+    return (
+      pDest.includes(destNameLower) ||
+      destNameLower.includes(pDest) ||
+      pState.includes(destStateLower) ||
+      pSlug.includes(destSlugLower) ||
+      (destSlugLower.includes('andaman') && (pDest.includes('andaman') || pSlug.includes('andaman'))) ||
+      (destSlugLower.includes('northeast') && (pState.includes('meghalaya') || pState.includes('sikkim') || pDest.includes('northeast'))) ||
+      (destSlugLower.includes('chardham') && (pDest.includes('chardham') || pSlug.includes('chardham'))) ||
+      (destSlugLower.includes('uttarakhand') && pState.includes('uttarakhand'))
+    );
+  });
 
   return (
     <div id="destination-detail-page" className="w-full pt-20 pb-24 bg-[#FAF9F6]">

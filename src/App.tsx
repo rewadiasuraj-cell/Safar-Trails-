@@ -276,6 +276,19 @@ export default function App() {
             }
           />
 
+          {/* ROUTE: DESTINATION-SPECIFIC PACKAGE DETAIL */}
+          <Route
+            path="/destinations/:destSlug/packages/:pkgSlug"
+            element={
+              <Suspense fallback={<SectionSkeleton />}>
+                <LocalPackageDetailPage
+                  onStartAIPlan={handleStartAIPlan}
+                  onOpenQuoteModal={handleOpenQuoteModal}
+                />
+              </Suspense>
+            }
+          />
+
           {/* ROUTE: SINGLE PACKAGE DETAIL (curated Home-page teaser packages, static data) */}
           <Route
             path="/tour-packages/:slug"

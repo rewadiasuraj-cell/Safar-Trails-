@@ -22,9 +22,9 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
   onStartAIPlan,
   onOpenQuoteModal
 }) => {
-  const { slug = '' } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
-  const packageData = packagesData.find((p) => p.slug === slug);
+  const { slug = '', pkgSlug = '' } = useParams<{ slug?: string; pkgSlug?: string }>();
+  const targetSlug = pkgSlug || slug;
+  const packageData = packagesData.find((p) => p.slug === targetSlug || p.id === targetSlug);
 
   const [activeTab, setActiveTab] = useState<'itinerary' | 'inclusions' | 'stays'>('itinerary');
   const [selectedHotelTier, setSelectedHotelTier] = useState<string>(packageData?.hotelCategory || 'Deluxe 4★');
