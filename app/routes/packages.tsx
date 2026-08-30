@@ -1,7 +1,6 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
+import { PackagesPage as SanityPackagesPage } from '../../src/components/Sanity/PackagesPage';
 import type { Route } from './+types/packages';
-
-const SanityPackagesPage = lazy(() => import('../../src/components/Sanity/PackagesPage').then(m => ({ default: m.PackagesPage })));
 
 export const meta: Route.MetaFunction = () => [
   { title: "All India Tour Packages — Customized Holiday Packages | Safar Trails" },
@@ -16,9 +15,7 @@ export const meta: Route.MetaFunction = () => [
 export default function PackagesRoute() {
   return (
     <div className="pt-20">
-      <Suspense fallback={<div className="w-full py-12 flex items-center justify-center min-h-[140px]" />}>
-        <SanityPackagesPage />
-      </Suspense>
+      <SanityPackagesPage />
     </div>
   );
 }

@@ -1,9 +1,8 @@
-import React, { Suspense, lazy } from 'react';
-import { useNavigate, useParams } from 'react-router';
+import React from 'react';
+import { useNavigate } from 'react-router';
 import { destinationsData } from '../../src/data/destinationsData';
+import { DestinationDetailPage as SanityDestinationDetailPage } from '../../src/components/Sanity/DestinationDetailPage';
 import type { Route } from './+types/destination-detail';
-
-const SanityDestinationDetailPage = lazy(() => import('../../src/components/Sanity/DestinationDetailPage').then(m => ({ default: m.DestinationDetailPage })));
 
 function useSafeNavigate() {
   try {
@@ -96,12 +95,10 @@ export default function DestinationDetailRoute({ params }: Route.ComponentProps)
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <Suspense fallback={<div className="w-full py-12 flex items-center justify-center min-h-[140px]" />}>
-        <SanityDestinationDetailPage
-          onStartAIPlan={(destName) => navigate(`/ai-planner?dest=${encodeURIComponent(destName)}`)}
-          onOpenQuoteModal={() => {}}
-        />
-      </Suspense>
+      <SanityDestinationDetailPage
+        onStartAIPlan={(destName) => navigate(`/ai-planner?dest=${encodeURIComponent(destName)}`)}
+        onOpenQuoteModal={() => {}}
+      />
     </>
   );
 }

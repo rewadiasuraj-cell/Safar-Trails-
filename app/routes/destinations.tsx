@@ -1,8 +1,7 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router';
+import { DestinationsPage as SanityDestinationsPage } from '../../src/components/Sanity/DestinationsPage';
 import type { Route } from './+types/destinations';
-
-const SanityDestinationsPage = lazy(() => import('../../src/components/Sanity/DestinationsPage').then(m => ({ default: m.DestinationsPage })));
 
 export const meta: Route.MetaFunction = () => [
   { title: "Top Travel Destinations in India — Holiday Packages 2026 | Safar Trails" },
@@ -18,13 +17,11 @@ export default function DestinationsRoute() {
   const navigate = useNavigate();
   return (
     <div className="pt-20">
-      <Suspense fallback={<div className="w-full py-12 flex items-center justify-center min-h-[140px]" />}>
-        <SanityDestinationsPage
-          onSelectDestination={(slug) => navigate(`/destinations/${slug}`)}
-          onPlanDestinationWithAI={(destName) => navigate(`/ai-planner?dest=${encodeURIComponent(destName)}`)}
-          onOpenQuoteModal={() => {}}
-        />
-      </Suspense>
+      <SanityDestinationsPage
+        onSelectDestination={(slug) => navigate(`/destinations/${slug}`)}
+        onPlanDestinationWithAI={(destName) => navigate(`/ai-planner?dest=${encodeURIComponent(destName)}`)}
+        onOpenQuoteModal={() => {}}
+      />
     </div>
   );
 }

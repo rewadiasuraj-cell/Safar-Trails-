@@ -1,9 +1,8 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router';
 import { ArrowLeft } from 'lucide-react';
+import { AITripPlanner } from '../../src/components/AITripPlanner/AITripPlanner';
 import type { Route } from './+types/ai-planner';
-
-const AITripPlanner = lazy(() => import('../../src/components/AITripPlanner/AITripPlanner').then(m => ({ default: m.AITripPlanner })));
 
 export const meta: Route.MetaFunction = () => [
   { title: "AI Trip Planner India — Create Custom Holiday Itineraries | Safar Trails" },
@@ -28,9 +27,7 @@ export default function AIPlannerRoute() {
           <span>Back to Home</span>
         </button>
       </div>
-      <Suspense fallback={<div className="w-full py-12 flex items-center justify-center min-h-[140px]" />}>
-        <AITripPlanner onOpenQuoteModal={() => {}} />
-      </Suspense>
+      <AITripPlanner onOpenQuoteModal={() => {}} />
     </div>
   );
 }

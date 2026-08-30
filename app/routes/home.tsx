@@ -1,20 +1,19 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router';
 import { HeroSection } from '../../src/components/HeroSection';
 import { HandpickedExperiencesSection } from '../../src/components/HandpickedExperiencesSection';
 import { AIPlannerTeaser } from '../../src/components/AIPlannerTeaser';
+import { DestinationsSection } from '../../src/components/Destinations/DestinationsSection';
+import { PackagesSection } from '../../src/components/Packages/PackagesSection';
+import { TravelStylesSection } from '../../src/components/TravelStylesSection';
+import { SeasonalTripsSection } from '../../src/components/SeasonalTripsSection';
+import { TravelGuidesSection } from '../../src/components/TravelGuides/TravelGuidesSection';
+import { TrustSection } from '../../src/components/TrustSection';
+import { ReviewsSection } from '../../src/components/ReviewsSection';
+import { FAQSection } from '../../src/components/FAQSection';
+import { FinalCTASection } from '../../src/components/FinalCTASection';
 import { Package, TravelGuide } from '../../src/types';
 import type { Route } from './+types/home';
-
-const DestinationsSection = lazy(() => import('../../src/components/Destinations/DestinationsSection').then(m => ({ default: m.DestinationsSection })));
-const PackagesSection = lazy(() => import('../../src/components/Packages/PackagesSection').then(m => ({ default: m.PackagesSection })));
-const TravelStylesSection = lazy(() => import('../../src/components/TravelStylesSection').then(m => ({ default: m.TravelStylesSection })));
-const SeasonalTripsSection = lazy(() => import('../../src/components/SeasonalTripsSection').then(m => ({ default: m.SeasonalTripsSection })));
-const TravelGuidesSection = lazy(() => import('../../src/components/TravelGuides/TravelGuidesSection').then(m => ({ default: m.TravelGuidesSection })));
-const TrustSection = lazy(() => import('../../src/components/TrustSection').then(m => ({ default: m.TrustSection })));
-const ReviewsSection = lazy(() => import('../../src/components/ReviewsSection').then(m => ({ default: m.ReviewsSection })));
-const FAQSection = lazy(() => import('../../src/components/FAQSection').then(m => ({ default: m.FAQSection })));
-const FinalCTASection = lazy(() => import('../../src/components/FinalCTASection').then(m => ({ default: m.FinalCTASection })));
 
 export const meta: Route.MetaFunction = () => [
   { title: "Safar Trails — AI-Powered India Holiday Packages & Custom Itineraries" },
@@ -30,10 +29,6 @@ export const meta: Route.MetaFunction = () => [
   { name: "twitter:description", content: "AI plans. Experts perfect. Discover bespoke holiday packages across Kashmir, Goa, Kerala, Rajasthan & beyond with SafarTrails." },
   { name: "twitter:image", content: "https://safartrails.co.in/og-image.jpg" },
 ];
-
-function SectionSkeleton() {
-  return <div className="w-full py-12 flex items-center justify-center min-h-[140px]" />;
-}
 
 export default function HomeRoute() {
   const navigate = useNavigate();
@@ -97,49 +92,47 @@ export default function HomeRoute() {
 
       <AIPlannerTeaser />
 
-      <Suspense fallback={<SectionSkeleton />}>
-        <DestinationsSection
-          onSelectDestination={handleSelectDestination}
-          onPlanDestinationWithAI={(destName) => handleStartAIPlan(undefined, destName)}
-          onOpenQuoteModal={() => {}}
-        />
+      <DestinationsSection
+        onSelectDestination={handleSelectDestination}
+        onPlanDestinationWithAI={(destName) => handleStartAIPlan(undefined, destName)}
+        onOpenQuoteModal={() => {}}
+      />
 
-        <PackagesSection
-          onSelectPackage={handleSelectPackage}
-          onCustomizePackageWithAI={(title, dest) => handleStartAIPlan(`Customize ${title} in ${dest}`, dest)}
-          onOpenQuoteModal={() => {}}
-        />
+      <PackagesSection
+        onSelectPackage={handleSelectPackage}
+        onCustomizePackageWithAI={(title, dest) => handleStartAIPlan(`Customize ${title} in ${dest}`, dest)}
+        onOpenQuoteModal={() => {}}
+      />
 
-        <TravelStylesSection
-          onSelectStyle={() => {
-            if (typeof document !== 'undefined') {
-              const el = document.getElementById('packages-section');
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
-            }
-          }}
-          onExploreStyleWithAI={(style) => handleStartAIPlan(`Plan a ${style} vacation in India`)}
-        />
+      <TravelStylesSection
+        onSelectStyle={() => {
+          if (typeof document !== 'undefined') {
+            const el = document.getElementById('packages-section');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
+        onExploreStyleWithAI={(style) => handleStartAIPlan(`Plan a ${style} vacation in India`)}
+      />
 
-        <SeasonalTripsSection
-          onSelectDestinationSlug={handleSelectDestination}
-          onStartAIPlan={(prompt) => handleStartAIPlan(prompt)}
-        />
+      <SeasonalTripsSection
+        onSelectDestinationSlug={handleSelectDestination}
+        onStartAIPlan={(prompt) => handleStartAIPlan(prompt)}
+      />
 
-        <TravelGuidesSection
-          onSelectGuide={handleSelectGuide}
-        />
+      <TravelGuidesSection
+        onSelectGuide={handleSelectGuide}
+      />
 
-        <TrustSection />
+      <TrustSection />
 
-        <ReviewsSection />
+      <ReviewsSection />
 
-        <FAQSection />
+      <FAQSection />
 
-        <FinalCTASection
-          onStartAIPlan={() => handleStartAIPlan()}
-          onOpenQuoteModal={() => {}}
-        />
-      </Suspense>
+      <FinalCTASection
+        onStartAIPlan={() => handleStartAIPlan()}
+        onOpenQuoteModal={() => {}}
+      />
     </>
   );
 }

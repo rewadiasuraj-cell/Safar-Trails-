@@ -1,8 +1,7 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router';
+import { GuidesPage as SanityGuidesPage } from '../../src/components/Sanity/GuidesPage';
 import type { Route } from './+types/guides';
-
-const SanityGuidesPage = lazy(() => import('../../src/components/Sanity/GuidesPage').then(m => ({ default: m.GuidesPage })));
 
 export const meta: Route.MetaFunction = () => [
   { title: "India Travel Guides, Tips & Itineraries | Safar Trails Blog" },
@@ -18,9 +17,7 @@ export default function GuidesRoute() {
   const navigate = useNavigate();
   return (
     <div className="pt-20">
-      <Suspense fallback={<div className="w-full py-12 flex items-center justify-center min-h-[140px]" />}>
-        <SanityGuidesPage onSelectGuide={(slug) => navigate(`/guides/${slug}`)} />
-      </Suspense>
+      <SanityGuidesPage onSelectGuide={(slug) => navigate(`/guides/${slug}`)} />
     </div>
   );
 }

@@ -1,9 +1,7 @@
-import React, { Suspense, lazy } from 'react';
-import { useParams } from 'react-router';
+import React from 'react';
 import { guidesData } from '../../src/data/guidesData';
+import { GuideDetailPage as SanityGuideDetailPage } from '../../src/components/Sanity/GuideDetailPage';
 import type { Route } from './+types/guide-detail';
-
-const SanityGuideDetailPage = lazy(() => import('../../src/components/Sanity/GuideDetailPage').then(m => ({ default: m.GuideDetailPage })));
 
 export const meta: Route.MetaFunction = (arg) => {
   const params = arg?.params || {};
@@ -93,9 +91,7 @@ export default function GuideDetailRoute({ params }: Route.ComponentProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <Suspense fallback={<div className="w-full py-12 flex items-center justify-center min-h-[140px]" />}>
-        <SanityGuideDetailPage />
-      </Suspense>
+      <SanityGuideDetailPage />
     </>
   );
 }
