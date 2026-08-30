@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { destinationsData } from '../../src/data/destinationsData';
 import type { Route } from './+types/destination-detail';
 
@@ -31,12 +31,66 @@ export const meta: Route.MetaFunction = ({ params }) => {
 
 export default function DestinationDetailRoute() {
   const navigate = useNavigate();
+  const params = useParams();
+  const slug = params.slug || '';
+  const dest = destinationsData.find(d => d.slug === slug);
+  const name = dest?.name || slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+  const image = dest?.heroImage || 'https://safartrails.co.in/og-image.jpg';
+  const description = (dest?.description || `Explore ${name} holiday packages with Safar Trails.`).slice(0, 155);
+
+  const destinationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'TouristDestination',
+    name: name,
+    description: description,
+    image: image,
+    includesAttraction: (dest?.highlights || []).map((h) => ({
+      '@type': 'TouristAttraction',
+      name: h,
+    })),
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://safartrails.co.in/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Destinations',
+        item: 'https://safartrails.co.in/destinations',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: name,
+        item: `https://safartrails.co.in/destinations/${slug}`,
+      },
+    ],
+  };
+
   return (
-    <Suspense fallback={<div className="w-full py-12 flex items-center justify-center min-h-[140px]" />}>
-      <SanityDestinationDetailPage
-        onStartAIPlan={(destName) => navigate(`/ai-planner?dest=${encodeURIComponent(destName)}`)}
-        onOpenQuoteModal={() => {}}
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(destinationSchema) }}
       />
-    </Suspense>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <Suspense fallback={<div className="w-full py-12 flex items-center justify-center min-h-[140px]" />}>
+        <SanityDestinationDetailPage
+          onStartAIPlan={(destName) => navigate(`/ai-planner?dest=${encodeURIComponent(destName)}`)}
+          onOpenQuoteModal={() => {}}
+        />
+      </Suspense>
+    </>
   );
 }

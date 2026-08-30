@@ -1,4 +1,5 @@
 import React, { Suspense, lazy } from 'react';
+import { useParams } from 'react-router';
 import { guidesData } from '../../src/data/guidesData';
 import type { Route } from './+types/guide-detail';
 
@@ -29,9 +30,71 @@ export const meta: Route.MetaFunction = ({ params }) => {
 };
 
 export default function GuideDetailRoute() {
+  const params = useParams();
+  const slug = params.slug || '';
+  const guide = guidesData.find(g => g.slug === slug);
+  const titleText = guide?.title || slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+  const description = (guide?.excerpt || `Read our expert travel guide for ${titleText} with Safar Trails.`).slice(0, 155);
+  const image = guide?.coverImage || 'https://safartrails.co.in/og-image.jpg';
+
+  const blogSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: titleText,
+    description: description,
+    image: [image],
+    author: {
+      '@type': 'Organization',
+      name: 'SafarTrails Editorial Team',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'SafarTrails',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://safartrails.co.in/logo.svg',
+      },
+    },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://safartrails.co.in/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Guides',
+        item: 'https://safartrails.co.in/guides',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: titleText,
+        item: `https://safartrails.co.in/guides/${slug}`,
+      },
+    ],
+  };
+
   return (
-    <Suspense fallback={<div className="w-full py-12 flex items-center justify-center min-h-[140px]" />}>
-      <SanityGuideDetailPage />
-    </Suspense>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <Suspense fallback={<div className="w-full py-12 flex items-center justify-center min-h-[140px]" />}>
+        <SanityGuideDetailPage />
+      </Suspense>
+    </>
   );
 }
