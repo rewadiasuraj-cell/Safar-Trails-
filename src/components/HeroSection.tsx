@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Plane, ArrowRight } from 'lucide-react';
+import { Plane, ArrowRight, MapPin, Users, Calendar, ChevronDown, ShieldCheck, BadgeCheck } from 'lucide-react';
 import { AIIcon } from './AIIcon';
 
 interface HeroSectionProps {
@@ -28,10 +28,15 @@ const HERO_SLIDES = [
 
 const SLIDE_INTERVAL_MS = 5000;
 
+const DURATION_OPTIONS = ['Trip duration', '3-4 Days', '5-7 Days', '8-10 Days', '10+ Days'];
+
 export const HeroSection: React.FC<HeroSectionProps> = ({
   onStartAIPlan
 }) => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [destination, setDestination] = useState('');
+  const [travelers, setTravelers] = useState('');
+  const [duration, setDuration] = useState('');
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -39,6 +44,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     }, SLIDE_INTERVAL_MS);
     return () => clearInterval(timer);
   }, []);
+
+  const handlePlanWithAI = () => {
+    if (!destination && !travelers && !duration) {
+      onStartAIPlan();
+      return;
+    }
+    const parts: string[] = [];
+    parts.push(`Plan a trip${destination ? ` to ${destination}` : ''}`);
+    if (travelers) parts.push(`for ${travelers} traveler${travelers === '1' ? '' : 's'}`);
+    if (duration && duration !== 'Trip duration') parts.push(`for ${duration}`);
+    onStartAIPlan(parts.join(' '));
+  };
 
   return (
     <section id="hero-section" className="relative w-full pt-24 sm:pt-28 pb-16 sm:pb-20 lg:pt-32 lg:pb-24 overflow-hidden bg-midnight-blue text-white">
@@ -85,9 +102,31 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </p>
 
           {/* Secondary line */}
-          <p className="text-sm sm:text-base lg:text-[17px] text-gray-300 font-normal leading-relaxed max-w-xl mb-7 sm:mb-8 text-shadow-xs">
+          <p className="text-sm sm:text-base lg:text-[17px] text-gray-300 font-normal leading-relaxed max-w-xl mb-5 text-shadow-xs">
             Personalized travel planning powered by intelligent AI, refined and verified by seasoned human destination specialists.
           </p>
+
+          {/* Trust Badges Row */}
+          <div className="flex items-center gap-6 sm:gap-8 mb-7 sm:mb-8">
+            <div className="flex flex-col items-center gap-1.5">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center">
+                <AIIcon className="w-4 h-4 text-white" />
+              </div>
+              <span className="text-[10px] sm:text-[11px] font-semibold text-gray-300 whitespace-nowrap">AI Powered</span>
+            </div>
+            <div className="flex flex-col items-center gap-1.5">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center">
+                <BadgeCheck className="w-4 h-4 text-white" />
+              </div>
+              <span className="text-[10px] sm:text-[11px] font-semibold text-gray-300 whitespace-nowrap">Expert Verified</span>
+            </div>
+            <div className="flex flex-col items-center gap-1.5">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center">
+                <ShieldCheck className="w-4 h-4 text-white" />
+              </div>
+              <span className="text-[10px] sm:text-[11px] font-semibold text-gray-300 whitespace-nowrap">Trusted</span>
+            </div>
+          </div>
 
           {/* Plan with AI Card */}
           <div className="bg-ivory rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-2xl text-slate-900 max-w-xl border border-luxury-gold/30">
@@ -101,24 +140,57 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </h2>
 
             <p className="text-sm text-slate-600 leading-relaxed mb-5">
-              Tell us your destination, number of travelers and duration. We'll craft the perfect travel plan for you.
+              Share a few details and we'll create the perfect travel plan for you.
             </p>
+
+            {/* Destination Input */}
+            <div className="relative mb-3">
+              <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+              <input
+                type="text"
+                value={destination}
+                onChange={(e) => setDestination(e.target.value)}
+                placeholder="Where do you want to go?"
+                className="w-full pl-10 pr-3.5 py-3 rounded-xl border border-gray-200 bg-white text-sm text-slate-900 placeholder:text-gray-400 focus:outline-none focus:border-deep-emerald"
+              />
+            </div>
+
+            {/* Travelers & Duration Row */}
+            <div className="grid grid-cols-2 gap-3 mb-5">
+              <div className="relative">
+                <Users className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+                <input
+                  type="number"
+                  min={1}
+                  value={travelers}
+                  onChange={(e) => setTravelers(e.target.value)}
+                  placeholder="Number of travelers"
+                  className="w-full pl-10 pr-3 py-3 rounded-xl border border-gray-200 bg-white text-sm text-slate-900 placeholder:text-gray-400 focus:outline-none focus:border-deep-emerald"
+                />
+              </div>
+              <div className="relative">
+                <Calendar className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none z-10" />
+                <select
+                  value={duration}
+                  onChange={(e) => setDuration(e.target.value)}
+                  className="w-full pl-10 pr-8 py-3 rounded-xl border border-gray-200 bg-white text-sm text-slate-900 focus:outline-none focus:border-deep-emerald appearance-none cursor-pointer"
+                >
+                  {DURATION_OPTIONS.map((opt) => (
+                    <option key={opt} value={opt === 'Trip duration' ? '' : opt}>{opt}</option>
+                  ))}
+                </select>
+                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+              </div>
+            </div>
 
             <button
               id="hero-plan-with-ai-btn"
               type="button"
-              onClick={() => onStartAIPlan()}
-              className="w-full bg-deep-emerald hover:bg-forest-green text-white px-5 sm:px-6 py-3.5 rounded-xl sm:rounded-2xl transition-all cursor-pointer active:scale-[0.98] shadow-xs flex items-center justify-between gap-3"
+              onClick={handlePlanWithAI}
+              className="w-full bg-deep-emerald hover:bg-forest-green text-white px-5 sm:px-6 py-3.5 rounded-xl sm:rounded-2xl transition-all cursor-pointer active:scale-[0.98] shadow-xs flex items-center justify-center gap-2"
             >
-              <span className="text-left min-w-0">
-                <span className="flex items-center gap-2 font-bold text-sm sm:text-base">
-                  <AIIcon className="w-4 h-4 text-white shrink-0" />
-                  <span>Plan with AI</span>
-                </span>
-                <span className="block text-[11px] sm:text-xs font-normal text-white/75 mt-0.5 truncate">
-                  Get a personalized itinerary in seconds
-                </span>
-              </span>
+              <AIIcon className="w-4 h-4 text-white shrink-0" />
+              <span className="font-bold text-sm sm:text-base">Plan with AI</span>
               <ArrowRight className="w-5 h-5 text-white shrink-0" />
             </button>
           </div>
