@@ -1,7 +1,33 @@
 import React, { Suspense, lazy } from 'react';
 import { useNavigate } from 'react-router';
+import { destinationsData } from '../../src/data/destinationsData';
+import type { Route } from './+types/destination-detail';
 
 const SanityDestinationDetailPage = lazy(() => import('../../src/components/Sanity/DestinationDetailPage').then(m => ({ default: m.DestinationDetailPage })));
+
+export const meta: Route.MetaFunction = ({ params }) => {
+  const slug = params.slug || '';
+  const staticFallback = destinationsData.find(d => d.slug === slug);
+  const name = staticFallback?.name || slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+  const title = `${name} Tour Packages 2026 — Customizable Itineraries | Safar Trails`;
+  const rawDesc = staticFallback?.description || `Book customized ${name} holiday packages with Safar Trails. Expert local guidance, premium stays & 24/7 concierge.`;
+  const description = rawDesc.replace(/(<([^>]+)>)/gi, '').slice(0, 155);
+  const ogImage = staticFallback?.heroImage || 'https://safartrails.co.in/og-image.jpg';
+
+  return [
+    { title },
+    { name: "description", content: description },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:url", content: `https://safartrails.co.in/destinations/${slug}` },
+    { property: "og:image", content: ogImage },
+    { property: "og:type", content: "article" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: description },
+    { name: "twitter:image", content: ogImage },
+  ];
+};
 
 export default function DestinationDetailRoute() {
   const navigate = useNavigate();

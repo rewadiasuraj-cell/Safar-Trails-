@@ -4,6 +4,7 @@ import { HeroSection } from '../../src/components/HeroSection';
 import { HandpickedExperiencesSection } from '../../src/components/HandpickedExperiencesSection';
 import { AIPlannerTeaser } from '../../src/components/AIPlannerTeaser';
 import { Package, TravelGuide } from '../../src/types';
+import type { Route } from './+types/home';
 
 const DestinationsSection = lazy(() => import('../../src/components/Destinations/DestinationsSection').then(m => ({ default: m.DestinationsSection })));
 const PackagesSection = lazy(() => import('../../src/components/Packages/PackagesSection').then(m => ({ default: m.PackagesSection })));
@@ -14,6 +15,20 @@ const TrustSection = lazy(() => import('../../src/components/TrustSection').then
 const ReviewsSection = lazy(() => import('../../src/components/ReviewsSection').then(m => ({ default: m.ReviewsSection })));
 const FAQSection = lazy(() => import('../../src/components/FAQSection').then(m => ({ default: m.FAQSection })));
 const FinalCTASection = lazy(() => import('../../src/components/FinalCTASection').then(m => ({ default: m.FinalCTASection })));
+
+export const meta: Route.MetaFunction = () => [
+  { title: "Safar Trails — AI-Powered India Holiday Packages & Custom Itineraries" },
+  { name: "description", content: "AI plans. Experts perfect. Discover bespoke holiday packages across Kashmir, Goa, Kerala, Rajasthan, Himachal, Uttarakhand & beyond with SafarTrails." },
+  { property: "og:title", content: "Safar Trails — AI-Powered India Holiday Packages & Custom Itineraries" },
+  { property: "og:description", content: "AI-powered custom holiday planning handcrafted by verified destination experts. Discover India with Trust." },
+  { property: "og:url", content: "https://safartrails.co.in/" },
+  { property: "og:image", content: "https://safartrails.co.in/og-image.jpg" },
+  { property: "og:type", content: "website" },
+  { name: "twitter:card", content: "summary_large_image" },
+  { name: "twitter:title", content: "Safar Trails — AI-Powered India Holiday Packages & Custom Itineraries" },
+  { name: "twitter:description", content: "AI plans. Experts perfect. Discover bespoke holiday packages across Kashmir, Goa, Kerala, Rajasthan & beyond with SafarTrails." },
+  { name: "twitter:image", content: "https://safartrails.co.in/og-image.jpg" },
+];
 
 function SectionSkeleton() {
   return <div className="w-full py-12 flex items-center justify-center min-h-[140px]" />;

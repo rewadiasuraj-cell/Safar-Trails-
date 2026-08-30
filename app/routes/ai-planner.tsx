@@ -1,8 +1,19 @@
 import React, { Suspense, lazy } from 'react';
 import { useNavigate } from 'react-router';
 import { ArrowLeft } from 'lucide-react';
+import type { Route } from './+types/ai-planner';
 
 const AITripPlanner = lazy(() => import('../../src/components/AITripPlanner/AITripPlanner').then(m => ({ default: m.AITripPlanner })));
+
+export const meta: Route.MetaFunction = () => [
+  { title: "AI Trip Planner India — Create Custom Holiday Itineraries | Safar Trails" },
+  { name: "description", content: "Generate custom India travel itineraries in seconds with Safar Trails AI. Tailored for budget, travel style & duration, then perfected by local destination experts." },
+  { property: "og:title", content: "AI Trip Planner India — Create Custom Holiday Itineraries | Safar Trails" },
+  { property: "og:description", content: "Generate custom India travel itineraries in seconds with Safar Trails AI. Tailored for budget, travel style & duration, then perfected by local destination experts." },
+  { property: "og:url", content: "https://safartrails.co.in/ai-planner" },
+  { property: "og:image", content: "https://safartrails.co.in/og-image.jpg" },
+  { name: "twitter:card", content: "summary_large_image" },
+];
 
 export default function AIPlannerRoute() {
   const navigate = useNavigate();
