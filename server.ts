@@ -8,7 +8,7 @@ import { generateTripPlan } from './src/lib/ai/generateTripPlan';
 dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3001;
 
 app.use(compression());
 app.use(express.json());
