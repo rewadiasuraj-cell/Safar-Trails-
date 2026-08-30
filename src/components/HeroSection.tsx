@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Plane, ArrowRight, MapPin, Users, Calendar, ChevronDown, ShieldCheck, BadgeCheck } from 'lucide-react';
+import { ArrowRight, MapPin, Users, Calendar, ChevronDown, ShieldCheck, BadgeCheck } from 'lucide-react';
 import { AIIcon } from './AIIcon';
 
 interface HeroSectionProps {
@@ -96,11 +96,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </span>
           </h1>
 
-          {/* Primary line - shown first, most prominent */}
-          <p className="text-base sm:text-lg lg:text-xl text-white font-medium leading-relaxed max-w-xl mb-2.5 text-shadow-xs">
-            Tell us where you want to go, and we'll turn your travel dreams into a perfectly planned journey.
-          </p>
-
           {/* Secondary line */}
           <p className="text-sm sm:text-base lg:text-[17px] text-gray-300 font-normal leading-relaxed max-w-xl mb-5 text-shadow-xs">
             Personalized travel planning powered by intelligent AI, refined and verified by seasoned human destination specialists.
@@ -130,11 +125,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Plan with AI Card */}
           <div className="bg-ivory rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-2xl text-slate-900 max-w-xl border border-luxury-gold/30">
-            <div className="inline-flex items-center gap-1.5 text-deep-emerald text-[11px] sm:text-xs font-extrabold uppercase tracking-[0.15em] mb-2.5">
-              <Plane className="w-3.5 h-3.5" />
-              <span>Let's Plan Your Next Adventure</span>
-            </div>
-
             <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 tracking-tight mb-2">
               Where do you want to go?
             </h2>
