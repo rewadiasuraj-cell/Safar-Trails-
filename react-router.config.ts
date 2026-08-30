@@ -57,7 +57,6 @@ export default {
           dynamicPaths.push(`/destinations/${item.slug}`);
         } else if (item._type === 'tourPackage') {
           dynamicPaths.push(`/packages/${item.slug}`);
-          dynamicPaths.push(`/tour-packages/${item.slug}`);
         } else if (item._type === 'guide') {
           dynamicPaths.push(`/guides/${item.slug}`);
         }
@@ -73,9 +72,6 @@ export default {
     });
 
     staticPkgSlugs.forEach((slug) => {
-      if (!dynamicPaths.includes(`/tour-packages/${slug}`)) {
-        dynamicPaths.push(`/tour-packages/${slug}`);
-      }
       if (!dynamicPaths.includes(`/packages/${slug}`)) {
         dynamicPaths.push(`/packages/${slug}`);
       }

@@ -41,12 +41,6 @@ async function generateSitemap() {
           changefreq: 'weekly',
           priority: '0.9',
         });
-        urls.push({
-          loc: `${BASE_URL}/tour-packages/${item.slug}`,
-          lastmod,
-          changefreq: 'weekly',
-          priority: '0.9',
-        });
       } else if (item._type === 'guide') {
         urls.push({
           loc: `${BASE_URL}/guides/${item.slug}`,
@@ -83,6 +77,7 @@ async function generateSitemap() {
   // Static fallback package slugs
   const staticPkgSlugs = [
     'chardham-yatra-haridwar-yamunotri-gangotri-kedarnath-badrinath-10d9n',
+    'chardham-yatra-package',
     'chardham-yatra-premium',
     'kashmir-escape-houseboat-bliss',
     'kashmir-premium-escape',
@@ -102,13 +97,9 @@ async function generateSitemap() {
     'auli-himalayan-retreat',
   ];
   staticPkgSlugs.forEach((slug) => {
-    const loc1 = `${BASE_URL}/packages/${slug}`;
-    const loc2 = `${BASE_URL}/tour-packages/${slug}`;
-    if (!urls.some((u) => u.loc === loc1)) {
-      urls.push({ loc: loc1, lastmod: today, changefreq: 'weekly', priority: '0.9' });
-    }
-    if (!urls.some((u) => u.loc === loc2)) {
-      urls.push({ loc: loc2, lastmod: today, changefreq: 'weekly', priority: '0.9' });
+    const loc = `${BASE_URL}/packages/${slug}`;
+    if (!urls.some((u) => u.loc === loc)) {
+      urls.push({ loc, lastmod: today, changefreq: 'weekly', priority: '0.9' });
     }
   });
 
