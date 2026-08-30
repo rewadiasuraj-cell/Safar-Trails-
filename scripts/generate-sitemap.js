@@ -6,8 +6,8 @@ const SANITY_ENDPOINT = 'https://xmtc060o.apicdn.sanity.io/v2024-06-01/data/quer
 
 const today = new Date().toISOString().split('T')[0];
 
-async function generateSitemap() {
-  console.log('Generating dynamic sitemap.xml & robots.txt...');
+async function generateSitemapAndRedirects() {
+  console.log('Generating dynamic sitemap.xml, robots.txt & _redirects...');
   const urls = [
     { loc: `${BASE_URL}/`, lastmod: today, changefreq: 'daily', priority: '1.0' },
     { loc: `${BASE_URL}/destinations`, lastmod: today, changefreq: 'daily', priority: '0.8' },
@@ -17,6 +17,19 @@ async function generateSitemap() {
     { loc: `${BASE_URL}/contact-us`, lastmod: today, changefreq: 'monthly', priority: '0.5' },
     { loc: `${BASE_URL}/ai-planner`, lastmod: today, changefreq: 'monthly', priority: '0.5' },
   ];
+
+  const destinationSlugs = new Set([
+    'chardham-yatra',
+    'kashmir',
+    'goa',
+    'kerala',
+    'rajasthan',
+    'himachal-pradesh',
+    'andaman-nicobar',
+    'andaman',
+    'northeast-india',
+    'uttarakhand',
+  ]);
 
   try {
     const res = await fetch(SANITY_ENDPOINT);
@@ -28,6 +41,7 @@ async function generateSitemap() {
       const lastmod = item._updatedAt ? item._updatedAt.split('T')[0] : today;
 
       if (item._type === 'destination') {
+        destinationSlugs.add(item.slug);
         urls.push({
           loc: `${BASE_URL}/destinations/${item.slug}`,
           lastmod,
@@ -54,20 +68,8 @@ async function generateSitemap() {
     console.warn('Warning: Failed to fetch Sanity items for sitemap, using static fallbacks:', e);
   }
 
-  // Static fallback destination slugs
-  const staticDestSlugs = [
-    'chardham-yatra',
-    'kashmir',
-    'goa',
-    'kerala',
-    'rajasthan',
-    'himachal-pradesh',
-    'andaman-nicobar',
-    'andaman',
-    'northeast-india',
-    'uttarakhand',
-  ];
-  staticDestSlugs.forEach((slug) => {
+  // Ensure all static fallback destination slugs are in urls list
+  destinationSlugs.forEach((slug) => {
     const loc = `${BASE_URL}/destinations/${slug}`;
     if (!urls.some((u) => u.loc === loc)) {
       urls.push({ loc, lastmod: today, changefreq: 'weekly', priority: '0.8' });
@@ -123,6 +125,13 @@ Allow: /
 Sitemap: ${BASE_URL}/sitemap.xml
 `;
 
+  // Build per-destination redirect rules + tour-packages redirect
+  const redirectLines = [
+    ...Array.from(destinationSlugs).sort().map((slug) => `/destinations/${slug}/packages/*  /packages/:splat  301`),
+    '/tour-packages/*  /packages/:splat  301',
+  ];
+  const redirectsContent = redirectLines.join('\n') + '\n';
+
   // Write to public folder
   const publicDir = path.resolve(process.cwd(), 'public');
   if (!fs.existsSync(publicDir)) {
@@ -130,15 +139,17 @@ Sitemap: ${BASE_URL}/sitemap.xml
   }
   fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), xmlContent, 'utf-8');
   fs.writeFileSync(path.join(publicDir, 'robots.txt'), robotsContent, 'utf-8');
+  fs.writeFileSync(path.join(publicDir, '_redirects'), redirectsContent, 'utf-8');
 
   // Also write to build/client if build directory exists
   const buildClientDir = path.resolve(process.cwd(), 'build/client');
   if (fs.existsSync(buildClientDir)) {
     fs.writeFileSync(path.join(buildClientDir, 'sitemap.xml'), xmlContent, 'utf-8');
     fs.writeFileSync(path.join(buildClientDir, 'robots.txt'), robotsContent, 'utf-8');
+    fs.writeFileSync(path.join(buildClientDir, '_redirects'), redirectsContent, 'utf-8');
   }
 
-  console.log(`Successfully generated sitemap.xml with ${urls.length} URLs and robots.txt!`);
+  console.log(`Successfully generated sitemap.xml with ${urls.length} URLs, robots.txt, and _redirects with ${redirectLines.length} rules!`);
 }
 
-generateSitemap();
+generateSitemapAndRedirects();

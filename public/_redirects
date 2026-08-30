@@ -1,2 +1,11 @@
-/destinations/*/packages/:slug  /packages/:slug  301
+/destinations/andaman/packages/*  /packages/:splat  301
+/destinations/andaman-nicobar/packages/*  /packages/:splat  301
+/destinations/chardham-yatra/packages/*  /packages/:splat  301
+/destinations/goa/packages/*  /packages/:splat  301
+/destinations/himachal-pradesh/packages/*  /packages/:splat  301
+/destinations/kashmir/packages/*  /packages/:splat  301
+/destinations/kerala/packages/*  /packages/:splat  301
+/destinations/northeast-india/packages/*  /packages/:splat  301
+/destinations/rajasthan/packages/*  /packages/:splat  301
+/destinations/uttarakhand/packages/*  /packages/:splat  301
 /tour-packages/*  /packages/:splat  301
