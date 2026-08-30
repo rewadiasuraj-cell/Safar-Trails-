@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router';
 import { ArrowLeft, CheckCircle2, XCircle, Plane, Train, Car } from 'lucide-react';
 import { useSanityQuery } from '../../lib/sanity/useSanityQuery';
 import { urlFor } from '../../lib/sanity/image';
@@ -7,7 +7,10 @@ import { PACKAGE_BY_SLUG_QUERY } from '../../lib/sanity/queries';
 import { SanityTourPackage } from '../../lib/sanity/types';
 import { SanityLoadingState, SanityErrorState, SanityEmptyState } from './SanityStateViews';
 
+import { packagesData } from '../../data/packagesData';
+
 interface PackageDetailPageProps {
+  slug?: string;
   onOpenQuoteModal: (summary?: string, destinationName?: string) => void;
 }
 
@@ -34,16 +37,42 @@ function usePageMeta(title?: string, description?: string) {
   }, [title, description]);
 }
 
-export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({ onOpenQuoteModal }) => {
-  const { slug = '' } = useParams<{ slug: string }>();
+export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({ slug: propSlug, onOpenQuoteModal }) => {
+  const routerParams = useParams<{ slug: string }>();
+  const slug = propSlug || routerParams.slug || '';
   const navigate = useNavigate();
 
-  const { data: pkg, loading, error } = useSanityQuery<SanityTourPackage | null>(PACKAGE_BY_SLUG_QUERY, { slug });
+  const { data: sanityPkg, loading, error } = useSanityQuery<SanityTourPackage | null>(PACKAGE_BY_SLUG_QUERY, { slug });
+  const staticFallback = packagesData.find(p => p.slug === slug);
+
+  const pkg: SanityTourPackage | null = sanityPkg || (staticFallback ? {
+    _id: staticFallback.id,
+    _type: 'tourPackage',
+    name: staticFallback.title,
+    slug: { _type: 'slug', current: staticFallback.slug },
+    destination: { _id: 'dest-1', _type: 'destination', title: staticFallback.destination, slug: { _type: 'slug', current: staticFallback.destination.toLowerCase().replace(/[^a-z0-9]+/g, '-') } },
+    priceFrom: staticFallback.startingPrice,
+    duration: `${staticFallback.durationDays} Days / ${staticFallback.durationNights} Nights`,
+    tagline: staticFallback.overview,
+    seoTitle: staticFallback.title,
+    seoDescription: staticFallback.overview,
+    images: [{ _type: 'image', asset: { _ref: staticFallback.heroImage, _type: 'reference' }, alt: staticFallback.title }],
+    highlights: staticFallback.highlights,
+    inclusions: staticFallback.inclusions,
+    exclusions: staticFallback.exclusions,
+    itinerary: staticFallback.itinerary.map(i => ({
+      _key: `day-${i.dayNumber}`,
+      dayNumber: i.dayNumber,
+      title: i.title,
+      description: i.description,
+      overnightStay: i.stay,
+    })),
+  } as unknown as SanityTourPackage : null);
 
   usePageMeta(pkg?.seoTitle, pkg?.seoDescription);
 
-  if (loading) return <SanityLoadingState label="Loading package…" />;
-  if (error) return <SanityErrorState message={error} />;
+  if (loading && !pkg) return <SanityLoadingState label="Loading package…" />;
+  if (error && !pkg) return <SanityErrorState message={error} />;
   if (!pkg) {
     return (
       <SanityEmptyState
@@ -59,14 +88,19 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({ onOpenQuot
 
   const requestQuote = (summary: string) => onOpenQuoteModal(summary, pkg.destination?.title || pkg.name);
 
+  const heroImgAsset = pkg.images?.[0]?.asset as unknown as { _ref?: string } | undefined;
+  const heroImgUrl = heroImgAsset?._ref && heroImgAsset._ref.startsWith('http')
+    ? heroImgAsset._ref
+    : (pkg.images && pkg.images[0] ? urlFor(pkg.images[0]).width(1600).height(900).fit('crop').url() : 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1200&auto=format&fit=crop');
+
   return (
     <div className="w-full">
       {/* Hero Banner */}
       <div className="relative w-full h-[45vh] min-h-[320px] max-h-[560px] overflow-hidden bg-gray-100">
-        {pkg.images && pkg.images[0] && (
+        {heroImgUrl && (
           <img
-            src={urlFor(pkg.images[0]).width(1600).height(900).fit('crop').url()}
-            alt={pkg.images[0].alt || pkg.name}
+            src={heroImgUrl}
+            alt={pkg.images?.[0]?.alt || pkg.name}
             className="w-full h-full object-cover"
           />
         )}

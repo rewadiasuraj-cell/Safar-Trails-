@@ -7,6 +7,43 @@ export default {
     const staticPaths = getStaticPaths();
     const dynamicPaths: string[] = [];
 
+    // Static fallback destination slugs
+    const staticDestSlugs = [
+      'chardham-yatra',
+      'kashmir',
+      'goa',
+      'kerala',
+      'rajasthan',
+      'himachal-pradesh',
+      'andaman-nicobar',
+      'andaman',
+      'northeast-india',
+      'uttarakhand'
+    ];
+
+    // Static fallback package slugs
+    const staticPkgSlugs = [
+      'chardham-yatra-haridwar-yamunotri-gangotri-kedarnath-badrinath-10d9n',
+      'chardham-yatra-package',
+      'chardham-yatra-premium',
+      'kashmir-escape-houseboat-bliss',
+      'kashmir-premium-escape',
+      'romantic-goa-boutique-beach-backwater',
+      'goa-premium-holiday',
+      'kerala-nature-munnar-alleppey-houseboat',
+      'kerala-complete-holiday',
+      'royal-rajasthan-heritage-desert-dunes',
+      'rajasthan-heritage-tour',
+      'himachal-manali-solang-sissu-retreat',
+      'himachal-adventure-tour',
+      'andaman-turquoise-havelock-scuba-dream',
+      'andaman-premium',
+      'meghalaya-living-root-bridges-dawki-shillong',
+      'sikkim-explorer',
+      'uttarakhand-rishikesh-mussoorie-corbett',
+      'auli-himalayan-retreat'
+    ];
+
     try {
       const res = await fetch(
         'https://xmtc060o.apicdn.sanity.io/v2024-06-01/data/query/production?query=*[_type%20in%20[%22destination%22,%20%22tourPackage%22,%20%22guide%22]]{_type,%20%22slug%22:%20slug.current}'
@@ -29,46 +66,12 @@ export default {
       console.warn('Sanity prerender fetch warning:', e);
     }
 
-    // Static fallback destination slugs
-    const staticDestSlugs = [
-      'chardham-yatra',
-      'kashmir',
-      'goa',
-      'kerala',
-      'rajasthan',
-      'himachal-pradesh',
-      'andaman-nicobar',
-      'andaman',
-      'northeast-india',
-      'uttarakhand'
-    ];
     staticDestSlugs.forEach((slug) => {
       if (!dynamicPaths.includes(`/destinations/${slug}`)) {
         dynamicPaths.push(`/destinations/${slug}`);
       }
     });
 
-    // Static fallback package slugs
-    const staticPkgSlugs = [
-      'chardham-yatra-haridwar-yamunotri-gangotri-kedarnath-badrinath-10d9n',
-      'chardham-yatra-premium',
-      'kashmir-escape-houseboat-bliss',
-      'kashmir-premium-escape',
-      'romantic-goa-boutique-beach-backwater',
-      'goa-premium-holiday',
-      'kerala-nature-munnar-alleppey-houseboat',
-      'kerala-complete-holiday',
-      'royal-rajasthan-heritage-desert-dunes',
-      'rajasthan-heritage-tour',
-      'himachal-manali-solang-sissu-retreat',
-      'himachal-adventure-tour',
-      'andaman-turquoise-havelock-scuba-dream',
-      'andaman-premium',
-      'meghalaya-living-root-bridges-dawki-shillong',
-      'sikkim-explorer',
-      'uttarakhand-rishikesh-mussoorie-corbett',
-      'auli-himalayan-retreat'
-    ];
     staticPkgSlugs.forEach((slug) => {
       if (!dynamicPaths.includes(`/tour-packages/${slug}`)) {
         dynamicPaths.push(`/tour-packages/${slug}`);
@@ -76,6 +79,34 @@ export default {
       if (!dynamicPaths.includes(`/packages/${slug}`)) {
         dynamicPaths.push(`/packages/${slug}`);
       }
+    });
+
+    // Generate /destinations/:destSlug/packages/:pkgSlug routes for destination-package detail compatibility
+    const destPkgPairs = [
+      { dest: 'chardham-yatra', pkg: 'chardham-yatra-haridwar-yamunotri-gangotri-kedarnath-badrinath-10d9n' },
+      { dest: 'chardham-yatra', pkg: 'chardham-yatra-package' },
+      { dest: 'chardham-yatra', pkg: 'chardham-yatra-premium' },
+      { dest: 'kashmir', pkg: 'kashmir-escape-houseboat-bliss' },
+      { dest: 'kashmir', pkg: 'kashmir-premium-escape' },
+      { dest: 'goa', pkg: 'romantic-goa-boutique-beach-backwater' },
+      { dest: 'goa', pkg: 'goa-premium-holiday' },
+      { dest: 'kerala', pkg: 'kerala-nature-munnar-alleppey-houseboat' },
+      { dest: 'kerala', pkg: 'kerala-complete-holiday' },
+      { dest: 'rajasthan', pkg: 'royal-rajasthan-heritage-desert-dunes' },
+      { dest: 'rajasthan', pkg: 'rajasthan-heritage-tour' },
+      { dest: 'himachal-pradesh', pkg: 'himachal-manali-solang-sissu-retreat' },
+      { dest: 'himachal-pradesh', pkg: 'himachal-adventure-tour' },
+      { dest: 'andaman', pkg: 'andaman-turquoise-havelock-scuba-dream' },
+      { dest: 'andaman-nicobar', pkg: 'andaman-turquoise-havelock-scuba-dream' },
+      { dest: 'andaman', pkg: 'andaman-premium' },
+      { dest: 'northeast-india', pkg: 'meghalaya-living-root-bridges-dawki-shillong' },
+      { dest: 'northeast-india', pkg: 'sikkim-explorer' },
+      { dest: 'uttarakhand', pkg: 'uttarakhand-rishikesh-mussoorie-corbett' },
+      { dest: 'uttarakhand', pkg: 'auli-himalayan-retreat' },
+    ];
+
+    destPkgPairs.forEach(({ dest, pkg }) => {
+      dynamicPaths.push(`/destinations/${dest}/packages/${pkg}`);
     });
 
     const allPaths = Array.from(new Set([...staticPaths, ...dynamicPaths]));

@@ -1,9 +1,7 @@
-import React, { Suspense, lazy } from 'react';
-import { useParams } from 'react-router';
+import React from 'react';
 import { packagesData } from '../../src/data/packagesData';
+import { PackageDetailPage } from '../../src/components/Sanity/PackageDetailPage';
 import type { Route } from './+types/tour-package-detail';
-
-const SanityPackageDetailPage = lazy(() => import('../../src/components/Sanity/PackageDetailPage').then(m => ({ default: m.PackageDetailPage })));
 
 export const meta: Route.MetaFunction = ({ params }) => {
   const slug = params.slug || '';
@@ -30,8 +28,7 @@ export const meta: Route.MetaFunction = ({ params }) => {
   ];
 };
 
-export default function TourPackageDetailRoute() {
-  const params = useParams();
+export default function TourPackageDetailRoute({ params }: Route.ComponentProps) {
   const slug = params.slug || '';
   const pkg = packagesData.find(p => p.slug === slug);
   const name = pkg?.title || slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
@@ -102,9 +99,7 @@ export default function TourPackageDetailRoute() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <Suspense fallback={<div className="w-full py-12 flex items-center justify-center min-h-[140px]" />}>
-        <SanityPackageDetailPage onOpenQuoteModal={() => {}} />
-      </Suspense>
+      <PackageDetailPage slug={slug} onOpenQuoteModal={() => {}} />
     </>
   );
 }
