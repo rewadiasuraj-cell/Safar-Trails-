@@ -1,13 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router';
 import { SafarLogo } from './SafarLogo';
 import { 
   Phone, 
   Mail, 
   MapPin, 
-  ShieldCheck, 
-  Heart,
-  Globe,
-  Lock
+  ShieldCheck
 } from 'lucide-react';
 import { AIIcon } from './AIIcon';
 
@@ -17,7 +15,6 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({
-  onNavigate,
   onOpenPolicyModal
 }) => {
   const popularDestinations = [
@@ -37,15 +34,15 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
           {/* Column 1: Brand & Identity */}
           <div className="lg:col-span-2 space-y-4">
-            <div 
-              onClick={() => onNavigate('home')}
+            <Link 
+              to="/"
               className="cursor-pointer inline-flex items-center"
             >
               <SafarLogo 
                 variant="dark" 
                 size="lg" 
               />
-            </div>
+            </Link>
             
             <p className="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-sm pt-1">
               SafarTrails is India’s premier AI-powered domestic travel agency. We combine instant AI itinerary generation with verified boutique stays, private sanitized cabs, and 24/7 dedicated human concierge.
@@ -65,12 +62,12 @@ export const Footer: React.FC<FooterProps> = ({
             <ul className="space-y-2 text-gray-300">
               {popularDestinations.slice(0, 6).map((d) => (
                 <li key={d.slug}>
-                  <button
-                    onClick={() => onNavigate('destination-detail', d.slug)}
-                    className="hover:text-luxury-gold transition-colors text-left cursor-pointer"
+                  <Link
+                    to={`/destinations/${d.slug}`}
+                    className="hover:text-luxury-gold transition-colors text-left cursor-pointer block"
                   >
                     {d.name}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -83,45 +80,45 @@ export const Footer: React.FC<FooterProps> = ({
             </h3>
             <ul className="space-y-2 text-gray-300">
               <li>
-                <button
-                  onClick={() => onNavigate('home')}
-                  className="hover:text-luxury-gold transition-colors cursor-pointer"
+                <Link
+                  to="/"
+                  className="hover:text-luxury-gold transition-colors cursor-pointer block"
                 >
                   Home
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => onNavigate('ai-planner')}
-                  className="hover:text-luxury-gold transition-colors flex items-center gap-1.5 cursor-pointer"
+                <Link
+                  to="/ai-planner"
+                  className="hover:text-luxury-gold transition-colors inline-flex items-center gap-1.5 cursor-pointer"
                 >
                   <AIIcon className="w-3 h-3 text-white" />
                   <span>AI Trip Studio</span>
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => onNavigate('packages')}
-                  className="hover:text-luxury-gold transition-colors cursor-pointer"
+                <Link
+                  to="/packages"
+                  className="hover:text-luxury-gold transition-colors cursor-pointer block"
                 >
                   Curated Holiday Packages
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => onNavigate('guides')}
-                  className="hover:text-luxury-gold transition-colors cursor-pointer"
+                <Link
+                  to="/guides"
+                  className="hover:text-luxury-gold transition-colors cursor-pointer block"
                 >
                   Travel Guides & Insights
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => onNavigate('why-us')}
-                  className="hover:text-luxury-gold transition-colors cursor-pointer"
+                <Link
+                  to="/about-us"
+                  className="hover:text-luxury-gold transition-colors cursor-pointer block"
                 >
                   Why SafarTrails
-                </button>
+                </Link>
               </li>
             </ul>
           </div>

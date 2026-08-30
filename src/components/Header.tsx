@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link, NavLink } from 'react-router';
 import { AnimatePresence, motion } from 'motion/react';
 import { SafarLogo } from './SafarLogo';
 import { WhatsAppIcon } from './WhatsAppIcon';
@@ -10,7 +11,6 @@ import {
   BookOpen,
   ShieldCheck,
   Star,
-  Phone,
   Compass
 } from 'lucide-react';
 
@@ -68,13 +68,6 @@ export const Header: React.FC<HeaderProps> = ({
     { name: 'Uttarakhand', slug: 'uttarakhand' }
   ];
 
-  const moreNavItems = [
-    { label: 'Travel Guides', id: 'guides', desc: 'Expert tips, best seasons & itineraries', icon: BookOpen },
-    { label: 'Why Us', id: 'why-us', desc: 'Verified partners, 0 hidden costs', icon: ShieldCheck },
-    { label: 'Destinations Guide', id: 'destinations', desc: 'Explore all 28+ states & circuits', icon: Compass },
-    { label: 'Guest Reviews', id: 'reviews', desc: '4.9★ rated by 12,000+ travellers', icon: Star },
-  ];
-
   const handleWhatsAppClick = () => {
     const text = encodeURIComponent("Hi SafarTrails Expert! I am planning a holiday in India. Please assist me with customized packages and travel estimates.");
     window.open(`https://wa.me/918076665782?text=${text}`, '_blank');
@@ -91,78 +84,76 @@ export const Header: React.FC<HeaderProps> = ({
         }`}
       >
         <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 flex items-center justify-between gap-2 sm:gap-3 md:gap-4">
-          {/* Brand Logo (Clean left alignment on Mobile, Tablet & Desktop) */}
+          {/* Brand Logo */}
           <div className="flex items-center flex-shrink-0">
-            <div
+            <Link
+              to="/"
               id="brand-logo-btn"
-              onClick={() => onNavigate('home')}
               className="cursor-pointer flex items-center flex-shrink-0"
             >
               <SafarLogo variant="dark" size="responsive" />
-            </div>
+            </Link>
           </div>
 
-          {/* Desktop & Tablet Navigation Links - Exactly Home / Destination / Tour Packages / Blogs / About Us / Contact Us */}
+          {/* Desktop & Tablet Navigation Links - Semantic HTML with NavLink & Link */}
           <nav 
             ref={navContainerRef}
             className="hidden lg:flex items-center gap-4 xl:gap-7 text-[14px] xl:text-[14.5px] font-medium text-ivory whitespace-nowrap"
           >
             {/* 1. Home */}
-            <button
+            <NavLink
+              to="/"
+              end
               id="nav-link-home"
               onClick={() => {
-                onNavigate('home');
                 setDestinationsDropdown(false);
                 setMoreDropdown(false);
               }}
-              className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
-                currentView === 'home'
-                  ? 'text-luxury-gold font-semibold'
-                  : 'text-ivory hover:text-luxury-gold'
-              }`}
+              className={({ isActive }) =>
+                `py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
+                  isActive ? 'text-luxury-gold font-semibold' : 'text-ivory hover:text-luxury-gold'
+                }`
+              }
             >
               <span className="whitespace-nowrap">Home</span>
-            </button>
+            </NavLink>
 
             {/* Plan with AI */}
-            <button
+            <NavLink
+              to="/ai-planner"
               id="nav-link-ai-planner"
               onClick={() => {
-                onNavigate('ai-planner');
                 setDestinationsDropdown(false);
                 setMoreDropdown(false);
               }}
-              className={`py-1.5 transition-colors inline-flex items-center gap-1.5 cursor-pointer select-none whitespace-nowrap ${
-                currentView === 'ai-planner'
-                  ? 'text-luxury-gold font-semibold'
-                  : 'text-ivory hover:text-luxury-gold'
-              }`}
+              className={({ isActive }) =>
+                `py-1.5 transition-colors inline-flex items-center gap-1.5 cursor-pointer select-none whitespace-nowrap ${
+                  isActive ? 'text-luxury-gold font-semibold' : 'text-ivory hover:text-luxury-gold'
+                }`
+              }
             >
               <AIIcon className="w-3.5 h-3.5" />
               <span className="whitespace-nowrap">Plan with AI</span>
-            </button>
+            </NavLink>
 
             {/* 2. Destination with Dropdown */}
             <div className="relative group">
-              <button
+              <NavLink
+                to="/destinations"
                 id="nav-link-destinations"
-                onClick={() => {
-                  setDestinationsDropdown(!destinationsDropdown);
-                  setMoreDropdown(false);
-                }}
                 onMouseEnter={() => {
                   setDestinationsDropdown(true);
                   setMoreDropdown(false);
                 }}
-                className={`py-1.5 transition-colors inline-flex items-center gap-1 cursor-pointer select-none whitespace-nowrap ${
-                  currentView === 'destinations' || currentView === 'destination-detail'
-                    ? 'text-luxury-gold font-semibold'
-                    : 'text-ivory hover:text-luxury-gold'
-                }`}
+                className={({ isActive }) =>
+                  `py-1.5 transition-colors inline-flex items-center gap-1 cursor-pointer select-none whitespace-nowrap ${
+                    isActive ? 'text-luxury-gold font-semibold' : 'text-ivory hover:text-luxury-gold'
+                  }`
+                }
               >
                 <span className="whitespace-nowrap">Destination</span>
                 <ChevronDown className="w-3.5 h-3.5 text-ivory/60 group-hover:text-luxury-gold group-hover:rotate-180 transition-transform duration-200 flex-shrink-0" />
-              </button>
+              </NavLink>
 
               {/* Destinations Mega Dropdown */}
               <AnimatePresence>
@@ -180,29 +171,25 @@ export const Header: React.FC<HeaderProps> = ({
                       Popular Domestic Destinations
                     </div>
                     {popularDestinations.map((dest) => (
-                      <button
+                      <Link
                         key={dest.slug}
-                        onClick={() => {
-                          onNavigate('destination-detail', dest.slug);
-                          setDestinationsDropdown(false);
-                        }}
+                        to={`/destinations/${dest.slug}`}
+                        onClick={() => setDestinationsDropdown(false)}
                         className="text-left px-3 py-2 rounded-xl hover:bg-[#FAF9F6] transition-colors flex group/item cursor-pointer"
                       >
                         <span className="text-sm font-semibold text-slate-900 group-hover/item:text-luxury-gold transition-colors whitespace-nowrap">
                           {dest.name}
                         </span>
-                      </button>
+                      </Link>
                     ))}
                     <div className="pt-2 border-t border-gray-100 mt-1">
-                      <button
-                        onClick={() => {
-                          onNavigate('destinations');
-                          setDestinationsDropdown(false);
-                        }}
-                        className="w-full text-center py-1.5 text-xs font-bold text-slate-900 hover:text-luxury-gold uppercase tracking-wider cursor-pointer whitespace-nowrap"
+                      <Link
+                        to="/destinations"
+                        onClick={() => setDestinationsDropdown(false)}
+                        className="w-full text-center py-1.5 text-xs font-bold text-slate-900 hover:text-luxury-gold uppercase tracking-wider cursor-pointer whitespace-nowrap block"
                       >
                         View All Destinations →
-                      </button>
+                      </Link>
                     </div>
                   </motion.div>
                 )}
@@ -210,75 +197,75 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
 
             {/* 3. Tour Packages */}
-            <button
+            <NavLink
+              to="/packages"
               id="nav-link-packages"
               onClick={() => {
-                onNavigate('packages');
                 setDestinationsDropdown(false);
                 setMoreDropdown(false);
               }}
-              className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
-                currentView === 'packages'
-                  ? 'text-luxury-gold font-semibold'
-                  : 'text-ivory hover:text-luxury-gold'
-              }`}
+              className={({ isActive }) =>
+                `py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
+                  isActive ? 'text-luxury-gold font-semibold' : 'text-ivory hover:text-luxury-gold'
+                }`
+              }
             >
               <span className="whitespace-nowrap">Tour Packages</span>
-            </button>
+            </NavLink>
 
             {/* 4. Blogs */}
-            <button
+            <NavLink
+              to="/guides"
               id="nav-link-blogs"
               onClick={() => {
-                onNavigate('guides');
                 setDestinationsDropdown(false);
                 setMoreDropdown(false);
               }}
-              className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
-                currentView === 'guides' || currentView === 'guide-detail'
-                  ? 'text-luxury-gold font-semibold'
-                  : 'text-ivory hover:text-luxury-gold'
-              }`}
+              className={({ isActive }) =>
+                `py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
+                  isActive ? 'text-luxury-gold font-semibold' : 'text-ivory hover:text-luxury-gold'
+                }`
+              }
             >
               <span className="whitespace-nowrap">Blogs</span>
-            </button>
+            </NavLink>
 
             {/* 5. About Us */}
-            <button
+            <NavLink
+              to="/about-us"
               id="nav-link-about-us"
               onClick={() => {
-                onNavigate('why-us');
                 setDestinationsDropdown(false);
                 setMoreDropdown(false);
               }}
-              className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
-                currentView === 'why-us'
-                  ? 'text-luxury-gold font-semibold'
-                  : 'text-ivory hover:text-luxury-gold'
-              }`}
+              className={({ isActive }) =>
+                `py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
+                  isActive ? 'text-luxury-gold font-semibold' : 'text-ivory hover:text-luxury-gold'
+                }`
+              }
             >
               <span className="whitespace-nowrap">About Us</span>
-            </button>
+            </NavLink>
 
             {/* 6. Contact Us */}
-            <button
+            <NavLink
+              to="/contact-us"
               id="nav-link-contact-us"
               onClick={() => {
-                onNavigate('contact-us');
                 setDestinationsDropdown(false);
                 setMoreDropdown(false);
               }}
-              className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
-                currentView === 'contact-us'
-                  ? 'text-luxury-gold font-semibold'
-                  : 'text-ivory hover:text-luxury-gold'
-              }`}
+              className={({ isActive }) =>
+                `py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
+                  isActive ? 'text-luxury-gold font-semibold' : 'text-ivory hover:text-luxury-gold'
+                }`
+              }
             >
               <span className="whitespace-nowrap">Contact Us</span>
-            </button>
+            </NavLink>
           </nav>
 
-          {/* Right Action CTAs (Desktop & Mobile view matching reference image) */}
+          {/* Right Action CTAs */}
           <div className="flex items-center gap-1 sm:gap-2 md:gap-3 flex-shrink-0">
             {/* Search Button */}
             <button
@@ -311,7 +298,7 @@ export const Header: React.FC<HeaderProps> = ({
               <span>Plan My Trip</span>
             </button>
 
-            {/* Mobile & Tablet Hamburger Menu Toggle Button (Placed after Plan My Trip on the Right) */}
+            {/* Mobile & Tablet Hamburger Menu Toggle Button */}
             <button
               id="mobile-menu-toggle-btn"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -361,140 +348,140 @@ export const Header: React.FC<HeaderProps> = ({
               exit={{ x: '100%' }}
               transition={{ type: 'spring', stiffness: 320, damping: 34 }}
               onClick={(e) => e.stopPropagation()}
-              className="fixed inset-y-0 right-0 w-4/5 max-w-sm bg-white shadow-2xl p-6 flex flex-col justify-between overflow-y-auto">
-            <div>
-              <div className="flex items-center justify-between pb-4 border-b border-gray-100">
-                <SafarLogo size="sm" />
-                <button
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 rounded-full text-gray-500 hover:bg-gray-100 cursor-pointer"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              <div className="mt-6 space-y-1 text-sm font-medium text-slate-800">
-                <button
-                  onClick={() => {
-                    onNavigate('home');
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'home' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
-                  }`}
-                >
-                  Home
-                </button>
-                <button
-                  onClick={() => {
-                    onNavigate('ai-planner');
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors flex items-center gap-2 ${
-                    currentView === 'ai-planner' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
-                  }`}
-                >
-                  <AIIcon className="w-4 h-4" />
-                  <span>Plan with AI</span>
-                </button>
-                <button
-                  onClick={() => {
-                    onNavigate('destinations');
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'destinations' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
-                  }`}
-                >
-                  Destination
-                </button>
-                <button
-                  onClick={() => {
-                    onNavigate('packages');
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'packages' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
-                  }`}
-                >
-                  Tour Packages
-                </button>
-                <button
-                  onClick={() => {
-                    onNavigate('guides');
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'guides' || currentView === 'guide-detail' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
-                  }`}
-                >
-                  Blogs
-                </button>
-                <button
-                  onClick={() => {
-                    onNavigate('why-us');
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'why-us' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
-                  }`}
-                >
-                  About Us
-                </button>
-                <button
-                  onClick={() => {
-                    onNavigate('contact-us');
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'contact-us' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
-                  }`}
-                >
-                  Contact Us
-                </button>
-              </div>
-
-              {/* Quick Destination Tags */}
-              <div className="mt-6 pt-4 border-t border-gray-100">
-                <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">
-                  Trending Destinations
+              className="fixed inset-y-0 right-0 w-4/5 max-w-sm bg-white shadow-2xl p-6 flex flex-col justify-between overflow-y-auto"
+            >
+              <div>
+                <div className="flex items-center justify-between pb-4 border-b border-gray-100">
+                  <SafarLogo size="sm" />
+                  <button
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="p-2 rounded-full text-gray-500 hover:bg-gray-100 cursor-pointer"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  {['Kashmir', 'Goa', 'Kerala', 'Rajasthan', 'Himachal', 'Andaman'].map((d) => (
-                    <button
-                      key={d}
-                      onClick={() => {
-                        onNavigate('destination-detail', d.toLowerCase().replace(/\s+/g, '-'));
-                        setMobileMenuOpen(false);
-                      }}
-                      className="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 text-gray-800 hover:bg-luxury-gold hover:text-white transition-colors cursor-pointer"
-                    >
-                      {d}
-                    </button>
-                  ))}
+
+                <div className="mt-6 space-y-1 text-sm font-medium text-slate-800">
+                  <NavLink
+                    to="/"
+                    end
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={({ isActive }) =>
+                      `w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors block ${
+                        isActive ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
+                      }`
+                    }
+                  >
+                    Home
+                  </NavLink>
+                  <NavLink
+                    to="/ai-planner"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={({ isActive }) =>
+                      `w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors flex items-center gap-2 ${
+                        isActive ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
+                      }`
+                    }
+                  >
+                    <AIIcon className="w-4 h-4" />
+                    <span>Plan with AI</span>
+                  </NavLink>
+                  <NavLink
+                    to="/destinations"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={({ isActive }) =>
+                      `w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors block ${
+                        isActive ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
+                      }`
+                    }
+                  >
+                    Destination
+                  </NavLink>
+                  <NavLink
+                    to="/packages"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={({ isActive }) =>
+                      `w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors block ${
+                        isActive ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
+                      }`
+                    }
+                  >
+                    Tour Packages
+                  </NavLink>
+                  <NavLink
+                    to="/guides"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={({ isActive }) =>
+                      `w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors block ${
+                        isActive ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
+                      }`
+                    }
+                  >
+                    Blogs
+                  </NavLink>
+                  <NavLink
+                    to="/about-us"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={({ isActive }) =>
+                      `w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors block ${
+                        isActive ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
+                      }`
+                    }
+                  >
+                    About Us
+                  </NavLink>
+                  <NavLink
+                    to="/contact-us"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={({ isActive }) =>
+                      `w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors block ${
+                        isActive ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
+                      }`
+                    }
+                  >
+                    Contact Us
+                  </NavLink>
+                </div>
+
+                {/* Quick Destination Tags */}
+                <div className="mt-6 pt-4 border-t border-gray-100">
+                  <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">
+                    Trending Destinations
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {['Kashmir', 'Goa', 'Kerala', 'Rajasthan', 'Himachal', 'Andaman'].map((d) => (
+                      <Link
+                        key={d}
+                        to={`/destinations/${d.toLowerCase().replace(/\s+/g, '-')}`}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 text-gray-800 hover:bg-luxury-gold hover:text-white transition-colors cursor-pointer"
+                      >
+                        {d}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Mobile Footer CTAs */}
-            <div className="pt-6 border-t border-gray-100 space-y-3">
-              <button
-                onClick={() => {
-                  onOpenQuoteModal();
-                  setMobileMenuOpen(false);
-                }}
-                className="w-full py-3 rounded-full bg-warm-orange text-white font-bold text-sm shadow-xs text-center flex items-center justify-center cursor-pointer"
-              >
-                <span>Plan My Trip</span>
-              </button>
-              <button
-                onClick={handleWhatsAppClick}
-                className="w-full py-3 rounded-full border border-gray-200 text-gray-800 font-semibold text-sm hover:bg-gray-50 text-center flex items-center justify-center gap-2 cursor-pointer"
-              >
-                <WhatsAppIcon className="w-5 h-5" />
-                <span>Expert Help on WhatsApp</span>
-              </button>
-            </div>
+              {/* Mobile Footer CTAs */}
+              <div className="pt-6 border-t border-gray-100 space-y-3">
+                <button
+                  onClick={() => {
+                    onOpenQuoteModal();
+                    setMobileMenuOpen(false);
+                  }}
+                  className="w-full py-3 rounded-full bg-warm-orange text-white font-bold text-sm shadow-xs text-center flex items-center justify-center cursor-pointer"
+                >
+                  <span>Plan My Trip</span>
+                </button>
+                <button
+                  onClick={handleWhatsAppClick}
+                  className="w-full py-3 rounded-full border border-gray-200 text-gray-800 font-semibold text-sm hover:bg-gray-50 text-center flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <WhatsAppIcon className="w-5 h-5" />
+                  <span>Expert Help on WhatsApp</span>
+                </button>
+              </div>
             </motion.div>
           </motion.div>
         )}
