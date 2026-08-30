@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router';
 import { packagesData } from '../../data/packagesData';
 import { Package } from '../../types';
 import {
@@ -237,13 +238,13 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
 
                 {/* 2 CTA Buttons: More Info & Book Now */}
                 <div className="grid grid-cols-2 gap-2">
-                  <button
-                    onClick={() => onSelectPackage(pkg)}
+                  <Link
+                    to={`/packages/${pkg.slug}`}
                     className="w-full h-10 rounded-xl border border-gray-200 hover:border-slate-900 hover:bg-gray-50 text-slate-800 font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center justify-center gap-1.5 cursor-pointer text-center whitespace-nowrap"
                   >
                     <Info className="w-3.5 h-3.5 text-slate-600" />
                     <span>More Info</span>
-                  </button>
+                  </Link>
 
                   <button
                     onClick={() => handleBookNow(pkg)}

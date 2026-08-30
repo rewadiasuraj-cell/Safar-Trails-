@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { destinationsData } from '../../data/destinationsData';
 import { Destination } from '../../types';
@@ -243,14 +244,14 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
                 </button>
 
                 <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
-                  <button
+                  <Link
+                    to={`/destinations/${dest.slug}`}
                     id={`explore-dest-${dest.slug}`}
-                    onClick={() => onSelectDestination(dest.slug)}
                     className="w-full h-8.5 min-[380px]:h-9 sm:h-9.5 min-h-[34px] sm:min-h-[38px] px-1 sm:px-2 rounded-xl border border-gray-200 hover:border-black hover:bg-gray-50 text-black font-bold text-[10px] min-[380px]:text-[10.5px] sm:text-[11px] uppercase tracking-tight min-[380px]:tracking-wide transition-colors inline-flex items-center justify-center gap-1 sm:gap-1.5 cursor-pointer text-center whitespace-nowrap select-none"
                   >
                     <span>More Info</span>
                     <ArrowRight className="w-3 h-3 min-[380px]:w-3.5 min-[380px]:h-3.5 shrink-0" />
-                  </button>
+                  </Link>
 
                   <button
                     id={`ai-plan-dest-${dest.slug}`}

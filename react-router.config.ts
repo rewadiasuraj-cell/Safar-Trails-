@@ -1,7 +1,7 @@
 import type { Config } from "@react-router/dev/config";
 
 export default {
-  ssr: false,
+  ssr: true,
   async prerender({ getStaticPaths }) {
     console.log("=== EXECUTING PRERENDER FUNCTION IN REACT ROUTER CONFIG ===");
     const staticPaths = getStaticPaths();

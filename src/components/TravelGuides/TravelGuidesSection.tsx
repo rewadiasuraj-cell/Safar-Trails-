@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router';
 import { guidesData } from '../../data/guidesData';
 import { TravelGuide } from '../../types';
 import { Clock, ArrowRight, Search } from 'lucide-react';
@@ -60,10 +61,10 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredGuides.map((guide) => (
-              <article
+              <Link
                 key={guide.slug}
-                className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-luxury-gold shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between cursor-pointer"
-                onClick={() => onSelectGuide(guide)}
+                to={`/guides/${guide.slug}`}
+                className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-luxury-gold shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between cursor-pointer block"
               >
                 <div>
                   <div className="relative h-56 overflow-hidden">
@@ -105,7 +106,7 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
                     <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         )}
