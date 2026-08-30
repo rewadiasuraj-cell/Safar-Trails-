@@ -173,6 +173,7 @@ export default function AppRoot() {
   };
 
   const handleOpenQuoteModal = (summary?: string, destinationName?: string) => {
+    console.log("=== handleOpenQuoteModal CALLED ===", { summary, destinationName });
     setQuoteModalInitialSummary(summary || '');
     setQuoteModalInitialDestination(destinationName || '');
     setQuoteModalOpen(true);

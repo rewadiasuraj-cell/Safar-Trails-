@@ -292,8 +292,11 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Plan My Trip CTA Button */}
             <button
               id="header-plan-trip-cta"
-              onClick={() => onOpenQuoteModal()}
-              className="inline-flex items-center justify-center bg-warm-orange hover:brightness-95 text-white text-[11px] sm:text-xs md:text-sm font-bold px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5 rounded-full transition-all duration-200 active:scale-95 shadow-xs cursor-pointer whitespace-nowrap flex-shrink-0"
+              onClick={() => {
+                console.log("=== Header CTA CLICKED ===");
+                onOpenQuoteModal();
+              }}
+              className="group relative px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-slate-950 text-white font-bold text-xs sm:text-sm shadow-md hover:bg-slate-800 transition-all duration-300 flex items-center gap-2 cursor-pointer border border-slate-800 hover:border-slate-700"
             >
               <span>Plan My Trip</span>
             </button>
