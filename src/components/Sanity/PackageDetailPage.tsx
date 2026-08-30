@@ -37,10 +37,28 @@ function usePageMeta(title?: string, description?: string) {
   }, [title, description]);
 }
 
+function useSafeNavigate() {
+  try {
+    return useNavigate();
+  } catch {
+    return (to: string) => {
+      if (typeof window !== 'undefined') window.location.href = to;
+    };
+  }
+}
+
+function useSafeParams() {
+  try {
+    return useParams<{ slug?: string }>() || {};
+  } catch {
+    return {};
+  }
+}
+
 export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({ slug: propSlug, onOpenQuoteModal }) => {
-  const routerParams = useParams<{ slug: string }>();
+  const routerParams = useSafeParams();
   const slug = propSlug || routerParams.slug || '';
-  const navigate = useNavigate();
+  const navigate = useSafeNavigate();
 
   const { data: sanityPkg, loading, error } = useSanityQuery<SanityTourPackage | null>(PACKAGE_BY_SLUG_QUERY, { slug });
   const staticFallback = packagesData.find(p => p.slug === slug);
@@ -89,9 +107,16 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({ slug: prop
   const requestQuote = (summary: string) => onOpenQuoteModal(summary, pkg.destination?.title || pkg.name);
 
   const heroImgAsset = pkg.images?.[0]?.asset as unknown as { _ref?: string } | undefined;
-  const heroImgUrl = heroImgAsset?._ref && heroImgAsset._ref.startsWith('http')
-    ? heroImgAsset._ref
-    : (pkg.images && pkg.images[0] ? urlFor(pkg.images[0]).width(1600).height(900).fit('crop').url() : 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1200&auto=format&fit=crop');
+  let heroImgUrl = 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1200&auto=format&fit=crop';
+  if (heroImgAsset?._ref && heroImgAsset._ref.startsWith('http')) {
+    heroImgUrl = heroImgAsset._ref;
+  } else if (pkg.images && pkg.images[0]) {
+    try {
+      heroImgUrl = urlFor(pkg.images[0]).width(1600).height(900).fit('crop').url();
+    } catch (e) {
+      heroImgUrl = 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1200&auto=format&fit=crop';
+    }
+  }
 
   return (
     <div className="w-full">

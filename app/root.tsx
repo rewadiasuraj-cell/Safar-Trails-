@@ -22,7 +22,6 @@ import { Package, TravelGuide } from '../src/types';
 import stylesheet from '../src/index.css?url';
 
 export const links: Route.LinksFunction = () => [
-  { rel: 'canonical', href: 'https://safartrails.co.in/' },
   { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
   { rel: 'alternate icon', type: 'image/svg+xml', href: '/favicon.svg' },
   { rel: 'apple-touch-icon', href: '/favicon.svg' },
@@ -180,7 +179,7 @@ export default function AppRoot() {
   };
 
   const handleSelectPackage = (pkg: Package) => {
-    navigate(`/tour-packages/${pkg.slug}`);
+    navigate(`/packages/${pkg.slug}`);
   };
 
   const handleSelectDestination = (slug: string) => {

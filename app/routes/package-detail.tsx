@@ -4,18 +4,19 @@ import { PackageDetailPage } from '../../src/components/Sanity/PackageDetailPage
 import type { Route } from './+types/package-detail';
 
 export const meta: Route.MetaFunction = ({ params }) => {
-  const slug = params.slug || '';
+  const slug = params?.slug || '';
   const staticFallback = packagesData.find(p => p.slug === slug);
   const name = staticFallback?.title || slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-  const duration = staticFallback?.duration || '';
+  const duration = staticFallback ? `${staticFallback.durationDays} Days / ${staticFallback.durationNights} Nights` : '';
   const title = duration ? `${name} — ${duration} | Safar Trails` : `${name} | Safar Trails`;
-  const rawDesc = staticFallback?.overview || staticFallback?.subtitle || `Book ${name} with Safar Trails. Includes stay, private transport, sightseeing & 24/7 concierge support.`;
+  const rawDesc = staticFallback?.overview || `Book ${name} with Safar Trails. Includes stay, private transport, sightseeing & 24/7 concierge support.`;
   const description = rawDesc.replace(/(<([^>]+)>)/gi, '').slice(0, 155);
   const ogImage = staticFallback?.heroImage || 'https://safartrails.co.in/og-image.jpg';
 
   return [
     { title },
     { name: "description", content: description },
+    { tagName: "link", rel: "canonical", href: `https://safartrails.co.in/packages/${slug}` },
     { property: "og:title", content: title },
     { property: "og:description", content: description },
     { property: "og:url", content: `https://safartrails.co.in/packages/${slug}` },
@@ -29,12 +30,12 @@ export const meta: Route.MetaFunction = ({ params }) => {
 };
 
 export default function PackageDetailRoute({ params }: Route.ComponentProps) {
-  const slug = params.slug || '';
+  const slug = params?.slug || '';
   const pkg = packagesData.find(p => p.slug === slug);
   const name = pkg?.title || slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-  const price = pkg?.price || 14999;
+  const price = pkg?.startingPrice || 14999;
   const image = pkg?.heroImage || 'https://safartrails.co.in/og-image.jpg';
-  const description = (pkg?.overview || `Customized ${name} holiday package with Safar Trails.`).slice(0, 155);
+  const description = (pkg?.overview || `Customized ${name} holiday package with SafarTrails.`).slice(0, 155);
 
   const productSchema = {
     '@context': 'https://schema.org',

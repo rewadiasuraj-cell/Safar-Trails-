@@ -5,18 +5,20 @@ import type { Route } from './+types/guide-detail';
 
 const SanityGuideDetailPage = lazy(() => import('../../src/components/Sanity/GuideDetailPage').then(m => ({ default: m.GuideDetailPage })));
 
-export const meta: Route.MetaFunction = ({ params }) => {
+export const meta: Route.MetaFunction = (arg) => {
+  const params = arg?.params || {};
   const slug = params.slug || '';
   const staticFallback = guidesData.find(g => g.slug === slug);
   const titleText = staticFallback?.title || slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
   const title = `${titleText} | Safar Trails Travel Guide`;
   const rawDesc = staticFallback?.excerpt || staticFallback?.readTime || `Read our expert travel guide for ${titleText} with Safar Trails. Top places to visit, trip costs & local tips.`;
   const description = rawDesc.replace(/(<([^>]+)>)/gi, '').slice(0, 155);
-  const ogImage = staticFallback?.coverImage || 'https://safartrails.co.in/og-image.jpg';
+  const ogImage = staticFallback?.heroImage || 'https://safartrails.co.in/og-image.jpg';
 
   return [
     { title },
     { name: "description", content: description },
+    { tagName: "link", rel: "canonical", href: `https://safartrails.co.in/guides/${slug}` },
     { property: "og:title", content: title },
     { property: "og:description", content: description },
     { property: "og:url", content: `https://safartrails.co.in/guides/${slug}` },
@@ -29,13 +31,12 @@ export const meta: Route.MetaFunction = ({ params }) => {
   ];
 };
 
-export default function GuideDetailRoute() {
-  const params = useParams();
-  const slug = params.slug || '';
+export default function GuideDetailRoute({ params }: Route.ComponentProps) {
+  const slug = params?.slug || '';
   const guide = guidesData.find(g => g.slug === slug);
   const titleText = guide?.title || slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
   const description = (guide?.excerpt || `Read our expert travel guide for ${titleText} with Safar Trails.`).slice(0, 155);
-  const image = guide?.coverImage || 'https://safartrails.co.in/og-image.jpg';
+  const image = guide?.heroImage || 'https://safartrails.co.in/og-image.jpg';
 
   const blogSchema = {
     '@context': 'https://schema.org',

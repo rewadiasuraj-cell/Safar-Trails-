@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { Clock } from 'lucide-react';
 import { useSanityQuery } from '../../lib/sanity/useSanityQuery';
 import { urlFor } from '../../lib/sanity/image';

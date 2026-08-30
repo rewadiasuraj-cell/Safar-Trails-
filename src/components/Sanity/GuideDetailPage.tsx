@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router';
 import { PortableText, PortableTextComponents } from '@portabletext/react';
 import { ArrowLeft, MapPin } from 'lucide-react';
 import { useSanityQuery } from '../../lib/sanity/useSanityQuery';

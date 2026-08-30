@@ -1,17 +1,24 @@
-import React, { Suspense, lazy } from 'react';
-import { useNavigate } from 'react-router';
+import React from 'react';
 import { packagesData } from '../../src/data/packagesData';
+import { PackageDetailPage } from '../../src/components/Sanity/PackageDetailPage';
 import type { Route } from './+types/destination-package-detail';
 
-const LocalPackageDetailPage = lazy(() => import('../../src/components/Packages/PackageDetailPage').then(m => ({ default: m.PackageDetailPage })));
+export const links: Route.LinksFunction = (arg) => {
+  const params = arg?.params || {};
+  const pkgSlug = params.pkgSlug || '';
+  return [
+    { rel: 'canonical', href: `https://safartrails.co.in/packages/${pkgSlug}` }
+  ];
+};
 
-export const meta: Route.MetaFunction = ({ params }) => {
-  const { destSlug, pkgSlug } = params;
+export const meta: Route.MetaFunction = (arg) => {
+  const params = arg?.params || {};
+  const pkgSlug = params.pkgSlug || '';
   const staticFallback = packagesData.find(p => p.slug === pkgSlug);
-  const name = staticFallback?.title || (pkgSlug ? pkgSlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) : 'Tour Package');
-  const duration = staticFallback?.duration || '';
+  const name = staticFallback?.title || pkgSlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+  const duration = staticFallback ? `${staticFallback.durationDays} Days / ${staticFallback.durationNights} Nights` : '';
   const title = duration ? `${name} — ${duration} | Safar Trails` : `${name} | Safar Trails`;
-  const rawDesc = staticFallback?.overview || staticFallback?.subtitle || `Book ${name} holiday package with Safar Trails. Private transfers, handpicked hotels & dedicated concierge.`;
+  const rawDesc = staticFallback?.overview || `Book ${name} with Safar Trails. Includes stay, private transport, sightseeing & 24/7 concierge support.`;
   const description = rawDesc.replace(/(<([^>]+)>)/gi, '').slice(0, 155);
   const ogImage = staticFallback?.heroImage || 'https://safartrails.co.in/og-image.jpg';
 
@@ -20,7 +27,7 @@ export const meta: Route.MetaFunction = ({ params }) => {
     { name: "description", content: description },
     { property: "og:title", content: title },
     { property: "og:description", content: description },
-    { property: "og:url", content: `https://safartrails.co.in/destinations/${destSlug}/packages/${pkgSlug}` },
+    { property: "og:url", content: `https://safartrails.co.in/packages/${pkgSlug}` },
     { property: "og:image", content: ogImage },
     { property: "og:type", content: "product" },
     { name: "twitter:card", content: "summary_large_image" },
@@ -30,14 +37,7 @@ export const meta: Route.MetaFunction = ({ params }) => {
   ];
 };
 
-export default function DestinationPackageDetailRoute() {
-  const navigate = useNavigate();
-  return (
-    <Suspense fallback={<div className="w-full py-12 flex items-center justify-center min-h-[140px]" />}>
-      <LocalPackageDetailPage
-        onStartAIPlan={(prompt, dest) => navigate(`/ai-planner?prompt=${encodeURIComponent(prompt || '')}&dest=${encodeURIComponent(dest || '')}`)}
-        onOpenQuoteModal={() => {}}
-      />
-    </Suspense>
-  );
+export default function DestinationPackageDetailRoute({ params }: Route.ComponentProps) {
+  const pkgSlug = params?.pkgSlug || '';
+  return <PackageDetailPage slug={pkgSlug} onOpenQuoteModal={() => {}} />;
 }

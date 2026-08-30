@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router';
 import { packagesData } from '../../data/packagesData';
 import { WhatsAppIcon } from '../WhatsAppIcon';
 import { AIIcon } from '../AIIcon';
@@ -22,6 +22,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
   onStartAIPlan,
   onOpenQuoteModal
 }) => {
+  const navigate = useNavigate();
   const { slug = '', pkgSlug = '' } = useParams<{ slug?: string; pkgSlug?: string }>();
   const targetSlug = pkgSlug || slug;
   const packageData = packagesData.find((p) => p.slug === targetSlug || p.id === targetSlug);

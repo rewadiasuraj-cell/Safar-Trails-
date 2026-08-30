@@ -5,18 +5,30 @@ import type { Route } from './+types/destination-detail';
 
 const SanityDestinationDetailPage = lazy(() => import('../../src/components/Sanity/DestinationDetailPage').then(m => ({ default: m.DestinationDetailPage })));
 
-export const meta: Route.MetaFunction = ({ params }) => {
+function useSafeNavigate() {
+  try {
+    return useNavigate();
+  } catch {
+    return (to: string) => {
+      if (typeof window !== 'undefined') window.location.href = to;
+    };
+  }
+}
+
+export const meta: Route.MetaFunction = (arg) => {
+  const params = arg?.params || {};
   const slug = params.slug || '';
   const staticFallback = destinationsData.find(d => d.slug === slug);
   const name = staticFallback?.name || slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
   const title = `${name} Tour Packages 2026 — Customizable Itineraries | Safar Trails`;
-  const rawDesc = staticFallback?.description || `Book customized ${name} holiday packages with Safar Trails. Expert local guidance, premium stays & 24/7 concierge.`;
+  const rawDesc = staticFallback?.seoDescription || staticFallback?.shortDescription || staticFallback?.tagline || `Book customized ${name} holiday packages with Safar Trails. Expert local guidance, premium stays & 24/7 concierge.`;
   const description = rawDesc.replace(/(<([^>]+)>)/gi, '').slice(0, 155);
   const ogImage = staticFallback?.heroImage || 'https://safartrails.co.in/og-image.jpg';
 
   return [
     { title },
     { name: "description", content: description },
+    { tagName: "link", rel: "canonical", href: `https://safartrails.co.in/destinations/${slug}` },
     { property: "og:title", content: title },
     { property: "og:description", content: description },
     { property: "og:url", content: `https://safartrails.co.in/destinations/${slug}` },
@@ -29,14 +41,13 @@ export const meta: Route.MetaFunction = ({ params }) => {
   ];
 };
 
-export default function DestinationDetailRoute() {
-  const navigate = useNavigate();
-  const params = useParams();
-  const slug = params.slug || '';
+export default function DestinationDetailRoute({ params }: Route.ComponentProps) {
+  const navigate = useSafeNavigate();
+  const slug = params?.slug || '';
   const dest = destinationsData.find(d => d.slug === slug);
   const name = dest?.name || slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
   const image = dest?.heroImage || 'https://safartrails.co.in/og-image.jpg';
-  const description = (dest?.description || `Explore ${name} holiday packages with Safar Trails.`).slice(0, 155);
+  const description = (dest?.seoDescription || dest?.shortDescription || dest?.tagline || `Explore ${name} holiday packages with Safar Trails.`).slice(0, 155);
 
   const destinationSchema = {
     '@context': 'https://schema.org',
@@ -46,7 +57,7 @@ export default function DestinationDetailRoute() {
     image: image,
     includesAttraction: (dest?.highlights || []).map((h) => ({
       '@type': 'TouristAttraction',
-      name: h,
+      name: typeof h === 'string' ? h : h.title,
     })),
   };
 

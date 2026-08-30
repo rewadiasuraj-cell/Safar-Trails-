@@ -19,6 +19,7 @@ const FinalCTASection = lazy(() => import('../../src/components/FinalCTASection'
 export const meta: Route.MetaFunction = () => [
   { title: "Safar Trails — AI-Powered India Holiday Packages & Custom Itineraries" },
   { name: "description", content: "AI plans. Experts perfect. Discover bespoke holiday packages across Kashmir, Goa, Kerala, Rajasthan, Himachal, Uttarakhand & beyond with SafarTrails." },
+  { tagName: "link", rel: "canonical", href: "https://safartrails.co.in/" },
   { property: "og:title", content: "Safar Trails — AI-Powered India Holiday Packages & Custom Itineraries" },
   { property: "og:description", content: "AI-powered custom holiday planning handcrafted by verified destination experts. Discover India with Trust." },
   { property: "og:url", content: "https://safartrails.co.in/" },
@@ -45,7 +46,7 @@ export default function HomeRoute() {
   };
 
   const handleSelectPackage = (pkg: Package) => {
-    navigate(`/tour-packages/${pkg.slug}`);
+    navigate(`/packages/${pkg.slug}`);
   };
 
   const handleSelectDestination = (slug: string) => {

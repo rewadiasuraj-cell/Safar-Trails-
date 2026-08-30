@@ -1,1 +1,2 @@
+/destinations/*/packages/:slug  /packages/:slug  301
 /tour-packages/*  /packages/:splat  301

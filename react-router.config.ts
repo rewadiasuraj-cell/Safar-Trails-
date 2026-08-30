@@ -5,6 +5,7 @@ export default {
   async prerender({ getStaticPaths }) {
     console.log("=== EXECUTING PRERENDER FUNCTION IN REACT ROUTER CONFIG ===");
     const staticPaths = getStaticPaths();
+    console.log("getStaticPaths():", staticPaths);
     const dynamicPaths: string[] = [];
 
     // Static fallback destination slugs
@@ -15,7 +16,6 @@ export default {
       'kerala',
       'rajasthan',
       'himachal-pradesh',
-      'andaman-nicobar',
       'andaman',
       'northeast-india',
       'uttarakhand'
@@ -75,34 +75,6 @@ export default {
       if (!dynamicPaths.includes(`/packages/${slug}`)) {
         dynamicPaths.push(`/packages/${slug}`);
       }
-    });
-
-    // Generate /destinations/:destSlug/packages/:pkgSlug routes for destination-package detail compatibility
-    const destPkgPairs = [
-      { dest: 'chardham-yatra', pkg: 'chardham-yatra-haridwar-yamunotri-gangotri-kedarnath-badrinath-10d9n' },
-      { dest: 'chardham-yatra', pkg: 'chardham-yatra-package' },
-      { dest: 'chardham-yatra', pkg: 'chardham-yatra-premium' },
-      { dest: 'kashmir', pkg: 'kashmir-escape-houseboat-bliss' },
-      { dest: 'kashmir', pkg: 'kashmir-premium-escape' },
-      { dest: 'goa', pkg: 'romantic-goa-boutique-beach-backwater' },
-      { dest: 'goa', pkg: 'goa-premium-holiday' },
-      { dest: 'kerala', pkg: 'kerala-nature-munnar-alleppey-houseboat' },
-      { dest: 'kerala', pkg: 'kerala-complete-holiday' },
-      { dest: 'rajasthan', pkg: 'royal-rajasthan-heritage-desert-dunes' },
-      { dest: 'rajasthan', pkg: 'rajasthan-heritage-tour' },
-      { dest: 'himachal-pradesh', pkg: 'himachal-manali-solang-sissu-retreat' },
-      { dest: 'himachal-pradesh', pkg: 'himachal-adventure-tour' },
-      { dest: 'andaman', pkg: 'andaman-turquoise-havelock-scuba-dream' },
-      { dest: 'andaman-nicobar', pkg: 'andaman-turquoise-havelock-scuba-dream' },
-      { dest: 'andaman', pkg: 'andaman-premium' },
-      { dest: 'northeast-india', pkg: 'meghalaya-living-root-bridges-dawki-shillong' },
-      { dest: 'northeast-india', pkg: 'sikkim-explorer' },
-      { dest: 'uttarakhand', pkg: 'uttarakhand-rishikesh-mussoorie-corbett' },
-      { dest: 'uttarakhand', pkg: 'auli-himalayan-retreat' },
-    ];
-
-    destPkgPairs.forEach(({ dest, pkg }) => {
-      dynamicPaths.push(`/destinations/${dest}/packages/${pkg}`);
     });
 
     const allPaths = Array.from(new Set([...staticPaths, ...dynamicPaths]));
