@@ -83,363 +83,327 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
         </div>
       </div>
 
-      {/* Hero Visual Section */}
-      <section className="relative w-full h-[420px] sm:h-[500px] overflow-hidden">
-        <img
-          src={destination.heroImage}
-          alt={destination.name}
-          className="w-full h-full object-cover"
-          referrerPolicy="no-referrer"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+      {/* Hero Visual Section - Curved Bottom with Dark Vignette */}
+      <section className="relative w-full bg-[#0F172A] text-white pt-6 pb-16 md:pb-24 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={destination.heroImage}
+            alt={destination.name}
+            className="w-full h-full object-cover opacity-40 scale-105"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0B1329]/90 via-[#0F172A]/70 to-[#0F172A]" />
+        </div>
 
-        <div className="absolute bottom-8 left-0 right-0 w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 text-white space-y-4">
-          <div className="flex flex-wrap items-center gap-2">
+        <div className="relative z-10 w-full max-w-7xl xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 space-y-6 pt-4">
+          {/* Top Category Badge */}
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-[#1E293B]/80 text-[#E6C687] border border-[#E6C687]/40 shadow-sm backdrop-blur-md">
+              <Compass className="w-3.5 h-3.5 text-[#E6C687]" />
+              <span>{destination.state} DESTINATION</span>
+            </span>
             {destination.isTrending && (
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#FF6B00] text-white shadow-md border border-orange-400/80">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#FF6B00] text-white shadow-md">
                 <Flame className="w-3.5 h-3.5 text-white fill-white shrink-0" />
                 <span>Trending</span>
               </span>
             )}
-            <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-black text-white border border-white/20">
-              {destination.state}
-            </span>
-            <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white/20 backdrop-blur-md text-white">
-              Ideal: {destination.idealDays}
-            </span>
-            <ExpertVerifiedBadge variant="glass-dark" size="sm" showSubtitle={true} />
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white text-gray-900 border border-white/90 shadow-md">
+            <ExpertVerifiedBadge variant="glass-dark" size="sm" showSubtitle={false} />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white/10 backdrop-blur-md text-white border border-white/20">
               <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400 shrink-0" />
-              <span className="text-black font-extrabold">{destination.rating ? destination.rating.toFixed(1) : '4.9'} / 5.0</span>
+              <span className="text-white font-extrabold">{destination.rating ? destination.rating.toFixed(1) : '4.9'} / 5.0</span>
               {destination.reviewCount && (
-                <span className="text-[11px] font-medium text-gray-600">({destination.reviewCount.toLocaleString()} reviews)</span>
+                <span className="text-[11px] font-medium text-gray-300">({destination.reviewCount.toLocaleString()})</span>
               )}
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-serif font-bold tracking-tight">
-            {destination.name}
+          {/* Large Serif Title with Gold Accent */}
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-bold text-white tracking-tight leading-tight">
+            {destination.name.split(' ')[0]}{' '}
+            <span className="text-[#E6A024]">
+              {destination.name.split(' ').slice(1).join(' ') || destination.state}
+            </span>
           </h1>
 
+          {/* Description Paragraph */}
+          <p className="text-gray-200 text-base sm:text-lg max-w-3xl leading-relaxed font-normal">
+            {destination.shortDescription || destination.fullOverview.slice(0, 260) + '...'}
+          </p>
+
           {/* Quick Stats Bar */}
-          <div className="pt-2 flex flex-wrap items-center gap-4 sm:gap-8 text-xs text-gray-300">
-            <div className="flex items-center gap-1.5">
-              <Calendar className="w-4 h-4 text-white" />
+          <div className="pt-2 flex flex-wrap items-center gap-6 sm:gap-10 text-xs sm:text-sm text-gray-300 border-t border-white/10">
+            <div className="flex items-center gap-2 pt-4">
+              <Calendar className="w-4 h-4 text-[#E6C687]" />
               <span><strong>Best Season:</strong> {destination.bestTime}</span>
             </div>
-            <div className="flex items-center gap-1.5">
-              <Thermometer className="w-4 h-4 text-white" />
-              <span>{destination.temperatureRange}</span>
+            <div className="flex items-center gap-2 pt-4">
+              <Thermometer className="w-4 h-4 text-[#E6C687]" />
+              <span><strong>Weather:</strong> {destination.temperatureRange}</span>
+            </div>
+            <div className="flex items-center gap-2 pt-4">
+              <MapPin className="w-4 h-4 text-[#E6C687]" />
+              <span><strong>Ideal Trip:</strong> {destination.idealDays}</span>
             </div>
           </div>
         </div>
+
+        {/* Curved Mask Divider */}
+        <div className="absolute bottom-0 left-0 right-0 h-10 bg-[#FAF9F5] rounded-t-[50%] z-20" />
       </section>
 
-      {/* Floating CTA / AI Prompt Bar */}
-      <div className="w-full bg-[#0A0A0A] text-white py-4 border-y border-gray-800">
-        <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-2 text-xs sm:text-sm font-normal">
-            <AIIcon className="w-4 h-4 text-white" />
-            <span>Customize a bespoke {destination.name} itinerary in 10 seconds.</span>
-          </div>
-          <div className="flex items-center gap-2 w-full sm:w-auto">
-            <button
-              onClick={() => onStartAIPlan(destination.name)}
-              className="flex-1 sm:flex-initial px-4 sm:px-5 py-2.5 rounded-xl bg-white hover:bg-gray-100 text-black text-xs font-bold uppercase tracking-wider transition-colors inline-flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer shadow-sm text-center"
-            >
-              <AIIcon className="w-3.5 h-3.5 text-black shrink-0" />
-              <span className="whitespace-nowrap">Plan {destination.name} with AI</span>
-            </button>
-            <button
-              onClick={() => onOpenQuoteModal(`Enquiry for ${destination.name} Holiday`)}
-              className="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer text-center"
-            >
-              Request Quote
-            </button>
-          </div>
-        </div>
-      </div>
-
       {/* Main Content Layout */}
-      <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-10">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-          {/* Left 2 Cols: Main Editorial Content */}
-          <div className="lg:col-span-2 space-y-12">
-            {/* Overview Section */}
-            <section className="space-y-4">
-              <h2 className="text-2xl font-serif font-bold text-black tracking-tight">
-                Overview & Experience
-              </h2>
-              <p className="text-gray-600 text-sm sm:text-base leading-relaxed font-normal">
-                {destination.fullOverview}
-              </p>
-
-              {/* Highlights Checklist */}
-              <div className="bg-white rounded-2xl p-6 border border-gray-200 space-y-3 mt-4 shadow-xs">
-                <h3 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-                  Signature SafarTrails Experiences
-                </h3>
-                <div className="grid grid-cols-1 gap-2.5">
-                  {destination.highlights.map((hl, i) => (
-                    <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-700 font-normal">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
-                      <span>{hl}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* Seasonal Weather Summary & Best Time to Visit Widget */}
-            <SeasonalWeatherWidget
-              destination={destination}
-              onStartAIPlan={onStartAIPlan}
-              onOpenQuoteModal={onOpenQuoteModal}
-            />
-
-            {/* Interactive Mock Map with Major Attractions & Package Pins */}
-            <DestinationInteractiveMap
-              destination={destination}
-              packages={destinationPackages}
-              onSelectPackage={onSelectPackage}
-              onStartAIPlan={onStartAIPlan}
-              onOpenQuoteModal={onOpenQuoteModal}
-            />
-
-            {/* Top Attractions Grid */}
-            <section className="space-y-6">
-              <h2 className="text-2xl font-serif font-bold text-black tracking-tight">
-                Top Places & Sights in {destination.name}
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {destination.topAttractions.map((att, i) => (
-                  <div
-                    key={i}
-                    className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-xs hover:border-black transition-all"
-                  >
-                    <div className="h-44 overflow-hidden">
-                      <img src={att.image} alt={att.name} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-                    </div>
-                    <div className="p-4 space-y-1">
-                      <h3 className="font-serif font-bold text-base text-black">{att.name}</h3>
-                      <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed font-normal">{att.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* How to Reach Guide */}
-            <section className="space-y-4">
-              <h2 className="text-2xl font-serif font-bold text-black tracking-tight">
-                How to Reach {destination.name}
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="p-4 rounded-2xl bg-white border border-gray-200 space-y-2 shadow-xs">
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-black">
-                    <Plane className="w-4 h-4 text-black" />
-                    <span>By Air</span>
-                  </div>
-                  <p className="text-xs text-gray-500 leading-relaxed font-normal">{destination.howToReach.air}</p>
-                </div>
-
-                <div className="p-4 rounded-2xl bg-white border border-gray-200 space-y-2 shadow-xs">
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-black">
-                    <Train className="w-4 h-4 text-black" />
-                    <span>By Rail</span>
-                  </div>
-                  <p className="text-xs text-gray-500 leading-relaxed font-normal">{destination.howToReach.rail}</p>
-                </div>
-
-                <div className="p-4 rounded-2xl bg-white border border-gray-200 space-y-2 shadow-xs">
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-black">
-                    <Car className="w-4 h-4 text-black" />
-                    <span>By Road</span>
-                  </div>
-                  <p className="text-xs text-gray-500 leading-relaxed font-normal">{destination.howToReach.road}</p>
-                </div>
-              </div>
-            </section>
-
-            {/* Stay Categories & Recommendations */}
-            <section className="space-y-4">
-              <h2 className="text-2xl font-serif font-bold text-black tracking-tight">
-                Where to Stay: Verified Tiers
-              </h2>
-              <div className="space-y-3">
-                {destination.stayCategories.map((stay, i) => (
-                  <div key={i} className="p-4 rounded-2xl border border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-white shadow-xs">
-                    <div>
-                      <div className="text-sm font-bold text-black">{stay.category}</div>
-                      <div className="text-xs text-gray-500 font-normal">{stay.recommendation}</div>
-                    </div>
-                    <div className="text-xs font-bold uppercase tracking-wider text-black whitespace-nowrap bg-gray-100 px-3 py-1.5 rounded-xl">
-                      {stay.priceRange}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Curated Packages for this Destination */}
-            {destinationPackages.length > 0 && (
-              <section className="space-y-4 pt-4">
-                <div className="flex items-center justify-between">
-                  <h2 className="text-2xl font-serif font-bold text-black tracking-tight">
-                    Popular {destination.name} Packages
-                  </h2>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {destinationPackages.map((pkg) => (
-                    <div
-                      key={pkg.id}
-                      className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-xs hover:border-black transition-all flex flex-col justify-between"
-                    >
-                      <div className="relative h-44">
-                        <img src={pkg.heroImage} alt={pkg.title} className="w-full h-full object-cover" />
-                        <span className="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-black/80 text-white backdrop-blur-xs">
-                          {pkg.durationDays}D / {pkg.durationNights}N
-                        </span>
-                      </div>
-                      <div className="p-4 space-y-2">
-                        <h3 className="font-serif font-bold text-base text-black line-clamp-1">{pkg.title}</h3>
-                        <p className="text-xs text-gray-500 line-clamp-2 font-normal">{pkg.overview}</p>
-                        <div className="pt-2 border-t border-gray-100 space-y-3">
-                          <div className="flex items-baseline justify-between">
-                            <div>
-                              <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 block">Starting from</span>
-                              <span className="text-sm font-extrabold text-black">
-                                ₹{pkg.startingPrice.toLocaleString('en-IN')}/person
-                              </span>
-                            </div>
-                          </div>
-
-                          <div className="grid grid-cols-2 gap-2">
-                            <button
-                              onClick={() => onSelectPackage(pkg)}
-                              className="py-2 px-2.5 rounded-xl border border-gray-200 hover:border-black text-black font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer text-center"
-                            >
-                              More Info
-                            </button>
-                            <button
-                              onClick={() => onOpenQuoteModal(`Booking Inquiry: ${pkg.title} (${pkg.durationDays}D/${pkg.durationNights}N)`, destination.name)}
-                              className="py-2 px-2.5 rounded-xl bg-[#FF6B00] hover:bg-[#e05e00] text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-2xs cursor-pointer text-center"
-                            >
-                              Book Now
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {/* FAQs */}
-            {destination.faqs && destination.faqs.length > 0 && (
-              <section className="space-y-4">
-                <h2 className="text-2xl font-serif font-bold text-black tracking-tight">
-                  Frequently Asked Questions about {destination.name}
-                </h2>
-                <div className="space-y-2.5">
-                  {destination.faqs.map((faq, i) => (
-                    <div key={i} className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-xs">
-                      <button
-                        onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                        className="w-full p-4 text-left font-serif font-bold text-sm sm:text-base text-black flex items-center justify-between hover:bg-gray-50 cursor-pointer"
-                      >
-                        <span>{faq.question}</span>
-                        {openFaq === i ? (
-                          <ChevronUp className="w-4 h-4 text-black flex-shrink-0" />
-                        ) : (
-                          <ChevronDown className="w-4 h-4 text-gray-400 flex-shrink-0" />
-                        )}
-                      </button>
-                      {openFaq === i && (
-                        <div className="p-4 pt-2 text-xs sm:text-sm text-gray-600 border-t border-gray-100 font-normal">
-                          {faq.answer}
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </section>
-            )}
+      <div className="w-full max-w-7xl xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-6 space-y-16">
+        
+        {/* HIGHLIGHTS SECTION (Matching Reference Image) */}
+        <section className="space-y-6">
+          <div className="flex items-center gap-3">
+            <h2 className="text-xs font-mono font-bold uppercase tracking-widest text-[#B8860B]">
+              HIGHLIGHTS
+            </h2>
+            <div className="h-[1px] w-24 bg-[#E6C687]/60" />
           </div>
 
-          {/* Right Col: Sticky Booking / Expert Box */}
-          <div className="space-y-6">
-            <div className="sticky top-28 bg-white rounded-2xl p-6 border border-gray-200 shadow-sm space-y-6">
-              <div className="border-b border-gray-100 pb-4">
-                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest block">
-                  Indicative Package Starting Cost
-                </span>
-                <div className="text-3xl font-serif font-bold text-black mt-1">
-                  ₹{destination.startingPrice.toLocaleString('en-IN')}
-                  <span className="text-xs font-normal text-gray-400 ml-1">/ person</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {destination.highlights.map((hl, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-2xl p-5 border border-[#E6E0D4] flex items-start gap-4 shadow-xs hover:shadow-md transition-all group"
+              >
+                <div className="w-12 h-12 rounded-full bg-[#FFFDF7] border border-[#E6C687] text-[#B8860B] flex items-center justify-center shrink-0 group-hover:bg-[#B8860B] group-hover:text-white transition-colors">
+                  <CheckCircle2 className="w-5 h-5" />
                 </div>
-                <div className="text-[11px] text-emerald-600 font-semibold mt-1">
-                  ✓ Includes Stay, Private Cab & Daily Meals
-                </div>
-
-                {/* Best Season Quick Pill */}
-                <div className="mt-3.5 pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
-                  <span className="text-gray-500 font-medium flex items-center gap-1.5">
-                    <CloudSun className="w-3.5 h-3.5 text-orange-500" />
-                    <span>Best Time:</span>
-                  </span>
-                  <span className="font-bold text-slate-900 text-[11px] text-right truncate max-w-[170px]" title={destination.bestTime}>
-                    {destination.bestTime.split('|')[0].trim()}
-                  </span>
+                <div className="space-y-1 pt-1">
+                  <p className="text-sm font-semibold text-slate-800 leading-snug">
+                    {hl}
+                  </p>
                 </div>
               </div>
+            ))}
+          </div>
+        </section>
 
-              {/* Action Buttons */}
-              <div className="space-y-3">
-                <button
-                  onClick={() => onStartAIPlan(destination.name)}
-                  className="w-full py-3.5 px-4 rounded-xl bg-black hover:bg-gray-800 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all inline-flex items-center justify-center gap-2 cursor-pointer text-center"
-                >
-                  <AIIcon className="w-4 h-4 text-white shrink-0" />
-                  <span className="whitespace-nowrap">Generate {destination.name} Plan</span>
-                </button>
+        {/* GALLERY SECTION (Matching Reference Image) */}
+        <section className="space-y-6">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <h2 className="text-xs font-mono font-bold uppercase tracking-widest text-[#B8860B]">
+                GALLERY
+              </h2>
+              <div className="h-[1px] w-24 bg-[#E6C687]/60" />
+            </div>
 
-                <button
-                  onClick={() => onOpenQuoteModal(`Interested in customized tour package to ${destination.name}`, destination.name)}
-                  className="w-full py-3.5 rounded-xl border border-gray-200 hover:border-black text-black font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer"
-                >
-                  <span>Request Custom Quote</span>
-                </button>
+            <button
+              onClick={() => setActiveTab('attractions')}
+              className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#B8860B] hover:text-[#916705] transition-colors"
+            >
+              <span>VIEW ALL</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
 
-                <a
-                  href={`https://wa.me/918076665782?text=${encodeURIComponent(`Hi SafarTrails! I want to plan a trip to ${destination.name}. Can a specialist assist me?`)}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full py-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
-                >
-                  <span>Chat on WhatsApp</span>
-                </a>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {(destination.topAttractions.length > 0 ? destination.topAttractions : [
+              { name: destination.name, image: destination.heroImage },
+              { name: destination.name + ' Sights', image: destination.cardImage }
+            ]).slice(0, 4).map((item, i) => (
+              <div key={i} className="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 border border-[#E6E0D4] shadow-xs group relative">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-3 flex items-end">
+                  <span className="text-white text-xs font-medium truncate">{item.name}</span>
+                </div>
               </div>
+            ))}
+          </div>
+        </section>
 
-              {/* Trust signals */}
-              <div className="pt-4 border-t border-gray-100 space-y-2 text-xs text-gray-500 font-normal">
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                  <span>Verified 4.5+ Star Hotels & Chauffeurs</span>
+        {/* TOUR PACKAGES SECTION (Matching Reference Image) */}
+        <section className="space-y-6">
+          <div className="flex items-center gap-3">
+            <h2 className="text-xs font-mono font-bold uppercase tracking-widest text-[#B8860B]">
+              TOUR PACKAGES FOR {destination.name.toUpperCase()}
+            </h2>
+            <div className="h-[1px] w-32 bg-[#E6C687]/60" />
+          </div>
+
+          {destinationPackages.length > 0 ? (
+            <div className="space-y-6">
+              {destinationPackages.map((pkg) => (
+                <div
+                  key={pkg.id}
+                  className="bg-white border border-[#E6E0D4] rounded-3xl p-5 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 hover:shadow-md transition-all relative overflow-hidden"
+                >
+                  {/* Left Package Image */}
+                  <div className="w-full md:w-1/3 aspect-[4/3] rounded-2xl overflow-hidden shrink-0 relative">
+                    <img
+                      src={pkg.heroImage}
+                      alt={pkg.title}
+                      className="w-full h-full object-cover"
+                    />
+                    {pkg.isPopular && (
+                      <span className="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#FF6B00] text-white shadow-md">
+                        Popular Pick
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Package Details */}
+                  <div className="flex-1 space-y-4 w-full">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-[#FFF8E7] text-[#B8860B] border border-[#E6C687]/60">
+                        MOST POPULAR
+                      </span>
+                      <div className="flex items-center gap-1.5 text-xs text-gray-500 font-medium">
+                        <Calendar className="w-3.5 h-3.5 text-[#B8860B]" />
+                        <span>{pkg.durationNights} Nights • {pkg.durationDays} Days</span>
+                      </div>
+                    </div>
+
+                    <h3 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+                      {pkg.title}
+                    </h3>
+
+                    <div className="flex flex-wrap items-baseline gap-2">
+                      <span className="text-2xl sm:text-3xl font-bold text-slate-900">
+                        ₹{pkg.startingPrice.toLocaleString('en-IN')}
+                      </span>
+                      <span className="text-xs text-gray-500 font-normal">/ person</span>
+                    </div>
+
+                    <button
+                      onClick={() => onSelectPackage(pkg)}
+                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#154238] hover:text-[#0b241e] transition-colors cursor-pointer pt-1"
+                    >
+                      <span>VIEW IN PACKAGES</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </button>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-black" />
-                  <span>100% Tailored to your dates & family</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-black" />
-                  <span>24/7 On-Trip WhatsApp Concierge</span>
-                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="bg-white border border-[#E6E0D4] rounded-3xl p-8 text-center space-y-4">
+              <h3 className="text-xl font-serif font-bold text-slate-900">
+                Custom {destination.name} Package Available
+              </h3>
+              <p className="text-sm text-gray-600 max-w-md mx-auto">
+                Starting from ₹{destination.startingPrice.toLocaleString('en-IN')}/person. Get a tailored itinerary crafted specifically for your dates & group size.
+              </p>
+              <button
+                onClick={() => onOpenQuoteModal(`Custom Tour Request: ${destination.name}`, destination.name)}
+                className="px-6 py-3 rounded-full bg-[#154238] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#0f322a] transition-colors cursor-pointer"
+              >
+                Request Custom Itinerary
+              </button>
+            </div>
+          )}
+        </section>
+
+        {/* Interactive Map & Seasonal Weather Section */}
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <SeasonalWeatherWidget
+            destination={destination}
+            onStartAIPlan={onStartAIPlan}
+            onOpenQuoteModal={onOpenQuoteModal}
+          />
+          <DestinationInteractiveMap
+            destination={destination}
+            packages={destinationPackages}
+            onSelectPackage={onSelectPackage}
+            onStartAIPlan={onStartAIPlan}
+            onOpenQuoteModal={onOpenQuoteModal}
+          />
+        </section>
+
+        {/* Overview & How to Reach */}
+        <section className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2 space-y-6 bg-white rounded-3xl p-6 sm:p-8 border border-[#E6E0D4] shadow-xs">
+            <h2 className="text-2xl font-serif font-bold text-slate-900">
+              Overview & Experience
+            </h2>
+            <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
+              {destination.fullOverview}
+            </p>
+          </div>
+
+          <div className="space-y-4 bg-white rounded-3xl p-6 border border-[#E6E0D4] shadow-xs">
+            <h3 className="text-lg font-serif font-bold text-slate-900">How to Reach {destination.name}</h3>
+            <div className="space-y-3 text-xs sm:text-sm text-slate-700">
+              <div className="flex items-start gap-2.5">
+                <Plane className="w-4 h-4 text-[#B8860B] shrink-0 mt-0.5" />
+                <div><strong>By Air:</strong> {destination.howToReach.air}</div>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <Train className="w-4 h-4 text-[#B8860B] shrink-0 mt-0.5" />
+                <div><strong>By Rail:</strong> {destination.howToReach.rail}</div>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <Car className="w-4 h-4 text-[#B8860B] shrink-0 mt-0.5" />
+                <div><strong>By Road:</strong> {destination.howToReach.road}</div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
+
+        {/* FAQs */}
+        {destination.faqs && destination.faqs.length > 0 && (
+          <section className="space-y-6">
+            <h2 className="text-2xl font-serif font-bold text-slate-900">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-3">
+              {destination.faqs.map((faq, i) => (
+                <div key={i} className="border border-[#E6E0D4] rounded-2xl overflow-hidden bg-white shadow-xs">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    className="w-full p-4 text-left font-serif font-bold text-sm sm:text-base text-slate-900 flex items-center justify-between hover:bg-[#FAF9F5] cursor-pointer"
+                  >
+                    <span>{faq.question}</span>
+                    {openFaq === i ? (
+                      <ChevronUp className="w-4 h-4 text-slate-900 shrink-0" />
+                    ) : (
+                      <ChevronDown className="w-4 h-4 text-slate-400 shrink-0" />
+                    )}
+                  </button>
+                  {openFaq === i && (
+                    <div className="p-4 pt-2 text-xs sm:text-sm text-slate-600 border-t border-[#E6E0D4] font-normal leading-relaxed">
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* DUAL ACTION BUTTONS (Matching Reference Design at Bottom) */}
+        <section className="pt-4 pb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+            <button
+              onClick={() => onStartAIPlan(destination.name)}
+              className="w-full py-4 px-6 rounded-full bg-[#154238] hover:bg-[#0e2f28] text-white font-bold text-base tracking-wide shadow-lg transition-all flex items-center justify-center gap-2.5 cursor-pointer text-center"
+            >
+              <AIIcon className="w-5 h-5 text-white shrink-0" />
+              <span>Plan {destination.name} with AI</span>
+            </button>
+
+            <button
+              onClick={() => onOpenQuoteModal(`Booking Request for ${destination.name}`, destination.name)}
+              className="w-full py-4 px-6 rounded-full bg-[#D4820A] hover:bg-[#b87007] text-white font-bold text-base tracking-wide shadow-lg transition-all flex items-center justify-center gap-2.5 cursor-pointer text-center"
+            >
+              <span>Book Now</span>
+              <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">
+                <ArrowRight className="w-4 h-4 text-white" />
+              </div>
+            </button>
+          </div>
+        </section>
+
       </div>
 
       {/* Floating Share Button on Destination Detail View */}
