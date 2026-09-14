@@ -28,12 +28,15 @@ export const GuidesPage: React.FC<GuidesPageProps> = ({ onSelectGuide }) => {
       <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <div className="mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-800 text-xs font-bold uppercase tracking-widest mb-3">
-            <BookOpen className="w-3.5 h-3.5 text-luxury-gold" />
+            <BookOpen className="w-3.5 h-3.5 text-gold-ink" aria-hidden="true" />
             <span>Travel Guides</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-serif text-black tracking-tight">Guides & Insights</h2>
-          <p className="mt-2 text-gray-500 text-sm sm:text-base max-w-2xl">
-            Expert tips and itineraries, managed from our Sanity Studio.
+          <h1 className="text-3xl sm:text-4xl font-serif text-black tracking-tight">
+            India Travel Guides
+          </h1>
+          <p className="mt-2 text-slate-600 text-sm sm:text-base max-w-2xl">
+            Written by the specialists who plan these trips every week: when to visit, what a trip
+            really costs, and the mistakes first-timers make.
           </p>
         </div>
 
@@ -66,7 +69,7 @@ export const GuidesPage: React.FC<GuidesPageProps> = ({ onSelectGuide }) => {
                 </div>
                 <div className="p-5">
                   {guide.relatedDestination && (
-                    <div className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-luxury-gold mb-1.5">
+                    <div className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-gold-ink mb-1.5">
                       <MapPin className="w-3 h-3" />
                       <span>{guide.relatedDestination.title}</span>
                     </div>

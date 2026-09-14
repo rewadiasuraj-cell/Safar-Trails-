@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, MapPin, Users, Calendar, ChevronDown, ShieldCheck, BadgeCheck } from 'lucide-react';
 import { AIIcon } from './AIIcon';
+import { trackAIPlanRequested } from '../lib/analytics';
 
 interface HeroSectionProps {
   onStartAIPlan: (promptText?: string) => void;
@@ -46,6 +47,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   }, []);
 
   const handlePlanWithAI = () => {
+    trackAIPlanRequested(destination || 'unspecified');
     if (!destination && !travelers && !duration) {
       onStartAIPlan();
       return;
@@ -80,19 +82,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
       <div className="relative z-10 w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <div className="max-w-2xl lg:max-w-3xl">
-          {/* Eyebrow: AI PLANS. EXPERTS PERFECT. */}
-          <div className="mb-3">
-            <span className="text-luxury-gold text-xs sm:text-[13px] font-extrabold uppercase tracking-[0.25em]">
-              AI PLANS. EXPERTS PERFECT.
+          {/* Main Editorial Headline. The gold overline is part of the H1 so the
+              page's only heading-level-1 carries the head keyword. */}
+          <h1 className="font-serif text-white tracking-tight mb-4">
+            <span className="block text-luxury-gold text-xs sm:text-[13px] font-sans-ui font-extrabold uppercase tracking-[0.25em] mb-3">
+              Custom India Tour Packages · AI Plans, Experts Perfect
             </span>
-          </div>
-
-          {/* Main Editorial Headline */}
-          <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-serif text-white tracking-tight leading-[1.08] mb-4">
-            <span>Your Journey.</span>
-            <br />
-            <span className="text-luxury-gold italic font-serif">
-              Our Passion.
+            <span className="block text-4xl sm:text-6xl lg:text-[68px] leading-[1.08]">
+              Your Journey.
+              <br />
+              <span className="text-luxury-gold italic">Our Passion.</span>
             </span>
           </h1>
 
@@ -105,19 +104,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div className="flex items-center gap-6 sm:gap-8 mb-7 sm:mb-8">
             <div className="flex flex-col items-center gap-1.5">
               <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center">
-                <AIIcon className="w-4 h-4 text-white" />
+                <AIIcon className="w-4 h-4 text-white" aria-hidden="true" />
               </div>
               <span className="text-[10px] sm:text-[11px] font-semibold text-gray-300 whitespace-nowrap">AI Powered</span>
             </div>
             <div className="flex flex-col items-center gap-1.5">
               <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center">
-                <BadgeCheck className="w-4 h-4 text-white" />
+                <BadgeCheck className="w-4 h-4 text-white" aria-hidden="true" />
               </div>
               <span className="text-[10px] sm:text-[11px] font-semibold text-gray-300 whitespace-nowrap">Expert Verified</span>
             </div>
             <div className="flex flex-col items-center gap-1.5">
               <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center">
-                <ShieldCheck className="w-4 h-4 text-white" />
+                <ShieldCheck className="w-4 h-4 text-white" aria-hidden="true" />
               </div>
               <span className="text-[10px] sm:text-[11px] font-semibold text-gray-300 whitespace-nowrap">Trusted</span>
             </div>

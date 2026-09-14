@@ -35,13 +35,27 @@ export const WHATSAPP_NUMBER = '918076665782';
  */
 export const PRIMARY_EMAIL = 'info.safartrails@gmail.com';
 
+/**
+ * The website footer and the Google Business Profile listing disagreed on the
+ * street line ("Dwarka Mor" on site, "Nawada" on GBP). This is the site's own,
+ * fuller version and is now used by the footer, the JSON-LD and anywhere else
+ * the address appears.
+ *
+ * ACTION FOR THE OWNER: make the Google Business Profile address match this
+ * string character for character. NAP consistency is a direct local-ranking
+ * factor, and a listing that disagrees with the site weakens both.
+ */
 export const POSTAL_ADDRESS = {
-  streetAddress: 'Pillar No. 786, Plot No. 2, Jai Bharat Enclave, Bhagwati Garden, Nawada',
+  streetAddress:
+    'First Floor, Plot No. 02, Jai Bharat Enclave, Bhagwati Garden, Metro Pillar No. 786, Dwarka Mor',
   addressLocality: 'New Delhi',
   addressRegion: 'Delhi',
   postalCode: '110059',
   addressCountry: 'IN',
 } as const;
+
+/** The same address as one display string, so the footer cannot drift from the schema. */
+export const DISPLAY_ADDRESS = `${POSTAL_ADDRESS.streetAddress}, ${POSTAL_ADDRESS.addressLocality} ${POSTAL_ADDRESS.postalCode}`;
 
 export const GEO = {
   latitude: 28.6139,

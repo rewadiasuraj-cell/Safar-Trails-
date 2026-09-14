@@ -23,17 +23,20 @@ export const SafarLogo: React.FC<SafarLogoProps> = ({
     sm: 'w-[130px] h-[31px] sm:w-[150px] sm:h-[36px]',
     md: 'w-[160px] h-[38px] sm:w-[185px] sm:h-[44px]',
     lg: 'w-[200px] h-[48px] md:w-[230px] md:h-[55px]',
-    responsive: 'w-[135px] h-[33px] sm:w-[155px] sm:h-[37px] md:w-[175px] md:h-[42px] lg:w-[195px] lg:h-[47px]'
+    // The extra min-[360px] step keeps the header from overflowing 320px-wide
+    // phones, where the logo plus four controls exceeded the viewport.
+    responsive:
+      'w-[112px] h-[27px] min-[360px]:w-[135px] min-[360px]:h-[33px] sm:w-[155px] sm:h-[37px] md:w-[175px] md:h-[42px] lg:w-[195px] lg:h-[47px]'
   }[size] || 'w-[195px] h-[47px]';
 
   return (
-    <div 
+    <div
       className={`inline-flex items-center select-none cursor-pointer group ${className}`}
-      title="Safar Trails — Travel With Trust"
+      title="Safar Trails — Travel with Trust"
     >
       <img
         src={logoSrc}
-        alt="Safar Trails - Travel With Trust"
+        alt="Safar Trails — Travel with Trust"
         className={`${sizeClasses} ${imgClassName} object-contain transition-transform duration-200 group-hover:scale-[1.01]`}
         style={imgStyle}
         width={560}

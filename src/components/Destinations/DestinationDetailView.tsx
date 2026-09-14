@@ -71,16 +71,16 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
     <div id="destination-detail-page" className="w-full pt-20 pb-24 bg-[#FAF9F6]">
       {/* Top Breadcrumbs & Back Bar */}
       <div className="w-full bg-white border-b border-gray-200 py-3.5">
-        <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 flex items-center justify-between">
+        <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 flex flex-wrap items-center justify-between gap-y-2 gap-x-3">
           <button
             onClick={onBack}
             className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-black hover:opacity-70 transition-opacity cursor-pointer"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-4 h-4" aria-hidden="true" />
             <span>Back to Destinations</span>
           </button>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <FloatingShareButton
               title={`${destination.name} Travel Guide & Holiday Packages | SafarTrails`}
               text={`Explore tailored itineraries, attractions, and holiday packages for ${destination.name} (${destination.state}). Starting from ₹${destination.startingPrice.toLocaleString('en-IN')}/person.`}
@@ -88,13 +88,13 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
               className="bg-slate-100 hover:bg-slate-200 text-slate-800 border-slate-200"
             />
 
-            <div className="text-xs text-gray-400 flex items-center gap-1.5 font-medium">
+            <nav aria-label="Breadcrumb" className="hidden sm:flex text-xs text-slate-500 items-center gap-1.5 font-medium">
               <span>Destinations</span>
               <span>/</span>
               <span>{destination.state}</span>
               <span>/</span>
               <span className="font-bold text-black">{destination.name}</span>
-            </div>
+            </nav>
           </div>
         </div>
       </div>
@@ -120,7 +120,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
               <span>{destination.state} DESTINATION</span>
             </span>
             {destination.isTrending && (
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#FF6B00] text-white shadow-md">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-accent-ink text-white shadow-md">
                 <Flame className="w-3.5 h-3.5 text-white fill-white shrink-0" />
                 <span>Trending</span>
               </span>
@@ -262,7 +262,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                       className="w-full h-full object-cover"
                     />
                     {pkg.isPopular && (
-                      <span className="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#FF6B00] text-white shadow-md">
+                      <span className="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-accent-ink text-white shadow-md">
                         Popular Pick
                       </span>
                     )}

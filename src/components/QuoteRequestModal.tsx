@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { WhatsAppIcon } from './WhatsAppIcon';
+import { trackQuoteFormSubmit, trackQuoteFormSuccess, trackWhatsAppClick } from '../lib/analytics';
+import { WHATSAPP_NUMBER } from '../lib/seo/siteConfig';
 import { 
   X, 
   Send, 
@@ -89,6 +91,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
 
     setIsSubmitting(true);
     setErrorMsg(null);
+    trackQuoteFormSubmit(destination, 'quote_modal');
 
     try {
       const response = await fetch('/api/quotes', {
@@ -109,6 +112,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
 
       const data = await response.json();
       if (data.success) {
+        trackQuoteFormSuccess(destination, data.leadId);
         // /api/quotes already sends the notification email itself (server.ts
         // and the Cloudflare Pages Function both do) - no separate call here,
         // or it would double-send on hosts where that endpoint works.
@@ -127,9 +131,11 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
         `Name: ${name} (${phone})\n` +
         `Notes: ${notes || initialSummary}`
       );
+      // The lead still reaches us over WhatsApp on this path, so it counts.
+      trackQuoteFormSuccess(destination, fallbackId);
       setSubmittedLead({
         leadId: fallbackId,
-        whatsappUrl: `https://wa.me/918076665782?text=${encodedMsg}`
+        whatsappUrl: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMsg}`
       });
       // /api/quotes itself failed/unreachable, so no server-side email was
       // ever attempted - this is the one remaining path where the separate
@@ -192,10 +198,11 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
               <a
                 href={submittedLead.whatsappUrl}
                 target="_blank"
-                rel="noreferrer"
-                className="w-full py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2.5"
+                rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick('quote_modal_success', destination)}
+                className="w-full py-3.5 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2.5"
               >
-                <WhatsAppIcon className="w-4.5 h-4.5" />
+                <WhatsAppIcon className="w-4.5 h-4.5" aria-hidden="true" />
                 <span>Continue on WhatsApp Now</span>
               </a>
 
@@ -211,19 +218,31 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
           /* Input Form */
           <form onSubmit={handleSubmit} className="p-6 space-y-4 bg-[#FAF9F6]">
             {errorMsg && (
-              <div className="p-3 rounded-xl bg-red-50 text-red-700 text-xs font-semibold border border-red-200">
+              <div
+                id="quote-form-error"
+                role="alert"
+                className="p-3 rounded-xl bg-red-50 text-red-800 text-xs font-semibold border border-red-300"
+              >
                 {errorMsg}
               </div>
             )}
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1">
-                  Full Name <span className="text-red-500">*</span>
+                <label
+                  htmlFor="quote-name"
+                  className="block text-[10px] font-bold uppercase tracking-widest text-gray-600 mb-1"
+                >
+                  Full Name <span aria-hidden="true" className="text-red-600">*</span>
                 </label>
                 <input
+                  id="quote-name"
+                  name="name"
                   type="text"
                   required
+                  autoComplete="name"
+                  aria-required="true"
+                  aria-describedby={errorMsg ? 'quote-form-error' : undefined}
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="e.g. Rahul Sharma"
@@ -232,12 +251,21 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
               </div>
 
               <div>
-                <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1">
-                  WhatsApp / Phone <span className="text-red-500">*</span>
+                <label
+                  htmlFor="quote-phone"
+                  className="block text-[10px] font-bold uppercase tracking-widest text-gray-600 mb-1"
+                >
+                  WhatsApp / Phone <span aria-hidden="true" className="text-red-600">*</span>
                 </label>
                 <input
+                  id="quote-phone"
+                  name="phone"
                   type="tel"
                   required
+                  inputMode="tel"
+                  autoComplete="tel"
+                  aria-required="true"
+                  aria-describedby={errorMsg ? 'quote-form-error' : undefined}
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="e.g. 80766 65782"
@@ -248,10 +276,15 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1">
+                <label
+                  htmlFor="quote-destination"
+                  className="block text-[10px] font-bold uppercase tracking-widest text-gray-600 mb-1"
+                >
                   Destination
                 </label>
                 <select
+                  id="quote-destination"
+                  name="destination"
                   value={destination}
                   onChange={(e) => setDestination(e.target.value)}
                   className="w-full px-3 py-2.5 rounded-xl border border-gray-200 text-xs sm:text-sm text-gray-900 font-bold bg-white focus:border-black focus:outline-none"
@@ -274,10 +307,15 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
               </div>
 
               <div>
-                <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1">
+                <label
+                  htmlFor="quote-dates"
+                  className="block text-[10px] font-bold uppercase tracking-widest text-gray-600 mb-1"
+                >
                   Travel Month/Date
                 </label>
                 <input
+                  id="quote-dates"
+                  name="travelDates"
                   type="text"
                   value={travelDates}
                   onChange={(e) => setTravelDates(e.target.value)}
@@ -289,10 +327,15 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1">
+                <label
+                  htmlFor="quote-travellers"
+                  className="block text-[10px] font-bold uppercase tracking-widest text-gray-600 mb-1"
+                >
                   Travellers
                 </label>
                 <select
+                  id="quote-travellers"
+                  name="travellers"
                   value={travellers}
                   onChange={(e) => setTravellers(e.target.value)}
                   className="w-full px-3 py-2.5 rounded-xl border border-gray-200 text-xs text-gray-900 bg-white focus:border-black focus:outline-none"
@@ -307,10 +350,15 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
               </div>
 
               <div>
-                <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1">
+                <label
+                  htmlFor="quote-budget"
+                  className="block text-[10px] font-bold uppercase tracking-widest text-gray-600 mb-1"
+                >
                   Budget Preference
                 </label>
                 <select
+                  id="quote-budget"
+                  name="budget"
                   value={budget}
                   onChange={(e) => setBudget(e.target.value)}
                   className="w-full px-3 py-2.5 rounded-xl border border-gray-200 text-xs text-gray-900 bg-white focus:border-black focus:outline-none"
@@ -323,10 +371,15 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
             </div>
 
             <div>
-              <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1">
+              <label
+                htmlFor="quote-notes"
+                className="block text-[10px] font-bold uppercase tracking-widest text-gray-600 mb-1"
+              >
                 Special Requests or Notes (Optional)
               </label>
               <textarea
+                id="quote-notes"
+                name="notes"
                 rows={2}
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}

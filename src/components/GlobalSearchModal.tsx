@@ -145,7 +145,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                   >
                     <img src={d.heroImage} alt={d.name} className="w-12 h-12 rounded-lg object-cover" />
                     <div>
-                      <div className="text-xs font-bold text-black group-hover:text-luxury-gold">{d.name}</div>
+                      <div className="text-xs font-bold text-black group-hover:text-gold-ink">{d.name}</div>
                       <div className="text-[11px] text-gray-400 line-clamp-1">{d.state} • {d.idealDays}</div>
                     </div>
                   </button>
@@ -174,7 +174,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                     <div className="flex items-center gap-3">
                       <img src={p.heroImage} alt={p.title} className="w-12 h-12 rounded-lg object-cover" />
                       <div>
-                        <div className="text-xs font-bold text-black group-hover:text-luxury-gold line-clamp-1">{p.title}</div>
+                        <div className="text-xs font-bold text-black group-hover:text-gold-ink line-clamp-1">{p.title}</div>
                         <div className="text-[11px] text-gray-400">{p.destination} • {p.durationDays}D/{p.durationNights}N</div>
                       </div>
                     </div>

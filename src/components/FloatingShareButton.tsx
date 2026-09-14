@@ -106,7 +106,7 @@ export const FloatingShareButton: React.FC<FloatingShareButtonProps> = ({
             >
               <div className="relative">
                 <Share2 className="w-4 h-4 text-orange-400 group-hover:text-orange-300 transition-colors" />
-                <span className="absolute -top-1 -right-1 w-2 h-2 bg-[#FF6B00] rounded-full animate-ping opacity-75" />
+                <span className="absolute -top-1 -right-1 w-2 h-2 bg-accent-ink rounded-full animate-ping opacity-75" />
               </div>
               <span className="text-xs font-bold tracking-wide uppercase font-sans">
                 Share Trip

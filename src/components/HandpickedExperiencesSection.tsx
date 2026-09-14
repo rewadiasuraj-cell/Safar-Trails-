@@ -313,8 +313,8 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-6">
           <div>
             <div className="flex items-center gap-2 mb-2.5">
-              <span className="text-luxury-gold text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-luxury-gold" />
+              <span className="text-gold-ink text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-gold-ink" aria-hidden="true" />
                 Explore Your Dream Destination
               </span>
             </div>

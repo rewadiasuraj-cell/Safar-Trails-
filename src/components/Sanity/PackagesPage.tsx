@@ -17,7 +17,13 @@ export const PackagesPage: React.FC = () => {
     <section id="packages-section" className="w-full py-16 lg:py-24 bg-white">
       <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <div className="mb-10">
-          <h2 className="text-3xl sm:text-4xl font-serif text-black tracking-tight">Tour Packages</h2>
+          <h1 className="text-3xl sm:text-4xl font-serif text-black tracking-tight">
+            India Holiday Packages
+          </h1>
+          <p className="mt-2 text-slate-600 text-sm sm:text-base max-w-2xl">
+            Each package is a starting point, not a fixed menu. Tell us your dates and we will send
+            a revised day-wise itinerary with transparent pricing.
+          </p>
         </div>
 
         {loading && <SanityLoadingState label="Loading packages…" />}

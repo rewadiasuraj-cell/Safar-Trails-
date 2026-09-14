@@ -137,6 +137,10 @@ async function startServer() {
     app.use(
       express.static(distPath, {
         index: false,
+        // Without this, Express 301s /destinations/kashmir to the trailing-slash
+        // form, contradicting the canonical URL. The handler below serves the
+        // prerendered file at the exact requested path instead.
+        redirect: false,
         setHeaders(res, filePath) {
           res.setHeader(
             'Cache-Control',

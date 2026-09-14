@@ -322,9 +322,18 @@ export default function App() {
                     onClick={() => navigate('/')}
                     className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-gray-200 hover:border-black text-slate-800 hover:text-black text-xs font-bold uppercase tracking-wide transition-colors cursor-pointer"
                   >
-                    <ArrowLeft className="w-3.5 h-3.5" />
+                    <ArrowLeft className="w-3.5 h-3.5" aria-hidden="true" />
                     <span>Back to Home</span>
                   </button>
+
+                  <h1 className="mt-6 text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-tight">
+                    Free AI Trip Planner for India Holidays
+                  </h1>
+                  <p className="mt-2.5 max-w-3xl text-sm sm:text-base text-slate-600 leading-relaxed">
+                    Describe the trip you want in plain language and the planner returns a day-by-day
+                    itinerary with stays, travel time and an honest cost estimate. A Safar Trails
+                    specialist reviews it before you book anything.
+                  </p>
                 </div>
                 <Suspense fallback={<SectionSkeleton />}>
                   <AITripPlanner
@@ -364,6 +373,17 @@ export default function App() {
             path="/about-us"
             element={
               <div className="pt-20">
+                <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+                  <h1 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-tight">
+                    About Safar Trails — Travel with Trust
+                  </h1>
+                  <p className="mt-3 max-w-3xl text-sm sm:text-base text-slate-600 leading-relaxed">
+                    Safar Trails is a New Delhi-based travel agency planning custom holidays across
+                    India and abroad. "Travel with Trust" means written inclusions and exclusions,
+                    stays we have actually verified, drivers we know by name, and a human reachable
+                    on WhatsApp for the whole length of your trip.
+                  </p>
+                </div>
                 <Suspense fallback={<SectionSkeleton />}>
                   <TrustSection />
                   <ReviewsSection />

@@ -100,7 +100,7 @@ const STATIC_PAGES: StaticPageSpec[] = [
     title: 'Custom India Tour Packages – AI Trip Planner | Safar Trails',
     description:
       'Custom Kashmir, Kerala, Himachal & Rajasthan tour packages, planned by AI and refined by real travel experts. 24x7 support, transparent pricing. Get a free itinerary!',
-    h1: 'Custom India Tour Packages, Planned by AI and Perfected by Travel Experts',
+    h1: 'Custom India Tour Packages · AI Plans, Experts Perfect — Your Journey. Our Passion.',
     intro:
       'Safar Trails builds hand-planned holiday packages across India — Kashmir houseboats, Kerala backwaters, Himachal road trips, Rajasthan forts, Andaman beaches and the Chardham Yatra. Every itinerary starts from your dates, budget and travel style, is checked by a destination specialist, and comes with verified stays, trained drivers and 24x7 on-trip support. Travel with Trust.',
     sections: [
