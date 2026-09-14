@@ -101,7 +101,11 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
           alt={packageData.title}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/30" />
+        {/* Was `from-black via-black/60 to-black/30`, which is solid black exactly
+            where the photograph's subject sits - the hero image may as well not
+            have been there. .photo-text-scrim keeps the title's contrast at the
+            bottom while letting the picture through above it. */}
+        <div className="absolute inset-0 photo-text-scrim pointer-events-none" />
 
         {/* Back Button */}
         <button
@@ -113,7 +117,10 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
         </button>
 
         {/* Top Badges */}
-        <div className="absolute top-20 right-4 sm:top-24 sm:right-6 flex items-center gap-2 z-10">
+        {/* max-w + wrap because these two chips are wider than the gap left by the
+            Back button at 390px: unconstrained, the row ran back across the button
+            and covered it, so Back could not be read or tapped on a phone. */}
+        <div className="absolute top-20 right-4 sm:top-24 sm:right-6 max-w-[55%] sm:max-w-none flex flex-wrap justify-end items-center gap-2 z-10">
           <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-black/70 text-white shadow-xs border border-white/20">
             {packageData.durationDays} Days / {packageData.durationNights} Nights
           </span>
