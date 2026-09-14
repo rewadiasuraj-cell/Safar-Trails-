@@ -269,7 +269,14 @@ async function main() {
   );
 
   // Sitemap: written to dist for deployment and to public/ so it stays in git.
-  const indexable = [...sitemapRoutes(), ...cmsRoutes.filter((r) => !r.robots.startsWith('noindex'))];
+  // A sitemap must list only canonical URLs. Some paths are reachable but
+  // canonicalise elsewhere - a package that exists both in Sanity at
+  // /packages/<slug> and in local data at /tour-packages/<slug> is served at
+  // both, with one canonical between them. Listing both told Google to index a
+  // URL that its own tag disowns, which is a contradictory signal.
+  const indexable = [...sitemapRoutes(), ...cmsRoutes].filter(
+    (route) => !route.robots.startsWith('noindex') && absoluteUrl(route.path) === route.canonical,
+  );
   const deduped = [...new Map(indexable.map((route) => [route.path, route])).values()].sort((a, b) =>
     b.priority - a.priority || a.path.localeCompare(b.path),
   );

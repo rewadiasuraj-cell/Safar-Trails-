@@ -1,6 +1,8 @@
 import React from 'react';
-import { ShieldCheck, Car, IndianRupee, Clock, CheckCircle2, HeartHandshake } from 'lucide-react';
+import { ShieldCheck, Car, IndianRupee, Clock, CheckCircle2, HeartHandshake, Star, MessageCircle, ExternalLink } from 'lucide-react';
 import { AIIcon } from './AIIcon';
+import { reviewLink } from '../lib/seo/siteConfig';
+import { trackEvent } from '../lib/analytics';
 
 export const TrustSection: React.FC = () => {
   const pillars = [
@@ -14,7 +16,7 @@ export const TrustSection: React.FC = () => {
       icon: ShieldCheck,
       color: 'text-midnight-blue bg-luxury-gold border-luxury-gold',
       title: 'Verified Stays & Clean Rooms',
-      description: 'We partner directly with boutique properties rated 4.5+ on hospitality. Central heating in snow valleys, private balconies, and hygienic dining assured.'
+      description: 'We check properties ourselves before putting them in an itinerary. Central heating in snow valleys, private balconies, and hygienic dining - inspected, not assumed.'
     },
     {
       icon: Car,
@@ -55,6 +57,41 @@ export const TrustSection: React.FC = () => {
           <p className="mt-2 text-gray-300 text-sm sm:text-base font-normal">
             We bridge modern artificial intelligence with trusted human hospitality to deliver memorable Indian holidays.
           </p>
+        </div>
+
+        {/* Verifiable proof only.
+            This replaced claims like "4.9 rated by 12,000+ travellers", which
+            the business could not substantiate. Everything here either links to
+            a source a visitor can check for themselves, or describes how we
+            actually operate. A rating someone can verify in one tap is worth
+            more than a large number they cannot. */}
+        <div className="mb-14 flex flex-col items-center gap-4">
+          <a
+            href={reviewLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent('google_reviews_click', { source: 'trust_section' })}
+            className="inline-flex items-center gap-2.5 rounded-full border border-luxury-gold/40 bg-white/10 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-luxury-gold"
+          >
+            <Star className="h-4 w-4 shrink-0 fill-luxury-gold text-luxury-gold" aria-hidden="true" />
+            <span>Read our reviews on Google</span>
+            <ExternalLink className="h-3.5 w-3.5 shrink-0 opacity-70" aria-hidden="true" />
+          </a>
+
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs sm:text-sm text-gray-300">
+            <span className="inline-flex items-center gap-1.5">
+              <MessageCircle className="h-4 w-4 shrink-0 text-luxury-gold" aria-hidden="true" />
+              Average WhatsApp reply under 3 minutes
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <ShieldCheck className="h-4 w-4 shrink-0 text-luxury-gold" aria-hidden="true" />
+              Verified stays &amp; trained local drivers
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <IndianRupee className="h-4 w-4 shrink-0 text-luxury-gold" aria-hidden="true" />
+              Written inclusions, no hidden costs
+            </span>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

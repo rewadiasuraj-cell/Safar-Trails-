@@ -19,6 +19,7 @@ import {
   POSTAL_ADDRESS,
   PRIMARY_EMAIL,
   PRIMARY_PHONE,
+  GOOGLE_MAPS_URL,
   SITE_URL,
   SOCIAL_PROFILES,
   absoluteUrl,
@@ -48,6 +49,9 @@ export function travelAgencySchema(): JsonLd {
     address: { '@type': 'PostalAddress', ...POSTAL_ADDRESS },
     geo: { '@type': 'GeoCoordinates', latitude: GEO.latitude, longitude: GEO.longitude },
     areaServed: { '@type': 'Country', name: 'India' },
+    // Ties the site to the Google Business Profile listing, so Google reads the
+    // two as one entity rather than two businesses with the same name.
+    hasMap: GOOGLE_MAPS_URL,
     sameAs: SOCIAL_PROFILES,
   };
 
@@ -98,9 +102,9 @@ export function faqSchema(faqs: { question: string; answer: string }[]): JsonLd 
 }
 
 /**
- * TouristDestination for a destination hub page. aggregateRating is emitted only
- * when the page itself displays that rating and count, which is what Google's
- * review-snippet policy requires.
+ * TouristDestination for a destination hub page.
+ *
+ * No aggregateRating — see the note above touristTripSchema.
  */
 export function touristDestinationSchema(destination: Destination): JsonLd {
   const url = absoluteUrl(`/destinations/${destination.slug}`);
@@ -125,20 +129,30 @@ export function touristDestinationSchema(destination: Destination): JsonLd {
     },
   };
 
-  if (destination.rating && destination.reviewCount) {
-    schema.aggregateRating = {
-      '@type': 'AggregateRating',
-      ratingValue: String(destination.rating),
-      reviewCount: String(destination.reviewCount),
-    };
-  }
-
   return schema;
 }
 
 /**
  * TouristTrip for a package page, with one subTrip per itinerary day — the
  * schema.org-sanctioned way to express a multi-day itinerary.
+ *
+ * NO aggregateRating, deliberately, for two independent reasons:
+ *
+ * 1. Policy. The rating and reviewCount fields in destinationsData and
+ *    packagesData are placeholder values from when the site was built — they
+ *    total well over ten thousand reviews, against a business with a handful of
+ *    real ones. Google's review-snippet policy requires ratings genuinely
+ *    collected from users; marking up invented counts is spammy structured data
+ *    and risks a manual action against the whole site.
+ * 2. It buys nothing anyway. Review snippets are only supported on a fixed list
+ *    of types (Book, Course, Event, HowTo, LocalBusiness, Movie, Product,
+ *    Recipe, SoftwareApplication and a few others). Neither TouristTrip nor
+ *    TouristDestination is on it, so Google would ignore the field even if the
+ *    numbers were real.
+ *
+ * To turn ratings on later: collect genuine reviews, display them on the page,
+ * and mark them up on a type Google actually supports — the TravelAgency
+ * (LocalBusiness) block, via ORGANIZATION_RATING_ENABLED in siteConfig.ts.
  */
 export function touristTripSchema(pkg: Package, canonicalPath: string): JsonLd {
   const url = absoluteUrl(canonicalPath);
@@ -178,14 +192,6 @@ export function touristTripSchema(pkg: Package, canonicalPath: string): JsonLd {
       description: `Starting price per person for a ${pkg.durationNights}N/${pkg.durationDays}D ${pkg.destination} package.`,
     },
   };
-
-  if (pkg.ratings && pkg.reviewCount) {
-    schema.aggregateRating = {
-      '@type': 'AggregateRating',
-      ratingValue: String(pkg.ratings),
-      reviewCount: String(pkg.reviewCount),
-    };
-  }
 
   return schema;
 }

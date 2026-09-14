@@ -18,8 +18,6 @@ interface FeaturedDestination {
   video?: string;
   duration: string;
   startingPrice: string;
-  rating: string;
-  reviews: string;
   isTrending?: boolean;
 }
 
@@ -40,8 +38,6 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       image: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=75&w=600&auto=format&fit=crop',
       duration: '5–7 Days',
       startingPrice: '₹16,999',
-      rating: '4.9',
-      reviews: '1.4k',
       isTrending: true
     },
     {
@@ -53,8 +49,6 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=75&w=600&auto=format&fit=crop',
       duration: '4–6 Days',
       startingPrice: '₹14,499',
-      rating: '4.8',
-      reviews: '2.1k',
       isTrending: true
     },
     {
@@ -66,8 +60,6 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=75&w=600&auto=format&fit=crop',
       duration: '5–7 Days',
       startingPrice: '₹15,999',
-      rating: '4.9',
-      reviews: '1.8k',
       isTrending: true
     },
     {
@@ -79,8 +71,6 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       image: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?q=75&w=600&auto=format&fit=crop',
       duration: '6–8 Days',
       startingPrice: '₹17,999',
-      rating: '4.9',
-      reviews: '1.6k',
       isTrending: true
     },
     {
@@ -92,8 +82,6 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=75&w=600&auto=format&fit=crop',
       duration: '5–7 Days',
       startingPrice: '₹14,999',
-      rating: '4.8',
-      reviews: '1.9k',
       isTrending: true
     },
     {
@@ -105,8 +93,6 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       image: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=75&w=600&auto=format&fit=crop',
       duration: '6–8 Days',
       startingPrice: '₹22,999',
-      rating: '4.9',
-      reviews: '1.1k',
       isTrending: true
     },
     {
@@ -118,8 +104,6 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       image: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=75&w=600&auto=format&fit=crop',
       duration: '5–7 Days',
       startingPrice: '₹24,999',
-      rating: '4.9',
-      reviews: '980',
       isTrending: true
     },
     {
@@ -131,8 +115,6 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=75&w=600&auto=format&fit=crop',
       duration: '5–7 Days',
       startingPrice: '₹18,499',
-      rating: '4.8',
-      reviews: '860'
     },
     {
       id: 'uttarakhand',
@@ -143,8 +125,6 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=75&w=600&auto=format&fit=crop',
       duration: '4–6 Days',
       startingPrice: '₹13,999',
-      rating: '4.9',
-      reviews: '1.5k',
       isTrending: true
     }
   ];
@@ -199,11 +179,13 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
           )}
         </div>
         
-        {/* Star Rating Badge with White Background, Yellow Star & Black Text */}
+        {/* Starting price. This replaced a star-rating badge whose rating and
+            review count were placeholder values the business could not
+            substantiate - see docs/README.md. Price is a claim we can stand
+            behind, and in travel it qualifies the lead better than a rating. */}
         <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] sm:text-[11px] font-bold bg-white text-gray-900 shadow-md border border-white/90 backdrop-blur-md whitespace-nowrap leading-none">
-          <Star className="w-3 h-3 fill-amber-400 text-amber-400 shrink-0" />
-          <span className="text-black font-extrabold">{dest.rating}</span>
-          <span className="text-[9px] font-bold text-gray-500">/5.0</span>
+          <span className="text-[9px] font-bold uppercase tracking-wide text-gray-600">From</span>
+          <span className="text-black font-extrabold">{dest.startingPrice}</span>
         </div>
       </div>
 
