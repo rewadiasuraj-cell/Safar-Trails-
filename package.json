@@ -11,7 +11,8 @@
     "clean": "rm -rf dist server.js",
     "lint": "tsx scripts/build-content.ts && tsc --noEmit",
     "prerender": "tsx scripts/prerender.ts",
-    "content": "tsx scripts/build-content.ts"
+    "content": "tsx scripts/build-content.ts",
+    "check-urls": "tsx scripts/check-urls.ts"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",
