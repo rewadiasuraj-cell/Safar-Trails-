@@ -5,21 +5,31 @@
 # be started from the GitHub web UI on a phone - no laptop, no terminal, no
 # checkout.
 #
-# HOW TO RUN IT
-#   1. github.com -> this repository -> Actions
-#   2. "Migrate Sanity content into the repo" in the left-hand list
-#   3. "Run workflow", pick the branch, Run
-#   4. Wait for the green tick, then read the summary it writes
+# HOW IT RUNS
 #
-# It commits the exported JSON and the downloaded images straight to the branch
-# you pick. Safe to re-run: the export script only ever adds files, and the commit
-# step does nothing when there is nothing new.
+# Automatically, on any push to the migration branch. Nothing to click.
+#
+# It cannot rely on the "Run workflow" button, because GitHub only shows a
+# workflow_dispatch workflow in the Actions UI once its file is on the DEFAULT
+# branch. This one lives on a feature branch, so that button never appears -
+# which is exactly why the first attempt at this workflow was invisible. A push
+# trigger has no such rule: the run happens on the branch the file is on.
+#
+# workflow_dispatch is kept anyway, so the button works too if this ever lands on
+# main.
+#
+# It commits the exported JSON and the downloaded images straight back to the
+# branch. Safe to re-run: the export only ever adds files, and the commit step
+# does nothing when there is nothing new. No loop either - GitHub does not start
+# workflow runs from pushes made with the default GITHUB_TOKEN.
 #
 # Delete this workflow, and scripts/export-sanity.ts, once the migration is done.
 
 name: Migrate Sanity content into the repo
 
 on:
+  push:
+    branches: [claude/safar-trails-website-setup-4vbki3]
   workflow_dispatch:
     inputs:
       project_id:
@@ -51,9 +61,11 @@ jobs:
         run: npm ci
 
       - name: Export everything out of Sanity
+        # inputs are empty on a push event, so the defaults are spelled out here
+        # rather than left to fall through the script's own fallback.
         env:
-          VITE_SANITY_PROJECT_ID: ${{ inputs.project_id }}
-          VITE_SANITY_DATASET: ${{ inputs.dataset }}
+          VITE_SANITY_PROJECT_ID: ${{ inputs.project_id || 'xmtc060o' }}
+          VITE_SANITY_DATASET: ${{ inputs.dataset || 'production' }}
         run: npx tsx scripts/export-sanity.ts 2>&1 | tee /tmp/export.log
 
       - name: Check the exported content is valid
