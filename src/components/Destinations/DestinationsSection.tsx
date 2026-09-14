@@ -24,12 +24,19 @@ const formatDestinationName = (name: string): string => {
 };
 
 interface DestinationsSectionProps {
+  /**
+   * True when this renders as the standalone /destinations page rather than a
+   * homepage section: the heading becomes the page's only h1 and carries the
+   * page-level copy, matching the prerendered H1 in src/lib/seo/routes.ts.
+   */
+  asPage?: boolean;
   onSelectDestination: (slug: string) => void;
   onPlanDestinationWithAI: (destinationName: string) => void;
   onOpenQuoteModal?: (summary?: string, destinationName?: string) => void;
 }
 
 export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
+  asPage = false,
   onSelectDestination,
   onPlanDestinationWithAI,
   onOpenQuoteModal
@@ -63,15 +70,29 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-gray-800 text-xs font-bold uppercase tracking-widest mb-3 shadow-xs">
-              <MapPin className="w-3.5 h-3.5 text-luxury-gold" />
+              <MapPin className="w-3.5 h-3.5 text-gold-ink" aria-hidden="true" />
               <span>Iconic Indian Destinations</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-serif text-black tracking-tight">
-              Where will your journey take you?
-            </h2>
-            <p className="mt-2 text-gray-500 text-sm sm:text-base max-w-2xl font-normal">
-              Handpicked domestic holiday hubs crafted with verified stays, expert local chauffeurs, and paced itineraries.
-            </p>
+            {asPage ? (
+              <>
+                <h1 className="text-3xl sm:text-4xl font-serif text-black tracking-tight">
+                  India Travel Destinations
+                </h1>
+                <p className="mt-2 text-slate-600 text-sm sm:text-base max-w-2xl font-normal">
+                  Every destination below has its own guide — the best season to travel, what a trip
+                  really costs, where to stay and how to get there — plus itineraries you can customise.
+                </p>
+              </>
+            ) : (
+              <>
+                <h2 className="text-3xl sm:text-4xl font-serif text-black tracking-tight">
+                  Where will your journey take you?
+                </h2>
+                <p className="mt-2 text-slate-600 text-sm sm:text-base max-w-2xl font-normal">
+                  Handpicked domestic holiday hubs crafted with verified stays, expert local chauffeurs, and paced itineraries.
+                </p>
+              </>
+            )}
           </div>
 
           {/* Search Box inside header */}

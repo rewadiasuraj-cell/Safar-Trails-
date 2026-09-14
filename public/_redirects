@@ -33,12 +33,26 @@ http://www.safartrails.co.in/* https://safartrails.co.in/:splat 301!
 /blog/*          /guides       301
 /thank-you       /             301
 
-# --- SPA fallback for CMS-driven detail routes ------------------------------
-# Scoped deliberately to these four prefixes. A blanket "/* /index.html 200"
-# would answer 200 for every junk URL (a soft 404), which is what the audit
-# warned about; without it, unmatched paths fall through to 404.html and
-# Cloudflare Pages returns a real HTTP 404.
+# --- Retired package URLs ---------------------------------------------------
+# Packages used to be served from two places: Sanity at /packages/<slug> and the
+# local data file at /tour-packages/<slug>, same slug, same trip. With Sanity
+# gone there is one source and one URL - /tour-packages/<slug>, which is what the
+# canonical tags and the submitted sitemap already point at.
+#
+# These 301s exist because /packages/<slug> URLs were in the sitemap Google read
+# before the migration and may hold history. First match wins, so the one slug
+# that does not map across by name is listed before the catch-all.
+/packages/chardham-yatra-package  /tour-packages/chardham-yatra-haridwar-yamunotri-gangotri-kedarnath-badrinath-10d9n  301
+/packages/*                       /tour-packages/:splat                                                                301
+
+# --- SPA fallback for client-routed detail pages ----------------------------
+# Scoped deliberately to these prefixes. A blanket "/* /index.html 200" would
+# answer 200 for every junk URL (a soft 404), which is what the audit warned
+# about; without it, unmatched paths fall through to 404.html and Cloudflare
+# Pages returns a real HTTP 404.
+#
+# /packages/* is absent on purpose - it is a 301 above, and /packages itself is a
+# prerendered file that the rules never reach.
 /destinations/*  /index.html   200
-/packages/*      /index.html   200
 /tour-packages/* /index.html   200
 /guides/*        /index.html   200

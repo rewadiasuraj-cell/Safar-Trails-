@@ -166,8 +166,20 @@ async function startServer() {
         return res.sendFile(prerendered);
       }
 
-      // Client-routed CMS detail pages still need the shell.
-      if (/^\/(destinations|packages|tour-packages|guides)\//.test(req.path)) {
+      // Packages used to be served from two URLs with the same slug. There is now
+      // one - /tour-packages/<slug> - so the retired form redirects into it.
+      // Mirrors the rules in public/_redirects for the Cloudflare deployment.
+      const retiredPackage = requestPath.match(/^\/packages\/(.+)$/);
+      if (retiredPackage) {
+        const target =
+          retiredPackage[1] === 'chardham-yatra-package'
+            ? 'chardham-yatra-haridwar-yamunotri-gangotri-kedarnath-badrinath-10d9n'
+            : retiredPackage[1];
+        return res.redirect(301, `/tour-packages/${target}`);
+      }
+
+      // Client-routed detail pages still need the shell.
+      if (/^\/(destinations|tour-packages|guides)\//.test(req.path)) {
         return res.sendFile(path.join(distPath, 'index.html'));
       }
 
