@@ -1,0 +1,36 @@
+{
+  "slug": "andaman-islands-guide-beaches-diving-ferries",
+  "destinationSlug": "andaman",
+  "destinationName": "Andaman & Nicobar",
+  "title": "Andaman Islands Guide: Beaches, Diving & Ferries",
+  "subtitle": "The Andaman Islands are India’s premier tropical paradise, with crystal-clear waters and vibrant coral gardens.",
+  "readTime": "1 min read",
+  "author": {
+    "name": "SafarTrails Editorial Team",
+    "role": "Destination Specialist",
+    "avatar": "/logo.svg"
+  },
+  "publishedDate": "2026-03-22T00:00:00Z",
+  "heroImage": "/content/guides/andaman-islands-guide-beaches-diving-ferries/0.jpg",
+  "category": "Itinerary",
+  "excerpt": "The Andaman Islands are India’s premier tropical paradise, with crystal-clear waters and vibrant coral gardens.",
+  "contentSections": [
+    {
+      "heading": "Andaman Islands Guide: Beaches, Diving & Ferries",
+      "content": "The Andaman Islands are India’s premier tropical paradise, with crystal-clear waters and vibrant coral gardens."
+    },
+    {
+      "heading": "Top Experiences",
+      "content": "Radhanagar Beach on Havelock Island is consistently ranked among the world’s top beaches. Port Blair’s Cellular Jail hosts an emotional Light & Sound show recounting India’s freedom struggle."
+    },
+    {
+      "heading": "Travel Tips",
+      "content": "",
+      "bulletPoints": [
+        "No passport or special permit is required for Indian citizens visiting Andaman.",
+        "Book private inter-island catamaran ferry tickets well in advance to avoid schedule disruption."
+      ]
+    }
+  ],
+  "relatedPackageSlugs": []
+}

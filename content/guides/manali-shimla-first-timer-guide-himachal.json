@@ -1,0 +1,36 @@
+{
+  "slug": "manali-shimla-first-timer-guide-himachal",
+  "destinationSlug": "himachal-pradesh",
+  "destinationName": "Himachal Pradesh",
+  "title": "Manali & Shimla: A First-Timer's Guide to Himachal Pradesh",
+  "subtitle": "Himachal Pradesh is North India’s quintessential mountain playground, from snow adventures in Solang to the spiritual sanctuary of Dharamshala.",
+  "readTime": "1 min read",
+  "author": {
+    "name": "SafarTrails Editorial Team",
+    "role": "Destination Specialist",
+    "avatar": "/logo.svg"
+  },
+  "publishedDate": "2026-03-12T00:00:00Z",
+  "heroImage": "/content/guides/manali-shimla-first-timer-guide-himachal/0.jpg",
+  "category": "Itinerary",
+  "excerpt": "Himachal Pradesh is North India’s quintessential mountain playground, from snow adventures in Solang to the spiritual sanctuary of Dharamshala.",
+  "contentSections": [
+    {
+      "heading": "Manali & Shimla: A First-Timer's Guide to Himachal Pradesh",
+      "content": "Himachal Pradesh is North India’s quintessential mountain playground, from snow adventures in Solang to the spiritual sanctuary of Dharamshala."
+    },
+    {
+      "heading": "Must-See Spots",
+      "content": "Solang Valley and the Atal Tunnel lead into glacial waterfalls and thrilling all-season adventure sports. Shimla’s Ridge and Jakhoo Temple offer grand colonial vistas and a historic neo-Gothic Christ Church."
+    },
+    {
+      "heading": "Travel Tips",
+      "content": "",
+      "bulletPoints": [
+        "Rohtang Pass permits must be booked in advance as daily vehicle quotas are strictly limited.",
+        "Carry motion-sickness medication if you are prone to dizziness on winding mountain roads."
+      ]
+    }
+  ],
+  "relatedPackageSlugs": []
+}

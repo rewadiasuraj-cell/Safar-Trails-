@@ -1,0 +1,36 @@
+{
+  "slug": "meghalaya-assam-first-timer-guide-northeast",
+  "destinationSlug": "northeast-india",
+  "destinationName": "Northeast India",
+  "title": "Meghalaya & Assam: A First-Timer’s Guide to Northeast India",
+  "subtitle": "Northeast India is a mystical expanse of untouched natural wonders, indigenous tribal cultures, and dramatic landscapes.",
+  "readTime": "1 min read",
+  "author": {
+    "name": "SafarTrails Editorial Team",
+    "role": "Destination Specialist",
+    "avatar": "/logo.svg"
+  },
+  "publishedDate": "2026-03-28T00:00:00Z",
+  "heroImage": "/content/guides/meghalaya-assam-first-timer-guide-northeast/0.jpg",
+  "category": "Itinerary",
+  "excerpt": "Northeast India is a mystical expanse of untouched natural wonders, indigenous tribal cultures, and dramatic landscapes.",
+  "contentSections": [
+    {
+      "heading": "Meghalaya & Assam: A First-Timer’s Guide to Northeast India",
+      "content": "Northeast India is a mystical expanse of untouched natural wonders, indigenous tribal cultures, and dramatic landscapes."
+    },
+    {
+      "heading": "Top Experiences",
+      "content": "Cherrapunji is one of the wettest places on Earth, with soaring waterfalls like Nohkalikai Falls. In Dawki, boats appear to float in mid-air over the crystal-clear Umngot River."
+    },
+    {
+      "heading": "Travel Tips",
+      "content": "",
+      "bulletPoints": [
+        "Wear sturdy non-slip trekking shoes for the root bridge walks in Meghalaya.",
+        "Visitors to Arunachal Pradesh or certain Sikkim border areas require an Inner Line Permit (ILP)."
+      ]
+    }
+  ],
+  "relatedPackageSlugs": []
+}

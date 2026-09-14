@@ -1,0 +1,36 @@
+{
+  "slug": "rishikesh-mussoorie-corbett-weekend-guide",
+  "destinationSlug": "uttarakhand",
+  "destinationName": "Uttarakhand",
+  "title": "Rishikesh, Mussoorie & Corbett: A Weekend Guide to Uttarakhand",
+  "subtitle": "Uttarakhand balances rejuvenation with thrilling mountain wilderness — ideal for a quick escape from Delhi NCR.",
+  "readTime": "1 min read",
+  "author": {
+    "name": "SafarTrails Editorial Team",
+    "role": "Destination Specialist",
+    "avatar": "/logo.svg"
+  },
+  "publishedDate": "2026-03-18T00:00:00Z",
+  "heroImage": "/content/guides/rishikesh-mussoorie-corbett-weekend-guide/0.jpg",
+  "category": "Itinerary",
+  "excerpt": "Uttarakhand balances rejuvenation with thrilling mountain wilderness — ideal for a quick escape from Delhi NCR.",
+  "contentSections": [
+    {
+      "heading": "Rishikesh, Mussoorie & Corbett: A Weekend Guide to Uttarakhand",
+      "content": "Uttarakhand balances rejuvenation with thrilling mountain wilderness — ideal for a quick escape from Delhi NCR."
+    },
+    {
+      "heading": "Top Experiences",
+      "content": "Rishikesh, the global capital of Yoga, is known for its iconic suspension bridges and white water rafting. Jim Corbett National Park, India’s oldest national park, is famed for Royal Bengal Tigers and rich birdlife."
+    },
+    {
+      "heading": "Travel Tips",
+      "content": "",
+      "bulletPoints": [
+        "Corbett safari permits for Dhikala and Bijrani zones open 45 days in advance and sell out rapidly.",
+        "River rafting is closed during peak monsoon months (July to mid-September) for safety."
+      ]
+    }
+  ],
+  "relatedPackageSlugs": []
+}
