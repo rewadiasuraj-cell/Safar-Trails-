@@ -65,8 +65,21 @@ from. The playbook puts this at day 25-30 for the same reason.
    (`src/lib/seo/siteConfig.ts`), but the profile still disagrees. Decide which
    is correct and make both match character for character — NAP consistency is a
    direct local-ranking factor.
-2. **Whether to publish an aggregate rating in schema.** It is deliberately
-   switched off (`ORGANIZATION_RATING_ENABLED = false`). Google's review-snippet
-   policy only allows ratings a site collects and displays itself; re-publishing
-   Google Business Profile ratings as your own markup is a policy violation that
-   risks a manual action. Turn it on once genuine on-site reviews exist.
+2. **The review counts shown on destination and package pages.** `destinationsData.ts`
+   and `packagesData.ts` carry ratings like *Kashmir 4.9 from 1,420 reviews*,
+   *Goa 4.8 from 2,180*, *Kerala 4.9 from 1,890* — over ten thousand reviews in
+   total, against a business with a handful of real ones. These look like
+   placeholder values from when the site was built.
+
+   They are no longer emitted in structured data (see below), but they are still
+   **displayed on the pages**. Publishing review counts you cannot substantiate
+   is a trust problem regardless of schema, and under India's consumer
+   protection rules on misleading advertising it is a real exposure. Either
+   replace them with true numbers or remove the counts from the UI. This is a
+   content decision, so it has been flagged rather than changed.
+
+   No `aggregateRating` is published anywhere now. The organisation-level switch
+   (`ORGANIZATION_RATING_ENABLED`) stays off until genuine on-site reviews exist,
+   and the destination/package blocks never carry one — `TouristDestination` and
+   `TouristTrip` are not types Google supports review snippets on, so the field
+   bought nothing and carried manual-action risk.
