@@ -17,7 +17,7 @@ import { destinationsData } from '../../data/destinationsData';
 import { guidesData } from '../../data/guidesData';
 import { packagesData } from '../../data/packagesData';
 import { Destination, Package, TravelGuide } from '../../types';
-import { BRAND_NAME, BRAND_TAGLINE, DEFAULT_OG_IMAGE, absoluteUrl } from './siteConfig';
+import { DEFAULT_OG_IMAGE, absoluteUrl } from './siteConfig';
 import {
   breadcrumbSchema,
   buildGraph,
@@ -524,84 +524,10 @@ export function resolveRouteSeo(pathname: string): RouteSeo {
     if (pkg) return { ...packageRoute(pkg), path };
   }
 
-  const sanityPackage = path.match(/^\/packages\/([^/]+)$/);
-  if (sanityPackage) {
-    const pkg = packagesData.find((item) => item.slug === sanityPackage[1]);
-    if (pkg) return { ...packageRoute(pkg), path };
-    return dynamicFallback(path, sanityPackage[1], 'package');
-  }
-
-  const sanityDestination = path.match(/^\/destinations\/([^/]+)$/);
-  if (sanityDestination) return dynamicFallback(path, sanityDestination[1], 'destination');
-
-  const sanityGuide = path.match(/^\/guides\/([^/]+)$/);
-  if (sanityGuide) return dynamicFallback(path, sanityGuide[1], 'guide');
-
+  // Everything else is unknown. While a CMS was in play an unrecognised slug
+  // might still have been a real page the build had not seen, so it got an
+  // indexable payload. All content now ships with the build, so an unknown slug
+  // is genuinely missing and must say so - a 404 the page and its head tags
+  // agree on, rather than a noindex page advertising itself as indexable.
   return allStaticRoutes().find((route) => route.path === '/404')!;
-}
-
-function slugToTitle(slug: string): string {
-  return slug
-    .split('-')
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
-}
-
-/**
- * Fallback for CMS-driven URLs this build has no local copy of. It still emits
- * a self-referencing canonical, which is the entire point of the fix.
- */
-function dynamicFallback(
-  path: string,
-  slug: string,
-  kind: 'destination' | 'package' | 'guide',
-): RouteSeo {
-  const name = slugToTitle(slug);
-  const copy = {
-    destination: {
-      title: fitTitle(`${name} Tour Packages`),
-      description: `Custom ${name} tour packages from ${BRAND_NAME} — verified stays, trained local drivers, transparent pricing and 24x7 on-trip support. Get a free itinerary.`,
-      h1: `${name} Tour Packages`,
-      section: 'Destinations',
-      sectionPath: '/destinations',
-    },
-    package: {
-      title: fitTitle(name),
-      description: `${name} holiday package from ${BRAND_NAME} — day-wise itinerary, verified stays and clear inclusions. Customise it to your dates and budget.`,
-      h1: name,
-      section: 'Packages',
-      sectionPath: '/packages',
-    },
-    guide: {
-      title: fitTitle(name),
-      description: `${name} — a practical travel guide from the ${BRAND_NAME} destination specialists. ${BRAND_TAGLINE}.`,
-      h1: name,
-      section: 'Travel Guides',
-      sectionPath: '/guides',
-    },
-  }[kind];
-
-  return {
-    path,
-    title: copy.title,
-    description: fitDescription(copy.description),
-    canonical: absoluteUrl(path),
-    ogImage: DEFAULT_OG_IMAGE,
-    ogType: kind === 'guide' ? 'article' : 'website',
-    robots: INDEX_FOLLOW,
-    jsonLd: organizationGraph([
-      breadcrumbSchema([
-        HOME_CRUMB,
-        { name: copy.section, path: copy.sectionPath },
-        { name: copy.h1, path },
-      ]),
-    ]),
-    h1: copy.h1,
-    intro: copy.description,
-    sections: [],
-    faqs: [],
-    relatedLinks: topDestinationLinks(),
-    priority: 0.6,
-    changefreq: 'weekly',
-  };
 }
