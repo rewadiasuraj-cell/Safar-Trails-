@@ -1,1 +1,35 @@
-/*    /index.html   200
+# Cloudflare Pages redirect + rewrite rules.
+#
+# Ordering note: Cloudflare Pages serves a matching static asset before applying
+# a non-forced rule, so the prerendered files written by scripts/prerender.ts
+# (e.g. /destinations/kashmir/index.html) win over the SPA rewrites below.
+
+# --- Canonical host ---------------------------------------------------------
+# The audit found https://www.safartrails.co.in returning HTTP 522 (server
+# unreachable) while the apex served 200. Anyone typing "www." hit an error
+# page. The trailing "!" forces the redirect even where an asset would match.
+https://www.safartrails.co.in/* https://safartrails.co.in/:splat 301!
+http://www.safartrails.co.in/* https://safartrails.co.in/:splat 301!
+
+# --- Duplicate / legacy paths ----------------------------------------------
+# /about and /about-us were both live and returning 200 = duplicate content.
+# One canonical URL each, everything else 301s into it.
+/about           /about-us     301
+/about-us/       /about-us     301
+/contact         /contact-us   301
+/contact-us/     /contact-us   301
+/faq             /about-us     301
+/reviews         /about-us     301
+/blog            /guides       301
+/blog/*          /guides       301
+/thank-you       /             301
+
+# --- SPA fallback for CMS-driven detail routes ------------------------------
+# Scoped deliberately to these four prefixes. A blanket "/* /index.html 200"
+# would answer 200 for every junk URL (a soft 404), which is what the audit
+# warned about; without it, unmatched paths fall through to 404.html and
+# Cloudflare Pages returns a real HTTP 404.
+/destinations/*  /index.html   200
+/packages/*      /index.html   200
+/tour-packages/* /index.html   200
+/guides/*        /index.html   200

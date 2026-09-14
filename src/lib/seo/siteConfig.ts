@@ -1,0 +1,78 @@
+/**
+ * Single source of truth for brand-level NAP (Name, Address, Phone) and social
+ * identity.
+ *
+ * The September 2026 audit flagged NAP inconsistency as a HIGH priority issue:
+ * the website footer advertised +91 80766 65782 while social profiles used
+ * +91 85008 19000. Google needs one identical phone/address/name across the
+ * website, Google Business Profile, Facebook and Instagram, so every surface in
+ * this codebase now reads those values from here. Changing the number in this
+ * file changes it everywhere on the site at once.
+ */
+
+export const SITE_URL = 'https://safartrails.co.in';
+
+export const BRAND_NAME = 'Safar Trails';
+
+/** Legacy one-word spelling still used in body copy; kept so both are searchable. */
+export const BRAND_NAME_COMPACT = 'SafarTrails';
+
+export const BRAND_TAGLINE = 'Travel with Trust';
+
+/**
+ * The one primary phone number. Must match Google Business Profile, Facebook
+ * and Instagram exactly.
+ */
+export const PRIMARY_PHONE = '+918076665782';
+export const PRIMARY_PHONE_DISPLAY = '+91 80766 65782';
+
+/** Digits only, no '+', for wa.me links. */
+export const WHATSAPP_NUMBER = '918076665782';
+
+/**
+ * Branded email. The audit recommended moving off info.safartrails@gmail.com;
+ * until the mailbox exists, PRIMARY_EMAIL_FALLBACK is what the site displays.
+ */
+export const PRIMARY_EMAIL = 'info.safartrails@gmail.com';
+
+export const POSTAL_ADDRESS = {
+  streetAddress: 'Pillar No. 786, Plot No. 2, Jai Bharat Enclave, Bhagwati Garden, Nawada',
+  addressLocality: 'New Delhi',
+  addressRegion: 'Delhi',
+  postalCode: '110059',
+  addressCountry: 'IN',
+} as const;
+
+export const GEO = {
+  latitude: 28.6139,
+  longitude: 77.0421,
+} as const;
+
+export const SOCIAL_PROFILES = [
+  'https://www.facebook.com/safartrails/',
+  'https://www.instagram.com/safartrails.in/',
+];
+
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
+
+/**
+ * Organization-level aggregateRating in JSON-LD.
+ *
+ * Deliberately disabled. Google's review-snippet policy only allows ratings
+ * that are collected and displayed by the site itself, and the homepage shows
+ * four on-site testimonials - not a statistically meaningful aggregate. Turning
+ * this on with numbers copied from Google Business Profile would be a policy
+ * violation (Google's own reviews may not be re-marked-up as your own).
+ *
+ * Enable it only once genuine, on-site, user-submitted reviews are collected
+ * and rendered on the page, and set the counts to the real totals.
+ */
+export const ORGANIZATION_RATING_ENABLED = false;
+export const ORGANIZATION_RATING = { ratingValue: '4.9', reviewCount: '127' };
+
+/** Absolute-URL helper that tolerates paths with or without a leading slash. */
+export function absoluteUrl(pathname: string): string {
+  if (/^https?:\/\//i.test(pathname)) return pathname;
+  const path = pathname.startsWith('/') ? pathname : `/${pathname}`;
+  return path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}`;
+}

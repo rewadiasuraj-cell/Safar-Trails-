@@ -1,5 +1,5 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
-import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { Header } from './components/Header';
 import { MobileBottomNav } from './components/MobileBottomNav';
@@ -12,6 +12,8 @@ import { AIPlannerTeaser } from './components/AIPlannerTeaser';
 
 import { Package, TravelGuide } from './types';
 import { initGA, trackPageView } from './lib/analytics';
+import { Seo } from './lib/seo/Seo';
+import { NotFoundPage } from './components/NotFoundPage';
 
 // Code-split below-the-fold sections to eliminate unused JS on initial mobile paint
 const AITripPlanner = lazy(() => import('./components/AITripPlanner/AITripPlanner').then(m => ({ default: m.AITripPlanner })));
@@ -135,6 +137,14 @@ export default function App() {
 
   return (
     <div className="min-h-screen w-full flex flex-col bg-white text-slate-900 font-sans selection:bg-orange-500 selection:text-white">
+      {/* Keeps <head> in sync with the route on every client-side navigation. */}
+      <Seo />
+
+      {/* WCAG 2.2 AA 2.4.1 Bypass Blocks - visible only once focused via Tab. */}
+      <a href="#main-content" className="skip-to-content">
+        Skip to main content
+      </a>
+
       {/* Primary Desktop & Mobile Header */}
       <Header
         currentView={currentView}
@@ -147,7 +157,7 @@ export default function App() {
       />
 
       {/* Main Content Router */}
-      <main className="w-full flex-grow">
+      <main id="main-content" tabIndex={-1} className="w-full flex-grow">
         <Routes>
           {/* ROUTE: HOME (Master Editorial Layout) */}
           <Route
@@ -377,8 +387,9 @@ export default function App() {
             }
           />
 
-          {/* Unknown paths fall back to Home */}
-          <Route path="*" element={<Navigate to="/" replace />} />
+          {/* Unknown paths render a real, noindex 404 page rather than silently
+              redirecting to Home, which Google reads as a soft 404. */}
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
 

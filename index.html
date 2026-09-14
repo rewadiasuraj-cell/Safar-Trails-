@@ -4,34 +4,37 @@
     <!-- Google Analytics 4 (gtag.js) is bootstrapped from src/lib/analytics.ts so the
          measurement ID can come from an env var reliably, with per-route page_view
          events fired on every React Router navigation. -->
+    <!-- The tags below are the HOMEPAGE defaults. scripts/prerender.ts rewrites
+         them per route at build time, and src/lib/seo/Seo.tsx keeps them correct
+         across client-side navigation. Edit the copy in src/lib/seo/routes.ts. -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>SafarTrails — AI-Powered India Holiday Packages & Custom Itineraries</title>
-    <meta name="description" content="AI plans. Experts perfect. Discover bespoke holiday packages across Kashmir, Goa, Kerala, Rajasthan, Himachal, Uttarakhand & beyond with SafarTrails." />
-    <meta name="keywords" content="India holiday packages, AI trip planner India, custom travel itineraries, Kashmir tour packages, Kerala houseboat tour, Rajasthan tour packages, Himachal holiday packages, Goa honeymoon package, luxury travel agency India, SafarTrails" />
-    <meta name="author" content="SafarTrails" />
-    <meta name="robots" content="index, follow" />
+    <title>Custom India Tour Packages – AI Trip Planner | Safar Trails</title>
+    <meta name="description" content="Custom Kashmir, Kerala, Himachal &amp; Rajasthan tour packages, planned by AI and refined by real travel experts. 24x7 support, transparent pricing. Get a free itinerary!" />
+    <meta name="keywords" content="India holiday packages, AI trip planner India, custom travel itineraries, Kashmir tour packages, Kerala houseboat tour, Rajasthan tour packages, Himachal holiday packages, Goa honeymoon package, trusted travel agency India, Safar Trails" />
+    <meta name="author" content="Safar Trails" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href="https://safartrails.co.in/" />
 
     <!-- Open Graph / Facebook / WhatsApp Social Media Card -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="SafarTrails" />
+    <meta property="og:site_name" content="Safar Trails" />
     <meta property="og:url" content="https://safartrails.co.in/" />
-    <meta property="og:title" content="SafarTrails — AI-Powered India Travel Packages & Custom Itineraries" />
-    <meta property="og:description" content="AI-powered custom holiday planning handcrafted by verified destination experts. Discover India with Trust." />
+    <meta property="og:title" content="Safar Trails – Travel with Trust" />
+    <meta property="og:description" content="Custom tour packages across India &amp; abroad. Hand-planned itineraries, verified stays, transparent pricing and 24x7 on-trip support." />
     <meta property="og:image" content="https://safartrails.co.in/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:alt" content="SafarTrails — AI-Powered India Travel Packages & Custom Itineraries" />
+    <meta property="og:image:alt" content="Safar Trails – Travel with Trust" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@SafarTrails" />
-    <meta name="twitter:title" content="SafarTrails — AI-Powered India Travel Packages & Custom Itineraries" />
-    <meta name="twitter:description" content="AI plans. Experts perfect. Discover bespoke holiday packages across Kashmir, Goa, Kerala, Rajasthan & beyond with SafarTrails." />
+    <meta name="twitter:title" content="Safar Trails – Travel with Trust" />
+    <meta name="twitter:description" content="Custom tour packages across India &amp; abroad. Hand-planned itineraries, verified stays and 24x7 on-trip support." />
     <meta name="twitter:image" content="https://safartrails.co.in/og-image.jpg" />
-    <meta name="twitter:image:alt" content="SafarTrails — AI-Powered India Travel Packages & Custom Itineraries" />
+    <meta name="twitter:image:alt" content="Safar Trails – Travel with Trust" />
 
     <meta name="theme-color" content="#1B2456" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -65,7 +68,9 @@
       />
     </noscript>
 
-    <!-- Schema.org Structured Data -->
+    <!-- Site-wide organization graph. scripts/prerender.ts replaces this with the
+         per-route @graph (TouristTrip / TouristDestination / Article / FAQPage /
+         BreadcrumbList) built in src/lib/seo/structuredData.ts. -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -73,25 +78,43 @@
         {
           "@type": "TravelAgency",
           "@id": "https://safartrails.co.in/#organization",
-          "name": "SafarTrails",
+          "name": "Safar Trails",
+          "alternateName": "SafarTrails",
+          "slogan": "Travel with Trust",
           "url": "https://safartrails.co.in",
           "logo": "https://safartrails.co.in/logo.svg",
           "image": "https://safartrails.co.in/og-image.jpg",
-          "slogan": "AI Plans. Experts Perfect. Travel With Trust.",
-          "description": "Indian domestic travel agency and AI holiday package platform curating personalized vacations for couples, families, and solo travelers.",
-          "telephone": "+91-8076665782",
+          "description": "Indian travel agency crafting custom tour packages across India and abroad \u2014 hand-planned itineraries, verified stays, transparent pricing and 24x7 on-trip support.",
+          "telephone": "+918076665782",
           "email": "info.safartrails@gmail.com",
-          "areaServed": "India",
-          "priceRange": "₹₹ - ₹₹₹₹"
+          "priceRange": "\u20b9\u20b9 - \u20b9\u20b9\u20b9\u20b9",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Pillar No. 786, Plot No. 2, Jai Bharat Enclave, Bhagwati Garden, Nawada",
+            "addressLocality": "New Delhi",
+            "addressRegion": "Delhi",
+            "postalCode": "110059",
+            "addressCountry": "IN"
+          },
+          "geo": { "@type": "GeoCoordinates", "latitude": 28.6139, "longitude": 77.0421 },
+          "areaServed": { "@type": "Country", "name": "India" },
+          "sameAs": [
+            "https://www.facebook.com/safartrails/",
+            "https://www.instagram.com/safartrails.in/"
+          ]
         },
         {
           "@type": "WebSite",
           "@id": "https://safartrails.co.in/#website",
           "url": "https://safartrails.co.in",
-          "name": "SafarTrails Holiday Packages & AI Trip Planner",
+          "name": "Safar Trails \u2014 Holiday Packages & AI Trip Planner",
+          "publisher": { "@id": "https://safartrails.co.in/#organization" },
           "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://safartrails.co.in/?search={search_term_string}",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://safartrails.co.in/?search={search_term_string}"
+            },
             "query-input": "required name=search_term_string"
           }
         }

@@ -1,4 +1,5 @@
 import express from 'express';
+import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
 import compression from 'compression';
@@ -130,13 +131,47 @@ async function startServer() {
     app.use(vite.middlewares);
   } else {
     const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath, {
-      maxAge: '1y',
-      immutable: true,
-      index: false
-    }));
+
+    // Hashed build assets are safe to cache forever; the prerendered HTML files
+    // are not, or a content update would never reach a returning visitor.
+    app.use(
+      express.static(distPath, {
+        index: false,
+        setHeaders(res, filePath) {
+          res.setHeader(
+            'Cache-Control',
+            filePath.endsWith('.html') ? 'public, max-age=0, must-revalidate' : 'public, max-age=31536000, immutable',
+          );
+        },
+      }),
+    );
+
+    // Serve the per-route HTML written by scripts/prerender.ts. Falling straight
+    // through to the SPA shell (the previous behavior) is what made every URL
+    // return the homepage's title, meta and canonical.
     app.get('*', (req, res) => {
-      res.sendFile(path.join(distPath, 'index.html'));
+      const requestPath = req.path.replace(/\/+$/, '');
+
+      if (!requestPath) {
+        return res.sendFile(path.join(distPath, 'index.html'));
+      }
+
+      // path.resolve + prefix check keeps a crafted "../" path from escaping dist.
+      const prerendered = path.resolve(distPath, `.${requestPath}`, 'index.html');
+      if (prerendered.startsWith(distPath + path.sep) && fs.existsSync(prerendered)) {
+        return res.sendFile(prerendered);
+      }
+
+      // Client-routed CMS detail pages still need the shell.
+      if (/^\/(destinations|packages|tour-packages|guides)\//.test(req.path)) {
+        return res.sendFile(path.join(distPath, 'index.html'));
+      }
+
+      // Everything else is genuinely missing: answer 404, not a soft 404.
+      const notFoundPage = path.join(distPath, '404.html');
+      return res
+        .status(404)
+        .sendFile(fs.existsSync(notFoundPage) ? notFoundPage : path.join(distPath, 'index.html'));
     });
   }
 

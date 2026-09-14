@@ -22,6 +22,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
   onStartAIPlan,
   onOpenQuoteModal
 }) => {
+  const navigate = useNavigate();
   const { slug = '', pkgSlug = '' } = useParams<{ slug?: string; pkgSlug?: string }>();
   const targetSlug = pkgSlug || slug;
   const packageData = packagesData.find((p) => p.slug === targetSlug || p.id === targetSlug);
