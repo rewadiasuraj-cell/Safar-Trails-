@@ -15,7 +15,7 @@ export const ReviewsSection: React.FC = () => {
             Loved by Couples, Families & Explorers
           </h2>
           <p className="mt-2 text-gray-500 text-sm sm:text-base font-normal">
-            Over 12,000+ happy journeys crafted across India. Read verified reviews from real travelers.
+            Real travellers, real trips. Every review below is from a journey we planned.
           </p>
         </div>
 

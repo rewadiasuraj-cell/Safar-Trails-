@@ -62,6 +62,26 @@ export const GEO = {
   longitude: 77.0421,
 } as const;
 
+/**
+ * Google Business Profile links.
+ *
+ * GOOGLE_REVIEW_URL should be the short "write a review" link from the profile
+ * (Business Profile → Ask for reviews → copy link). It looks like
+ * https://g.page/r/XXXXXXXXXXXX/review. Until that is pasted in, the site links
+ * to the Maps listing instead, which still lets people read and leave reviews -
+ * it is just one extra tap.
+ *
+ * This is the ONLY review claim the site should make: a link to the real
+ * profile, where the rating can be verified. See docs/README.md on why the
+ * hardcoded review counts were removed.
+ */
+export const GOOGLE_MAPS_URL =
+  'https://www.google.com/maps/search/Safar+Trails+Jai+Bharat+Encl+Nawada+New+Delhi';
+export const GOOGLE_REVIEW_URL = '';
+
+/** Falls back to the Maps listing until the short review link is filled in. */
+export const reviewLink = (): string => GOOGLE_REVIEW_URL || GOOGLE_MAPS_URL;
+
 export const SOCIAL_PROFILES = [
   'https://www.facebook.com/safartrails/',
   'https://www.instagram.com/safartrails.in/',

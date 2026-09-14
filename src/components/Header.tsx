@@ -73,7 +73,7 @@ export const Header: React.FC<HeaderProps> = ({
     { label: 'Travel Guides', id: 'guides', desc: 'Expert tips, best seasons & itineraries', icon: BookOpen },
     { label: 'Why Us', id: 'why-us', desc: 'Verified partners, 0 hidden costs', icon: ShieldCheck },
     { label: 'Destinations Guide', id: 'destinations', desc: 'Explore all 28+ states & circuits', icon: Compass },
-    { label: 'Guest Reviews', id: 'reviews', desc: '4.9★ rated by 12,000+ travellers', icon: Star },
+    { label: 'Guest Reviews', id: 'reviews', desc: 'Real stories from real Safar Trails trips', icon: Star },
   ];
 
   const handleWhatsAppClick = () => openWhatsApp(enquiryMessage(), 'header');

@@ -126,12 +126,15 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
               </span>
             )}
             <ExpertVerifiedBadge variant="glass-dark" size="sm" showSubtitle={false} />
+            {/* Was a star rating with a review count from placeholder data the
+                business could not substantiate. A starting price is true, and
+                it is what a traveller is actually trying to find out here. */}
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white/10 backdrop-blur-md text-white border border-white/20">
-              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400 shrink-0" />
-              <span className="text-white font-extrabold">{destination.rating ? destination.rating.toFixed(1) : '4.9'} / 5.0</span>
-              {destination.reviewCount && (
-                <span className="text-[11px] font-medium text-gray-300">({destination.reviewCount.toLocaleString()})</span>
-              )}
+              <span className="text-[11px] font-medium text-gray-200 uppercase tracking-wide">From</span>
+              <span className="text-white font-extrabold">
+                ₹{destination.startingPrice.toLocaleString('en-IN')}
+              </span>
+              <span className="text-[11px] font-medium text-gray-200">per person</span>
             </span>
           </div>
 

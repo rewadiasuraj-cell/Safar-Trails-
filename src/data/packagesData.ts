@@ -1,3 +1,18 @@
+// NOTE ON rating / reviewCount
+//
+// These are placeholder values from when the site was first built - they total
+// well over ten thousand reviews across the file, against a business with a
+// handful of real ones. They are deliberately NOT displayed anywhere in the UI
+// and NOT emitted in structured data: publishing review counts you cannot
+// substantiate is a Google review-snippet policy violation (manual-action risk)
+// and, under India's consumer protection rules on misleading advertising, a
+// real exposure.
+//
+// Do not wire them back into the UI or into JSON-LD. Once genuine reviews are
+// collected and shown on the page, mark them up on the TravelAgency block via
+// ORGANIZATION_RATING_ENABLED in src/lib/seo/siteConfig.ts - the type Google
+// actually supports review snippets on.
+
 import { Package } from '../types';
 
 export const packagesData: Package[] = [
