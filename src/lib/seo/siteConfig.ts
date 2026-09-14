@@ -77,7 +77,7 @@ export const GEO = {
  */
 export const GOOGLE_MAPS_URL =
   'https://www.google.com/maps/search/Safar+Trails+Jai+Bharat+Encl+Nawada+New+Delhi';
-export const GOOGLE_REVIEW_URL = '';
+export const GOOGLE_REVIEW_URL = 'https://g.page/r/CTW1s_2ahEdtEBM/review';
 
 /** Falls back to the Maps listing until the short review link is filled in. */
 export const reviewLink = (): string => GOOGLE_REVIEW_URL || GOOGLE_MAPS_URL;

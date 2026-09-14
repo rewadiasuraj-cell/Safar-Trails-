@@ -19,6 +19,7 @@ import {
   POSTAL_ADDRESS,
   PRIMARY_EMAIL,
   PRIMARY_PHONE,
+  GOOGLE_MAPS_URL,
   SITE_URL,
   SOCIAL_PROFILES,
   absoluteUrl,
@@ -48,6 +49,9 @@ export function travelAgencySchema(): JsonLd {
     address: { '@type': 'PostalAddress', ...POSTAL_ADDRESS },
     geo: { '@type': 'GeoCoordinates', latitude: GEO.latitude, longitude: GEO.longitude },
     areaServed: { '@type': 'Country', name: 'India' },
+    // Ties the site to the Google Business Profile listing, so Google reads the
+    // two as one entity rather than two businesses with the same name.
+    hasMap: GOOGLE_MAPS_URL,
     sameAs: SOCIAL_PROFILES,
   };
 
