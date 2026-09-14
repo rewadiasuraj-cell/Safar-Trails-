@@ -114,13 +114,13 @@ export function touristDestinationSchema(destination: Destination): JsonLd {
     name: destination.name,
     description: destination.shortDescription,
     url,
-    image: destination.heroImage,
+    image: absoluteUrl(destination.heroImage),
     touristType: 'Leisure and pilgrimage travellers from India',
     includesAttraction: destination.topAttractions.map((attraction) => ({
       '@type': 'TouristAttraction',
       name: attraction.name,
       description: attraction.description,
-      image: attraction.image,
+      image: absoluteUrl(attraction.image),
     })),
     address: {
       '@type': 'PostalAddress',
@@ -162,7 +162,7 @@ export function touristTripSchema(pkg: Package, canonicalPath: string): JsonLd {
     name: pkg.title,
     description: pkg.overview,
     url,
-    image: pkg.heroImage,
+    image: absoluteUrl(pkg.heroImage),
     touristType: pkg.tripType,
     provider: { '@id': ORGANIZATION_ID },
     itinerary: {
@@ -204,7 +204,7 @@ export function guideArticleSchema(guide: TravelGuide): JsonLd {
     headline: guide.title,
     description: guide.excerpt,
     url,
-    image: guide.heroImage,
+    image: absoluteUrl(guide.heroImage),
     datePublished: parsePublishedDate(guide.publishedDate),
     author: { '@type': 'Person', name: guide.author.name, jobTitle: guide.author.role },
     publisher: { '@id': ORGANIZATION_ID },

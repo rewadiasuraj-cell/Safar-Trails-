@@ -21,7 +21,7 @@ account. Start at [docs/README.md](./docs/README.md).
 are easy to break by accident:
 
 1. **`bun run build` must keep running `scripts/prerender.ts`.** Without it the
-   site reverts to serving one identical head tag and an empty body on all 42
+   site reverts to serving one identical head tag and an empty body on all 47
    URLs — the exact state the audit found. `build:pages` includes it too.
 2. **Page titles and descriptions live in `src/lib/seo/routes.ts`,** not in
    `index.html`. The prerender overwrites `index.html`'s tags per route.
@@ -46,6 +46,31 @@ couple of minutes.
 The filename is the URL slug: `content/packages/sikkim-explorer.json` is served at
 `/tour-packages/sikkim-explorer`. To add a package, copy an existing file, rename
 it to the new slug, and change the contents.
+
+### Photos
+
+`heroImage` is the one image that shows on the page — it becomes the banner, the
+Facebook/WhatsApp link preview and the `image` in the structured data. Two forms
+work:
+
+```
+"heroImage": "/content/packages/<slug>/1.jpg"          a real photo in this repo
+"heroImage": "https://images.unsplash.com/photo-…"     a stock photo
+```
+
+Real photos rank and convert better than stock — the audit says so explicitly —
+so prefer them wherever they exist. Put the files in
+`public/content/packages/<slug>/` (or `destinations/`, `guides/`) and reference
+them with a leading slash, exactly as above. The code turns that into a full
+`https://safartrails.co.in/…` URL wherever one is needed, so never write the
+domain into the JSON.
+
+Before committing a photo, **shrink it**: longest edge 1600px, JPEG quality
+around 75. A phone photo straight out of the camera is 4–8 MB and will make the
+page slow on mobile data, which costs rankings. Anything over ~300 KB is too
+big.
+
+`galleryImages` is stored but not yet rendered anywhere.
 
 ### If you break something, the build stops
 

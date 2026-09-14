@@ -8,9 +8,11 @@
  * build now produces against a snapshot of what is live, and fails when a URL
  * disappears without a redirect covering it.
  *
- * The snapshot is written by scripts/export-sanity.ts as
- * content/.sitemap-baseline.txt. Without it this passes with a warning, because
- * there is nothing to compare against.
+ * The snapshot is content/.sitemap-baseline.txt: the 48 URLs the live sitemap
+ * held on the day of the migration, committed alongside the content itself.
+ * Without it this passes with a warning, because there is nothing to compare
+ * against. Keep it - it is the record of what Google already knows about, and
+ * it stays useful for any future change that retires a URL.
  *
  * Run: npx tsx scripts/check-urls.ts   (after a build)
  */
@@ -63,8 +65,8 @@ function main(): void {
   if (!fs.existsSync(BASELINE)) {
     console.warn(
       '[urls] No content/.sitemap-baseline.txt, so there is nothing to compare against.\n' +
-        '       scripts/export-sanity.ts writes it. Until then this check cannot tell you\n' +
-        '       whether a live URL has been dropped.',
+        '       It should be committed in this repository. Without it this check cannot\n' +
+        '       tell you whether a live URL has been dropped.',
     );
     return;
   }

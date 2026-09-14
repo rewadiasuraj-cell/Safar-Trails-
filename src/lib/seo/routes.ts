@@ -320,7 +320,7 @@ function destinationRoute(destination: Destination): RouteSeo {
       fitTitle(`${destination.name} Tour Packages`),
     description: fitDescription(destination.seoDescription || destination.shortDescription),
     canonical: absoluteUrl(path),
-    ogImage: destination.heroImage,
+    ogImage: absoluteUrl(destination.heroImage),
     ogType: 'website',
     robots: INDEX_FOLLOW,
     jsonLd: organizationGraph([
@@ -393,7 +393,7 @@ function packageRoute(pkg: Package): RouteSeo {
       `${pkg.overview} Starting ₹${pkg.startingPrice.toLocaleString('en-IN')} per person from ${pkg.startingCity}.`,
     ),
     canonical: absoluteUrl(path),
-    ogImage: pkg.heroImage,
+    ogImage: absoluteUrl(pkg.heroImage),
     ogType: 'website',
     robots: INDEX_FOLLOW,
     jsonLd: organizationGraph([
@@ -448,7 +448,7 @@ function guideRoute(guide: TravelGuide): RouteSeo {
     title: fitTitle(guide.title.replace(/\s*\(\d{4}\)\s*$/, '')),
     description: fitDescription(guide.excerpt),
     canonical: absoluteUrl(path),
-    ogImage: guide.heroImage,
+    ogImage: absoluteUrl(guide.heroImage),
     ogType: 'article',
     robots: INDEX_FOLLOW,
     jsonLd: organizationGraph([

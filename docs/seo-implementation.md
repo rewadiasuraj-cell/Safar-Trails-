@@ -68,7 +68,7 @@ Measured result:
 | Destination page | 6 KB | 16 KB |
 | `<h1>` per page | 0 | 1 |
 | Visible text, destination page | 68 chars | ~3,800 chars (~600 words) |
-| Distinct canonicals | 1 | 42 |
+| Distinct canonicals | 1 | 47 |
 
 ### Where the content comes from
 
@@ -137,12 +137,20 @@ multi-day itinerary, exactly as the playbook's Section 6 describes.
 
 Validate after deploying: <https://search.google.com/test/rich-results>
 
-**On `aggregateRating`.** Destination and package pages emit it because those
-pages display that rating and count on-screen, which is what Google's policy
-requires. The organisation-level rating is off by default
-(`ORGANIZATION_RATING_ENABLED` in `siteConfig.ts`). Turning it on with numbers
-copied from the Google Business Profile would violate Google's review-snippet
-policy — a site may not re-mark-up reviews collected on Google as its own.
+**On `aggregateRating`.** Nothing emits it, anywhere. The ratings and review
+counts in the content files were placeholders — over 10,000 reviews in total,
+none of them real — so marking them up would have been publishing invented
+numbers to Google. They were removed from the schema and from the page, and the
+cards now lead with "From ₹X" and factual badges instead. Separately,
+`TouristDestination` and `TouristTrip` are not on Google's list of types that
+support review snippets, so the markup would have earned nothing even if the
+numbers had been genuine.
+
+The organisation-level rating is off by default (`ORGANIZATION_RATING_ENABLED`
+in `siteConfig.ts`). Turning it on with numbers copied from the Google Business
+Profile would violate Google's review-snippet policy — a site may not re-mark-up
+reviews collected on Google as its own. Enable it only once genuine reviews are
+collected and displayed on the site itself.
 
 ## Domain, redirects and 404s
 
@@ -214,6 +222,6 @@ curl -sI https://www.safartrails.co.in/ | head -3
 # A junk URL must return 404, not 200
 curl -s -o /dev/null -w '%{http_code}\n' https://safartrails.co.in/xyz-fake-page
 
-# The sitemap should list 42 URLs
+# The sitemap should list 47 URLs
 curl -s https://safartrails.co.in/sitemap.xml | grep -c '<url>'
 ```
