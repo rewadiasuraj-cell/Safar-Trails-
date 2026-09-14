@@ -11,9 +11,10 @@ import {
   Mail, 
   Calendar, 
   Users, 
-  IndianRupee, 
+  IndianRupee,
   Loader2,
-  ArrowRight
+  ArrowRight,
+  ChevronDown
 } from 'lucide-react';
 
 interface QuoteRequestModalProps {
@@ -34,10 +35,26 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
   const [email, setEmail] = useState('');
   const [destination, setDestination] = useState(initialDestination || 'Kashmir');
   const [travelDates, setTravelDates] = useState('');
-  const [travellers, setTravellers] = useState('2 Adults');
+  // These two must match an <option value> below exactly, or the select shows the
+  // first option while the state holds something else - and the enquiry records a
+  // value nobody chose. '2 Adults' used to do precisely that.
+  const [travellers, setTravellers] = useState('2 Adults (Couple/Honeymoon)');
   const [budget, setBudget] = useState('Standard (₹15k–₹25k/person)');
   const [notes, setNotes] = useState(initialSummary);
-  
+
+  /**
+   * The audit measured this form at seven fields and recommended four. Only name
+   * and phone are actually required, so the other five were costing enquiries
+   * purely by making the form look long. They are collapsed rather than deleted:
+   * the request body is unchanged, and anyone who wants to give more detail
+   * still can.
+   *
+   * It starts open when the AI planner passes an itinerary in, because that text
+   * is prefilled into notes and the sender should be able to see what is being
+   * sent on their behalf.
+   */
+  const [showMore, setShowMore] = useState(Boolean(initialSummary));
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedLead, setSubmittedLead] = useState<any>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -50,6 +67,10 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
       }
       if (initialSummary) {
         setNotes(initialSummary);
+        // The useState initialiser only runs on first mount, and this modal stays
+        // mounted between opens - so the planner path has to re-open the section
+        // here, not just on mount.
+        setShowMore(true);
       }
       setSubmittedLead(null);
       setErrorMsg(null);
@@ -325,6 +346,23 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
               </div>
             </div>
 
+            <button
+              type="button"
+              onClick={() => setShowMore((open) => !open)}
+              aria-expanded={showMore}
+              aria-controls="quote-more-details"
+              className="w-full flex items-center justify-between gap-2 px-3.5 py-2.5 rounded-xl border border-dashed border-gray-300 text-[11px] font-bold uppercase tracking-widest text-gray-600 hover:text-gray-900 hover:border-gray-400 bg-white cursor-pointer"
+            >
+              <span>
+                {showMore ? 'Hide extra details' : 'Add trip details (optional)'}
+              </span>
+              <ChevronDown
+                aria-hidden="true"
+                className={`w-4 h-4 flex-shrink-0 transition-transform ${showMore ? 'rotate-180' : ''}`}
+              />
+            </button>
+
+            <div id="quote-more-details" hidden={!showMore} className="space-y-3">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <label
@@ -372,6 +410,25 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
 
             <div>
               <label
+                htmlFor="quote-email"
+                className="block text-[10px] font-bold uppercase tracking-widest text-gray-600 mb-1"
+              >
+                Email (Optional)
+              </label>
+              <input
+                id="quote-email"
+                name="email"
+                type="email"
+                autoComplete="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="e.g. rahul@gmail.com"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-xs sm:text-sm text-gray-900 bg-white focus:border-black focus:outline-none"
+              />
+            </div>
+
+            <div>
+              <label
                 htmlFor="quote-notes"
                 className="block text-[10px] font-bold uppercase tracking-widest text-gray-600 mb-1"
               >
@@ -386,6 +443,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                 placeholder="e.g. Want Dal lake houseboat with central heating, need vegetarian meals, child car seat..."
                 className="w-full p-3 rounded-xl border border-gray-200 text-xs text-gray-900 resize-none bg-white focus:border-black focus:outline-none"
               />
+            </div>
             </div>
 
             <button

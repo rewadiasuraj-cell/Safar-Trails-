@@ -10,12 +10,19 @@ import {
 } from 'lucide-react';
 
 interface PackagesSectionProps {
+  /**
+   * True when this renders as the standalone /packages page rather than a
+   * homepage section: the heading becomes the page's only h1 and carries the
+   * page-level copy, matching the prerendered H1 in src/lib/seo/routes.ts.
+   */
+  asPage?: boolean;
   onSelectPackage: (pkg: Package) => void;
   onCustomizePackageWithAI?: (packageTitle: string, destination: string) => void;
   onOpenQuoteModal?: (summary?: string, destinationName?: string) => void;
 }
 
 export const PackagesSection: React.FC<PackagesSectionProps> = ({
+  asPage = false,
   onSelectPackage,
   onCustomizePackageWithAI,
   onOpenQuoteModal
@@ -62,12 +69,26 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
         {/* Single Clean Section Heading - No Redundant Subheaders */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
           <div>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-tight">
-              India Tour Packages
-            </h2>
-            <p className="mt-1.5 text-slate-500 text-sm max-w-xl font-normal">
-              Expertly curated itineraries, trusted stays, private cabs, and 24/7 travel support.
-            </p>
+            {asPage ? (
+              <>
+                <h1 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-tight">
+                  India Holiday Packages
+                </h1>
+                <p className="mt-1.5 text-slate-600 text-sm max-w-xl font-normal">
+                  Each package is a starting point, not a fixed menu. Tell us your dates and we will
+                  send a revised day-wise itinerary with transparent pricing.
+                </p>
+              </>
+            ) : (
+              <>
+                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-tight">
+                  India Tour Packages
+                </h2>
+                <p className="mt-1.5 text-slate-600 text-sm max-w-xl font-normal">
+                  Expertly curated itineraries, trusted stays, private cabs, and 24/7 travel support.
+                </p>
+              </>
+            )}
           </div>
 
           <div className="text-xs font-bold uppercase tracking-wider text-slate-500 bg-gray-50 px-3.5 py-1.5 rounded-full border border-gray-200 self-start sm:self-auto">
@@ -187,9 +208,9 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
 
                 {/* Card Details */}
                 <div className="p-5 space-y-3">
-                  <h2 className="text-lg font-serif font-bold text-slate-900 group-hover:text-luxury-gold transition-colors line-clamp-2 leading-snug">
+                  <h3 className="text-lg font-serif font-bold text-slate-900 group-hover:text-gold-ink transition-colors line-clamp-2 leading-snug">
                     {pkg.title}
-                  </h2>
+                  </h3>
 
                   <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
                     {pkg.overview}

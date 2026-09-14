@@ -1,0 +1,59 @@
+{
+  "id": "pkg-chardham-yatra-premium",
+  "slug": "chardham-yatra-premium",
+  "title": "Chardham Yatra Premium with Helicopter Options",
+  "destination": "Chardham Yatra, Uttarakhand",
+  "state": "Uttarakhand",
+  "durationDays": 10,
+  "durationNights": 9,
+  "startingPrice": 39999,
+  "originalPrice": 48000,
+  "tripType": [
+    "Spiritual",
+    "Family",
+    "Luxury"
+  ],
+  "hotelCategory": "Luxury 5★",
+  "ratings": 4.9,
+  "reviewCount": 54,
+  "startingCity": "Delhi / Dehradun",
+  "bestFor": "Senior Citizens & Premium Pilgrims",
+  "heroImage": "https://images.unsplash.com/photo-1698574996391-73f103113f60?q=80&w=1200&auto=format&fit=crop",
+  "galleryImages": [
+    "https://images.unsplash.com/photo-1698574996391-73f103113f60?q=80&w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1601821139366-eb14f3628e26?q=80&w=800&auto=format&fit=crop"
+  ],
+  "overview": "Premium 10-day Chardham Yatra experience with luxury stays, priority VIP darshan assistance, dedicated Innova Crysta transfers, and optional helicopter booking for Kedarnath.",
+  "highlights": [
+    "VIP Darshan assistance at Kedarnath & Badrinath",
+    "Priority Helicopter ticket assistance for Phata/Sersi to Kedarnath",
+    "Luxury 4★/5★ hotel & luxury cottage accommodations",
+    "Dedicated Innova Crysta vehicle throughout the pilgrimage"
+  ],
+  "inclusions": [
+    "9 Nights stay in premium hotels and luxury resort camps",
+    "Daily breakfast & dinner at all properties",
+    "Private Innova Crysta with experienced mountain driver",
+    "Special VIP Yatra registration and priest coordination"
+  ],
+  "exclusions": [
+    "Helicopter ticket cost (unless added as optional package add-on)",
+    "Pony and palki charges"
+  ],
+  "itinerary": [
+    {
+      "dayNumber": 1,
+      "title": "Delhi/Dehradun to Haridwar",
+      "location": "Haridwar",
+      "description": "Luxury transfer to Haridwar with evening VIP seating for Ganga Aarti at Har Ki Pauri.",
+      "morningActivity": "Pickup in private Innova Crysta",
+      "eveningActivity": "VIP Ganga Aarti experience",
+      "stay": "Haveli Hari Ganga / Radisson Blu Haridwar 5★",
+      "mealsIncluded": "Dinner",
+      "transfers": "Private Innova Crysta"
+    }
+  ],
+  "season": "Summer",
+  "isFeatured": true,
+  "isPopular": true
+}

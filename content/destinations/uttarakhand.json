@@ -1,0 +1,65 @@
+{
+  "slug": "uttarakhand",
+  "name": "Uttarakhand",
+  "tagline": "Devbhoomi — Ganga Aarti, Clifftop Hill Stations & Tiger Safaris",
+  "state": "Uttarakhand",
+  "heroImage": "/Places-in-Uttarakhand.jpg",
+  "cardImage": "/Places-in-Uttarakhand.jpg",
+  "shortDescription": "White water river rafting in Rishikesh, mesmerizing evening Ganga Aarti at Triveni Ghat, scenic walks in Mussoorie, and tiger safaris in Jim Corbett.",
+  "fullOverview": "From the adrenaline rush of Grade IV rapids in Rishikesh and tranquil yoga ashrams along the sacred Ganges to the misty colonial promenades of Mussoorie and Nainital’s emerald lakes, Uttarakhand balances rejuvenation with thrilling mountain wilderness.",
+  "bestTime": "October to June (Great for rafting & hill stations) | November to February (Jim Corbett tiger safaris & Auli skiing)",
+  "temperatureRange": "5°C - 30°C",
+  "startingPrice": 11999,
+  "idealDays": "4 to 7 Days",
+  "rating": 4.9,
+  "reviewCount": 1530,
+  "isTrending": true,
+  "highlights": [
+    "16 km White Water River Rafting through Shivpuri to Rishikesh with cliff jumping",
+    "Soulful sunset Ganga Aarti ceremony at Parmarth Niketan / Triveni Ghat",
+    "Open 4x4 Jeep Safari in Jim Corbett National Park (Bijrani / Dhikala zone)",
+    "Scenic cable car ride to Gun Hill and Kempty Falls in Mussoorie",
+    "Yachting and boating on mango-shaped Naini Lake"
+  ],
+  "howToReach": {
+    "air": "Jolly Grant Airport, Dehradun (DED) with daily direct flights from Delhi, Mumbai, Bengaluru, and Hyderabad.",
+    "rail": "Haridwar (HW), Dehradun (DDN), and Kathgodam (KGM) stations.",
+    "road": "Smooth 4-5 hour drive from Delhi-NCR via Delhi-Meerut Expressway."
+  },
+  "topAttractions": [
+    {
+      "name": "Rishikesh & Ganga Riverbank",
+      "description": "Global capital of Yoga, iconic suspension bridges (Lakshman & Ram Jhula), and cafes.",
+      "image": "/Places-in-Uttarakhand.jpg"
+    },
+    {
+      "name": "Jim Corbett Tiger Reserve",
+      "description": "India’s oldest national park known for Royal Bengal Tigers, wild elephants, and rich birdlife.",
+      "image": "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?q=80&w=600&auto=format&fit=crop"
+    }
+  ],
+  "stayCategories": [
+    {
+      "category": "Riverside Glamping Camps (Rishikesh)",
+      "priceRange": "₹2,500 – ₹6,000 / night (all meals & bonfire)",
+      "recommendation": "Luxury tents with AC, pool, volleyball, and private river stream access."
+    },
+    {
+      "category": "Wilderness Jungle Lodges (Jim Corbett)",
+      "priceRange": "₹5,000 – ₹15,000 / night",
+      "recommendation": "Nestled on the banks of Kosi River with naturalist-led birding walks."
+    }
+  ],
+  "travelTips": [
+    "Corbett safari permits for Dhikala and Bijrani zones open 45 days in advance and sell out rapidly.",
+    "River rafting is closed during peak monsoon months (July to mid-September) for safety."
+  ],
+  "faqs": [
+    {
+      "question": "Is Uttarakhand suitable for weekend getaways from Delhi?",
+      "answer": "Yes, destinations like Rishikesh, Mussoorie, Jim Corbett, and Nainital are accessible in a 4 to 6-hour drive from Delhi NCR, making them ideal 3D/2N weekend breaks."
+    }
+  ],
+  "seoTitle": "Uttarakhand Tour Packages 2026 | Rishikesh Rafting, Mussoorie & Corbett Safaris",
+  "seoDescription": "Book Uttarakhand holiday packages with river rafting in Rishikesh, luxury jungle safaris in Corbett, and hill station stays in Mussoorie & Nainital."
+}

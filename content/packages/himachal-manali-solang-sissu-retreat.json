@@ -1,0 +1,121 @@
+{
+  "id": "pkg-himachal-highs",
+  "slug": "himachal-manali-solang-sissu-retreat",
+  "title": "Himachal Pradesh Tour Package",
+  "destination": "Himachal Pradesh",
+  "state": "Himachal Pradesh",
+  "durationDays": 6,
+  "durationNights": 5,
+  "startingPrice": 14499,
+  "originalPrice": 18000,
+  "tripType": [
+    "Family",
+    "Couple",
+    "Adventure",
+    "Friends"
+  ],
+  "hotelCategory": "Deluxe 4★",
+  "ratings": 4.8,
+  "reviewCount": 260,
+  "startingCity": "Chandigarh or Delhi Pickup",
+  "bestFor": "Snow Lovers, Adventure Seekers & Families",
+  "heroImage": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop",
+  "galleryImages": [
+    "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=800&auto=format&fit=crop"
+  ],
+  "overview": "Breathe in crisp cedar mountain air on this 6-day holiday. Drive through the historic Atal Tunnel into Lahaul’s Sissu waterfalls, soar on paragliders in Solang, and relax in scenic wooden chalets amidst apple orchards in Manali.",
+  "highlights": [
+    "3 Nights in Manali + 1 Night in Shimla + 1 Night in Kasol / Kullu",
+    "Drive through engineering wonder Atal Tunnel to Sissu, Lahaul Valley",
+    "Solang Valley adventure sports and snow activities",
+    "River rafting in Beas river, Kullu",
+    "Hadimba Temple, Vashisht Hot Springs & Old Manali cafes",
+    "Daily breakfast and dinner included"
+  ],
+  "inclusions": [
+    "5 Nights stay in handpicked 3★/4★ mountain resorts",
+    "Daily Breakfast & Dinner at all hotels",
+    "Dedicated private AC/Heated Sedan/Innova for entire tour",
+    "All toll, fuel, parking, and driver allowances"
+  ],
+  "exclusions": [
+    "Adventure activities fees (paragliding, rafting, quad bikes)",
+    "Rohtang Pass NGT green permit taxi if opted"
+  ],
+  "itinerary": [
+    {
+      "dayNumber": 1,
+      "title": "Delhi/Chandigarh to Shimla (Queen of Hills)",
+      "location": "Shimla",
+      "description": "Pickup from Delhi/Chandigarh and scenic highway drive through the Shivalik hills to Shimla. Check into hotel and stroll on the historic Mall Road and Ridge.",
+      "morningActivity": "Highway drive with Himalayan views",
+      "afternoonActivity": "Check-in to Shimla hotel",
+      "eveningActivity": "Walk along the Ridge, Christ Church and Mall Road",
+      "stay": "Snow Valley Resorts / Marina 4★, Shimla",
+      "mealsIncluded": "Dinner",
+      "transfers": "Private Chauffeur Cab"
+    },
+    {
+      "dayNumber": 2,
+      "title": "Shimla to Manali via Kullu Valley & Pandoh Dam",
+      "location": "Manali",
+      "description": "Drive from Shimla to Manali (approx. 7 hrs) along the Beas River. Stop at Pandoh Dam, Hanogi Mata temple, and Kullu Shawl weaving factory. Arrive in Manali by evening.",
+      "morningActivity": "Drive through Kullu valley",
+      "afternoonActivity": "Pandoh dam view & Kullu shawl factory visit",
+      "eveningActivity": "Check-in to Manali apple orchard resort & dinner",
+      "stay": "The Himalayan Resort / Apple Country Resort 4★, Manali",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private Chauffeur Cab"
+    },
+    {
+      "dayNumber": 3,
+      "title": "Solang Valley Adventure & Atal Tunnel to Sissu Waterfall",
+      "location": "Solang & Sissu",
+      "description": "Head to Solang Valley for paragliding, zorbing, and ropeway. Cross through the 9.02 km Atal Tunnel to enter the dramatic trans-Himalayan landscape of Sissu in Lahaul Valley.",
+      "morningActivity": "Solang valley adventure sports",
+      "afternoonActivity": "Atal Tunnel drive to Sissu waterfall and snow points",
+      "eveningActivity": "Return to Manali for campfire and hot buffet",
+      "stay": "The Himalayan Resort / Apple Country Resort 4★, Manali",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private Chauffeur Cab"
+    },
+    {
+      "dayNumber": 4,
+      "title": "Manali Local Sightseeing: Hadimba, Vashisht & Old Manali",
+      "location": "Manali",
+      "description": "Visit the 500-year-old wooden Hadimba Devi Temple in deep cedar woods, holy Vashisht Hot Sulphur Springs, Club House, and cozy bohemian cafes of Old Manali.",
+      "morningActivity": "Hadimba Temple and Van Vihar pine forest walk",
+      "afternoonActivity": "Vashisht hot springs and Tibetan Monastery",
+      "eveningActivity": "Cafe hopping in Old Manali & wood-fired pizza",
+      "stay": "The Himalayan Resort / Apple Country Resort 4★, Manali",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private Chauffeur Cab"
+    },
+    {
+      "dayNumber": 5,
+      "title": "Manali to Kasol Parvati Valley & Manikaran Sahib",
+      "location": "Kasol & Manikaran",
+      "description": "Drive to the scenic Parvati Valley. Visit Manikaran Sahib Gurudwara known for its natural hot springs and langar. Relax in the picturesque riverside village of Kasol.",
+      "morningActivity": "Drive to Parvati Valley with Kullu Beas river rafting",
+      "afternoonActivity": "Manikaran Sahib Gurudwara and hot spring dip",
+      "eveningActivity": "Riverside chill at Kasol and Israeli cuisine dinner",
+      "stay": "The River Crescent / Kasol Riverside Camp 4★",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private Chauffeur Cab"
+    },
+    {
+      "dayNumber": 6,
+      "title": "Kasol to Chandigarh / Delhi Departure",
+      "location": "Departure",
+      "description": "Enjoy breakfast with river sounds before driving back to Chandigarh/Delhi airport or railway station.",
+      "morningActivity": "Breakfast & scenic downhill drive",
+      "afternoonActivity": "Drop-off at Chandigarh/Delhi",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private Chauffeur Cab"
+    }
+  ],
+  "season": "All Season",
+  "isFeatured": true,
+  "isPopular": true
+}

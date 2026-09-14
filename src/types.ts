@@ -12,7 +12,8 @@ export type TripType =
   | 'Spiritual'
   | 'Heritage'
   | 'Cultural'
-  | 'Nature';
+  | 'Nature'
+  | 'Relaxation';
 
 export type HotelCategory = 'Standard 3★' | 'Deluxe 4★' | 'Luxury 5★' | 'Heritage Boutique' | 'Houseboat & Resort';
 

@@ -1,0 +1,90 @@
+{
+  "slug": "kashmir",
+  "name": "Kashmir",
+  "tagline": "Heaven on Earth — Shikaras, Snow Peaks & Pine Valleys",
+  "state": "Jammu & Kashmir",
+  "heroImage": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=1600&auto=format&fit=crop",
+  "cardImage": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=800&auto=format&fit=crop",
+  "shortDescription": "Gliding on Dal Lake in a wooden shikara, skiing down Apharwat peak in Gulmarg, and sipping hot Kahwa in Pahalgam valleys.",
+  "fullOverview": "Kashmir remains India’s most breathtaking alpine sanctuary. From the tranquil waters of Dal Lake and Mughal gardens of Srinagar to the snow bowl of Gulmarg and the roaring Lidder River in Pahalgam, Kashmir offers an ethereal experience for honeymooners, families, and mountain lovers alike.",
+  "bestTime": "April to October (Flowers & Lush Green) | December to February (Snow & Skiing)",
+  "temperatureRange": "Summer: 12°C - 28°C | Winter: -5°C - 8°C",
+  "startingPrice": 16999,
+  "idealDays": "5 to 7 Days",
+  "rating": 4.9,
+  "reviewCount": 1420,
+  "isTrending": true,
+  "highlights": [
+    "Overnight stay in a heritage cedarwood Houseboat on Nigeen / Dal Lake",
+    "Gondola Cable Car Ride to Phase 1 & Phase 2 (13,780 ft) in Gulmarg",
+    "Pony rides to Baisaran Valley (\"Mini Switzerland\") in Pahalgam",
+    "Thajiwas Glacier sledge ride & Sindh river view in Sonamarg",
+    "Authentic Wazwan cuisine tasting and aromatic Kashmiri Kahwa"
+  ],
+  "howToReach": {
+    "air": "Sheikh ul-Alam International Airport (SXR), Srinagar has direct daily flights from Delhi, Mumbai, Bengaluru, and Chandigarh.",
+    "rail": "Jammu Tawi (JAT) and Udhampur (UHP) railway stations (approx. 6-7 hours scenic highway drive or Vande Bharat to Katra).",
+    "road": "National Highway 44 connects Srinagar with Jammu and Punjab via the world-class Chenani-Nashri & Banihal Qazigund tunnels."
+  },
+  "topAttractions": [
+    {
+      "name": "Dal & Nigeen Lake",
+      "description": "Iconic water bodies dotted with floating vegetable markets, lotus blossoms, and luxury houseboats.",
+      "image": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Gulmarg Gondola & Apharwat",
+      "description": "Asia’s highest cable car taking you into pristine powder snow at 4,000+ meters altitude.",
+      "image": "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Betaab & Aru Valley, Pahalgam",
+      "description": "Verdant riverbanks surrounded by dense deodar forests, ideal for trekking and quiet picnics.",
+      "image": "https://images.unsplash.com/photo-1626014303757-658c3a119760?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Sonamarg & Thajiwas Glacier",
+      "description": "The Golden Meadow known for snow activities, crystal streams, and gateway to Ladakh.",
+      "image": "https://images.unsplash.com/photo-1588661799793-7da9f7336798?q=80&w=600&auto=format&fit=crop"
+    }
+  ],
+  "stayCategories": [
+    {
+      "category": "Heritage Dal Lake Houseboats",
+      "priceRange": "₹3,500 – ₹9,500 / night",
+      "recommendation": "Handcrafted walnut wood interiors with dedicated Butler & Shikara pickup."
+    },
+    {
+      "category": "4★ & 5★ Mountain Resorts (Gulmarg & Pahalgam)",
+      "priceRange": "₹6,500 – ₹18,000 / night",
+      "recommendation": "Central heating, pine valley balconies, spa, and heated buffet halls."
+    },
+    {
+      "category": "Cozy Boutique Cottages",
+      "priceRange": "₹2,500 – ₹5,000 / night",
+      "recommendation": "Perfect for families and small groups wanting warm local Kashmiri hospitality."
+    }
+  ],
+  "travelTips": [
+    "Book Gulmarg Gondola Phase 2 tickets at least 3-4 weeks in advance on the official JK Tourism portal.",
+    "Carry postpaid SIM cards (Airtel, Jio, or BSNL) as prepaid SIMs outside J&K do not work in the valley.",
+    "Always dress in layers, especially when heading up Apharwat peak or Sonamarg glacier.",
+    "Carry cash for local pony rides and sledging as mobile network in deep valleys can be intermittent."
+  ],
+  "faqs": [
+    {
+      "question": "Is Kashmir safe for family and couple trips?",
+      "answer": "Yes, Kashmir is overwhelmingly warm and welcoming for tourists. Thousands of families and couples travel smoothly year-round. SafarTrails partners with vetted local chauffeurs and verified hotels."
+    },
+    {
+      "question": "How many days are recommended for a complete Kashmir trip?",
+      "answer": "A 6-day / 5-night itinerary is optimal to comfortably explore Srinagar, Gulmarg, Pahalgam, and Sonamarg without feeling rushed."
+    },
+    {
+      "question": "What is the estimated cost per person for a Kashmir package?",
+      "answer": "A comfortable 6D/5N package with 3-4 star stays, private sanitized cab, breakfast, dinner, and houseboat stay starts around ₹16,999 to ₹24,500 per person on twin sharing."
+    }
+  ],
+  "seoTitle": "Kashmir Tour Packages 2026 | Custom Itineraries with Houseboat & Cab",
+  "seoDescription": "Handcrafted Kashmir holiday packages with Dal Lake houseboats, Gulmarg gondola, Pahalgam valleys, and 24/7 concierge assistance."
+}

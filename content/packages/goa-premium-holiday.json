@@ -1,0 +1,54 @@
+{
+  "id": "pkg-goa-premium-holiday",
+  "slug": "goa-premium-holiday",
+  "title": "Goa Premium Beach Resort Retreat",
+  "destination": "Goa",
+  "state": "Goa",
+  "durationDays": 6,
+  "durationNights": 5,
+  "startingPrice": 18500,
+  "originalPrice": 24000,
+  "tripType": [
+    "Couple",
+    "Family",
+    "Luxury"
+  ],
+  "hotelCategory": "Luxury 5★",
+  "ratings": 4.9,
+  "reviewCount": 88,
+  "startingCity": "Goa (MOPA / Dabolim Airport)",
+  "bestFor": "Beach Lovers & Families",
+  "heroImage": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1200&auto=format&fit=crop",
+  "galleryImages": [
+    "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=800&auto=format&fit=crop"
+  ],
+  "overview": "5 Nights in 5★ South Goa beachfront resort with private beach access, sunset yacht cruise, and spice plantation tour with authentic Goan buffet.",
+  "highlights": [
+    "5 Nights in 5★ Taj / Alila Diwa South Goa Beach Resort",
+    "Private luxury sunset yacht cruise on Mandovi River",
+    "Private AC transfers for North & South Goa sightseeing"
+  ],
+  "inclusions": [
+    "5 Nights 5★ Resort stay with breakfast",
+    "Private AC SUV transfers"
+  ],
+  "exclusions": [
+    "Flight tickets to Goa"
+  ],
+  "itinerary": [
+    {
+      "dayNumber": 1,
+      "title": "Goa Arrival & Beachfront Welcome",
+      "location": "South Goa",
+      "description": "Airport pickup and transfer to 5★ South Goa beachfront resort.",
+      "morningActivity": "Airport pickup",
+      "eveningActivity": "Sunset cocktail at resort beach lounge",
+      "stay": "Alila Diwa / Taj Exotica South Goa 5★",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private AC SUV"
+    }
+  ],
+  "season": "All Season",
+  "isFeatured": true,
+  "isPopular": true
+}

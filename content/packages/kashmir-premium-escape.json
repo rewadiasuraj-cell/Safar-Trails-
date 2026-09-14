@@ -1,0 +1,56 @@
+{
+  "id": "pkg-kashmir-premium-escape",
+  "slug": "kashmir-premium-escape",
+  "title": "Kashmir Premium Luxury Escape",
+  "destination": "Kashmir",
+  "state": "Jammu & Kashmir",
+  "durationDays": 7,
+  "durationNights": 6,
+  "startingPrice": 24999,
+  "originalPrice": 32000,
+  "tripType": [
+    "Honeymoon",
+    "Couple",
+    "Luxury"
+  ],
+  "hotelCategory": "Luxury 5★",
+  "ratings": 5,
+  "reviewCount": 112,
+  "startingCity": "Srinagar",
+  "bestFor": "Honeymooners & Luxury Travellers",
+  "heroImage": "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1200&auto=format&fit=crop",
+  "galleryImages": [
+    "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=800&auto=format&fit=crop"
+  ],
+  "overview": "7 Days of unmatched Kashmiri luxury: Stay at Khyber Himalayan Resort in Gulmarg, heritage houseboat on Nigeen Lake, and luxury pine cottages in Pahalgam.",
+  "highlights": [
+    "1 Night Khyber Himalayan Resort & Spa, Gulmarg",
+    "Confirmed Gondola Phase 1 & Phase 2 tickets included",
+    "Romantic Shikara ride with flower decor & Wazwan dinner"
+  ],
+  "inclusions": [
+    "6 Nights stay in 5★ Luxury resorts & heritage houseboats",
+    "Daily breakfast & dinner with traditional Kashmiri Wazwan",
+    "Private Innova Crysta with luxury chauffeur"
+  ],
+  "exclusions": [
+    "Airfare to Srinagar"
+  ],
+  "itinerary": [
+    {
+      "dayNumber": 1,
+      "title": "Arrival in Srinagar & Nigeen Lake Houseboat",
+      "location": "Srinagar",
+      "description": "VIP pickup from Srinagar Airport and check-in to heritage houseboat on Nigeen Lake.",
+      "morningActivity": "Airport pickup",
+      "eveningActivity": "Shikara sunset ride",
+      "stay": "Sukhoon Heritage Houseboat, Nigeen Lake",
+      "mealsIncluded": "Dinner",
+      "transfers": "Private Innova Crysta"
+    }
+  ],
+  "season": "All Season",
+  "isFeatured": true,
+  "isPopular": true
+}

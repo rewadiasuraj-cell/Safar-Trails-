@@ -1,0 +1,71 @@
+{
+  "slug": "rajasthan",
+  "name": "Rajasthan",
+  "tagline": "Land of Maharajas — Royal Palaces, Golden Forts & Desert Safaris",
+  "state": "Rajasthan",
+  "heroImage": "https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=1600&auto=format&fit=crop",
+  "cardImage": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800&auto=format&fit=crop",
+  "shortDescription": "Majestic hill forts of Jaipur, romantic lake palaces of Udaipur, blue alleyways of Jodhpur, and starlit camel safaris on Jaisalmer dunes.",
+  "fullOverview": "Rajasthan is an opulent tapestry of royal legacy, vibrant folk traditions, and timeless desert landscapes. Walk through towering sandstone ramparts, take boat rides on shimmering Lake Pichola, sleep under Thar desert constellations in luxury Swiss tents, and relish authentic Rajasthani Dal Baati Churma.",
+  "bestTime": "October to March (Pleasant, crisp winter weather)",
+  "temperatureRange": "10°C - 28°C in winter",
+  "startingPrice": 14999,
+  "idealDays": "6 to 9 Days",
+  "rating": 4.9,
+  "reviewCount": 1650,
+  "isTrending": true,
+  "highlights": [
+    "Sunset Boat Ride on Lake Pichola overlooking Udaipur City Palace and Jag Mandir",
+    "Desert Jeep Safari, camel ride, and folk Kalbeliya dance on Sam Sand Dunes, Jaisalmer",
+    "Amber Fort elephant/jeep ascent and Hawa Mahal photo stop in the Pink City Jaipur",
+    "Walk through the massive Mehrangarh Fort towering above the Blue City Jodhpur",
+    "Stay in a restored royal Haveli or heritage Palace hotel"
+  ],
+  "howToReach": {
+    "air": "Jaipur International Airport (JAI), Udaipur Maharana Pratap Airport (UDR), or Jodhpur Airport (JDH).",
+    "rail": "Extensive superfast and Vande Bharat connections from Delhi, Mumbai, Ahmedabad, and Kolkata.",
+    "road": "Smooth Delhi-Mumbai Expressway and national highways offer rapid road transit."
+  },
+  "topAttractions": [
+    {
+      "name": "Udaipur City Palace & Lake Pichola",
+      "description": "Vast architectural marvel blending Rajasthani and Mughal styles on the lake shore.",
+      "image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Jaisalmer Golden Fort & Sam Sand Dunes",
+      "description": "Living sandstone fort and undulating Thar desert with evening campfires and stargazing.",
+      "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Jaipur Amber Fort & Jal Mahal",
+      "description": "Grand hilltop fortress with the Sheesh Mahal (Mirror Palace) and water-encircled palace.",
+      "image": "https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=600&auto=format&fit=crop"
+    }
+  ],
+  "stayCategories": [
+    {
+      "category": "Heritage Havelis & Royal Palaces",
+      "priceRange": "₹4,500 – ₹25,000 / night",
+      "recommendation": "Intricate jharokhas, courtyards, traditional thali dining, and antique decor."
+    },
+    {
+      "category": "Luxury Desert Swiss Camps",
+      "priceRange": "₹3,500 – ₹9,000 / night (includes folk show & buffet)",
+      "recommendation": "Sam Sand Dunes with private attached baths, bonfire, and stargazing."
+    }
+  ],
+  "travelTips": [
+    "Winter nights in Jaisalmer desert can drop below 8°C; pack warm jackets or shawls.",
+    "Purchase composite entry tickets at monuments in Jaipur to save time at ticket counters.",
+    "Hire authorized government-approved guides at major forts for authentic historical storytelling."
+  ],
+  "faqs": [
+    {
+      "question": "Which cities should be covered in a 7-day Rajasthan trip?",
+      "answer": "A balanced 7-day royal circuit covers Jaipur (2N) → Jodhpur (2N) → Udaipur (2N) or Jaipur (2N) → Jodhpur (1N) → Jaisalmer (2N) → Bikaner (1N)."
+    }
+  ],
+  "seoTitle": "Rajasthan Tour Packages 2026 | Jaipur, Udaipur, Jaisalmer Desert Camps",
+  "seoDescription": "Experience royal Rajasthan with curated tour packages. Heritage stays, desert safaris, private chauffeur cabs, and customized family/honeymoon itineraries."
+}

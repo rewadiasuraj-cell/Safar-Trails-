@@ -68,16 +68,17 @@ Measured result:
 | Destination page | 6 KB | 16 KB |
 | `<h1>` per page | 0 | 1 |
 | Visible text, destination page | 68 chars | ~3,800 chars (~600 words) |
-| Distinct canonicals | 1 | 42 |
+| Distinct canonicals | 1 | 47 |
 
-### Sanity-backed pages
+### Where the content comes from
 
-The build also asks Sanity for published slugs and prerenders those too. If
-Sanity is unreachable (offline build, restrictive network) the build logs a
-warning and continues with the locally-authored routes — it never fails. CMS
-pages still work in that case; they just fall back to the SPA shell with correct
-head tags from `resolveRouteSeo`'s dynamic fallback, which is the part that
-matters most.
+Every page is built from `content/` — one JSON file per destination, package and
+guide, validated and compiled into `src/data/generated` by
+`scripts/build-content.ts`. There is no CMS fetch anywhere, at build time or in
+the browser, so the build is deterministic and works offline: the same commit
+always produces the same pages, and no outage can change what gets deployed.
+
+See "Editing content" in the root README for how to change a page.
 
 ## Editing page copy
 
@@ -136,12 +137,20 @@ multi-day itinerary, exactly as the playbook's Section 6 describes.
 
 Validate after deploying: <https://search.google.com/test/rich-results>
 
-**On `aggregateRating`.** Destination and package pages emit it because those
-pages display that rating and count on-screen, which is what Google's policy
-requires. The organisation-level rating is off by default
-(`ORGANIZATION_RATING_ENABLED` in `siteConfig.ts`). Turning it on with numbers
-copied from the Google Business Profile would violate Google's review-snippet
-policy — a site may not re-mark-up reviews collected on Google as its own.
+**On `aggregateRating`.** Nothing emits it, anywhere. The ratings and review
+counts in the content files were placeholders — over 10,000 reviews in total,
+none of them real — so marking them up would have been publishing invented
+numbers to Google. They were removed from the schema and from the page, and the
+cards now lead with "From ₹X" and factual badges instead. Separately,
+`TouristDestination` and `TouristTrip` are not on Google's list of types that
+support review snippets, so the markup would have earned nothing even if the
+numbers had been genuine.
+
+The organisation-level rating is off by default (`ORGANIZATION_RATING_ENABLED`
+in `siteConfig.ts`). Turning it on with numbers copied from the Google Business
+Profile would violate Google's review-snippet policy — a site may not re-mark-up
+reviews collected on Google as its own. Enable it only once genuine reviews are
+collected and displayed on the site itself.
 
 ## Domain, redirects and 404s
 
@@ -184,21 +193,22 @@ relative paths on a host that reaches the Pages project:
 - `/about` → `/about-us`, `/contact` → `/contact-us`, `/faq` and `/reviews` →
   `/about-us`, `/blog/*` → `/guides`. The audit found `/about` and `/about-us`
   both live and both returning 200, which is duplicate content.
-- SPA rewrites scoped to `/destinations/*`, `/packages/*`, `/tour-packages/*`
-  and `/guides/*` only. A blanket `/* /index.html 200` would answer 200 for
-  every junk URL, which is the soft-404 pattern the audit warned about.
-  Anything outside those prefixes falls through to `404.html` and gets a real
-  HTTP 404.
+- `/packages/<slug>` → `/tour-packages/<slug>`, 301. Packages were once served
+  from both; there is now one URL, and the retired form redirects into it.
+- SPA rewrites scoped to `/destinations/*`, `/tour-packages/*` and `/guides/*`
+  only. A blanket `/* /index.html 200` would answer 200 for every junk URL,
+  which is the soft-404 pattern the audit warned about. Anything outside those
+  prefixes falls through to `404.html` and gets a real HTTP 404.
 
 `server.ts` mirrors the same behaviour for the Express deployment.
 
-**Known limitation:** a bad slug *under* one of those four prefixes (for example
+**Known limitation:** a bad slug *under* one of those three prefixes (for example
 `/destinations/not-a-real-place`) still returns 200 with the React 404 page,
-because the CMS owns which slugs are valid and the CDN cannot know. The page is
-`noindex`, so it will not be indexed, but it is not a hard 404. Resolving it
-properly means either prerendering every valid CMS slug at build time (already
-happens when Sanity is reachable — so rebuild after publishing new content) or
-moving to server-side rendering.
+because the CDN serves the SPA shell for anything it has no file for. The page
+renders the real 404 and is `noindex`, so it will not be indexed, but the status
+code is wrong. Fixing it properly means generating a `_redirects` entry per known
+slug, or moving to server-side rendering — neither is worth it while the count is
+this small.
 
 ## Verifying after a deploy
 
@@ -212,6 +222,6 @@ curl -sI https://www.safartrails.co.in/ | head -3
 # A junk URL must return 404, not 200
 curl -s -o /dev/null -w '%{http_code}\n' https://safartrails.co.in/xyz-fake-page
 
-# The sitemap should list 42 URLs
+# The sitemap should list 47 URLs
 curl -s https://safartrails.co.in/sitemap.xml | grep -c '<url>'
 ```

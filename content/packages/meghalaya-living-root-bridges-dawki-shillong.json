@@ -1,0 +1,121 @@
+{
+  "id": "pkg-meghalaya-living-roots",
+  "slug": "meghalaya-living-root-bridges-dawki-shillong",
+  "title": "Meghalaya Tour Package",
+  "destination": "Northeast India",
+  "state": "Meghalaya",
+  "durationDays": 6,
+  "durationNights": 5,
+  "startingPrice": 19499,
+  "originalPrice": 25000,
+  "tripType": [
+    "Adventure",
+    "Nature",
+    "Group",
+    "Couple"
+  ],
+  "hotelCategory": "Deluxe 4★",
+  "ratings": 4.9,
+  "reviewCount": 142,
+  "startingCity": "Guwahati (Airport Pickup)",
+  "bestFor": "Trekkers, Photographers & Nature Lovers",
+  "heroImage": "https://images.unsplash.com/photo-1622308644420-a757e2fa722a?q=80&w=1200&auto=format&fit=crop",
+  "galleryImages": [
+    "https://images.unsplash.com/photo-1622308644420-a757e2fa722a?q=80&w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1609137144813-7d9921338f24?q=80&w=800&auto=format&fit=crop"
+  ],
+  "overview": "Discover the Abode of Clouds: trek to the bio-engineered Double Decker Living Root Bridge, boat on the crystal-clear Umngot river in Dawki, stand before soaring waterfalls in Cherrapunji, and experience Scotland of the East in Shillong.",
+  "highlights": [
+    "2 Nights Cherrapunji + 1 Night Shnongpdeng / Dawki + 2 Nights Shillong",
+    "Double Decker Living Root Bridge trek in Nongriat",
+    "Boating on glass-like clear Umngot River in Dawki",
+    "Nohkalikai Falls, Mawsmai Cave, and Seven Sisters Falls",
+    "Cleanest village Mawlynnong and Umiam Lake boat ride"
+  ],
+  "inclusions": [
+    "5 Nights stay in premium hill resorts and riverside eco-camps",
+    "Daily breakfast at all stays",
+    "Dedicated private AC cab from Guwahati to Guwahati",
+    "All toll, fuel, parking, and driver allowances"
+  ],
+  "exclusions": [
+    "Airfare to Guwahati",
+    "Boating fees in Dawki and entry fees at caves and waterfalls",
+    "Guide fee for root bridge trek (can be arranged on spot)"
+  ],
+  "itinerary": [
+    {
+      "dayNumber": 1,
+      "title": "Guwahati Arrival, Umiam Lake & Drive to Shillong",
+      "location": "Shillong",
+      "description": "Pickup at Guwahati Airport and drive to Shillong. Stop at the vast, serene Umiam Lake (Barapani) for watersports and photography. Check in to your boutique hotel in Shillong.",
+      "morningActivity": "Guwahati Airport pickup",
+      "afternoonActivity": "Umiam Lake watersports and panoramic viewpoint",
+      "eveningActivity": "Police Bazar shopping and live music cafe in Shillong",
+      "stay": "Heritage Club / Ri Kynjai 4★, Shillong",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private AC Cab"
+    },
+    {
+      "dayNumber": 2,
+      "title": "Shillong to Cherrapunji (Sohra) Waterfalls & Caves",
+      "location": "Cherrapunji",
+      "description": "Drive along cloud-covered mountain ridges to Cherrapunji. Visit Elephant Falls, the roaring Nohkalikai Falls (tallest plunge waterfall in India), Mawsmai limestone cave, and Seven Sisters Falls.",
+      "morningActivity": "Drive to Cherrapunji with Elephant Falls stop",
+      "afternoonActivity": "Nohkalikai Falls viewpoint and Mawsmai cave exploration",
+      "eveningActivity": "Check-in to resort overlooking the gorge & campfire",
+      "stay": "Polo Orchid Resort / Jiva Resort 4★, Cherrapunji",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private AC Cab"
+    },
+    {
+      "dayNumber": 3,
+      "title": "Double Decker Living Root Bridge & Rainbow Falls Trek",
+      "location": "Nongriat & Cherrapunji",
+      "description": "Trek down into the rainforest to witness the extraordinary Double Decker Living Root Bridge grown over centuries by the Khasi tribe. Optional trek extension to the turquoise pool of Rainbow Falls.",
+      "morningActivity": "Morning descent through Tyrna village to Nongriat",
+      "afternoonActivity": "Swim in natural pools and admire the living bridge",
+      "eveningActivity": "Ascend back and relax with hot tea at your resort",
+      "stay": "Polo Orchid Resort / Jiva Resort 4★, Cherrapunji",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private AC Cab"
+    },
+    {
+      "dayNumber": 4,
+      "title": "Mawlynnong Clean Village & Dawki Umngot River Boating",
+      "location": "Dawki & Shnongpdeng",
+      "description": "Visit Mawlynnong, celebrated as Asia’s cleanest village. Continue to Dawki on the Indo-Bangladesh border for boating on the crystal-clear Umngot River. Stay in cozy riverside luxury tents in Shnongpdeng.",
+      "morningActivity": "Mawlynnong village walk & single living root bridge",
+      "afternoonActivity": "Boating on transparent waters of Umngot River",
+      "eveningActivity": "Bonfire and riverside camping under the stars",
+      "stay": "Riverside Luxury Glamping / Resort, Shnongpdeng",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private AC Cab"
+    },
+    {
+      "dayNumber": 5,
+      "title": "Laitlum Canyons & Return to Shillong",
+      "location": "Shillong",
+      "description": "Drive back to Shillong via the dramatic rolling abyss of Laitlum Grand Canyons. Visit Don Bosco Museum of Indigenous Cultures and Cathedral of Mary Help of Christians.",
+      "morningActivity": "Scenic morning drive to Laitlum Canyons",
+      "afternoonActivity": "Don Bosco Cultural Museum in Shillong",
+      "eveningActivity": "Cafe evening at Dylan’s Cafe or Cloud 9 lounge",
+      "stay": "Heritage Club / Ri Kynjai 4★, Shillong",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private AC Cab"
+    },
+    {
+      "dayNumber": 6,
+      "title": "Shillong to Kamakhya Temple & Guwahati Departure",
+      "location": "Guwahati Departure",
+      "description": "Drive down to Guwahati. Visit the sacred Kamakhya Devi Temple on Nilachal Hill before drop-off at Guwahati Airport.",
+      "morningActivity": "Downhill highway drive to Guwahati",
+      "afternoonActivity": "Kamakhya Temple darshan & airport drop",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private AC Cab"
+    }
+  ],
+  "season": "All Season",
+  "isFeatured": true,
+  "isPopular": true
+}

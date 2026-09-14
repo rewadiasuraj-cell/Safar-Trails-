@@ -21,7 +21,7 @@ account. Start at [docs/README.md](./docs/README.md).
 are easy to break by accident:
 
 1. **`bun run build` must keep running `scripts/prerender.ts`.** Without it the
-   site reverts to serving one identical head tag and an empty body on all 42
+   site reverts to serving one identical head tag and an empty body on all 47
    URLs — the exact state the audit found. `build:pages` includes it too.
 2. **Page titles and descriptions live in `src/lib/seo/routes.ts`,** not in
    `index.html`. The prerender overwrites `index.html`'s tags per route.
@@ -29,68 +29,73 @@ are easy to break by accident:
 The prerender also regenerates `public/sitemap.xml`, so that file is build
 output and should not be hand-edited.
 
-## Content Management (Sanity Studio)
+## Editing content
 
-Destinations, tour packages, and travel guides shown on the `/destinations`,
-`/destinations/:slug`, `/packages`, and `/guides` pages are managed as content
-in [Sanity](https://www.sanity.io) and fetched live by the app via
-`@sanity/client` — see `src/lib/sanity/`. The Studio itself lives in
-`studio-safar-trails/` as a completely standalone project: it has its own
-`package.json`, its own dependencies, and its own build — it is never bundled
-into the main app (the root `vite build` / `bun run build` never touches it).
+Destinations, packages and travel guides live as one JSON file per item:
 
-Project ID: `xmtc060o` · Dataset: `production`
-
-### One-time setup: allow the app's origin in Sanity CORS
-
-Sanity blocks browser requests from origins it doesn't recognize, even for a
-public dataset. Before the app can read data, add each URL it runs on
-(e.g. `http://localhost:3000` for local dev, plus your production domain) at
-[sanity.io/manage](https://sanity.io/manage) → your project → **API** → **CORS
-Origins**, or from `studio-safar-trails/` run:
-
-```bash
-npx sanity cors add http://localhost:3000 --credentials false
+```
+content/destinations/kashmir.json
+content/packages/kashmir-escape-houseboat-bliss.json
+content/guides/best-time-to-visit-kashmir.json
 ```
 
-Until this is done, the destinations/packages/guides pages will show a
-"Couldn't load content from Sanity" message instead of your content.
+**You do not need a local checkout to edit these.** Open the file on github.com,
+click the pencil, change what you need, and commit. Cloudflare redeploys in a
+couple of minutes.
 
-### Running the Studio locally
+The filename is the URL slug: `content/packages/sikkim-explorer.json` is served at
+`/tour-packages/sikkim-explorer`. To add a package, copy an existing file, rename
+it to the new slug, and change the contents.
 
-```bash
-cd studio-safar-trails
-bun install
-bun run dev      # starts the Studio at http://localhost:3333
+### Photos
+
+`heroImage` is the one image that shows on the page — it becomes the banner, the
+Facebook/WhatsApp link preview and the `image` in the structured data. Two forms
+work:
+
+```
+"heroImage": "/content/packages/<slug>/1.jpg"          a real photo in this repo
+"heroImage": "https://images.unsplash.com/photo-…"     a stock photo
 ```
 
-The first time you run it you'll be prompted to log in with your Sanity
-account (this only grants *you* editing access — it doesn't affect the
-live site, which only reads public data).
+Real photos rank and convert better than stock — the audit says so explicitly —
+so prefer them wherever they exist. Put the files in
+`public/content/packages/<slug>/` (or `destinations/`, `guides/`) and reference
+them with a leading slash, exactly as above. The code turns that into a full
+`https://safartrails.co.in/…` URL wherever one is needed, so never write the
+domain into the JSON.
 
-Content types: **Destination** (title, slug, description, hero image,
-gallery, highlights, best time to visit), **Tour Package** (name, slug,
-price, duration, a reference to a Destination, itinerary, images,
-inclusions/exclusions), and **Guide** (title, slug, body, author, published
-date, cover image, related Destination).
+Before committing a photo, **shrink it**: longest edge 1600px, JPEG quality
+around 75. A phone photo straight out of the camera is 4–8 MB and will make the
+page slow on mobile data, which costs rankings. Anything over ~300 KB is too
+big.
 
-The dataset starts empty — add a few documents of each type in the Studio
-and they'll appear on the live site automatically (no redeploy needed,
-thanks to `useCdn: true` + Sanity's fast CDN propagation).
+`galleryImages` is stored but not yet rendered anywhere.
 
-### Deploying the Studio (optional, free)
+### If you break something, the build stops
 
-You don't need to self-host the Studio — Sanity provides free hosting for it:
+`scripts/build-content.ts` reads these files, checks each one, and generates
+`src/data/generated/`. A bad edit fails the build with a specific message instead
+of shipping a broken page:
 
-```bash
-cd studio-safar-trails
-bun run deploy
+```
+content/packages/sikkim-explorer.json: not valid JSON (…). Check for a trailing
+comma, a missing quote, or a curly " pasted from a document.
+
+content/packages/sikkim-explorer.json: missing required field "startingPrice"
+
+content/packages/sikkim-explorer.json: slug "sikkim-explorer-2026" does not match
+the filename. Rename the file to sikkim-explorer-2026.json, or fix the slug.
 ```
 
-This publishes it to `https://<your-chosen-name>.sanity.studio`, a
-standalone URL separate from the main site, where you (or teammates you
-invite as collaborators on sanity.io) can log in and edit content from
-anywhere.
+The live site keeps serving the previous version until the problem is fixed.
+
+Two rules worth remembering when editing by hand: text must be wrapped in
+straight double quotes (`"`), not the curly ones a word processor produces, and
+the last item in a list or object must not have a comma after it.
+
+`src/data/generated/` is build output and is gitignored — it is rebuilt on every
+`bun run dev` and `bun run build`, so a content change is always a one-file diff.
 
 ## Email Notifications (Resend)
 

@@ -19,6 +19,10 @@
  * on mount: crawlers and no-JS visitors get the full text, everyone else gets
  * the normal app. Nothing is hidden from users that is shown to crawlers.
  *
+ * Every route comes from content/ via src/data/generated, so this build is
+ * deterministic and needs no network: the same commit always produces the same
+ * pages, and a CMS outage can no longer change what gets deployed.
+ *
  * Run: bun run prerender (automatically included in `bun run build`)
  */
 
@@ -161,58 +165,6 @@ function applyBody(html: string, seo: RouteSeo): string {
 }
 
 /* ------------------------------------------------------------------ *
- * Sanity routes (best effort)
- * ------------------------------------------------------------------ */
-
-const SANITY_PROJECT_ID = process.env.VITE_SANITY_PROJECT_ID || 'xmtc060o';
-const SANITY_DATASET = process.env.VITE_SANITY_DATASET || 'production';
-const SANITY_API_VERSION = process.env.VITE_SANITY_API_VERSION || '2024-06-01';
-
-interface SanityDoc {
-  _type: string;
-  slug?: string;
-}
-
-/**
- * Pulls published slugs out of Sanity so CMS-managed pages get prerendered too.
- * Purely additive: if the CMS is unreachable (offline build, network policy),
- * the build logs a warning and continues with the locally-authored routes.
- */
-async function fetchSanityRoutes(): Promise<RouteSeo[]> {
-  const query = '*[_type in ["destination","tourPackage","guide"] && defined(slug.current)]{_type,"slug":slug.current}';
-  const url = `https://${SANITY_PROJECT_ID}.apicdn.sanity.io/v${SANITY_API_VERSION}/data/query/${SANITY_DATASET}?query=${encodeURIComponent(query)}`;
-
-  try {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 15000);
-    const response = await fetch(url, { signal: controller.signal });
-    clearTimeout(timeout);
-
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const body = (await response.json()) as { result?: SanityDoc[] };
-    const docs = body.result ?? [];
-
-    const { resolveRouteSeo } = await import('../src/lib/seo/routes');
-    const prefixes: Record<string, string> = {
-      destination: '/destinations',
-      tourPackage: '/packages',
-      guide: '/guides',
-    };
-
-    return docs
-      .filter((doc) => doc.slug && prefixes[doc._type])
-      .map((doc) => resolveRouteSeo(`${prefixes[doc._type]}/${doc.slug}`));
-  } catch (error) {
-    console.warn(
-      `[prerender] Sanity content not reachable (${(error as Error).message}). ` +
-        'Prerendering locally-authored routes only - CMS pages will still work, ' +
-        'they just fall back to the SPA shell until the next build with network access.',
-    );
-    return [];
-  }
-}
-
-/* ------------------------------------------------------------------ *
  * Sitemap
  * ------------------------------------------------------------------ */
 
@@ -240,20 +192,14 @@ function writeRoute(templateHtml: string, seo: RouteSeo): void {
   fs.writeFileSync(path.join(outDir, 'index.html'), html, 'utf8');
 }
 
-async function main() {
+function main() {
   const templatePath = path.join(DIST, 'index.html');
   if (!fs.existsSync(templatePath)) {
     throw new Error('dist/index.html not found - run `vite build` before prerendering.');
   }
   const template = fs.readFileSync(templatePath, 'utf8');
 
-  const localRoutes = allStaticRoutes();
-  const cmsRoutes = await fetchSanityRoutes();
-
-  // Local data wins where both define the same path.
-  const byPath = new Map<string, RouteSeo>();
-  for (const route of [...cmsRoutes, ...localRoutes]) byPath.set(route.path, route);
-  const routes = [...byPath.values()];
+  const routes = allStaticRoutes();
 
   for (const route of routes) {
     if (route.path === '/404') continue; // written separately as dist/404.html
@@ -269,12 +215,10 @@ async function main() {
   );
 
   // Sitemap: written to dist for deployment and to public/ so it stays in git.
-  // A sitemap must list only canonical URLs. Some paths are reachable but
-  // canonicalise elsewhere - a package that exists both in Sanity at
-  // /packages/<slug> and in local data at /tour-packages/<slug> is served at
-  // both, with one canonical between them. Listing both told Google to index a
-  // URL that its own tag disowns, which is a contradictory signal.
-  const indexable = [...sitemapRoutes(), ...cmsRoutes].filter(
+  // A sitemap must list only canonical URLs. Any path that canonicalises
+  // elsewhere is reachable but must not be submitted - asking Google to index a
+  // URL that the page's own tag disowns is a contradictory signal.
+  const indexable = sitemapRoutes().filter(
     (route) => !route.robots.startsWith('noindex') && absoluteUrl(route.path) === route.canonical,
   );
   const deduped = [...new Map(indexable.map((route) => [route.path, route])).values()].sort((a, b) =>
@@ -285,12 +229,14 @@ async function main() {
   fs.writeFileSync(path.join(PUBLIC, 'sitemap.xml'), sitemap, 'utf8');
 
   console.log(
-    `[prerender] Wrote ${routes.length} static pages (${cmsRoutes.length} from Sanity) ` +
-      `and a ${deduped.length}-URL sitemap for ${SITE_URL}.`,
+    `[prerender] Wrote ${routes.length} static pages and a ${deduped.length}-URL sitemap ` +
+      `for ${SITE_URL}.`,
   );
 }
 
-main().catch((error) => {
+try {
+  main();
+} catch (error) {
   console.error('[prerender] Failed:', error);
   process.exit(1);
-});
+}

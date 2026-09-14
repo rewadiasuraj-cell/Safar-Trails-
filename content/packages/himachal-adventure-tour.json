@@ -1,0 +1,55 @@
+{
+  "id": "pkg-himachal-adventure-tour",
+  "slug": "himachal-adventure-tour",
+  "title": "Himachal Grand Adventure Tour",
+  "destination": "Himachal Pradesh",
+  "state": "Himachal Pradesh",
+  "durationDays": 8,
+  "durationNights": 7,
+  "startingPrice": 19500,
+  "originalPrice": 26000,
+  "tripType": [
+    "Adventure",
+    "Group",
+    "Family"
+  ],
+  "hotelCategory": "Deluxe 4★",
+  "ratings": 4.8,
+  "reviewCount": 156,
+  "startingCity": "Chandigarh / Delhi",
+  "bestFor": "Mountain Lovers & Adventure Enthusiasts",
+  "heroImage": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop",
+  "galleryImages": [
+    "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=800&auto=format&fit=crop"
+  ],
+  "overview": "Comprehensive Himachal circuit: Shimla Mall Road, Kufri pine forests, Kullu river rafting, Solang Valley paragliding, Atal Tunnel to Sissu waterfall, and Dharamshala Dalai Lama Temple.",
+  "highlights": [
+    "2 Nights Shimla + 3 Nights Manali + 2 Nights Dharamshala / McLeod Ganj",
+    "Atal Tunnel 9.02 km mountain drive to Sissu, Lahaul Valley",
+    "Paragliding in Solang Valley & River Rafting in Kullu"
+  ],
+  "inclusions": [
+    "7 Nights 3★/4★ Resort stays",
+    "Daily Breakfast & Dinner",
+    "Private AC Cab"
+  ],
+  "exclusions": [
+    "Adventure activities tickets"
+  ],
+  "itinerary": [
+    {
+      "dayNumber": 1,
+      "title": "Delhi/Chandigarh to Shimla",
+      "location": "Shimla",
+      "description": "Highway drive up Shivalik hills to Shimla.",
+      "morningActivity": "Highway pickup",
+      "eveningActivity": "Shimla Ridge walk",
+      "stay": "Snow Valley Resorts 4★, Shimla",
+      "mealsIncluded": "Dinner",
+      "transfers": "Private AC Cab"
+    }
+  ],
+  "season": "All Season",
+  "isFeatured": true,
+  "isPopular": true
+}

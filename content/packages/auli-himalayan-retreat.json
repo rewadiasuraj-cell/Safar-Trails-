@@ -1,0 +1,55 @@
+{
+  "id": "pkg-auli-himalayan-retreat",
+  "slug": "auli-himalayan-retreat",
+  "title": "Auli Skiing & Himalayan Retreat",
+  "destination": "Uttarakhand",
+  "state": "Uttarakhand",
+  "durationDays": 6,
+  "durationNights": 5,
+  "startingPrice": 19999,
+  "originalPrice": 26000,
+  "tripType": [
+    "Adventure",
+    "Couple",
+    "Nature"
+  ],
+  "hotelCategory": "Deluxe 4★",
+  "ratings": 4.9,
+  "reviewCount": 114,
+  "startingCity": "Dehradun / Haridwar",
+  "bestFor": "Skiers, Couples & Snow Enthusiasts",
+  "heroImage": "https://images.unsplash.com/photo-1601821139366-eb14f3628e26?q=80&w=1200&auto=format&fit=crop",
+  "galleryImages": [
+    "https://images.unsplash.com/photo-1601821139366-eb14f3628e26?q=80&w=800&auto=format&fit=crop"
+  ],
+  "overview": "Ascend to India’s premier ski resort: take the Joshimath-Auli cable car (longest ropeway in Asia) surrounded by 180° views of Nanda Devi peak (25,645 ft) and artificial lake.",
+  "highlights": [
+    "Asia’s longest 4 km cable car ride from Joshimath to Auli",
+    "Panoramic 180-degree view of snow-capped Nanda Devi & Mana Parvat peaks",
+    "Skiing lessons and snow activities on slopes"
+  ],
+  "inclusions": [
+    "5 Nights 4★ Resort stay in Auli & Rishikesh",
+    "Daily Breakfast & Dinner",
+    "Private Mountain SUV"
+  ],
+  "exclusions": [
+    "Skiing gear rental"
+  ],
+  "itinerary": [
+    {
+      "dayNumber": 1,
+      "title": "Dehradun / Haridwar to Rishikesh",
+      "location": "Rishikesh",
+      "description": "Pickup and drive to Rishikesh for evening Ganga Aarti.",
+      "morningActivity": "Pickup in private SUV",
+      "eveningActivity": "Ganga Aarti",
+      "stay": "Aloft / Taj Rishikesh 4★",
+      "mealsIncluded": "Dinner",
+      "transfers": "Private Mountain SUV"
+    }
+  ],
+  "season": "All Season",
+  "isFeatured": true,
+  "isPopular": true
+}

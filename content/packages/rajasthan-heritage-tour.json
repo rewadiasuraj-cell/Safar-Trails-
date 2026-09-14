@@ -1,0 +1,55 @@
+{
+  "id": "pkg-rajasthan-heritage-tour",
+  "slug": "rajasthan-heritage-tour",
+  "title": "Grand Rajasthan Heritage Tour",
+  "destination": "Rajasthan",
+  "state": "Rajasthan",
+  "durationDays": 9,
+  "durationNights": 8,
+  "startingPrice": 24500,
+  "originalPrice": 32000,
+  "tripType": [
+    "Heritage",
+    "Family",
+    "Cultural"
+  ],
+  "hotelCategory": "Deluxe 4★",
+  "ratings": 4.9,
+  "reviewCount": 198,
+  "startingCity": "Jaipur",
+  "bestFor": "Culture Enthusiasts & Families",
+  "heroImage": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1200&auto=format&fit=crop",
+  "galleryImages": [
+    "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800&auto=format&fit=crop"
+  ],
+  "overview": "Explore the Pink City Jaipur, Blue City Jodhpur, Golden Desert City Jaisalmer, Lake City Udaipur, and sacred Pushkar lake over 9 memorable days.",
+  "highlights": [
+    "Sam Sand Dunes luxury desert glamping with camel safari & Kalbeliya folk dance",
+    "Elephant / Jeep ride at Amber Fort Jaipur & City Palace Udaipur lake view",
+    "Visit Mehrangarh Fort, Umaid Bhawan Palace, and Jaisalmer Fort"
+  ],
+  "inclusions": [
+    "8 Nights 4★ Heritage Hotels & Desert Camp stay",
+    "Daily Breakfast & Dinner",
+    "Private AC Cab"
+  ],
+  "exclusions": [
+    "Monument entry fees"
+  ],
+  "itinerary": [
+    {
+      "dayNumber": 1,
+      "title": "Jaipur Arrival & Pink City Heritage Walk",
+      "location": "Jaipur",
+      "description": "Pickup at Jaipur Airport / Station. Visit Hawa Mahal, City Palace, and local bazaar.",
+      "morningActivity": "Jaipur pickup",
+      "eveningActivity": "Hawa Mahal photo stop and bazaar shopping",
+      "stay": "Shahpura House / Alsisar Haveli 4★, Jaipur",
+      "mealsIncluded": "Dinner",
+      "transfers": "Private AC Cab"
+    }
+  ],
+  "season": "All Season",
+  "isFeatured": true,
+  "isPopular": true
+}

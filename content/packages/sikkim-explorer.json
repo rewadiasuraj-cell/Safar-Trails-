@@ -1,0 +1,55 @@
+{
+  "id": "pkg-sikkim-explorer",
+  "slug": "sikkim-explorer",
+  "title": "Sikkim & Gangtok Himalayan Explorer",
+  "destination": "Northeast India",
+  "state": "Sikkim",
+  "durationDays": 7,
+  "durationNights": 6,
+  "startingPrice": 22999,
+  "originalPrice": 29000,
+  "tripType": [
+    "Adventure",
+    "Family",
+    "Nature"
+  ],
+  "hotelCategory": "Deluxe 4★",
+  "ratings": 4.9,
+  "reviewCount": 135,
+  "startingCity": "Bagdogra (IXB) / NJP",
+  "bestFor": "Couples, Families & Nature Enthusiasts",
+  "heroImage": "https://images.unsplash.com/photo-1622308644420-a757e2fa722a?q=80&w=1200&auto=format&fit=crop",
+  "galleryImages": [
+    "https://images.unsplash.com/photo-1622308644420-a757e2fa722a?q=80&w=800&auto=format&fit=crop"
+  ],
+  "overview": "Experience the mystical Eastern Himalayas: Gangtok MG Marg, sacred high-altitude Tsomgo Lake (12,400 ft), Nathula Pass (Indo-China border), Pelling glass skywalk, and Darjeeling tea garden sunrise over Kanchenjunga.",
+  "highlights": [
+    "3 Nights Gangtok + 1 Night Pelling + 2 Nights Darjeeling",
+    "Excursion to Tsomgo Lake & Nathula Pass (Indo-China Border)",
+    "Darjeeling Tiger Hill early morning Kanchenjunga sunrise view"
+  ],
+  "inclusions": [
+    "6 Nights 4★ Resort Stay",
+    "Daily Breakfast & Dinner",
+    "Private SUV Transfer & Permits"
+  ],
+  "exclusions": [
+    "Airfare to Bagdogra"
+  ],
+  "itinerary": [
+    {
+      "dayNumber": 1,
+      "title": "Bagdogra / NJP to Gangtok",
+      "location": "Gangtok",
+      "description": "Drive along Teesta River valley up to Gangtok.",
+      "morningActivity": "Bagdogra pickup",
+      "eveningActivity": "Stroll along MG Marg Gangtok",
+      "stay": "The Elgin Nor-Khill / Lemon Tree 4★, Gangtok",
+      "mealsIncluded": "Dinner",
+      "transfers": "Private SUV"
+    }
+  ],
+  "season": "All Season",
+  "isFeatured": true,
+  "isPopular": true
+}

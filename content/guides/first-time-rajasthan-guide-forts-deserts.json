@@ -1,0 +1,37 @@
+{
+  "slug": "first-time-rajasthan-guide-forts-deserts",
+  "destinationSlug": "rajasthan",
+  "destinationName": "Rajasthan",
+  "title": "First-Time Rajasthan Guide: Forts, Deserts & Royal Stays",
+  "subtitle": "Rajasthan is an opulent tapestry of royal legacy, vibrant folk traditions, and timeless desert landscapes — here’s what first-time visitors should know.",
+  "readTime": "1 min read",
+  "author": {
+    "name": "SafarTrails Editorial Team",
+    "role": "Destination Specialist",
+    "avatar": "/logo.svg"
+  },
+  "publishedDate": "2026-03-05T00:00:00Z",
+  "heroImage": "/content/guides/first-time-rajasthan-guide-forts-deserts/0.jpg",
+  "category": "Itinerary",
+  "excerpt": "Rajasthan is an opulent tapestry of royal legacy, vibrant folk traditions, and timeless desert landscapes — here’s what first-time visitors should know.",
+  "contentSections": [
+    {
+      "heading": "First-Time Rajasthan Guide: Forts, Deserts & Royal Stays",
+      "content": "Rajasthan is an opulent tapestry of royal legacy, vibrant folk traditions, and timeless desert landscapes — here’s what first-time visitors should know."
+    },
+    {
+      "heading": "Top Forts & Palaces to See",
+      "content": "Udaipur City Palace overlooks Lake Pichola with a vast architectural blend of Rajasthani and Mughal styles. Jaisalmer’s living Golden Fort rises from the Thar Desert beside the Sam Sand Dunes. In Jaipur, the hilltop Amber Fort houses the dazzling Sheesh Mahal (Mirror Palace)."
+    },
+    {
+      "heading": "Travel Tips",
+      "content": "",
+      "bulletPoints": [
+        "Winter nights in Jaisalmer’s desert can drop below 8°C — pack warm jackets or shawls.",
+        "Purchase composite entry tickets at Jaipur monuments to save time at ticket counters.",
+        "Hire authorized government-approved guides at major forts for authentic historical storytelling."
+      ]
+    }
+  ],
+  "relatedPackageSlugs": []
+}
