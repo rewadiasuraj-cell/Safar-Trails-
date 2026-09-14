@@ -5,9 +5,18 @@
 # (e.g. /destinations/kashmir/index.html) win over the SPA rewrites below.
 
 # --- Canonical host ---------------------------------------------------------
-# The audit found https://www.safartrails.co.in returning HTTP 522 (server
-# unreachable) while the apex served 200. Anyone typing "www." hit an error
-# page. The trailing "!" forces the redirect even where an asset would match.
+# NOTE: these two lines are almost certainly INERT, and are kept only as a
+# belt-and-braces fallback.
+#
+# The www host was returning HTTP 522, which means Cloudflare's edge could not
+# reach an origin at all - the request fails BEFORE the Pages project (and
+# therefore this file) is ever consulted. On top of that, Pages only matches
+# relative paths in the source column; a hostname source like the ones below is
+# Netlify syntax and is ignored here.
+#
+# The authoritative fix is a Cloudflare Redirect Rule at the zone level, which
+# runs at the edge and does not need a working origin. See
+# docs/seo-implementation.md, "Canonical host".
 https://www.safartrails.co.in/* https://safartrails.co.in/:splat 301!
 http://www.safartrails.co.in/* https://safartrails.co.in/:splat 301!
 

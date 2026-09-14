@@ -145,10 +145,42 @@ policy — a site may not re-mark-up reviews collected on Google as its own.
 
 ## Domain, redirects and 404s
 
-`public/_redirects` (Cloudflare Pages):
+### Canonical host (the www 522)
 
-- `www.safartrails.co.in/*` → `https://safartrails.co.in/:splat`, 301, both
-  schemes, forced. This is the HTTP 522 fix.
+**This is not fixed by anything in this repository, and cannot be.**
+
+HTTP 522 means Cloudflare's edge could not reach an origin for that hostname.
+The request fails before the Pages project is consulted, so a rule inside
+`public/_redirects` never executes. Cloudflare Pages also matches only relative
+paths in the source column of `_redirects` — a hostname source is Netlify
+syntax and is ignored. The two www lines in that file are kept as a harmless
+fallback, nothing more.
+
+The fix is a zone-level **Redirect Rule**, which runs at the Cloudflare edge
+and needs no working origin:
+
+1. **DNS** — `safartrails.co.in` zone → DNS → make sure a `www` record exists
+   and is **Proxied** (orange cloud). A `CNAME www → safartrails.co.in` is
+   fine. Without a proxied record the request never reaches Cloudflare and no
+   rule can run.
+2. **Rules → Redirect Rules → Create rule**
+   - When incoming requests match: *Hostname* **equals** `www.safartrails.co.in`
+   - Then: **Dynamic** redirect, status **301**, preserve query string on
+   - Expression: `concat("https://safartrails.co.in", http.request.uri.path)`
+
+   Cloudflare also ships a one-click "Redirect from WWW to Root" template that
+   does exactly this.
+3. Verify: `curl -sI https://www.safartrails.co.in/` must return `301` with a
+   `location:` header, not `522`.
+
+Deleting the `www` DNS record entirely also removes the error page, but then
+anyone typing "www." gets a DNS failure instead of landing on the site. The
+redirect is better.
+
+### Path redirects
+
+`public/_redirects` (Cloudflare Pages) — these do work, because they are
+relative paths on a host that reaches the Pages project:
 - `/about` → `/about-us`, `/contact` → `/contact-us`, `/faq` and `/reviews` →
   `/about-us`, `/blog/*` → `/guides`. The audit found `/about` and `/about-us`
   both live and both returning 200, which is duplicate content.

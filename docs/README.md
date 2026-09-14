@@ -24,7 +24,7 @@ access.
 |---|---|---|
 | Critical 1 | Identical title / meta / canonical on all 32 URLs | **Fixed** — per-route metadata, self-referencing canonicals |
 | Critical 2 | 6 KB HTML shell, 0 H1, 68 characters of text | **Fixed** — every route prerendered with real content (~600 words on destination pages) |
-| Critical 3 | `www.safartrails.co.in` returning HTTP 522 | **Fixed in config** — needs a deploy to take effect, then re-test |
+| Critical 3 | `www.safartrails.co.in` returning HTTP 522 | **NOT fixed — owner action.** Cannot be fixed from this repo; needs a Cloudflare Redirect Rule. See [seo-implementation.md](./seo-implementation.md), "Canonical host" |
 | High 2 | Soft 404s — junk URLs answering 200 | **Fixed** — real 404 status and a noindex 404 page |
 | High 3 | No GA4 / conversion events | **Fixed** — GA4 tag plus five conversion events |
 | High 1 | Sitemap missing live pages | **Fixed** — generated at build time from the route table |
@@ -37,16 +37,19 @@ access.
 ### Blocked on account access
 
 Nothing below can be done from the repository. Each needs someone signed in to
-the relevant Google account.
+the relevant Cloudflare or Google account.
 
-1. **Verify the site in Search Console** and submit the sitemap.
-2. **Confirm the GA4 property** `G-0VMQX8NMJZ` is real and receiving data, then
+1. **Add the www → apex Redirect Rule in Cloudflare.** The only one of the
+   audit's three critical issues still open, and the only item here that is not
+   a Google account task.
+2. **Verify the site in Search Console** and submit the sitemap.
+3. **Confirm the GA4 property** `G-0VMQX8NMJZ` is real and receiving data, then
    mark the conversion events.
-3. **Update the Google Business Profile** — categories, description, address so
+4. **Update the Google Business Profile** — categories, description, address so
    it matches the website exactly.
-4. **Create the Google Ads account** and build the campaigns.
-5. **Consolidate the Instagram handles** and fix the bios.
-6. **Set up `info@safartrails.co.in`** to replace the Gmail address.
+5. **Create the Google Ads account** and build the campaigns.
+6. **Consolidate the Instagram handles** and fix the bios.
+7. **Set up `info@safartrails.co.in`** to replace the Gmail address.
 
 ## The one ordering rule
 
