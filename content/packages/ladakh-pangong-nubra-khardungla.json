@@ -1,0 +1,120 @@
+{
+  "id": "pkg-ladakh-high-passes-pangong",
+  "slug": "ladakh-pangong-nubra-khardungla",
+  "title": "Ladakh Tour Package",
+  "destination": "Ladakh",
+  "state": "Ladakh",
+  "durationDays": 6,
+  "durationNights": 5,
+  "startingPrice": 22999,
+  "originalPrice": 29000,
+  "tripType": [
+    "Adventure",
+    "Couple",
+    "Group"
+  ],
+  "hotelCategory": "Deluxe 4★",
+  "ratings": 4.9,
+  "reviewCount": 228,
+  "startingCity": "Leh (Airport Pickup)",
+  "bestFor": "Couples, Road Trippers & Adventure Seekers",
+  "heroImage": "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=1200&auto=format&fit=crop",
+  "galleryImages": [
+    "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?q=80&w=800&auto=format&fit=crop"
+  ],
+  "overview": "Embark on the ultimate Trans-Himalayan odyssey: cross Khardung La (17,982 ft), ride double-humped camels through the cold desert dunes of Nubra Valley, gaze upon the shifting blue hues of Pangong Tso, and find tranquility in ancient Buddhist gompas with emergency oxygen backup throughout.",
+  "highlights": [
+    "1 Night in Luxury Swiss Camp at Pangong Tso (14,270 ft)",
+    "1 Night in Organic Farm Cottages at Nubra Valley + 3 Nights in Leh",
+    "Drive across world’s legendary Khardung La and Chang La passes",
+    "Bactrian Camel Safari in Hunder Sand Dunes & Diskit Giant Buddha",
+    "Inner Line Permits and portable medical oxygen cylinder in vehicle"
+  ],
+  "inclusions": [
+    "5 Nights accommodation in 3★/4★ boutique hotels & luxury heated camps",
+    "Daily Breakfast & Dinner at all hotels and camps",
+    "Dedicated private Non-AC Innova / Scorpio with seasoned mountain driver",
+    "All Protected Area Inner Line Permits and wildlife environmental fees",
+    "Emergency Oxygen Cylinder and first-aid medical kit in vehicle"
+  ],
+  "exclusions": [
+    "Airfare to Leh",
+    "Camel ride charges at Hunder and monument entrance fees",
+    "Personal snacks, hot drinks outside meals, and tipping"
+  ],
+  "itinerary": [
+    {
+      "dayNumber": 1,
+      "title": "Leh Arrival & Mandatory Acclimatization",
+      "location": "Leh Town",
+      "description": "Land at Kushok Bakula Rimpochee Airport, Leh (11,562 ft). Transfer to your hotel. Strict complete rest for the entire day to acclimatize to high altitude. Evening gentle walk to Leh Main Market.",
+      "morningActivity": "Airport pickup and warm reception with traditional Khatak",
+      "afternoonActivity": "Complete rest and hydration in hotel room",
+      "eveningActivity": "Gentle stroll in Leh Market & Shanti Stupa sunset viewpoint",
+      "stay": "The Grand Dragon / Spic N Span 4★, Leh",
+      "mealsIncluded": "Dinner",
+      "transfers": "Private Mountain Cab"
+    },
+    {
+      "dayNumber": 2,
+      "title": "Sham Valley: Magnetic Hill, Sangam & Hall of Fame",
+      "location": "Sham Valley & Leh",
+      "description": "Excursion along the Indus River: experience the optical illusion at Magnetic Hill, witness the confluence (Sangam) of turquoise Indus and muddy Zanskar rivers, and visit the Hall of Fame war museum.",
+      "morningActivity": "Drive to Magnetic Hill and Gurudwara Pathar Sahib",
+      "afternoonActivity": "Indus-Zanskar Sangam and Spituk Monastery",
+      "eveningActivity": "Visit Hall of Fame and local Ladakhi tea cafe",
+      "stay": "The Grand Dragon / Spic N Span 4★, Leh",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private Mountain Cab"
+    },
+    {
+      "dayNumber": 3,
+      "title": "Leh to Nubra Valley via Khardung La Pass (17,982 ft)",
+      "location": "Nubra Valley (Hunder / Diskit)",
+      "description": "Scale one of the highest motorable passes on earth — Khardung La. Descend into the picturesque Nubra Valley. Visit the 106-ft Maitreya Buddha at Diskit Monastery and ride double-humped camels in Hunder Dunes.",
+      "morningActivity": "Epic drive over snow-draped Khardung La Pass",
+      "afternoonActivity": "Diskit Monastery & Maitreya Buddha statue",
+      "eveningActivity": "Double-humped Bactrian camel safari in Hunder Sand Dunes",
+      "stay": "Organic Apple Orchard Resort / Luxury Swiss Camp 4★, Nubra",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private Mountain Cab"
+    },
+    {
+      "dayNumber": 4,
+      "title": "Nubra Valley to Pangong Tso via Shyok River Route",
+      "location": "Pangong Tso (Spangmik)",
+      "description": "Drive along the rugged, scenic Shyok River gorge directly to Pangong Tso. Arrive at the high-altitude lake as its waters transition between turquoise, royal blue, and indigo. Stargaze under zero light pollution.",
+      "morningActivity": "Scenic off-road drive along Shyok River canyon",
+      "afternoonActivity": "Arrive at Pangong Lake (14,270 ft) & photography session",
+      "eveningActivity": "Witness dramatic sunset over the lake & stargazing",
+      "stay": "Deluxe Swiss Cottage Camp with attached heated bath, Pangong",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private Mountain Cab"
+    },
+    {
+      "dayNumber": 5,
+      "title": "Pangong Sunrise & Return to Leh via Chang La Pass",
+      "location": "Leh via Chang La",
+      "description": "Witness an unforgettable sunrise reflecting off Pangong Lake. Journey back to Leh crossing Chang La Pass (17,590 ft). Visit the majestic 12-storey Thiksey Monastery on the return.",
+      "morningActivity": "Golden hour sunrise walk along Pangong shoreline",
+      "afternoonActivity": "Cross Chang La pass and visit Thiksey Monastery & Shey Palace",
+      "eveningActivity": "Farewell dinner and souvenir shopping in Leh",
+      "stay": "The Grand Dragon / Spic N Span 4★, Leh",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private Mountain Cab"
+    },
+    {
+      "dayNumber": 6,
+      "title": "Leh Airport Departure",
+      "location": "Leh Departure",
+      "description": "Early morning transfer to Leh Airport for your scenic flight over the snow-capped Himalayan ranges.",
+      "morningActivity": "Transfer to Leh Airport with cherished memories",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private Mountain Cab"
+    }
+  ],
+  "season": "Summer",
+  "isFeatured": true,
+  "isPopular": true
+}

@@ -1,0 +1,125 @@
+{
+  "id": "pkg-kerala-grand-nature",
+  "slug": "kerala-nature-munnar-alleppey-houseboat",
+  "title": "Kerala Tour Package",
+  "destination": "Kerala",
+  "state": "Kerala",
+  "durationDays": 6,
+  "durationNights": 5,
+  "startingPrice": 15999,
+  "originalPrice": 19500,
+  "tripType": [
+    "Couple",
+    "Family",
+    "Honeymoon",
+    "Relaxation"
+  ],
+  "hotelCategory": "Deluxe 4★",
+  "ratings": 4.8,
+  "reviewCount": 289,
+  "startingCity": "Kochi (Airport/Station Pickup)",
+  "bestFor": "Couples, Families & Wellness Seekers",
+  "heroImage": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1200&auto=format&fit=crop",
+  "galleryImages": [
+    "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=800&auto=format&fit=crop"
+  ],
+  "overview": "Indulge in God’s Own Country: traverse aromatic tea gardens in Munnar, encounter wild elephants in Thekkady’s Periyar lake, and spend a night cruising peaceful palm-lined canals in a private Alleppey houseboat.",
+  "highlights": [
+    "2 Nights in Munnar with Cheeyappara Waterfalls & Tea Museum",
+    "1 Night in Thekkady with Spice Plantation & Periyar Boat Safari",
+    "1 Night in Private Alleppey AC Houseboat with traditional Kerala Feast",
+    "1 Night in historic Fort Kochi with Chinese Fishing Nets",
+    "Authentic Ayurvedic wellness consultation voucher"
+  ],
+  "inclusions": [
+    "5 Nights accommodation in curated 3★/4★ resorts + exclusive Houseboat",
+    "All meals on Houseboat (Lunch, Evening Tea & Snacks, Dinner, Breakfast)",
+    "Daily Breakfast at Munnar, Thekkady, and Kochi hotels",
+    "Private air-conditioned Sedan/Ertiga/Innova throughout trip",
+    "Spice plantation tour tickets in Thekkady",
+    "All toll, parking, driver charges, and 24/7 SafarTrails concierge"
+  ],
+  "exclusions": [
+    "Flights/train tickets to Kochi",
+    "Periyar boat safari tickets (booked at sanctuary counter/online)",
+    "Kathakali/Kalaripayattu show tickets (optional add-on)",
+    "Personal laundry, beverages, and tips"
+  ],
+  "itinerary": [
+    {
+      "dayNumber": 1,
+      "title": "Kochi Arrival & Scenic Drive to Munnar Hills",
+      "location": "Kochi to Munnar",
+      "description": "Pickup from Kochi Airport/Railway station. Embark on a breathtaking drive to Munnar. En route, stop at the cascading Cheeyappara and Valara waterfalls. Check in at your tea-valley resort in Munnar.",
+      "morningActivity": "Airport reception & highway drive into the Western Ghats",
+      "afternoonActivity": "Cheeyappara waterfalls stop & spice garden stroll",
+      "eveningActivity": "Check-in to mountain resort & evening campfire",
+      "stay": "Misty Mountain Resort / Amber Dale 4★, Munnar",
+      "mealsIncluded": "Dinner",
+      "transfers": "Private AC Cab"
+    },
+    {
+      "dayNumber": 2,
+      "title": "Munnar Tea Estates, Eravikulam & Mattupetty Dam",
+      "location": "Munnar",
+      "description": "Full day of Munnar sightseeing. Visit Eravikulam National Park (habitat of Nilgiri Tahr), Tata Tea Museum with tea tasting, Mattupetty Dam, Echo Point, and Kundala Lake.",
+      "morningActivity": "Eravikulam National Park safari",
+      "afternoonActivity": "Tea factory tour & boating at Mattupetty Dam",
+      "eveningActivity": "Stroll in Munnar town and shop for pure spices & cocoa",
+      "stay": "Misty Mountain Resort / Amber Dale 4★, Munnar",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private AC Cab"
+    },
+    {
+      "dayNumber": 3,
+      "title": "Munnar to Thekkady Spice Hills & Periyar Sanctuary",
+      "location": "Thekkady",
+      "description": "Drive through cardamom and pepper hills to Thekkady. Take a guided tour of a certified organic spice plantation. Later, enjoy a boat safari on Periyar Lake inside the tiger reserve.",
+      "morningActivity": "Scenic drive to Thekkady (approx. 3 hrs)",
+      "afternoonActivity": "Guided spice plantation walk & Periyar boat ride",
+      "eveningActivity": "Watch traditional Kathakali and Kalaripayattu performance",
+      "stay": "Cardamom County / Poetree Sarovar 4★, Thekkady",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private AC Cab"
+    },
+    {
+      "dayNumber": 4,
+      "title": "Thekkady to Alleppey Private Houseboat Cruise",
+      "location": "Alleppey Backwaters",
+      "description": "Descend the hills to Alleppey backwaters. Board your private traditionally crafted Kettuvallam houseboat around 12:30 PM. Cruise along serene canals, lush paddy fields, and backwater villages while enjoying freshly prepared Kerala delicacies.",
+      "morningActivity": "Drive to Alleppey jetty & welcome tender coconut drink",
+      "afternoonActivity": "Houseboat cruise with fresh Karimeen fish / Veg Kerala lunch",
+      "eveningActivity": "Anchor at tranquil backwater village for sunset walk",
+      "stay": "Private Deluxe AC Houseboat, Alleppey",
+      "mealsIncluded": "Breakfast, Lunch, Evening Snacks & Dinner",
+      "transfers": "Private AC Cab + Houseboat"
+    },
+    {
+      "dayNumber": 5,
+      "title": "Alleppey to Fort Kochi Heritage Exploration",
+      "location": "Fort Kochi",
+      "description": "Enjoy sunrise breakfast on the houseboat sundeck. Disembark at 9:00 AM and drive to Fort Kochi. Explore the historic Jew Town, Paradesi Synagogue, Santa Cruz Basilica, and the iconic Chinese Fishing Nets at sunset.",
+      "morningActivity": "Backwater disembarkation and transfer to Kochi",
+      "afternoonActivity": "Heritage walk in Fort Kochi & Jew Street antiques",
+      "eveningActivity": "Sunset at Fort Kochi beach & seafood dining",
+      "stay": "Brunton Boatyard / Dutch Bungalow Heritage 4★, Kochi",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private AC Cab"
+    },
+    {
+      "dayNumber": 6,
+      "title": "Kochi Souvenir Shopping & Departure",
+      "location": "Kochi Departure",
+      "description": "Breakfast at hotel followed by transfer to Kochi International Airport / Ernakulam Railway Station for onward journey.",
+      "morningActivity": "Breakfast & Lulu Mall or local banana chips shopping",
+      "afternoonActivity": "Airport drop with unforgettable Kerala memories",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private AC Cab"
+    }
+  ],
+  "season": "All Season",
+  "isFeatured": true,
+  "isPopular": true
+}

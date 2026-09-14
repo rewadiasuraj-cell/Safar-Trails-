@@ -1,0 +1,34 @@
+{
+  "slug": "kerala-5-day-itinerary-munnar-alleppey",
+  "destinationSlug": "kerala",
+  "destinationName": "Kerala",
+  "title": "The Perfect 5-Day Kerala Itinerary: Munnar Tea Hills to Alleppey Houseboat",
+  "subtitle": "A seamlessly timed travel plan that balances scenic mountain mornings with relaxing backwaters.",
+  "readTime": "7 min read",
+  "author": {
+    "name": "Dr. Priya Nair",
+    "role": "Heritage & Wellness Specialist, Kochi",
+    "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
+  },
+  "publishedDate": "January 2026",
+  "heroImage": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1200&auto=format&fit=crop",
+  "category": "Itinerary",
+  "excerpt": "Detailed hour-by-hour route planning from Kochi arrival, Cheeyappara waterfalls, tea factory tours, spice tasting in Thekkady, to sleeping under the stars on an Alleppey houseboat.",
+  "contentSections": [
+    {
+      "heading": "Day 1 & 2: Misty Valleys of Munnar",
+      "content": "Ascend the Western Ghats into Munnar. Spend two leisurely nights admiring the Anayirangal Dam, walking through Eravikulam National Park, and visiting century-old tea factories."
+    },
+    {
+      "heading": "Day 3: Cardamom Hills & Wildlife at Thekkady",
+      "content": "Drive through fragrant spice estates to Periyar. Enjoy an evening bamboo boat safari where wild elephants and bison often graze by the water’s edge."
+    },
+    {
+      "heading": "Day 4: Private Houseboat Cruise in Alleppey",
+      "content": "Board your private Kettuvallam at 12:30 PM. Relish fresh Karimeen fry lunch, watch peaceful village life from your private deck, and anchor at sunset."
+    }
+  ],
+  "relatedPackageSlugs": [
+    "kerala-nature-munnar-alleppey-houseboat"
+  ]
+}

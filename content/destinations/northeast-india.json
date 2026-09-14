@@ -1,0 +1,59 @@
+{
+  "slug": "northeast-india",
+  "name": "Northeast India",
+  "tagline": "Seven Sisters — Living Root Bridges, Cloud Valleys & One-Horned Rhinos",
+  "state": "Meghalaya, Assam, Sikkim & Arunachal",
+  "heroImage": "https://images.unsplash.com/photo-1622308644420-a757e2fa722a?q=80&w=1600&auto=format&fit=crop",
+  "cardImage": "https://images.unsplash.com/photo-1622308644420-a757e2fa722a?q=80&w=800&auto=format&fit=crop",
+  "shortDescription": "Double Decker Living Root Bridges of Cherrapunji, crystal-clear Umngot river in Dawki, one-horned rhinos in Kaziranga, and high mountain passes of Tawang.",
+  "fullOverview": "Northeast India is a mystical expanse of untouched natural wonders, indigenous tribal cultures, and dramatic landscapes. Float on transparent river waters at Dawki, explore sacred groves, witness roaring monsoon waterfalls, and discover ancient Buddhist monasteries perched on Himalayan cliffs.",
+  "bestTime": "October to May (Clear skies, trekking & wildlife) | June to September (Monsoon waterfalls in full majesty)",
+  "temperatureRange": "10°C - 26°C",
+  "startingPrice": 18499,
+  "idealDays": "6 to 9 Days",
+  "rating": 4.8,
+  "reviewCount": 860,
+  "highlights": [
+    "Trek to the ancient Double Decker Living Root Bridge in Nongriat, Meghalaya",
+    "Boating on the glass-transparent waters of the Umngot River in Dawki",
+    "Jeep and Elephant safari in Kaziranga National Park to spot Great Indian One-Horned Rhinoceros",
+    "Standing amidst the clouds at Nohkalikai Falls and Seven Sisters Falls, Cherrapunji",
+    "Visit Mawlynnong, recognized as Asia’s cleanest village"
+  ],
+  "howToReach": {
+    "air": "Lokpriya Gopinath Bordoloi International Airport, Guwahati (GAU) serves as the primary gateway.",
+    "rail": "Guwahati Railway Station (GHY) with high-speed Vande Bharat and Rajdhani express trains.",
+    "road": "Scenic highways linking Guwahati to Shillong (approx. 3 hrs via Guwahati-Shillong Highway)."
+  },
+  "topAttractions": [
+    {
+      "name": "Cherrapunji & Nohkalikai Falls",
+      "description": "One of the wettest places on earth with soaring waterfalls and deep limestone caves.",
+      "image": "https://images.unsplash.com/photo-1622308644420-a757e2fa722a?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Dawki Umngot River & Shnongpdeng",
+      "description": "Famed for boats appearing to float in mid-air over pebble beds and crystal emerald water.",
+      "image": "https://images.unsplash.com/photo-1609137144813-7d9921338f24?q=80&w=600&auto=format&fit=crop"
+    }
+  ],
+  "stayCategories": [
+    {
+      "category": "Eco Lodges & Boutique Cloud Resorts",
+      "priceRange": "₹3,500 – ₹9,000 / night",
+      "recommendation": "Sustainable bamboo architecture overlooking Cherrapunji gorges and Khasi hills."
+    }
+  ],
+  "travelTips": [
+    "Wear sturdy non-slip trekking shoes for the root bridge walks in Meghalaya.",
+    "Indian tourists visiting Arunachal Pradesh or certain Sikkim border areas require an Inner Line Permit (ILP), arranged by SafarTrails."
+  ],
+  "faqs": [
+    {
+      "question": "Is the Double Decker Root Bridge trek suitable for beginners?",
+      "answer": "The trek involves descending and ascending approx. 3,500 stone steps. Travelers with moderate fitness can complete it with trekking poles and adequate hydration stops."
+    }
+  ],
+  "seoTitle": "Meghalaya & Northeast Tour Packages 2026 | Dawki, Cherrapunji & Kaziranga",
+  "seoDescription": "Handcrafted Northeast India holidays with Shillong cloud hills, Dawki crystal boating, living root bridges, and Kaziranga wildlife safaris."
+}

@@ -1,0 +1,81 @@
+{
+  "slug": "chardham-yatra",
+  "name": "Chardham Yatra",
+  "tagline": "Devbhoomi’s Holy Circuit — Yamunotri, Gangotri, Kedarnath & Badrinath",
+  "state": "Uttarakhand",
+  "heroImage": "https://images.unsplash.com/photo-1601821139366-eb14f3628e26?q=80&w=1600&auto=format&fit=crop",
+  "cardImage": "https://images.unsplash.com/photo-1601821139366-eb14f3628e26?q=80&w=800&auto=format&fit=crop",
+  "shortDescription": "Sacred darshan at all four Himalayan dhams, the soul-stirring Ganga Aarti at Har Ki Pauri, and breathtaking mountain drives through Devbhoomi Uttarakhand.",
+  "fullOverview": "Chardham Yatra is one of the most sacred and spiritually significant pilgrimages in India. Located in the beautiful Himalayan region of Uttarakhand, the yatra takes devotees to four revered Hindu shrines — Yamunotri, Gangotri, Kedarnath, and Badrinath. Each dham holds deep religious importance and is associated with ancient traditions, mythology, and divine blessings. The journey offers a unique combination of spirituality, devotion, and breathtaking Himalayan landscapes.",
+  "bestTime": "May to June (Pleasant weather, most popular) | September to October (Clearer skies, cooler weather)",
+  "temperatureRange": "5°C - 25°C (colder at higher altitudes like Kedarnath & Badrinath)",
+  "startingPrice": 24999,
+  "idealDays": "9 Nights / 10 Days",
+  "rating": 4.9,
+  "reviewCount": 128,
+  "isTrending": true,
+  "highlights": [
+    "Darshan at all four sacred dhams — Yamunotri, Gangotri, Kedarnath & Badrinath",
+    "Evening Ganga Aarti at Har Ki Pauri, Haridwar",
+    "Ancient Kedarnath Temple, one of the twelve Jyotirlingas of Lord Shiva",
+    "Badrinath Temple on the banks of the Alaknanda River, sacred abode of Lord Vishnu",
+    "Scenic Garhwal Himalayan drives through Barkot, Uttarkashi & Guptkashi"
+  ],
+  "howToReach": {
+    "air": "Jolly Grant Airport, Dehradun, connected to several major Indian cities; continue by road to Haridwar/Rishikesh.",
+    "rail": "Haridwar and Rishikesh are the most convenient railway stations, with rail connectivity to Delhi and other major cities.",
+    "road": "Haridwar, Rishikesh and Dehradun are major starting points with good road connectivity from Delhi; continue towards the dhams by private cab, bus or organised tour."
+  },
+  "topAttractions": [
+    {
+      "name": "Yamunotri Temple",
+      "description": "The sacred source of the Yamuna River, dedicated to Goddess Yamuna, known for scenic mountain trails and natural hot springs.",
+      "image": "https://images.unsplash.com/photo-1695236547282-7f927fe12197?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Gangotri Temple",
+      "description": "Dedicated to Goddess Ganga beside the Bhagirathi River, where Hindu belief holds she descended to Earth to cleanse humanity.",
+      "image": "https://images.unsplash.com/photo-1696465889052-6c8921536920?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Kedarnath Temple",
+      "description": "One of the twelve Jyotirlingas of Lord Shiva, set amidst the breathtaking snow-covered Garhwal Himalayas.",
+      "image": "https://images.unsplash.com/photo-1698574996391-73f103113f60?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Badrinath Temple",
+      "description": "A sacred abode of Lord Vishnu along the Alaknanda River, surrounded by the majestic Himalayas.",
+      "image": "https://images.unsplash.com/photo-1601821139366-eb14f3628e26?q=80&w=600&auto=format&fit=crop"
+    }
+  ],
+  "stayCategories": [
+    {
+      "category": "Standard / Deluxe Hotels (Haridwar, Barkot, Uttarkashi, Guptkashi, Badrinath)",
+      "priceRange": "₹2,000 – ₹5,500 / night",
+      "recommendation": "Comfortable hotels along the route selected for cleanliness and convenient access to the yatra circuit."
+    },
+    {
+      "category": "Basic Guest House / GMVN (Kedarnath)",
+      "priceRange": "₹1,200 – ₹3,000 / night",
+      "recommendation": "Simple, functional stays near the temple given the terrain — hotel category can be upgraded where availability allows."
+    }
+  ],
+  "travelTips": [
+    "The yatra depends on temple opening dates, weather conditions and road accessibility — always check current conditions before planning.",
+    "Book helicopter, pony or palki arrangements for Kedarnath and Yamunotri well in advance as they are subject to availability and weather.",
+    "May–June and Sept–Oct see the highest footfall — advance hotel and transport bookings are strongly recommended.",
+    "Carry warm layers even in summer months — temperatures drop sharply at higher altitudes."
+  ],
+  "faqs": [
+    {
+      "question": "What is the best time for Chardham Yatra?",
+      "answer": "May–June is the most popular window with pleasant weather, while September–October offers clearer skies and cooler temperatures with comparatively fewer crowds. July–August sees heavy monsoon rainfall and possible road disruptions."
+    },
+    {
+      "question": "How many days does the Chardham Yatra take?",
+      "answer": "A complete Chardham Yatra covering Yamunotri, Gangotri, Kedarnath and Badrinath typically takes 9 Nights / 10 Days starting and ending in Haridwar, though it can be customized based on your travel dates and pace."
+    }
+  ],
+  "seoTitle": "Chardham Yatra Packages 2026 | Yamunotri, Gangotri, Kedarnath & Badrinath",
+  "seoDescription": "Book your Chardham Yatra with Safar Trails — customized 9N/10D pilgrimage packages covering Yamunotri, Gangotri, Kedarnath and Badrinath with comfortable stays and private transport."
+}

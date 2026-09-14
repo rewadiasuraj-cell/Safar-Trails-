@@ -1,0 +1,121 @@
+{
+  "id": "pkg-andaman-turquoise",
+  "slug": "andaman-turquoise-havelock-scuba-dream",
+  "title": "Andaman Tour Package",
+  "destination": "Andaman",
+  "state": "Andaman & Nicobar",
+  "durationDays": 6,
+  "durationNights": 5,
+  "startingPrice": 22999,
+  "originalPrice": 28999,
+  "tripType": [
+    "Honeymoon",
+    "Couple",
+    "Family",
+    "Adventure"
+  ],
+  "hotelCategory": "Luxury 5★",
+  "ratings": 5,
+  "reviewCount": 178,
+  "startingCity": "Port Blair (Airport Pickup)",
+  "bestFor": "Honeymooners, Divers & Island Explorers",
+  "heroImage": "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=1200&auto=format&fit=crop",
+  "galleryImages": [
+    "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&auto=format&fit=crop"
+  ],
+  "overview": "Escape to India’s pristine tropical frontier. Includes high-speed luxury catamaran cruise (Makruzz/Nautika), 2 nights on Havelock Island with Radhanagar sunset, scuba diving at Elephant beach, and 1 night on Neil Island.",
+  "highlights": [
+    "2 Nights Havelock Island beachfront resort + 1 Night Neil Island + 2 Nights Port Blair",
+    "Confirmed Makruzz/Nautika Luxury Catamaran cruise tickets",
+    "Visit Radhanagar Beach (Asia’s Best Beach) and Elephant Beach water sports",
+    "Cellular Jail Light & Sound Show + Corbyn’s Cove Beach",
+    "Natural Rock Formation & coral glass-bottom boat at Neil Island"
+  ],
+  "inclusions": [
+    "5 Nights stay in premium beach resorts with daily buffet breakfast",
+    "All inter-island ferry tickets in Premium AC Catamaran (Port Blair - Havelock - Neil - Port Blair)",
+    "All private AC transfers on Port Blair, Havelock, and Neil Island",
+    "Cellular Jail entry tickets and light & sound show passes",
+    "Dedicated island coordinators at every jetty"
+  ],
+  "exclusions": [
+    "Flight tickets to Port Blair",
+    "Scuba diving, sea walk, parasailing, and jet ski activity fees",
+    "Personal tips and expenses"
+  ],
+  "itinerary": [
+    {
+      "dayNumber": 1,
+      "title": "Port Blair Arrival, Corbyn’s Cove & Cellular Jail Light & Sound",
+      "location": "Port Blair",
+      "description": "Arrive at Port Blair Airport and transfer to hotel. Visit Corbyn’s Cove Beach for coconut water, followed by Cellular Jail and its moving evening Light & Sound presentation.",
+      "morningActivity": "Airport pickup & hotel check-in",
+      "afternoonActivity": "Relaxation at Corbyn’s Cove palm-fringed coast",
+      "eveningActivity": "Historic Cellular Jail tour & evening Light & Sound show",
+      "stay": "Sinclairs Bayview / Symphony Samudra 4★, Port Blair",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private AC Cab"
+    },
+    {
+      "dayNumber": 2,
+      "title": "High-Speed Ferry to Havelock Island & Radhanagar Sunset",
+      "location": "Havelock Island (Swaraj Dweep)",
+      "description": "Board the luxury Makruzz catamaran to Havelock Island. Check in to your beach resort. Later, witness the world-famous golden sunset at Radhanagar Beach (Beach No. 7).",
+      "morningActivity": "Catamaran cruise across azure waters to Havelock",
+      "afternoonActivity": "Check-in to beachfront resort & pool dip",
+      "eveningActivity": "Spectacular sunset at Radhanagar Beach",
+      "stay": "Barefoot at Havelock / Symphony Palms Beach Resort 4★, Havelock",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Luxury Catamaran + Private Cab"
+    },
+    {
+      "dayNumber": 3,
+      "title": "Elephant Beach Scuba, Snorkeling & Water Sports",
+      "location": "Havelock Island",
+      "description": "Speedboat ride to Elephant Beach. Indulge in snorkeling among live corals, sea walking, or discover scuba diving with certified dive instructors.",
+      "morningActivity": "Speedboat transfer to Elephant Beach",
+      "afternoonActivity": "Underwater coral viewing, sea walk or scuba diving",
+      "eveningActivity": "Candlelight beachside dinner (optional add-on for couples)",
+      "stay": "Barefoot at Havelock / Symphony Palms Beach Resort 4★, Havelock",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Speedboat + Private Cab"
+    },
+    {
+      "dayNumber": 4,
+      "title": "Havelock to Neil Island (Shaheed Dweep) & Natural Bridge",
+      "location": "Neil Island",
+      "description": "Cruise to the peaceful island of Neil. Visit the famous Howrah Bridge (natural living rock formation), Bharatpur Beach for shallow reef swimming, and Laxmanpur Beach for sunset.",
+      "morningActivity": "Morning ferry to Neil Island and check-in",
+      "afternoonActivity": "Explore Natural Coral Rock Formation & Bharatpur reef",
+      "eveningActivity": "Sunset at Laxmanpur Beach Point 1",
+      "stay": "Summer Sands Beach Resort / Pearl Park 4★, Neil Island",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Luxury Catamaran + Private Cab"
+    },
+    {
+      "dayNumber": 5,
+      "title": "Neil Island to Port Blair & Local Souvenir Market",
+      "location": "Port Blair",
+      "description": "Board return ferry back to Port Blair. Visit Sagarika Emporium for pearl jewellery and shell handicrafts. Enjoy a farewell coastal seafood dinner.",
+      "morningActivity": "Return ferry to Port Blair",
+      "afternoonActivity": "Sagarika Handicraft Emporium & Chatham Saw Mill",
+      "eveningActivity": "Fine dining dinner at harbor view lounge",
+      "stay": "Sinclairs Bayview / Symphony Samudra 4★, Port Blair",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Luxury Catamaran + Private Cab"
+    },
+    {
+      "dayNumber": 6,
+      "title": "Port Blair Airport Departure",
+      "location": "Port Blair Departure",
+      "description": "Transfer to Port Blair Airport for your flight back home with memories of emerald waters and white sands.",
+      "morningActivity": "Breakfast & airport transfer",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private Airport Cab"
+    }
+  ],
+  "season": "All Season",
+  "isFeatured": true,
+  "isPopular": true
+}

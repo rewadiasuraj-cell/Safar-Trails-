@@ -1,0 +1,110 @@
+{
+  "id": "pkg-romantic-goa-boutique",
+  "slug": "romantic-goa-boutique-beach-backwater",
+  "title": "Goa Tour Package",
+  "destination": "Goa",
+  "state": "Goa",
+  "durationDays": 5,
+  "durationNights": 4,
+  "startingPrice": 12999,
+  "originalPrice": 16500,
+  "tripType": [
+    "Couple",
+    "Honeymoon",
+    "Friends",
+    "Weekend"
+  ],
+  "hotelCategory": "Deluxe 4★",
+  "ratings": 4.8,
+  "reviewCount": 312,
+  "startingCity": "Goa (Mopa or Dabolim Airport Pickup)",
+  "bestFor": "Couples, Young Travelers & Foodies",
+  "heroImage": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1200&auto=format&fit=crop",
+  "galleryImages": [
+    "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop"
+  ],
+  "overview": "The quintessential Goa holiday designed with balance: relax in luxury South Goa resorts, walk through vibrant Portuguese heritage streets in Fontainhas, and explore North Goa’s chic cafes and sunset cruises.",
+  "highlights": [
+    "4 Nights in 4★ Boutique Beach Resort with daily buffet breakfast",
+    "Private sunset river cruise on Mandovi with Goan live folk music",
+    "Guided walking photography tour of Fontainhas Latin Quarter",
+    "Day trip to South Goa beaches (Palolem, Agonda & Cabo de Rama Fort)",
+    "Dedicated private AC cab for all tours and transfers"
+  ],
+  "inclusions": [
+    "4 Nights stay in 4★ boutique beach resort",
+    "Daily breakfast at hotel",
+    "Private airport pickup and drop off (GOX or GOI)",
+    "Full day North Goa sightseeing & Full day South Goa beaches tour",
+    "Sunset Mandovi river cruise passes"
+  ],
+  "exclusions": [
+    "Flight tickets to Goa",
+    "Water sports activity packages (can be booked at jetty)",
+    "Club entry fees and alcohol"
+  ],
+  "itinerary": [
+    {
+      "dayNumber": 1,
+      "title": "Arrival in Goa & Sunset Beach Walk",
+      "location": "Goa Arrival",
+      "description": "Warm pickup at Mopa (GOX) or Dabolim (GOI) airport. Transfer to your beach resort. Relax by the pool and take a leisurely sunset walk along the beach.",
+      "morningActivity": "Airport pickup & check-in",
+      "afternoonActivity": "Poolside relaxation and tropical welcome drink",
+      "eveningActivity": "Sunset walk at Candolim/Benaulim beach shack",
+      "stay": "Hard Rock Hotel / Heritage Village Resort 4★, Goa",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private AC Cab"
+    },
+    {
+      "dayNumber": 2,
+      "title": "North Goa Forts, Water Sports & Mandovi Sunset Cruise",
+      "location": "North Goa",
+      "description": "Visit Aguada Fort overlooking the Arabian Sea, Sinquerim beach for parasailing and jet skiing, followed by a romantic sunset catamaran cruise on the Mandovi River.",
+      "morningActivity": "Aguada Fort & Sinquerim lighthouse tour",
+      "afternoonActivity": "Water sports at Calangute/Baga coast",
+      "eveningActivity": "Sunset Mandovi River Cruise with live DJ and folk dance",
+      "stay": "Hard Rock Hotel / Heritage Village Resort 4★, Goa",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private AC Cab"
+    },
+    {
+      "dayNumber": 3,
+      "title": "Fontainhas Latin Quarter & Old Goa Heritage Churches",
+      "location": "Panaji & Old Goa",
+      "description": "Explore the UNESCO heritage Basilica of Bom Jesus and Se Cathedral in Old Goa. Afterwards, walk through the colourful Portuguese Latin Quarter of Fontainhas and taste warm Bebinca at a 100-year-old bakery.",
+      "morningActivity": "Old Goa churches & history walk",
+      "afternoonActivity": "Guided photography walk through Fontainhas",
+      "eveningActivity": "Dinner at quaint Goan-Portuguese courtyard bistro in Assagao",
+      "stay": "Hard Rock Hotel / Heritage Village Resort 4★, Goa",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private AC Cab"
+    },
+    {
+      "dayNumber": 4,
+      "title": "Pristine South Goa: Cabo de Rama Fort & Palolem Beach",
+      "location": "South Goa",
+      "description": "Head to the untamed beauty of South Goa. Clamber up the cliffside ruins of Cabo de Rama Fort for turquoise sea panoramas, followed by dolphin watching and kayaking at Palolem beach.",
+      "morningActivity": "Drive to Cabo de Rama cliff viewpoint",
+      "afternoonActivity": "Kayaking & beach shacks at Palolem and Agonda",
+      "eveningActivity": "Sunset cocktail at clifftop cafe",
+      "stay": "Hard Rock Hotel / Heritage Village Resort 4★, Goa",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private AC Cab"
+    },
+    {
+      "dayNumber": 5,
+      "title": "Goa Souvenirs & Airport Departure",
+      "location": "Goa Departure",
+      "description": "Breakfast, morning dip in the sea, and transfer to airport with sun-kissed memories.",
+      "morningActivity": "Breakfast & cashew/feni souvenir shopping",
+      "afternoonActivity": "Airport drop off",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private AC Cab"
+    }
+  ],
+  "season": "All Season",
+  "isFeatured": true,
+  "isPopular": true
+}

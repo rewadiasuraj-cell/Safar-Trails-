@@ -1,0 +1,71 @@
+{
+  "slug": "kerala",
+  "name": "Kerala",
+  "tagline": "God’s Own Country — Backwaters, Tea Hills & Ayurvedic Spas",
+  "state": "Kerala",
+  "heroImage": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1600&auto=format&fit=crop",
+  "cardImage": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=800&auto=format&fit=crop",
+  "shortDescription": "Cruising through Alleppey backwaters on a private Kettuvallam houseboat, walking rolling tea estates in Munnar, and wildlife safaris in Thekkady.",
+  "fullOverview": "Kerala weaves lush nature, tranquil waterways, and ancient wellness traditions into a restorative holiday. Discover misty mountain plantations in Munnar, spice groves and bamboo rafting in Periyar, serene village backwaters in Kumarakom, and clifftop sunsets at Varkala.",
+  "bestTime": "September to March (Pleasant climate) | June to August (Monsoon Ayurveda & Waterfalls)",
+  "temperatureRange": "18°C - 32°C",
+  "startingPrice": 15499,
+  "idealDays": "5 to 7 Days",
+  "rating": 4.9,
+  "reviewCount": 1890,
+  "isTrending": true,
+  "highlights": [
+    "Overnight cruise in a private air-conditioned Houseboat with traditional Kerala Karimeen meals",
+    "Stroll through emerald tea gardens and visit Tea Museum in Munnar",
+    "Boat safari on Periyar Lake inside Thekkady Wildlife Sanctuary",
+    "Watch Kathakali dance and Kalaripayattu martial arts live performances",
+    "Authentic Ayurvedic rejuvenation massage with herbal oils"
+  ],
+  "howToReach": {
+    "air": "Cochin International Airport (COK) or Trivandrum International Airport (TRV).",
+    "rail": "Ernakulam Junction (ERS) and Aluva stations offer seamless connectivity to Munnar and Alleppey.",
+    "road": "Well-maintained state highways linking Kochi to Munnar (approx. 3.5 hrs scenic hill drive)."
+  },
+  "topAttractions": [
+    {
+      "name": "Alleppey & Kumarakom Backwaters",
+      "description": "Vast network of canals, paddy fields, and coconut groves navigated by wooden houseboats.",
+      "image": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Munnar Tea Gardens & Eravikulam",
+      "description": "Rolling mist-shrouded green hills home to the endangered Nilgiri Tahr and Anamudi peak.",
+      "image": "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Varkala Clifftop Beach",
+      "description": "Unique red laterite cliffs bordering the Arabian Sea with bohemian cafes and yoga retreats.",
+      "image": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=600&auto=format&fit=crop"
+    }
+  ],
+  "stayCategories": [
+    {
+      "category": "Deluxe & Premium Houseboats",
+      "priceRange": "₹7,500 – ₹16,000 / night (all meals included)",
+      "recommendation": "Dedicated chef, captain, and engine operator with private sundeck."
+    },
+    {
+      "category": "Misty Hill Resorts & Treehouses",
+      "priceRange": "₹4,500 – ₹12,000 / night",
+      "recommendation": "Immersed in Munnar tea plantations with private valley views."
+    }
+  ],
+  "travelTips": [
+    "Houseboats operate with AC in bedrooms from 9 PM to 6 AM unless full-time AC is booked in advance.",
+    "Vegetarian and Jain meals can be fully arranged with prior notice on houseboats and resorts.",
+    "Wear modest attire when visiting holy temples like Padmanabhaswamy Temple in Trivandrum."
+  ],
+  "faqs": [
+    {
+      "question": "What is the classic route for a 6-day Kerala holiday?",
+      "answer": "The most popular route is Kochi (1N) → Munnar (2N) → Thekkady (1N) → Alleppey Houseboat (1N) → Departure from Kochi."
+    }
+  ],
+  "seoTitle": "Kerala Tour Packages 2026 | Munnar Hills, Alleppey Houseboat & Spice Tours",
+  "seoDescription": "Explore Kerala holiday packages with private houseboat cruises, Munnar tea plantation stays, Periyar wildlife tours, and customized transfers."
+}

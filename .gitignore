@@ -2,6 +2,12 @@ node_modules/
 build/
 dist/
 coverage/
+
+# Build output of scripts/build-content.ts, regenerated from content/ on every
+# dev start and build. Deliberately not committed: editing one JSON file in
+# content/ through the GitHub web UI should produce a one-file diff, and nobody
+# editing from a browser can regenerate these.
+src/data/generated/
 .DS_Store
 *.log
 .env*

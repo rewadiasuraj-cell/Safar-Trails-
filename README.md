@@ -29,6 +29,49 @@ are easy to break by accident:
 The prerender also regenerates `public/sitemap.xml`, so that file is build
 output and should not be hand-edited.
 
+## Editing content
+
+Destinations, packages and travel guides live as one JSON file per item:
+
+```
+content/destinations/kashmir.json
+content/packages/kashmir-escape-houseboat-bliss.json
+content/guides/best-time-to-visit-kashmir.json
+```
+
+**You do not need a local checkout to edit these.** Open the file on github.com,
+click the pencil, change what you need, and commit. Cloudflare redeploys in a
+couple of minutes.
+
+The filename is the URL slug: `content/packages/sikkim-explorer.json` is served at
+`/tour-packages/sikkim-explorer`. To add a package, copy an existing file, rename
+it to the new slug, and change the contents.
+
+### If you break something, the build stops
+
+`scripts/build-content.ts` reads these files, checks each one, and generates
+`src/data/generated/`. A bad edit fails the build with a specific message instead
+of shipping a broken page:
+
+```
+content/packages/sikkim-explorer.json: not valid JSON (…). Check for a trailing
+comma, a missing quote, or a curly " pasted from a document.
+
+content/packages/sikkim-explorer.json: missing required field "startingPrice"
+
+content/packages/sikkim-explorer.json: slug "sikkim-explorer-2026" does not match
+the filename. Rename the file to sikkim-explorer-2026.json, or fix the slug.
+```
+
+The live site keeps serving the previous version until the problem is fixed.
+
+Two rules worth remembering when editing by hand: text must be wrapped in
+straight double quotes (`"`), not the curly ones a word processor produces, and
+the last item in a list or object must not have a comma after it.
+
+`src/data/generated/` is build output and is gitignored — it is rebuilt on every
+`bun run dev` and `bun run build`, so a content change is always a one-file diff.
+
 ## Content Management (Sanity Studio)
 
 Destinations, tour packages, and travel guides shown on the `/destinations`,

@@ -1,0 +1,60 @@
+{
+  "slug": "andaman",
+  "name": "Andaman & Nicobar",
+  "tagline": "Emerald Isles — Coral Reefs, Turquoise Lagoons & White Sands",
+  "state": "Andaman & Nicobar Islands",
+  "heroImage": "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=1600&auto=format&fit=crop",
+  "cardImage": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&auto=format&fit=crop",
+  "shortDescription": "Radhanagar Beach rated Asia’s best, deep sea scuba diving at Havelock, high-speed catamaran cruises to Neil Island, and historic Cellular Jail.",
+  "fullOverview": "The Andaman Islands are India’s premier tropical paradise. Floating in the Bay of Bengal, the archipelago boasts crystal-clear azure waters, vibrant coral gardens, bioluminescent night kayaking, and secluded white sand beaches shaded by towering Mahua trees.",
+  "bestTime": "October to May (Calm turquoise waters, ideal for diving & sea transfers)",
+  "temperatureRange": "23°C - 31°C",
+  "startingPrice": 21999,
+  "idealDays": "5 to 7 Days",
+  "rating": 4.9,
+  "reviewCount": 980,
+  "isTrending": true,
+  "highlights": [
+    "Sunset at Radhanagar Beach (Beach No. 7), consistently ranked among the world’s top beaches",
+    "Discover scuba diving & sea walking at Elephant Beach, Havelock",
+    "High-speed Makruzz or Nautika luxury cruise between Port Blair, Havelock & Neil Island",
+    "Light & Sound show depicting India’s freedom struggle at Cellular Jail",
+    "Natural rock formation bridge and coral watching at Bharatpur Beach, Neil Island"
+  ],
+  "howToReach": {
+    "air": "Veer Savarkar International Airport, Port Blair (IXZ) with direct flights from Chennai, Kolkata, Delhi, and Bengaluru.",
+    "rail": "Not applicable (Island territory).",
+    "road": "Island hopping is conducted via modern luxury catamarans and private tourist cabs."
+  },
+  "topAttractions": [
+    {
+      "name": "Radhanagar & Elephant Beach, Havelock",
+      "description": "Powder-soft white sand, sunset hues, and vibrant coral reefs for snorkeling.",
+      "image": "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Cellular Jail National Memorial, Port Blair",
+      "description": "Historic colonial prison that housed notable Indian freedom fighters with emotional light & sound show.",
+      "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=600&auto=format&fit=crop"
+    }
+  ],
+  "stayCategories": [
+    {
+      "category": "Beachfront Cottages & Island Resorts",
+      "priceRange": "₹5,500 – ₹20,000 / night",
+      "recommendation": "Step straight from your private villa onto white sand beaches on Havelock Island."
+    }
+  ],
+  "travelTips": [
+    "No passport or special permit is required for Indian citizens visiting Andaman.",
+    "Book private inter-island catamaran ferry tickets (Makruzz/Nautika) well in advance to avoid schedule disruption."
+  ],
+  "faqs": [
+    {
+      "question": "Do we need swimming skills for scuba diving in Andaman?",
+      "answer": "No! Discover Scuba Diving (DSD) is conducted with dedicated 1-on-1 certified PADI divemasters and requires zero swimming knowledge."
+    }
+  ],
+  "seoTitle": "Andaman Tour Packages 2026 | Havelock Island, Scuba Diving & Ferry Tickets",
+  "seoDescription": "Plan your dream Andaman honeymoon or family vacation. Includes Makruzz ferry, Radhanagar beach resorts, scuba diving, and Cellular Jail tour."
+}

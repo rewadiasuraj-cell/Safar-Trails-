@@ -1,0 +1,133 @@
+{
+  "id": "pkg-kashmir-escape",
+  "slug": "kashmir-escape-houseboat-bliss",
+  "title": "Kashmir Tour Package",
+  "destination": "Kashmir",
+  "state": "Jammu & Kashmir",
+  "durationDays": 6,
+  "durationNights": 5,
+  "startingPrice": 17499,
+  "originalPrice": 22000,
+  "tripType": [
+    "Couple",
+    "Family",
+    "Honeymoon"
+  ],
+  "hotelCategory": "Deluxe 4★",
+  "ratings": 4.9,
+  "reviewCount": 342,
+  "startingCity": "Srinagar (Airport Pickup)",
+  "bestFor": "Couples, Families & Nature Enthusiasts",
+  "heroImage": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=1200&auto=format&fit=crop",
+  "galleryImages": [
+    "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1626014303757-658c3a119760?q=80&w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&w=800&auto=format&fit=crop"
+  ],
+  "overview": "Experience the magic of Kashmir with this 6-day signature journey. Enjoy an authentic cedarwood Houseboat stay on Dal Lake, scenic Gondola cable car ride in Gulmarg, pine walks in Pahalgam, and snow vistas in Sonamarg, with private sanitized transfers throughout.",
+  "highlights": [
+    "1 Night in Luxury Dal Lake Houseboat with Shikara sunset ride",
+    "2 Nights in scenic Srinagar + 2 Nights in pine valley Pahalgam",
+    "Excursion to Gulmarg with assistance for Gondola Phase 1 & 2 tickets",
+    "Day trip to Sonamarg (\"Meadow of Gold\") & Thajiwas Glacier",
+    "Daily freshly prepared Kashmiri Breakfast and Dinner",
+    "Private dedicated sedan/SUV cab with polite local chauffeur"
+  ],
+  "inclusions": [
+    "5 Nights accommodation in handpicked 3★/4★ hotels & luxury houseboat",
+    "Daily Breakfast & Dinner at all hotels and houseboat (MAP plan)",
+    "1-Hour complimentary Shikara Ride on Dal Lake at sunset",
+    "Dedicated private Sedan/Innova for all airport transfers and sightseeing",
+    "All toll taxes, parking fees, driver allowance, and fuel charges",
+    "24/7 dedicated on-trip concierge and local ground support"
+  ],
+  "exclusions": [
+    "Airfare to and from Srinagar Airport",
+    "Gulmarg Gondola tickets, pony rides, and sledge hire fees",
+    "Local Union taxi in Pahalgam (Aru, Betaab, Chandanwari) as per J&K tourist rule",
+    "Personal expenses, laundry, monument entry fees, and travel insurance"
+  ],
+  "itinerary": [
+    {
+      "dayNumber": 1,
+      "title": "Arrival in Srinagar & Dal Lake Shikara Sunset",
+      "location": "Srinagar",
+      "description": "Warm welcome by our SafarTrails representative at Srinagar Airport. Transfer to your luxury Houseboat on Dal Lake. In the evening, embark on a magical 1-hour Shikara ride passing floating gardens, lotus beds, and vibrant lake markets.",
+      "morningActivity": "Airport pickup and check-in to heritage cedar Houseboat",
+      "afternoonActivity": "Leisurely walk along the Boulevard Road & local Kahwa tasting",
+      "eveningActivity": "Sunset Shikara ride on Dal Lake & traditional Kashmiri dinner",
+      "stay": "Heritage Deluxe Houseboat, Dal Lake",
+      "mealsIncluded": "Dinner",
+      "transfers": "Private Chauffeur Cab",
+      "image": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=600&auto=format&fit=crop",
+      "insiderTip": "Ask your Shikara boatman to take you to the quieter interior channels of Nigeen lake for postcard-worthy sunset photos."
+    },
+    {
+      "dayNumber": 2,
+      "title": "Srinagar to Gulmarg Day Trip (Meadow of Flowers)",
+      "location": "Gulmarg",
+      "description": "Drive along willow-lined highways to Gulmarg (approx. 50 km / 1.5 hrs). Board the renowned Gulmarg Gondola — one of the highest cable cars in the world — to reach Kongdoori (Phase 1) and Apharwat Peak (Phase 2 at 13,780 ft). Return to Srinagar for dinner.",
+      "morningActivity": "Scenic drive to Gulmarg with apple orchard photo stops",
+      "afternoonActivity": "Gondola ride to snow-clad Apharwat peak & snow activities",
+      "eveningActivity": "Visit historic St. Mary’s Church and return to Srinagar hotel",
+      "stay": "Hotel Grand Boulevard / Similar 4★, Srinagar",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private Chauffeur Cab",
+      "image": "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=600&auto=format&fit=crop",
+      "insiderTip": "Keep your Gondola Phase 2 e-tickets printed or easily saved on your phone before ascending."
+    },
+    {
+      "dayNumber": 3,
+      "title": "Srinagar to Pahalgam (Valley of Shepherds) via Saffron Fields",
+      "location": "Pahalgam",
+      "description": "Journey to picturesque Pahalgam (approx. 90 km / 2.5 hrs). En route, halt at the ancient Avantipur Temple ruins and vibrant Pampore saffron fields. Check in at your pine-facing river resort in Pahalgam.",
+      "morningActivity": "Drive to Pahalgam with Saffron & Cricket Bat factory visits",
+      "afternoonActivity": "Check-in to riverside resort along the roaring Lidder River",
+      "eveningActivity": "Leisure walk in Pahalgam market and hot walnut fudge tasting",
+      "stay": "Pine Spring Resort / Eden Resorts 4★, Pahalgam",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private Chauffeur Cab",
+      "image": "https://images.unsplash.com/photo-1626014303757-658c3a119760?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "dayNumber": 4,
+      "title": "Exploring Betaab Valley, Aru Valley & Baisaran",
+      "location": "Pahalgam",
+      "description": "Explore the verdant landscapes of Pahalgam. Board the local union cab to visit Betaab Valley (where Bollywood movies were filmed), Aru Valley wildlife hamlet, and optional pony trek to Baisaran Meadow (\"Mini Switzerland\").",
+      "morningActivity": "Excursion to Aru Valley and Betaab Valley riverbanks",
+      "afternoonActivity": "Visit Chandanwari & optional Baisaran pine meadow walk",
+      "eveningActivity": "Bonfire by the Lidder river at your resort",
+      "stay": "Pine Spring Resort / Eden Resorts 4★, Pahalgam",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Local Union Cab + Private Chauffeur",
+      "image": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "dayNumber": 5,
+      "title": "Pahalgam to Sonamarg Excursion & Return to Srinagar",
+      "location": "Sonamarg & Srinagar",
+      "description": "Travel to the majestic golden meadow of Sonamarg nestled under snowy Himalayan peaks. Admire the Sindh River and take a pony ride to Thajiwas Glacier. In the late afternoon, return to Srinagar and visit the Mughal Gardens (Nishat & Shalimar Bagh).",
+      "morningActivity": "Drive along Sindh Valley to Sonamarg meadow",
+      "afternoonActivity": "Thajiwas Glacier views & pony sledging",
+      "eveningActivity": "Visit Nishat Bagh & Shalimar Mughal Gardens in Srinagar",
+      "stay": "Hotel Grand Boulevard / Similar 4★, Srinagar",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private Chauffeur Cab",
+      "image": "https://images.unsplash.com/photo-1588661799793-7da9f7336798?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "dayNumber": 6,
+      "title": "Srinagar Souvenir Shopping & Airport Drop",
+      "location": "Srinagar Departure",
+      "description": "Relish a hearty breakfast. Depending on flight timings, stop for authentic Kashmiri dry fruits, Pashmina shawls, and saffron in Lal Chowk before your transfer to Srinagar Airport for your onward journey.",
+      "morningActivity": "Breakfast & Lal Chowk handicraft shopping",
+      "afternoonActivity": "Airport transfer with sweet memories of Kashmir",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private Airport Drop"
+    }
+  ],
+  "season": "All Season",
+  "isFeatured": true,
+  "isPopular": true
+}

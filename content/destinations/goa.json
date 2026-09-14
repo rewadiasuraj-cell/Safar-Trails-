@@ -1,0 +1,75 @@
+{
+  "slug": "goa",
+  "name": "Goa",
+  "tagline": "Sun-Kissed Beaches, Portuguese Quarters & River Cruises",
+  "state": "Goa",
+  "heroImage": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1600&auto=format&fit=crop",
+  "cardImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop",
+  "shortDescription": "Golden sunset sands in South Goa, vibrant beach shacks in North Goa, heritage Latin Quarters of Fontainhas, and Mandovi backwaters.",
+  "fullOverview": "Goa offers a dual soul: the electric nightlife, water sports, and cafe culture of North Goa, combined with the tranquil palm-lined shores, boutique heritage villas, and peaceful backwaters of South Goa. Whether looking for a relaxing beach escape or a vibrant group party, Goa delivers year-round.",
+  "bestTime": "October to April (Perfect beach weather) | June to September (Lush green monsoon escapes)",
+  "temperatureRange": "22°C - 33°C",
+  "startingPrice": 12499,
+  "idealDays": "4 to 6 Days",
+  "rating": 4.8,
+  "reviewCount": 2180,
+  "isTrending": true,
+  "highlights": [
+    "Sunset Catamaran or Luxury Yacht cruise on the Mandovi River",
+    "Walking photography tour through colorful Portuguese Fontainhas, Panjim",
+    "Scuba diving and parasailing at Grand Island & Calangute coast",
+    "Private beach shack dinner with fresh coastal seafood and Goan curry",
+    "Jeep safari to the majestic four-tiered Dudhsagar Waterfalls"
+  ],
+  "howToReach": {
+    "air": "Manohar International Airport, Mopa (GOX) for North Goa or Dabolim Airport (GOI) for Central/South Goa.",
+    "rail": "Madgaon (MAO) and Thivim (THVM) stations connect directly with Mumbai, Delhi, Bengaluru, and Kerala.",
+    "road": "Scenic drive via NH66 from Mumbai/Pune or NH4A from Bengaluru through the Western Ghats."
+  },
+  "topAttractions": [
+    {
+      "name": "Palolem & Agonda Beaches",
+      "description": "Crescent-shaped serene white sands in South Goa, perfect for dolphin watching and calm swimming.",
+      "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Fontainhas Latin Quarter",
+      "description": "Vibrant yellow, cobalt, and terracotta colonial villas with indie art galleries and quaint bakeries.",
+      "image": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Dudhsagar Waterfalls & Spice Plantation",
+      "description": "Spectacular 310m milky white cascade nestled inside Bhagwan Mahaveer Wildlife Sanctuary.",
+      "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=600&auto=format&fit=crop"
+    }
+  ],
+  "stayCategories": [
+    {
+      "category": "Beachfront Resorts & 5★ Spas",
+      "priceRange": "₹7,000 – ₹22,000 / night",
+      "recommendation": "Direct beach access, infinity pools, private cabanas in Varca, Candolim, and Morjim."
+    },
+    {
+      "category": "Portuguese Heritage Homestays",
+      "priceRange": "₹3,500 – ₹7,000 / night",
+      "recommendation": "Authentic Goan susegad vibe in Panaji, Assagao, and Saligao."
+    }
+  ],
+  "travelTips": [
+    "Choose North Goa if you want beach clubs, trendy cafes, and water sports; pick South Goa for quiet luxury and uncrowded shores.",
+    "Renting an automatic scooter or self-drive vehicle requires a valid permanent driving license.",
+    "Respect swimming flag warnings on beaches — red flags mean high tides and dangerous undercurrents."
+  ],
+  "faqs": [
+    {
+      "question": "Which is better for families: North Goa or South Goa?",
+      "answer": "South Goa (Cavelossim, Benaulim, Majorda) is ideal for peaceful family holidays with gentle surf and wide resorts. North Goa is great for families who enjoy bustling markets and water activities."
+    },
+    {
+      "question": "Can Goa packages be customized with private yacht rentals?",
+      "answer": "Yes! SafarTrails curates private 2-hour sunset cruises on Mandovi river or off Morjim beach for birthdays, anniversaries, and couple celebrations."
+    }
+  ],
+  "seoTitle": "Goa Tour Packages 2026 | Beach Resorts, Water Sports & Heritage Stays",
+  "seoDescription": "Book customized Goa holiday packages with private transfers, South Goa luxury resorts, North Goa beach trips, and water sports."
+}

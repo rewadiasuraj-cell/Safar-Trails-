@@ -1,0 +1,65 @@
+{
+  "slug": "himachal-pradesh",
+  "name": "Himachal Pradesh",
+  "tagline": "Valley of the Gods — Pine Forests, Snow Passes & Tibetan Monasteries",
+  "state": "Himachal Pradesh",
+  "heroImage": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1600&auto=format&fit=crop",
+  "cardImage": "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=800&auto=format&fit=crop",
+  "shortDescription": "Solang Valley adventure sports, Atal Tunnel drives to Sissu waterfalls, peaceful apple orchards in Old Manali, and colonial charm in Shimla.",
+  "fullOverview": "Himachal Pradesh is North India’s quintessential mountain playground. Whether you seek snow adventures in Solang, river rafting in Beas, the serene spiritual sanctuary of the Dalai Lama in Dharamshala, or the raw rugged passes of Spiti Valley, Himachal captivates every traveler.",
+  "bestTime": "March to June (Summer flowers & cool breeze) | November to February (Snow & winter sports)",
+  "temperatureRange": "-2°C - 24°C",
+  "startingPrice": 13999,
+  "idealDays": "5 to 8 Days",
+  "rating": 4.8,
+  "reviewCount": 1940,
+  "isTrending": true,
+  "highlights": [
+    "Drive through the engineering marvel Atal Tunnel into Lahaul Valley (Sissu)",
+    "Paragliding, ziplining, and snow quad biking at Solang Valley",
+    "Colonial heritage walk along Shimla Ridge and historic Mall Road",
+    "Café hopping, riverside relaxation, and Tibetan momos in Old Manali & Kasol",
+    "Visit His Holiness the Dalai Lama Temple & Namgyal Monastery in McLeod Ganj"
+  ],
+  "howToReach": {
+    "air": "Kullu-Manali Airport at Bhuntar (KUU), Kangra Airport at Gaggal (DHM), or Chandigarh Airport (IXC) followed by scenic drive.",
+    "rail": "Chandigarh Junction or Kalka (for historic UNESCO toy train to Shimla).",
+    "road": "Smooth four-lane expressway connecting Delhi/Chandigarh to Mandi and Kullu-Manali."
+  },
+  "topAttractions": [
+    {
+      "name": "Solang Valley & Atal Tunnel",
+      "description": "Epic mountain pass leading to glacial waterfalls and thrilling all-season adventure sports.",
+      "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Shimla Ridge & Jakhoo Temple",
+      "description": "Grand colonial vista points, historic neo-Gothic Christ Church, and giant Hanuman statue.",
+      "image": "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=600&auto=format&fit=crop"
+    }
+  ],
+  "stayCategories": [
+    {
+      "category": "Apple Orchard Cottages & Chalets",
+      "priceRange": "₹3,000 – ₹7,500 / night",
+      "recommendation": "Wood-fired fireplaces, home-cooked Pahadi meals, and private valley balconies."
+    },
+    {
+      "category": "Luxury Hill Resorts",
+      "priceRange": "₹6,000 – ₹18,000 / night",
+      "recommendation": "Heated indoor pools, cedar spas, and panoramic snow-peak dining."
+    }
+  ],
+  "travelTips": [
+    "Rohtang Pass permits must be booked in advance as daily vehicle quotas are strictly limited by NGT.",
+    "Carry motion-sickness medication if you are prone to dizziness on winding mountain roads."
+  ],
+  "faqs": [
+    {
+      "question": "When can we see snow in Manali?",
+      "answer": "Snowfall typically occurs in Manali town from late December through February. Snow is accessible in higher reaches like Solang, Atal Tunnel North Portal, and Rohtang from November through April."
+    }
+  ],
+  "seoTitle": "Himachal Tour Packages 2026 | Manali, Shimla, Dharamshala & Spiti Trips",
+  "seoDescription": "Book all-inclusive Himachal tour packages with private cab, hotel stays, adventure activities in Solang, and 24/7 travel concierge."
+}
