@@ -1,12 +1,41 @@
 @import "tailwindcss";
 
+/* Palette.
+ *
+ * Contrast ratios below were measured against the surfaces each colour is
+ * actually used on, following the 14 Sep 2026 audit. WCAG 2.2 AA needs 4.5:1
+ * for normal text and 3:1 for large text (>=24px, or >=18.66px bold) and for
+ * non-text UI components such as icons and borders.
+ *
+ * No single gold clears 4.5:1 against both white and #071A33, which is why
+ * there are two: luxury-gold for dark surfaces, gold-ink for light ones.
+ */
 @theme {
   --color-midnight-blue: #071A33;
   --color-royal-navy: #102B4E;
   --color-deep-emerald: #164A41;
   --color-forest-green: #1F5D50;
+
+  /* Gold on dark surfaces: 7.18:1 on midnight-blue, 5.85:1 on royal-navy.
+     Only 2.43:1 on white - never use it for text on a light background. */
   --color-luxury-gold: #C6A15B;
-  --color-warm-orange: #EB7D00;
+
+  /* Gold for text on light surfaces: 5.03:1 on white, 4.78:1 on ivory. */
+  --color-gold-ink: #8A6A28;
+
+  /* Primary CTA. Was #EB7D00, which gave white button text only 2.81:1 -
+     a fail on every "Plan My Trip" and "Book Now" button on the site.
+     #B85C00 holds the same hue at 4.60:1 with white. */
+  --color-warm-orange: #B85C00;
+
+  /* Accent for orange text on white: 5.18:1 (the old #FF6B00 was 2.86:1). */
+  --color-accent-ink: #C2410C;
+
+  /* WhatsApp. The brand green #25D366 gives white text 1.98:1; this is
+     WhatsApp's own darker teal at 5.79:1. */
+  --color-whatsapp: #0F7268;
+  --color-whatsapp-hover: #0B5A52;
+
   --color-light-blue: #E6F3FA;
   --color-soft-blue: #DCEFF8;
   --color-ivory: #F4FAFD;
@@ -16,14 +45,15 @@
   :root {
     --brand-primary: #0A0A0A;
     --brand-secondary: #1A1A1A;
-    --brand-accent: #FF6B00;
-    --brand-accent-hover: #E55F00;
+    --brand-accent: #C2410C;
+    --brand-accent-hover: #9A3412;
     --bg-canvas: #FAF9F6;
     --bg-card: #FFFFFF;
     --border-subtle: #E5E7EB;
     --text-primary: #0A0A0A;
     --text-secondary: #4B5563;
-    --text-muted: #9CA3AF;
+    /* #9CA3AF gave only 2.54:1 on white - below the 4.5:1 minimum for text. */
+    --text-muted: #6B7280;
   }
 
   body {
@@ -101,3 +131,134 @@
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
 }
 
+
+/* ==========================================================================
+   Accessibility — WCAG 2.2 AA
+   Added following the 14 Sep 2026 audit. Everything here is either a success
+   criterion the site was failing or a safeguard against reintroducing one.
+   ========================================================================== */
+
+/* 2.4.1 Bypass Blocks — keyboard users can jump past the header and nav.
+   Off-screen until focused, so it costs sighted mouse users nothing. */
+.skip-to-content {
+  position: absolute;
+  left: 1rem;
+  top: -100%;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 0.75rem 0.75rem;
+  background: #0A0A0A;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: top 0.15s ease-in-out;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* 2.4.7 Focus Visible + 2.4.13 Focus Appearance.
+   Roughly twenty controls carry Tailwind's `focus:outline-none`, most of them
+   relying on a border colour change alone - which is a colour-only cue and too
+   low-contrast to serve as a focus indicator. Tailwind's utility has higher
+   specificity than a plain element selector, so !important is what actually
+   restores the ring. Scoped to :focus-visible, so it only ever appears for
+   keyboard and assistive-tech users; mouse clicks look exactly as before. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #B45309 !important;
+  outline-offset: 2px !important;
+  border-radius: 0.25rem;
+}
+
+/* The header sits on #071A33, where the amber ring above drops below 3:1.
+   White reads at ~15:1 there. */
+#main-header a:focus-visible,
+#main-header button:focus-visible,
+#main-header input:focus-visible {
+  outline-color: #FFFFFF !important;
+}
+
+/* main is focused programmatically by the skip link; it is not a control, so it
+   should not draw a ring of its own. */
+#main-content:focus,
+#main-content:focus-visible {
+  outline: none !important;
+}
+
+/* 2.3.3 Animation from Interactions — respect the OS "reduce motion" setting.
+   The site uses motion/react transitions, an infinite marquee and smooth
+   scrolling, all of which can trigger vestibular symptoms. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-infinite-scroll {
+    animation: none;
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+
+/* 1.4.3 Contrast (Minimum) — white text over a photograph is unreadable wherever
+   the photo happens to be bright, which on travel sites is most of the time
+   (snow, sand, sky). Any hero that puts text over an image should carry this
+   scrim so the text keeps its 4.5:1 ratio regardless of the photo behind it. */
+.photo-text-scrim::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(7, 26, 51, 0.85) 0%,
+    rgba(7, 26, 51, 0.55) 45%,
+    rgba(7, 26, 51, 0.25) 100%
+  );
+  pointer-events: none;
+}
+
+/* 1.4.10 Reflow — nothing may scroll horizontally at 320px. Wide tables and
+   code-like blocks get their own scroll container instead of pushing the page. */
+table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* 1.4.4 Resize Text — iOS zooms the page when a focused input's font-size is
+   below 16px, which then leaves the layout zoomed. */
+@media (max-width: 640px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+/* Print: the AI planner offers "print itinerary", so keep the paper output to
+   the itinerary itself. */
+@media print {
+  #main-header,
+  #sticky-contact-widget,
+  .skip-to-content,
+  nav[aria-label='Primary mobile navigation'] {
+    display: none !important;
+  }
+}

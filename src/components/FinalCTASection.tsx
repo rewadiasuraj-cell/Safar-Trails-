@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { AIIcon } from './AIIcon';
+import { enquiryMessage, openWhatsApp } from '../lib/contact';
 
 interface FinalCTASectionProps {
   onStartAIPlan: () => void;
@@ -18,10 +19,7 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
   onStartAIPlan,
   onOpenQuoteModal
 }) => {
-  const handleWhatsApp = () => {
-    const text = encodeURIComponent("Hi SafarTrails! I'm planning an upcoming holiday in India and would like to speak with a travel specialist.");
-    window.open(`https://wa.me/918076665782?text=${text}`, '_blank');
-  };
+  const handleWhatsApp = () => openWhatsApp(enquiryMessage(), 'final_cta');
 
   return (
     <section id="final-cta-section" className="w-full bg-midnight-blue text-white relative overflow-hidden border-t border-luxury-gold/30">
@@ -103,7 +101,7 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
 
             <button
               onClick={handleWhatsApp}
-              className="w-full sm:w-auto px-7 py-4 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2.5 cursor-pointer"
+              className="w-full sm:w-auto px-7 py-4 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2.5 cursor-pointer"
             >
               <WhatsAppIcon className="w-4.5 h-4.5" />
               <span>Chat on WhatsApp</span>

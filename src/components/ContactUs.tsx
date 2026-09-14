@@ -1,16 +1,16 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
+import { enquiryMessage, openWhatsApp } from '../lib/contact';
+import { trackPhoneCallClick } from '../lib/analytics';
+import { PRIMARY_PHONE, PRIMARY_PHONE_DISPLAY } from '../lib/seo/siteConfig';
 
 interface ContactUsProps {
   onOpenQuoteModal: (summary?: string) => void;
 }
 
 export const ContactUs: React.FC<ContactUsProps> = ({ onOpenQuoteModal }) => {
-  const handleWhatsAppClick = () => {
-    const text = encodeURIComponent("Hi SafarTrails Expert! I am planning a holiday in India. Please assist me with customized packages and travel estimates.");
-    window.open(`https://wa.me/918076665782?text=${text}`, '_blank');
-  };
+  const handleWhatsAppClick = () => openWhatsApp(enquiryMessage(), 'contact_page');
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
@@ -27,7 +27,7 @@ export const ContactUs: React.FC<ContactUsProps> = ({ onOpenQuoteModal }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="space-y-6 bg-soft-blue rounded-2xl p-6 sm:p-8 border border-gray-100">
           <div className="flex items-start gap-3">
-            <MapPin className="w-5 h-5 text-luxury-gold flex-shrink-0 mt-0.5" />
+            <MapPin className="w-5 h-5 text-gold-ink flex-shrink-0 mt-0.5" aria-hidden="true" />
             <div>
               <div className="text-sm font-bold text-slate-900">Office Address</div>
               <div className="text-sm text-slate-600 mt-1">
@@ -38,27 +38,31 @@ export const ContactUs: React.FC<ContactUsProps> = ({ onOpenQuoteModal }) => {
           </div>
 
           <div className="flex items-start gap-3">
-            <Phone className="w-5 h-5 text-luxury-gold flex-shrink-0 mt-0.5" />
+            <Phone className="w-5 h-5 text-gold-ink flex-shrink-0 mt-0.5" aria-hidden="true" />
             <div>
               <div className="text-sm font-bold text-slate-900">Phone</div>
-              <a href="tel:+918076665782" className="text-sm text-slate-600 hover:text-luxury-gold transition-colors">
-                +91 80766 65782 (24/7 Helpline)
+              <a
+                href={`tel:${PRIMARY_PHONE}`}
+                onClick={() => trackPhoneCallClick('contact_page')}
+                className="text-sm text-slate-700 hover:text-gold-ink transition-colors"
+              >
+                {PRIMARY_PHONE_DISPLAY} (24/7 helpline)
               </a>
             </div>
           </div>
 
           <div className="flex items-start gap-3">
-            <Mail className="w-5 h-5 text-luxury-gold flex-shrink-0 mt-0.5" />
+            <Mail className="w-5 h-5 text-gold-ink flex-shrink-0 mt-0.5" aria-hidden="true" />
             <div>
               <div className="text-sm font-bold text-slate-900">Email</div>
-              <a href="mailto:info.safartrails@gmail.com" className="text-sm text-slate-600 hover:text-luxury-gold transition-colors">
+              <a href="mailto:info.safartrails@gmail.com" className="text-sm text-slate-700 hover:text-gold-ink transition-colors">
                 info.safartrails@gmail.com
               </a>
             </div>
           </div>
 
           <div className="flex items-start gap-3">
-            <Clock className="w-5 h-5 text-luxury-gold flex-shrink-0 mt-0.5" />
+            <Clock className="w-5 h-5 text-gold-ink flex-shrink-0 mt-0.5" aria-hidden="true" />
             <div>
               <div className="text-sm font-bold text-slate-900">Response Time</div>
               <div className="text-sm text-slate-600 mt-1">

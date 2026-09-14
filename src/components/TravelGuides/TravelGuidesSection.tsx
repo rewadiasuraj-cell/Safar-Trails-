@@ -26,9 +26,9 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
         {/* Section Header with Single Clean Heading and Search Bar */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6 border-b border-gray-200 pb-8">
           <div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight">
-              Travel Guides & Blogs
-            </h1>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight">
+              India Travel Guides & Blogs
+            </h2>
             <p className="mt-3 text-slate-600 text-sm sm:text-base max-w-2xl font-normal">
               Insider insights, transparent cost breakdowns, and seasonal tips curated by on-ground destination specialists.
             </p>
@@ -52,7 +52,7 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
             <p className="text-gray-500 text-sm font-medium">No guides or blogs found matching "{searchQuery}".</p>
             <button
               onClick={() => setSearchQuery('')}
-              className="mt-3 px-4 py-1.5 text-xs font-semibold text-luxury-gold hover:underline"
+              className="mt-3 px-4 py-1.5 text-xs font-semibold text-gold-ink hover:underline"
             >
               Clear Search
             </button>
@@ -88,7 +88,7 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
                   </div>
 
                   <div className="p-6 space-y-3">
-                    <h2 className="text-lg sm:text-xl font-serif font-bold text-slate-900 group-hover:text-luxury-gold transition-colors line-clamp-2 leading-snug">
+                    <h2 className="text-lg sm:text-xl font-serif font-bold text-slate-900 group-hover:text-gold-ink transition-colors line-clamp-2 leading-snug">
                       {guide.title}
                     </h2>
 

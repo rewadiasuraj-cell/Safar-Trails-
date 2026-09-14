@@ -12,6 +12,7 @@ import {
   ChevronUp,
   ArrowRight
 } from 'lucide-react';
+import { openWhatsApp } from '../../lib/contact';
 
 interface PackageDetailPageProps {
   onStartAIPlan: (promptText?: string, destinationName?: string) => void;
@@ -22,6 +23,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
   onStartAIPlan,
   onOpenQuoteModal
 }) => {
+  const navigate = useNavigate();
   const { slug = '', pkgSlug = '' } = useParams<{ slug?: string; pkgSlug?: string }>();
   const targetSlug = pkgSlug || slug;
   const packageData = packagesData.find((p) => p.slug === targetSlug || p.id === targetSlug);
@@ -81,8 +83,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
       `💰 Est. Price: ₹${estimatedPerPersonPrice.toLocaleString('en-IN')}/person (Total: ₹${estimatedTotalPrice.toLocaleString('en-IN')})\n\n` +
       `Please provide the final quote and verified hotel options for this itinerary!`;
 
-    const encoded = encodeURIComponent(summary);
-    window.open(`https://wa.me/918076665782?text=${encoded}`, '_blank');
+    openWhatsApp(summary, 'package_detail', packageData.destination);
   };
 
   const formattedQuoteSummary = `${packageData.title} (${packageData.durationDays}D/${packageData.durationNights}N) - ${selectedHotelTier} stay & ${selectedVehicle} for ${travellersCount} guests`;

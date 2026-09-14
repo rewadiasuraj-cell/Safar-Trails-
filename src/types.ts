@@ -9,7 +9,10 @@ export type TripType =
   | 'Adventure'
   | 'Luxury'
   | 'Weekend'
-  | 'Spiritual';
+  | 'Spiritual'
+  | 'Heritage'
+  | 'Cultural'
+  | 'Nature';
 
 export type HotelCategory = 'Standard 3★' | 'Deluxe 4★' | 'Luxury 5★' | 'Heritage Boutique' | 'Houseboat & Resort';
 

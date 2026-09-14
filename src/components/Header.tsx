@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import { SafarLogo } from './SafarLogo';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { AIIcon } from './AIIcon';
+import { enquiryMessage, openWhatsApp } from '../lib/contact';
 import {
   Search,
   X,
@@ -75,10 +76,7 @@ export const Header: React.FC<HeaderProps> = ({
     { label: 'Guest Reviews', id: 'reviews', desc: '4.9★ rated by 12,000+ travellers', icon: Star },
   ];
 
-  const handleWhatsAppClick = () => {
-    const text = encodeURIComponent("Hi SafarTrails Expert! I am planning a holiday in India. Please assist me with customized packages and travel estimates.");
-    window.open(`https://wa.me/918076665782?text=${text}`, '_blank');
-  };
+  const handleWhatsAppClick = () => openWhatsApp(enquiryMessage(), 'header');
 
   return (
     <>
@@ -90,16 +88,18 @@ export const Header: React.FC<HeaderProps> = ({
             : 'py-2.5 sm:py-3 md:py-3.5'
         }`}
       >
-        <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 flex items-center justify-between gap-2 sm:gap-3 md:gap-4">
+        <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 flex items-center justify-between gap-1.5 sm:gap-3 md:gap-4">
           {/* Brand Logo (Clean left alignment on Mobile, Tablet & Desktop) */}
           <div className="flex items-center flex-shrink-0">
-            <div
+            <button
               id="brand-logo-btn"
+              type="button"
               onClick={() => onNavigate('home')}
-              className="cursor-pointer flex items-center flex-shrink-0"
+              aria-label="Safar Trails — go to homepage"
+              className="cursor-pointer flex items-center flex-shrink-0 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-luxury-gold"
             >
               <SafarLogo variant="dark" size="responsive" />
-            </div>
+            </button>
           </div>
 
           {/* Desktop & Tablet Navigation Links - Exactly Home / Destination / Tour Packages / Blogs / About Us / Contact Us */}
@@ -279,16 +279,16 @@ export const Header: React.FC<HeaderProps> = ({
           </nav>
 
           {/* Right Action CTAs (Desktop & Mobile view matching reference image) */}
-          <div className="flex items-center gap-1 sm:gap-2 md:gap-3 flex-shrink-0">
+          <div className="flex items-center gap-0.5 min-[360px]:gap-1 sm:gap-2 md:gap-3 flex-shrink-0">
             {/* Search Button */}
             <button
               id="global-search-btn"
               onClick={onOpenSearch}
               className="w-7 h-7 sm:w-8.5 sm:h-8.5 md:w-9.5 md:h-9.5 rounded-full flex items-center justify-center text-white hover:text-white hover:bg-white/10 transition-colors cursor-pointer flex-shrink-0"
               title="Search destinations & packages (Cmd+K)"
-              aria-label="Search"
+              aria-label="Search destinations and packages"
             >
-              <Search className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 stroke-[2]" />
+              <Search className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 stroke-[2]" aria-hidden="true" />
             </button>
 
             {/* WhatsApp Circular Button with Original Logo */}
@@ -296,17 +296,17 @@ export const Header: React.FC<HeaderProps> = ({
               id="header-whatsapp-btn"
               onClick={handleWhatsAppClick}
               className="w-7 h-7 sm:w-8.5 sm:h-8.5 md:w-9.5 md:h-9.5 rounded-full border border-white/20 hover:border-forest-green bg-white hover:bg-white flex items-center justify-center transition-all shadow-2xs cursor-pointer flex-shrink-0"
-              title="Chat with an Expert on WhatsApp"
-              aria-label="WhatsApp Expert Help"
+              title="Chat with an expert on WhatsApp"
+              aria-label="Chat with a Safar Trails travel specialist on WhatsApp"
             >
-              <WhatsAppIcon className="w-4 h-4 sm:w-5 sm:h-5 md:w-5.5 md:h-5.5" />
+              <WhatsAppIcon className="w-4 h-4 sm:w-5 sm:h-5 md:w-5.5 md:h-5.5" aria-hidden="true" />
             </button>
 
             {/* Plan My Trip CTA Button */}
             <button
               id="header-plan-trip-cta"
               onClick={() => onOpenQuoteModal()}
-              className="inline-flex items-center justify-center bg-warm-orange hover:brightness-95 text-white text-[11px] sm:text-xs md:text-sm font-bold px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5 rounded-full transition-all duration-200 active:scale-95 shadow-xs cursor-pointer whitespace-nowrap flex-shrink-0"
+              className="inline-flex items-center justify-center bg-warm-orange hover:brightness-95 text-white text-[10px] sm:text-xs md:text-sm font-bold px-2.5 sm:px-4 md:px-5 py-2 sm:py-2 md:py-2.5 rounded-full transition-all duration-200 active:scale-95 shadow-xs cursor-pointer whitespace-nowrap flex-shrink-0"
             >
               <span>Plan My Trip</span>
             </button>
@@ -315,8 +315,10 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               id="mobile-menu-toggle-btn"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-1.5 sm:p-2 rounded-xl text-white hover:bg-white/10 hover:text-white border border-white/20 focus:outline-none cursor-pointer flex items-center justify-center flex-shrink-0 transition-colors"
-              aria-label="Toggle navigation menu"
+              className="lg:hidden p-1.5 sm:p-2 rounded-xl text-white hover:bg-white/10 hover:text-white border border-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-luxury-gold cursor-pointer flex items-center justify-center flex-shrink-0 transition-colors"
+              aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-nav-drawer"
               title="Menu"
             >
               <span className="relative w-4.5 h-4.5 sm:w-5 sm:h-5">

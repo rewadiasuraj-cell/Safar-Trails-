@@ -7,7 +7,27 @@ An AI-powered India travel planning site (React + Vite + Express).
 ```bash
 bun install
 bun run dev      # starts the app at http://localhost:3000
+bun run build    # vite build + prerender + server bundle
 ```
+
+## SEO, Google setup and growth docs
+
+`docs/` holds the work following the September 2026 SEO audit — what was fixed
+in code, and the runbooks for the parts that need someone signed in to a Google
+account. Start at [docs/README.md](./docs/README.md).
+
+**If you change anything about how pages are built, read
+[docs/seo-implementation.md](./docs/seo-implementation.md) first.** Two things
+are easy to break by accident:
+
+1. **`bun run build` must keep running `scripts/prerender.ts`.** Without it the
+   site reverts to serving one identical head tag and an empty body on all 42
+   URLs — the exact state the audit found. `build:pages` includes it too.
+2. **Page titles and descriptions live in `src/lib/seo/routes.ts`,** not in
+   `index.html`. The prerender overwrites `index.html`'s tags per route.
+
+The prerender also regenerates `public/sitemap.xml`, so that file is build
+output and should not be hand-edited.
 
 ## Content Management (Sanity Studio)
 

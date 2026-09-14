@@ -114,11 +114,11 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
         {/* HIGHLIGHTS SECTION */}
         {destination.highlights && destination.highlights.length > 0 && (
           <section className="space-y-6">
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <h2 className="text-xs font-mono font-bold uppercase tracking-widest text-[#B8860B]">
                 HIGHLIGHTS
               </h2>
-              <div className="h-[1px] w-24 bg-[#E6C687]/60" />
+              <div className="h-[1px] flex-1 min-w-[2rem] bg-[#E6C687]/60" />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -144,11 +144,11 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
         {/* GALLERY SECTION */}
         {destination.gallery && destination.gallery.length > 0 && (
           <section className="space-y-6">
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <h2 className="text-xs font-mono font-bold uppercase tracking-widest text-[#B8860B]">
                 GALLERY
               </h2>
-              <div className="h-[1px] w-24 bg-[#E6C687]/60" />
+              <div className="h-[1px] flex-1 min-w-[2rem] bg-[#E6C687]/60" />
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -168,11 +168,11 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
 
         {/* TOUR PACKAGES SECTION */}
         <section className="space-y-6">
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <h2 className="text-xs font-mono font-bold uppercase tracking-widest text-[#B8860B]">
               TOUR PACKAGES FOR {destination.title.toUpperCase()}
             </h2>
-            <div className="h-[1px] w-32 bg-[#E6C687]/60" />
+            <div className="h-[1px] flex-1 min-w-[2rem] bg-[#E6C687]/60" />
           </div>
 
           {packages && packages.length > 0 ? (

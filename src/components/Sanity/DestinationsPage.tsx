@@ -36,14 +36,15 @@ export const DestinationsPage: React.FC<DestinationsPageProps> = ({
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-800 text-xs font-bold uppercase tracking-widest mb-3">
-              <MapPin className="w-3.5 h-3.5 text-luxury-gold" />
+              <MapPin className="w-3.5 h-3.5 text-gold-ink" aria-hidden="true" />
               <span>Iconic Indian Destinations</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-serif text-black tracking-tight">
-              Where will your journey take you?
-            </h2>
-            <p className="mt-2 text-gray-500 text-sm sm:text-base max-w-2xl font-normal">
-              Handpicked domestic holiday hubs, managed from our Sanity Studio.
+            <h1 className="text-3xl sm:text-4xl font-serif text-black tracking-tight">
+              India Travel Destinations
+            </h1>
+            <p className="mt-2 text-slate-600 text-sm sm:text-base max-w-2xl font-normal">
+              Every destination below has its own guide — the best season to travel, what a trip
+              really costs, where to stay and how to get there — plus itineraries you can customise.
             </p>
           </div>
 

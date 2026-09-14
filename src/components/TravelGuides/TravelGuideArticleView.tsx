@@ -11,6 +11,7 @@ import {
   Info,
   Send
 } from 'lucide-react';
+import { openWhatsApp } from '../../lib/contact';
 
 interface TravelGuideArticleViewProps {
   guide: TravelGuide;
@@ -40,10 +41,12 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
     ? categoryRelatedPackages 
     : packagesData.slice(0, 4);
 
-  const handleWhatsAppShare = () => {
-    const text = encodeURIComponent(`Hi SafarTrails! I just read your blog "${guide.title}". Can you help me plan this trip?`);
-    window.open(`https://wa.me/918076665782?text=${text}`, '_blank');
-  };
+  const handleWhatsAppShare = () =>
+    openWhatsApp(
+      `Hi Safar Trails! I just read your guide "${guide.title}". Can you help me plan this trip?`,
+      'guide_article',
+      guide.destinationName,
+    );
 
   return (
     <article id="travel-guide-article-page" className="w-full pt-16 pb-24 bg-[#FAF9F6]">
@@ -177,7 +180,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
           <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
             <button
               onClick={() => onStartAIPlan(guide.destinationName)}
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#FF6B00] text-white font-bold text-xs uppercase tracking-wider inline-flex items-center justify-center gap-2 cursor-pointer hover:bg-[#e05e00] transition-colors shadow-xs text-center"
+              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-accent-ink text-white font-bold text-xs uppercase tracking-wider inline-flex items-center justify-center gap-2 cursor-pointer hover:bg-[#9A3412] transition-colors shadow-xs text-center"
             >
               <Sparkles className="w-4 h-4 text-white shrink-0" />
               <span className="whitespace-nowrap">Plan {guide.destinationName} Itinerary</span>
@@ -245,7 +248,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
                   </button>
                   <button
                     onClick={() => onOpenQuoteModal(`Booking Inquiry: ${pkg.title} (${pkg.durationDays}D/${pkg.durationNights}N - ₹${pkg.startingPrice})`)}
-                    className="py-2.5 px-3 rounded-xl bg-[#FF6B00] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#e05e00] transition-colors shadow-2xs flex items-center justify-center gap-1.5 cursor-pointer"
+                    className="py-2.5 px-3 rounded-xl bg-accent-ink text-white font-bold text-xs uppercase tracking-wider hover:bg-[#9A3412] transition-colors shadow-2xs flex items-center justify-center gap-1.5 cursor-pointer"
                   >
                     <Send className="w-3.5 h-3.5 text-white" />
                     <span>Book Now</span>

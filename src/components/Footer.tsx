@@ -10,6 +10,14 @@ import {
   Lock
 } from 'lucide-react';
 import { AIIcon } from './AIIcon';
+import { trackPhoneCallClick } from '../lib/analytics';
+import {
+  BRAND_TAGLINE,
+  DISPLAY_ADDRESS,
+  PRIMARY_EMAIL,
+  PRIMARY_PHONE,
+  PRIMARY_PHONE_DISPLAY,
+} from '../lib/seo/siteConfig';
 
 interface FooterProps {
   onNavigate: (view: string, param?: string) => void;
@@ -133,27 +141,26 @@ export const Footer: React.FC<FooterProps> = ({
             </h3>
             <ul className="space-y-2.5 text-gray-300">
               <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-luxury-gold flex-shrink-0 mt-0.5" />
-                <span className="leading-relaxed">
-                  First Floor, Plot No. 02, Jai Bharat Enclave, Bhagwati Garden, Metro Pillar No. 786, Dwarka Mor, New Delhi 110059
-                </span>
+                <MapPin className="w-4 h-4 text-luxury-gold flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <address className="not-italic leading-relaxed">{DISPLAY_ADDRESS}</address>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-luxury-gold flex-shrink-0" />
-                <a 
-                  href="tel:+918076665782"
+                <Phone className="w-4 h-4 text-luxury-gold flex-shrink-0" aria-hidden="true" />
+                <a
+                  href={`tel:${PRIMARY_PHONE}`}
+                  onClick={() => trackPhoneCallClick('footer')}
                   className="hover:text-luxury-gold transition-colors"
                 >
-                  +91 80766 65782 <span className="text-gray-500">(24/7 Helpline)</span>
+                  {PRIMARY_PHONE_DISPLAY} <span className="text-gray-400">(24/7 helpline)</span>
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-luxury-gold flex-shrink-0" />
-                <a 
-                  href="mailto:info.safartrails@gmail.com"
-                  className="hover:text-luxury-gold transition-colors"
+                <Mail className="w-4 h-4 text-luxury-gold flex-shrink-0" aria-hidden="true" />
+                <a
+                  href={`mailto:${PRIMARY_EMAIL}`}
+                  className="hover:text-luxury-gold transition-colors break-all"
                 >
-                  info.safartrails@gmail.com
+                  {PRIMARY_EMAIL}
                 </a>
               </li>
               <li className="pt-2">
@@ -168,7 +175,8 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Bottom Legal Row */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400 border-t border-white/5">
           <div>
-            © {new Date().getFullYear()} SafarTrails Private Limited. All rights reserved. • <span className="italic">AI plans. Experts perfect.</span>
+            © {new Date().getFullYear()} SafarTrails Private Limited. All rights reserved. •{' '}
+            <span className="italic">{BRAND_TAGLINE} — AI plans. Experts perfect.</span>
           </div>
 
           <div className="flex items-center gap-4">

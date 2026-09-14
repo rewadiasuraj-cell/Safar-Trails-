@@ -62,9 +62,9 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
         {/* Single Clean Section Heading - No Redundant Subheaders */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
           <div>
-            <h1 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-tight">
-              Tour Packages
-            </h1>
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-tight">
+              India Tour Packages
+            </h2>
             <p className="mt-1.5 text-slate-500 text-sm max-w-xl font-normal">
               Expertly curated itineraries, trusted stays, private cabs, and 24/7 travel support.
             </p>

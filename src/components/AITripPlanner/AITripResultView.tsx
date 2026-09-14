@@ -20,6 +20,7 @@ import {
   ChevronUp,
   RotateCcw
 } from 'lucide-react';
+import { openWhatsApp } from '../../lib/contact';
 import { AITripPlanResult } from '../../types';
 
 interface AITripResultViewProps {
@@ -47,8 +48,7 @@ export const AITripResultView: React.FC<AITripResultViewProps> = ({
       `💰 Estimated Starting Price: ₹${plan.estimatedBudget.min.toLocaleString('en-IN')} – ₹${plan.estimatedBudget.max.toLocaleString('en-IN')} total (approx. ₹${plan.estimatedBudget.perPerson.toLocaleString('en-IN')}/person)\n\n` +
       `Please connect me with a Destination Specialist to finalize hotel choices and lock this package!`;
 
-    const encoded = encodeURIComponent(summaryText);
-    window.open(`https://wa.me/918076665782?text=${encoded}`, '_blank');
+    openWhatsApp(summaryText, 'ai_planner_result', plan.destination);
   };
 
   const handlePrint = () => {
@@ -317,7 +317,7 @@ export const AITripResultView: React.FC<AITripResultViewProps> = ({
 
             <button
               onClick={handleWhatsAppShare}
-              className="w-full sm:w-auto px-5 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2.5 cursor-pointer"
+              className="w-full sm:w-auto px-5 py-3.5 rounded-xl bg-whatsapp hover:bg-whatsapp-hover text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2.5 cursor-pointer"
             >
               <WhatsAppIcon className="w-4.5 h-4.5" />
               <span>Chat on WhatsApp</span>

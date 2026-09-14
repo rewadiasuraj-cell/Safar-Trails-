@@ -1,5 +1,5 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
-import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { Header } from './components/Header';
 import { MobileBottomNav } from './components/MobileBottomNav';
@@ -12,6 +12,8 @@ import { AIPlannerTeaser } from './components/AIPlannerTeaser';
 
 import { Package, TravelGuide } from './types';
 import { initGA, trackPageView } from './lib/analytics';
+import { Seo } from './lib/seo/Seo';
+import { NotFoundPage } from './components/NotFoundPage';
 
 // Code-split below-the-fold sections to eliminate unused JS on initial mobile paint
 const AITripPlanner = lazy(() => import('./components/AITripPlanner/AITripPlanner').then(m => ({ default: m.AITripPlanner })));
@@ -135,6 +137,14 @@ export default function App() {
 
   return (
     <div className="min-h-screen w-full flex flex-col bg-white text-slate-900 font-sans selection:bg-orange-500 selection:text-white">
+      {/* Keeps <head> in sync with the route on every client-side navigation. */}
+      <Seo />
+
+      {/* WCAG 2.2 AA 2.4.1 Bypass Blocks - visible only once focused via Tab. */}
+      <a href="#main-content" className="skip-to-content">
+        Skip to main content
+      </a>
+
       {/* Primary Desktop & Mobile Header */}
       <Header
         currentView={currentView}
@@ -147,7 +157,7 @@ export default function App() {
       />
 
       {/* Main Content Router */}
-      <main className="w-full flex-grow">
+      <main id="main-content" tabIndex={-1} className="w-full flex-grow">
         <Routes>
           {/* ROUTE: HOME (Master Editorial Layout) */}
           <Route
@@ -312,9 +322,18 @@ export default function App() {
                     onClick={() => navigate('/')}
                     className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-gray-200 hover:border-black text-slate-800 hover:text-black text-xs font-bold uppercase tracking-wide transition-colors cursor-pointer"
                   >
-                    <ArrowLeft className="w-3.5 h-3.5" />
+                    <ArrowLeft className="w-3.5 h-3.5" aria-hidden="true" />
                     <span>Back to Home</span>
                   </button>
+
+                  <h1 className="mt-6 text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-tight">
+                    Free AI Trip Planner for India Holidays
+                  </h1>
+                  <p className="mt-2.5 max-w-3xl text-sm sm:text-base text-slate-600 leading-relaxed">
+                    Describe the trip you want in plain language and the planner returns a day-by-day
+                    itinerary with stays, travel time and an honest cost estimate. A Safar Trails
+                    specialist reviews it before you book anything.
+                  </p>
                 </div>
                 <Suspense fallback={<SectionSkeleton />}>
                   <AITripPlanner
@@ -354,6 +373,17 @@ export default function App() {
             path="/about-us"
             element={
               <div className="pt-20">
+                <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+                  <h1 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-tight">
+                    About Safar Trails — Travel with Trust
+                  </h1>
+                  <p className="mt-3 max-w-3xl text-sm sm:text-base text-slate-600 leading-relaxed">
+                    Safar Trails is a New Delhi-based travel agency planning custom holidays across
+                    India and abroad. "Travel with Trust" means written inclusions and exclusions,
+                    stays we have actually verified, drivers we know by name, and a human reachable
+                    on WhatsApp for the whole length of your trip.
+                  </p>
+                </div>
                 <Suspense fallback={<SectionSkeleton />}>
                   <TrustSection />
                   <ReviewsSection />
@@ -377,8 +407,9 @@ export default function App() {
             }
           />
 
-          {/* Unknown paths fall back to Home */}
-          <Route path="*" element={<Navigate to="/" replace />} />
+          {/* Unknown paths render a real, noindex 404 page rather than silently
+              redirecting to Home, which Google reads as a soft 404. */}
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
 

@@ -1,6 +1,11 @@
 User-agent: *
 Allow: /
+
+# API endpoints have no crawlable content.
 Disallow: /api/
 
+# Deep-link query variants of the planner would otherwise be crawled as
+# near-duplicates of /ai-planner itself.
+Disallow: /*?search=
+
 Sitemap: https://safartrails.co.in/sitemap.xml
-Sitemap: https://safartrails.com/sitemap.xml
