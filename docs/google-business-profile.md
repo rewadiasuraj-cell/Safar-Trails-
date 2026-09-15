@@ -9,23 +9,36 @@ New Delhi 110059, showing 5★. So this is a tune-up, not a setup.
 For a travel agency, the profile is usually the single largest source of free
 qualified local enquiries — it is what puts you in the Maps pack.
 
-## 1. Fix the address first
+## 1. The address — resolved, but verify the exact string
 
-This is the one genuine inconsistency, and it is worth ten minutes.
+The site said "Dwarka Mor", the profile said "Nawada". Same building, two
+descriptions, and Google reads them as two signals.
 
-| Source | Street line |
-|---|---|
-| Website footer | First Floor, Plot No. 02, Jai Bharat Enclave, Bhagwati Garden, Metro Pillar No. 786, Dwarka Mor |
-| Business Profile | Pillar No. 786, Plot no-2, Jai Bharat Encl, Bhagwati Garden, Nawada |
+**The owner confirmed the profile is correct**, so the website was changed to
+match it, not the other way round — the verified listing is the record Google
+ranks, so the site moves to it. `POSTAL_ADDRESS` in `src/lib/seo/siteConfig.ts`
+now reads:
 
-Same building, two different descriptions — and Google reads them as two
-different signals. Pick whichever is correct and make the profile match the
-website exactly, character for character. The website's version is defined once
-in `src/lib/seo/siteConfig.ts` and flows to the footer, the JSON-LD and
-everywhere else, so if the *profile* is the correct one, change that file and
-redeploy instead.
+```
+First Floor, Plot No. 02, Pillar No. 786, Jai Bharat Enclave, Bhagwati Garden,
+Nawada, New Delhi 110059
+```
 
-Same rule for the phone number. The site now publishes **+91 80766 65782**
+That flows to the footer, the contact page and the JSON-LD together.
+
+**Still to check:** the string above was reconstructed from the audit's
+transcription of the listing, not copied from it. Open the profile and compare
+word for word. Two likely differences, both harmless to fix:
+
+- The profile may abbreviate — "Jai Bharat Encl" rather than "Jai Bharat
+  Enclave". Match whichever you prefer, on both.
+- "First Floor" may not be on the profile at all. Keep it if the office really is
+  upstairs — it helps visitors find the door — and add it to the profile too.
+
+Character-for-character agreement is the goal; which of the two you edit to get
+there does not matter.
+
+Same rule for the phone number. The site publishes **+91 80766 65782**
 everywhere; the social profiles were showing +91 85008 19000. One number, on the
 website, the profile, Facebook and Instagram.
 
@@ -40,15 +53,19 @@ precise true description.
   add only the ones you actually deliver. Padding this list with services you
   do not provide dilutes relevance and invites suspensions.
 
-## 3. Storefront or service area
+## 3. Storefront plus service areas
 
-- Walk-in office where customers actually visit → **storefront listing**, with a
-  Maps pin. Stronger for local ranking.
-- No permanent signage and no customer visits → Google's rules require a
-  **service-area business** with the address hidden.
+The owner confirmed customers do visit the office, so this stays a **storefront
+listing** with a visible address and a Maps pin — the stronger of the two for
+local ranking.
 
-If there is a real office, set it up as a storefront *and* add service areas
-(Delhi NCR plus the tier-2 cities enquiries come from).
+Two conditions come with that, and Google does enforce them on spot checks:
+permanent signage with the business name at the location, and someone there
+during the stated opening hours. If either is not true, the listing is at risk
+and a service-area business would be the honest configuration instead.
+
+Add service areas alongside it: Delhi NCR first, then whichever cities enquiries
+actually come from. Service areas do not weaken a storefront listing.
 
 ## 4. Business description
 
@@ -56,18 +73,26 @@ If there is a real office, set it up as a storefront *and* add service areas
 the hook goes first. This runs ~610 characters, inside the 400-600+ sweet spot:
 
 ```
-Safar Trails is a trusted travel agency crafting custom tour packages across
-India & abroad – Kashmir houseboats, Kerala backwaters, Himachal road trips,
-Dubai & international honeymoons. Every itinerary is hand-planned by real travel
-experts with transparent pricing, verified hotels, trained drivers & guides,
-visa and ticketing assistance, plus 24x7 on-trip support. 500+ happy travelers
-rated us 4.9★. Travel with Trust – safar aapka, zimmedari hamari. Call or
-WhatsApp for a free itinerary in 30 minutes.
+Safar Trails is a travel agency in Dwarka, New Delhi crafting custom tour
+packages across India – Kashmir houseboats, Kerala backwaters, Himachal road
+trips, Chardham Yatra, Rajasthan, Goa and the Andamans. Every itinerary is
+hand-planned by real travel consultants, not a template: transparent pricing
+with no hidden extras, verified hotels, trained local drivers and guides, visa
+and ticketing assistance, and support on the phone for the whole trip. Families,
+honeymoons, pilgrimage groups and corporate departures. Travel with Trust –
+safar aapka, zimmedari hamari. Call or WhatsApp for a free itinerary in 30
+minutes.
 ```
 
-Before pasting, confirm "500+ happy travelers" and "4.9★" are numbers you can
-stand behind. Google can suspend a listing over unverifiable claims, and the
-same figures appear in the site's schema — they should agree.
+**No rating or traveller count in this text, deliberately.** An earlier draft
+opened with "500+ happy travelers rated us 4.9★". Those numbers came from the
+same placeholder set as the review counts that were removed from the website —
+they were never real. Google suspends listings over unverifiable claims, and a
+profile claiming a rating the site no longer claims is a contradiction anyone
+can check in one tap.
+
+Add the numbers back only when the profile's own review count reaches them, and
+say exactly what the profile says.
 
 ## 5. Services and products
 
