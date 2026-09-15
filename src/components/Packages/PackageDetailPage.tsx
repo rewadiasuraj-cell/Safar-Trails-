@@ -331,6 +331,47 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
         )}
       </div>
 
+      {/* Common questions.
+          Rendered here as well as in the prerendered HTML on purpose. React
+          replaces everything inside #root on mount, so anything the prerender
+          writes but no component renders would be text only a crawler ever sees -
+          which is cloaking. Both must agree.
+
+          <details> rather than a JS accordion: it is open-able without
+          JavaScript, keyboard-operable for free, and Chrome's find-in-page
+          searches inside collapsed ones. */}
+      {packageData.faqs && packageData.faqs.length > 0 && (
+        <section
+          aria-labelledby="package-faqs-heading"
+          className="border-t border-gray-200 px-4 sm:px-6 lg:px-8 py-8 sm:py-10 bg-[#FAF9F6]"
+        >
+          <div className="mx-auto w-full max-w-3xl">
+            <h2
+              id="package-faqs-heading"
+              className="font-serif text-xl sm:text-2xl font-bold text-black tracking-tight"
+            >
+              Common questions
+            </h2>
+            <div className="mt-4 divide-y divide-gray-200 border-y border-gray-200">
+              {packageData.faqs.map((faq) => (
+                <details key={faq.question} className="group py-3">
+                  <summary className="flex cursor-pointer items-start justify-between gap-3 list-none text-sm font-bold text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-luxury-gold">
+                    <span>{faq.question}</span>
+                    <ChevronDown
+                      aria-hidden="true"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-gray-500 transition-transform group-open:rotate-180"
+                    />
+                  </summary>
+                  <p className="mt-2 pr-7 text-sm leading-relaxed text-gray-700 font-normal">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Sticky Bottom CTA Bar (offset above the mobile bottom nav bar, which is hidden at lg+) */}
       <div className="sticky bottom-[58px] lg:bottom-0 bg-white border-t border-gray-200 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-3 z-20">
         <div className="flex items-center gap-2 w-full sm:w-auto">

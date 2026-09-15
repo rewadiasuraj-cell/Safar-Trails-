@@ -403,6 +403,7 @@ function packageRoute(pkg: Package): RouteSeo {
         { name: 'Packages', path: '/packages' },
         { name: pkg.title, path },
       ]),
+      faqSchema(pkg.faqs ?? []),
     ]),
     h1: `${pkg.title} — ${pkg.durationNights} Nights / ${pkg.durationDays} Days`,
     intro: pkg.overview,
@@ -428,7 +429,7 @@ function packageRoute(pkg: Package): RouteSeo {
       { heading: "What's included", bullets: pkg.inclusions },
       { heading: "What's not included", bullets: pkg.exclusions },
     ],
-    faqs: [],
+    faqs: pkg.faqs ?? [],
     relatedLinks: [
       ...(destination
         ? [{ label: `${destination.name} travel guide`, href: `/destinations/${destination.slug}` }]
