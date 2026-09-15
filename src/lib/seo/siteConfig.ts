@@ -37,7 +37,7 @@ export const WHATSAPP_NUMBER = '918076665782';
  * whether to send money. Switching is one edit here once info@safartrails.co.in
  * exists and receives mail - not before, or every enquiry sent to it bounces.
  */
-export const PRIMARY_EMAIL = 'info.safartrails@gmail.com';
+export const PRIMARY_EMAIL = 'info@safartrails.co.in';
 
 /**
  * Where quote enquiries are DELIVERED. Separate from PRIMARY_EMAIL on purpose:
@@ -48,6 +48,12 @@ export const PRIMARY_EMAIL = 'info.safartrails@gmail.com';
  * This was hardcoded in three places - server.ts, functions/api/quotes.ts and
  * functions/api/send-quote-email.ts - so changing it meant finding all three, and
  * missing one meant silently dropping leads down a mailbox nobody checks.
+ *
+ * Deliberately still the Gmail address, even though the site now DISPLAYS
+ * info@safartrails.co.in. That address is a Cloudflare Email Routing forward,
+ * not a mailbox - mail to it takes an extra hop before landing in the same
+ * Gmail. Pointing leads through that hop adds a place for them to go missing and
+ * a second chance to be marked spam, for no gain: the destination is identical.
  *
  * Change this ONLY to an address that is confirmed to receive mail. Send a test
  * enquiry through the form afterwards and make sure it arrives.
