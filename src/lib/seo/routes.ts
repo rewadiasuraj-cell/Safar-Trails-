@@ -443,9 +443,10 @@ function packageRoute(pkg: Package): RouteSeo {
 
   return {
     path,
-    title: fitTitle(`${pkg.title} – ${pkg.durationNights}N/${pkg.durationDays}D`),
+    title: pkg.seoTitle ?? fitTitle(`${pkg.title} – ${pkg.durationNights}N/${pkg.durationDays}D`),
     description: fitDescription(
-      `${pkg.overview} Starting ₹${pkg.startingPrice.toLocaleString('en-IN')} per person from ${pkg.startingCity}.`,
+      pkg.seoDescription ??
+        `${pkg.overview} Starting ₹${pkg.startingPrice.toLocaleString('en-IN')} per person from ${pkg.startingCity}.`,
     ),
     canonical: absoluteUrl(path),
     ogImage: absoluteUrl(pkg.heroImage),

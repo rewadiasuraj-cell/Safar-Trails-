@@ -84,6 +84,21 @@ export interface Package {
     question: string;
     answer: string;
   }[];
+  /**
+   * Optional meta-title and meta-description overrides for this package's page.
+   *
+   * Without them the title is generated as "<title> – 2N/3D | Safar Trails",
+   * which is fine for most packages. Supply these when the page is being written
+   * to rank for a specific phrase and the generated form would bury it, or when
+   * marketing has already decided the wording.
+   *
+   * Keep seoTitle at or under 60 characters and seoDescription under 158, or
+   * Google truncates them mid-sentence. seoDescription is length-fitted
+   * automatically; seoTitle is used exactly as written, the same way
+   * DESTINATION_TITLE_OVERRIDES works.
+   */
+  seoTitle?: string;
+  seoDescription?: string;
 }
 
 export interface DestinationHighlight {
