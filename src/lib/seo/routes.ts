@@ -321,6 +321,12 @@ const DESTINATION_TITLE_OVERRIDES: Record<string, string> = {
   goa: 'Goa Tour Packages – Beaches & Boutique Stays | Safar Trails',
   rajasthan: 'Rajasthan Tour Packages – Forts & Desert | Safar Trails',
   'himachal-pradesh': 'Himachal Tour Packages – Manali & Shimla | Safar Trails',
+  // Deliberately NOT "Shimla Tour Packages". The package page at
+  // /tour-packages/shimla-tour-package-kufri-mall-road-3d2n already owns that
+  // phrase, and two pages on one site competing for one query is how you get
+  // Google to rank neither. This page answers the research questions - what to
+  // see, when to go, what it costs - and hands the booking intent to the package.
+  shimla: 'Shimla Travel Guide – Places to Visit & Cost | Safar Trails',
   uttarakhand: 'Uttarakhand Packages – Hills & Rishikesh | Safar Trails',
   'northeast-india': 'Northeast India Tours – Meghalaya & Assam | Safar Trails',
   andaman: 'Andaman Tour Packages – Havelock & Scuba | Safar Trails',
