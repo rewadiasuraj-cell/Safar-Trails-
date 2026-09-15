@@ -26,6 +26,7 @@ import {
   Star,
   Flame
 } from 'lucide-react';
+import { GST_NOTE } from '../../lib/seo/siteConfig';
 
 interface DestinationDetailViewProps {
   destination: Destination;
@@ -45,27 +46,26 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
   const [activeTab, setActiveTab] = useState<'overview' | 'attractions' | 'packages' | 'travel-guide'>('overview');
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  // Filter packages for this destination dynamically
-  const destNameLower = destination.name.toLowerCase();
-  const destSlugLower = destination.slug.toLowerCase();
-  const destStateLower = destination.state.toLowerCase();
-
-  const destinationPackages = packagesData.filter((p) => {
-    const pDest = p.destination.toLowerCase();
-    const pState = p.state.toLowerCase();
-    const pSlug = p.slug.toLowerCase();
-
-    return (
-      pDest.includes(destNameLower) ||
-      destNameLower.includes(pDest) ||
-      pState.includes(destStateLower) ||
-      pSlug.includes(destSlugLower) ||
-      (destSlugLower.includes('andaman') && (pDest.includes('andaman') || pSlug.includes('andaman'))) ||
-      (destSlugLower.includes('northeast') && (pState.includes('meghalaya') || pState.includes('sikkim') || pDest.includes('northeast'))) ||
-      (destSlugLower.includes('chardham') && (pDest.includes('chardham') || pSlug.includes('chardham'))) ||
-      (destSlugLower.includes('uttarakhand') && pState.includes('uttarakhand'))
-    );
-  });
+  /**
+   * Packages shown under "TOUR PACKAGES FOR <destination>".
+   *
+   * This used to be nine chained substring tests with hardcoded escapes for
+   * andaman, northeast, chardham and uttarakhand - each one patching around the
+   * same root cause, that package.destination is display copy ("Andaman",
+   * "Chardham Yatra, Uttarakhand") and never matched a destination name. It also
+   * matched on state, so both Chardham packages appeared under Uttarakhand and
+   * an Auli retreat appeared under a heading reading "TOUR PACKAGES FOR CHARDHAM
+   * YATRA".
+   *
+   * Every package now carries destinationSlug, so this is one comparison - and,
+   * importantly, the same comparison the prerender uses, so what a crawler reads
+   * and what a visitor sees no longer differ.
+   */
+  const destinationPackages = packagesData.filter((p) =>
+    p.destinationSlug
+      ? p.destinationSlug === destination.slug
+      : p.destination.toLowerCase() === destination.name.toLowerCase(),
+  );
 
   return (
     <div id="destination-detail-page" className="w-full pt-20 pb-24 bg-[#FAF9F6]">
@@ -134,7 +134,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
               <span className="text-white font-extrabold">
                 ₹{destination.startingPrice.toLocaleString('en-IN')}
               </span>
-              <span className="text-[11px] font-medium text-gray-200">per person</span>
+              <span className="text-[11px] font-medium text-gray-200">per person {GST_NOTE}</span>
             </span>
           </div>
 
@@ -291,7 +291,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                       <span className="text-2xl sm:text-3xl font-bold text-slate-900">
                         ₹{pkg.startingPrice.toLocaleString('en-IN')}
                       </span>
-                      <span className="text-xs text-gray-500 font-normal">/ person</span>
+                      <span className="text-xs text-gray-500 font-normal">/ person {GST_NOTE}</span>
                     </div>
 
                     <button

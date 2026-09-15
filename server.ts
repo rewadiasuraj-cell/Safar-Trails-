@@ -17,7 +17,9 @@ app.use(express.json());
 // In-memory leads storage for demo & export
 const submittedLeads: any[] = [];
 
-const QUOTE_NOTIFY_EMAIL = 'info.safartrails@gmail.com';
+import { LEAD_NOTIFICATION_EMAIL } from './src/lib/seo/siteConfig';
+
+const QUOTE_NOTIFY_EMAIL = LEAD_NOTIFICATION_EMAIL;
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {

@@ -38,7 +38,17 @@ export interface Package {
   id: string;
   slug: string;
   title: string;
-  destination: string; // e.g. "Kashmir"
+  destination: string; // display label, e.g. "Chardham Yatra, Uttarakhand"
+  /**
+   * Which destination page this package belongs to. Separate from `destination`
+   * because that field is display copy and drifted from the destination names:
+   * "Andaman" vs "Andaman & Nicobar", "Chardham Yatra, Uttarakhand" vs "Chardham
+   * Yatra". Matching on it left /destinations/andaman and
+   * /destinations/chardham-yatra showing no packages at all.
+   *
+   * Guides already key off destinationSlug; packages now do the same.
+   */
+  destinationSlug?: string;
   state: string;
   durationDays: number;
   durationNights: number;

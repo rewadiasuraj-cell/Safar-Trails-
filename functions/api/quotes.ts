@@ -15,7 +15,9 @@ interface Env {
   RESEND_FROM_EMAIL?: string;
 }
 
-const QUOTE_NOTIFY_EMAIL = 'info.safartrails@gmail.com';
+import { LEAD_NOTIFICATION_EMAIL } from '../../src/lib/seo/siteConfig';
+
+const QUOTE_NOTIFY_EMAIL = LEAD_NOTIFICATION_EMAIL;
 
 interface QuoteRequestBody {
   name?: string;

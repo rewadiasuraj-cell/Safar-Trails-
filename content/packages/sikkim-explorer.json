@@ -3,6 +3,7 @@
   "slug": "sikkim-explorer",
   "title": "Sikkim & Gangtok Himalayan Explorer",
   "destination": "Northeast India",
+  "destinationSlug": "northeast-india",
   "state": "Sikkim",
   "durationDays": 7,
   "durationNights": 6,

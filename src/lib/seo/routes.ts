@@ -94,6 +94,54 @@ const topDestinationLinks = () =>
     href: `/destinations/${destination.slug}`,
   }));
 
+const allPackageLinks = () =>
+  packagesData.map((pkg) => ({
+    label: `${pkg.title} — ${pkg.durationNights}N/${pkg.durationDays}D`,
+    href: `/tour-packages/${pkg.slug}`,
+  }));
+
+const allGuideLinks = () =>
+  guidesData.map((guide) => ({
+    label: guide.title,
+    href: `/guides/${guide.slug}`,
+  }));
+
+/**
+ * The links every prerendered page carries, regardless of what it is about.
+ *
+ * Without this the prerendered HTML has no site navigation at all - the header
+ * and footer are React, so a crawler only sees them on the second, slower
+ * JavaScript pass. That left the homepage, /about-us and /contact-us with zero
+ * inbound internal links in the crawlable HTML, and every other page reachable
+ * only through whatever its own related list happened to mention.
+ *
+ * Internal links are the main crawl-priority signal a site owner controls, and
+ * "Discovered - currently not indexed" is what Google reports when it knows a
+ * URL from the sitemap but has no reason to prioritise fetching it.
+ */
+const SITE_NAV_LINKS = [
+  { label: 'Safar Trails home', href: '/' },
+  { label: 'All India destinations', href: '/destinations' },
+  { label: 'All holiday packages', href: '/packages' },
+  { label: 'India travel guides', href: '/guides' },
+  { label: 'Plan a trip with the AI planner', href: '/ai-planner' },
+  { label: 'About Safar Trails', href: '/about-us' },
+  { label: 'Contact Safar Trails', href: '/contact-us' },
+];
+
+/** Related links for a page, plus site nav, minus any link back to itself. */
+function withSiteNav(
+  path: string,
+  links: { label: string; href: string }[],
+): { label: string; href: string }[] {
+  const seen = new Set([path]);
+  return [...links, ...SITE_NAV_LINKS].filter((link) => {
+    if (seen.has(link.href)) return false;
+    seen.add(link.href);
+    return true;
+  });
+}
+
 const STATIC_PAGES: StaticPageSpec[] = [
   {
     path: '/',
@@ -167,6 +215,11 @@ const STATIC_PAGES: StaticPageSpec[] = [
     h1: 'India Holiday Packages',
     intro:
       'Each package below is a starting point, not a fixed menu. Day counts, hotel categories, transport and add-ons can all be adjusted — tell us your dates and we will send a revised itinerary with pricing.',
+    // A hub page that lists none of the things it is a hub for is not a hub. This
+    // page previously linked to ten destinations and zero packages in the
+    // crawlable HTML, which left most packages with a single inbound internal
+    // link and three with none at all.
+    relatedLinks: allPackageLinks(),
     priority: 0.9,
     changefreq: 'weekly',
   },
@@ -200,6 +253,7 @@ const STATIC_PAGES: StaticPageSpec[] = [
     h1: 'India Travel Guides',
     intro:
       'Written by the specialists who plan these trips every week: when to visit, what a trip really costs, how many days each region deserves, and the mistakes first-timers make.',
+    relatedLinks: allGuideLinks(),
     priority: 0.8,
     changefreq: 'weekly',
   },
@@ -296,7 +350,7 @@ function staticRoute(spec: StaticPageSpec): RouteSeo {
     intro: spec.intro,
     sections: spec.sections ?? [],
     faqs: [],
-    relatedLinks: spec.relatedLinks ?? topDestinationLinks(),
+    relatedLinks: withSiteNav(spec.path, spec.relatedLinks ?? topDestinationLinks()),
     priority: spec.priority,
     changefreq: spec.changefreq,
   };
@@ -304,8 +358,10 @@ function staticRoute(spec: StaticPageSpec): RouteSeo {
 
 function destinationRoute(destination: Destination): RouteSeo {
   const path = `/destinations/${destination.slug}`;
-  const relatedPackages = packagesData.filter(
-    (pkg) => pkg.destination.toLowerCase() === destination.name.toLowerCase(),
+  const relatedPackages = packagesData.filter((pkg) =>
+    pkg.destinationSlug
+      ? pkg.destinationSlug === destination.slug
+      : pkg.destination.toLowerCase() === destination.name.toLowerCase(),
   );
   const relatedGuides = guidesData.filter((guide) => guide.destinationSlug === destination.slug);
 
@@ -367,14 +423,13 @@ function destinationRoute(destination: Destination): RouteSeo {
       { heading: `${destination.name} travel tips`, bullets: destination.travelTips },
     ],
     faqs: destination.faqs,
-    relatedLinks: [
+    relatedLinks: withSiteNav(path, [
       ...relatedPackages.map((pkg) => ({
         label: pkg.title,
         href: `/tour-packages/${pkg.slug}`,
       })),
       ...relatedGuides.map((guide) => ({ label: guide.title, href: `/guides/${guide.slug}` })),
-      { label: 'All India destinations', href: '/destinations' },
-    ],
+    ]),
     priority: 0.85,
     changefreq: 'weekly',
   };
@@ -430,13 +485,11 @@ function packageRoute(pkg: Package): RouteSeo {
       { heading: "What's not included", bullets: pkg.exclusions },
     ],
     faqs: pkg.faqs ?? [],
-    relatedLinks: [
+    relatedLinks: withSiteNav(path, [
       ...(destination
         ? [{ label: `${destination.name} travel guide`, href: `/destinations/${destination.slug}` }]
         : []),
-      { label: 'All holiday packages', href: '/packages' },
-      { label: 'Build a custom itinerary with the AI planner', href: '/ai-planner' },
-    ],
+    ]),
     priority: 0.8,
     changefreq: 'weekly',
   };
@@ -468,14 +521,13 @@ function guideRoute(guide: TravelGuide): RouteSeo {
       bullets: section.bulletPoints,
     })),
     faqs: [],
-    relatedLinks: [
+    relatedLinks: withSiteNav(path, [
       { label: `${guide.destinationName} tour packages`, href: `/destinations/${guide.destinationSlug}` },
       ...guide.relatedPackageSlugs
         .map((slug) => packagesData.find((pkg) => pkg.slug === slug))
         .filter((pkg): pkg is Package => Boolean(pkg))
         .map((pkg) => ({ label: pkg.title, href: `/tour-packages/${pkg.slug}` })),
-      { label: 'All travel guides', href: '/guides' },
-    ],
+    ]),
     priority: 0.75,
     changefreq: 'monthly',
   };

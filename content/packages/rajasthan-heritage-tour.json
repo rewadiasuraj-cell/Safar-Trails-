@@ -3,6 +3,7 @@
   "slug": "rajasthan-heritage-tour",
   "title": "Grand Rajasthan Heritage Tour",
   "destination": "Rajasthan",
+  "destinationSlug": "rajasthan",
   "state": "Rajasthan",
   "durationDays": 9,
   "durationNights": 8,

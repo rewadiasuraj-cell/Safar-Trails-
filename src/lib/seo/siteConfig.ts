@@ -30,10 +30,35 @@ export const PRIMARY_PHONE_DISPLAY = '+91 80766 65782';
 export const WHATSAPP_NUMBER = '918076665782';
 
 /**
- * Branded email. The audit recommended moving off info.safartrails@gmail.com;
- * until the mailbox exists, PRIMARY_EMAIL_FALLBACK is what the site displays.
+ * The address the site SHOWS - footer, contact page, Organization schema.
+ *
+ * The audit recommended moving off the Gmail address: on a business taking
+ * ₹25,000+ bookings it costs trust at exactly the moment someone is deciding
+ * whether to send money. Switching is one edit here once info@safartrails.co.in
+ * exists and receives mail - not before, or every enquiry sent to it bounces.
  */
-export const PRIMARY_EMAIL = 'info.safartrails@gmail.com';
+export const PRIMARY_EMAIL = 'info@safartrails.co.in';
+
+/**
+ * Where quote enquiries are DELIVERED. Separate from PRIMARY_EMAIL on purpose:
+ * the displayed address is branding, this one is the inbox a lead lands in, and
+ * they can safely differ (a branded address forwarding to a mailbox someone
+ * actually reads is the normal setup).
+ *
+ * This was hardcoded in three places - server.ts, functions/api/quotes.ts and
+ * functions/api/send-quote-email.ts - so changing it meant finding all three, and
+ * missing one meant silently dropping leads down a mailbox nobody checks.
+ *
+ * Deliberately still the Gmail address, even though the site now DISPLAYS
+ * info@safartrails.co.in. That address is a Cloudflare Email Routing forward,
+ * not a mailbox - mail to it takes an extra hop before landing in the same
+ * Gmail. Pointing leads through that hop adds a place for them to go missing and
+ * a second chance to be marked spam, for no gain: the destination is identical.
+ *
+ * Change this ONLY to an address that is confirmed to receive mail. Send a test
+ * enquiry through the form afterwards and make sure it arrives.
+ */
+export const LEAD_NOTIFICATION_EMAIL = 'info.safartrails@gmail.com';
 
 /**
  * The website footer and the Google Business Profile listing disagreed on the
@@ -110,6 +135,28 @@ export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
  */
 export const ORGANIZATION_RATING_ENABLED = false;
 export const ORGANIZATION_RATING = { ratingValue: '4.9', reviewCount: '127' };
+
+/**
+ * GST on tour packages, and how the site says so.
+ *
+ * Every price in content/ is the pre-tax, per-person, twin-sharing rate. GST is
+ * charged on top at 5%, and until now the site said that nowhere: a visitor read
+ * "₹14,499", enquired, and met ₹15,224 in the quote. That is the definition of a
+ * hidden extra on a site whose own copy promises "transparent pricing, no hidden
+ * extras", and it is the moment an enquiry goes cold.
+ *
+ * So the note travels with the number. One constant, so a rate change is one
+ * edit and the pages cannot disagree with each other.
+ *
+ * If the rate changes, update GST_RATE and GST_NOTE together, and re-check the
+ * prices published on the Google Business Profile - those are entered
+ * tax-inclusive, because Google's Activities editor asks for the total.
+ */
+export const GST_RATE = 0.05;
+export const GST_NOTE = '+5% GST';
+
+/** The tax-inclusive total a customer actually pays, rounded to the rupee. */
+export const priceWithGst = (base: number): number => Math.round(base * (1 + GST_RATE));
 
 /** Absolute-URL helper that tolerates paths with or without a leading slash. */
 export function absoluteUrl(pathname: string): string {

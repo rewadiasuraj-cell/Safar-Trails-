@@ -18,7 +18,9 @@ interface Env {
   RESEND_FROM_EMAIL?: string;
 }
 
-const NOTIFY_TO = 'info.safartrails@gmail.com';
+import { LEAD_NOTIFICATION_EMAIL } from '../../src/lib/seo/siteConfig';
+
+const NOTIFY_TO = LEAD_NOTIFICATION_EMAIL;
 
 function jsonResponse(body: unknown, status: number): Response {
   return new Response(JSON.stringify(body), {
