@@ -26,6 +26,7 @@ import {
   Star,
   Flame
 } from 'lucide-react';
+import { GST_NOTE } from '../../lib/seo/siteConfig';
 
 interface DestinationDetailViewProps {
   destination: Destination;
@@ -133,7 +134,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
               <span className="text-white font-extrabold">
                 ₹{destination.startingPrice.toLocaleString('en-IN')}
               </span>
-              <span className="text-[11px] font-medium text-gray-200">per person</span>
+              <span className="text-[11px] font-medium text-gray-200">per person {GST_NOTE}</span>
             </span>
           </div>
 
@@ -290,7 +291,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                       <span className="text-2xl sm:text-3xl font-bold text-slate-900">
                         ₹{pkg.startingPrice.toLocaleString('en-IN')}
                       </span>
-                      <span className="text-xs text-gray-500 font-normal">/ person</span>
+                      <span className="text-xs text-gray-500 font-normal">/ person {GST_NOTE}</span>
                     </div>
 
                     <button

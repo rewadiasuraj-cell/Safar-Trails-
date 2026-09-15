@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { formatPublishedDate } from '../../lib/seo/textUtils';
 import { openWhatsApp } from '../../lib/contact';
+import { GST_NOTE } from '../../lib/seo/siteConfig';
 
 interface TravelGuideArticleViewProps {
   guide: TravelGuide;
@@ -238,7 +239,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
                     </h3>
                     <div className="text-sm font-black text-slate-900">
                       ₹{pkg.startingPrice.toLocaleString('en-IN')}{' '}
-                      <span className="text-xs font-normal text-slate-500">/ person</span>
+                      <span className="text-xs font-normal text-slate-500">/ person {GST_NOTE}</span>
                     </div>
                   </div>
                 </div>

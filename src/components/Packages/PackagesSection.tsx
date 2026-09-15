@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { packagesData } from '../../data/packagesData';
+import { GST_NOTE } from '../../lib/seo/siteConfig';
 import { Package } from '../../types';
 import {
   Building2,
@@ -243,7 +244,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
                       <span className="text-lg font-black text-slate-900">
                         ₹{pkg.startingPrice.toLocaleString('en-IN')}
                       </span>
-                      <span className="text-xs text-slate-500 font-normal">/ person</span>
+                      <span className="text-xs text-slate-500 font-normal">/ person {GST_NOTE}</span>
                     </div>
                   </div>
 
