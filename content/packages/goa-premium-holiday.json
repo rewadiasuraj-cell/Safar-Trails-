@@ -3,6 +3,7 @@
   "slug": "goa-premium-holiday",
   "title": "Goa Premium Beach Resort Retreat",
   "destination": "Goa",
+  "destinationSlug": "goa",
   "state": "Goa",
   "durationDays": 6,
   "durationNights": 5,

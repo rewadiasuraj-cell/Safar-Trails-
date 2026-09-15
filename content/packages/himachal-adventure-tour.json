@@ -3,6 +3,7 @@
   "slug": "himachal-adventure-tour",
   "title": "Himachal Grand Adventure Tour",
   "destination": "Himachal Pradesh",
+  "destinationSlug": "himachal-pradesh",
   "state": "Himachal Pradesh",
   "durationDays": 8,
   "durationNights": 7,

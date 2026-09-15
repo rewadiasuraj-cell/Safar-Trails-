@@ -3,6 +3,7 @@
   "slug": "andaman-premium",
   "title": "Andaman Premium Island Retreat",
   "destination": "Andaman",
+  "destinationSlug": "andaman",
   "state": "Andaman & Nicobar",
   "durationDays": 7,
   "durationNights": 6,
