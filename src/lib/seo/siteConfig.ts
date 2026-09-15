@@ -30,10 +30,29 @@ export const PRIMARY_PHONE_DISPLAY = '+91 80766 65782';
 export const WHATSAPP_NUMBER = '918076665782';
 
 /**
- * Branded email. The audit recommended moving off info.safartrails@gmail.com;
- * until the mailbox exists, PRIMARY_EMAIL_FALLBACK is what the site displays.
+ * The address the site SHOWS - footer, contact page, Organization schema.
+ *
+ * The audit recommended moving off the Gmail address: on a business taking
+ * ₹25,000+ bookings it costs trust at exactly the moment someone is deciding
+ * whether to send money. Switching is one edit here once info@safartrails.co.in
+ * exists and receives mail - not before, or every enquiry sent to it bounces.
  */
 export const PRIMARY_EMAIL = 'info.safartrails@gmail.com';
+
+/**
+ * Where quote enquiries are DELIVERED. Separate from PRIMARY_EMAIL on purpose:
+ * the displayed address is branding, this one is the inbox a lead lands in, and
+ * they can safely differ (a branded address forwarding to a mailbox someone
+ * actually reads is the normal setup).
+ *
+ * This was hardcoded in three places - server.ts, functions/api/quotes.ts and
+ * functions/api/send-quote-email.ts - so changing it meant finding all three, and
+ * missing one meant silently dropping leads down a mailbox nobody checks.
+ *
+ * Change this ONLY to an address that is confirmed to receive mail. Send a test
+ * enquiry through the form afterwards and make sure it arrives.
+ */
+export const LEAD_NOTIFICATION_EMAIL = 'info.safartrails@gmail.com';
 
 /**
  * The website footer and the Google Business Profile listing disagreed on the

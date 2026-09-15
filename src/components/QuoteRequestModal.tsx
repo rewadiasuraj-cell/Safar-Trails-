@@ -79,7 +79,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
 
   if (!isOpen) return null;
 
-  // Fire-and-forget: notifies info.safartrails@gmail.com via the Resend-backed
+  // Fire-and-forget: notifies LEAD_NOTIFICATION_EMAIL (siteConfig) via the Resend-backed
   // /api/send-quote-email function. Never awaited and never throws into the
   // caller, so a failure here can't block the enquiry or the WhatsApp flow.
   const sendQuoteEmailNotification = (leadId: string) => {

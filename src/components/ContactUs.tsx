@@ -3,7 +3,12 @@ import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { enquiryMessage, openWhatsApp } from '../lib/contact';
 import { trackPhoneCallClick } from '../lib/analytics';
-import { DISPLAY_ADDRESS, PRIMARY_PHONE, PRIMARY_PHONE_DISPLAY } from '../lib/seo/siteConfig';
+import {
+  DISPLAY_ADDRESS,
+  PRIMARY_EMAIL,
+  PRIMARY_PHONE,
+  PRIMARY_PHONE_DISPLAY,
+} from '../lib/seo/siteConfig';
 
 interface ContactUsProps {
   onOpenQuoteModal: (summary?: string) => void;
@@ -55,8 +60,10 @@ export const ContactUs: React.FC<ContactUsProps> = ({ onOpenQuoteModal }) => {
             <Mail className="w-5 h-5 text-gold-ink flex-shrink-0 mt-0.5" aria-hidden="true" />
             <div>
               <div className="text-sm font-bold text-slate-900">Email</div>
-              <a href="mailto:info.safartrails@gmail.com" className="text-sm text-slate-700 hover:text-gold-ink transition-colors">
-                info.safartrails@gmail.com
+              {/* From siteConfig, like the address above it: this was typed out by
+                  hand and would have been the one left behind on a rebrand. */}
+              <a href={`mailto:${PRIMARY_EMAIL}`} className="text-sm text-slate-700 hover:text-gold-ink transition-colors">
+                {PRIMARY_EMAIL}
               </a>
             </div>
           </div>
