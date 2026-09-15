@@ -72,6 +72,11 @@ big.
 
 `galleryImages` is stored but not yet rendered anywhere.
 
+**Author avatars must be square.** A guide's `author.avatar` renders in a 44px
+circle that crops to the centre, so a wide image turns into an unreadable sliver
+— `/logo.svg` is a 200×40 wordmark and did exactly that. Use `/favicon.svg` for
+the brand mark, or a square photo.
+
 ### If you break something, the build stops
 
 `scripts/build-content.ts` reads these files, checks each one, and generates
