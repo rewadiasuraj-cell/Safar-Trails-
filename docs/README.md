@@ -58,25 +58,40 @@ check and the www redirect are all confirmed working. Ads traffic landing on a
 site whose conversions are not tracked is money spent with nothing to learn
 from. The playbook puts this at day 25-30 for the same reason.
 
-## Two decisions that need the owner, not a developer
+## Two decisions that needed the owner — both now settled
 
-1. **The street address.** The website footer says "Dwarka Mor"; the Google
-   Business Profile says "Nawada". Both are now consistent *within* the site
-   (`src/lib/seo/siteConfig.ts`), but the profile still disagrees. Decide which
-   is correct and make both match character for character — NAP consistency is a
-   direct local-ranking factor.
-2. **The review counts shown on destination and package pages.** `destinationsData.ts`
-   and `packagesData.ts` carry ratings like *Kashmir 4.9 from 1,420 reviews*,
-   *Goa 4.8 from 2,180*, *Kerala 4.9 from 1,890* — over ten thousand reviews in
-   total, against a business with a handful of real ones. These look like
-   placeholder values from when the site was built.
+1. **The street address — settled.** The site said "Dwarka Mor", the Google
+   Business Profile said "Nawada". The owner confirmed the profile is correct,
+   so `POSTAL_ADDRESS` in `src/lib/seo/siteConfig.ts` was changed to match it and
+   the contact page, which had the old line typed out by hand, now reads from
+   that same object. See `google-business-profile.md` §1 for the exact string to
+   compare against the live listing.
 
-   They are no longer emitted in structured data (see below), but they are still
-   **displayed on the pages**. Publishing review counts you cannot substantiate
-   is a trust problem regardless of schema, and under India's consumer
-   protection rules on misleading advertising it is a real exposure. Either
-   replace them with true numbers or remove the counts from the UI. This is a
-   content decision, so it has been flagged rather than changed.
+2. **The invented review counts — settled, removed.** `destinationsData.ts` and
+   `packagesData.ts` carried ratings like *Kashmir 4.9 from 1,420 reviews*, *Goa
+   4.8 from 2,180*, *Kerala 4.9 from 1,890* — over ten thousand reviews against a
+   business with a handful of real ones. Placeholders from when the site was
+   built, and they had been published to Google in structured data.
+
+   They are gone from the schema and from the pages. Cards now lead with
+   "From ₹X" and factual badges, and the Trust section links to the real Google
+   profile where the rating can be verified in one tap. Nothing on the site now
+   states a rating or a review count.
+
+   **This applies to anything written for the profile too.** The GBP description
+   draft originally opened with "500+ happy travelers rated us 4.9★", from the
+   same placeholder set; it was rewritten without numbers. Google suspends
+   listings over unverifiable claims.
+
+### Still open, and also the owner's
+
+The author bylines on six guides — *Aditi Sharma*, *Dr. Priya Nair*, *Rohan
+Deshmukh*, *Tariq Mir*, *Priya Rawat* — use Unsplash stock portraits as their
+avatars. If these are real colleagues, the fix is real photographs. If they are
+not real people, this is the same class of problem as the review counts: Google's
+E-E-A-T guidance weighs author credibility, and a reverse image search resolves
+it instantly. The five migrated guides already use the brand mark with
+"SafarTrails Editorial Team", which is the honest fallback.
 
    No `aggregateRating` is published anywhere now. The organisation-level switch
    (`ORGANIZATION_RATING_ENABLED`) stays off until genuine on-site reviews exist,

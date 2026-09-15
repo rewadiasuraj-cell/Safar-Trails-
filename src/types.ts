@@ -60,6 +60,20 @@ export interface Package {
   season: 'All Season' | 'Summer' | 'Monsoon' | 'Winter' | 'Spring';
   isFeatured?: boolean;
   isPopular?: boolean;
+  /**
+   * Optional. Questions people actually type before booking this trip - "Manali
+   * tour package for couple", "…from Delhi", "…with flight". Destinations have
+   * carried these for a while; packages are where the buying-intent searches
+   * land, so they earn them too.
+   *
+   * Answer honestly about THIS package. A question the trip does not cover
+   * (a two-day version, a price band well below its own) brings in a visitor who
+   * bounces, which helps nobody.
+   */
+  faqs?: {
+    question: string;
+    answer: string;
+  }[];
 }
 
 export interface DestinationHighlight {

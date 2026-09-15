@@ -11,6 +11,7 @@ import {
   Info,
   Send
 } from 'lucide-react';
+import { formatPublishedDate } from '../../lib/seo/textUtils';
 import { openWhatsApp } from '../../lib/contact';
 
 interface TravelGuideArticleViewProps {
@@ -94,10 +95,15 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
         {/* Author Bio & Date Bar */}
         <div className="mt-6 pt-6 border-t border-gray-200 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
+            {/* object-cover is right for the portrait photos some guides use, but it
+                crops anything wide to its middle: /logo.svg is a 200x40 wordmark and
+                rendered here as an unreadable sliver of "TRAVEL WITH TRUST". The
+                brand-marked guides now point at the square /favicon.svg instead, and
+                avatars are expected to be square. bg-white backs the transparent SVG. */}
             <img
               src={guide.author.avatar}
               alt={guide.author.name}
-              className="w-11 h-11 rounded-full object-cover border border-gray-300"
+              className="w-11 h-11 rounded-full object-cover bg-white border border-gray-300"
             />
             <div>
               <div className="text-sm font-bold text-slate-900">{guide.author.name}</div>
@@ -108,7 +114,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
           <div className="flex items-center gap-4 text-xs font-medium text-slate-500">
             <span className="flex items-center gap-1.5">
               <Calendar className="w-3.5 h-3.5" />
-              <span>{guide.publishedDate}</span>
+              <span>{formatPublishedDate(guide.publishedDate)}</span>
             </span>
             <span>•</span>
             <span className="flex items-center gap-1.5">

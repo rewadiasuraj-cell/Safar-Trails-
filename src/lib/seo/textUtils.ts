@@ -36,6 +36,29 @@ export function fitDescription(text: string, max = DESCRIPTION_MAX): string {
   return truncateAtWord(text.replace(/\s+/g, ' ').trim(), max);
 }
 
+/**
+ * Renders a guide's publishedDate for humans.
+ *
+ * The field holds two shapes. Guides written here carry "January 2026"; the ones
+ * migrated out of the CMS carry a full ISO timestamp, which was being printed to
+ * the page verbatim - a reader saw "2026-03-12T00:00:00Z" under the headline.
+ *
+ * ISO is kept in the JSON on purpose: it is the exact date, and the Article
+ * schema's datePublished needs that precision. Only the display is formatted,
+ * and anything that is already human-readable is passed through untouched.
+ */
+export function formatPublishedDate(raw: string): string {
+  if (!/^\d{4}-\d{2}-\d{2}/.test(raw)) return raw;
+  const parsed = new Date(raw);
+  if (Number.isNaN(parsed.getTime())) return raw;
+  return parsed.toLocaleDateString('en-IN', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}
+
 /** Minimal HTML-entity escaping for values interpolated into prerendered HTML. */
 export function escapeHtml(value: string): string {
   return value
