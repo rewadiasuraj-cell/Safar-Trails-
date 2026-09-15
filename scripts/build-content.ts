@@ -96,7 +96,11 @@ const COLLECTIONS: Collection[] = [
       itinerary: 'array',
       season: 'string',
     },
-    sortBy: (p) => String(p.slug),
+    // displayOrder first (1, 2, 3 …), then everything else alphabetically.
+    // Padded so the string comparison below orders numbers correctly, and so a
+    // package without displayOrder always sorts after one that has it.
+    sortBy: (p) =>
+      `${String(p.displayOrder ?? 999).padStart(3, '0')}|${String(p.slug)}`,
   },
   {
     dir: 'guides',

@@ -1,9 +1,10 @@
 {
   "id": "pkg-shimla-3d2n",
   "slug": "shimla-tour-package-kufri-mall-road-3d2n",
+  "displayOrder": 2,
   "title": "Shimla Tour Package",
   "destination": "Shimla, Himachal Pradesh",
-  "destinationSlug": "himachal-pradesh",
+  "destinationSlug": "shimla",
   "state": "Himachal Pradesh",
   "durationDays": 3,
   "durationNights": 2,

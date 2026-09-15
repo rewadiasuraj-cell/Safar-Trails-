@@ -1,0 +1,121 @@
+{
+  "slug": "shimla",
+  "name": "Shimla",
+  "tagline": "Queen of the Hills — Colonial Ridge Walks, Kufri Snow & the Kalka Toy Train",
+  "state": "Himachal Pradesh",
+  "heroImage": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1600&auto=format&fit=crop",
+  "cardImage": "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=800&auto=format&fit=crop",
+  "shortDescription": "Mall Road evenings, The Ridge at sunset, Kufri and Green Valley by day, and colonial landmarks like Christ Church and the Viceregal Lodge — all within a weekend of Delhi.",
+  "fullOverview": "Shimla is the hill station most Delhi families reach first, and it earns the habit. The British ran their summer government from here, so the town centre is a walkable ridge of neo-Gothic churches, timbered lodges and a pedestrian Mall Road where nothing motorised is allowed. Around it sit the day trips: Kufri and Green Valley for forest and mountain views, Jakhoo Hill for the climb and the panorama. It is roughly seven to eight hours by road from Delhi, or the narrow-gauge Kalka–Shimla railway if you would rather the journey be part of the holiday. Three to four days covers it properly without spending the trip in a car.",
+  "bestTime": "March to June (pleasant sightseeing weather) | October to February (cold, with possible snowfall around Kufri) | July to September brings rain and greener hills, but check road conditions before travelling",
+  "temperatureRange": "-2°C - 25°C",
+  "startingPrice": 7500,
+  "idealDays": "3 to 4 Days",
+  "highlights": [
+    "Evening walks on The Ridge and Mall Road, both pedestrian-only",
+    "Kufri and Green Valley — the main day trip, and where snow is most likely in winter",
+    "Jakhoo Temple on Jakhoo Hill, with views across the whole valley",
+    "Christ Church and the Viceregal Lodge for Shimla's colonial architecture",
+    "The Kalka–Shimla narrow-gauge railway, a UNESCO World Heritage line"
+  ],
+  "howToReach": {
+    "air": "Shimla Airport at Jubbarhatti has very limited connectivity — check current flight availability before planning around it. Most travellers fly into Chandigarh (IXC) and drive the remaining 3 to 4 hours.",
+    "rail": "Kalka is the railhead. From there the narrow-gauge Kalka–Shimla railway climbs to Shimla — slow, scenic, and a genuine attraction in its own right. Book well ahead in peak season.",
+    "road": "Roughly 7 to 8 hours from Delhi and 3 to 4 from Chandigarh, on a route that is four-lane for most of the way before it starts climbing. Private cab, bus and self-drive are all common."
+  },
+  "topAttractions": [
+    {
+      "name": "The Ridge",
+      "description": "The open stretch at the centre of town, with mountain views on both sides and most of Shimla's landmarks a short walk away. Best at sunset.",
+      "image": "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Mall Road",
+      "description": "Shimla's shopping and café street, pedestrian-only and busiest in the evening. Local handicrafts, woollens and a long row of places to eat.",
+      "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Kufri",
+      "description": "About an hour out, surrounded by forest and the most likely place to find snow between late December and February. Seasonal outdoor activities run here depending on conditions.",
+      "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Green Valley",
+      "description": "A roadside viewpoint on the Kufri route, thick with deodar forest on both sides. A short photography stop rather than a half-day.",
+      "image": "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Jakhoo Temple",
+      "description": "A Hanuman temple on Shimla's highest hill, reached by a steep walk. The views are the reason to go. Keep food and phones out of sight — the monkeys are practised.",
+      "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Christ Church",
+      "description": "The neo-Gothic church on The Ridge, one of the oldest in north India and the image most people picture when they think of Shimla.",
+      "image": "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Viceregal Lodge",
+      "description": "Now the Indian Institute of Advanced Study. The building and its grounds are open to visitors and are the clearest surviving picture of Shimla's colonial-era role.",
+      "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop"
+    }
+  ],
+  "stayCategories": [
+    {
+      "category": "Standard 3★ Hotels",
+      "priceRange": "₹2,000 – ₹4,000 / night",
+      "recommendation": "The usual choice on a 3-day trip. Ask specifically how far it is from Mall Road — many cheaper hotels are down the hill and involve a climb or a cab each time."
+    },
+    {
+      "category": "Deluxe 4★ & Resorts",
+      "priceRange": "₹4,500 – ₹9,000 / night",
+      "recommendation": "Worth it for a honeymoon or with elderly parents, mainly for heating, in-house dining and proximity to the Mall."
+    },
+    {
+      "category": "Heritage & Colonial Properties",
+      "priceRange": "₹8,000 – ₹20,000 / night",
+      "recommendation": "Shimla's old British-era buildings converted to hotels. Book months ahead for New Year and the summer holidays."
+    }
+  ],
+  "travelTips": [
+    "Compare packages on what is included, not on the headline price — transport type and hotel distance from Mall Road change the real cost more than anything else.",
+    "Check the weather and road conditions before you leave, especially July to September when rain affects the hill roads.",
+    "Carry warm clothing from October onwards. Shimla is cold after dark even when the days are pleasant.",
+    "Wear proper shoes. The Ridge, Mall Road and especially Jakhoo all involve walking on steep sections.",
+    "Book early for New Year, Christmas and the May–June school holidays — these are the dearest and most crowded weeks of the year.",
+    "Nobody can promise snow on specific dates. Treat any operator who guarantees it as guessing.",
+    "Keep a little flexibility in the itinerary. Hill weather moves plans around more often than people expect."
+  ],
+  "faqs": [
+    {
+      "question": "How many days are enough for a Shimla trip?",
+      "answer": "Three to four days covers Shimla's main attractions and Kufri without rushing. Two days would be mostly road — it is roughly 7 to 8 hours from Delhi each way. With a week, Shimla pairs naturally with Manali, Solang Valley and the Atal Tunnel."
+    },
+    {
+      "question": "What is the best time to visit Shimla?",
+      "answer": "March to June for comfortable sightseeing weather, which is why it is the busiest season with families. October to February if you want the cold and a chance of snow, most likely around Kufri rather than in town. July to September is green and cheaper but brings rain that can affect the hill roads."
+    },
+    {
+      "question": "How much does a Shimla tour package cost?",
+      "answer": "Our 3-day Shimla package starts at ₹7,500 per person on twin sharing, plus 5% GST — about ₹15,000 for a couple, including 2 nights with breakfast, the private cab from Delhi and back, tolls, parking and sightseeing. The figure moves with your dates, hotel category and group size. New Year and the summer holidays are the most expensive weeks."
+    },
+    {
+      "question": "Is Shimla suitable for families?",
+      "answer": "Yes, and it is one of the easier hill stations to do with mixed ages. Mall Road is pedestrian so children can walk freely, and the sightseeing sits comfortably in two days. If you are travelling with elderly parents, say so when you enquire — Jakhoo Temple involves a steep climb and we will plan around it."
+    },
+    {
+      "question": "Is Shimla good for a honeymoon?",
+      "answer": "It is one of the shortest honeymoons you can take from Delhi, which is why couples choose it when leave is tight. We use a private cab rather than a shared coach, and a room upgrade, candlelight dinner or room decoration can be added — just ask when you enquire."
+    },
+    {
+      "question": "Will we see snowfall in Shimla?",
+      "answer": "Possibly, between late December and February, and more likely at Kufri than in Shimla town. Snowfall varies from year to year and nobody can promise it on specific dates. What we can do is tell you honestly what the forecast looks like before you commit, and plan the Kufri day around it."
+    },
+    {
+      "question": "Can a Shimla tour package be customised?",
+      "answer": "Yes. Nights, hotel category, vehicle and sightseeing are all adjustable, and the trip can start from Chandigarh instead of Delhi if that suits your travel. Tell us your dates, headcount and budget and you will get an itemised quote rather than a fixed menu."
+    }
+  ],
+  "seoTitle": "Shimla Travel Guide | Places to Visit, Best Time & Cost",
+  "seoDescription": "Plan a Shimla trip — The Ridge, Mall Road, Kufri, Jakhoo and Green Valley, how to reach, best time to visit and what a package costs. Packages from ₹7,500 per person."
+}
