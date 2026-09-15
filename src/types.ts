@@ -99,6 +99,20 @@ export interface Package {
    */
   seoTitle?: string;
   seoDescription?: string;
+  /**
+   * Where this package sits in the listing. 1 shows first, 2 second, and so on;
+   * packages without it fall in behind, ordered by slug as before.
+   *
+   * Packages were previously listed alphabetically by slug, which put Andaman at
+   * the top all year for no reason anyone chose. What sells changes with the
+   * season - Shimla and Manali from September through January, Chardham from
+   * May to October - so the order is now a decision, made in the content files
+   * and changeable from a phone without touching code.
+   *
+   * Reorder seasonally. A package nobody is searching for in December should not
+   * be occupying the first card.
+   */
+  displayOrder?: number;
 }
 
 export interface DestinationHighlight {

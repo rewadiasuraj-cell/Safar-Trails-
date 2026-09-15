@@ -1,7 +1,8 @@
 {
   "id": "pkg-himachal-highs",
   "slug": "himachal-manali-solang-sissu-retreat",
-  "title": "Himachal Pradesh Tour Package",
+  "displayOrder": 3,
+  "title": "Manali Tour Package",
   "destination": "Himachal Pradesh",
   "destinationSlug": "himachal-pradesh",
   "state": "Himachal Pradesh",
