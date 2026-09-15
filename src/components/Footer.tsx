@@ -55,13 +55,27 @@ export const Footer: React.FC<FooterProps> = ({
               />
             </div>
             
+            {/* Was "India's premier AI-powered domestic travel agency" - a
+                superlative nobody can substantiate, and the line Google was
+                quoting in its search snippet. Replaced with what the business
+                actually does, which is both true and more specific than what
+                every other agency writes. */}
             <p className="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-sm pt-1">
-              SafarTrails is India’s premier AI-powered domestic travel agency. We combine instant AI itinerary generation with verified boutique stays, private sanitized cabs, and 24/7 dedicated human concierge.
+              Safar Trails plans custom India holidays from New Delhi — hand-built itineraries,
+              verified stays, trained local drivers, and a person on WhatsApp for the whole trip.
             </p>
 
+            {/* "Ministry of Tourism Compliant" was removed. No such status exists:
+                the Ministry runs a RECOGNITION scheme for travel agents, with an
+                application and a certificate. Presenting "compliant" behind a
+                shield icon reads as an official endorsement that was never
+                granted, which is the same problem as the invented review counts.
+                If the recognition is obtained, say "Ministry of Tourism
+                Recognised Travel Agent" and add the certificate number - that is
+                a far stronger claim precisely because it is checkable. */}
             <div className="pt-2 flex items-center gap-3 text-xs text-gray-300 font-medium">
               <ShieldCheck className="w-4 h-4 text-forest-green" />
-              <span>Ministry of Tourism Compliant • GST Registered</span>
+              <span>GST Registered</span>
             </div>
           </div>
 
