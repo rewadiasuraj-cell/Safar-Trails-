@@ -1,0 +1,175 @@
+{
+  "id": "pkg-shimla-manali-kasol-7d6n",
+  "slug": "shimla-manali-kasol-tour-package-7d6n",
+  "displayOrder": 4,
+  "title": "Shimla Manali Kasol Tour Package",
+  "destination": "Shimla, Manali & Kasol, Himachal Pradesh",
+  "destinationSlug": "himachal-pradesh",
+  "state": "Himachal Pradesh",
+  "durationDays": 7,
+  "durationNights": 6,
+  "startingPrice": 15000,
+  "tripType": [
+    "Family",
+    "Couple",
+    "Friends",
+    "Group",
+    "Adventure"
+  ],
+  "hotelCategory": "Standard 3★",
+  "ratings": 0,
+  "reviewCount": 0,
+  "startingCity": "Delhi",
+  "bestFor": "Families, Couples, Friends & Groups",
+  "heroImage": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop",
+  "galleryImages": [
+    "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=800&auto=format&fit=crop"
+  ],
+  "overview": "Three very different parts of Himachal in one week, driven door to door from Delhi. Two nights in colonial Shimla with a full day at Kufri, two in Manali for Solang Valley and the Atal Tunnel through to Sissu, and two in Kasol where the pace finally drops — Manikaran Sahib, Chalal village and the Parvati river. Seven days is what this route needs; squeezed into five it becomes a car journey.",
+  "highlights": [
+    "2 nights each in Shimla, Manali and Kasol — no single-night stops",
+    "A full day at Kufri and Green Valley rather than a rushed morning",
+    "Solang Valley, and the Atal Tunnel through to Sissu in Lahaul",
+    "Hadimba Temple, Manu Temple, Vashisht village and Old Manali",
+    "Manikaran Sahib and the walk to Chalal village in Parvati Valley",
+    "Private cab for the whole circuit, Delhi to Delhi, with tolls and parking"
+  ],
+  "inclusions": [
+    "6 nights hotel accommodation — 2 each in Shimla, Manali and Kasol",
+    "Private cab for the full circuit and all sightseeing, Delhi to Delhi",
+    "Shimla and Kufri sightseeing",
+    "Manali local sightseeing",
+    "Solang Valley, Atal Tunnel and Sissu",
+    "Kasol, Manikaran and Chalal village",
+    "Daily breakfast",
+    "All toll and parking charges",
+    "Travel assistance on WhatsApp for the length of the trip"
+  ],
+  "exclusions": [
+    "Entry tickets at monuments, temples and viewpoints",
+    "Adventure activities at Solang and Kufri (paragliding, zorbing, ropeway, snow activities)",
+    "Lunch, dinner and any premium meal plan",
+    "Rohtang Pass NGT permit and taxi, if opted for",
+    "Shopping and personal expenses",
+    "5% GST on the package cost",
+    "Costs arising from weather, landslides or road closures beyond our control",
+    "Anything not specifically listed under inclusions"
+  ],
+  "itinerary": [
+    {
+      "dayNumber": 1,
+      "title": "Delhi to Shimla, arrival and The Ridge",
+      "location": "Shimla",
+      "description": "Depart Delhi early by private cab for the drive up through the Shivalik foothills. Check in and rest, then walk out in the evening to The Ridge, Mall Road and Christ Church — the pedestrian heart of Shimla, best taken slowly.",
+      "morningActivity": "Private cab from Delhi through the Shivalik hills",
+      "eveningActivity": "The Ridge, Mall Road and Christ Church on foot",
+      "stay": "Standard 3★ hotel in Shimla",
+      "mealsIncluded": "None on arrival day",
+      "transfers": "Private Cab"
+    },
+    {
+      "dayNumber": 2,
+      "title": "Kufri, Green Valley and Jakhoo Temple",
+      "location": "Kufri & Shimla",
+      "description": "A full day out of town — Kufri and Green Valley for the forested ridgelines and mountain views, then Jakhoo Temple on Jakhoo Hill. The evening is free again on Mall Road.",
+      "morningActivity": "Kufri and Green Valley",
+      "afternoonActivity": "Jakhoo Temple",
+      "eveningActivity": "Free time on Mall Road and The Ridge",
+      "stay": "Standard 3★ hotel in Shimla",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private Cab",
+      "insiderTip": "Jakhoo is a steep walk — proper shoes, and keep phones and food packets out of sight. The monkeys there are practised at both."
+    },
+    {
+      "dayNumber": 3,
+      "title": "Shimla to Manali through the Kullu valley",
+      "location": "Manali",
+      "description": "The long scenic leg, roughly 7 hours along the Beas through the Kullu valley, with stops on the way. Check in at Manali by evening and take it easy on Mall Road.",
+      "morningActivity": "Drive from Shimla through Mandi and the Kullu valley",
+      "eveningActivity": "Check in and evening at Manali Mall Road",
+      "stay": "Standard 3★ hotel in Manali",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private Cab"
+    },
+    {
+      "dayNumber": 4,
+      "title": "Manali local — Hadimba, Vashisht and Old Manali",
+      "location": "Manali",
+      "description": "The 1553 wooden Hadimba Devi Temple in its cedar forest, Manu Temple, the hot sulphur springs at Vashisht, Van Vihar, and the afternoon in Old Manali among the cafés above the river.",
+      "morningActivity": "Hadimba Devi Temple, Manu Temple and Van Vihar",
+      "afternoonActivity": "Vashisht hot springs",
+      "eveningActivity": "Old Manali",
+      "stay": "Standard 3★ hotel in Manali",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private Cab"
+    },
+    {
+      "dayNumber": 5,
+      "title": "Solang Valley, Atal Tunnel and Sissu, then on to Kasol",
+      "location": "Solang, Sissu & Kasol",
+      "description": "Out to Solang Valley first, then through the 9.02 km Atal Tunnel into Lahaul — a completely different landscape on the far side — as far as Sissu and its waterfall. Back down through Kullu in the afternoon and on to Kasol in the Parvati Valley for the night.",
+      "morningActivity": "Solang Valley",
+      "afternoonActivity": "Atal Tunnel to Sissu, Lahaul valley",
+      "eveningActivity": "Drive to Kasol and check in",
+      "stay": "Standard 3★ hotel or riverside property in Kasol",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private Cab",
+      "insiderTip": "The Atal Tunnel stays open through most of the winter, unlike Rohtang. If snow is what you came for and the pass is shut, this is the day that delivers it."
+    },
+    {
+      "dayNumber": 6,
+      "title": "Manikaran Sahib and Chalal village",
+      "location": "Kasol & Manikaran",
+      "description": "Manikaran Sahib Gurudwara and its natural hot springs in the morning, then the short riverside walk across to Chalal village. The rest of the day is deliberately unplanned — Kasol market, the Parvati river, or nothing at all.",
+      "morningActivity": "Manikaran Sahib and the hot springs",
+      "afternoonActivity": "Walk to Chalal village",
+      "eveningActivity": "Kasol market and the riverside",
+      "stay": "Standard 3★ hotel or riverside property in Kasol",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private Cab"
+    },
+    {
+      "dayNumber": 7,
+      "title": "Kasol to Delhi, departure",
+      "location": "Departure",
+      "description": "Breakfast, check out, and the drive back down the valley to Delhi by private cab with refreshment stops along the way. The tour ends on arrival in Delhi.",
+      "morningActivity": "Check out and begin the return drive",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private Cab"
+    }
+  ],
+  "season": "All Season",
+  "seoTitle": "Shimla Manali Kasol Tour Package – Manali Adventure & Sightseeing",
+  "seoDescription": "Shimla, Manali and Kasol in 7 days from Delhi — Kufri, Solang Valley, the Atal Tunnel to Sissu, Manikaran and Chalal. Private cab, 6 nights with breakfast.",
+  "faqs": [
+    {
+      "question": "How many days are needed for Shimla, Manali and Kasol together?",
+      "answer": "Seven days and six nights, which is how this package is built — two nights in each place. It can be done in five, but then Shimla gets a morning instead of a day and you spend most of the holiday in the car. The three are genuinely far apart: Shimla to Manali is about 7 hours and Manali to Kasol another 4 to 5."
+    },
+    {
+      "question": "What does this Shimla Manali Kasol package cost?",
+      "answer": "From ₹15,000 per person on twin sharing, plus 5% GST — roughly ₹30,000 for a couple. That covers 6 nights with breakfast, the private cab for the whole circuit from Delhi and back, tolls, parking and all the sightseeing listed. The figure moves with your dates, hotel category and group size; New Year and the May–June holidays are the dearest weeks of the year."
+    },
+    {
+      "question": "Will we get to see snow on this trip?",
+      "answer": "Between late December and February there is a good chance, most likely at Solang, Kufri and beyond the Atal Tunnel at Sissu rather than in the towns. Nobody can promise snow on specific dates, and an operator who guarantees it is guessing. We will tell you honestly what the forecast looks like before you commit."
+    },
+    {
+      "question": "Is Rohtang Pass included?",
+      "answer": "No. Rohtang needs a separate NGT permit with a strictly limited daily quota, is closed on Tuesdays for maintenance, and is shut by snow from roughly November to May. It can be added at extra cost when it is open and permits are available. Day 5 goes through the Atal Tunnel to Sissu instead, which is open nearly year-round and is the more reliable way to reach the high Lahaul landscape."
+    },
+    {
+      "question": "Is this package good for a family?",
+      "answer": "Yes, and the seven-day length is why. Every stop gets two nights, so there is no packing and unpacking each morning, and the sightseeing sits at a pace children and elderly travellers can manage. Tell us who is travelling — Jakhoo Temple involves a steep climb and the Chalal walk is uneven underfoot, and we will plan around both."
+    },
+    {
+      "question": "Is Kasol worth adding, or should we just do Shimla and Manali?",
+      "answer": "It depends on what you want from the trip. Shimla and Manali are sightseeing; Kasol is where you stop moving. If your group wants a riverside day, Manikaran Sahib and a short village walk, the two extra nights earn their place. If everyone would rather see more and rest less, we will quote the 6-day Shimla–Manali version instead and put the saving back in your pocket."
+    },
+    {
+      "question": "Can this package be customised?",
+      "answer": "Yes. Nights, hotel category, vehicle and sightseeing are all adjustable, and the trip can start from Chandigarh instead of Delhi, which cuts three to four hours off each end. For groups of six or more we switch to a tempo traveller, which usually lowers the per-head cost. Send your dates, headcount and budget and you will get an itemised quote rather than a fixed menu."
+    }
+  ]
+}
