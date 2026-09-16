@@ -378,6 +378,22 @@ function destinationRoute(destination: Destination): RouteSeo {
   );
   const relatedGuides = guidesData.filter((guide) => guide.destinationSlug === destination.slug);
 
+  /**
+   * Other destinations in the same state.
+   *
+   * Himachal Pradesh, Manali and Shimla are three pages about one state, and
+   * until now none of them linked to the others: the state page listed its
+   * packages and stopped, so a "which part of Himachal" visitor had no way
+   * through to the city pages that answer them. Uttarakhand and Chardham Yatra
+   * are the same shape.
+   *
+   * Matching on `state` rather than a hand-maintained list means a new city
+   * page joins the cluster by existing, with nothing to remember to update.
+   */
+  const siblingDestinations = destinationsData.filter(
+    (other) => other.slug !== destination.slug && other.state === destination.state,
+  );
+
   const highlightText = destination.highlights.map((highlight) =>
     typeof highlight === 'string' ? highlight : highlight.title,
   );
@@ -440,6 +456,10 @@ function destinationRoute(destination: Destination): RouteSeo {
       ...relatedPackages.map((pkg) => ({
         label: pkg.title,
         href: `/tour-packages/${pkg.slug}`,
+      })),
+      ...siblingDestinations.map((other) => ({
+        label: `${other.name} travel guide`,
+        href: `/destinations/${other.slug}`,
       })),
       ...relatedGuides.map((guide) => ({ label: guide.title, href: `/guides/${guide.slug}` })),
     ]),

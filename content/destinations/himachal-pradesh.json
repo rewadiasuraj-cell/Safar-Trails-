@@ -1,65 +1,130 @@
 {
   "slug": "himachal-pradesh",
   "name": "Himachal Pradesh",
-  "tagline": "Valley of the Gods — Pine Forests, Snow Passes & Tibetan Monasteries",
+  "tagline": "One State, Six Very Different Trips — Pick the Right One",
   "state": "Himachal Pradesh",
   "heroImage": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1600&auto=format&fit=crop",
   "cardImage": "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=800&auto=format&fit=crop",
-  "shortDescription": "Solang Valley adventure sports, Atal Tunnel drives to Sissu waterfalls, peaceful apple orchards in Old Manali, and colonial charm in Shimla.",
-  "fullOverview": "Himachal Pradesh is North India’s quintessential mountain playground. Whether you seek snow adventures in Solang, river rafting in Beas, the serene spiritual sanctuary of the Dalai Lama in Dharamshala, or the raw rugged passes of Spiti Valley, Himachal captivates every traveler.",
-  "bestTime": "March to June (Summer flowers & cool breeze) | November to February (Snow & winter sports)",
+  "shortDescription": "Himachal is not one destination. Shimla and Manali for a first trip, Dharamshala for quiet, Parvati Valley for a slow one, Spiti for the cold desert — this page helps you choose before you book.",
+  "fullOverview": "Most people book Himachal before deciding which Himachal they mean, and end up with a week of driving. The state runs from colonial Shimla at 2,200 m to the Tibetan-plateau villages of Spiti above 4,000 m, and the regions are genuinely far apart — Shimla to Kaza is two days on the road, not an afternoon. What they share is that almost everything starts from Delhi or Chandigarh. Shimla and Manali are the first-trip pair, and the easiest to combine. Dharamshala and McLeod Ganj are the quieter option. Parvati Valley suits travellers who want to sit still. Spiti is a different kind of trip altogether, and a seasonal one. Pick the region first, then the itinerary — that decision matters more than the hotel category.",
+  "bestTime": "March to June for almost all of the state | December to February for snow, mainly around Manali, Solang and Kufri | July to September is the monsoon, when the hill highways are landslide-prone | Spiti is the exception: June to September via Manali, or Shimla–Kinnaur in the shoulder months",
   "temperatureRange": "-2°C - 24°C",
-  "startingPrice": 13999,
-  "idealDays": "5 to 8 Days",
+  "startingPrice": 7500,
+  "idealDays": "3 Days (Shimla) to 10 Days (Spiti circuit)",
   "rating": 4.8,
   "reviewCount": 1940,
   "isTrending": true,
   "highlights": [
-    "Drive through the engineering marvel Atal Tunnel into Lahaul Valley (Sissu)",
-    "Paragliding, ziplining, and snow quad biking at Solang Valley",
-    "Colonial heritage walk along Shimla Ridge and historic Mall Road",
-    "Café hopping, riverside relaxation, and Tibetan momos in Old Manali & Kasol",
-    "Visit His Holiness the Dalai Lama Temple & Namgyal Monastery in McLeod Ganj"
+    "Shimla and Manali — the first-trip pair, and the easiest two to combine from Delhi",
+    "Dharamshala and McLeod Ganj — the Dalai Lama's residence, Namgyal Monastery and the Triund trek",
+    "Parvati Valley — Kasol, Manikaran Sahib and Tosh, for travellers who want to stay put",
+    "Spiti Valley — cold desert, Key Monastery and Chandratal, on a seasonal road",
+    "Dalhousie, Khajjiar and Chamba — the quieter north, well away from the Kullu highway",
+    "Bir Billing — one of the better-known paragliding sites in the country"
   ],
   "howToReach": {
-    "air": "Kullu-Manali Airport at Bhuntar (KUU), Kangra Airport at Gaggal (DHM), or Chandigarh Airport (IXC) followed by scenic drive.",
-    "rail": "Chandigarh Junction or Kalka (for historic UNESCO toy train to Shimla).",
-    "road": "Smooth four-lane expressway connecting Delhi/Chandigarh to Mandi and Kullu-Manali."
+    "air": "Chandigarh (IXC) is the practical airport for most of Himachal and runs year-round. Kangra at Gaggal (DHM) is closest for Dharamshala and Bir, Bhuntar (KUU) for Kullu and Manali — both are small, and their flights are weather-dependent in winter.",
+    "rail": "Chandigarh, Ambala and Pathankot are the main railheads, depending on which region you are heading for. Kalka is where the UNESCO-listed narrow-gauge line up to Shimla starts.",
+    "road": "The usual approach. Delhi to Shimla is about 7 to 8 hours, Delhi to Manali 12 to 14, Delhi to Dharamshala around 11. Chandigarh cuts three to four hours off any of these, which is why many itineraries start there."
   },
   "topAttractions": [
     {
-      "name": "Solang Valley & Atal Tunnel",
-      "description": "Epic mountain pass leading to glacial waterfalls and thrilling all-season adventure sports.",
+      "name": "Shimla & Kufri",
+      "description": "The colonial hill station and the state capital — Mall Road, The Ridge, Christ Church, and Kufri an hour out. The shortest Himachal trip you can take from Delhi, and the easiest with elderly parents.",
+      "image": "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Manali, Solang & the Atal Tunnel",
+      "description": "Adventure sports at Solang, the 9 km tunnel through to Sissu in Lahaul, Hadimba temple and Old Manali. The busiest part of the state, and the one most packages are built around.",
       "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop"
     },
     {
-      "name": "Shimla Ridge & Jakhoo Temple",
-      "description": "Grand colonial vista points, historic neo-Gothic Christ Church, and giant Hanuman statue.",
+      "name": "Dharamshala & McLeod Ganj",
+      "description": "The Dalai Lama's residence, Namgyal Monastery, Bhagsu waterfall and the Triund trek above the town. Quieter than Manali and a good choice if the crowds are what put you off Himachal.",
+      "image": "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Parvati Valley — Kasol, Manikaran & Tosh",
+      "description": "Riverside villages a few hours south of Manali. Manikaran Sahib has natural hot springs and a langar; Kheerganga is the trek most people come for. Built for staying in one place rather than touring.",
+      "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Spiti Valley",
+      "description": "A cold desert above 4,000 m — Key Monastery, Kaza, Chandratal and some of the highest villages in the country. The Manali approach over Kunzum Pass is open roughly June to September only, so this needs planning around the season.",
+      "image": "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Dalhousie, Khajjiar & Chamba",
+      "description": "The north of the state, reached via Pathankot rather than the Kullu highway. Meadows, deodar forest and old Chamba temples, with a fraction of Manali's traffic.",
+      "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Bir Billing",
+      "description": "One of India's best-known paragliding sites, with a flying season around October–November and again in spring. Also a quiet monastery town in its own right, near Dharamshala.",
       "image": "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=600&auto=format&fit=crop"
     }
   ],
   "stayCategories": [
     {
-      "category": "Apple Orchard Cottages & Chalets",
-      "priceRange": "₹3,000 – ₹7,500 / night",
-      "recommendation": "Wood-fired fireplaces, home-cooked Pahadi meals, and private valley balconies."
+      "category": "Standard 3★ Hotels",
+      "priceRange": "₹2,000 – ₹4,500 / night",
+      "recommendation": "Fine across the state. From November onwards, check whether heating is included or charged as a room heater — the difference shows up on the bill more often than people expect."
     },
     {
-      "category": "Luxury Hill Resorts",
-      "priceRange": "₹6,000 – ₹18,000 / night",
-      "recommendation": "Heated indoor pools, cedar spas, and panoramic snow-peak dining."
+      "category": "Orchard Cottages & Hill Resorts",
+      "priceRange": "₹4,500 – ₹10,000 / night",
+      "recommendation": "Where most package travellers end up in Manali and Dharamshala. Set back from the main road, which is the part worth paying for in peak season."
+    },
+    {
+      "category": "Luxury & Heritage Properties",
+      "priceRange": "₹9,000 – ₹25,000 / night",
+      "recommendation": "Colonial-era buildings in Shimla, river-facing resorts near Manali. Book months ahead for New Year and the May–June holidays."
+    },
+    {
+      "category": "Homestays & Guesthouses",
+      "priceRange": "₹800 – ₹2,500 / night",
+      "recommendation": "The normal option in Spiti, Parvati Valley and the smaller villages, where full hotels barely exist. Expect simple rooms and shared meals rather than service."
     }
   ],
   "travelTips": [
-    "Rohtang Pass permits must be booked in advance as daily vehicle quotas are strictly limited by NGT.",
-    "Carry motion-sickness medication if you are prone to dizziness on winding mountain roads."
+    "Pick the region before the dates. Shimla, Manali, Dharamshala, Parvati and Spiti are separate trips — trying to combine more than two means most of the holiday happens in the car.",
+    "Rohtang Pass needs an NGT permit with a strictly limited daily vehicle quota, is closed on Tuesdays for maintenance, and is shut by snow from around November to May. The Atal Tunnel is the year-round way to reach snow.",
+    "Spiti is the one region that genuinely closes. The Manali–Kunzum road is open roughly June to September; outside that it is the long Shimla–Kinnaur approach, and only for travellers who know what they are taking on.",
+    "Avoid July to September where you can. The Kullu–Manali and Chandigarh–Shimla highways are landslide-prone through the monsoon and delays are routine.",
+    "Distances read shorter than they drive. Allow for hill roads, not highway speeds, and do not plan a long drive and sightseeing on the same day.",
+    "Carry motion-sickness medication if you are prone to it — most of these routes are continuous switchbacks.",
+    "Spiti, Rohtang and Chandratal are high enough for altitude to affect some people. Gain height slowly and keep a spare day in the plan."
   ],
   "faqs": [
     {
-      "question": "When can we see snow in Manali?",
-      "answer": "Snowfall typically occurs in Manali town from late December through February. Snow is accessible in higher reaches like Solang, Atal Tunnel North Portal, and Rohtang from November through April."
+      "question": "Which part of Himachal should I visit?",
+      "answer": "For a first trip, Shimla and Manali — they are the easiest to reach, they combine well, and the sightseeing is straightforward. For somewhere quieter, Dharamshala and McLeod Ganj. If you would rather stay in one place than tour, Parvati Valley around Kasol. Spiti is the most rewarding and the hardest — a cold desert above 4,000 m on a seasonal road, and not a first Himachal trip. Tell us how many days you have and we will match the region to them."
+    },
+    {
+      "question": "How many days do I need for Himachal?",
+      "answer": "It depends entirely on the region. Shimla works as a 3-day trip from Delhi. Shimla and Manali together need 5 to 6. Dharamshala is about 5. A proper Spiti circuit is 8 to 10 and should not be rushed. Anyone selling you four regions in a week is selling you a car journey."
+    },
+    {
+      "question": "Can I cover Shimla, Manali and Dharamshala in one trip?",
+      "answer": "You can, but we usually advise against it in under eight days. Shimla to Manali is roughly 7 hours and Manali to Dharamshala another 8, so a week-long version leaves you with about a day in each place. Two of the three, over 6 days, is the better trip — and it costs less."
+    },
+    {
+      "question": "What is the best time to visit Himachal?",
+      "answer": "March to June is the main season across the state — pleasant weather and the busiest weeks with families. December to February for snow, mostly around Manali, Solang and Kufri. July to September is the monsoon: greener and cheaper, but the hill highways are landslide-prone. Spiti runs to its own calendar, June to September via Manali."
+    },
+    {
+      "question": "Where can we actually see snow in Himachal?",
+      "answer": "Realistically late December to February, and more reliably at Solang, Kufri and beyond the Atal Tunnel at Sissu than in the towns themselves. Nobody can promise snow on specific dates, and an operator who guarantees it is guessing. We will tell you what the forecast looks like before you commit, and plan the snow day around the Atal Tunnel rather than Rohtang, which is closed all winter."
+    },
+    {
+      "question": "Is Himachal suitable for families and elderly parents?",
+      "answer": "Shimla and Dharamshala are the easiest — shorter drives, gentler altitude, and sightseeing you can do at a slow pace. Manali is fine too if the driving days are spaced out. Spiti and the higher Parvati treks are not, because of the altitude and the state of the roads. Tell us who is travelling and we will plan around it rather than sell you the standard itinerary."
+    },
+    {
+      "question": "What does a Himachal tour package cost?",
+      "answer": "Our 3-day Shimla trip starts at ₹7,500 per person on twin sharing and the 6-day Shimla–Manali–Kasol itinerary at ₹14,499, both plus 5% GST, with hotels, meals as listed and a private vehicle throughout. The figure moves with your dates, hotel category, group size and vehicle — New Year and the May–June holidays are the dearest weeks of the year. Send your dates and headcount and you will get an itemised quote."
     }
   ],
-  "seoTitle": "Himachal Tour Packages 2026 | Manali, Shimla, Dharamshala & Spiti Trips",
-  "seoDescription": "Book all-inclusive Himachal tour packages with private cab, hotel stays, adventure activities in Solang, and 24/7 travel concierge."
+  "seoTitle": "Himachal Tour Packages | Which Region to Pick & What It Costs",
+  "seoDescription": "Himachal is not one destination. Compare Shimla, Manali, Dharamshala, Parvati Valley and Spiti — how long each needs, when to go and what a package costs."
 }
