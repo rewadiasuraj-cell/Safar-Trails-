@@ -67,6 +67,12 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://safartrails.co.in/destinations/manali</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://safartrails.co.in/destinations/northeast-india</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>

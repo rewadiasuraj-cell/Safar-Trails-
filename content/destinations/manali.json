@@ -1,0 +1,126 @@
+{
+  "slug": "manali",
+  "name": "Manali",
+  "tagline": "Apple Orchards, the Atal Tunnel to Lahaul & Solang Valley Adventure",
+  "state": "Himachal Pradesh",
+  "heroImage": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1600&auto=format&fit=crop",
+  "cardImage": "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=800&auto=format&fit=crop",
+  "shortDescription": "Solang Valley paragliding, the 9 km Atal Tunnel through to Sissu in Lahaul, the wooden Hadimba temple in deep cedar forest, and Old Manali's cafés along the Beas.",
+  "fullOverview": "Manali sits at the head of the Kullu valley, where the apple orchards stop and the high Himalaya begins. It is the base for most of what people come to Himachal for: Solang Valley for paragliding and the ropeway, Rohtang and the Atal Tunnel for snow, Parvati Valley and Kasol a couple of hours south. The town itself splits in two — Old Manali with its cafés and guesthouses above the river, and the busier main Manali around the Mall. It is roughly 12 to 14 hours by road from Delhi, or about 8 from Chandigarh, which is why most itineraries build in a night at Shimla on the way up rather than driving it in one go.",
+  "bestTime": "March to June (pleasant, and the busiest family season) | December to February (cold, with snow around Solang and through the Atal Tunnel) | July to September brings the monsoon — the Kullu–Manali highway is landslide-prone, so check conditions before travelling",
+  "temperatureRange": "-4°C - 25°C",
+  "startingPrice": 14499,
+  "idealDays": "5 to 6 Days",
+  "highlights": [
+    "Solang Valley — paragliding, zorbing, the ropeway and snow activities in season",
+    "The 9.02 km Atal Tunnel through to Sissu and the Lahaul valley beyond",
+    "Hadimba Devi Temple, a 16th-century wooden temple in cedar forest",
+    "Vashisht hot sulphur springs and the old temple above them",
+    "Old Manali's cafés, and the Manu Temple walk above the village",
+    "Kasol, Manikaran Sahib and the Parvati Valley, an easy add-on to the south"
+  ],
+  "howToReach": {
+    "air": "Bhuntar (Kullu–Manali Airport, KUU) is the closest at about 50 km, but it has few flights and they are weather-dependent in winter. Chandigarh (IXC) is the reliable option — about 310 km, with a road transfer of roughly 8 hours.",
+    "rail": "There is no railway station at Manali. Chandigarh and Ambala are the practical railheads; Joginder Nagar's narrow-gauge line is scenic but too slow to be useful for most trips.",
+    "road": "Roughly 530 km and 12 to 14 hours from Delhi, or about 8 hours from Chandigarh, up the Kullu valley along the Beas. Volvo buses run overnight from Delhi; most package travellers split the drive with a night at Shimla."
+  },
+  "topAttractions": [
+    {
+      "name": "Solang Valley",
+      "description": "About 13 km from town, and the centre of Manali's adventure sports — paragliding, zorbing and the ropeway in summer, snow activities in winter. Operators charge on the spot, so agree the price before you start.",
+      "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Atal Tunnel & Sissu",
+      "description": "The 9.02 km tunnel under the Rohtang ridge opens into Lahaul — a completely different, barer landscape on the far side. Sissu and its waterfall sit just beyond. Unlike Rohtang, the tunnel usually stays open through winter.",
+      "image": "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Hadimba Devi Temple",
+      "description": "A four-tiered wooden temple from 1553, set in a deodar forest a short walk from the Mall. Quietest early in the morning, before the tour groups arrive.",
+      "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Vashisht Hot Springs",
+      "description": "Natural sulphur springs across the river from Manali, with an old stone temple above them and public bathing tanks. Combines easily with the Old Manali afternoon.",
+      "image": "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Old Manali",
+      "description": "Up the hill from the main town — guesthouses, cafés and the Manu Temple walk, on a slower street than the Mall. Most of its cafés shut down between December and February.",
+      "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Rohtang Pass",
+      "description": "At about 3,980 m, usually open May to November and closed by snow the rest of the year. Entry needs an NGT permit with a strict daily vehicle quota, so it has to be arranged in advance.",
+      "image": "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "name": "Kasol & Manikaran Sahib",
+      "description": "Parvati Valley, about 3 hours south. Manikaran Sahib Gurudwara has natural hot springs and a langar; Kasol is the riverside village travellers stop in. Usually added on the drive back.",
+      "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop"
+    }
+  ],
+  "stayCategories": [
+    {
+      "category": "Standard 3★ Hotels",
+      "priceRange": "₹2,500 – ₹4,500 / night",
+      "recommendation": "Fine for a shorter trip. Check that heating is actually included from November onwards — many list it and then charge for a room heater."
+    },
+    {
+      "category": "Orchard Resorts & Cottages",
+      "priceRange": "₹4,500 – ₹10,000 / night",
+      "recommendation": "What most package travellers end up in. Set back among the apple orchards rather than on the main road, which is the difference worth paying for in peak season."
+    },
+    {
+      "category": "Luxury Resorts & Riverside Properties",
+      "priceRange": "₹9,000 – ₹25,000 / night",
+      "recommendation": "Heated pools, spas and river-facing rooms. Book months ahead for New Year and the May–June holidays."
+    }
+  ],
+  "travelTips": [
+    "Rohtang Pass needs an NGT permit and the daily vehicle quota is strictly limited — it has to be booked in advance, and the pass is closed on Tuesdays for maintenance.",
+    "The Atal Tunnel is the dependable way to reach snow. It usually stays open when Rohtang is shut, so a winter trip that promises snow should be planning around Sissu, not Rohtang.",
+    "Adventure activities at Solang are paid to the operators directly and are not part of any package price. Agree the rate before you start, not after.",
+    "Rohtang and Sissu are high enough that altitude affects some people. Go up slowly, keep water on you, and do not plan anything strenuous the same day.",
+    "Avoid July to September if you can. The Kullu–Manali highway is landslide-prone in the monsoon and delays are common.",
+    "Carry warm clothing from October onwards, and proper shoes if there is any chance of snow — the rental gear at Solang is basic.",
+    "Book early for New Year and the May–June school holidays. These are the most expensive and most crowded weeks of the year in Manali."
+  ],
+  "faqs": [
+    {
+      "question": "How many days do you need for Manali?",
+      "answer": "Five to six days works best from Delhi, because the road journey is 12 to 14 hours each way. That gives you a night at Shimla on the way up, two or three days in Manali for Solang, the Atal Tunnel and local sightseeing, and Kasol on the way back. Four nights starting from Chandigarh is the shortest version we would actually recommend."
+    },
+    {
+      "question": "Is there a Manali tour package from Delhi?",
+      "answer": "Yes — our 6-day package picks up in Delhi or Chandigarh and drops you back, so the road journey both ways is already included, by private AC vehicle with a mountain driver. Fuel, tolls, parking and driver allowances are covered. If you would rather come by Volvo bus and start the tour in Manali, we can quote that version instead."
+    },
+    {
+      "question": "What does a Manali package cost?",
+      "answer": "Our 6-day package starts at ₹14,499 per person on twin sharing, plus 5% GST, for 5 nights with breakfast and dinner and a private vehicle throughout. The final figure moves with your dates, hotel category, group size and vehicle. Packages advertised around ₹5,000 are usually 2-day trips on a shared bus with basic rooms and no meals — a different product, and worth knowing before you compare."
+    },
+    {
+      "question": "When can we see snow in Manali?",
+      "answer": "Snow usually falls in Manali town from late December through February, and lies longer at Solang and beyond the Atal Tunnel at Sissu. Nobody can promise it on specific dates. What we can do is tell you what the forecast looks like before you commit, and plan the Sissu day rather than Rohtang — the tunnel stays open when the pass does not."
+    },
+    {
+      "question": "Is Rohtang Pass always open?",
+      "answer": "No. It is usually open from around May to November and closed by snow for the rest of the year, and it needs an NGT permit with a limited daily vehicle quota that must be arranged in advance. It is also shut on Tuesdays for maintenance. For a winter trip, the Atal Tunnel to Sissu is the reliable alternative."
+    },
+    {
+      "question": "Is Manali good for a family?",
+      "answer": "Yes, and it is one of the trips families book most. The sightseeing — Hadimba, Vashisht, Old Manali, Solang — sits at an unhurried pace, and the stays are orchard resorts with breakfast and dinner. Travelling with elderly parents or small children, tell us and we will space the driving days out and pick hotels with easier access."
+    },
+    {
+      "question": "Is Manali good for a honeymoon?",
+      "answer": "It works well for couples. Transport is a private vehicle rather than a shared coach, the resorts sit among the orchards rather than on the main road, and the Atal Tunnel drive into Lahaul is the day most couples remember. A candlelight dinner, room decoration or a premium cottage can be added — ask when you enquire."
+    },
+    {
+      "question": "Can a Manali package be customised?",
+      "answer": "Yes. Nights, hotel category, vehicle and sightseeing are all adjustable, and the trip can start from Chandigarh instead of Delhi. For groups of six or more we switch to a tempo traveller, which usually lowers the per-head cost. Send your dates, headcount and budget and you will get an itemised quote rather than a fixed menu."
+    }
+  ],
+  "seoTitle": "Manali Travel Guide | Places to Visit, Best Time & Cost",
+  "seoDescription": "Plan a Manali trip — Solang Valley, the Atal Tunnel to Sissu, Hadimba Temple and Old Manali, how to reach, best time to visit and what a package costs. From ₹14,499."
+}
