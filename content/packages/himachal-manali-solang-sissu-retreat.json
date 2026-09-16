@@ -20,20 +20,21 @@
   "ratings": 4.8,
   "reviewCount": 260,
   "startingCity": "Chandigarh or Delhi Pickup",
-  "bestFor": "Snow Lovers, Adventure Seekers & Families",
+  "bestFor": "Travellers Who Want Manali Itself — Snow, Adventure & Families",
   "heroImage": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop",
   "galleryImages": [
     "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=800&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=800&auto=format&fit=crop"
   ],
-  "overview": "Breathe in crisp cedar mountain air on this 6-day holiday. Drive through the historic Atal Tunnel into Lahaul’s Sissu waterfalls, soar on paragliders in Solang, and relax in scenic wooden chalets amidst apple orchards in Manali.",
+  "overview": "A Manali trip that actually stays in Manali — three of your five nights are there, in 4★ apple-orchard resorts with breakfast and dinner included. Shimla on the way up and Kasol on the way back are one night each, so you get the drive without losing the days. Solang, the Atal Tunnel through to Sissu, Hadimba and Old Manali all have room to breathe. If you would rather split the week evenly across all three towns, our 7-day Shimla Manali Kasol package does that instead.",
   "highlights": [
-    "3 Nights in Manali + 1 Night in Shimla + 1 Night in Kasol / Kullu",
-    "Drive through engineering wonder Atal Tunnel to Sissu, Lahaul Valley",
+    "3 nights in Manali — this is a Manali trip, not a three-city dash",
+    "Deluxe 4★ resorts with daily breakfast AND dinner included",
+    "Drive through the Atal Tunnel to Sissu in the Lahaul valley",
     "Solang Valley adventure sports and snow activities",
-    "River rafting in Beas river, Kullu",
-    "Hadimba Temple, Vashisht Hot Springs & Old Manali cafes",
-    "Daily breakfast and dinner included"
+    "River rafting on the Beas at Kullu",
+    "Hadimba Temple, Vashisht hot springs and the Old Manali cafés",
+    "1 night each in Shimla and Kasol, so the route is covered without rushing Manali"
   ],
   "inclusions": [
     "5 Nights stay in handpicked 3★/4★ mountain resorts",
@@ -120,7 +121,13 @@
   "season": "All Season",
   "isFeatured": true,
   "isPopular": true,
+  "seoTitle": "Manali Tour Package | 3 Nights in Manali, 4★ With Dinner",
+  "seoDescription": "A Manali trip that stays in Manali — 3 of 5 nights there, 4★ resorts with breakfast and dinner, Solang, Atal Tunnel to Sissu. From ₹14,499 per person +5% GST.",
   "faqs": [
+    {
+      "question": "What is the difference between this and your Shimla Manali Kasol package?",
+      "answer": "Where the nights go. This one puts 3 of its 5 nights in Manali, with a single night each in Shimla and Kasol — it is a Manali holiday that picks the other two up on the way. The 7-day Shimla Manali Kasol package splits the nights evenly, 2 in each, so you see all three properly but get one less day in Manali. This package is 4★ with breakfast and dinner; that one is 3★ with breakfast, which is most of the price difference. Pick this if Manali is the point, that one if the three towns are."
+    },
     {
       "question": "Is there a Manali tour package from Delhi?",
       "answer": "Yes. This package picks you up in Delhi or Chandigarh and drops you back at the end, so the road journey both ways is already part of it. Travel is by private AC vehicle with a mountain driver, and fuel, tolls, parking, permits and the driver's allowances are included. If you would rather come by Volvo bus and start the tour in Manali, we can quote that version instead."
