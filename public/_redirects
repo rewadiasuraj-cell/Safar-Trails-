@@ -42,8 +42,29 @@ http://www.safartrails.co.in/* https://safartrails.co.in/:splat 301!
 # These 301s exist because /packages/<slug> URLs were in the sitemap Google read
 # before the migration and may hold history. First match wins, so the one slug
 # that does not map across by name is listed before the catch-all.
+#
+# The two rules directly below MUST stay above the catch-all.
+#
+# /packages is the packages listing page - a prerendered file at
+# packages/index.html, and one of the 50 URLs in the sitemap. An earlier comment
+# here claimed it "is a prerendered file that the rules never reach", on the
+# assumption that a matching static asset always beats a non-forced rule. That
+# was wrong: /packages/* swallowed the bare /packages too, sending it to
+# /tour-packages/, which is not a page, and the listing served a 404 to both
+# visitors and Googlebot. Google reported it as "Not found (404)" on inspection.
+#
+# Rewriting to the file explicitly, ahead of the catch-all, makes the listing
+# independent of how Pages resolves directories or empty splats.
+/packages                         /packages/index.html                                                                 200
+/packages/                        /packages/index.html                                                                 200
 /packages/chardham-yatra-package  /tour-packages/chardham-yatra-haridwar-yamunotri-gangotri-kedarnath-badrinath-10d9n  301
 /packages/*                       /tour-packages/:splat                                                                301
+
+# /tour-packages has no listing of its own - /packages is it. Without these, the
+# SPA fallback below answers 200 with the app shell for a URL that names nothing,
+# which is a soft 404. Same reason they sit above that rule.
+/tour-packages                    /packages                                                                            301
+/tour-packages/                   /packages                                                                            301
 
 # --- SPA fallback for client-routed detail pages ----------------------------
 # Scoped deliberately to these prefixes. A blanket "/* /index.html 200" would

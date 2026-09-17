@@ -61,7 +61,122 @@ function readRedirectPatterns(): RegExp[] {
     );
 }
 
+/**
+ * Every rule in _redirects, in file order, with its status.
+ *
+ * Order matters here where readRedirectPatterns() can ignore it: Cloudflare
+ * Pages applies the FIRST matching rule, so a 200 rewrite listed above a 301
+ * protects a path from it. A check that ignored order would report a false
+ * positive for exactly the fix that makes /packages work.
+ */
+function readOrderedRules(): {
+  pattern: RegExp;
+  status: string;
+  source: string;
+  target: string;
+}[] {
+  if (!fs.existsSync(REDIRECTS)) return [];
+
+  return fs
+    .readFileSync(REDIRECTS, 'utf8')
+    .split('\n')
+    .map((line) => line.trim())
+    .filter((line) => line && !line.startsWith('#'))
+    .map((line) => line.split(/\s+/))
+    .filter((parts) => parts[0]?.startsWith('/') && parts.length >= 3)
+    .map((parts) => ({
+      source: parts[0],
+      target: parts[1],
+      status: parts[2].replace('!', ''),
+      pattern: new RegExp(
+        `^${parts[0].replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*')}$`,
+      ),
+    }));
+}
+
+/**
+ * Nothing we publish may redirect away from itself.
+ *
+ * /packages shipped broken for days exactly this way. It is a prerendered page
+ * and sits in the sitemap, but the `/packages/* -> /tour-packages/:splat` rule
+ * below it also matched the bare /packages, so the listing 301'd to a URL that
+ * does not exist and served a 404 to visitors and to Googlebot. The existing
+ * baseline check could not see it: that one asks whether URLs have been dropped
+ * from the sitemap, and this URL was present the whole time.
+ *
+ * So: take what we are actually asking Google to index, and confirm the edge
+ * will answer each one with a page rather than send it somewhere else.
+ */
+function checkSitemapIsServable(built: string[]): string[] {
+  const rules = readOrderedRules();
+  const problems: string[] = [];
+
+  for (const url of built) {
+    const urlPath = url.replace(SITE, '') || '/';
+
+    /*
+     * Both spellings, because the edge moves between them on its own.
+     *
+     * /packages is what the sitemap says and what a naive reading of
+     * `/packages/*` does not match - the pattern needs the slash. The edge
+     * resolves the directory to /packages/ first, and THAT matches the wildcard
+     * with an empty splat. Checking only the sitemap spelling is what let this
+     * ship: the rule looked like it could not apply, and it did.
+     */
+    const spellings = urlPath === '/' ? ['/'] : [urlPath, `${urlPath}/`];
+
+    const shadowed = spellings
+      .map((spelling) => ({ spelling, rule: rules.find((r) => r.pattern.test(spelling)) }))
+      .find(
+        ({ rule }) =>
+          rule &&
+          /^3\d\d$/.test(rule.status) &&
+          // A trailing-slash rule that points back at this same path is
+          // canonicalisation, not shadowing - /about-us/ -> /about-us is
+          // exactly what we want. Only a redirect to somewhere ELSE is a bug.
+          rule.target !== urlPath,
+      );
+
+    if (shadowed?.rule) {
+      problems.push(
+        `${urlPath} is in the sitemap but "${shadowed.rule.source}" ` +
+          `${shadowed.rule.status}s ${shadowed.spelling} away`,
+      );
+      continue;
+    }
+
+    const firstMatch = rules.find((rule) => rule.pattern.test(urlPath));
+
+    // A 200 rewrite is fine - it names the file to serve. Otherwise the
+    // prerendered file has to be there, or the edge has nothing to answer with.
+    if (!firstMatch || firstMatch.status !== '200') {
+      const file =
+        urlPath === '/'
+          ? path.join(ROOT, 'dist', 'index.html')
+          : path.join(ROOT, 'dist', urlPath, 'index.html');
+      if (!fs.existsSync(file)) {
+        problems.push(`${urlPath} is in the sitemap but ${path.relative(ROOT, file)} was not built`);
+      }
+    }
+  }
+
+  return problems;
+}
+
 function main(): void {
+  const servable = checkSitemapIsServable(readBuiltUrls());
+  if (servable.length) {
+    console.error(`\n[urls] ${servable.length} URL(s) in the sitemap will not serve a page:\n`);
+    for (const problem of servable) console.error(`         ${problem}`);
+    console.error(
+      '\n       A URL we submit to Google has to answer with its own page. Move the\n' +
+        '       rule in public/_redirects below a 200 rewrite for this path, or take\n' +
+        '       the URL out of the sitemap.\n',
+    );
+    process.exit(1);
+  }
+  console.log('[urls] Every sitemap URL serves its own page.');
+
   if (!fs.existsSync(BASELINE)) {
     console.warn(
       '[urls] No content/.sitemap-baseline.txt, so there is nothing to compare against.\n' +
