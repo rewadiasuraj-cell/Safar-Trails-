@@ -137,26 +137,26 @@ export const ORGANIZATION_RATING_ENABLED = false;
 export const ORGANIZATION_RATING = { ratingValue: '4.9', reviewCount: '127' };
 
 /**
- * GST on tour packages, and how the site says so.
+ * Tax, and how the site says so.
  *
- * Every price in content/ is the pre-tax, per-person, twin-sharing rate. GST is
- * charged on top at 5%, and until now the site said that nowhere: a visitor read
- * "₹14,499", enquired, and met ₹15,224 in the quote. That is the definition of a
- * hidden extra on a site whose own copy promises "transparent pricing, no hidden
- * extras", and it is the moment an enquiry goes cold.
+ * Prices in content/ are what the customer pays. Tax is inside the number, not
+ * added at the quote, and every price on the site carries this note so that is
+ * unambiguous.
  *
- * So the note travels with the number. One constant, so a rate change is one
- * edit and the pages cannot disagree with each other.
+ * It used to be the other way round - prices were pre-tax and the site added
+ * "+5% GST" next to them. Changed on the owner's instruction, and it matches
+ * how the packages are briefed: the Manali brief lists "Applicable taxes" under
+ * inclusions and quotes one all-in figure.
  *
- * If the rate changes, update GST_RATE and GST_NOTE together, and re-check the
- * prices published on the Google Business Profile - those are entered
- * tax-inclusive, because Google's Activities editor asks for the total.
+ * Whatever this says, the number beside it and the figures written into FAQs
+ * and package copy have to agree. The pre-tax version drifted exactly there,
+ * which is why the note is one constant rather than a phrase typed per page.
+ *
+ * Prices on the Google Business Profile are entered tax-inclusive too, because
+ * Google's Activities editor asks for the total - so those now match the site
+ * directly and need no conversion.
  */
-export const GST_RATE = 0.05;
-export const GST_NOTE = '+5% GST';
-
-/** The tax-inclusive total a customer actually pays, rounded to the rupee. */
-export const priceWithGst = (base: number): number => Math.round(base * (1 + GST_RATE));
+export const GST_NOTE = 'including tax';
 
 /** Absolute-URL helper that tolerates paths with or without a leading slash. */
 export function absoluteUrl(pathname: string): string {

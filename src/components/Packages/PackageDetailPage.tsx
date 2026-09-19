@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { packagesData } from '../../data/packagesData';
-import { GST_NOTE, priceWithGst } from '../../lib/seo/siteConfig';
+import { GST_NOTE } from '../../lib/seo/siteConfig';
 import { WhatsAppIcon } from '../WhatsAppIcon';
 import { AIIcon } from '../AIIcon';
 import {
@@ -178,12 +178,9 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
           </div>
           <div className="text-right">
             <span className="text-[10px] text-gray-400 block uppercase tracking-wider">Total ({travellersCount} Guests)</span>
+            {/* One figure, because it is now the payable one. This used to print
+                the pre-tax total and a second "with GST" line underneath. */}
             <span className="text-xs font-bold text-black">₹{estimatedTotalPrice.toLocaleString('en-IN')}</span>
-            {/* The pre-tax total is the headline, so the payable figure is spelled
-                out rather than left for the quote to reveal. */}
-            <span className="block text-[10px] text-gray-500 font-normal">
-              ₹{priceWithGst(estimatedTotalPrice).toLocaleString('en-IN')} with GST
-            </span>
           </div>
         </div>
       </div>

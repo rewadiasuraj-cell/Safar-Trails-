@@ -22,7 +22,6 @@ import {
   GOOGLE_MAPS_URL,
   SITE_URL,
   SOCIAL_PROFILES,
-  GST_RATE,
   absoluteUrl,
 } from './siteConfig';
 
@@ -190,19 +189,19 @@ export function touristTripSchema(pkg: Package, canonicalPath: string): JsonLd {
       priceCurrency: 'INR',
       availability: 'https://schema.org/InStock',
       url,
-      // The stored price is the pre-tax, twin-sharing rate; GST is charged on
-      // top. Saying so in the markup keeps the structured data honest about a
-      // number a shopper would otherwise read as the total, and matches what
-      // the page itself now prints next to it.
+      // The stored price includes tax, so the markup says so. This has to track
+      // GST_NOTE and the price printed on the page: a shopper who sees one
+      // figure in a search result and a different one on the page is the exact
+      // failure this field exists to prevent.
       priceSpecification: {
         '@type': 'PriceSpecification',
         price: String(pkg.startingPrice),
         priceCurrency: 'INR',
-        valueAddedTaxIncluded: false,
+        valueAddedTaxIncluded: true,
       },
       description:
         `Starting price per person on twin sharing for a ${pkg.durationNights}N/${pkg.durationDays}D ` +
-        `${pkg.destination} package, before ${Math.round(GST_RATE * 100)}% GST.`,
+        `${pkg.destination} package, including tax.`,
     },
   };
 
