@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, MapPin, Users, Calendar, ChevronDown, ShieldCheck, BadgeCheck } from 'lucide-react';
+import { ArrowRight, MapPin, Users, Calendar, ChevronDown } from 'lucide-react';
 import { AIIcon } from './AIIcon';
 import { trackAIPlanRequested } from '../lib/analytics';
 
@@ -31,8 +31,27 @@ const SLIDE_INTERVAL_MS = 5000;
 
 const DURATION_OPTIONS = ['Trip duration', '3-4 Days', '5-7 Days', '8-10 Days', '10+ Days'];
 
+/**
+ * Split hero: words on cream to the left, photograph to the right.
+ *
+ * This used to be a full-bleed dark photo with a near-opaque navy gradient
+ * poured over the whole left two-thirds so white text would sit on it. That
+ * made the first screen a solid dark block - and it meant the photograph,
+ * the one thing actually selling a holiday, was only visible in the corner
+ * the text did not reach.
+ *
+ * Now the copy sits on the page's own cream with no scrim at all, and the
+ * photograph gets its own half at full strength. Contrast stops depending on
+ * how bright a given slide happens to be, which is the bug that scrim existed
+ * to paper over: measured on ivory, the headline is 16.38:1, the green second
+ * line 9.41:1, the body 9.62:1 and the eyebrow 4.71:1.
+ *
+ * On phones there is no room for two columns, so the photo sits above the
+ * copy rather than behind it - still no text over an image.
+ */
 export const HeroSection: React.FC<HeroSectionProps> = ({
-  onStartAIPlan
+  onStartAIPlan,
+  onExplorePackages
 }) => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [destination, setDestination] = useState('');
@@ -60,133 +79,149 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   };
 
   return (
-    <section id="hero-section" className="relative w-full pt-24 sm:pt-28 pb-16 sm:pb-20 lg:pt-32 lg:pb-24 overflow-hidden bg-midnight-blue text-white">
-      {/* Background Slider: full-bleed, edge-to-edge autoplay carousel */}
-      <div className="absolute inset-0 z-0 w-full h-full">
-        {HERO_SLIDES.map((slide, i) => (
-          <img
-            key={slide.src}
-            src={slide.src}
-            alt={slide.alt}
-            className={`absolute inset-0 w-full h-full object-cover object-right md:object-center transition-opacity duration-1000 ease-in-out ${
-              i === activeSlide ? 'opacity-100' : 'opacity-0'
-            }`}
-            loading={i === 0 ? 'eager' : 'lazy'}
-            fetchPriority={i === 0 ? 'high' : 'auto'}
-          />
-        ))}
-        {/* Editorial Gradient Overlays for optimal text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-midnight-blue/95 via-midnight-blue/75 to-transparent sm:w-3/4 lg:w-3/5" />
-        <div className="absolute inset-0 bg-gradient-to-t from-midnight-blue via-transparent to-midnight-blue/30 lg:hidden" />
-      </div>
+    <section id="hero-section" className="relative w-full bg-ivory overflow-hidden">
+      <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-20 sm:pt-24 lg:pt-28">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.05fr] gap-8 lg:gap-12 items-center">
 
-      <div className="relative z-10 w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
-        <div className="max-w-2xl lg:max-w-3xl">
-          {/* Main Editorial Headline. The gold overline is part of the H1 so the
-              page's only heading-level-1 carries the head keyword. */}
-          <h1 className="font-serif text-white tracking-tight mb-4">
-            <span className="block text-luxury-gold text-xs sm:text-[13px] font-sans-ui font-extrabold uppercase tracking-[0.25em] mb-3">
-              Custom India Tour Packages · AI Plans, Experts Perfect
-            </span>
-            <span className="block text-4xl sm:text-6xl lg:text-[68px] leading-[1.08]">
-              Your Journey.
-              <br />
-              {/* Not italic any more. Outfit has no true italic on Google
-                  Fonts, so the browser synthesised an oblique by slanting the
-                  upright - which on a geometric sans reads as a rendering
-                  fault rather than emphasis. The colour change alone carries
-                  the second line, as it does in the reference layout. */}
-              <span className="text-luxury-gold">Our Passion.</span>
-            </span>
-          </h1>
+          {/* ---- Words ---- */}
+          <div className="order-2 lg:order-1 pb-2 lg:pb-10">
+            {/* The eyebrow is inside the h1 so the page's only heading-level-1
+                carries the head keyword. */}
+            <h1 className="font-serif text-stone-900 tracking-tight mb-4">
+              <span className="block text-gold-ink text-[11px] sm:text-xs font-sans-ui font-extrabold uppercase tracking-[0.22em] mb-3">
+                Custom India Tour Packages · AI Plans, Experts Perfect
+              </span>
+              <span className="block text-4xl sm:text-5xl lg:text-[58px] xl:text-[64px] leading-[1.06] font-bold">
+                Your Journey.
+                <br />
+                {/* Green, not gold-on-dark: gold needs a dark surface to be
+                    readable and this one is cream. Not italic either - Outfit
+                    ships no true italic, so the browser fakes one by slanting
+                    the upright. */}
+                <span className="text-deep-emerald">Our Passion.</span>
+              </span>
+            </h1>
 
-          {/* Secondary line */}
-          <p className="text-sm sm:text-base lg:text-[17px] text-stone-300 font-normal leading-relaxed max-w-xl mb-5 text-shadow-xs">
-            Personalized travel planning powered by intelligent AI, refined and verified by seasoned human destination specialists.
-          </p>
-
-          {/* Trust Badges Row */}
-          <div className="flex items-center gap-6 sm:gap-8 mb-7 sm:mb-8">
-            <div className="flex flex-col items-center gap-1.5">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center">
-                <AIIcon className="w-4 h-4 text-white" aria-hidden="true" />
-              </div>
-              <span className="text-[10px] sm:text-[11px] font-semibold text-stone-300 whitespace-nowrap">AI Powered</span>
-            </div>
-            <div className="flex flex-col items-center gap-1.5">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center">
-                <BadgeCheck className="w-4 h-4 text-white" aria-hidden="true" />
-              </div>
-              <span className="text-[10px] sm:text-[11px] font-semibold text-stone-300 whitespace-nowrap">Expert Verified</span>
-            </div>
-            <div className="flex flex-col items-center gap-1.5">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center">
-                <ShieldCheck className="w-4 h-4 text-white" aria-hidden="true" />
-              </div>
-              <span className="text-[10px] sm:text-[11px] font-semibold text-stone-300 whitespace-nowrap">Trusted</span>
-            </div>
-          </div>
-
-          {/* Plan with AI Card */}
-          <div className="bg-ivory rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-2xl text-stone-900 max-w-xl border border-luxury-gold/30">
-            <h2 className="text-xl sm:text-2xl font-serif font-bold text-stone-900 tracking-tight mb-2">
-              Where do you want to go?
-            </h2>
-
-            <p className="text-sm text-stone-600 leading-relaxed mb-5">
-              Share a few details and we'll create the perfect travel plan for you.
+            <p className="text-sm sm:text-base lg:text-[17px] text-[#44403C] leading-relaxed max-w-lg mb-7">
+              Personalized travel planning powered by intelligent AI, refined and
+              verified by seasoned human destination specialists.
             </p>
 
-            {/* Destination Input */}
-            <div className="relative mb-3">
-              <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400 pointer-events-none" />
+            {/* onExplorePackages was passed in by App.tsx and never destructured,
+                so this hero had no button at all - only the planner form. */}
+            <button
+              id="hero-explore-packages-btn"
+              type="button"
+              onClick={onExplorePackages}
+              className="inline-flex items-center gap-2 bg-warm-orange hover:brightness-95 text-cta-ink font-bold text-sm sm:text-[15px] px-6 sm:px-7 py-3 sm:py-3.5 rounded-full transition-all active:scale-[0.98] shadow-xs cursor-pointer"
+            >
+              <span>Explore Packages</span>
+              <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />
+            </button>
+          </div>
+
+          {/* ---- Photograph ---- */}
+          <div className="order-1 lg:order-2 relative">
+            <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3.4] rounded-3xl lg:rounded-[2rem] overflow-hidden shadow-xl">
+              {HERO_SLIDES.map((slide, i) => (
+                <img
+                  key={slide.src}
+                  src={slide.src}
+                  alt={slide.alt}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+                    i === activeSlide ? 'opacity-100' : 'opacity-0'
+                  }`}
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  fetchPriority={i === 0 ? 'high' : 'auto'}
+                />
+              ))}
+            </div>
+
+            {/* Slide position. Buttons, not dots: a carousel that only advances
+                on a timer gives a visitor no way back to a photo they liked. */}
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 px-2.5 py-1.5 rounded-full bg-black/45 backdrop-blur-xs">
+              {HERO_SLIDES.map((slide, i) => (
+                <button
+                  key={slide.src}
+                  type="button"
+                  onClick={() => setActiveSlide(i)}
+                  aria-label={`Show photo ${i + 1} of ${HERO_SLIDES.length}: ${slide.alt}`}
+                  aria-current={i === activeSlide}
+                  className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                    i === activeSlide ? 'w-5 bg-white' : 'w-1.5 bg-white/55 hover:bg-white/80'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* ---- Search bar, spanning both columns ----
+            One row on desktop, stacked on phones, the way the reference lays
+            it out. Same three fields and the same handler as before; only the
+            arrangement changed. */}
+        <div className="relative mt-8 lg:-mt-4 mb-12 sm:mb-14 lg:mb-16 bg-white rounded-2xl sm:rounded-[1.75rem] border border-[#E7E2DA] shadow-lg p-3 sm:p-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_auto] gap-2.5 lg:gap-0 lg:divide-x lg:divide-[#E7E2DA]">
+            <div className="relative lg:pr-4">
+              <label htmlFor="hero-destination" className="block text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-1 pl-10 lg:pl-9">
+                Where to?
+              </label>
+              <MapPin className="absolute left-3.5 lg:left-3 bottom-2.5 w-4 h-4 text-stone-400 pointer-events-none" aria-hidden="true" />
               <input
+                id="hero-destination"
                 type="text"
                 value={destination}
                 onChange={(e) => setDestination(e.target.value)}
-                placeholder="Where do you want to go?"
-                className="w-full pl-10 pr-3.5 py-3 rounded-xl border border-stone-200 bg-white text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-deep-emerald"
+                placeholder="Any destination"
+                className="w-full pl-10 lg:pl-9 pr-3 py-1.5 bg-transparent text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none"
               />
             </div>
 
-            {/* Travelers & Duration Row */}
-            <div className="grid grid-cols-2 gap-3 mb-5">
-              <div className="relative">
-                <Users className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400 pointer-events-none" />
-                <input
-                  type="number"
-                  min={1}
-                  value={travelers}
-                  onChange={(e) => setTravelers(e.target.value)}
-                  placeholder="Number of travelers"
-                  className="w-full pl-10 pr-3 py-3 rounded-xl border border-stone-200 bg-white text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-deep-emerald"
-                />
-              </div>
-              <div className="relative">
-                <Calendar className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400 pointer-events-none z-10" />
-                <select
-                  value={duration}
-                  onChange={(e) => setDuration(e.target.value)}
-                  className="w-full pl-10 pr-8 py-3 rounded-xl border border-stone-200 bg-white text-sm text-stone-900 focus:outline-none focus:border-deep-emerald appearance-none cursor-pointer"
-                >
-                  {DURATION_OPTIONS.map((opt) => (
-                    <option key={opt} value={opt === 'Trip duration' ? '' : opt}>{opt}</option>
-                  ))}
-                </select>
-                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400 pointer-events-none" />
-              </div>
+            <div className="relative lg:px-4">
+              <label htmlFor="hero-travelers" className="block text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-1 pl-10 lg:pl-11">
+                Travellers
+              </label>
+              <Users className="absolute left-3.5 lg:left-7 bottom-2.5 w-4 h-4 text-stone-400 pointer-events-none" aria-hidden="true" />
+              <input
+                id="hero-travelers"
+                type="number"
+                min={1}
+                value={travelers}
+                onChange={(e) => setTravelers(e.target.value)}
+                placeholder="Add guests"
+                className="w-full pl-10 lg:pl-11 pr-3 py-1.5 bg-transparent text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none"
+              />
             </div>
 
-            <button
-              id="hero-plan-with-ai-btn"
-              type="button"
-              onClick={handlePlanWithAI}
-              className="w-full bg-deep-emerald hover:bg-forest-green text-white px-5 sm:px-6 py-3.5 rounded-xl sm:rounded-2xl transition-all cursor-pointer active:scale-[0.98] shadow-xs flex items-center justify-center gap-2"
-            >
-              <AIIcon className="w-4 h-4 text-white shrink-0" />
-              <span className="font-bold text-sm sm:text-base">Plan with AI</span>
-              <ArrowRight className="w-5 h-5 text-white shrink-0" />
-            </button>
+            <div className="relative lg:px-4">
+              <label htmlFor="hero-duration" className="block text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-1 pl-10 lg:pl-11">
+                Duration
+              </label>
+              <Calendar className="absolute left-3.5 lg:left-7 bottom-2.5 w-4 h-4 text-stone-400 pointer-events-none z-10" aria-hidden="true" />
+              <select
+                id="hero-duration"
+                value={duration}
+                onChange={(e) => setDuration(e.target.value)}
+                className="w-full pl-10 lg:pl-11 pr-8 py-1.5 bg-transparent text-sm text-stone-900 focus:outline-none appearance-none cursor-pointer"
+              >
+                {DURATION_OPTIONS.map((opt) => (
+                  <option key={opt} value={opt === 'Trip duration' ? '' : opt}>{opt}</option>
+                ))}
+              </select>
+              <ChevronDown className="absolute right-2 bottom-2.5 w-4 h-4 text-stone-400 pointer-events-none" aria-hidden="true" />
+            </div>
+
+            <div className="lg:pl-4 flex items-end">
+              <button
+                id="hero-plan-with-ai-btn"
+                type="button"
+                onClick={handlePlanWithAI}
+                className="w-full lg:w-auto bg-deep-emerald hover:bg-forest-green text-white px-6 py-3 rounded-xl sm:rounded-2xl lg:rounded-full transition-all cursor-pointer active:scale-[0.98] flex items-center justify-center gap-2 whitespace-nowrap"
+              >
+                <AIIcon className="w-4 h-4 text-white shrink-0" aria-hidden="true" />
+                <span className="font-bold text-sm">Plan with AI</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
