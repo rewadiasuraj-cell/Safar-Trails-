@@ -3,166 +3,158 @@
   "slug": "himachal-manali-solang-sissu-retreat",
   "displayOrder": 2,
   "title": "Manali Tour Package",
-  "destination": "Himachal Pradesh",
+  "destination": "Manali, Himachal Pradesh",
   "destinationSlug": "manali",
   "state": "Himachal Pradesh",
-  "durationDays": 6,
-  "durationNights": 5,
-  "startingPrice": 14499,
-  "originalPrice": 18000,
+  "durationDays": 4,
+  "durationNights": 3,
+  "startingPrice": 10000,
   "tripType": [
-    "Family",
     "Couple",
-    "Adventure",
-    "Friends"
+    "Honeymoon",
+    "Family",
+    "Friends",
+    "Adventure"
   ],
-  "hotelCategory": "Deluxe 4★",
-  "ratings": 4.8,
-  "reviewCount": 260,
-  "startingCity": "Chandigarh or Delhi Pickup",
-  "bestFor": "Travellers Who Want Manali Itself — Snow, Adventure & Families",
+  "hotelCategory": "Standard 3★",
+  "ratings": 0,
+  "reviewCount": 0,
+  "startingCity": "Delhi or Chandigarh",
+  "bestFor": "Couples, Families, Friends & Groups",
   "heroImage": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop",
   "galleryImages": [
     "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=800&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=800&auto=format&fit=crop"
   ],
-  "overview": "A Manali trip that actually stays in Manali — three of your five nights are there, in 4★ apple-orchard resorts with breakfast and dinner included. Shimla on the way up and Kasol on the way back are one night each, so you get the drive without losing the days. Solang, the Atal Tunnel through to Sissu, Hadimba and Old Manali all have room to breathe. If you would rather split the week evenly across all three towns, our 7-day Shimla Manali Kasol package does that instead.",
+  "overview": "Four days in Manali and nothing else — all three nights in one hotel, so you unpack once. A full day for the town itself (Hadimba, Manu Temple, Vashisht, Old Manali) and a full day for the mountains (Solang Valley, then through the Atal Tunnel to Sissu in Lahaul). Driven door to door from Delhi by private cab, with the Kullu valley on the way back. Short enough for a long weekend, and the shortest trip from Delhi that still leaves you two clear days on the ground.",
   "highlights": [
-    "3 nights in Manali — this is a Manali trip, not a three-city dash",
-    "Deluxe 4★ resorts with daily breakfast AND dinner included",
-    "Drive through the Atal Tunnel to Sissu in the Lahaul valley",
-    "Solang Valley adventure sports and snow activities",
-    "River rafting on the Beas at Kullu",
-    "Hadimba Temple, Vashisht hot springs and the Old Manali cafés",
-    "1 night each in Shimla and Kasol, so the route is covered without rushing Manali"
+    "All 3 nights in Manali — one hotel, no packing and moving mid-trip",
+    "Solang Valley, then the 9.02 km Atal Tunnel through to Sissu in Lahaul",
+    "Hadimba Devi Temple, Manu Temple, Vashisht hot springs and Van Vihar",
+    "Evenings free on Mall Road and in Old Manali",
+    "Private cab from Delhi and back, with fuel, tolls and parking included",
+    "Daily breakfast and dinner at the hotel",
+    "Kullu valley and optional shawl shopping on the return drive"
   ],
   "inclusions": [
-    "5 Nights stay in handpicked 3★/4★ mountain resorts",
-    "Daily Breakfast & Dinner at all hotels",
-    "Dedicated private AC/Heated Sedan/Innova for entire tour",
-    "All toll, fuel, parking, and driver allowances"
+    "3 nights hotel accommodation in Manali",
+    "Daily breakfast and dinner at the hotel",
+    "Private cab for the full trip and all sightseeing, Delhi to Delhi",
+    "Arrival and departure transfers",
+    "Manali local sightseeing",
+    "Solang Valley, Atal Tunnel and Sissu excursion",
+    "Driver charges, fuel, and all toll and parking charges",
+    "Travel assistance on WhatsApp for the length of the trip"
   ],
   "exclusions": [
-    "Adventure activities fees (paragliding, rafting, quad bikes)",
-    "Rohtang Pass NGT green permit taxi if opted"
+    "Flight, train and bus tickets",
+    "Lunch and any premium meal plan",
+    "Adventure activity charges at Solang (paragliding, zorbing, ropeway, snow activities)",
+    "Entry tickets at monuments and viewpoints",
+    "Rohtang Pass NGT permit and taxi, if opted for",
+    "Travel insurance",
+    "Sightseeing beyond the itinerary",
+    "Room service, shopping and personal expenses",
+    "5% GST on the package cost",
+    "Anything not specifically listed under inclusions"
   ],
   "itinerary": [
     {
       "dayNumber": 1,
-      "title": "Delhi/Chandigarh to Shimla (Queen of Hills)",
-      "location": "Shimla",
-      "description": "Pickup from Delhi/Chandigarh and scenic highway drive through the Shivalik hills to Shimla. Check into hotel and stroll on the historic Mall Road and Ridge.",
-      "morningActivity": "Highway drive with Himalayan views",
-      "afternoonActivity": "Check-in to Shimla hotel",
-      "eveningActivity": "Walk along the Ridge, Christ Church and Mall Road",
-      "stay": "Snow Valley Resorts / Marina 4★, Shimla",
+      "title": "Delhi to Manali, arrival and Mall Road",
+      "location": "Manali",
+      "description": "Depart Delhi by private cab for the drive up through the Kullu valley along the Beas. Check in, rest, and head out in the evening to Mall Road. It is a long drive — roughly 12 to 14 hours — so the day is deliberately left free after check-in.",
+      "morningActivity": "Private cab from Delhi through the Kullu valley",
+      "eveningActivity": "Check in and evening on Mall Road",
+      "stay": "Standard 3★ hotel in Manali",
       "mealsIncluded": "Dinner",
-      "transfers": "Private Chauffeur Cab"
+      "transfers": "Private Cab"
     },
     {
       "dayNumber": 2,
-      "title": "Shimla to Manali via Kullu Valley & Pandoh Dam",
+      "title": "Manali local — Hadimba, Vashisht and Old Manali",
       "location": "Manali",
-      "description": "Drive from Shimla to Manali (approx. 7 hrs) along the Beas River. Stop at Pandoh Dam, Hanogi Mata temple, and Kullu Shawl weaving factory. Arrive in Manali by evening.",
-      "morningActivity": "Drive through Kullu valley",
-      "afternoonActivity": "Pandoh dam view & Kullu shawl factory visit",
-      "eveningActivity": "Check-in to Manali apple orchard resort & dinner",
-      "stay": "The Himalayan Resort / Apple Country Resort 4★, Manali",
+      "description": "The 1553 wooden Hadimba Devi Temple in its cedar forest, Manu Temple, the hot sulphur springs at Vashisht, and the Van Vihar walk by the Beas. The afternoon and evening go to Old Manali and its cafés above the river.",
+      "morningActivity": "Hadimba Devi Temple, Manu Temple and Van Vihar",
+      "afternoonActivity": "Vashisht hot springs",
+      "eveningActivity": "Old Manali and Mall Road",
+      "stay": "Standard 3★ hotel in Manali",
       "mealsIncluded": "Breakfast & Dinner",
-      "transfers": "Private Chauffeur Cab"
+      "transfers": "Private Cab"
     },
     {
       "dayNumber": 3,
-      "title": "Solang Valley Adventure & Atal Tunnel to Sissu Waterfall",
+      "title": "Solang Valley and the Atal Tunnel to Sissu",
       "location": "Solang & Sissu",
-      "description": "Head to Solang Valley for paragliding, zorbing, and ropeway. Cross through the 9.02 km Atal Tunnel to enter the dramatic trans-Himalayan landscape of Sissu in Lahaul Valley.",
-      "morningActivity": "Solang valley adventure sports",
-      "afternoonActivity": "Atal Tunnel drive to Sissu waterfall and snow points",
-      "eveningActivity": "Return to Manali for campfire and hot buffet",
-      "stay": "The Himalayan Resort / Apple Country Resort 4★, Manali",
+      "description": "Out to Solang Valley first, then through the 9.02 km Atal Tunnel into Lahaul — a completely different, barer landscape on the far side — as far as Sissu and its waterfall. Back to Manali by evening.",
+      "morningActivity": "Solang Valley",
+      "afternoonActivity": "Atal Tunnel to Sissu, Lahaul valley",
+      "eveningActivity": "Return to Manali",
+      "stay": "Standard 3★ hotel in Manali",
       "mealsIncluded": "Breakfast & Dinner",
-      "transfers": "Private Chauffeur Cab"
+      "transfers": "Private Cab",
+      "insiderTip": "The Atal Tunnel stays open through most of the winter, unlike Rohtang. If snow is what you came for and the pass is shut, this is the day that delivers it."
     },
     {
       "dayNumber": 4,
-      "title": "Manali Local Sightseeing: Hadimba, Vashisht & Old Manali",
-      "location": "Manali",
-      "description": "Visit the 500-year-old wooden Hadimba Devi Temple in deep cedar woods, holy Vashisht Hot Sulphur Springs, Club House, and cozy bohemian cafes of Old Manali.",
-      "morningActivity": "Hadimba Temple and Van Vihar pine forest walk",
-      "afternoonActivity": "Vashisht hot springs and Tibetan Monastery",
-      "eveningActivity": "Cafe hopping in Old Manali & wood-fired pizza",
-      "stay": "The Himalayan Resort / Apple Country Resort 4★, Manali",
-      "mealsIncluded": "Breakfast & Dinner",
-      "transfers": "Private Chauffeur Cab"
-    },
-    {
-      "dayNumber": 5,
-      "title": "Manali to Kasol Parvati Valley & Manikaran Sahib",
-      "location": "Kasol & Manikaran",
-      "description": "Drive to the scenic Parvati Valley. Visit Manikaran Sahib Gurudwara known for its natural hot springs and langar. Relax in the picturesque riverside village of Kasol.",
-      "morningActivity": "Drive to Parvati Valley with Kullu Beas river rafting",
-      "afternoonActivity": "Manikaran Sahib Gurudwara and hot spring dip",
-      "eveningActivity": "Riverside chill at Kasol and Israeli cuisine dinner",
-      "stay": "The River Crescent / Kasol Riverside Camp 4★",
-      "mealsIncluded": "Breakfast & Dinner",
-      "transfers": "Private Chauffeur Cab"
-    },
-    {
-      "dayNumber": 6,
-      "title": "Kasol to Chandigarh / Delhi Departure",
+      "title": "Manali to Delhi via Kullu",
       "location": "Departure",
-      "description": "Enjoy breakfast with river sounds before driving back to Chandigarh/Delhi airport or railway station.",
-      "morningActivity": "Breakfast & scenic downhill drive",
-      "afternoonActivity": "Drop-off at Chandigarh/Delhi",
+      "description": "Breakfast, check out, and the drive back down through the Kullu valley with time for shawl shopping on the way. The tour ends on arrival in Delhi.",
+      "morningActivity": "Check out and begin the return drive",
+      "afternoonActivity": "Kullu valley, with optional shawl shopping",
       "mealsIncluded": "Breakfast",
-      "transfers": "Private Chauffeur Cab"
+      "transfers": "Private Cab"
     }
   ],
   "season": "All Season",
   "isFeatured": true,
   "isPopular": true,
-  "seoTitle": "Manali Tour Package | 3 Nights in Manali, 4★ With Dinner",
-  "seoDescription": "A Manali trip that stays in Manali — 3 of 5 nights there, 4★ resorts with breakfast and dinner, Solang, Atal Tunnel to Sissu. From ₹14,499 per person +5% GST.",
+  "seoTitle": "Best Manali Tour Packages | Explore Manali with Safar Trails",
+  "seoDescription": "Discover the best Manali tour packages with Safar Trails. Comfortable stays, private cab from Delhi, Solang Valley and the Atal Tunnel through to Sissu.",
   "faqs": [
     {
       "question": "What is the difference between this and your Shimla Manali Kasol package?",
-      "answer": "Where the nights go. This one puts 3 of its 5 nights in Manali, with a single night each in Shimla and Kasol — it is a Manali holiday that picks the other two up on the way. The 7-day Shimla Manali Kasol package splits the nights evenly, 2 in each, so you see all three properly but get one less day in Manali. This package is 4★ with breakfast and dinner; that one is 3★ with breakfast, which is most of the price difference. Pick this if Manali is the point, that one if the three towns are."
+      "answer": "This one is Manali and nothing else — 4 days, all three nights in one Manali hotel, a day for the town and a day for Solang and the Atal Tunnel. The 7-day Shimla Manali Kasol package covers three towns with two nights in each, so you see more of Himachal but less of Manali, and it costs more because it is three days longer. Pick this if Manali is the point, that one if you want the circuit."
     },
     {
       "question": "Manali tour package from Delhi — what does it include?",
-      "answer": "It picks you up in Delhi or Chandigarh and drops you back at the end, so the road journey both ways is already part of it. Travel is by private AC vehicle with a mountain driver, and fuel, tolls, parking, permits and the driver's allowances are included. If you would rather come by Volvo bus and start the tour in Manali, we can quote that version instead."
+      "answer": "It picks you up in Delhi and drops you back at the end, so the road journey both ways is already part of it. Travel is by private AC cab with a mountain driver, and fuel, tolls, parking and the driver's allowances are included, along with 3 nights in Manali with breakfast and dinner. Pickup from Chandigarh works too and takes three to four hours off each end. If you would rather come by Volvo bus and start the tour in Manali, we can quote that version instead."
     },
     {
       "question": "Manali tour package for family — is this one suitable?",
-      "answer": "Yes — it is one of the trips families book most. Stays are 3-star or 4-star mountain resorts with breakfast and dinner, and the sightseeing days cover Solang Valley, Hadimba Temple, Vashisht and Old Manali at an unhurried pace. Travelling with elderly parents or small children is fine - tell us and we will space out the driving days and pick hotels with easier access."
+      "answer": "Yes — and staying put in one hotel for all three nights is what makes it work with children or elderly parents. There is no packing and moving mid-trip, the sightseeing sits in two easy days, and the hotel is a base to come back to rather than somewhere you are only sleeping. Tell us who is travelling and we will pick a hotel with easier access and keep the Solang day unhurried."
     },
     {
       "question": "Manali tour package for couple — does it work for a honeymoon?",
-      "answer": "It works well for couples. Transport is a private vehicle rather than a shared coach, the resorts sit among the apple orchards rather than on the main road, and the Atal Tunnel to Sissu day is the one most couples remember. For a honeymoon we can add a candlelight dinner, room decoration or a premium cottage - ask when you enquire."
+      "answer": "It is one of the shortest honeymoons you can take from Delhi, which is why couples pick it when leave is tight. Transport is a private cab rather than a shared coach, and room decoration, a candlelight dinner or an upgrade to a premium or orchard-side room can be arranged — just ask when you enquire, since it depends on the hotel."
     },
     {
       "question": "Manali tour package with flight — can you arrange that?",
-      "answer": "This package is priced without airfare, because most travellers on it drive up from Delhi or Chandigarh. If you would prefer to fly, we can quote a version with tickets to Bhuntar (Kullu) or Chandigarh plus the road transfer to Manali. Bhuntar is the closer airport but its flights are weather-dependent in winter, so we usually plan Chandigarh with a road leg for anything between December and February."
+      "answer": "This package is priced without airfare, because most travellers on it drive up from Delhi or Chandigarh. If you would prefer to fly, we can quote a version with tickets to Bhuntar (Kullu) or Chandigarh plus the road transfer to Manali. Bhuntar is much closer but its flights are weather-dependent in winter, so between December and February we usually plan Chandigarh with a road leg instead."
     },
     {
       "question": "Manali tour package for a single person — can a solo traveller book it?",
-      "answer": "Yes, and we will customise it rather than sell you a group seat. A solo booking is quoted on single occupancy, so the per-person price differs from the twin-sharing rate shown here - the room is the main reason. You can bring the cost down with a smaller vehicle or a simpler hotel category. Tell us your budget and we will build to it."
+      "answer": "Yes, and we will customise it rather than sell you a group seat. A solo booking is quoted on single occupancy, so the per-person price differs from the twin-sharing rate shown here — the room is the main reason, and a private cab for one is the other. A smaller vehicle or a simpler hotel brings it down. Tell us your budget and we will build to it."
     },
     {
       "question": "Manali tour package 2 days 1 night — do you have one?",
-      "answer": "We can arrange one, but it is a different trip from this one. Manali is roughly 12 to 14 hours by road from Delhi, so a 2-day plan spends most of its time travelling and leaves you about half a day on the ground. If your dates are tight, a 4-night trip starting from Chandigarh is the shortest version we would actually recommend. This 6-day itinerary exists because it lets you see Shimla, Manali, Sissu and Kasol without rushing any of them."
+      "answer": "We can arrange one, but be clear about what it is. Manali is roughly 12 to 14 hours by road from Delhi, so a 2-day plan is two nights in a vehicle and about half a day on the ground. Starting from Chandigarh makes it more realistic. This 4-day version exists because it is the shortest trip from Delhi that still gives you two clear days in Manali rather than one rushed morning."
     },
     {
       "question": "Manali tour package for friends — is this a good group trip?",
-      "answer": "Yes. Solang Valley covers paragliding, zorbing and the ropeway, the Atal Tunnel drive into Lahaul is the highlight of the trip, and Kasol and Parvati Valley are on the way back. Adventure activities are charged on the spot by the operators rather than bundled in, so you only pay for what your group actually does. For six or more people we switch to a tempo traveller, which usually lowers the per-head cost."
+      "answer": "Yes. Solang covers paragliding, zorbing and the ropeway, and the Atal Tunnel drive into Lahaul is the part most groups remember. Adventure activities are paid to the operators on the spot rather than bundled in, so you only pay for what your group actually does. For six or more we switch to a tempo traveller, which usually lowers the per-head cost."
     },
     {
       "question": "Manali tour package under ₹5,000 — do you have one?",
-      "answer": "Not honestly, and we would rather say so than take the enquiry. ₹5,000 a head does not cover 5 nights, a private vehicle from Delhi and back, and two meals a day — the trips advertised at that price are usually 2 days on a shared Volvo with a basic room and no meals, which is a different product, not a cheaper version of this one. This package starts at ₹14,499 per person. If ₹5,000 is genuinely the budget, tell us: a shorter trip starting from Chandigarh, a simpler hotel or a bigger group all bring the per-head figure down, and we will show you what is actually possible at that number instead of quoting you something you would be disappointed by."
+      "answer": "Not honestly, and we would rather say so than take the enquiry. ₹5,000 a head does not cover 3 nights, a private cab from Delhi and back, and two meals a day — the trips advertised at that price are usually 2 days on a shared Volvo with a basic room and no meals, which is a different product, not a cheaper version of this one. This package starts at ₹10,000 per person. If ₹5,000 is genuinely the budget, tell us: starting from Chandigarh, a simpler hotel or a bigger group all bring the per-head figure down, and we will show you what is actually possible at that number."
+    },
+    {
+      "question": "Is Rohtang Pass included in this Manali package?",
+      "answer": "No. Rohtang needs a separate NGT permit with a strictly limited daily quota, is closed on Tuesdays for maintenance, and is shut by snow from roughly November to May. It can be added at extra cost when it is open and permits are available. Day 3 goes through the Atal Tunnel to Sissu instead, which is open nearly year-round and reaches the same high Lahaul landscape far more reliably."
     },
     {
       "question": "What does a Manali tour package actually cost?",
-      "answer": "This one starts at Rs 14,499 per person on twin sharing, for 5 nights with breakfast, dinner and a private vehicle throughout. The final figure moves with your travel dates, hotel category, group size and vehicle - peak season, New Year and the summer holidays are the dearest. Packages advertised at Rs 5,000 or so are usually 2-day trips on a shared bus with basic rooms and no meals, which is a different product; we would rather tell you that than surprise you later. Send us your dates and headcount and you will get an itemised quote."
+      "answer": "This one starts at ₹10,000 per person on twin sharing, plus 5% GST — about ₹20,000 for a couple — covering 3 nights with breakfast and dinner and the private cab from Delhi and back. The figure moves with your travel dates, hotel category, group size and vehicle; 3★, 4★ and premium hotels are all available, and New Year and the May–June holidays are the dearest weeks of the year. Send us your dates and headcount and you will get an itemised quote."
     }
   ]
 }
