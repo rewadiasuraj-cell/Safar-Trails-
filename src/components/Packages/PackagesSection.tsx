@@ -62,9 +62,9 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
    * page, and the same catalogue /packages already carries. It shows a handful
    * and links onward; the standalone page is unchanged.
    */
-  /* Four on the homepage, matching the destinations grid above it, with
-     "View all 21 packages" beneath. /packages has the filters and the rest. */
-  const visiblePackages = asPage ? filteredPackages : filteredPackages.slice(0, 4);
+  /* The full-card grid below only ever renders on /packages now; the homepage
+     has its own compact grid of four. */
+  const visiblePackages = asPage ? filteredPackages : [];
 
   const handleBookNow = (pkg: Package) => {
     if (onOpenQuoteModal) {
@@ -102,12 +102,68 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
             )}
           </div>
 
-          <div className="text-xs font-bold uppercase tracking-wider text-stone-500 bg-stone-50 px-3.5 py-1.5 rounded-full border border-stone-200 self-start sm:self-auto">
-            <strong className="text-stone-900">{filteredPackages.length}</strong> Packages Available
-          </div>
+          {asPage ? (
+            <div className="text-xs font-bold uppercase tracking-wider text-stone-500 bg-stone-50 px-3.5 py-1.5 rounded-full border border-stone-200 self-start sm:self-auto">
+              <strong className="text-stone-900">{filteredPackages.length}</strong> Packages Available
+            </div>
+          ) : (
+            <Link
+              to="/packages"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-stone-200 text-stone-900 text-[11px] sm:text-xs font-bold uppercase tracking-wider hover:bg-stone-50 transition-colors whitespace-nowrap self-start sm:self-auto"
+            >
+              <span>{`View all ${packagesData.length}`}</span>
+              <span aria-hidden="true">&rarr;</span>
+            </Link>
+          )}
         </div>
 
+        {/* Homepage grid: four photo cards, one row.
+         *
+         * Same reasoning as the destinations grid above it. The full card
+         * carries an overview, four spec rows, a price block and two buttons;
+         * four of them made this section 1527px. Here the card answers "which
+         * trip do I want to open" - photo, nights, title, price - and the
+         * whole tile is one link to the package page, where every CTA lives.
+         *
+         * The three filter rows below are for /packages. Filtering a list of
+         * four was three rows of controls over one row of results. */}
+        {!asPage && (
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
+            {filteredPackages.slice(0, 4).map((pkg) => (
+              <Link
+                key={pkg.id}
+                to={`/tour-packages/${pkg.slug}`}
+                className="group relative block rounded-2xl overflow-hidden aspect-[3/4] sm:aspect-[4/5] border border-stone-200/80 shadow-xs hover:shadow-xl transition-shadow"
+              >
+                <img
+                  src={pkg.heroImage}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
+
+                <span className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/95 text-stone-900 leading-none">
+                  {pkg.durationDays}D / {pkg.durationNights}N
+                </span>
+
+                <div className="absolute inset-x-2.5 bottom-2.5 sm:inset-x-4 sm:bottom-4">
+                  <h3 className="font-serif text-[13px] sm:text-base font-bold text-white tracking-tight leading-snug line-clamp-2">
+                    {pkg.title}
+                  </h3>
+                  <p className="mt-1.5 text-sm sm:text-base font-extrabold text-luxury-gold">
+                    ₹{pkg.startingPrice.toLocaleString('en-IN')}
+                    <span className="text-[10px] sm:text-[11px] font-semibold text-white/75"> / person {GST_NOTE}</span>
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
+
         {/* Filter Controls Bar */}
+        {asPage && (
         <div className="bg-[#FAF9F6] p-4 sm:p-5 rounded-2xl border border-stone-200/80 shadow-2xs mb-8 space-y-3.5">
           {/* Destination Pills */}
           <div>
@@ -176,8 +232,10 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
             </div>
           </div>
         </div>
+        )}
 
-        {/* Packages Grid */}
+        {/* Packages Grid — /packages only; the homepage grid is above. */}
+        {asPage && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {visiblePackages.map((pkg) => (
             <div
@@ -310,19 +368,9 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
               </div>
             </div>
           ))}
-        
-        {!asPage && (
-          <div className="mt-10 flex justify-center">
-            <Link
-              to="/packages"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-stone-300 bg-white text-stone-900 text-xs font-bold uppercase tracking-wider hover:bg-stone-50 transition-colors"
-            >
-              <span>{`View all ${filteredPackages.length} packages`}</span>
-              <span aria-hidden="true">&rarr;</span>
-            </Link>
-          </div>
+          {/* "View all" moved into the section header, top right. */}
+        </div>
         )}
-</div>
       </div>
     </section>
   );

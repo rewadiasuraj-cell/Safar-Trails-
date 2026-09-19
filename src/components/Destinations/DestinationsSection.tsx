@@ -96,42 +96,115 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
             )}
           </div>
 
-          {/* Search Box inside header */}
-          <div className="relative w-full md:w-72">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search destination..."
-              className="w-full pl-10 pr-4 py-2.5 rounded-full border border-stone-200 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-black bg-white"
-            />
-          </div>
+          {/* Search and the state filters below are for /destinations only.
+              On the homepage they were controls for narrowing a list of four
+              - and the "View all" link sits here instead, where the reference
+              layout puts it. */}
+          {asPage ? (
+            <div className="relative w-full md:w-72">
+              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search destination..."
+                className="w-full pl-10 pr-4 py-2.5 rounded-full border border-stone-200 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-black bg-white"
+              />
+            </div>
+          ) : (
+            <Link
+              to="/destinations"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-stone-200 text-stone-900 text-[11px] sm:text-xs font-bold uppercase tracking-wider hover:bg-stone-50 transition-colors whitespace-nowrap self-start md:self-auto"
+            >
+              <span>{`View all ${destinationsData.length}`}</span>
+              <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+            </Link>
+          )}
         </div>
 
         {/* State Filter Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none">
-          {states.map((st) => (
-            <button
-              key={st}
-              onClick={() => setSelectedState(st)}
-              className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all cursor-pointer ${
-                selectedState === st
-                  ? 'bg-midnight-blue text-white shadow-sm'
-                  : 'bg-white text-stone-600 hover:bg-stone-100'
-              }`}
-            >
-              {st === 'All' ? 'All Destinations' : st}
-            </button>
-          ))}
-        </div>
+        {asPage && (
+          <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none">
+            {states.map((st) => (
+              <button
+                key={st}
+                onClick={() => setSelectedState(st)}
+                className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all cursor-pointer ${
+                  selectedState === st
+                    ? 'bg-midnight-blue text-white shadow-sm'
+                    : 'bg-white text-stone-600 hover:bg-stone-100'
+                }`}
+              >
+                {st === 'All' ? 'All Destinations' : st}
+              </button>
+            ))}
+          </div>
+        )}
 
-        {/* Destination Grid */}
+        {/* Homepage grid: four photo cards, one row, nothing else.
+         *
+         * The full card below carries a description, three attraction tags, a
+         * duration, a price and three buttons - about 430px of card. Four of
+         * them made this section 1766px, a screen and a half to look at four
+         * destinations. On the homepage the only question is "which of these
+         * do I want to read about", so the card answers that and nothing else:
+         * photo, name, tagline, starting price, and the whole tile is one
+         * link. The full card still runs on /destinations, where someone is
+         * comparing rather than browsing.
+         *
+         * Price is luxury-gold, not warm-orange: measured 5.84:1 against the
+         * dark end of the gradient, where warm-orange does not clear 4.5:1. */}
+        {!asPage && (
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
+            {filteredDestinations.slice(0, 4).map((dest) => (
+              <Link
+                key={dest.slug}
+                to={`/destinations/${dest.slug}`}
+                className="group relative block rounded-2xl overflow-hidden aspect-[3/4] sm:aspect-[4/5] border border-stone-200/80 shadow-xs hover:shadow-xl transition-shadow"
+              >
+                <img
+                  src={dest.cardImage || dest.heroImage}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
+
+                {/* Trip length, not the isTrending flag.
+                    Nine of the twelve destinations carry isTrending, so on a
+                    row of four the badge was on all four - a claim that reads
+                    as information and carries none. idealDays differs per
+                    destination, is the next thing someone wants to know, and
+                    matches the nights badge on the packages row below. */}
+                {/* truncated: idealDays runs long on some destinations
+                    ("3 days (Shimla) to 10 days (Spiti circuit)"), which
+                    wrapped the badge to two lines and past the card edge. */}
+                <span className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 max-w-[calc(100%-1.25rem)] sm:max-w-[calc(100%-1.5rem)] block truncate px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/95 text-stone-900 leading-none">
+                  {dest.idealDays}
+                </span>
+
+                <div className="absolute inset-x-2.5 bottom-2.5 sm:inset-x-4 sm:bottom-4">
+                  <h3 className="font-serif text-base sm:text-xl font-bold text-white tracking-tight leading-tight truncate">
+                    {formatDestinationName(dest.name)}
+                  </h3>
+                  <p className="text-[10.5px] sm:text-xs text-white/85 leading-snug truncate">
+                    {dest.tagline}
+                  </p>
+                  <p className="mt-1.5 text-sm sm:text-base font-extrabold text-luxury-gold">
+                    ₹{dest.startingPrice.toLocaleString('en-IN')}
+                    <span className="text-[10px] sm:text-[11px] font-semibold text-white/75"> / person</span>
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
+
+        {/* Destination Grid — /destinations only; the homepage grid is above. */}
+        {asPage && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-          {/* Four on the homepage, not six: one full row of the grid, then
-              "View all 12 destinations". A second row is a second scroll of
-              the same decision. */}
-          {(asPage ? filteredDestinations : filteredDestinations.slice(0, 4)).map((dest) => (
+          {filteredDestinations.map((dest) => (
             <div
               key={dest.slug}
               className="group bg-white rounded-2xl overflow-hidden border border-stone-200/80 hover:border-luxury-gold shadow-xs hover:shadow-2xl transition-all duration-300 ease-out flex flex-col justify-between hover:scale-[1.02] transform will-change-transform"
@@ -289,19 +362,11 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
               </div>
             </div>
           ))}
-        
-        {!asPage && (
-          <div className="mt-10 flex justify-center">
-            <Link
-              to="/destinations"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-stone-300 bg-white text-stone-900 text-xs font-bold uppercase tracking-wider hover:bg-stone-50 transition-colors"
-            >
-              <span>{`View all ${filteredDestinations.length} destinations`}</span>
-              <span aria-hidden="true">&rarr;</span>
-            </Link>
-          </div>
+          {/* The "View all" link used to sit here, below the grid. It is in
+              the section header now, top right, as the reference layout has
+              it - reachable before the cards rather than after them. */}
+        </div>
         )}
-</div>
       </div>
     </section>
   );
