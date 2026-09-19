@@ -19,8 +19,6 @@ import { NotFoundPage } from './components/NotFoundPage';
 const AITripPlanner = lazy(() => import('./components/AITripPlanner/AITripPlanner').then(m => ({ default: m.AITripPlanner })));
 const DestinationsSection = lazy(() => import('./components/Destinations/DestinationsSection').then(m => ({ default: m.DestinationsSection })));
 const PackagesSection = lazy(() => import('./components/Packages/PackagesSection').then(m => ({ default: m.PackagesSection })));
-const TravelStylesSection = lazy(() => import('./components/TravelStylesSection').then(m => ({ default: m.TravelStylesSection })));
-const SeasonalTripsSection = lazy(() => import('./components/SeasonalTripsSection').then(m => ({ default: m.SeasonalTripsSection })));
 const TravelGuidesSection = lazy(() => import('./components/TravelGuides/TravelGuidesSection').then(m => ({ default: m.TravelGuidesSection })));
 const TrustSection = lazy(() => import('./components/TrustSection').then(m => ({ default: m.TrustSection })));
 const ReviewsSection = lazy(() => import('./components/ReviewsSection').then(m => ({ default: m.ReviewsSection })));
@@ -199,18 +197,15 @@ export default function App() {
                     onOpenQuoteModal={handleOpenQuoteModal}
                   />
 
-                  <TravelStylesSection
-                    onSelectStyle={() => {
-                      const el = document.getElementById('packages-section');
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    onExploreStyleWithAI={(style) => handleStartAIPlan(`Plan a ${style} vacation in India`)}
-                  />
-
-                  <SeasonalTripsSection
-                    onSelectDestinationSlug={handleSelectDestination}
-                    onStartAIPlan={(prompt) => handleStartAIPlan(prompt)}
-                  />
+                  {/* TravelStylesSection and SeasonalTripsSection were here.
+                      With Handpicked, Destinations and Packages above them, the
+                      homepage carried five separate grids over the same 21
+                      trips - the visitor scrolled the same inventory sliced five
+                      ways. Both are removed; the filters on /packages do the
+                      same job at the point someone is actually choosing.
+                      The matching "Popular travel styles" block is out of the
+                      homepage prerender too, so nothing is left in the markup
+                      that the page does not show. */}
 
                   <TravelGuidesSection
                     onSelectGuide={handleSelectGuide}

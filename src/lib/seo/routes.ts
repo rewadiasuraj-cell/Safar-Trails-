@@ -162,16 +162,10 @@ const STATIC_PAGES: StaticPageSpec[] = [
           'Visa assistance, air ticketing and airport transfers arranged alongside the trip itself.',
         ],
       },
-      {
-        heading: 'Popular travel styles',
-        bullets: [
-          'Honeymoon and couple trips — Kashmir, Kerala, Goa, Andaman.',
-          'Family holidays with comfortable pacing and child-friendly stays.',
-          'Group and corporate tours with tempo travellers and block hotel bookings.',
-          'Pilgrimage journeys including the full Chardham Yatra circuit.',
-          'Adventure and road trips across Himachal, Ladakh and the Northeast.',
-        ],
-      },
+      // A "Popular travel styles" block sat here. Its counterpart section was
+      // removed from the homepage, and prerendered text with nothing rendering
+      // it is text only a crawler sees. The styles themselves are still marked
+      // up per package, via tripType.
       {
         heading: 'Where we plan trips',
         paragraphs: [

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { packagesData } from '../../data/packagesData';
 import { GST_NOTE } from '../../lib/seo/siteConfig';
 import { Package } from '../../types';
@@ -55,6 +56,13 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
 
     return matchesDest && matchesType && matchesDuration;
   });
+
+  /**
+   * The homepage used to render all 21 package cards - 11,884px of a 35,592px
+   * page, and the same catalogue /packages already carries. It shows a handful
+   * and links onward; the standalone page is unchanged.
+   */
+  const visiblePackages = asPage ? filteredPackages : filteredPackages.slice(0, 6);
 
   const handleBookNow = (pkg: Package) => {
     if (onOpenQuoteModal) {
@@ -169,7 +177,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
 
         {/* Packages Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {filteredPackages.map((pkg) => (
+          {visiblePackages.map((pkg) => (
             <div
               key={pkg.id}
               className="group bg-white rounded-2xl overflow-hidden border border-stone-200 hover:border-luxury-gold shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
@@ -300,7 +308,19 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
               </div>
             </div>
           ))}
-        </div>
+        
+        {!asPage && (
+          <div className="mt-10 flex justify-center">
+            <Link
+              to="/packages"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-stone-300 bg-white text-stone-900 text-xs font-bold uppercase tracking-wider hover:bg-stone-50 transition-colors"
+            >
+              <span>{`View all ${filteredPackages.length} packages`}</span>
+              <span aria-hidden="true">&rarr;</span>
+            </Link>
+          </div>
+        )}
+</div>
       </div>
     </section>
   );

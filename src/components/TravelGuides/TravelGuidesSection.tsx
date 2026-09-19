@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { guidesData } from '../../data/guidesData';
 import { TravelGuide } from '../../types';
 import { Clock, ArrowRight, Search } from 'lucide-react';
@@ -80,7 +81,7 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredGuides.map((guide) => (
+            {(asPage ? filteredGuides : filteredGuides.slice(0, 3)).map((guide) => (
               <article
                 key={guide.slug}
                 className="group bg-white rounded-2xl overflow-hidden border border-stone-200 hover:border-luxury-gold shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between cursor-pointer"
@@ -128,7 +129,19 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
                 </div>
               </article>
             ))}
-          </div>
+          
+          {!asPage && (
+            <div className="mt-10 flex justify-center">
+              <Link
+                to="/guides"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-stone-300 bg-white text-stone-900 text-xs font-bold uppercase tracking-wider hover:bg-stone-50 transition-colors"
+              >
+                <span>{`View all ${filteredGuides.length} travel guides`}</span>
+                <span aria-hidden="true">&rarr;</span>
+              </Link>
+            </div>
+          )}
+</div>
         )}
       </div>
     </section>

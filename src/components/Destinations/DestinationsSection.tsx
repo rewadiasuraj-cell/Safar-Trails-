@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { destinationsData } from '../../data/destinationsData';
 import { Destination } from '../../types';
@@ -127,7 +128,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
 
         {/* Destination Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-          {filteredDestinations.map((dest) => (
+          {(asPage ? filteredDestinations : filteredDestinations.slice(0, 6)).map((dest) => (
             <div
               key={dest.slug}
               className="group bg-white rounded-2xl overflow-hidden border border-stone-200/80 hover:border-luxury-gold shadow-xs hover:shadow-2xl transition-all duration-300 ease-out flex flex-col justify-between hover:scale-[1.02] transform will-change-transform"
@@ -285,7 +286,19 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
               </div>
             </div>
           ))}
-        </div>
+        
+        {!asPage && (
+          <div className="mt-10 flex justify-center">
+            <Link
+              to="/destinations"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-stone-300 bg-white text-stone-900 text-xs font-bold uppercase tracking-wider hover:bg-stone-50 transition-colors"
+            >
+              <span>{`View all ${filteredDestinations.length} destinations`}</span>
+              <span aria-hidden="true">&rarr;</span>
+            </Link>
+          </div>
+        )}
+</div>
       </div>
     </section>
   );
