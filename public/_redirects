@@ -43,22 +43,25 @@ http://www.safartrails.co.in/* https://safartrails.co.in/:splat 301!
 # before the migration and may hold history. First match wins, so the one slug
 # that does not map across by name is listed before the catch-all.
 #
-# The two rules directly below MUST stay above the catch-all.
+# WHY :slug AND NOT * HERE.
 #
-# /packages is the packages listing page - a prerendered file at
-# packages/index.html, and one of the 50 URLs in the sitemap. An earlier comment
-# here claimed it "is a prerendered file that the rules never reach", on the
-# assumption that a matching static asset always beats a non-forced rule. That
-# was wrong: /packages/* swallowed the bare /packages too, sending it to
-# /tour-packages/, which is not a page, and the listing served a 404 to both
-# visitors and Googlebot. Google reported it as "Not found (404)" on inspection.
+# /packages is the packages listing page - a prerendered file, and one of the
+# URLs in the sitemap. A `*` splat matches the empty string, so `/packages/*`
+# also matched the bare /packages once Pages resolved it as a directory, and
+# sent the listing to /tour-packages/, which is not a page. The listing served
+# a 404 to visitors and Googlebot alike.
 #
-# Rewriting to the file explicitly, ahead of the catch-all, makes the listing
-# independent of how Pages resolves directories or empty splats.
-/packages                         /packages/index.html                                                                 200
-/packages/                        /packages/index.html                                                                 200
+# The first attempt at a fix rewrote /packages to /packages/index.html above
+# this rule. That was worse: Pages canonicalises a request for
+# <dir>/index.html back to <dir>, so the rewrite bounced straight back into
+# itself and the page died with ERR_TOO_MANY_REDIRECTS. Never point a rewrite
+# at an index.html.
+#
+# A `:slug` placeholder requires a non-empty path segment, so /packages/<slug>
+# still redirects and /packages cannot match this rule at all. The listing is
+# then served as the static file it is, with no rule involved.
 /packages/chardham-yatra-package  /tour-packages/chardham-yatra-haridwar-yamunotri-gangotri-kedarnath-badrinath-10d9n  301
-/packages/*                       /tour-packages/:splat                                                                301
+/packages/:slug                   /tour-packages/:slug                                                                 301
 
 # /tour-packages has no listing of its own - /packages is it. Without these, the
 # SPA fallback below answers 200 with the app shell for a URL that names nothing,

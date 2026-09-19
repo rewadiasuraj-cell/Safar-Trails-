@@ -36,6 +36,22 @@ function readBuiltUrls(): string[] {
 }
 
 /**
+ * One _redirects source pattern as a regex.
+ *
+ * `*` is a splat and matches anything INCLUDING the empty string - which is the
+ * whole reason /packages/* swallowed the bare /packages. `:name` is a
+ * placeholder and matches exactly one non-empty path segment, which is why the
+ * package rule uses one.
+ */
+function sourceToRegExp(source: string): RegExp {
+  const escaped = source
+    .replace(/[.+?^${}()|[\]\\]/g, '\\$&')
+    .replace(/:[A-Za-z_][A-Za-z0-9_]*/g, '[^/]+')
+    .replace(/\*/g, '.*');
+  return new RegExp(`^${escaped}$`);
+}
+
+/**
  * Source patterns from _redirects that are genuine redirects, as regexes.
  *
  * Only 3xx rules count. The SPA rewrites are `200`, which serve the app shell -
@@ -55,10 +71,7 @@ function readRedirectPatterns(): RegExp[] {
     .filter((line) => line && !line.startsWith('#'))
     .map((line) => line.split(/\s+/))
     .filter((parts) => parts[0]?.startsWith('/') && /^3\d\d!?$/.test(parts[2] ?? ''))
-    .map(
-      (parts) =>
-        new RegExp(`^${parts[0].replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*')}$`),
-    );
+    .map((parts) => sourceToRegExp(parts[0]));
 }
 
 /**
@@ -88,9 +101,7 @@ function readOrderedRules(): {
       source: parts[0],
       target: parts[1],
       status: parts[2].replace('!', ''),
-      pattern: new RegExp(
-        `^${parts[0].replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*')}$`,
-      ),
+      pattern: sourceToRegExp(parts[0]),
     }));
 }
 
@@ -110,6 +121,29 @@ function readOrderedRules(): {
 function checkSitemapIsServable(built: string[]): string[] {
   const rules = readOrderedRules();
   const problems: string[] = [];
+
+  /*
+   * No rule may point at a SUBDIRECTORY index.html.
+   *
+   * Pages canonicalises <dir>/index.html back to <dir>, so a rule whose target
+   * is one redirects into its own source and the page dies with
+   * ERR_TOO_MANY_REDIRECTS. Not theoretical: the first attempt at fixing
+   * /packages rewrote it to /packages/index.html and took the listing down
+   * harder than the 404 it was meant to fix. The servable check above could not
+   * see it, because a 200 rewrite reads as "this path is handled".
+   *
+   * The root /index.html is exempt and must stay that way - it is the SPA shell
+   * the three fallbacks below serve, it has worked in production throughout, and
+   * there is no directory for Pages to canonicalise it back to.
+   */
+  for (const rule of rules) {
+    if (/^\/.+\/index\.html$/.test(rule.target)) {
+      problems.push(
+        `"${rule.source}" points at ${rule.target} - Pages rewrites that back to ` +
+          `${rule.target.replace(/\/index\.html$/, '')} and the request loops`,
+      );
+    }
+  }
 
   for (const url of built) {
     const urlPath = url.replace(SITE, '') || '/';
