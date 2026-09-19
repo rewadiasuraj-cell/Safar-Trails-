@@ -1,13 +1,13 @@
 {
   "slug": "andaman",
   "name": "Andaman & Nicobar",
-  "tagline": "Port Blair, Havelock & Neil — Coral Reefs, Turquoise Water & White Sand",
+  "tagline": "Emerald Isles — Coral Reefs, Turquoise Lagoons & White Sands",
   "state": "Andaman & Nicobar Islands",
   "heroImage": "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=1600&auto=format&fit=crop",
   "cardImage": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&auto=format&fit=crop",
-  "shortDescription": "Three islands, one trip — Port Blair for the history, Havelock for Radhanagar Beach and the diving, Neil for the quiet. Flights, ferries and hotels all book up early, which is the real reason people take a package.",
-  "fullOverview": "Almost every Andaman trip is the same three islands in the same order: Port Blair, where the flights land and the Cellular Jail is; Havelock (Swaraj Dweep), which has Radhanagar Beach and most of the diving; and Neil (Shaheed Dweep), which is quieter and usually shorter. What makes the planning awkward is not the sightseeing, it is the joins — inter-island ferries run to a fixed timetable, sell out weeks ahead in season, and a missed one costs you a day. That, more than anything, is why most travellers book this as a package rather than assembling it themselves. Five to seven days covers all three without rushing; a shorter trip usually means dropping Neil.",
-  "bestTime": "October to May is the season — calm seas, reliable ferries and the best underwater visibility for diving and snorkelling | June to September is the monsoon, when sea crossings are rougher and can be cancelled at short notice",
+  "shortDescription": "Planning an island holiday is easy with an Andaman tour package that combines hotels, sightseeing, transfers, and activities in one plan. Enjoy beautiful beaches, clear waters, peaceful islands and exciting activities.",
+  "fullOverview": "An Andaman tour package is designed to make your island vacation comfortable and well-organized. Depending on the package you select, it may include hotel accommodation, airport transfers, sightseeing, ferry tickets, meals, and selected activities. You can choose a short trip for a quick escape or a longer holiday to explore more islands. Couples may prefer romantic stays and beach experiences, while families often look for comfortable hotels, easy transfers, and child-friendly activities. The biggest advantage is convenience — instead of arranging every part of your holiday separately, you can have most travel arrangements planned in advance.",
+  "bestTime": "October to May (Calm turquoise waters, ideal for diving & sea transfers)",
   "temperatureRange": "23°C - 31°C",
   "startingPrice": 22999,
   "idealDays": "5 to 7 Days",
@@ -15,105 +15,87 @@
   "reviewCount": 980,
   "isTrending": true,
   "highlights": [
-    "Radhanagar Beach (Beach No. 7) on Havelock, at sunset",
-    "Discover Scuba Diving at Elephant Beach — no swimming or certification needed",
-    "Snorkelling over the reefs for anyone who would rather stay on the surface",
-    "The light and sound show at Cellular Jail, Port Blair",
-    "Bharatpur Beach and the natural rock bridge on Neil Island",
-    "Makruzz or Nautika catamaran between the islands rather than the slow government ferry"
+    "Port Blair — historical sites, local markets and the waterfront",
+    "Havelock Island — beautiful beaches, clear water and water activities",
+    "Radhanagar Beach, a major attraction on Havelock",
+    "Neil Island — a quieter island experience away from busy tourist areas",
+    "Scuba diving in clear waters with marine life",
+    "Snorkeling for colourful fish without advanced diving skills"
   ],
   "howToReach": {
-    "air": "Veer Savarkar International Airport, Port Blair (IXZ), with direct flights from Chennai, Kolkata, Delhi and Bengaluru. Chennai and Kolkata are the shortest hops and usually the cheapest.",
-    "rail": "Not applicable — the Andamans are an island territory with no rail link.",
-    "road": "Travel between islands is by sea, not road. Private catamarans (Makruzz, Nautika) run Port Blair–Havelock–Neil on a fixed daily timetable and sell out weeks ahead in season; local sightseeing on each island is by cab or auto."
+    "air": "Veer Savarkar International Airport, Port Blair (IXZ) with direct flights from Chennai, Kolkata, Delhi, and Bengaluru.",
+    "rail": "Not applicable (Island territory).",
+    "road": "Island hopping is conducted via modern luxury catamarans and private tourist cabs."
   },
   "topAttractions": [
     {
-      "name": "Radhanagar Beach, Havelock",
-      "description": "The one everybody comes for — a long curve of white sand backed by forest, and the best sunset on the islands. Busiest between 4pm and dusk.",
-      "image": "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=600&auto=format&fit=crop"
-    },
-    {
-      "name": "Elephant Beach, Havelock",
-      "description": "Reached by speedboat, and where most of the water activities happen — Discover Scuba Diving, snorkelling, sea walking. Reef is close in, so you do not need to be a swimmer.",
+      "name": "Port Blair",
+      "description": "Often the starting point for an Andaman tour package. Home to several important attractions and a convenient base for exploring nearby destinations — historical sites, local markets and the waterfront.",
       "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=600&auto=format&fit=crop"
     },
     {
-      "name": "Cellular Jail, Port Blair",
-      "description": "The colonial prison that held India's freedom fighters, now a national memorial. Go for the evening light and sound show rather than only the daytime visit.",
-      "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=600&auto=format&fit=crop"
-    },
-    {
-      "name": "Neil Island (Shaheed Dweep)",
-      "description": "Smaller, slower and far less built up than Havelock. Bharatpur and Laxmanpur beaches, the natural rock bridge, and not much else — which is the point.",
+      "name": "Havelock Island",
+      "description": "One of the most popular stops, known for its beautiful beaches, clear water and exciting water activities. Radhanagar Beach is a major attraction, and visitors can also enjoy snorkeling, scuba diving and peaceful beach walks.",
       "image": "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=600&auto=format&fit=crop"
     },
     {
-      "name": "Port Blair town",
-      "description": "Where you land and usually where the trip ends. The waterfront, the local markets and the museums fill the half-day either side of a flight without needing a plan.",
+      "name": "Neil Island",
+      "description": "A wonderful choice for travellers looking for a quieter island experience. Beautiful beaches, natural surroundings and a relaxed atmosphere — ideal for spending time away from busy tourist areas.",
       "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=600&auto=format&fit=crop"
     }
   ],
   "stayCategories": [
     {
-      "category": "Standard Hotels & Guesthouses",
-      "priceRange": "₹2,000 – ₹4,500 / night",
-      "recommendation": "Common in Port Blair and inland on Havelock. Check the distance to the beach — inland Havelock is a 10-15 minute drive from Radhanagar and cabs are not always waiting."
+      "category": "Budget Packages",
+      "priceRange": "On request",
+      "recommendation": "Focus on essential travel services without adding unnecessary luxury — simple and comfortable hotels, shared transfers and selected sightseeing to keep costs under control."
     },
     {
-      "category": "Beach Resorts & Cottages",
-      "priceRange": "₹5,500 – ₹12,000 / night",
-      "recommendation": "What most package travellers end up in on Havelock. Worth confirming whether it is actually beachfront or beach-access, because the listings use both words loosely."
+      "category": "Comfortable Hotels",
+      "priceRange": "On request",
+      "recommendation": "Families can choose comfortable hotels, convenient transfers and activities suitable for different age groups."
     },
     {
-      "category": "Premium Island Resorts",
-      "priceRange": "₹12,000 – ₹25,000 / night",
-      "recommendation": "A handful of properties on Havelock and Neil. These are the first to sell out for Christmas, New Year and the April–May holidays — book months ahead."
+      "category": "Romantic Stays",
+      "priceRange": "On request",
+      "recommendation": "Couples may prefer romantic stays and beach experiences as part of the package."
     }
   ],
   "travelTips": [
-    "Indian citizens need no passport or special permit for Port Blair, Havelock or Neil — a photo ID is enough.",
-    "Book inter-island ferries as early as you book the flights. They run to a fixed timetable, sell out weeks ahead in season, and a missed crossing costs you a whole day.",
-    "Compare packages on what is included, not on the headline price. Ferry class, airport transfers and whether water activities are covered change the real cost more than the hotel does.",
-    "Water activities at Elephant Beach are usually paid to the operators on the spot. Agree the rate before you start, and ask what is included — photos and video are often charged separately.",
-    "Sea conditions decide diving and snorkelling, not the calendar. Keep a spare day if the underwater activities are the reason you are going.",
-    "Mobile signal is patchy on Havelock and Neil, and data is slow. Download your tickets and maps before you leave Port Blair.",
-    "Book early for Christmas, New Year and the April–May school holidays — these are the most expensive and most crowded weeks of the year."
+    "Compare different packages instead of selecting the first option you find. Check the hotel category, inclusions, transportation and sightseeing details.",
+    "Book your trip in advance whenever possible. Early planning can give you more choices of hotels and travel dates.",
+    "Select a package that focuses on the places and activities you genuinely want to experience, and avoid paying extra for services you do not need.",
+    "Travelling during the less busy season can help you get better value.",
+    "Travelling with family or friends can make certain travel costs easier to manage.",
+    "Before booking, carefully check what is included and what may require an additional payment.",
+    "Weather conditions can change, so it is always useful to check the latest travel information before your journey."
   ],
   "faqs": [
     {
-      "question": "How many days are enough for an Andaman trip?",
-      "answer": "Five to seven days covers Port Blair, Havelock and Neil without rushing, which is why our packages are built that way. A shorter trip usually means dropping Neil — the islands are joined by scheduled ferries, so each move costs you most of a morning and you cannot compress that."
+      "question": "Why choose an Andaman tour package?",
+      "answer": "An Andaman tour package can save both time and effort. Planning hotels, transportation, sightseeing and island transfers independently can be confusing, especially if you are visiting Andaman for the first time. A package allows you to have a planned itinerary while still leaving enough free time to relax and enjoy the destination. Many packages can also be customized according to the number of travellers, hotel category, activities and places you want to visit."
     },
     {
-      "question": "What is the best time to visit Andaman?",
-      "answer": "October to May. The sea is calm, the ferries run reliably and underwater visibility is at its best for diving and snorkelling. June to September is the monsoon: it is cheaper and much quieter, but crossings get rough and can be cancelled at short notice, which is a real risk on a fixed itinerary."
+      "question": "What is included in an Andaman tour package?",
+      "answer": "The inclusions depend on the travel provider and package category. Common inclusions may include hotel accommodation, airport or hotel transfers, island transfers, sightseeing, ferry tickets, selected meals, local transportation, activity arrangements and tour assistance. Before booking, carefully check what is included and what may require an additional payment."
     },
     {
-      "question": "What does an Andaman tour package cost?",
-      "answer": "Our 6-day Andaman package starts at ₹22,999 per person on twin sharing, plus 5% GST, covering hotels, island transfers, ferry tickets and sightseeing. Flights to Port Blair are quoted separately because the fare swings more than the rest of the trip combined. The final figure moves with your dates, hotel category and group size — Christmas, New Year and the April–May holidays are the dearest weeks."
+      "question": "What are the top activities to enjoy in Andaman?",
+      "answer": "Scuba diving is one of the most popular experiences — the clear waters and marine life provide an opportunity to explore the underwater world. If you prefer a simpler water activity, snorkeling lets you see colourful fish and underwater surroundings without needing advanced diving skills. Beaches are an important part of any Andaman trip, whether that is relaxing on the sand, enjoying the sunsets or simply taking in the island atmosphere."
     },
     {
-      "question": "Do we need to know swimming for scuba diving in Andaman?",
-      "answer": "No. Discover Scuba Diving is run one-to-one with a certified divemaster and needs no swimming ability or prior certification. If you would still rather stay on the surface, snorkelling at Elephant Beach shows you much of the same reef."
+      "question": "Is Andaman suitable for a family trip?",
+      "answer": "Yes. An Andaman tour package is a great option for families because it can reduce the stress of planning transportation and sightseeing. Families can choose comfortable hotels, convenient transfers and activities suitable for different age groups, and a well-planned itinerary should include enough time for both sightseeing and relaxation."
     },
     {
-      "question": "Do Indian citizens need a permit for Andaman?",
-      "answer": "Not for Port Blair, Havelock or Neil — a government photo ID is enough. Some of the outer and tribal-reserve islands are restricted and are not part of any standard itinerary, ours included."
+      "question": "When is the best time to visit Andaman?",
+      "answer": "Choosing the right travel season can make your trip more enjoyable. October to May brings calm turquoise waters that suit diving and sea transfers. Weather conditions can change, so it is always useful to check the latest travel information before your journey — particularly if you are planning snorkeling, scuba diving or island hopping, where sea conditions matter."
     },
     {
-      "question": "Is Andaman good for a family trip?",
-      "answer": "Yes, and it is easier than it looks. The beaches are calm, Discover Scuba works for most ages, and the travelling is by boat and short cab rides rather than long drives. The part worth planning around is the ferry timings — with small children or elderly parents, tell us and we will book the shorter crossings and leave more room between them."
-    },
-    {
-      "question": "How do you travel between the islands?",
-      "answer": "By sea. Private catamarans — Makruzz and Nautika — run Port Blair to Havelock to Neil on a fixed daily timetable and take roughly 1 to 2 hours a leg. Government ferries are cheaper and slower. We book the private ones as part of the package because they are the ones that keep an itinerary on schedule."
-    },
-    {
-      "question": "Can an Andaman package be customised?",
-      "answer": "Yes. Nights per island, hotel category, ferry class and which activities are included are all adjustable, and we can quote with or without flights. Tell us your dates, headcount and budget and you will get an itemised quote rather than a fixed menu."
+      "question": "How do you book the best Andaman tour deal?",
+      "answer": "Start by understanding your travel requirements: how many days you want to stay, how many people are travelling, your preferred hotel category and your approximate budget. Then compare package itineraries carefully — destinations covered, accommodation, transfers, meals, activities and other inclusions. Do not choose a package based only on its price; a slightly different package may offer better convenience or more useful inclusions."
     }
   ],
   "seoTitle": "Andaman Travel Guide | Places to Visit, Best Time & Cost",
-  "seoDescription": "Plan an Andaman trip — Port Blair, Havelock and Neil, Radhanagar Beach, scuba and snorkelling, ferries between the islands, best time to go and what a package costs."
+  "seoDescription": "Plan an Andaman trip — Port Blair, Havelock and Neil Island, scuba diving and snorkeling, what a package includes, the best time to go and how to book the right deal."
 }
