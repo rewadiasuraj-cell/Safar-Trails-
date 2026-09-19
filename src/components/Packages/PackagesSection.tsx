@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { packagesData } from '../../data/packagesData';
 import { GST_NOTE } from '../../lib/seo/siteConfig';
 import { Package } from '../../types';
@@ -29,12 +29,24 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
   onCustomizePackageWithAI,
   onOpenQuoteModal
 }) => {
+  /* The travel-style strip on the homepage links here as /packages?style=Family.
+     Without this the chips would land on an unfiltered list and quietly do
+     nothing, which is worse than not having them. Read once, as the initial
+     filter value, so a visitor can still change it from the controls below. */
+  const [searchParams] = useSearchParams();
+  const styleParam = searchParams.get('style');
+
   const [selectedDestination, setSelectedDestination] = useState<string>('All');
-  const [selectedTripType, setSelectedTripType] = useState<string>('All');
+  const [selectedTripType, setSelectedTripType] = useState<string>(styleParam || 'All');
   const [selectedDuration, setSelectedDuration] = useState<string>('All');
 
   const destinationsList = ['All', 'Kashmir', 'Goa', 'Kerala', 'Rajasthan', 'Himachal Pradesh', 'Andaman', 'Meghalaya', 'Uttarakhand'];
-  const tripTypesList = ['All', 'Couple', 'Honeymoon', 'Family', 'Friends', 'Solo', 'Adventure', 'Luxury'];
+  /* These are the tripType values that actually occur in the content, with the
+     count each covers: Couple 16, Family 15, Adventure 9, Honeymoon 8,
+     Group 7, Luxury 5, Nature 4. "Solo" and "Friends" used to be listed here
+     and Solo matches nothing at all - a filter chip that always returns an
+     empty grid. */
+  const tripTypesList = ['All', 'Couple', 'Family', 'Adventure', 'Honeymoon', 'Group', 'Luxury', 'Nature'];
   const durationsList = ['All', 'Short (3-4 Days)', 'Classic (5-7 Days)', 'Grand (8+ Days)'];
 
   const filteredPackages = packagesData.filter((pkg) => {

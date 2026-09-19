@@ -28,6 +28,73 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
     return matchesSearch;
   });
 
+  /* Homepage: one sand panel, pitch on the left, two guides on the right.
+   *
+   * The full section below - a heading, a search box and a three-card grid on
+   * its own background - is what /guides needs. On the homepage it was a third
+   * full-width card grid after destinations and packages, for the part of the
+   * page least likely to lead to a booking. This says the same thing in a
+   * third of the height and reads as one block rather than another aisle. */
+  if (!asPage) {
+    const featured = guidesData.slice(0, 2);
+    return (
+      <section id="travel-guides-section" className="w-full py-10 sm:py-14 bg-ivory">
+        <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+          <div className="bg-light-blue rounded-3xl border border-[#E7E2DA] p-5 sm:p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-6 lg:gap-10 items-center">
+            <div>
+              <span className="block text-[11px] font-sans-ui font-extrabold uppercase tracking-[0.22em] text-gold-ink mb-2.5">
+                Need inspiration?
+              </span>
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] font-bold text-stone-900 tracking-tight leading-tight">
+                Travel Stories &amp; Guides
+              </h2>
+              <p className="mt-3 text-sm text-[#44403C] leading-relaxed max-w-sm">
+                Written by the specialists who plan these trips every week — when to go,
+                what a trip really costs, and the mistakes first-timers make.
+              </p>
+              <Link
+                to="/guides"
+                className="mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-deep-emerald hover:bg-forest-green text-white text-xs font-bold uppercase tracking-wider transition-colors"
+              >
+                <span>{`Read all ${guidesData.length} guides`}</span>
+                <ArrowRight className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 sm:gap-5">
+              {featured.map((guide) => (
+                <Link
+                  key={guide.slug}
+                  to={`/guides/${guide.slug}`}
+                  className="group block bg-white rounded-2xl overflow-hidden border border-[#E7E2DA] shadow-xs hover:shadow-lg transition-shadow"
+                >
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <img
+                      src={guide.heroImage}
+                      alt=""
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <div className="p-3.5 sm:p-4">
+                    <h3 className="font-serif text-[13px] sm:text-[15px] font-bold text-stone-900 leading-snug line-clamp-2 group-hover:text-gold-ink transition-colors">
+                      {guide.title}
+                    </h3>
+                    <p className="mt-1.5 flex items-center gap-1.5 text-[11px] text-[#57534E]">
+                      <Clock className="w-3 h-3 shrink-0" aria-hidden="true" />
+                      <span>{guide.readTime}</span>
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section id="travel-guides-section" className="w-full py-12 lg:py-20 bg-[#FAF9F6] border-t border-stone-200">
       <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
@@ -129,19 +196,11 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
                 </div>
               </article>
             ))}
-          
-          {!asPage && (
-            <div className="mt-10 flex justify-center">
-              <Link
-                to="/guides"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-stone-300 bg-white text-stone-900 text-xs font-bold uppercase tracking-wider hover:bg-stone-50 transition-colors"
-              >
-                <span>{`View all ${filteredGuides.length} travel guides`}</span>
-                <span aria-hidden="true">&rarr;</span>
-              </Link>
-            </div>
-          )}
-</div>
+            {/* A "View all guides" link used to sit here - inside the grid
+                container, so the browser made it a grid cell and stretched it
+                to a full card's height. It is not needed on /guides, which
+                already shows every guide. */}
+          </div>
         )}
       </div>
     </section>

@@ -22,6 +22,8 @@ const PackagesSection = lazy(() => import('./components/Packages/PackagesSection
 const TravelGuidesSection = lazy(() => import('./components/TravelGuides/TravelGuidesSection').then(m => ({ default: m.TravelGuidesSection })));
 const TrustSection = lazy(() => import('./components/TrustSection').then(m => ({ default: m.TrustSection })));
 const StatsBand = lazy(() => import('./components/StatsBand').then(m => ({ default: m.StatsBand })));
+const TravelStylesStrip = lazy(() => import('./components/TravelStylesStrip').then(m => ({ default: m.TravelStylesStrip })));
+const SpecialOfferSection = lazy(() => import('./components/SpecialOfferSection').then(m => ({ default: m.SpecialOfferSection })));
 const ReviewsSection = lazy(() => import('./components/ReviewsSection').then(m => ({ default: m.ReviewsSection })));
 const FAQSection = lazy(() => import('./components/FAQSection').then(m => ({ default: m.FAQSection })));
 const FinalCTASection = lazy(() => import('./components/FinalCTASection').then(m => ({ default: m.FinalCTASection })));
@@ -191,6 +193,10 @@ export default function App() {
                     onOpenQuoteModal={handleOpenQuoteModal}
                   />
 
+                  {/* One row of travel styles between the two grids, each chip
+                      carrying a real filter into /packages. */}
+                  <TravelStylesStrip />
+
                   <PackagesSection
                     onSelectPackage={handleSelectPackage}
                     onCustomizePackageWithAI={(title, dest) => handleStartAIPlan(`Customize ${title} in ${dest}`, dest)}
@@ -210,6 +216,8 @@ export default function App() {
                   <TravelGuidesSection
                     onSelectGuide={handleSelectGuide}
                   />
+
+                  <SpecialOfferSection />
 
                   {/* TrustSection is no longer here - TrustStrip carries it at
                       the top of the page, and the six-pillar version still
