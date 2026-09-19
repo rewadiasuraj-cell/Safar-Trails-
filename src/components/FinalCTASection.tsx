@@ -33,7 +33,7 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
             </div>
             <div>
               <div className="text-sm font-bold text-white tracking-wide">Fully Customized</div>
-              <div className="text-xs text-gray-400">Packages</div>
+              <div className="text-xs text-stone-400">Packages</div>
             </div>
           </div>
 
@@ -44,7 +44,7 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
             </div>
             <div>
               <div className="text-sm font-bold text-white tracking-wide">Trusted</div>
-              <div className="text-xs text-gray-400">Travel Partners</div>
+              <div className="text-xs text-stone-400">Travel Partners</div>
             </div>
           </div>
 
@@ -55,7 +55,7 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
             </div>
             <div>
               <div className="text-sm font-bold text-white tracking-wide">Clear</div>
-              <div className="text-xs text-gray-400">Pricing</div>
+              <div className="text-xs text-stone-400">Pricing</div>
             </div>
           </div>
 
@@ -66,7 +66,7 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
             </div>
             <div>
               <div className="text-sm font-bold text-white tracking-wide">24/7</div>
-              <div className="text-xs text-gray-400">Travel Support</div>
+              <div className="text-xs text-stone-400">Travel Support</div>
             </div>
           </div>
         </div>
@@ -84,7 +84,7 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
             Let's Plan Your Perfect Journey
           </h2>
 
-          <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="text-stone-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-normal">
             Smart AI planning, expert refinement, and personalized travel—crafted for your perfect journey.
           </p>
 

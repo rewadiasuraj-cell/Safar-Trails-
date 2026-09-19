@@ -54,7 +54,7 @@ export const TrustSection: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl font-serif text-white tracking-tight">
             Why Experienced Travelers Choose Safar Trails
           </h2>
-          <p className="mt-2 text-gray-300 text-sm sm:text-base font-normal">
+          <p className="mt-2 text-stone-300 text-sm sm:text-base font-normal">
             We bridge modern artificial intelligence with trusted human hospitality to deliver memorable Indian holidays.
           </p>
         </div>
@@ -78,7 +78,7 @@ export const TrustSection: React.FC = () => {
             <ExternalLink className="h-3.5 w-3.5 shrink-0 opacity-70" aria-hidden="true" />
           </a>
 
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs sm:text-sm text-gray-300">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs sm:text-sm text-stone-300">
             <span className="inline-flex items-center gap-1.5">
               <MessageCircle className="h-4 w-4 shrink-0 text-luxury-gold" aria-hidden="true" />
               Average WhatsApp reply under 3 minutes
@@ -110,7 +110,7 @@ export const TrustSection: React.FC = () => {
                   {pillar.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-normal">
+                <p className="text-xs sm:text-sm text-stone-300 leading-relaxed font-normal">
                   {pillar.description}
                 </p>
               </div>

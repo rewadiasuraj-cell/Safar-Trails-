@@ -174,9 +174,9 @@ export const Header: React.FC<HeaderProps> = ({
                     exit={{ opacity: 0, scale: 0.96, y: -8 }}
                     transition={{ type: 'spring', stiffness: 420, damping: 32 }}
                     style={{ transformOrigin: 'top left' }}
-                    className="absolute top-full left-0 mt-2 w-80 bg-white rounded-2xl shadow-xl border border-gray-100 p-4 grid grid-cols-1 gap-1 z-50"
+                    className="absolute top-full left-0 mt-2 w-80 bg-white rounded-2xl shadow-xl border border-stone-100 p-4 grid grid-cols-1 gap-1 z-50"
                   >
-                    <div className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-gray-400 border-b border-gray-100 mb-1">
+                    <div className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-stone-400 border-b border-stone-100 mb-1">
                       Popular Domestic Destinations
                     </div>
                     {popularDestinations.map((dest) => (
@@ -188,18 +188,18 @@ export const Header: React.FC<HeaderProps> = ({
                         }}
                         className="text-left px-3 py-2 rounded-xl hover:bg-[#FAF9F6] transition-colors flex group/item cursor-pointer"
                       >
-                        <span className="text-sm font-semibold text-slate-900 group-hover/item:text-luxury-gold transition-colors whitespace-nowrap">
+                        <span className="text-sm font-semibold text-stone-900 group-hover/item:text-luxury-gold transition-colors whitespace-nowrap">
                           {dest.name}
                         </span>
                       </button>
                     ))}
-                    <div className="pt-2 border-t border-gray-100 mt-1">
+                    <div className="pt-2 border-t border-stone-100 mt-1">
                       <button
                         onClick={() => {
                           onNavigate('destinations');
                           setDestinationsDropdown(false);
                         }}
-                        className="w-full text-center py-1.5 text-xs font-bold text-slate-900 hover:text-luxury-gold uppercase tracking-wider cursor-pointer whitespace-nowrap"
+                        className="w-full text-center py-1.5 text-xs font-bold text-stone-900 hover:text-luxury-gold uppercase tracking-wider cursor-pointer whitespace-nowrap"
                       >
                         View All Destinations →
                       </button>
@@ -365,24 +365,24 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={(e) => e.stopPropagation()}
               className="fixed inset-y-0 right-0 w-4/5 max-w-sm bg-white shadow-2xl p-6 flex flex-col justify-between overflow-y-auto">
             <div>
-              <div className="flex items-center justify-between pb-4 border-b border-gray-100">
+              <div className="flex items-center justify-between pb-4 border-b border-stone-100">
                 <SafarLogo size="sm" />
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 rounded-full text-gray-500 hover:bg-gray-100 cursor-pointer"
+                  className="p-2 rounded-full text-stone-500 hover:bg-stone-100 cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
-              <div className="mt-6 space-y-1 text-sm font-medium text-slate-800">
+              <div className="mt-6 space-y-1 text-sm font-medium text-stone-800">
                 <button
                   onClick={() => {
                     onNavigate('home');
                     setMobileMenuOpen(false);
                   }}
                   className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'home' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
+                    currentView === 'home' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-stone-50'
                   }`}
                 >
                   Home
@@ -393,7 +393,7 @@ export const Header: React.FC<HeaderProps> = ({
                     setMobileMenuOpen(false);
                   }}
                   className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors flex items-center gap-2 ${
-                    currentView === 'ai-planner' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
+                    currentView === 'ai-planner' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-stone-50'
                   }`}
                 >
                   <AIIcon className="w-4 h-4" />
@@ -405,7 +405,7 @@ export const Header: React.FC<HeaderProps> = ({
                     setMobileMenuOpen(false);
                   }}
                   className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'destinations' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
+                    currentView === 'destinations' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-stone-50'
                   }`}
                 >
                   Destination
@@ -416,7 +416,7 @@ export const Header: React.FC<HeaderProps> = ({
                     setMobileMenuOpen(false);
                   }}
                   className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'packages' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
+                    currentView === 'packages' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-stone-50'
                   }`}
                 >
                   Tour Packages
@@ -427,7 +427,7 @@ export const Header: React.FC<HeaderProps> = ({
                     setMobileMenuOpen(false);
                   }}
                   className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'guides' || currentView === 'guide-detail' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
+                    currentView === 'guides' || currentView === 'guide-detail' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-stone-50'
                   }`}
                 >
                   Blogs
@@ -438,7 +438,7 @@ export const Header: React.FC<HeaderProps> = ({
                     setMobileMenuOpen(false);
                   }}
                   className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'why-us' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
+                    currentView === 'why-us' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-stone-50'
                   }`}
                 >
                   About Us
@@ -449,7 +449,7 @@ export const Header: React.FC<HeaderProps> = ({
                     setMobileMenuOpen(false);
                   }}
                   className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'contact-us' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-gray-50'
+                    currentView === 'contact-us' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-stone-50'
                   }`}
                 >
                   Contact Us
@@ -457,8 +457,8 @@ export const Header: React.FC<HeaderProps> = ({
               </div>
 
               {/* Quick Destination Tags */}
-              <div className="mt-6 pt-4 border-t border-gray-100">
-                <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">
+              <div className="mt-6 pt-4 border-t border-stone-100">
+                <div className="text-[10px] font-bold text-stone-400 uppercase tracking-widest mb-3">
                   Trending Destinations
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -469,7 +469,7 @@ export const Header: React.FC<HeaderProps> = ({
                         onNavigate('destination-detail', d.toLowerCase().replace(/\s+/g, '-'));
                         setMobileMenuOpen(false);
                       }}
-                      className="px-3 py-1 text-xs font-medium rounded-full bg-gray-100 text-gray-800 hover:bg-luxury-gold hover:text-white transition-colors cursor-pointer"
+                      className="px-3 py-1 text-xs font-medium rounded-full bg-stone-100 text-stone-800 hover:bg-luxury-gold hover:text-white transition-colors cursor-pointer"
                     >
                       {d}
                     </button>
@@ -479,7 +479,7 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
 
             {/* Mobile Footer CTAs */}
-            <div className="pt-6 border-t border-gray-100 space-y-3">
+            <div className="pt-6 border-t border-stone-100 space-y-3">
               <button
                 onClick={() => {
                   onOpenQuoteModal();
@@ -491,7 +491,7 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
               <button
                 onClick={handleWhatsAppClick}
-                className="w-full py-3 rounded-full border border-gray-200 text-gray-800 font-semibold text-sm hover:bg-gray-50 text-center flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-3 rounded-full border border-stone-200 text-stone-800 font-semibold text-sm hover:bg-stone-50 text-center flex items-center justify-center gap-2 cursor-pointer"
               >
                 <WhatsAppIcon className="w-5 h-5" />
                 <span>Expert Help on WhatsApp</span>

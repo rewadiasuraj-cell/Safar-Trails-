@@ -169,9 +169,9 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 animate-in fade-in duration-200">
-      <div className="bg-white w-full max-w-lg rounded-2xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col my-auto">
+      <div className="bg-white w-full max-w-lg rounded-2xl shadow-2xl border border-stone-200 overflow-hidden flex flex-col my-auto">
         {/* Header */}
-        <div className="bg-[#0A0A0A] p-6 text-white relative border-b border-gray-800">
+        <div className="bg-[#1C1917] p-6 text-white relative border-b border-stone-800">
           <button
             onClick={onClose}
             className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
@@ -179,7 +179,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
             <X className="w-5 h-5" />
           </button>
 
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-gray-300 text-[10px] font-bold uppercase tracking-widest mb-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-stone-300 text-[10px] font-bold uppercase tracking-widest mb-2">
             <ShieldCheck className="w-3.5 h-3.5 text-white" />
             <span>Direct Specialist Connection</span>
           </div>
@@ -187,7 +187,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
           <h2 className="text-xl sm:text-2xl font-serif font-bold text-white tracking-tight">
             Get Your Custom Trip Quote
           </h2>
-          <p className="text-xs text-gray-400 mt-1 font-normal">
+          <p className="text-xs text-stone-400 mt-1 font-normal">
             Zero commitment. 100% itemized pricing with hotel room categories.
           </p>
         </div>
@@ -201,7 +201,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
             </div>
 
             <div>
-              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest block">
+              <span className="text-[10px] font-bold text-stone-400 uppercase tracking-widest block">
                 Enquiry Reference ID
               </span>
               <div className="text-2xl font-black text-black tracking-widest mt-0.5">
@@ -210,7 +210,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
               <h3 className="text-lg font-serif font-bold text-black mt-2">
                 Thank you, {name}!
               </h3>
-              <p className="text-xs sm:text-sm text-gray-600 mt-1 font-normal">
+              <p className="text-xs sm:text-sm text-stone-600 mt-1 font-normal">
                 Your request has been routed to our senior destination coordinator. We will reach out on WhatsApp within 3 hours.
               </p>
             </div>
@@ -229,7 +229,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
 
               <button
                 onClick={onClose}
-                className="w-full py-2.5 rounded-xl border border-gray-200 text-xs font-bold text-gray-700 hover:border-black cursor-pointer"
+                className="w-full py-2.5 rounded-xl border border-stone-200 text-xs font-bold text-stone-700 hover:border-black cursor-pointer"
               >
                 Back to Website
               </button>
@@ -252,7 +252,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
               <div>
                 <label
                   htmlFor="quote-name"
-                  className="block text-[10px] font-bold uppercase tracking-widest text-gray-600 mb-1"
+                  className="block text-[10px] font-bold uppercase tracking-widest text-stone-600 mb-1"
                 >
                   Full Name <span aria-hidden="true" className="text-red-600">*</span>
                 </label>
@@ -267,14 +267,14 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="e.g. Rahul Sharma"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-xs sm:text-sm text-gray-900 bg-white focus:border-black focus:outline-none"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-stone-200 text-xs sm:text-sm text-stone-900 bg-white focus:border-black focus:outline-none"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="quote-phone"
-                  className="block text-[10px] font-bold uppercase tracking-widest text-gray-600 mb-1"
+                  className="block text-[10px] font-bold uppercase tracking-widest text-stone-600 mb-1"
                 >
                   WhatsApp / Phone <span aria-hidden="true" className="text-red-600">*</span>
                 </label>
@@ -290,7 +290,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="e.g. 80766 65782"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-xs sm:text-sm text-gray-900 bg-white focus:border-black focus:outline-none"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-stone-200 text-xs sm:text-sm text-stone-900 bg-white focus:border-black focus:outline-none"
                 />
               </div>
             </div>
@@ -299,7 +299,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
               <div>
                 <label
                   htmlFor="quote-destination"
-                  className="block text-[10px] font-bold uppercase tracking-widest text-gray-600 mb-1"
+                  className="block text-[10px] font-bold uppercase tracking-widest text-stone-600 mb-1"
                 >
                   Destination
                 </label>
@@ -308,7 +308,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                   name="destination"
                   value={destination}
                   onChange={(e) => setDestination(e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl border border-gray-200 text-xs sm:text-sm text-gray-900 font-bold bg-white focus:border-black focus:outline-none"
+                  className="w-full px-3 py-2.5 rounded-xl border border-stone-200 text-xs sm:text-sm text-stone-900 font-bold bg-white focus:border-black focus:outline-none"
                 >
                   <option value="Kashmir">Kashmir</option>
                   <option value="Goa">Goa</option>
@@ -330,7 +330,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
               <div>
                 <label
                   htmlFor="quote-dates"
-                  className="block text-[10px] font-bold uppercase tracking-widest text-gray-600 mb-1"
+                  className="block text-[10px] font-bold uppercase tracking-widest text-stone-600 mb-1"
                 >
                   Travel Month/Date
                 </label>
@@ -341,7 +341,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                   value={travelDates}
                   onChange={(e) => setTravelDates(e.target.value)}
                   placeholder="e.g. Next Month / Diwali"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-xs sm:text-sm text-gray-900 bg-white focus:border-black focus:outline-none"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-stone-200 text-xs sm:text-sm text-stone-900 bg-white focus:border-black focus:outline-none"
                 />
               </div>
             </div>
@@ -351,7 +351,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
               onClick={() => setShowMore((open) => !open)}
               aria-expanded={showMore}
               aria-controls="quote-more-details"
-              className="w-full flex items-center justify-between gap-2 px-3.5 py-2.5 rounded-xl border border-dashed border-gray-300 text-[11px] font-bold uppercase tracking-widest text-gray-600 hover:text-gray-900 hover:border-gray-400 bg-white cursor-pointer"
+              className="w-full flex items-center justify-between gap-2 px-3.5 py-2.5 rounded-xl border border-dashed border-stone-300 text-[11px] font-bold uppercase tracking-widest text-stone-600 hover:text-stone-900 hover:border-stone-400 bg-white cursor-pointer"
             >
               <span>
                 {showMore ? 'Hide extra details' : 'Add trip details (optional)'}
@@ -367,7 +367,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
               <div>
                 <label
                   htmlFor="quote-travellers"
-                  className="block text-[10px] font-bold uppercase tracking-widest text-gray-600 mb-1"
+                  className="block text-[10px] font-bold uppercase tracking-widest text-stone-600 mb-1"
                 >
                   Travellers
                 </label>
@@ -376,7 +376,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                   name="travellers"
                   value={travellers}
                   onChange={(e) => setTravellers(e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl border border-gray-200 text-xs text-gray-900 bg-white focus:border-black focus:outline-none"
+                  className="w-full px-3 py-2.5 rounded-xl border border-stone-200 text-xs text-stone-900 bg-white focus:border-black focus:outline-none"
                 >
                   <option value="2 Adults (Couple/Honeymoon)">2 Adults (Couple / Honeymoon)</option>
                   <option value="Family (2 Adults + 1-2 Kids)">Family (2 Adults + 1-2 Kids)</option>
@@ -390,7 +390,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
               <div>
                 <label
                   htmlFor="quote-budget"
-                  className="block text-[10px] font-bold uppercase tracking-widest text-gray-600 mb-1"
+                  className="block text-[10px] font-bold uppercase tracking-widest text-stone-600 mb-1"
                 >
                   Budget Preference
                 </label>
@@ -399,7 +399,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                   name="budget"
                   value={budget}
                   onChange={(e) => setBudget(e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl border border-gray-200 text-xs text-gray-900 bg-white focus:border-black focus:outline-none"
+                  className="w-full px-3 py-2.5 rounded-xl border border-stone-200 text-xs text-stone-900 bg-white focus:border-black focus:outline-none"
                 >
                   <option value="Standard (₹15k–₹25k/person)">Standard 3★ (₹15k–₹25k/person)</option>
                   <option value="Deluxe (₹25k–₹40k/person)">Deluxe 4★ (₹25k–₹40k/person)</option>
@@ -411,7 +411,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
             <div>
               <label
                 htmlFor="quote-email"
-                className="block text-[10px] font-bold uppercase tracking-widest text-gray-600 mb-1"
+                className="block text-[10px] font-bold uppercase tracking-widest text-stone-600 mb-1"
               >
                 Email (Optional)
               </label>
@@ -423,14 +423,14 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="e.g. rahul@gmail.com"
-                className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-xs sm:text-sm text-gray-900 bg-white focus:border-black focus:outline-none"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-stone-200 text-xs sm:text-sm text-stone-900 bg-white focus:border-black focus:outline-none"
               />
             </div>
 
             <div>
               <label
                 htmlFor="quote-notes"
-                className="block text-[10px] font-bold uppercase tracking-widest text-gray-600 mb-1"
+                className="block text-[10px] font-bold uppercase tracking-widest text-stone-600 mb-1"
               >
                 Special Requests or Notes (Optional)
               </label>
@@ -441,7 +441,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
                 placeholder="e.g. Want Dal lake houseboat with central heating, need vegetarian meals, child car seat..."
-                className="w-full p-3 rounded-xl border border-gray-200 text-xs text-gray-900 resize-none bg-white focus:border-black focus:outline-none"
+                className="w-full p-3 rounded-xl border border-stone-200 text-xs text-stone-900 resize-none bg-white focus:border-black focus:outline-none"
               />
             </div>
             </div>
@@ -450,7 +450,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
               id="submit-quote-request-btn"
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-3.5 rounded-xl bg-black hover:bg-gray-800 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+              className="w-full py-3.5 rounded-xl bg-black hover:bg-stone-800 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
             >
               {isSubmitting ? (
                 <>

@@ -25,7 +25,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
   return (
     <nav
       aria-label="Primary mobile navigation"
-      className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-lg border-t border-gray-200 px-2 pt-1.5 pb-[max(0.375rem,env(safe-area-inset-bottom))] shadow-[0_-4px_20px_rgba(0,0,0,0.06)]"
+      className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-lg border-t border-stone-200 px-2 pt-1.5 pb-[max(0.375rem,env(safe-area-inset-bottom))] shadow-[0_-4px_20px_rgba(0,0,0,0.06)]"
     >
       <div className="flex items-center justify-around">
         {navItems.map((item) => {
@@ -58,7 +58,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
               onClick={() => onNavigate(item.id)}
               aria-current={isActive ? 'page' : undefined}
               className={`flex min-h-[48px] min-w-[48px] flex-col items-center justify-center rounded-lg px-2.5 py-1 transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600 ${
-                isActive ? 'text-black font-bold' : 'text-slate-600 hover:text-black font-medium'
+                isActive ? 'text-black font-bold' : 'text-stone-600 hover:text-black font-medium'
               }`}
             >
               <Icon className={`w-5 h-5 ${isActive ? 'stroke-[2.5]' : 'stroke-2'}`} aria-hidden="true" />

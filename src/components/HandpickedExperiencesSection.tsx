@@ -143,7 +143,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       key={`${dest.id}-${indexSuffix}`}
       id={`featured-exp-${dest.slug}-${indexSuffix}`}
       onClick={() => handleCardClick(dest)}
-      className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] hover:scale-[1.02] transform will-change-transform transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 border border-gray-200/90 hover:border-luxury-gold select-none"
+      className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] hover:scale-[1.02] transform will-change-transform transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 border border-stone-200/90 hover:border-luxury-gold select-none"
     >
       {/* Photography Background with Zoom Hover & Fallback */}
       <img
@@ -183,8 +183,8 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
             review count were placeholder values the business could not
             substantiate - see docs/README.md. Price is a claim we can stand
             behind, and in travel it qualifies the lead better than a rating. */}
-        <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] sm:text-[11px] font-bold bg-white text-gray-900 shadow-md border border-white/90 backdrop-blur-md whitespace-nowrap leading-none">
-          <span className="text-[9px] font-bold uppercase tracking-wide text-gray-600">From</span>
+        <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10.5px] sm:text-[11px] font-bold bg-white text-stone-900 shadow-md border border-white/90 backdrop-blur-md whitespace-nowrap leading-none">
+          <span className="text-[9px] font-bold uppercase tracking-wide text-stone-600">From</span>
           <span className="text-black font-extrabold">{dest.startingPrice}</span>
         </div>
       </div>
@@ -242,7 +242,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
       key={`view-all-${indexSuffix}`}
       id={`featured-exp-view-all-${indexSuffix}`}
       onClick={() => onViewAll()}
-      className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 bg-midnight-blue border border-slate-800 hover:border-luxury-gold/60 select-none"
+      className="group relative flex-none w-[280px] sm:w-[310px] lg:w-[330px] xl:w-[340px] h-[370px] sm:h-[390px] lg:h-[410px] rounded-2xl sm:rounded-[22px] overflow-hidden cursor-pointer shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_36px_-8px_rgba(0,0,0,0.22)] transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 bg-midnight-blue border border-stone-800 hover:border-luxury-gold/60 select-none"
     >
       {/* Atmospheric Background Image with Deep Navy Overlay */}
       <img
@@ -288,7 +288,7 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
   );
 
   return (
-    <section id="handpicked-experiences-section" className="w-full py-16 sm:py-20 lg:py-24 bg-ivory border-b border-gray-100 overflow-hidden">
+    <section id="handpicked-experiences-section" className="w-full py-16 sm:py-20 lg:py-24 bg-ivory border-b border-stone-100 overflow-hidden">
       <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         
         {/* Section Header */}
@@ -301,14 +301,14 @@ export const HandpickedExperiencesSection: React.FC<HandpickedExperiencesSection
               </span>
             </div>
             
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-serif font-bold text-slate-900 tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-serif font-bold text-stone-900 tracking-tight leading-tight">
               Handpicked Experiences for You
             </h2>
 
             <div className="flex items-center gap-2 mt-3">
               <div className="w-10 h-[1.5px] bg-luxury-gold rounded-full" />
               <div className="w-1.5 h-1.5 rounded-full bg-luxury-gold" />
-              <p className="text-sm text-slate-500 font-sans-ui ml-1">
+              <p className="text-sm text-stone-500 font-sans-ui ml-1">
                 Hover to pause and explore curated holidays across India
               </p>
             </div>

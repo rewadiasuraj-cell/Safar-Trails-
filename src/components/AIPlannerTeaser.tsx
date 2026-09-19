@@ -7,7 +7,7 @@ export const AIPlannerTeaser: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="w-full py-8 sm:py-10 bg-ivory border-t border-b border-gray-200/80">
+    <section className="w-full py-8 sm:py-10 bg-ivory border-t border-b border-stone-200/80">
       <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <button
           onClick={() => navigate('/ai-planner')}
@@ -21,7 +21,7 @@ export const AIPlannerTeaser: React.FC = () => {
               <div className="font-serif font-bold text-base sm:text-lg tracking-tight truncate">
                 Plan My Trip with AI
               </div>
-              <div className="text-xs sm:text-sm text-gray-300 truncate">
+              <div className="text-xs sm:text-sm text-stone-300 truncate">
                 Tell us your dates, budget & style — get a custom itinerary in seconds.
               </div>
             </div>

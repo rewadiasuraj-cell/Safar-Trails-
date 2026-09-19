@@ -100,7 +100,7 @@ export const FloatingShareButton: React.FC<FloatingShareButtonProps> = ({
                 e.preventDefault();
                 setShowDropdown(!showDropdown);
               }}
-              className="group flex items-center gap-2.5 px-4 py-3 sm:py-3.5 bg-slate-900 hover:bg-black text-white rounded-full shadow-[0_8px_25px_-4px_rgba(0,0,0,0.35)] hover:shadow-[0_12px_30px_-4px_rgba(255,107,0,0.35)] border border-slate-700/80 hover:border-orange-500/50 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+              className="group flex items-center gap-2.5 px-4 py-3 sm:py-3.5 bg-stone-900 hover:bg-black text-white rounded-full shadow-[0_8px_25px_-4px_rgba(0,0,0,0.35)] hover:shadow-[0_12px_30px_-4px_rgba(255,107,0,0.35)] border border-stone-700/80 hover:border-orange-500/50 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               title="Share this travel page with friends"
               aria-label="Share this travel page"
             >
@@ -115,12 +115,12 @@ export const FloatingShareButton: React.FC<FloatingShareButtonProps> = ({
 
             {/* Quick Share Dropdown Popover */}
             {showDropdown && (
-              <div className="absolute bottom-full right-0 mb-3 w-56 bg-white rounded-2xl shadow-xl border border-gray-200 p-3 z-50 animate-in fade-in slide-in-from-bottom-2 duration-200">
-                <div className="flex items-center justify-between pb-2 mb-2 border-b border-gray-100">
-                  <span className="text-[11px] font-bold text-slate-800 uppercase tracking-wider">Share With Friends</span>
+              <div className="absolute bottom-full right-0 mb-3 w-56 bg-white rounded-2xl shadow-xl border border-stone-200 p-3 z-50 animate-in fade-in slide-in-from-bottom-2 duration-200">
+                <div className="flex items-center justify-between pb-2 mb-2 border-b border-stone-100">
+                  <span className="text-[11px] font-bold text-stone-800 uppercase tracking-wider">Share With Friends</span>
                   <button
                     onClick={() => setShowDropdown(false)}
-                    className="p-1 text-slate-400 hover:text-slate-700 rounded-md"
+                    className="p-1 text-stone-400 hover:text-stone-700 rounded-md"
                   >
                     <X className="w-3.5 h-3.5" />
                   </button>
@@ -131,7 +131,7 @@ export const FloatingShareButton: React.FC<FloatingShareButtonProps> = ({
                     href={whatsappUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors"
+                    className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-stone-700 hover:bg-emerald-50 hover:text-emerald-700 font-medium transition-colors"
                   >
                     <WhatsAppIcon className="w-4 h-4 text-emerald-600" />
                     <span>WhatsApp</span>
@@ -141,7 +141,7 @@ export const FloatingShareButton: React.FC<FloatingShareButtonProps> = ({
                     href={twitterUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-700 hover:bg-sky-50 hover:text-sky-700 font-medium transition-colors"
+                    className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-stone-700 hover:bg-sky-50 hover:text-sky-700 font-medium transition-colors"
                   >
                     <Twitter className="w-4 h-4 text-sky-500" />
                     <span>X (Twitter)</span>
@@ -152,9 +152,9 @@ export const FloatingShareButton: React.FC<FloatingShareButtonProps> = ({
                       copyToClipboard();
                       setShowDropdown(false);
                     }}
-                    className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-700 hover:bg-slate-100 font-medium transition-colors text-left cursor-pointer"
+                    className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-stone-700 hover:bg-stone-100 font-medium transition-colors text-left cursor-pointer"
                   >
-                    {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4 text-slate-500" />}
+                    {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4 text-stone-500" />}
                     <span>{copied ? 'Copied!' : 'Copy Link'}</span>
                   </button>
                 </div>
@@ -165,7 +165,7 @@ export const FloatingShareButton: React.FC<FloatingShareButtonProps> = ({
 
         {/* Global Toast Indicator */}
         {showToast && (
-          <div className="fixed top-24 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-white px-5 py-2.5 rounded-full shadow-xl border border-slate-700 flex items-center gap-2.5 animate-in fade-in slide-in-from-top-4 duration-200">
+          <div className="fixed top-24 left-1/2 -translate-x-1/2 z-50 bg-stone-900 text-white px-5 py-2.5 rounded-full shadow-xl border border-stone-700 flex items-center gap-2.5 animate-in fade-in slide-in-from-top-4 duration-200">
             <Check className="w-4 h-4 text-emerald-400" />
             <span className="text-xs font-semibold">
               {copied ? 'Link copied to clipboard! Share with friends' : 'Shared successfully!'}

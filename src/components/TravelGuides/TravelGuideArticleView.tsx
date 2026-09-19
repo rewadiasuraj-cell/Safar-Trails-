@@ -53,11 +53,11 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
   return (
     <article id="travel-guide-article-page" className="w-full pt-16 pb-24 bg-[#FAF9F6]">
       {/* Top Navigation & Search Bar */}
-      <div className="w-full bg-white border-b border-gray-200 py-3.5 sticky top-16 z-20 shadow-2xs">
+      <div className="w-full bg-white border-b border-stone-200 py-3.5 sticky top-16 z-20 shadow-2xs">
         <div className="w-full max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <button
             onClick={onBack}
-            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-900 hover:text-luxury-gold transition-colors cursor-pointer self-start sm:self-auto"
+            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-stone-900 hover:text-luxury-gold transition-colors cursor-pointer self-start sm:self-auto"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to All Blogs & Guides</span>
@@ -65,7 +65,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
 
           <div className="flex items-center gap-3 w-full sm:w-auto">
             <div className="relative w-full sm:w-64">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-stone-400" />
               <input
                 type="text"
                 value={quickSearch}
@@ -76,7 +76,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
                   }
                 }}
                 placeholder="Search blogs..."
-                className="w-full pl-9 pr-3 py-1.5 rounded-lg border border-gray-200 text-xs text-slate-800 placeholder:text-gray-400 focus:outline-none focus:border-luxury-gold bg-gray-50"
+                className="w-full pl-9 pr-3 py-1.5 rounded-lg border border-stone-200 text-xs text-stone-800 placeholder:text-stone-400 focus:outline-none focus:border-luxury-gold bg-stone-50"
               />
             </div>
           </div>
@@ -89,12 +89,12 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
           <span>{guide.destinationName} Travel Guide</span>
         </div>
 
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-[1.2]">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-stone-900 tracking-tight leading-[1.2]">
           {guide.title}
         </h1>
 
         {/* Author Bio & Date Bar */}
-        <div className="mt-6 pt-6 border-t border-gray-200 flex flex-wrap items-center justify-between gap-4">
+        <div className="mt-6 pt-6 border-t border-stone-200 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             {/* object-cover is right for the portrait photos some guides use, but it
                 crops anything wide to its middle: /logo.svg is a 200x40 wordmark and
@@ -104,15 +104,15 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
             <img
               src={guide.author.avatar}
               alt={guide.author.name}
-              className="w-11 h-11 rounded-full object-cover bg-white border border-gray-300"
+              className="w-11 h-11 rounded-full object-cover bg-white border border-stone-300"
             />
             <div>
-              <div className="text-sm font-bold text-slate-900">{guide.author.name}</div>
-              <div className="text-xs text-slate-500 font-medium">{guide.author.role}</div>
+              <div className="text-sm font-bold text-stone-900">{guide.author.name}</div>
+              <div className="text-xs text-stone-500 font-medium">{guide.author.role}</div>
             </div>
           </div>
 
-          <div className="flex items-center gap-4 text-xs font-medium text-slate-500">
+          <div className="flex items-center gap-4 text-xs font-medium text-stone-500">
             <span className="flex items-center gap-1.5">
               <Calendar className="w-3.5 h-3.5" />
               <span>{formatPublishedDate(guide.publishedDate)}</span>
@@ -128,7 +128,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
 
       {/* Hero Image */}
       <div className="w-full max-w-4xl xl:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-        <div className="rounded-2xl overflow-hidden shadow-xs h-[340px] sm:h-[440px] border border-gray-200">
+        <div className="rounded-2xl overflow-hidden shadow-xs h-[340px] sm:h-[440px] border border-stone-200">
           <img
             src={guide.heroImage}
             alt={guide.title}
@@ -140,21 +140,21 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
       {/* Article Content Sections */}
       <div className="w-full max-w-3xl xl:max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Intro Excerpt */}
-        <p className="text-lg sm:text-xl text-slate-800 font-serif leading-relaxed italic border-l-3 border-luxury-gold pl-4">
+        <p className="text-lg sm:text-xl text-stone-800 font-serif leading-relaxed italic border-l-3 border-luxury-gold pl-4">
           "{guide.excerpt}"
         </p>
 
         {guide.contentSections.map((sec, idx) => (
           <section key={idx} className="space-y-4 pt-2">
-            <h2 className="text-2xl font-serif font-bold text-slate-900 tracking-tight">
+            <h2 className="text-2xl font-serif font-bold text-stone-900 tracking-tight">
               {sec.heading}
             </h2>
-            <p className="text-slate-700 text-base leading-relaxed font-normal">
+            <p className="text-stone-700 text-base leading-relaxed font-normal">
               {sec.content}
             </p>
 
             {sec.bulletPoints && sec.bulletPoints.length > 0 && (
-              <ul className="space-y-2 bg-white p-5 rounded-2xl border border-gray-200 text-sm text-slate-700 font-normal shadow-2xs">
+              <ul className="space-y-2 bg-white p-5 rounded-2xl border border-stone-200 text-sm text-stone-700 font-normal shadow-2xs">
                 {sec.bulletPoints.map((bp, i) => (
                   <li key={i} className="flex items-start gap-2.5">
                     <span className="text-luxury-gold font-bold text-base">•</span>
@@ -165,7 +165,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
             )}
 
             {sec.highlightQuote && (
-              <div className="p-4 rounded-xl bg-orange-50/70 text-slate-900 text-sm font-semibold border-l-3 border-luxury-gold">
+              <div className="p-4 rounded-xl bg-orange-50/70 text-stone-900 text-sm font-semibold border-l-3 border-luxury-gold">
                 💡 {sec.highlightQuote}
               </div>
             )}
@@ -173,7 +173,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
         ))}
 
         {/* Embedded Interactive AI Trip Planner Box */}
-        <div className="my-10 bg-slate-900 text-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-800 space-y-4">
+        <div className="my-10 bg-stone-900 text-white p-6 sm:p-8 rounded-2xl shadow-sm border border-stone-800 space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-[10px] font-bold uppercase tracking-widest">
             <AIIcon className="w-3.5 h-3.5 text-white" />
             <span>Interactive Trip Planner</span>
@@ -181,7 +181,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
           <h2 className="text-2xl font-serif font-bold text-white tracking-tight">
             Inspired to visit {guide.destinationName}?
           </h2>
-          <p className="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-xl font-normal">
+          <p className="text-xs sm:text-sm text-stone-300 leading-relaxed max-w-xl font-normal">
             Get an instant custom {guide.destinationName} day-by-day itinerary tailored to your group size, budget, and travel preferences.
           </p>
           <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
@@ -202,12 +202,12 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
         </div>
 
         {/* Category Related Packages Section */}
-        <div className="pt-10 border-t border-gray-200">
+        <div className="pt-10 border-t border-stone-200">
           <div className="mb-6">
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-stone-900 tracking-tight">
               Category Related Packages
             </h2>
-            <p className="mt-1 text-sm text-slate-500">
+            <p className="mt-1 text-sm text-stone-500">
               Handcrafted tour packages matching {guide.destinationName} and related holiday experiences.
             </p>
           </div>
@@ -216,7 +216,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
             {displayPackages.map((pkg) => (
               <div
                 key={pkg.id}
-                className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-xs hover:border-luxury-gold transition-all flex flex-col justify-between group"
+                className="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-xs hover:border-luxury-gold transition-all flex flex-col justify-between group"
               >
                 <div>
                   <div className="relative h-44 overflow-hidden">
@@ -234,12 +234,12 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
                     </span>
                   </div>
                   <div className="p-5 space-y-2">
-                    <h3 className="font-serif font-bold text-base text-slate-900 line-clamp-2 leading-snug">
+                    <h3 className="font-serif font-bold text-base text-stone-900 line-clamp-2 leading-snug">
                       {pkg.title}
                     </h3>
-                    <div className="text-sm font-black text-slate-900">
+                    <div className="text-sm font-black text-stone-900">
                       ₹{pkg.startingPrice.toLocaleString('en-IN')}{' '}
-                      <span className="text-xs font-normal text-slate-500">/ person {GST_NOTE}</span>
+                      <span className="text-xs font-normal text-stone-500">/ person {GST_NOTE}</span>
                     </div>
                   </div>
                 </div>
@@ -248,9 +248,9 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
                 <div className="p-5 pt-0 grid grid-cols-2 gap-2.5">
                   <button
                     onClick={() => onSelectPackage(pkg)}
-                    className="py-2.5 px-3 rounded-xl border border-gray-200 text-slate-800 font-bold text-xs uppercase tracking-wider hover:border-black hover:bg-gray-50 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                    className="py-2.5 px-3 rounded-xl border border-stone-200 text-stone-800 font-bold text-xs uppercase tracking-wider hover:border-black hover:bg-stone-50 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                   >
-                    <Info className="w-3.5 h-3.5 text-slate-600" />
+                    <Info className="w-3.5 h-3.5 text-stone-600" />
                     <span>More Info</span>
                   </button>
                   <button

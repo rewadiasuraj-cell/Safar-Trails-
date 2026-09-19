@@ -28,27 +28,27 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
   });
 
   return (
-    <section id="travel-guides-section" className="w-full py-12 lg:py-20 bg-[#FAF9F6] border-t border-gray-200">
+    <section id="travel-guides-section" className="w-full py-12 lg:py-20 bg-[#FAF9F6] border-t border-stone-200">
       <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Section Header with Single Clean Heading and Search Bar */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6 border-b border-gray-200 pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6 border-b border-stone-200 pb-8">
           <div>
             {asPage ? (
               <>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-stone-900 tracking-tight">
                   India Travel Guides
                 </h1>
-                <p className="mt-3 text-slate-600 text-sm sm:text-base max-w-2xl font-normal">
+                <p className="mt-3 text-stone-600 text-sm sm:text-base max-w-2xl font-normal">
                   Written by the specialists who plan these trips every week: when to visit, what a
                   trip really costs, and the mistakes first-timers make.
                 </p>
               </>
             ) : (
               <>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-stone-900 tracking-tight">
                   India Travel Guides & Blogs
                 </h2>
-                <p className="mt-3 text-slate-600 text-sm sm:text-base max-w-2xl font-normal">
+                <p className="mt-3 text-stone-600 text-sm sm:text-base max-w-2xl font-normal">
                   Insider insights, transparent cost breakdowns, and seasonal tips curated by on-ground destination specialists.
                 </p>
               </>
@@ -56,21 +56,21 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
           </div>
 
           <div className="relative w-full md:w-80 shrink-0">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search blogs & travel guides..."
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 text-sm text-slate-900 placeholder:text-gray-400 focus:outline-none focus:border-luxury-gold bg-white shadow-xs"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-stone-200 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-luxury-gold bg-white shadow-xs"
             />
           </div>
         </div>
 
         {/* Guides Grid */}
         {filteredGuides.length === 0 ? (
-          <div className="text-center py-16 bg-white rounded-2xl border border-gray-200">
-            <p className="text-gray-500 text-sm font-medium">No guides or blogs found matching "{searchQuery}".</p>
+          <div className="text-center py-16 bg-white rounded-2xl border border-stone-200">
+            <p className="text-stone-500 text-sm font-medium">No guides or blogs found matching "{searchQuery}".</p>
             <button
               onClick={() => setSearchQuery('')}
               className="mt-3 px-4 py-1.5 text-xs font-semibold text-gold-ink hover:underline"
@@ -83,7 +83,7 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
             {filteredGuides.map((guide) => (
               <article
                 key={guide.slug}
-                className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-luxury-gold shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between cursor-pointer"
+                className="group bg-white rounded-2xl overflow-hidden border border-stone-200 hover:border-luxury-gold shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between cursor-pointer"
                 onClick={() => onSelectGuide(guide)}
               >
                 <div>
@@ -102,26 +102,26 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
                       </span>
                     </div>
 
-                    <div className="absolute bottom-3 left-3.5 text-gray-200 text-xs flex items-center gap-1.5 font-medium">
+                    <div className="absolute bottom-3 left-3.5 text-stone-200 text-xs flex items-center gap-1.5 font-medium">
                       <Clock className="w-3.5 h-3.5" />
                       <span>{guide.readTime}</span>
                     </div>
                   </div>
 
                   <div className="p-6 space-y-3">
-                    <h3 className="text-lg sm:text-xl font-serif font-bold text-slate-900 group-hover:text-gold-ink transition-colors line-clamp-2 leading-snug">
+                    <h3 className="text-lg sm:text-xl font-serif font-bold text-stone-900 group-hover:text-gold-ink transition-colors line-clamp-2 leading-snug">
                       {guide.title}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-slate-600 line-clamp-2 leading-relaxed font-normal">
+                    <p className="text-xs sm:text-sm text-stone-600 line-clamp-2 leading-relaxed font-normal">
                       {guide.excerpt}
                     </p>
                   </div>
                 </div>
 
                 {/* Read CTA */}
-                <div className="p-6 pt-0 border-t border-gray-100 flex items-center justify-end mt-2">
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-900 group-hover:text-luxury-gold group-hover:translate-x-1 transition-transform flex items-center gap-1">
+                <div className="p-6 pt-0 border-t border-stone-100 flex items-center justify-end mt-2">
+                  <span className="text-xs font-bold uppercase tracking-wider text-stone-900 group-hover:text-luxury-gold group-hover:translate-x-1 transition-transform flex items-center gap-1">
                     <span>Read Guide</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </span>

@@ -7,17 +7,29 @@
  * for normal text and 3:1 for large text (>=24px, or >=18.66px bold) and for
  * non-text UI components such as icons and borders.
  *
- * No single gold clears 4.5:1 against both white and #071A33, which is why
+ * No single gold clears 4.5:1 against both white and the dark surface, which is why
  * there are two: luxury-gold for dark surfaces, gold-ink for light ones.
  */
 @theme {
-  --color-midnight-blue: #071A33;
-  --color-royal-navy: #102B4E;
+  /* Warm & earthy, replacing the navy-and-gold scheme.
+   *
+   * The dark anchor is a deep forest rather than a navy, and the cool blue
+   * tints are now sands. The accents did not need replacing - warm-orange and
+   * accent-ink were already terracotta, and their ratios below are unchanged.
+   *
+   * midnight-blue and royal-navy keep their names on purpose. Renaming them
+   * would touch every component in one commit and bury the colour change in a
+   * rename diff; the values are what matter, and the names read as "the darkest
+   * surface" and "the mid dark surface" wherever they are used. */
+  --color-midnight-blue: #12302A;
+  --color-royal-navy: #173F35;
   --color-deep-emerald: #164A41;
   --color-forest-green: #1F5D50;
 
-  /* Gold on dark surfaces: 7.18:1 on midnight-blue, 5.85:1 on royal-navy.
-     Only 2.43:1 on white - never use it for text on a light background. */
+  /* Gold on dark surfaces: 5.84:1 on midnight-blue, 4.81:1 on royal-navy.
+     Only 2.43:1 on white - never use it for text on a light background.
+     royal-navy is #173F35 and not a lighter green because gold falls to
+     4.13:1 by #1A4A3E - measured, not eyeballed. */
   --color-luxury-gold: #C6A15B;
 
   /* Gold for text on light surfaces: 5.03:1 on white, 4.78:1 on ivory. */
@@ -36,24 +48,34 @@
   --color-whatsapp: #0F7268;
   --color-whatsapp-hover: #0B5A52;
 
-  --color-light-blue: #E6F3FA;
-  --color-soft-blue: #DCEFF8;
-  --color-ivory: #F4FAFD;
+  /* Were #E6F3FA / #DCEFF8 / #F4FAFD - cool blue tints. Sands now, so section
+     backgrounds sit with the photography instead of against it.
+     Body text #1C1917 clears 14:1 or better on all three.
+     soft-sand is the one limit: accent-ink text on it is 4.22:1, a fail. Use
+     it for surfaces, badges and borders, not for orange text. */
+  --color-light-blue: #F5EFE6;
+  --color-soft-blue: #EFE7DA;
+  --color-ivory: #FBF7F0;
 }
 
 @layer base {
   :root {
-    --brand-primary: #0A0A0A;
-    --brand-secondary: #1A1A1A;
+    /* Neutrals warmed to match the palette: the greys were blue-cast (#4B5563,
+       #6B7280, #E5E7EB) and read cold against sand surfaces. These are the
+       stone equivalents at the same or better contrast. */
+    --brand-primary: #1C1917;
+    --brand-secondary: #292524;
     --brand-accent: #C2410C;
     --brand-accent-hover: #9A3412;
     --bg-canvas: #FAF9F6;
     --bg-card: #FFFFFF;
-    --border-subtle: #E5E7EB;
-    --text-primary: #0A0A0A;
-    --text-secondary: #4B5563;
-    /* #9CA3AF gave only 2.54:1 on white - below the 4.5:1 minimum for text. */
-    --text-muted: #6B7280;
+    --border-subtle: #E7E2DA;
+    --text-primary: #1C1917;
+    /* 16.61:1 on canvas. */
+    --text-secondary: #44403C;
+    /* #9CA3AF gave only 2.54:1 on white - below the 4.5:1 minimum for text.
+       #57534E is 7.25:1 on canvas. */
+    --text-muted: #57534E;
   }
 
   body {
@@ -89,7 +111,7 @@
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #9CA3AF;
+  background: #A8A29E;
 }
 
 /* Glassmorphism / Crisp Backdrop utility */
@@ -178,7 +200,7 @@ summary:focus-visible,
   border-radius: 0.25rem;
 }
 
-/* The header sits on #071A33, where the amber ring above drops below 3:1.
+/* The header sits on midnight-blue (#12302A), where the amber ring above drops below 3:1.
    White reads at ~15:1 there. */
 #main-header a:focus-visible,
 #main-header button:focus-visible,

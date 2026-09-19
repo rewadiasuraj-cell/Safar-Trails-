@@ -218,7 +218,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
     { name: 'Nature & Valleys', icon: <Trees className="w-3.5 h-3.5 text-emerald-600 stroke-[2]" />, isPrimary: true },
     { name: 'Houseboats & Waters', icon: <Sailboat className="w-3.5 h-3.5 text-cyan-600 stroke-[2]" />, isPrimary: true },
     { name: 'Mountains & Snow', icon: <Snowflake className="w-3.5 h-3.5 text-sky-500 stroke-[2]" />, isPrimary: true },
-    { name: 'Photography & Scenic Stops', icon: <Camera className="w-3.5 h-3.5 text-slate-700 stroke-[2]" />, isPrimary: true },
+    { name: 'Photography & Scenic Stops', icon: <Camera className="w-3.5 h-3.5 text-stone-700 stroke-[2]" />, isPrimary: true },
     { name: 'Food & Wazwan Curries', icon: <Utensils className="w-3.5 h-3.5 text-amber-600 stroke-[2]" /> },
     { name: 'Heritage & Royal Forts', icon: <Landmark className="w-3.5 h-3.5 text-orange-600 stroke-[2]" /> },
     { name: 'Adventure & Treks', icon: <Compass className="w-3.5 h-3.5 text-indigo-600 stroke-[2]" /> },
@@ -396,26 +396,26 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
     : allTripTypes.filter(t => t.isPrimary);
 
   return (
-    <section id="ai-trip-planner-section" className="w-full py-12 sm:py-16 bg-[#FAF9F6] border-t border-b border-gray-200/80">
+    <section id="ai-trip-planner-section" className="w-full py-12 sm:py-16 bg-[#FAF9F6] border-t border-b border-stone-200/80">
       <div className="w-full max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gray-200 text-slate-800 text-xs font-bold uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-stone-200 text-stone-800 text-xs font-bold uppercase tracking-widest mb-3">
             <SlidersHorizontal className="w-3.5 h-3.5 text-accent-ink" />
             <span>Instant Custom Itineraries</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-stone-900 tracking-tight">
             AI-Powered Custom Trip Planner
           </h2>
-          <p className="mt-2 text-slate-600 text-sm sm:text-base font-normal">
+          <p className="mt-2 text-stone-600 text-sm sm:text-base font-normal">
             Choose your destination, dates, and stay preferences for a curated day-by-day itinerary with exact price estimates.
           </p>
         </div>
 
         {/* Top Centered Mode Toggle Pill */}
         <div className="flex justify-center mb-6 sm:mb-8">
-          <div className="inline-flex p-1 rounded-full bg-white border border-gray-200 shadow-2xs">
+          <div className="inline-flex p-1 rounded-full bg-white border border-stone-200 shadow-2xs">
             {/* Guided Custom Planner Button */}
             <button
               type="button"
@@ -423,8 +423,8 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
               onClick={() => setActiveTab('guided')}
               className={`relative px-5 sm:px-7 py-2 rounded-full text-xs sm:text-[13px] font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                 activeTab === 'guided'
-                  ? 'bg-[#071322] text-white shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900 bg-transparent'
+                  ? 'bg-[#0E2620] text-white shadow-xs'
+                  : 'text-stone-600 hover:text-stone-900 bg-transparent'
               }`}
             >
               <span>Guided Custom Planner</span>
@@ -440,8 +440,8 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
               onClick={() => setActiveTab('conversational')}
               className={`px-5 sm:px-7 py-2 rounded-full text-xs sm:text-[13px] font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer inline-flex items-center gap-1.5 ${
                 activeTab === 'conversational'
-                  ? 'bg-[#071322] text-white shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900 bg-transparent'
+                  ? 'bg-[#0E2620] text-white shadow-xs'
+                  : 'text-stone-600 hover:text-stone-900 bg-transparent'
               }`}
             >
               <SlidersHorizontal className="w-3.5 h-3.5 text-accent-ink stroke-[2]" />
@@ -452,24 +452,24 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
 
         {/* Main Card Container */}
         {!generatedPlan && (
-          <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 lg:p-8 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] border border-gray-200/90">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 lg:p-8 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] border border-stone-200/90">
             {activeTab === 'conversational' ? (
               /* Conversational Natural Prompt Mode */
               <div className="space-y-5">
                 <div>
-                  <label className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2 flex items-center justify-between">
+                  <label className="block text-xs font-bold text-stone-800 uppercase tracking-wider mb-2 flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <FileText className="w-3.5 h-3.5 text-accent-ink stroke-[2]" />
                       <span>Describe your dream trip in plain words</span>
                     </div>
-                    <span className="text-[11px] text-slate-400 font-normal">Any destination • Any duration • Any budget</span>
+                    <span className="text-[11px] text-stone-400 font-normal">Any destination • Any duration • Any budget</span>
                   </label>
                   <textarea
                     rows={3}
                     value={naturalPrompt}
                     onChange={(e) => setNaturalPrompt(e.target.value)}
                     placeholder="e.g. Couple honeymoon in Goa, 5 days, beach resort, private cab & candlelight dinner"
-                    className="w-full p-3.5 rounded-xl border border-gray-200 text-slate-900 focus:border-[#071322] focus:outline-none text-sm resize-none bg-[#FAF9F6]"
+                    className="w-full p-3.5 rounded-xl border border-stone-200 text-stone-900 focus:border-[#0E2620] focus:outline-none text-sm resize-none bg-[#FAF9F6]"
                   />
                 </div>
 
@@ -488,28 +488,28 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                         <span>AI Detected Preferences:</span>
                       </div>
                       <div className="flex flex-wrap gap-1.5">
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white border border-orange-200 text-slate-800 text-xs font-bold shadow-2xs">
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white border border-orange-200 text-stone-800 text-xs font-bold shadow-2xs">
                           <MapPin className="w-3 h-3 text-accent-ink" />
                           <span>{preview.destination}</span>
                         </span>
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white border border-orange-200 text-slate-800 text-xs font-bold shadow-2xs">
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white border border-orange-200 text-stone-800 text-xs font-bold shadow-2xs">
                           <Calendar className="w-3 h-3 text-accent-ink" />
                           <span>{preview.durationDays} Days ({preview.durationNights}N)</span>
                         </span>
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white border border-orange-200 text-slate-800 text-xs font-bold shadow-2xs">
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white border border-orange-200 text-stone-800 text-xs font-bold shadow-2xs">
                           <Users className="w-3 h-3 text-accent-ink" />
                           <span>{preview.travellers} {preview.travellers === 1 ? 'Person' : 'People'} ({preview.tripType})</span>
                         </span>
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white border border-orange-200 text-slate-800 text-xs font-bold shadow-2xs">
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white border border-orange-200 text-stone-800 text-xs font-bold shadow-2xs">
                           <Building2 className="w-3 h-3 text-accent-ink" />
                           <span>{preview.hotelCategory}</span>
                         </span>
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white border border-orange-200 text-slate-800 text-xs font-bold shadow-2xs">
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white border border-orange-200 text-stone-800 text-xs font-bold shadow-2xs">
                           <Car className="w-3 h-3 text-accent-ink" />
                           <span>{preview.transportMode}</span>
                         </span>
                         {preview.budgetTotal && (
-                          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white border border-orange-200 text-[#071322] text-xs font-bold shadow-2xs">
+                          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white border border-orange-200 text-[#0E2620] text-xs font-bold shadow-2xs">
                             <span>Budget: ₹{preview.budgetTotal.toLocaleString('en-IN')}</span>
                           </span>
                         )}
@@ -519,7 +519,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                 })()}
 
                 <div className="flex flex-wrap items-center gap-1.5 text-xs">
-                  <span className="text-gray-400 font-bold uppercase tracking-wider text-[10px]">Try Prompts:</span>
+                  <span className="text-stone-400 font-bold uppercase tracking-wider text-[10px]">Try Prompts:</span>
                   {[
                     'Couple honeymoon in Goa, 5 days, beach resort',
                     '4 friends, Manali & Solang, 5 days, adventure & snow',
@@ -531,7 +531,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                       key={idx}
                       type="button"
                       onClick={() => setNaturalPrompt(p)}
-                      className="px-2.5 py-1 rounded-full bg-gray-100 border border-gray-200 text-slate-700 hover:border-accent-ink text-[11px] font-medium transition-colors cursor-pointer"
+                      className="px-2.5 py-1 rounded-full bg-stone-100 border border-stone-200 text-stone-700 hover:border-accent-ink text-[11px] font-medium transition-colors cursor-pointer"
                     >
                       "{p}"
                     </button>
@@ -542,7 +542,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                   id="generate-conversational-plan-btn"
                   onClick={() => handleGenerate(true)}
                   disabled={loading}
-                  className="w-full py-3.5 rounded-xl bg-[#071322] hover:bg-slate-900 text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                  className="w-full py-3.5 rounded-xl bg-[#0E2620] hover:bg-stone-900 text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                 >
                   {loading ? (
                     <>
@@ -565,8 +565,8 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8 items-center">
                   {/* Left: Destination Dropdown */}
                   <div>
-                    <label className="block text-[11px] font-bold text-slate-800 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
-                      <MapPin className="w-3.5 h-3.5 text-slate-700 stroke-[2]" />
+                    <label className="block text-[11px] font-bold text-stone-800 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
+                      <MapPin className="w-3.5 h-3.5 text-stone-700 stroke-[2]" />
                       <span>DESTINATION</span>
                     </label>
                     
@@ -575,7 +575,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                         id="ai-planner-destination-select"
                         value={destination}
                         onChange={(e) => setDestination(e.target.value)}
-                        className="w-full appearance-none px-3.5 py-2.5 rounded-xl border border-gray-200 bg-white text-slate-900 font-semibold text-sm focus:border-[#071322] focus:outline-none cursor-pointer pr-9 shadow-2xs"
+                        className="w-full appearance-none px-3.5 py-2.5 rounded-xl border border-stone-200 bg-white text-stone-900 font-semibold text-sm focus:border-[#0E2620] focus:outline-none cursor-pointer pr-9 shadow-2xs"
                       >
                         {destinationsList.map((d) => (
                           <option key={d} value={d}>
@@ -583,20 +583,20 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                           </option>
                         ))}
                       </select>
-                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 pointer-events-none stroke-[2]" />
+                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-500 pointer-events-none stroke-[2]" />
                     </div>
                   </div>
 
                   {/* Right: Duration Slider */}
                   <div>
                     <div className="flex items-center justify-between mb-1.5">
-                      <label className="text-[11px] font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
-                        <Calendar className="w-3.5 h-3.5 text-slate-700 stroke-[2]" />
+                      <label className="text-[11px] font-bold text-stone-800 uppercase tracking-wider flex items-center gap-1.5">
+                        <Calendar className="w-3.5 h-3.5 text-stone-700 stroke-[2]" />
                         <span>DURATION</span>
                       </label>
                       <div className="text-xs font-bold uppercase tracking-wider">
                         <span className="text-accent-ink font-black">{durationDays} DAYS</span>
-                        <span className="text-slate-800 font-bold"> / {durationDays - 1} NIGHTS</span>
+                        <span className="text-stone-800 font-bold"> / {durationDays - 1} NIGHTS</span>
                       </div>
                     </div>
 
@@ -607,7 +607,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                         max={12}
                         value={durationDays}
                         onChange={(e) => setDurationDays(Number(e.target.value))}
-                        className="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#071322]"
+                        className="w-full h-1.5 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-[#0E2620]"
                         style={{
                           background: `linear-gradient(to right, #C2410C 0%, #C2410C ${
                             ((durationDays - 3) / 9) * 100
@@ -621,13 +621,13 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                 {/* 2. Who is Travelling? (Compact Grid + Inline "See more") */}
                 <div>
                   <div className="flex items-center justify-between mb-2.5">
-                    <label className="text-[11px] font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
-                      <Users className="w-3.5 h-3.5 text-slate-700 stroke-[2]" />
+                    <label className="text-[11px] font-bold text-stone-800 uppercase tracking-wider flex items-center gap-1.5">
+                      <Users className="w-3.5 h-3.5 text-stone-700 stroke-[2]" />
                       <span>WHO IS TRAVELLING?</span>
                     </label>
 
-                    <div className="text-xs font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1">
-                      <User className="w-3 h-3 text-slate-600" />
+                    <div className="text-xs font-bold text-stone-900 uppercase tracking-wider flex items-center gap-1">
+                      <User className="w-3 h-3 text-stone-600" />
                       <span>{travellers} {travellers === 1 ? 'TRAVELLER' : 'TRAVELLERS'}</span>
                     </div>
                   </div>
@@ -648,18 +648,18 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                           className={`relative p-2.5 sm:p-3 rounded-xl border text-center transition-all duration-200 flex flex-col items-center justify-center gap-1 cursor-pointer min-h-[78px] ${
                             isSelected
                               ? 'border-accent-ink bg-orange-50/20 text-accent-ink shadow-2xs ring-1 ring-accent-ink'
-                              : 'border-gray-200 hover:border-gray-300 bg-white text-slate-700 hover:bg-gray-50/60'
+                              : 'border-stone-200 hover:border-stone-300 bg-white text-stone-700 hover:bg-stone-50/60'
                           }`}
                         >
                           {/* Top-right subtle selection indicator pill */}
                           {isSelected && (
                             <span className="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-accent-ink" />
                           )}
-                          <div className={isSelected ? 'text-accent-ink' : 'text-slate-700'}>
+                          <div className={isSelected ? 'text-accent-ink' : 'text-stone-700'}>
                             {item.icon}
                           </div>
                           <span className={`text-[11px] sm:text-xs font-bold tracking-tight whitespace-nowrap leading-tight ${
-                            isSelected ? 'text-slate-900' : 'text-slate-700'
+                            isSelected ? 'text-stone-900' : 'text-stone-700'
                           }`}>
                             {item.label}
                           </span>
@@ -672,15 +672,15 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                       type="button"
                       id="toggle-see-more-trip-types"
                       onClick={() => setShowMoreTripTypes(!showMoreTripTypes)}
-                      className="p-2.5 sm:p-3 rounded-xl border border-gray-200 hover:border-gray-300 bg-white hover:bg-gray-50 text-slate-600 transition-all flex flex-col items-center justify-center gap-1 cursor-pointer min-h-[78px]"
+                      className="p-2.5 sm:p-3 rounded-xl border border-stone-200 hover:border-stone-300 bg-white hover:bg-stone-50 text-stone-600 transition-all flex flex-col items-center justify-center gap-1 cursor-pointer min-h-[78px]"
                     >
-                      <span className="text-[11px] sm:text-xs font-bold text-slate-700 leading-tight">
+                      <span className="text-[11px] sm:text-xs font-bold text-stone-700 leading-tight">
                         {showMoreTripTypes ? 'See less' : 'See more'}
                       </span>
                       {showMoreTripTypes ? (
-                        <ChevronUp className="w-3.5 h-3.5 text-slate-500" />
+                        <ChevronUp className="w-3.5 h-3.5 text-stone-500" />
                       ) : (
-                        <ChevronDown className="w-3.5 h-3.5 text-slate-500" />
+                        <ChevronDown className="w-3.5 h-3.5 text-stone-500" />
                       )}
                     </button>
                   </div>
@@ -690,8 +690,8 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8 pt-1">
                   {/* Left: Stay Category */}
                   <div>
-                    <label className="block text-[11px] font-bold text-slate-800 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                      <Building2 className="w-3.5 h-3.5 text-slate-700 stroke-[2]" />
+                    <label className="block text-[11px] font-bold text-stone-800 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                      <Building2 className="w-3.5 h-3.5 text-stone-700 stroke-[2]" />
                       <span>STAY CATEGORY</span>
                     </label>
 
@@ -705,8 +705,8 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                             onClick={() => setHotelCategory(tier)}
                             className={`px-2.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer text-center leading-tight whitespace-nowrap ${
                               isSelected
-                                ? 'bg-[#071322] text-white border-[#071322] shadow-xs'
-                                : 'bg-white border-gray-200 text-slate-700 hover:border-gray-300 hover:bg-gray-50/60'
+                                ? 'bg-[#0E2620] text-white border-[#0E2620] shadow-xs'
+                                : 'bg-white border-stone-200 text-stone-700 hover:border-stone-300 hover:bg-stone-50/60'
                             }`}
                           >
                             {tier}
@@ -727,8 +727,8 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                               onClick={() => setHotelCategory(tier)}
                               className={`px-2.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer text-center leading-tight ${
                                 isSelected
-                                  ? 'bg-[#071322] text-white border-[#071322] shadow-xs'
-                                  : 'bg-white border-gray-200 text-slate-700 hover:border-gray-300'
+                                  ? 'bg-[#0E2620] text-white border-[#0E2620] shadow-xs'
+                                  : 'bg-white border-stone-200 text-stone-700 hover:border-stone-300'
                               }`}
                             >
                               {tier}
@@ -742,7 +742,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                       <button
                         type="button"
                         onClick={() => setShowMoreHotels(!showMoreHotels)}
-                        className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-500 hover:text-slate-800 transition-colors py-0.5 px-2 rounded-md hover:bg-gray-100 cursor-pointer"
+                        className="inline-flex items-center gap-1 text-[11px] font-semibold text-stone-500 hover:text-stone-800 transition-colors py-0.5 px-2 rounded-md hover:bg-stone-100 cursor-pointer"
                       >
                         <span>{showMoreHotels ? 'See less' : 'See more'}</span>
                         {showMoreHotels ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
@@ -752,8 +752,8 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
 
                   {/* Right: Dedicated Transport */}
                   <div>
-                    <label className="block text-[11px] font-bold text-slate-800 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                      <Car className="w-3.5 h-3.5 text-slate-700 stroke-[2]" />
+                    <label className="block text-[11px] font-bold text-stone-800 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                      <Car className="w-3.5 h-3.5 text-stone-700 stroke-[2]" />
                       <span>DEDICATED TRANSPORT</span>
                     </label>
 
@@ -767,8 +767,8 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                             onClick={() => setTransportMode(item.mode)}
                             className={`px-2.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer text-center leading-tight whitespace-nowrap ${
                               isSelected
-                                ? 'bg-[#071322] text-white border-[#071322] shadow-xs'
-                                : 'bg-white border-gray-200 text-slate-700 hover:border-gray-300 hover:bg-gray-50/60'
+                                ? 'bg-[#0E2620] text-white border-[#0E2620] shadow-xs'
+                                : 'bg-white border-stone-200 text-stone-700 hover:border-stone-300 hover:bg-stone-50/60'
                             }`}
                           >
                             {item.label}
@@ -787,8 +787,8 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                             onClick={() => setTransportMode(item.mode)}
                             className={`px-2.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer text-center leading-tight whitespace-nowrap ${
                               isSelected
-                                ? 'bg-[#071322] text-white border-[#071322] shadow-xs'
-                                : 'bg-white border-gray-200 text-slate-700 hover:border-gray-300 hover:bg-gray-50/60'
+                                ? 'bg-[#0E2620] text-white border-[#0E2620] shadow-xs'
+                                : 'bg-white border-stone-200 text-stone-700 hover:border-stone-300 hover:bg-stone-50/60'
                             }`}
                           >
                             {item.label}
@@ -809,8 +809,8 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                               onClick={() => setTransportMode(item.mode)}
                               className={`px-2.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer text-center leading-tight ${
                                 isSelected
-                                  ? 'bg-[#071322] text-white border-[#071322] shadow-xs'
-                                  : 'bg-white border-gray-200 text-slate-700 hover:border-gray-300'
+                                  ? 'bg-[#0E2620] text-white border-[#0E2620] shadow-xs'
+                                  : 'bg-white border-stone-200 text-stone-700 hover:border-stone-300'
                               }`}
                             >
                               {item.label}
@@ -824,7 +824,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                       <button
                         type="button"
                         onClick={() => setShowMoreTransport(!showMoreTransport)}
-                        className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-500 hover:text-slate-800 transition-colors py-0.5 px-2 rounded-md hover:bg-gray-100 cursor-pointer"
+                        className="inline-flex items-center gap-1 text-[11px] font-semibold text-stone-500 hover:text-stone-800 transition-colors py-0.5 px-2 rounded-md hover:bg-stone-100 cursor-pointer"
                       >
                         <span>{showMoreTransport ? 'See less' : 'See more'}</span>
                         {showMoreTransport ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
@@ -835,8 +835,8 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
 
                 {/* 4. Recommended Experiences (Pills + Inline "See more") */}
                 <div className="pt-1">
-                  <label className="block text-[11px] font-bold text-slate-800 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
-                    <Compass className="w-3.5 h-3.5 text-slate-700 stroke-[2]" />
+                  <label className="block text-[11px] font-bold text-stone-800 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+                    <Compass className="w-3.5 h-3.5 text-stone-700 stroke-[2]" />
                     <span>RECOMMENDED EXPERIENCES</span>
                   </label>
 
@@ -850,8 +850,8 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                           onClick={() => toggleInterest(interest.name)}
                           className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
                             isSelected
-                              ? 'bg-white border-accent-ink text-slate-900 shadow-2xs ring-1 ring-accent-ink/40'
-                              : 'bg-white border-gray-200 text-slate-700 hover:border-gray-300 hover:bg-gray-50/60'
+                              ? 'bg-white border-accent-ink text-stone-900 shadow-2xs ring-1 ring-accent-ink/40'
+                              : 'bg-white border-stone-200 text-stone-700 hover:border-stone-300 hover:bg-stone-50/60'
                           }`}
                         >
                           {interest.icon}
@@ -869,8 +869,8 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                           onClick={() => toggleInterest(interest.name)}
                           className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all flex items-center gap-1.5 cursor-pointer whitespace-nowrap animate-in fade-in duration-150 ${
                             isSelected
-                              ? 'bg-white border-accent-ink text-slate-900 shadow-2xs ring-1 ring-accent-ink/40'
-                              : 'bg-white border-gray-200 text-slate-700 hover:border-gray-300'
+                              ? 'bg-white border-accent-ink text-stone-900 shadow-2xs ring-1 ring-accent-ink/40'
+                              : 'bg-white border-stone-200 text-stone-700 hover:border-stone-300'
                           }`}
                         >
                           {interest.icon}
@@ -882,10 +882,10 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                     <button
                       type="button"
                       onClick={() => setShowMoreInterests(!showMoreInterests)}
-                      className="px-3 py-1.5 rounded-full text-xs font-semibold border border-gray-200 hover:border-gray-300 bg-white hover:bg-gray-50 text-slate-600 transition-all flex items-center gap-1 cursor-pointer whitespace-nowrap"
+                      className="px-3 py-1.5 rounded-full text-xs font-semibold border border-stone-200 hover:border-stone-300 bg-white hover:bg-stone-50 text-stone-600 transition-all flex items-center gap-1 cursor-pointer whitespace-nowrap"
                     >
                       <span className="text-[11.5px]">{showMoreInterests ? 'See less' : 'See more'}</span>
-                      {showMoreInterests ? <ChevronUp className="w-3 h-3 text-slate-500" /> : <ChevronDown className="w-3 h-3 text-slate-500" />}
+                      {showMoreInterests ? <ChevronUp className="w-3 h-3 text-stone-500" /> : <ChevronDown className="w-3 h-3 text-stone-500" />}
                     </button>
                   </div>
                 </div>
@@ -896,7 +896,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                     id="generate-guided-plan-btn"
                     onClick={() => handleGenerate(false)}
                     disabled={loading}
-                    className="w-full px-4 sm:px-6 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-[#071322] hover:bg-slate-900 text-white transition-all shadow-md hover:shadow-lg flex items-center justify-between cursor-pointer disabled:opacity-60 active:scale-[0.99]"
+                    className="w-full px-4 sm:px-6 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-[#0E2620] hover:bg-stone-900 text-white transition-all shadow-md hover:shadow-lg flex items-center justify-between cursor-pointer disabled:opacity-60 active:scale-[0.99]"
                   >
                     {loading ? (
                       <div className="w-full flex items-center justify-center gap-2">
@@ -922,16 +922,16 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
         )}
 
         {/* Bottom Trust Pillars Bar */}
-        <div className="mt-6 pt-5 border-t border-gray-200/70 grid grid-cols-3 gap-2 sm:gap-6 text-center">
+        <div className="mt-6 pt-5 border-t border-stone-200/70 grid grid-cols-3 gap-2 sm:gap-6 text-center">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2">
             <div className="w-7 h-7 rounded-full bg-orange-50 border border-orange-100 flex items-center justify-center text-accent-ink shrink-0">
               <CheckCircle2 className="w-4 h-4" />
             </div>
             <div className="text-left hidden sm:block">
-              <div className="text-xs font-bold text-slate-900">Verified Experts</div>
-              <div className="text-[11px] text-gray-500 leading-none mt-0.5">Personalized for you</div>
+              <div className="text-xs font-bold text-stone-900">Verified Experts</div>
+              <div className="text-[11px] text-stone-500 leading-none mt-0.5">Personalized for you</div>
             </div>
-            <span className="text-[11px] font-bold text-slate-800 sm:hidden">Verified Experts</span>
+            <span className="text-[11px] font-bold text-stone-800 sm:hidden">Verified Experts</span>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2">
@@ -939,10 +939,10 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
               <ShieldCheck className="w-4 h-4" />
             </div>
             <div className="text-left hidden sm:block">
-              <div className="text-xs font-bold text-slate-900">Transparent Pricing</div>
-              <div className="text-[11px] text-gray-500 leading-none mt-0.5">No hidden charges</div>
+              <div className="text-xs font-bold text-stone-900">Transparent Pricing</div>
+              <div className="text-[11px] text-stone-500 leading-none mt-0.5">No hidden charges</div>
             </div>
-            <span className="text-[11px] font-bold text-slate-800 sm:hidden">Transparent Pricing</span>
+            <span className="text-[11px] font-bold text-stone-800 sm:hidden">Transparent Pricing</span>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2">
@@ -950,10 +950,10 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
               <Headphones className="w-4 h-4" />
             </div>
             <div className="text-left hidden sm:block">
-              <div className="text-xs font-bold text-slate-900">24/7 Support</div>
-              <div className="text-[11px] text-gray-500 leading-none mt-0.5">We're here to help</div>
+              <div className="text-xs font-bold text-stone-900">24/7 Support</div>
+              <div className="text-[11px] text-stone-500 leading-none mt-0.5">We're here to help</div>
             </div>
-            <span className="text-[11px] font-bold text-slate-800 sm:hidden">24/7 Support</span>
+            <span className="text-[11px] font-bold text-stone-800 sm:hidden">24/7 Support</span>
           </div>
         </div>
 

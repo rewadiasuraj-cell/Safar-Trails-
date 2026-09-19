@@ -67,7 +67,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
   return (
     <div id="destination-detail-page" className="w-full pt-20 pb-24 bg-[#FAF9F6]">
       {/* Top Breadcrumbs & Back Bar */}
-      <div className="w-full bg-white border-b border-gray-200 py-3.5">
+      <div className="w-full bg-white border-b border-stone-200 py-3.5">
         <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 flex flex-wrap items-center justify-between gap-y-2 gap-x-3">
           <button
             onClick={onBack}
@@ -82,10 +82,10 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
               title={`${destination.name} Travel Guide & Holiday Packages | SafarTrails`}
               text={`Explore tailored itineraries, attractions, and holiday packages for ${destination.name} (${destination.state}). Starting from ₹${destination.startingPrice.toLocaleString('en-IN')}/person.`}
               variant="pill"
-              className="bg-slate-100 hover:bg-slate-200 text-slate-800 border-slate-200"
+              className="bg-stone-100 hover:bg-stone-200 text-stone-800 border-stone-200"
             />
 
-            <nav aria-label="Breadcrumb" className="hidden sm:flex text-xs text-slate-500 items-center gap-1.5 font-medium">
+            <nav aria-label="Breadcrumb" className="hidden sm:flex text-xs text-stone-500 items-center gap-1.5 font-medium">
               <span>Destinations</span>
               <span>/</span>
               <span>{destination.state}</span>
@@ -97,7 +97,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
       </div>
 
       {/* Hero Visual Section - Curved Bottom with Dark Vignette */}
-      <section className="relative w-full bg-[#0F172A] text-white pt-6 pb-16 md:pb-24 overflow-hidden">
+      <section className="relative w-full bg-[#12302A] text-white pt-6 pb-16 md:pb-24 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img
@@ -106,13 +106,13 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
             className="w-full h-full object-cover opacity-40 scale-105"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0B1329]/90 via-[#0F172A]/70 to-[#0F172A]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0E2620]/90 via-[#12302A]/70 to-[#12302A]" />
         </div>
 
         <div className="relative z-10 w-full max-w-7xl xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 space-y-6 pt-4">
           {/* Top Category Badge */}
           <div className="flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-[#1E293B]/80 text-[#E6C687] border border-[#E6C687]/40 shadow-sm backdrop-blur-md">
+            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-[#173F35]/80 text-[#E6C687] border border-[#E6C687]/40 shadow-sm backdrop-blur-md">
               <Compass className="w-3.5 h-3.5 text-[#E6C687]" />
               <span>{destination.state} DESTINATION</span>
             </span>
@@ -127,11 +127,11 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                 business could not substantiate. A starting price is true, and
                 it is what a traveller is actually trying to find out here. */}
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white/10 backdrop-blur-md text-white border border-white/20">
-              <span className="text-[11px] font-medium text-gray-200 uppercase tracking-wide">From</span>
+              <span className="text-[11px] font-medium text-stone-200 uppercase tracking-wide">From</span>
               <span className="text-white font-extrabold">
                 ₹{destination.startingPrice.toLocaleString('en-IN')}
               </span>
-              <span className="text-[11px] font-medium text-gray-200">per person {GST_NOTE}</span>
+              <span className="text-[11px] font-medium text-stone-200">per person {GST_NOTE}</span>
             </span>
           </div>
 
@@ -144,12 +144,12 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
           </h1>
 
           {/* Description Paragraph */}
-          <p className="text-gray-200 text-base sm:text-lg max-w-3xl leading-relaxed font-normal">
+          <p className="text-stone-200 text-base sm:text-lg max-w-3xl leading-relaxed font-normal">
             {destination.shortDescription || destination.fullOverview.slice(0, 260) + '...'}
           </p>
 
           {/* Quick Stats Bar */}
-          <div className="pt-2 flex flex-wrap items-center gap-6 sm:gap-10 text-xs sm:text-sm text-gray-300 border-t border-white/10">
+          <div className="pt-2 flex flex-wrap items-center gap-6 sm:gap-10 text-xs sm:text-sm text-stone-300 border-t border-white/10">
             <div className="flex items-center gap-2 pt-4">
               <Calendar className="w-4 h-4 text-[#E6C687]" />
               <span><strong>Best Season:</strong> {destination.bestTime}</span>
@@ -166,7 +166,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
         </div>
 
         {/* Curved Mask Divider */}
-        <div className="absolute bottom-0 left-0 right-0 h-10 bg-[#FAF9F5] rounded-t-[50%] z-20" />
+        <div className="absolute bottom-0 left-0 right-0 h-10 bg-[#FAF9F6] rounded-t-[50%] z-20" />
       </section>
 
       {/* Main Content Layout */}
@@ -191,7 +191,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                   <CheckCircle2 className="w-5 h-5" />
                 </div>
                 <div className="space-y-1 pt-1">
-                  <p className="text-sm font-semibold text-slate-800 leading-snug">
+                  <p className="text-sm font-semibold text-stone-800 leading-snug">
                     {hl}
                   </p>
                 </div>
@@ -224,7 +224,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
               { name: destination.name, image: destination.heroImage },
               { name: destination.name + ' Sights', image: destination.cardImage }
             ]).slice(0, 4).map((item, i) => (
-              <div key={i} className="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 border border-[#E6E0D4] shadow-xs group relative">
+              <div key={i} className="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 border border-[#E6E0D4] shadow-xs group relative">
                 <img
                   src={item.image}
                   alt={item.name}
@@ -274,21 +274,21 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                       <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-[#FFF8E7] text-[#B8860B] border border-[#E6C687]/60">
                         MOST POPULAR
                       </span>
-                      <div className="flex items-center gap-1.5 text-xs text-gray-500 font-medium">
+                      <div className="flex items-center gap-1.5 text-xs text-stone-500 font-medium">
                         <Calendar className="w-3.5 h-3.5 text-[#B8860B]" />
                         <span>{pkg.durationNights} Nights • {pkg.durationDays} Days</span>
                       </div>
                     </div>
 
-                    <h3 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+                    <h3 className="text-2xl sm:text-3xl font-serif font-bold text-stone-900 tracking-tight">
                       {pkg.title}
                     </h3>
 
                     <div className="flex flex-wrap items-baseline gap-2">
-                      <span className="text-2xl sm:text-3xl font-bold text-slate-900">
+                      <span className="text-2xl sm:text-3xl font-bold text-stone-900">
                         ₹{pkg.startingPrice.toLocaleString('en-IN')}
                       </span>
-                      <span className="text-xs text-gray-500 font-normal">/ person {GST_NOTE}</span>
+                      <span className="text-xs text-stone-500 font-normal">/ person {GST_NOTE}</span>
                     </div>
 
                     {/* The whole card opens the package, not just this line.
@@ -310,10 +310,10 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
             </div>
           ) : (
             <div className="bg-white border border-[#E6E0D4] rounded-3xl p-8 text-center space-y-4">
-              <h3 className="text-xl font-serif font-bold text-slate-900">
+              <h3 className="text-xl font-serif font-bold text-stone-900">
                 Custom {destination.name} Package Available
               </h3>
-              <p className="text-sm text-gray-600 max-w-md mx-auto">
+              <p className="text-sm text-stone-600 max-w-md mx-auto">
                 Starting from ₹{destination.startingPrice.toLocaleString('en-IN')}/person. Get a tailored itinerary crafted specifically for your dates & group size.
               </p>
               <button
@@ -335,17 +335,17 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
         {/* Overview & How to Reach */}
         <section className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-6 bg-white rounded-3xl p-6 sm:p-8 border border-[#E6E0D4] shadow-xs">
-            <h2 className="text-2xl font-serif font-bold text-slate-900">
+            <h2 className="text-2xl font-serif font-bold text-stone-900">
               Overview & Experience
             </h2>
-            <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
+            <p className="text-stone-700 text-sm sm:text-base leading-relaxed">
               {destination.fullOverview}
             </p>
           </div>
 
           <div className="space-y-4 bg-white rounded-3xl p-6 border border-[#E6E0D4] shadow-xs">
-            <h3 className="text-lg font-serif font-bold text-slate-900">How to Reach {destination.name}</h3>
-            <div className="space-y-3 text-xs sm:text-sm text-slate-700">
+            <h3 className="text-lg font-serif font-bold text-stone-900">How to Reach {destination.name}</h3>
+            <div className="space-y-3 text-xs sm:text-sm text-stone-700">
               <div className="flex items-start gap-2.5">
                 <Plane className="w-4 h-4 text-[#B8860B] shrink-0 mt-0.5" />
                 <div><strong>By Air:</strong> {destination.howToReach.air}</div>
@@ -365,7 +365,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
         {/* FAQs */}
         {destination.faqs && destination.faqs.length > 0 && (
           <section className="space-y-6">
-            <h2 className="text-2xl font-serif font-bold text-slate-900">
+            <h2 className="text-2xl font-serif font-bold text-stone-900">
               Frequently Asked Questions
             </h2>
             <div className="space-y-3">
@@ -373,17 +373,17 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                 <div key={i} className="border border-[#E6E0D4] rounded-2xl overflow-hidden bg-white shadow-xs">
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full p-4 text-left font-serif font-bold text-sm sm:text-base text-slate-900 flex items-center justify-between hover:bg-[#FAF9F5] cursor-pointer"
+                    className="w-full p-4 text-left font-serif font-bold text-sm sm:text-base text-stone-900 flex items-center justify-between hover:bg-[#FAF9F6] cursor-pointer"
                   >
                     <span>{faq.question}</span>
                     {openFaq === i ? (
-                      <ChevronUp className="w-4 h-4 text-slate-900 shrink-0" />
+                      <ChevronUp className="w-4 h-4 text-stone-900 shrink-0" />
                     ) : (
-                      <ChevronDown className="w-4 h-4 text-slate-400 shrink-0" />
+                      <ChevronDown className="w-4 h-4 text-stone-400 shrink-0" />
                     )}
                   </button>
                   {openFaq === i && (
-                    <div className="p-4 pt-2 text-xs sm:text-sm text-slate-600 border-t border-[#E6E0D4] font-normal leading-relaxed">
+                    <div className="p-4 pt-2 text-xs sm:text-sm text-stone-600 border-t border-[#E6E0D4] font-normal leading-relaxed">
                       {faq.answer}
                     </div>
                   )}

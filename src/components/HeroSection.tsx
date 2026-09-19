@@ -96,7 +96,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </h1>
 
           {/* Secondary line */}
-          <p className="text-sm sm:text-base lg:text-[17px] text-gray-300 font-normal leading-relaxed max-w-xl mb-5 text-shadow-xs">
+          <p className="text-sm sm:text-base lg:text-[17px] text-stone-300 font-normal leading-relaxed max-w-xl mb-5 text-shadow-xs">
             Personalized travel planning powered by intelligent AI, refined and verified by seasoned human destination specialists.
           </p>
 
@@ -106,69 +106,69 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center">
                 <AIIcon className="w-4 h-4 text-white" aria-hidden="true" />
               </div>
-              <span className="text-[10px] sm:text-[11px] font-semibold text-gray-300 whitespace-nowrap">AI Powered</span>
+              <span className="text-[10px] sm:text-[11px] font-semibold text-stone-300 whitespace-nowrap">AI Powered</span>
             </div>
             <div className="flex flex-col items-center gap-1.5">
               <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center">
                 <BadgeCheck className="w-4 h-4 text-white" aria-hidden="true" />
               </div>
-              <span className="text-[10px] sm:text-[11px] font-semibold text-gray-300 whitespace-nowrap">Expert Verified</span>
+              <span className="text-[10px] sm:text-[11px] font-semibold text-stone-300 whitespace-nowrap">Expert Verified</span>
             </div>
             <div className="flex flex-col items-center gap-1.5">
               <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center">
                 <ShieldCheck className="w-4 h-4 text-white" aria-hidden="true" />
               </div>
-              <span className="text-[10px] sm:text-[11px] font-semibold text-gray-300 whitespace-nowrap">Trusted</span>
+              <span className="text-[10px] sm:text-[11px] font-semibold text-stone-300 whitespace-nowrap">Trusted</span>
             </div>
           </div>
 
           {/* Plan with AI Card */}
-          <div className="bg-ivory rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-2xl text-slate-900 max-w-xl border border-luxury-gold/30">
-            <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 tracking-tight mb-2">
+          <div className="bg-ivory rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-2xl text-stone-900 max-w-xl border border-luxury-gold/30">
+            <h2 className="text-xl sm:text-2xl font-serif font-bold text-stone-900 tracking-tight mb-2">
               Where do you want to go?
             </h2>
 
-            <p className="text-sm text-slate-600 leading-relaxed mb-5">
+            <p className="text-sm text-stone-600 leading-relaxed mb-5">
               Share a few details and we'll create the perfect travel plan for you.
             </p>
 
             {/* Destination Input */}
             <div className="relative mb-3">
-              <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+              <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400 pointer-events-none" />
               <input
                 type="text"
                 value={destination}
                 onChange={(e) => setDestination(e.target.value)}
                 placeholder="Where do you want to go?"
-                className="w-full pl-10 pr-3.5 py-3 rounded-xl border border-gray-200 bg-white text-sm text-slate-900 placeholder:text-gray-400 focus:outline-none focus:border-deep-emerald"
+                className="w-full pl-10 pr-3.5 py-3 rounded-xl border border-stone-200 bg-white text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-deep-emerald"
               />
             </div>
 
             {/* Travelers & Duration Row */}
             <div className="grid grid-cols-2 gap-3 mb-5">
               <div className="relative">
-                <Users className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+                <Users className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400 pointer-events-none" />
                 <input
                   type="number"
                   min={1}
                   value={travelers}
                   onChange={(e) => setTravelers(e.target.value)}
                   placeholder="Number of travelers"
-                  className="w-full pl-10 pr-3 py-3 rounded-xl border border-gray-200 bg-white text-sm text-slate-900 placeholder:text-gray-400 focus:outline-none focus:border-deep-emerald"
+                  className="w-full pl-10 pr-3 py-3 rounded-xl border border-stone-200 bg-white text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-deep-emerald"
                 />
               </div>
               <div className="relative">
-                <Calendar className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none z-10" />
+                <Calendar className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400 pointer-events-none z-10" />
                 <select
                   value={duration}
                   onChange={(e) => setDuration(e.target.value)}
-                  className="w-full pl-10 pr-8 py-3 rounded-xl border border-gray-200 bg-white text-sm text-slate-900 focus:outline-none focus:border-deep-emerald appearance-none cursor-pointer"
+                  className="w-full pl-10 pr-8 py-3 rounded-xl border border-stone-200 bg-white text-sm text-stone-900 focus:outline-none focus:border-deep-emerald appearance-none cursor-pointer"
                 >
                   {DURATION_OPTIONS.map((opt) => (
                     <option key={opt} value={opt === 'Trip duration' ? '' : opt}>{opt}</option>
                   ))}
                 </select>
-                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400 pointer-events-none" />
               </div>
             </div>
 

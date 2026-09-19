@@ -69,10 +69,10 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
             exit={{ opacity: 0, scale: 0.95, y: -12 }}
             transition={{ type: 'spring', stiffness: 380, damping: 30 }}
             onClick={(e) => e.stopPropagation()}
-            className="bg-white w-full max-w-2xl rounded-2xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col max-h-[80vh]"
+            className="bg-white w-full max-w-2xl rounded-2xl shadow-2xl border border-stone-200 overflow-hidden flex flex-col max-h-[80vh]"
           >
         {/* Search Input Box */}
-        <div className="p-4 sm:p-5 border-b border-gray-100 flex items-center gap-3 bg-[#FAF9F6]">
+        <div className="p-4 sm:p-5 border-b border-stone-100 flex items-center gap-3 bg-[#FAF9F6]">
           <Search className="w-5 h-5 text-black flex-shrink-0" />
           <input
             type="text"
@@ -80,12 +80,12 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search Kashmir, Goa, packages, guides, or honeymoon ideas..."
-            className="w-full text-base sm:text-lg text-black placeholder:text-gray-400 bg-transparent focus:outline-none font-medium"
+            className="w-full text-base sm:text-lg text-black placeholder:text-stone-400 bg-transparent focus:outline-none font-medium"
           />
           {query && (
             <button
               onClick={() => setQuery('')}
-              className="p-1 rounded-full text-gray-400 hover:text-black cursor-pointer"
+              className="p-1 rounded-full text-stone-400 hover:text-black cursor-pointer"
             >
               <X className="w-4 h-4" />
             </button>
@@ -94,7 +94,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
             onClick={onClose}
             aria-label="Close search"
             title="Close search"
-            className="p-1.5 rounded-full text-gray-500 hover:text-black hover:bg-gray-200 cursor-pointer flex-shrink-0"
+            className="p-1.5 rounded-full text-stone-500 hover:text-black hover:bg-stone-200 cursor-pointer flex-shrink-0"
           >
             <X className="w-5 h-5" />
           </button>
@@ -109,7 +109,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                 onStartAIPlan(query);
                 onClose();
               }}
-              className="p-3.5 rounded-2xl bg-[#FAF9F6] border border-gray-200 flex items-center justify-between cursor-pointer hover:border-black transition-all"
+              className="p-3.5 rounded-2xl bg-[#FAF9F6] border border-stone-200 flex items-center justify-between cursor-pointer hover:border-black transition-all"
             >
               <div className="flex items-center gap-2.5">
                 <AIIcon className="w-5 h-5 text-black" />
@@ -117,7 +117,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                   <div className="text-xs font-bold text-black font-serif">
                     Plan "{query}" with AI
                   </div>
-                  <div className="text-[11px] text-gray-500 font-normal">
+                  <div className="text-[11px] text-stone-500 font-normal">
                     Generate instant day-by-day customized itinerary & cost estimate
                   </div>
                 </div>
@@ -129,7 +129,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
           {/* Destinations Category */}
           {matchedDestinations.length > 0 && (
             <div>
-              <div className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2 flex items-center gap-1.5">
+              <div className="text-[10px] font-bold uppercase tracking-widest text-stone-400 mb-2 flex items-center gap-1.5">
                 <MapPin className="w-3.5 h-3.5 text-black" />
                 <span>Destinations</span>
               </div>
@@ -141,12 +141,12 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                       onSelectDestination(d.slug);
                       onClose();
                     }}
-                    className="p-2.5 rounded-xl hover:bg-[#FAF9F6] border border-gray-150 text-left flex items-center gap-3 transition-colors group cursor-pointer"
+                    className="p-2.5 rounded-xl hover:bg-[#FAF9F6] border border-stone-150 text-left flex items-center gap-3 transition-colors group cursor-pointer"
                   >
                     <img src={d.heroImage} alt={d.name} className="w-12 h-12 rounded-lg object-cover" />
                     <div>
                       <div className="text-xs font-bold text-black group-hover:text-gold-ink">{d.name}</div>
-                      <div className="text-[11px] text-gray-400 line-clamp-1">{d.state} • {d.idealDays}</div>
+                      <div className="text-[11px] text-stone-400 line-clamp-1">{d.state} • {d.idealDays}</div>
                     </div>
                   </button>
                 ))}
@@ -157,7 +157,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
           {/* Packages Category */}
           {matchedPackages.length > 0 && (
             <div>
-              <div className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2 flex items-center gap-1.5">
+              <div className="text-[10px] font-bold uppercase tracking-widest text-stone-400 mb-2 flex items-center gap-1.5">
                 <PackageIcon className="w-3.5 h-3.5 text-black" />
                 <span>Holiday Packages</span>
               </div>
@@ -169,18 +169,18 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                       onSelectPackage(p);
                       onClose();
                     }}
-                    className="w-full p-2.5 rounded-xl hover:bg-[#FAF9F6] border border-gray-150 text-left flex items-center justify-between transition-colors group cursor-pointer"
+                    className="w-full p-2.5 rounded-xl hover:bg-[#FAF9F6] border border-stone-150 text-left flex items-center justify-between transition-colors group cursor-pointer"
                   >
                     <div className="flex items-center gap-3">
                       <img src={p.heroImage} alt={p.title} className="w-12 h-12 rounded-lg object-cover" />
                       <div>
                         <div className="text-xs font-bold text-black group-hover:text-gold-ink line-clamp-1">{p.title}</div>
-                        <div className="text-[11px] text-gray-400">{p.destination} • {p.durationDays}D/{p.durationNights}N</div>
+                        <div className="text-[11px] text-stone-400">{p.destination} • {p.durationDays}D/{p.durationNights}N</div>
                       </div>
                     </div>
                     <div className="text-right">
                       <div className="text-xs font-black text-black">₹{p.startingPrice.toLocaleString('en-IN')}</div>
-                      <div className="text-[10px] text-gray-400 uppercase tracking-wider">/ person</div>
+                      <div className="text-[10px] text-stone-400 uppercase tracking-wider">/ person</div>
                     </div>
                   </button>
                 ))}
@@ -191,7 +191,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
           {/* Guides Category */}
           {matchedGuides.length > 0 && (
             <div>
-              <div className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-2 flex items-center gap-1.5">
+              <div className="text-[10px] font-bold uppercase tracking-widest text-stone-400 mb-2 flex items-center gap-1.5">
                 <BookOpen className="w-3.5 h-3.5 text-black" />
                 <span>Travel Guides</span>
               </div>
@@ -203,12 +203,12 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                       onSelectGuide(g);
                       onClose();
                     }}
-                    className="w-full p-2.5 rounded-xl hover:bg-[#FAF9F6] border border-gray-150 text-left flex items-center gap-3 transition-colors group cursor-pointer"
+                    className="w-full p-2.5 rounded-xl hover:bg-[#FAF9F6] border border-stone-150 text-left flex items-center gap-3 transition-colors group cursor-pointer"
                   >
                     <img src={g.heroImage} alt={g.title} className="w-12 h-12 rounded-lg object-cover" />
                     <div>
                       <div className="text-xs font-bold text-black group-hover:text-luxury-gold line-clamp-1">{g.title}</div>
-                      <div className="text-[11px] text-gray-400">{g.destinationName} • {g.readTime}</div>
+                      <div className="text-[11px] text-stone-400">{g.destinationName} • {g.readTime}</div>
                     </div>
                   </button>
                 ))}
@@ -217,7 +217,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
           )}
 
           {matchedDestinations.length === 0 && matchedPackages.length === 0 && matchedGuides.length === 0 && (
-            <div className="text-center py-8 text-gray-400 text-sm">
+            <div className="text-center py-8 text-stone-400 text-sm">
               No matching destinations or packages found for "{query}". <br />
               <button
                 onClick={() => {

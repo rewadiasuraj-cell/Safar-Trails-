@@ -65,43 +65,43 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
   };
 
   return (
-    <section id="packages-section" className="w-full py-14 lg:py-20 bg-light-blue border-t border-gray-100">
+    <section id="packages-section" className="w-full py-14 lg:py-20 bg-light-blue border-t border-stone-100">
       <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Single Clean Section Heading - No Redundant Subheaders */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
           <div>
             {asPage ? (
               <>
-                <h1 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-tight">
+                <h1 className="text-3xl sm:text-4xl font-serif font-bold text-stone-900 tracking-tight">
                   India Holiday Packages
                 </h1>
-                <p className="mt-1.5 text-slate-600 text-sm max-w-xl font-normal">
+                <p className="mt-1.5 text-stone-600 text-sm max-w-xl font-normal">
                   Each package is a starting point, not a fixed menu. Tell us your dates and we will
                   send a revised day-wise itinerary with transparent pricing.
                 </p>
               </>
             ) : (
               <>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-tight">
+                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-stone-900 tracking-tight">
                   India Tour Packages
                 </h2>
-                <p className="mt-1.5 text-slate-600 text-sm max-w-xl font-normal">
+                <p className="mt-1.5 text-stone-600 text-sm max-w-xl font-normal">
                   Expertly curated itineraries, trusted stays, private cabs, and 24/7 travel support.
                 </p>
               </>
             )}
           </div>
 
-          <div className="text-xs font-bold uppercase tracking-wider text-slate-500 bg-gray-50 px-3.5 py-1.5 rounded-full border border-gray-200 self-start sm:self-auto">
-            <strong className="text-slate-900">{filteredPackages.length}</strong> Packages Available
+          <div className="text-xs font-bold uppercase tracking-wider text-stone-500 bg-stone-50 px-3.5 py-1.5 rounded-full border border-stone-200 self-start sm:self-auto">
+            <strong className="text-stone-900">{filteredPackages.length}</strong> Packages Available
           </div>
         </div>
 
         {/* Filter Controls Bar */}
-        <div className="bg-[#FAF9F6] p-4 sm:p-5 rounded-2xl border border-gray-200/80 shadow-2xs mb-8 space-y-3.5">
+        <div className="bg-[#FAF9F6] p-4 sm:p-5 rounded-2xl border border-stone-200/80 shadow-2xs mb-8 space-y-3.5">
           {/* Destination Pills */}
           <div>
-            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest block mb-1.5">
+            <span className="text-[10px] font-bold text-stone-400 uppercase tracking-widest block mb-1.5">
               Destination:
             </span>
             <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
@@ -111,8 +111,8 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
                   onClick={() => setSelectedDestination(dest)}
                   className={`px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all cursor-pointer ${
                     selectedDestination === dest
-                      ? 'bg-slate-900 text-white shadow-xs'
-                      : 'bg-white text-slate-700 hover:bg-gray-100 border border-gray-200'
+                      ? 'bg-stone-900 text-white shadow-xs'
+                      : 'bg-white text-stone-700 hover:bg-stone-100 border border-stone-200'
                   }`}
                 >
                   {dest}
@@ -122,9 +122,9 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
           </div>
 
           {/* Trip Type & Duration row */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 border-t border-gray-200">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 border-t border-stone-200">
             <div>
-              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest block mb-1.5">
+              <span className="text-[10px] font-bold text-stone-400 uppercase tracking-widest block mb-1.5">
                 Travel Style:
               </span>
               <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
@@ -134,8 +134,8 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
                     onClick={() => setSelectedTripType(type)}
                     className={`px-3 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer ${
                       selectedTripType === type
-                        ? 'bg-slate-900 text-white font-bold'
-                        : 'bg-white text-slate-600 hover:bg-gray-100 border border-gray-200'
+                        ? 'bg-stone-900 text-white font-bold'
+                        : 'bg-white text-stone-600 hover:bg-stone-100 border border-stone-200'
                     }`}
                   >
                     {type}
@@ -145,7 +145,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
             </div>
 
             <div>
-              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest block mb-1.5">
+              <span className="text-[10px] font-bold text-stone-400 uppercase tracking-widest block mb-1.5">
                 Duration:
               </span>
               <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
@@ -155,8 +155,8 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
                     onClick={() => setSelectedDuration(dur)}
                     className={`px-3 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer ${
                       selectedDuration === dur
-                        ? 'bg-slate-900 text-white font-bold'
-                        : 'bg-white text-slate-600 hover:bg-gray-100 border border-gray-200'
+                        ? 'bg-stone-900 text-white font-bold'
+                        : 'bg-white text-stone-600 hover:bg-stone-100 border border-stone-200'
                     }`}
                   >
                     {dur}
@@ -172,7 +172,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
           {filteredPackages.map((pkg) => (
             <div
               key={pkg.id}
-              className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-luxury-gold shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              className="group bg-white rounded-2xl overflow-hidden border border-stone-200 hover:border-luxury-gold shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
               <div className="relative">
                 {/*
@@ -213,17 +213,17 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
 
                   {/* Top Badges */}
                   <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between">
-                    <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/95 text-slate-900 shadow-xs">
+                    <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/95 text-stone-900 shadow-xs">
                       {pkg.destination}
                     </span>
-                    <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-900 text-white shadow-xs">
+                    <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-stone-900 text-white shadow-xs">
                       {pkg.durationDays}D / {pkg.durationNights}N
                     </span>
                   </div>
 
                   {/* Best for */}
                   <div className="absolute bottom-3 left-3.5 right-3.5 flex items-center text-white text-xs">
-                    <span className="text-[11px] text-gray-200 line-clamp-1">
+                    <span className="text-[11px] text-stone-200 line-clamp-1">
                       {pkg.bestFor}
                     </span>
                   </div>
@@ -231,26 +231,26 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
 
                 {/* Card Details */}
                 <div className="p-5 space-y-3">
-                  <h3 className="text-lg font-serif font-bold text-slate-900 group-hover:text-gold-ink transition-colors line-clamp-2 leading-snug">
+                  <h3 className="text-lg font-serif font-bold text-stone-900 group-hover:text-gold-ink transition-colors line-clamp-2 leading-snug">
                     {pkg.title}
                   </h3>
 
-                  <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
+                  <p className="text-xs text-stone-500 line-clamp-2 leading-relaxed">
                     {pkg.overview}
                   </p>
 
                   {/* Quick Feature Specs */}
-                  <div className="grid grid-cols-3 gap-2 pt-2 text-[11px] text-slate-600 border-t border-gray-100">
+                  <div className="grid grid-cols-3 gap-2 pt-2 text-[11px] text-stone-600 border-t border-stone-100">
                     <div className="flex items-center gap-1.5">
-                      <Building2 className="w-3.5 h-3.5 text-slate-400" />
+                      <Building2 className="w-3.5 h-3.5 text-stone-400" />
                       <span className="truncate">{pkg.hotelCategory}</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <Car className="w-3.5 h-3.5 text-slate-400" />
+                      <Car className="w-3.5 h-3.5 text-stone-400" />
                       <span className="truncate">Private Cab</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <Utensils className="w-3.5 h-3.5 text-slate-400" />
+                      <Utensils className="w-3.5 h-3.5 text-stone-400" />
                       <span className="truncate">Meals Incl.</span>
                     </div>
                   </div>
@@ -258,21 +258,21 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
               </div>
 
               {/* Price & 2-Button Action Row (More Info & Book Now) */}
-              <div className="p-5 pt-0 border-t border-gray-100 mt-2 space-y-3">
+              <div className="p-5 pt-0 border-t border-stone-100 mt-2 space-y-3">
                 <div className="flex items-baseline justify-between pt-2">
                   <div>
-                    <span className="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">Starting from</span>
+                    <span className="text-[10px] uppercase tracking-wider text-stone-400 font-bold block">Starting from</span>
                     <div className="flex items-baseline gap-1.5">
-                      <span className="text-lg font-black text-slate-900">
+                      <span className="text-lg font-black text-stone-900">
                         ₹{pkg.startingPrice.toLocaleString('en-IN')}
                       </span>
-                      <span className="text-xs text-slate-500 font-normal">/ person {GST_NOTE}</span>
+                      <span className="text-xs text-stone-500 font-normal">/ person {GST_NOTE}</span>
                     </div>
                   </div>
 
                   {pkg.originalPrice && (
                     <div className="text-right">
-                      <span className="text-xs text-gray-400 line-through">
+                      <span className="text-xs text-stone-400 line-through">
                         ₹{pkg.originalPrice.toLocaleString('en-IN')}
                       </span>
                     </div>
@@ -283,9 +283,9 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
                 <div className="grid grid-cols-2 gap-2">
                   <button
                     onClick={() => onSelectPackage(pkg)}
-                    className="w-full h-10 rounded-xl border border-gray-200 hover:border-slate-900 hover:bg-gray-50 text-slate-800 font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center justify-center gap-1.5 cursor-pointer text-center whitespace-nowrap"
+                    className="w-full h-10 rounded-xl border border-stone-200 hover:border-stone-900 hover:bg-stone-50 text-stone-800 font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center justify-center gap-1.5 cursor-pointer text-center whitespace-nowrap"
                   >
-                    <Info className="w-3.5 h-3.5 text-slate-600" />
+                    <Info className="w-3.5 h-3.5 text-stone-600" />
                     <span>More Info</span>
                   </button>
 
