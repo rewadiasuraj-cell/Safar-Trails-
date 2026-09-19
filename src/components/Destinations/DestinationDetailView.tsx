@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Destination, Package } from '../../types';
 import { packagesData } from '../../data/packagesData';
 import { AIIcon } from '../AIIcon';
-import { DestinationInteractiveMap } from './DestinationInteractiveMap';
 import { FloatingShareButton } from '../FloatingShareButton';
 import { ExpertVerifiedBadge } from '../ExpertVerifiedBadge';
 import { 
@@ -321,20 +320,11 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
           )}
         </section>
 
-        {/* Interactive Map Section
-            The "Current Travel & Weather Trends" widget used to sit beside this
-            in a two-column grid. It was removed on the owner's instruction, so
-            the map takes the full width rather than leaving half the row empty.
-            Best season and temperature still appear in the facts row above. */}
-        <section>
-          <DestinationInteractiveMap
-            destination={destination}
-            packages={destinationPackages}
-            onSelectPackage={onSelectPackage}
-            onStartAIPlan={onStartAIPlan}
-            onOpenQuoteModal={onOpenQuoteModal}
-          />
-        </section>
+        {/* "Current Travel & Weather Trends" and "Interactive Tour Map &
+            Highlights" both sat here and were removed on the owner's
+            instruction. Best season and temperature still show in the facts row
+            under the hero, and the attractions the map pinned are listed in the
+            Top Attractions section below. */}
 
         {/* Overview & How to Reach */}
         <section className="grid grid-cols-1 lg:grid-cols-3 gap-8">
