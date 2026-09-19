@@ -35,10 +35,21 @@
   /* Gold for text on light surfaces: 5.03:1 on white, 4.78:1 on ivory. */
   --color-gold-ink: #8A6A28;
 
-  /* Primary CTA. Was #EB7D00, which gave white button text only 2.81:1 -
-     a fail on every "Plan My Trip" and "Book Now" button on the site.
-     #B85C00 holds the same hue at 4.60:1 with white. */
-  --color-warm-orange: #B85C00;
+  /* Primary CTA — the bright amber from the reference layout.
+   *
+   * It is paired with dark ink, never white. White on this amber is 2.24:1,
+   * which is what the reference itself does and is a fail; the same amber
+   * under #1C1917 is 7.82:1. So the button keeps the reference's colour and
+   * gets legible text, rather than copying an inaccessible pairing.
+   *
+   * Use --color-cta-ink for any text or icon sitting on this. On the dark
+   * greens the amber itself is readable as text: 6.34:1 on midnight-blue,
+   * 5.22:1 on royal-navy.
+   *
+   * (It was #B85C00, chosen when the CTA had white text — a dark brown-orange
+   * that cleared 4.60:1 with white but read nothing like the reference.) */
+  --color-warm-orange: #EE9B3F;
+  --color-cta-ink: #1C1917;
 
   /* Accent for orange text on white: 5.18:1 (the old #FF6B00 was 2.86:1). */
   --color-accent-ink: #C2410C;
@@ -56,6 +67,20 @@
   --color-light-blue: #F5EFE6;
   --color-soft-blue: #EFE7DA;
   --color-ivory: #FBF7F0;
+
+  /* Type.
+   *
+   * 53 elements across the codebase carry Tailwind's `font-serif` utility, and
+   * a utility beats anything declared in @layer base - so setting the family
+   * on `.font-serif` there did nothing at all; headings kept rendering in
+   * `ui-serif, Georgia`. Redefining the theme variable is what actually
+   * retargets the utility, and it keeps the class names as they are rather
+   * than touching 53 files to rename them.
+   *
+   * Outfit is the geometric display sans; Plus Jakarta Sans stays for body
+   * text. Playfair Display is no longer loaded. */
+  --font-serif: 'Outfit', 'Plus Jakarta Sans', Georgia, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 @layer base {
@@ -85,8 +110,19 @@
     overflow-x: hidden;
   }
 
+  /* Headings are a geometric sans now, not Playfair Display.
+   *
+   * The class names stay `font-serif` / `font-serif-editorial` on purpose:
+   * they are on 53 elements across the codebase, and renaming them would turn
+   * a one-line type change into a diff nobody can read. What they mean here is
+   * "display type", and this rule is the single place that decides what that
+   * is.
+   *
+   * Georgia stays in the stack as the fallback because it is the metric that
+   * was actually rendering while the font URL was broken. */
   h1, h2, h3, .font-serif, .font-serif-editorial {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Outfit', 'Plus Jakarta Sans', Georgia, sans-serif;
+    letter-spacing: -0.02em;
   }
 
   .font-display {
@@ -200,13 +236,11 @@ summary:focus-visible,
   border-radius: 0.25rem;
 }
 
-/* The header sits on midnight-blue (#12302A), where the amber ring above drops below 3:1.
-   White reads at ~15:1 there. */
-#main-header a:focus-visible,
-#main-header button:focus-visible,
-#main-header input:focus-visible {
-  outline-color: #FFFFFF !important;
-}
+/* The header used to sit on midnight-blue, where the amber ring above drops
+   below 3:1, so it was overridden to white. The header is ivory now - white on
+   ivory is 1.05:1, invisible - so the override is gone and the amber ring from
+   the rule above applies here like everywhere else: #B45309 on #FBF7F0 is
+   6.42:1. */
 
 /* main is focused programmatically by the skip link; it is not a control, so it
    should not draw a ring of its own. */

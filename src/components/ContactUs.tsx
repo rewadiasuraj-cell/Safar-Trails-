@@ -89,7 +89,7 @@ export const ContactUs: React.FC<ContactUsProps> = ({ onOpenQuoteModal }) => {
           </p>
           <button
             onClick={() => onOpenQuoteModal('Contact & General Inquiries')}
-            className="w-full py-3 rounded-full bg-warm-orange hover:brightness-95 text-white font-bold text-sm shadow-xs transition-all active:scale-95 cursor-pointer"
+            className="w-full py-3 rounded-full bg-warm-orange hover:brightness-95 text-cta-ink font-bold text-sm shadow-xs transition-all active:scale-95 cursor-pointer"
           >
             Request a Free Quote
           </button>

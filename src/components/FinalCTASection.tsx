@@ -109,7 +109,7 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({
 
             <button
               onClick={onOpenQuoteModal}
-              className="w-full sm:w-auto px-6 py-4 rounded-xl bg-warm-orange hover:brightness-95 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer"
+              className="w-full sm:w-auto px-6 py-4 rounded-xl bg-warm-orange hover:brightness-95 text-cta-ink font-bold text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer"
             >
               Request Custom Package
             </button>

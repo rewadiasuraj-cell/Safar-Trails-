@@ -359,7 +359,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
 
                   <button
                     onClick={() => handleBookNow(pkg)}
-                    className="w-full h-10 rounded-xl bg-warm-orange hover:brightness-95 text-white font-bold text-xs uppercase tracking-wider transition-all inline-flex items-center justify-center gap-1.5 cursor-pointer text-center whitespace-nowrap shadow-2xs"
+                    className="w-full h-10 rounded-xl bg-warm-orange hover:brightness-95 text-cta-ink font-bold text-xs uppercase tracking-wider transition-all inline-flex items-center justify-center gap-1.5 cursor-pointer text-center whitespace-nowrap shadow-2xs"
                   >
                     <Send className="w-3.5 h-3.5 text-white" />
                     <span>Book Now</span>

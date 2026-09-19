@@ -70,9 +70,9 @@ export const Header: React.FC<HeaderProps> = ({
     <>
       <header
         id="main-header"
-        className={`fixed top-0 left-0 right-0 w-full z-40 transition-all duration-200 bg-midnight-blue border-b border-white/10 ${
+        className={`fixed top-0 left-0 right-0 w-full z-40 transition-all duration-200 bg-ivory/95 backdrop-blur-md border-b border-[#E7E2DA] ${
           isScrolled
-            ? 'shadow-[0_2px_15px_-3px_rgba(0,0,0,0.25)] py-2 sm:py-2.5 md:py-3'
+            ? 'shadow-[0_2px_15px_-3px_rgba(0,0,0,0.08)] py-2 sm:py-2.5 md:py-3'
             : 'py-2.5 sm:py-3 md:py-3.5'
         }`}
       >
@@ -84,9 +84,9 @@ export const Header: React.FC<HeaderProps> = ({
               type="button"
               onClick={() => onNavigate('home')}
               aria-label="Safar Trails — go to homepage"
-              className="cursor-pointer flex items-center flex-shrink-0 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-luxury-gold"
+              className="cursor-pointer flex items-center flex-shrink-0 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-ink"
             >
-              <SafarLogo variant="dark" size="responsive" />
+              <SafarLogo variant="light" size="responsive" />
             </button>
           </div>
 
@@ -108,7 +108,7 @@ export const Header: React.FC<HeaderProps> = ({
            * which is the rule: nothing may exist for the crawler alone. */}
           <nav
             ref={navContainerRef}
-            className="hidden lg:flex items-center gap-4 xl:gap-7 text-[14px] xl:text-[14.5px] font-medium text-ivory whitespace-nowrap"
+            className="hidden lg:flex items-center gap-4 xl:gap-7 text-[14px] xl:text-[14.5px] font-medium text-stone-800 whitespace-nowrap"
           >
             {/* 1. Destination with Dropdown */}
             <div className="relative group">
@@ -124,12 +124,12 @@ export const Header: React.FC<HeaderProps> = ({
                 }}
                 className={`py-1.5 transition-colors inline-flex items-center gap-1 cursor-pointer select-none whitespace-nowrap ${
                   currentView === 'destinations' || currentView === 'destination-detail'
-                    ? 'text-luxury-gold font-semibold'
-                    : 'text-ivory hover:text-luxury-gold'
+                    ? 'text-accent-ink font-bold underline decoration-2 underline-offset-8 decoration-accent-ink'
+                    : 'text-stone-800 hover:text-accent-ink'
                 }`}
               >
                 <span className="whitespace-nowrap">Destination</span>
-                <ChevronDown className="w-3.5 h-3.5 text-ivory/60 group-hover:text-luxury-gold group-hover:rotate-180 transition-transform duration-200 flex-shrink-0" />
+                <ChevronDown className="w-3.5 h-3.5 text-stone-400 group-hover:text-accent-ink group-hover:rotate-180 transition-transform duration-200 flex-shrink-0" />
               </button>
 
               {/* Destinations Mega Dropdown */}
@@ -200,8 +200,8 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
                 currentView === 'packages'
-                  ? 'text-luxury-gold font-semibold'
-                  : 'text-ivory hover:text-luxury-gold'
+                  ? 'text-accent-ink font-bold underline decoration-2 underline-offset-8 decoration-accent-ink'
+                  : 'text-stone-800 hover:text-accent-ink'
               }`}
             >
               <span className="whitespace-nowrap">Tour Packages</span>
@@ -217,8 +217,8 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className={`py-1.5 transition-colors inline-flex items-center gap-1.5 cursor-pointer select-none whitespace-nowrap ${
                 currentView === 'ai-planner'
-                  ? 'text-luxury-gold font-semibold'
-                  : 'text-ivory hover:text-luxury-gold'
+                  ? 'text-accent-ink font-bold underline decoration-2 underline-offset-8 decoration-accent-ink'
+                  : 'text-stone-800 hover:text-accent-ink'
               }`}
             >
               <AIIcon className="w-3.5 h-3.5" />
@@ -242,12 +242,12 @@ export const Header: React.FC<HeaderProps> = ({
                 aria-expanded={contactDropdown}
                 className={`py-1.5 transition-colors inline-flex items-center gap-1 cursor-pointer select-none whitespace-nowrap ${
                   currentView === 'contact-us' || currentView === 'why-us'
-                    ? 'text-luxury-gold font-semibold'
-                    : 'text-ivory hover:text-luxury-gold'
+                    ? 'text-accent-ink font-bold underline decoration-2 underline-offset-8 decoration-accent-ink'
+                    : 'text-stone-800 hover:text-accent-ink'
                 }`}
               >
                 <span className="whitespace-nowrap">Contact Us</span>
-                <ChevronDown className="w-3.5 h-3.5 text-ivory/60 group-hover:text-luxury-gold group-hover:rotate-180 transition-transform duration-200 flex-shrink-0" />
+                <ChevronDown className="w-3.5 h-3.5 text-stone-400 group-hover:text-accent-ink group-hover:rotate-180 transition-transform duration-200 flex-shrink-0" />
               </button>
 
               <AnimatePresence>
@@ -319,7 +319,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               id="global-search-btn"
               onClick={onOpenSearch}
-              className="w-7 h-7 sm:w-8.5 sm:h-8.5 md:w-9.5 md:h-9.5 rounded-full flex items-center justify-center text-white hover:text-white hover:bg-white/10 transition-colors cursor-pointer flex-shrink-0"
+              className="w-7 h-7 sm:w-8.5 sm:h-8.5 md:w-9.5 md:h-9.5 rounded-full flex items-center justify-center text-stone-700 hover:text-stone-900 hover:bg-stone-200/70 transition-colors cursor-pointer flex-shrink-0"
               title="Search destinations & packages (Cmd+K)"
               aria-label="Search destinations and packages"
             >
@@ -330,7 +330,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               id="header-whatsapp-btn"
               onClick={handleWhatsAppClick}
-              className="w-7 h-7 sm:w-8.5 sm:h-8.5 md:w-9.5 md:h-9.5 rounded-full border border-white/20 hover:border-forest-green bg-white hover:bg-white flex items-center justify-center transition-all shadow-2xs cursor-pointer flex-shrink-0"
+              className="w-7 h-7 sm:w-8.5 sm:h-8.5 md:w-9.5 md:h-9.5 rounded-full border border-[#E7E2DA] hover:border-forest-green bg-white hover:bg-white flex items-center justify-center transition-all shadow-2xs cursor-pointer flex-shrink-0"
               title="Chat with an expert on WhatsApp"
               aria-label="Chat with a Safar Trails travel specialist on WhatsApp"
             >
@@ -341,7 +341,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               id="header-plan-trip-cta"
               onClick={() => onOpenQuoteModal()}
-              className="inline-flex items-center justify-center bg-warm-orange hover:brightness-95 text-white text-[10px] sm:text-xs md:text-sm font-bold px-2.5 sm:px-4 md:px-5 py-2 sm:py-2 md:py-2.5 rounded-full transition-all duration-200 active:scale-95 shadow-xs cursor-pointer whitespace-nowrap flex-shrink-0"
+              className="inline-flex items-center justify-center bg-warm-orange hover:brightness-95 text-cta-ink text-[10px] sm:text-xs md:text-sm font-bold px-2.5 sm:px-4 md:px-5 py-2 sm:py-2 md:py-2.5 rounded-full transition-all duration-200 active:scale-95 shadow-xs cursor-pointer whitespace-nowrap flex-shrink-0"
             >
               <span>Plan My Trip</span>
             </button>
@@ -350,7 +350,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               id="mobile-menu-toggle-btn"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-1.5 sm:p-2 rounded-xl text-white hover:bg-white/10 hover:text-white border border-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-luxury-gold cursor-pointer flex items-center justify-center flex-shrink-0 transition-colors"
+              className="lg:hidden p-1.5 sm:p-2 rounded-xl text-stone-800 hover:bg-stone-200/70 hover:text-stone-900 border border-[#E7E2DA] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-ink cursor-pointer flex items-center justify-center flex-shrink-0 transition-colors"
               aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-nav-drawer"
@@ -358,19 +358,19 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <span className="relative w-4.5 h-4.5 sm:w-5 sm:h-5">
                 <motion.span
-                  className="absolute left-0 w-full h-[2.2px] bg-white rounded-full"
+                  className="absolute left-0 w-full h-[2.2px] bg-stone-800 rounded-full"
                   style={{ top: 'calc(50% - 1.1px)' }}
                   animate={mobileMenuOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: -4 }}
                   transition={{ type: 'spring', stiffness: 400, damping: 28 }}
                 />
                 <motion.span
-                  className="absolute left-0 w-full h-[2.2px] bg-white rounded-full"
+                  className="absolute left-0 w-full h-[2.2px] bg-stone-800 rounded-full"
                   style={{ top: 'calc(50% - 1.1px)' }}
                   animate={mobileMenuOpen ? { opacity: 0, scale: 0.5 } : { opacity: 1, scale: 1 }}
                   transition={{ duration: 0.15 }}
                 />
                 <motion.span
-                  className="absolute left-0 w-full h-[2.2px] bg-white rounded-full"
+                  className="absolute left-0 w-full h-[2.2px] bg-stone-800 rounded-full"
                   style={{ top: 'calc(50% - 1.1px)' }}
                   animate={mobileMenuOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: 4 }}
                   transition={{ type: 'spring', stiffness: 400, damping: 28 }}
@@ -458,7 +458,7 @@ export const Header: React.FC<HeaderProps> = ({
                   onOpenQuoteModal();
                   setMobileMenuOpen(false);
                 }}
-                className="w-full py-3 rounded-full bg-warm-orange text-white font-bold text-sm shadow-xs text-center flex items-center justify-center cursor-pointer"
+                className="w-full py-3 rounded-full bg-warm-orange text-cta-ink font-bold text-sm shadow-xs text-center flex items-center justify-center cursor-pointer"
               >
                 <span>Plan My Trip</span>
               </button>

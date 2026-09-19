@@ -45,7 +45,7 @@ export const StickyContactWidget: React.FC<StickyContactWidgetProps> = ({
         id="sticky-btn-call"
         type="button"
         onClick={handleCall}
-        className="relative flex items-center justify-center w-12 h-12 rounded-full bg-warm-orange hover:brightness-95 text-white shadow-xl hover:shadow-2xl border-2 border-white transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer group/item focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900"
+        className="relative flex items-center justify-center w-12 h-12 rounded-full bg-warm-orange hover:brightness-95 text-cta-ink shadow-xl hover:shadow-2xl border-2 border-white transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer group/item focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900"
         title={`Call a travel specialist (${PRIMARY_PHONE_DISPLAY})`}
         aria-label={`Call a travel specialist on ${PRIMARY_PHONE_DISPLAY}`}
       >

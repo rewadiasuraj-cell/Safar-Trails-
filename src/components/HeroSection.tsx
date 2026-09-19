@@ -91,7 +91,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <span className="block text-4xl sm:text-6xl lg:text-[68px] leading-[1.08]">
               Your Journey.
               <br />
-              <span className="text-luxury-gold italic">Our Passion.</span>
+              {/* Not italic any more. Outfit has no true italic on Google
+                  Fonts, so the browser synthesised an oblique by slanting the
+                  upright - which on a geometric sans reads as a rendering
+                  fault rather than emphasis. The colour change alone carries
+                  the second line, as it does in the reference layout. */}
+              <span className="text-luxury-gold">Our Passion.</span>
             </span>
           </h1>
 
