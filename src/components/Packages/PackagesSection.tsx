@@ -174,7 +174,29 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
               key={pkg.id}
               className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-luxury-gold shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
-              <div>
+              <div className="relative">
+                {/*
+                  Clicking the photo or the details opens the package, the same
+                  as More Info below.
+
+                  Only this upper block, not the whole card: the card's footer
+                  carries Book Now as well, and a full-card overlay would
+                  swallow it.
+
+                  aria-hidden and tabIndex -1 because this is a mouse
+                  convenience, not a second control. More Info below is the real
+                  one - keeping this out of the tab order avoids a duplicate
+                  stop on every card and a screen reader announcing the same
+                  action twice.
+                */}
+                <button
+                  type="button"
+                  aria-hidden="true"
+                  tabIndex={-1}
+                  onClick={() => onSelectPackage(pkg)}
+                  className="absolute inset-0 z-10 cursor-pointer"
+                />
+
                 {/* Hero Image */}
                 <div className="relative h-56 overflow-hidden">
                   <img

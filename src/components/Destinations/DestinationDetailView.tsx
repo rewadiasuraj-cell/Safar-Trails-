@@ -252,7 +252,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
               {destinationPackages.map((pkg) => (
                 <div
                   key={pkg.id}
-                  className="bg-white border border-[#E6E0D4] rounded-3xl p-5 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 hover:shadow-md transition-all relative overflow-hidden"
+                  className="group bg-white border border-[#E6E0D4] rounded-3xl p-5 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 hover:shadow-md transition-all relative overflow-hidden"
                 >
                   {/* Left Package Image */}
                   <div className="w-full md:w-1/3 aspect-[4/3] rounded-2xl overflow-hidden shrink-0 relative">
@@ -291,12 +291,18 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                       <span className="text-xs text-gray-500 font-normal">/ person {GST_NOTE}</span>
                     </div>
 
+                    {/* The whole card opens the package, not just this line.
+                        Done with a stretched pseudo-element rather than an
+                        onClick on the card, so there is still exactly one
+                        control here: one tab stop, one thing announced, and no
+                        interactive element nested inside another. The card is
+                        the positioned ancestor the inset-0 resolves against. */}
                     <button
                       onClick={() => onSelectPackage(pkg)}
-                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#154238] hover:text-[#0b241e] transition-colors cursor-pointer pt-1"
+                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#154238] group-hover:text-[#0b241e] transition-colors cursor-pointer pt-1 after:absolute after:inset-0 after:content-[''] after:rounded-3xl"
                     >
                       <span>VIEW IN PACKAGES</span>
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                     </button>
                   </div>
                 </div>
