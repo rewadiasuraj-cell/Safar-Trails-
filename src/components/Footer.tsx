@@ -145,6 +145,18 @@ export const Footer: React.FC<FooterProps> = ({
                   Why SafarTrails
                 </button>
               </li>
+              {/* Contact Us left the header nav when it was cut from seven
+                  links to three. /contact-us is in SITE_NAV_LINKS and so is
+                  prerendered on every page; this is the React link that keeps
+                  that honest. */}
+              <li>
+                <button
+                  onClick={() => onNavigate('contact-us')}
+                  className="hover:text-luxury-gold transition-colors cursor-pointer"
+                >
+                  Contact Us
+                </button>
+              </li>
             </ul>
           </div>
 

@@ -4,16 +4,7 @@ import { SafarLogo } from './SafarLogo';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { AIIcon } from './AIIcon';
 import { enquiryMessage, openWhatsApp } from '../lib/contact';
-import {
-  Search,
-  X,
-  ChevronDown,
-  BookOpen,
-  ShieldCheck,
-  Star,
-  Phone,
-  Compass
-} from 'lucide-react';
+import { Search, X, ChevronDown } from 'lucide-react';
 
 interface HeaderProps {
   currentView: string;
@@ -31,7 +22,6 @@ export const Header: React.FC<HeaderProps> = ({
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [destinationsDropdown, setDestinationsDropdown] = useState(false);
-  const [moreDropdown, setMoreDropdown] = useState(false);
   const navContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -51,29 +41,23 @@ export const Header: React.FC<HeaderProps> = ({
     const handleClickOutside = (event: MouseEvent) => {
       if (navContainerRef.current && !navContainerRef.current.contains(event.target as Node)) {
         setDestinationsDropdown(false);
-        setMoreDropdown(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  /* Six, not eight, and the same six the footer shows. A dropdown that lists
+     eight of the twelve destinations is not a shortlist, it is a second
+     /destinations page - and the two extras it used to carry (Northeast India,
+     Uttarakhand) are still one click away behind "View all destinations". */
   const popularDestinations = [
     { name: 'Kashmir', slug: 'kashmir' },
     { name: 'Goa', slug: 'goa' },
     { name: 'Kerala', slug: 'kerala' },
     { name: 'Rajasthan', slug: 'rajasthan' },
     { name: 'Himachal Pradesh', slug: 'himachal-pradesh' },
-    { name: 'Andaman & Nicobar', slug: 'andaman' },
-    { name: 'Northeast India', slug: 'northeast-india' },
-    { name: 'Uttarakhand', slug: 'uttarakhand' }
-  ];
-
-  const moreNavItems = [
-    { label: 'Travel Guides', id: 'guides', desc: 'Expert tips, best seasons & itineraries', icon: BookOpen },
-    { label: 'Why Us', id: 'why-us', desc: 'Verified partners, 0 hidden costs', icon: ShieldCheck },
-    { label: 'Destinations Guide', id: 'destinations', desc: 'Explore all 28+ states & circuits', icon: Compass },
-    { label: 'Guest Reviews', id: 'reviews', desc: 'Real stories from real Safar Trails trips', icon: Star },
+    { name: 'Andaman & Nicobar', slug: 'andaman' }
   ];
 
   const handleWhatsAppClick = () => openWhatsApp(enquiryMessage(), 'header');
@@ -102,58 +86,31 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
           </div>
 
-          {/* Desktop & Tablet Navigation Links - Exactly Home / Destination / Tour Packages / Blogs / About Us / Contact Us */}
-          <nav 
+          {/* Three links, not seven.
+           *
+           * What came out, and where it went instead of disappearing:
+           *   Home       -> the logo to the left of this nav already goes home.
+           *   Blogs      -> "Travel guides" at the foot of the dropdown below,
+           *                 and the footer's Explore column.
+           *   About Us   -> footer, as "Why SafarTrails" (same /about-us page).
+           *   Contact Us -> footer, plus the WhatsApp button and "Plan My Trip"
+           *                 two elements to the right of here, which is how
+           *                 people actually contact this business.
+           *
+           * Every one of those URLs is still in SITE_NAV_LINKS in
+           * src/lib/seo/routes.ts, so the prerendered HTML keeps linking to
+           * them - and each still has a real React link a visitor can click,
+           * which is the rule: nothing may exist for the crawler alone. */}
+          <nav
             ref={navContainerRef}
             className="hidden lg:flex items-center gap-4 xl:gap-7 text-[14px] xl:text-[14.5px] font-medium text-ivory whitespace-nowrap"
           >
-            {/* 1. Home */}
-            <button
-              id="nav-link-home"
-              onClick={() => {
-                onNavigate('home');
-                setDestinationsDropdown(false);
-                setMoreDropdown(false);
-              }}
-              className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
-                currentView === 'home'
-                  ? 'text-luxury-gold font-semibold'
-                  : 'text-ivory hover:text-luxury-gold'
-              }`}
-            >
-              <span className="whitespace-nowrap">Home</span>
-            </button>
-
-            {/* Plan with AI */}
-            <button
-              id="nav-link-ai-planner"
-              onClick={() => {
-                onNavigate('ai-planner');
-                setDestinationsDropdown(false);
-                setMoreDropdown(false);
-              }}
-              className={`py-1.5 transition-colors inline-flex items-center gap-1.5 cursor-pointer select-none whitespace-nowrap ${
-                currentView === 'ai-planner'
-                  ? 'text-luxury-gold font-semibold'
-                  : 'text-ivory hover:text-luxury-gold'
-              }`}
-            >
-              <AIIcon className="w-3.5 h-3.5" />
-              <span className="whitespace-nowrap">Plan with AI</span>
-            </button>
-
-            {/* 2. Destination with Dropdown */}
+            {/* 1. Destination with Dropdown */}
             <div className="relative group">
               <button
                 id="nav-link-destinations"
-                onClick={() => {
-                  setDestinationsDropdown(!destinationsDropdown);
-                  setMoreDropdown(false);
-                }}
-                onMouseEnter={() => {
-                  setDestinationsDropdown(true);
-                  setMoreDropdown(false);
-                }}
+                onClick={() => setDestinationsDropdown(!destinationsDropdown)}
+                onMouseEnter={() => setDestinationsDropdown(true)}
                 className={`py-1.5 transition-colors inline-flex items-center gap-1 cursor-pointer select-none whitespace-nowrap ${
                   currentView === 'destinations' || currentView === 'destination-detail'
                     ? 'text-luxury-gold font-semibold'
@@ -193,15 +150,28 @@ export const Header: React.FC<HeaderProps> = ({
                         </span>
                       </button>
                     ))}
-                    <div className="pt-2 border-t border-stone-100 mt-1">
+                    <div className="pt-2 border-t border-stone-100 mt-1 grid grid-cols-2 gap-1">
                       <button
+                        id="nav-link-all-destinations"
                         onClick={() => {
                           onNavigate('destinations');
                           setDestinationsDropdown(false);
                         }}
                         className="w-full text-center py-1.5 text-xs font-bold text-stone-900 hover:text-luxury-gold uppercase tracking-wider cursor-pointer whitespace-nowrap"
                       >
-                        View All Destinations →
+                        All destinations →
+                      </button>
+                      {/* Where "Blogs" went. The guides are destination reading,
+                          so this is where someone is already looking for them. */}
+                      <button
+                        id="nav-link-blogs"
+                        onClick={() => {
+                          onNavigate('guides');
+                          setDestinationsDropdown(false);
+                        }}
+                        className="w-full text-center py-1.5 text-xs font-bold text-stone-900 hover:text-luxury-gold uppercase tracking-wider cursor-pointer whitespace-nowrap"
+                      >
+                        Travel guides →
                       </button>
                     </div>
                   </motion.div>
@@ -209,13 +179,12 @@ export const Header: React.FC<HeaderProps> = ({
               </AnimatePresence>
             </div>
 
-            {/* 3. Tour Packages */}
+            {/* 2. Tour Packages */}
             <button
               id="nav-link-packages"
               onClick={() => {
                 onNavigate('packages');
                 setDestinationsDropdown(false);
-                setMoreDropdown(false);
               }}
               className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
                 currentView === 'packages'
@@ -226,55 +195,21 @@ export const Header: React.FC<HeaderProps> = ({
               <span className="whitespace-nowrap">Tour Packages</span>
             </button>
 
-            {/* 4. Blogs */}
+            {/* 3. Plan with AI */}
             <button
-              id="nav-link-blogs"
+              id="nav-link-ai-planner"
               onClick={() => {
-                onNavigate('guides');
+                onNavigate('ai-planner');
                 setDestinationsDropdown(false);
-                setMoreDropdown(false);
               }}
-              className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
-                currentView === 'guides' || currentView === 'guide-detail'
+              className={`py-1.5 transition-colors inline-flex items-center gap-1.5 cursor-pointer select-none whitespace-nowrap ${
+                currentView === 'ai-planner'
                   ? 'text-luxury-gold font-semibold'
                   : 'text-ivory hover:text-luxury-gold'
               }`}
             >
-              <span className="whitespace-nowrap">Blogs</span>
-            </button>
-
-            {/* 5. About Us */}
-            <button
-              id="nav-link-about-us"
-              onClick={() => {
-                onNavigate('why-us');
-                setDestinationsDropdown(false);
-                setMoreDropdown(false);
-              }}
-              className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
-                currentView === 'why-us'
-                  ? 'text-luxury-gold font-semibold'
-                  : 'text-ivory hover:text-luxury-gold'
-              }`}
-            >
-              <span className="whitespace-nowrap">About Us</span>
-            </button>
-
-            {/* 6. Contact Us */}
-            <button
-              id="nav-link-contact-us"
-              onClick={() => {
-                onNavigate('contact-us');
-                setDestinationsDropdown(false);
-                setMoreDropdown(false);
-              }}
-              className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
-                currentView === 'contact-us'
-                  ? 'text-luxury-gold font-semibold'
-                  : 'text-ivory hover:text-luxury-gold'
-              }`}
-            >
-              <span className="whitespace-nowrap">Contact Us</span>
+              <AIIcon className="w-3.5 h-3.5" />
+              <span className="whitespace-nowrap">Plan with AI</span>
             </button>
           </nav>
 
@@ -375,103 +310,41 @@ export const Header: React.FC<HeaderProps> = ({
                 </button>
               </div>
 
-              <div className="mt-6 space-y-1 text-sm font-medium text-stone-800">
-                <button
-                  onClick={() => {
-                    onNavigate('home');
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'home' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-stone-50'
-                  }`}
-                >
-                  Home
-                </button>
-                <button
-                  onClick={() => {
-                    onNavigate('ai-planner');
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors flex items-center gap-2 ${
-                    currentView === 'ai-planner' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-stone-50'
-                  }`}
-                >
-                  <AIIcon className="w-4 h-4" />
-                  <span>Plan with AI</span>
-                </button>
-                <button
-                  onClick={() => {
-                    onNavigate('destinations');
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'destinations' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-stone-50'
-                  }`}
-                >
-                  Destination
-                </button>
-                <button
-                  onClick={() => {
-                    onNavigate('packages');
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'packages' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-stone-50'
-                  }`}
-                >
-                  Tour Packages
-                </button>
-                <button
-                  onClick={() => {
-                    onNavigate('guides');
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'guides' || currentView === 'guide-detail' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-stone-50'
-                  }`}
-                >
-                  Blogs
-                </button>
-                <button
-                  onClick={() => {
-                    onNavigate('why-us');
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'why-us' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-stone-50'
-                  }`}
-                >
-                  About Us
-                </button>
-                <button
-                  onClick={() => {
-                    onNavigate('contact-us');
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                    currentView === 'contact-us' ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-stone-50'
-                  }`}
-                >
-                  Contact Us
-                </button>
-              </div>
-
-              {/* Quick Destination Tags */}
-              <div className="mt-6 pt-4 border-t border-stone-100">
-                <div className="text-[10px] font-bold text-stone-400 uppercase tracking-widest mb-3">
-                  Trending Destinations
+              {/* This drawer only carries what the bottom bar does not.
+               *
+               * MobileBottomNav is fixed to the bottom of every viewport this
+               * drawer can open in - both are lg:hidden - and it already holds
+               * Home, Explore (destinations), AI Plan, Trips (packages) and
+               * WhatsApp. The drawer used to repeat all of those and then add
+               * six destination chips on top, so the hamburger opened onto
+               * fifteen controls, nine of them a second copy of the bar the
+               * user could already see.
+               *
+               * The chips went with them. One of the six was broken anyway -
+               * "Himachal" built the slug `himachal`, and the destination is
+               * `himachal-pradesh`, so that chip led to a not-found page. */}
+              <div className="mt-6">
+                <div className="text-[10px] font-bold text-stone-400 uppercase tracking-widest mb-2 px-4">
+                  More
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  {['Kashmir', 'Goa', 'Kerala', 'Rajasthan', 'Himachal', 'Andaman'].map((d) => (
+                <div className="space-y-1 text-sm font-medium text-stone-800">
+                  {[
+                    { label: 'Travel Guides', view: 'guides', active: currentView === 'guides' || currentView === 'guide-detail' },
+                    { label: 'About Us', view: 'why-us', active: currentView === 'why-us' },
+                    { label: 'Contact Us', view: 'contact-us', active: currentView === 'contact-us' },
+                  ].map((item) => (
                     <button
-                      key={d}
+                      key={item.view}
                       onClick={() => {
-                        onNavigate('destination-detail', d.toLowerCase().replace(/\s+/g, '-'));
+                        onNavigate(item.view);
                         setMobileMenuOpen(false);
                       }}
-                      className="px-3 py-1 text-xs font-medium rounded-full bg-stone-100 text-stone-800 hover:bg-luxury-gold hover:text-white transition-colors cursor-pointer"
+                      aria-current={item.active ? 'page' : undefined}
+                      className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
+                        item.active ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-stone-50'
+                      }`}
                     >
-                      {d}
+                      {item.label}
                     </button>
                   ))}
                 </div>
