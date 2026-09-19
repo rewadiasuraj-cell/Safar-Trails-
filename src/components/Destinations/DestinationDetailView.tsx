@@ -3,7 +3,6 @@ import { Destination, Package } from '../../types';
 import { packagesData } from '../../data/packagesData';
 import { AIIcon } from '../AIIcon';
 import { DestinationInteractiveMap } from './DestinationInteractiveMap';
-import { SeasonalWeatherWidget } from './SeasonalWeatherWidget';
 import { FloatingShareButton } from '../FloatingShareButton';
 import { ExpertVerifiedBadge } from '../ExpertVerifiedBadge';
 import { 
@@ -22,7 +21,6 @@ import {
   ChevronUp, 
   ArrowRight, 
   ShieldCheck,
-  CloudSun,
   Star,
   Flame
 } from 'lucide-react';
@@ -323,13 +321,12 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
           )}
         </section>
 
-        {/* Interactive Map & Seasonal Weather Section */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <SeasonalWeatherWidget
-            destination={destination}
-            onStartAIPlan={onStartAIPlan}
-            onOpenQuoteModal={onOpenQuoteModal}
-          />
+        {/* Interactive Map Section
+            The "Current Travel & Weather Trends" widget used to sit beside this
+            in a two-column grid. It was removed on the owner's instruction, so
+            the map takes the full width rather than leaving half the row empty.
+            Best season and temperature still appear in the facts row above. */}
+        <section>
           <DestinationInteractiveMap
             destination={destination}
             packages={destinationPackages}
