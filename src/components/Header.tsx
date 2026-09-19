@@ -4,6 +4,8 @@ import { SafarLogo } from './SafarLogo';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { AIIcon } from './AIIcon';
 import { enquiryMessage, openWhatsApp } from '../lib/contact';
+import { trackPhoneCallClick } from '../lib/analytics';
+import { PRIMARY_PHONE, PRIMARY_PHONE_DISPLAY } from '../lib/seo/siteConfig';
 import { Search, X, ChevronDown } from 'lucide-react';
 
 interface HeaderProps {
@@ -22,6 +24,7 @@ export const Header: React.FC<HeaderProps> = ({
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [destinationsDropdown, setDestinationsDropdown] = useState(false);
+  const [contactDropdown, setContactDropdown] = useState(false);
   const navContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -41,6 +44,7 @@ export const Header: React.FC<HeaderProps> = ({
     const handleClickOutside = (event: MouseEvent) => {
       if (navContainerRef.current && !navContainerRef.current.contains(event.target as Node)) {
         setDestinationsDropdown(false);
+        setContactDropdown(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -86,16 +90,17 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
           </div>
 
-          {/* Three links, not seven.
+          {/* Four links, not seven.
            *
            * What came out, and where it went instead of disappearing:
            *   Home       -> the logo to the left of this nav already goes home.
-           *   Blogs      -> "Travel guides" at the foot of the dropdown below,
-           *                 and the footer's Explore column.
-           *   About Us   -> footer, as "Why SafarTrails" (same /about-us page).
-           *   Contact Us -> footer, plus the WhatsApp button and "Plan My Trip"
-           *                 two elements to the right of here, which is how
-           *                 people actually contact this business.
+           *   Blogs      -> "Travel guides" at the foot of the Destination
+           *                 dropdown, and the footer's Explore column.
+           *   About Us   -> inside the Contact Us dropdown, which is the whole
+           *                 reason that link is still a top-level item: a
+           *                 stranger deciding whether to wire money to a travel
+           *                 agency wants "who are you" and "how do I reach you"
+           *                 in the same place, so they are one menu.
            *
            * Every one of those URLs is still in SITE_NAV_LINKS in
            * src/lib/seo/routes.ts, so the prerendered HTML keeps linking to
@@ -109,8 +114,14 @@ export const Header: React.FC<HeaderProps> = ({
             <div className="relative group">
               <button
                 id="nav-link-destinations"
-                onClick={() => setDestinationsDropdown(!destinationsDropdown)}
-                onMouseEnter={() => setDestinationsDropdown(true)}
+                onClick={() => {
+                  setDestinationsDropdown(!destinationsDropdown);
+                  setContactDropdown(false);
+                }}
+                onMouseEnter={() => {
+                  setDestinationsDropdown(true);
+                  setContactDropdown(false);
+                }}
                 className={`py-1.5 transition-colors inline-flex items-center gap-1 cursor-pointer select-none whitespace-nowrap ${
                   currentView === 'destinations' || currentView === 'destination-detail'
                     ? 'text-luxury-gold font-semibold'
@@ -185,6 +196,7 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={() => {
                 onNavigate('packages');
                 setDestinationsDropdown(false);
+                setContactDropdown(false);
               }}
               className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
                 currentView === 'packages'
@@ -201,6 +213,7 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={() => {
                 onNavigate('ai-planner');
                 setDestinationsDropdown(false);
+                setContactDropdown(false);
               }}
               className={`py-1.5 transition-colors inline-flex items-center gap-1.5 cursor-pointer select-none whitespace-nowrap ${
                 currentView === 'ai-planner'
@@ -211,6 +224,93 @@ export const Header: React.FC<HeaderProps> = ({
               <AIIcon className="w-3.5 h-3.5" />
               <span className="whitespace-nowrap">Plan with AI</span>
             </button>
+
+            {/* 4. Contact Us, carrying About Us with it.
+                Right-aligned because this is the last item before the button
+                cluster - a left-aligned panel would run off the viewport. */}
+            <div className="relative group">
+              <button
+                id="nav-link-contact-us"
+                onClick={() => {
+                  setContactDropdown(!contactDropdown);
+                  setDestinationsDropdown(false);
+                }}
+                onMouseEnter={() => {
+                  setContactDropdown(true);
+                  setDestinationsDropdown(false);
+                }}
+                aria-expanded={contactDropdown}
+                className={`py-1.5 transition-colors inline-flex items-center gap-1 cursor-pointer select-none whitespace-nowrap ${
+                  currentView === 'contact-us' || currentView === 'why-us'
+                    ? 'text-luxury-gold font-semibold'
+                    : 'text-ivory hover:text-luxury-gold'
+                }`}
+              >
+                <span className="whitespace-nowrap">Contact Us</span>
+                <ChevronDown className="w-3.5 h-3.5 text-ivory/60 group-hover:text-luxury-gold group-hover:rotate-180 transition-transform duration-200 flex-shrink-0" />
+              </button>
+
+              <AnimatePresence>
+                {contactDropdown && (
+                  <motion.div
+                    onMouseLeave={() => setContactDropdown(false)}
+                    initial={{ opacity: 0, scale: 0.96, y: -8 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.96, y: -8 }}
+                    transition={{ type: 'spring', stiffness: 420, damping: 32 }}
+                    style={{ transformOrigin: 'top right' }}
+                    className="absolute top-full right-0 mt-2 w-72 bg-white rounded-2xl shadow-xl border border-stone-100 p-4 grid grid-cols-1 gap-1 z-50"
+                  >
+                    <div className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-stone-400 border-b border-stone-100 mb-1">
+                      Safar Trails
+                    </div>
+                    {[
+                      {
+                        id: 'contact-me',
+                        label: 'Contact Us',
+                        view: 'contact-us',
+                        desc: 'Call, WhatsApp or send us your dates',
+                      },
+                      {
+                        id: 'contact-about',
+                        label: 'About Us',
+                        view: 'why-us',
+                        desc: 'Who we are and why people book with us',
+                      },
+                    ].map((item) => (
+                      <button
+                        key={item.view}
+                        id={`nav-contact-${item.view}`}
+                        onClick={() => {
+                          onNavigate(item.view);
+                          setContactDropdown(false);
+                        }}
+                        className="text-left px-3 py-2 rounded-xl hover:bg-[#FAF9F6] transition-colors cursor-pointer group/item"
+                      >
+                        <span className="block text-sm font-semibold text-stone-900 group-hover/item:text-luxury-gold transition-colors">
+                          {item.label}
+                        </span>
+                        <span className="block text-xs text-stone-600 mt-0.5">
+                          {item.desc}
+                        </span>
+                      </button>
+                    ))}
+                    <div className="pt-2 border-t border-stone-100 mt-1">
+                      <a
+                        href={`tel:${PRIMARY_PHONE}`}
+                        onClick={() => {
+                          trackPhoneCallClick('header_contact_menu');
+                          setContactDropdown(false);
+                        }}
+                        className="block px-3 py-1.5 text-xs font-bold text-stone-900 hover:text-luxury-gold tracking-wider cursor-pointer whitespace-nowrap"
+                      >
+                        {PRIMARY_PHONE_DISPLAY}
+                      </a>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </nav>
 
           {/* Right Action CTAs (Desktop & Mobile view matching reference image) */}
