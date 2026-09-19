@@ -336,7 +336,10 @@ const DESTINATION_TITLE_OVERRIDES: Record<string, string> = {
   manali: 'Manali Travel Guide – Places to Visit & Cost | Safar Trails',
   uttarakhand: 'Uttarakhand Packages – Hills & Rishikesh | Safar Trails',
   'northeast-india': 'Northeast India Tours – Meghalaya & Assam | Safar Trails',
-  andaman: 'Andaman Tour Packages – Havelock & Scuba | Safar Trails',
+  // Not "Andaman Tour Package(s)": the package page at
+  // /tour-packages/andaman-turquoise-havelock-scuba-dream owns that phrase and
+  // is the one a buyer should land on. Same split as Shimla and Manali.
+  andaman: 'Andaman Travel Guide – Places to Visit & Cost | Safar Trails',
   ladakh: 'Ladakh Tour Packages – Pangong & Nubra | Safar Trails',
 };
 
