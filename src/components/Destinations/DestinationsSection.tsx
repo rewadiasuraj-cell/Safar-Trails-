@@ -128,7 +128,10 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
 
         {/* Destination Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-          {(asPage ? filteredDestinations : filteredDestinations.slice(0, 6)).map((dest) => (
+          {/* Four on the homepage, not six: one full row of the grid, then
+              "View all 12 destinations". A second row is a second scroll of
+              the same decision. */}
+          {(asPage ? filteredDestinations : filteredDestinations.slice(0, 4)).map((dest) => (
             <div
               key={dest.slug}
               className="group bg-white rounded-2xl overflow-hidden border border-stone-200/80 hover:border-luxury-gold shadow-xs hover:shadow-2xl transition-all duration-300 ease-out flex flex-col justify-between hover:scale-[1.02] transform will-change-transform"

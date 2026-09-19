@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react';
 import { Header } from './components/Header';
 import { MobileBottomNav } from './components/MobileBottomNav';
 import { HeroSection } from './components/HeroSection';
-import { HandpickedExperiencesSection } from './components/HandpickedExperiencesSection';
+import { TrustStrip } from './components/TrustStrip';
 import { StickyContactWidget } from './components/StickyContactWidget';
 import { Footer } from './components/Footer';
 import { ContactUs } from './components/ContactUs';
@@ -21,6 +21,7 @@ const DestinationsSection = lazy(() => import('./components/Destinations/Destina
 const PackagesSection = lazy(() => import('./components/Packages/PackagesSection').then(m => ({ default: m.PackagesSection })));
 const TravelGuidesSection = lazy(() => import('./components/TravelGuides/TravelGuidesSection').then(m => ({ default: m.TravelGuidesSection })));
 const TrustSection = lazy(() => import('./components/TrustSection').then(m => ({ default: m.TrustSection })));
+const StatsBand = lazy(() => import('./components/StatsBand').then(m => ({ default: m.StatsBand })));
 const ReviewsSection = lazy(() => import('./components/ReviewsSection').then(m => ({ default: m.ReviewsSection })));
 const FAQSection = lazy(() => import('./components/FAQSection').then(m => ({ default: m.FAQSection })));
 const FinalCTASection = lazy(() => import('./components/FinalCTASection').then(m => ({ default: m.FinalCTASection })));
@@ -167,20 +168,19 @@ export default function App() {
                   }}
                 />
 
-                <HandpickedExperiencesSection
-                  onSelectDestination={(slug) => handleSelectDestination(slug)}
-                  onSelectCategory={() => {
-                    const el = document.getElementById('destinations-section');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    else navigate('/destinations');
-                  }}
-                  onViewAll={() => {
-                    const el = document.getElementById('destinations-section');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    else navigate('/destinations');
-                  }}
-                  onOpenQuoteModal={handleOpenQuoteModal}
-                />
+                {/* Trust comes second, not seventh.
+                    The long version, TrustSection, used to be the only place
+                    the site made its case, six screens down. This is the same
+                    four promises in one band, where a first-time visitor
+                    actually decides whether to keep reading. */}
+                <TrustStrip />
+
+                {/* HandpickedExperiencesSection was here: a marquee of eight
+                    hardcoded destinations, sitting directly above
+                    DestinationsSection, which renders the real twelve from
+                    content/. Two destination sections back to back, the first
+                    one a list that had to be edited by hand every time a
+                    destination changed. The grid below does the job. */}
 
                 <AIPlannerTeaser />
 
@@ -211,7 +211,11 @@ export default function App() {
                     onSelectGuide={handleSelectGuide}
                   />
 
-                  <TrustSection />
+                  {/* TrustSection is no longer here - TrustStrip carries it at
+                      the top of the page, and the six-pillar version still
+                      runs in full on /about-us. Repeating it in both places
+                      was the site making its own case twice to the same
+                      scroll. */}
 
                   <ReviewsSection />
 
@@ -221,6 +225,8 @@ export default function App() {
                     onStartAIPlan={() => handleStartAIPlan()}
                     onOpenQuoteModal={() => handleOpenQuoteModal()}
                   />
+
+                  <StatsBand />
                 </Suspense>
               </>
             }

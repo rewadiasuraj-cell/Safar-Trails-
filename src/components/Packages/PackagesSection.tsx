@@ -62,7 +62,9 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
    * page, and the same catalogue /packages already carries. It shows a handful
    * and links onward; the standalone page is unchanged.
    */
-  const visiblePackages = asPage ? filteredPackages : filteredPackages.slice(0, 6);
+  /* Four on the homepage, matching the destinations grid above it, with
+     "View all 21 packages" beneath. /packages has the filters and the rest. */
+  const visiblePackages = asPage ? filteredPackages : filteredPackages.slice(0, 4);
 
   const handleBookNow = (pkg: Package) => {
     if (onOpenQuoteModal) {
