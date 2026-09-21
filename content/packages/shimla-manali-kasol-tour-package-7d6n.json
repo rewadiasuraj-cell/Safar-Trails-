@@ -122,7 +122,28 @@
     }
   ],
   "season": "All Season",
-  "seoTitle": "Shimla, Manali & Kasol Tour Package | 7 Days From Delhi",
-  "seoDescription": "Shimla, Manali and Kasol in 7 days from Delhi — Kufri, Solang Valley, the Atal Tunnel to Sissu, Manikaran and Chalal. Private cab, 6 nights with breakfast.",
-  "faqs": []
+  "seoTitle": "Shimla Manali Kasol Tour Package – Manali Adventure & Sightseeing",
+  "seoDescription": "Explore Manali with the Shimla Manali Kasol tour package. Visit Hadimba Temple, Old Manali, Mall Road and Solang Valley, with Atal Tunnel and Rohtang Pass subject to access.",
+  "faqs": [
+    {
+      "question": "What is the best time to visit Shimla, Manali and Kasol?",
+      "answer": "Summer is ideal for pleasant weather and sightseeing. The monsoon brings lush green landscapes but also rain and possible road disruptions. Winter is good for travellers looking for snow, though accessibility depends on weather and road conditions. Check the latest weather and road conditions before travelling, especially for the higher-altitude stretches."
+    },
+    {
+      "question": "Who can book this Himachal tour?",
+      "answer": "Families, couples, friends, solo travellers, corporate groups, school or college groups and private travel groups. Safar Trails can help you select an itinerary according to your group size, travel preferences and budget."
+    },
+    {
+      "question": "Can the itinerary be changed?",
+      "answer": "Yes. You can discuss your preferred travel dates, hotel category, number of travellers and the places you want to visit, and the itinerary is adjusted to suit — it is not a fixed plan."
+    },
+    {
+      "question": "Are the Atal Tunnel and Rohtang Pass included?",
+      "answer": "The Atal Tunnel and Sissu are part of the Day 5 drive. The Rohtang Pass area can be added where accessible, but it depends on the season, road conditions and local permissions, so it cannot be guaranteed in advance."
+    },
+    {
+      "question": "What is not included in the package?",
+      "answer": "Personal expenses, additional and adventure activities, entry tickets and attraction charges, meals not mentioned in the package, expenses arising from unexpected weather or road conditions, special sightseeing requirements or additional services, and anything not specifically listed in the inclusions."
+    }
+  ]
 }
