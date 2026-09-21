@@ -121,7 +121,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
           ) : (
             <Link
               to="/packages"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-stone-200 text-stone-900 text-[11px] sm:text-xs font-bold uppercase tracking-wider hover:bg-stone-50 transition-colors whitespace-nowrap self-start sm:self-auto"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-deep-emerald hover:bg-forest-green text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider shadow-[0_8px_22px_-10px_rgba(3,105,161,0.8)] transition-colors whitespace-nowrap self-start sm:self-auto cursor-pointer"
             >
               <span>{`View all ${packagesData.length}`}</span>
               <span aria-hidden="true">&rarr;</span>
@@ -145,7 +145,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
               <Link
                 key={pkg.id}
                 to={`/tour-packages/${pkg.slug}`}
-                className="group relative block rounded-2xl overflow-hidden aspect-[3/4] sm:aspect-[4/5] border border-stone-200/80 shadow-xs hover:shadow-xl transition-shadow"
+                className="group relative block rounded-2xl overflow-hidden aspect-[3/4] sm:aspect-[4/5] shadow-[0_10px_30px_-12px_rgba(15,23,42,0.35)] hover:shadow-[0_22px_48px_-14px_rgba(15,23,42,0.45)] hover:-translate-y-1 transition-all duration-300"
               >
                 <img
                   src={pkg.heroImage}
@@ -164,7 +164,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
                   <h3 className="font-serif text-[13px] sm:text-base font-bold text-white tracking-tight leading-snug line-clamp-2">
                     {pkg.title}
                   </h3>
-                  <p className="mt-1.5 text-sm sm:text-base font-extrabold text-luxury-gold">
+                  <p className="mt-2 text-[15px] sm:text-lg font-black text-luxury-gold tracking-tight">
                     ₹{pkg.startingPrice.toLocaleString('en-IN')}
                     <span className="text-[10px] sm:text-[11px] font-semibold text-white/75"> / person {GST_NOTE}</span>
                   </p>

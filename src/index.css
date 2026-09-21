@@ -338,3 +338,13 @@ table {
     display: none !important;
   }
 }
+
+/* Used by the reviews slider and the filter pill rows. Tailwind has no such
+   utility; without it every horizontal scroller shows a bar under the cards. */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}

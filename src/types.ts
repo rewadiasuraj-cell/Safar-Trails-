@@ -15,7 +15,13 @@ export type TripType =
   | 'Nature'
   | 'Relaxation';
 
-export type HotelCategory = 'Standard 3★' | 'Deluxe 4★' | 'Luxury 5★' | 'Heritage Boutique' | 'Houseboat & Resort';
+export type HotelCategory =
+  | 'Budget / 3★'
+  | 'Standard 3★'
+  | 'Deluxe 4★'
+  | 'Luxury 5★'
+  | 'Heritage Boutique'
+  | 'Houseboat & Resort';
 
 export type TransportType = 'Private Sedan' | 'Private SUV (Innova/Crysta)' | 'Tempo Traveller' | 'Self Drive / Flight + Cab';
 
@@ -67,7 +73,21 @@ export interface Package {
   inclusions: string[];
   exclusions: string[];
   itinerary: ItineraryDay[];
-  season: 'All Season' | 'Summer' | 'Monsoon' | 'Winter' | 'Spring';
+  /**
+   * When the trip is worth taking, in the operator's own words.
+   *
+   * This was a five-value union, and real content outgrew it twice in a day:
+   * Udaipur is "October to March" and Darjeeling is "March to May & October to
+   * early December", neither of which is Summer, Monsoon, Winter or Spring.
+   * Forcing them into the nearest label would have thrown away the useful half
+   * of the answer.
+   *
+   * Nothing renders this field - it is not a filter and not a badge; the
+   * seasonal ordering a visitor actually sees comes from displayOrder, and the
+   * real answer lives in each package's "best time to visit" FAQ. So it is
+   * free text, and build-content.ts already validates it as a string.
+   */
+  season: string;
   isFeatured?: boolean;
   isPopular?: boolean;
   /**

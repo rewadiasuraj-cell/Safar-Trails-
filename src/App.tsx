@@ -168,6 +168,7 @@ export default function App() {
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
                     else navigate('/packages');
                   }}
+                  onOpenQuoteModal={() => handleOpenQuoteModal()}
                 />
 
                 {/* Trust comes second, not seventh.
@@ -184,7 +185,7 @@ export default function App() {
                     one a list that had to be edited by hand every time a
                     destination changed. The grid below does the job. */}
 
-                <AIPlannerTeaser />
+                <AIPlannerTeaser onStartAIPlan={(prompt) => handleStartAIPlan(prompt)} />
 
                 <Suspense fallback={<SectionSkeleton />}>
                   <DestinationsSection

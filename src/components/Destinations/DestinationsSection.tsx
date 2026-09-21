@@ -114,7 +114,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
           ) : (
             <Link
               to="/destinations"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-stone-200 text-stone-900 text-[11px] sm:text-xs font-bold uppercase tracking-wider hover:bg-stone-50 transition-colors whitespace-nowrap self-start md:self-auto"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-deep-emerald hover:bg-forest-green text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider shadow-[0_8px_22px_-10px_rgba(3,105,161,0.8)] transition-colors whitespace-nowrap self-start md:self-auto cursor-pointer"
             >
               <span>{`View all ${destinationsData.length}`}</span>
               <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
@@ -152,15 +152,17 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
          * link. The full card still runs on /destinations, where someone is
          * comparing rather than browsing.
          *
-         * Price is luxury-gold, not warm-orange: measured 5.84:1 against the
-         * dark end of the gradient, where warm-orange does not clear 4.5:1. */}
+         * The price is luxury-gold, which is a pale sky blue since the
+         * repalette - 9.62:1 against the gradient's worst case. It is
+         * deliberately not the orange: orange on this site means "press
+         * this", and a price is not a button. */}
         {!asPage && (
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
             {filteredDestinations.slice(0, 4).map((dest) => (
               <Link
                 key={dest.slug}
                 to={`/destinations/${dest.slug}`}
-                className="group relative block rounded-2xl overflow-hidden aspect-[3/4] sm:aspect-[4/5] border border-stone-200/80 shadow-xs hover:shadow-xl transition-shadow"
+                className="group relative block rounded-2xl overflow-hidden aspect-[3/4] sm:aspect-[4/5] shadow-[0_10px_30px_-12px_rgba(15,23,42,0.35)] hover:shadow-[0_22px_48px_-14px_rgba(15,23,42,0.45)] hover:-translate-y-1 transition-all duration-300"
               >
                 <img
                   src={dest.cardImage || dest.heroImage}
@@ -191,7 +193,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
                   <p className="text-[10.5px] sm:text-xs text-white/85 leading-snug truncate">
                     {dest.tagline}
                   </p>
-                  <p className="mt-1.5 text-sm sm:text-base font-extrabold text-luxury-gold">
+                  <p className="mt-2 text-[15px] sm:text-lg font-black text-luxury-gold tracking-tight">
                     ₹{dest.startingPrice.toLocaleString('en-IN')}
                     <span className="text-[10px] sm:text-[11px] font-semibold text-white/75"> / person</span>
                   </p>

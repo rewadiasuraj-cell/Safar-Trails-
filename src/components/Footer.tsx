@@ -7,9 +7,12 @@ import {
   ShieldCheck, 
   Heart,
   Globe,
-  Lock
+  Lock,
+  Facebook,
+  Instagram
 } from 'lucide-react';
 import { AIIcon } from './AIIcon';
+import { NewsletterSignup } from './NewsletterSignup';
 import { trackPhoneCallClick } from '../lib/analytics';
 import {
   BRAND_TAGLINE,
@@ -17,6 +20,7 @@ import {
   PRIMARY_EMAIL,
   PRIMARY_PHONE,
   PRIMARY_PHONE_DISPLAY,
+  SOCIAL_PROFILES,
 } from '../lib/seo/siteConfig';
 
 interface FooterProps {
@@ -74,8 +78,39 @@ export const Footer: React.FC<FooterProps> = ({
                 Recognised Travel Agent" and add the certificate number - that is
                 a far stronger claim precisely because it is checkable. */}
             <div className="pt-2 flex items-center gap-3 text-xs text-stone-300 font-medium">
-              <ShieldCheck className="w-4 h-4 text-forest-green" />
+              <ShieldCheck className="w-4 h-4 text-luxury-gold" />
               <span>GST Registered</span>
+            </div>
+
+            {/* Two icons, because two accounts exist. SOCIAL_PROFILES holds
+                Facebook and Instagram; a row of four with an X and a YouTube
+                mark would be four links, two of which go nowhere. */}
+            <div className="pt-1 flex items-center gap-2.5">
+              {SOCIAL_PROFILES.map((href) => {
+                const isInstagram = href.includes('instagram');
+                const label = isInstagram ? 'Instagram' : 'Facebook';
+                return (
+                  <a
+                    key={href}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Safar Trails on ${label}`}
+                    title={label}
+                    className="w-9 h-9 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 hover:border-white/45 flex items-center justify-center transition-colors"
+                  >
+                    {isInstagram ? (
+                      <Instagram className="w-[18px] h-[18px] text-white" aria-hidden="true" />
+                    ) : (
+                      <Facebook className="w-[18px] h-[18px] text-white" aria-hidden="true" />
+                    )}
+                  </a>
+                );
+              })}
+            </div>
+
+            <div className="pt-5">
+              <NewsletterSignup />
             </div>
           </div>
 
