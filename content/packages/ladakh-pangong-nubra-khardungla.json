@@ -19,9 +19,9 @@
   "reviewCount": 228,
   "startingCity": "Leh (Airport Pickup)",
   "bestFor": "Couples, Road Trippers & Adventure Seekers",
-  "heroImage": "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=1200&auto=format&fit=crop",
+  "heroImage": "/content/destinations/ladakh/1.jpg",
   "galleryImages": [
-    "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=800&auto=format&fit=crop",
+    "/content/destinations/ladakh/1.jpg",
     "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?q=80&w=800&auto=format&fit=crop"
   ],
   "overview": "Embark on the ultimate Trans-Himalayan odyssey: cross Khardung La (17,982 ft), ride double-humped camels through the cold desert dunes of Nubra Valley, gaze upon the shifting blue hues of Pangong Tso, and find tranquility in ancient Buddhist gompas with emergency oxygen backup throughout.",

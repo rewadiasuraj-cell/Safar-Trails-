@@ -19,9 +19,9 @@
   "reviewCount": 342,
   "startingCity": "Srinagar (Airport Pickup)",
   "bestFor": "Couples, Families & Nature Enthusiasts",
-  "heroImage": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=1200&auto=format&fit=crop",
+  "heroImage": "/content/destinations/kashmir/1.jpg",
   "galleryImages": [
-    "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=800&auto=format&fit=crop",
+    "/content/destinations/kashmir/1.jpg",
     "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=800&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1626014303757-658c3a119760?q=80&w=800&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&w=800&auto=format&fit=crop"
