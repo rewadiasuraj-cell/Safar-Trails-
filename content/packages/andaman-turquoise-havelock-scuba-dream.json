@@ -25,7 +25,7 @@
     "/content/destinations/andaman/1.jpg",
     "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&auto=format&fit=crop"
   ],
-  "overview": "Escape to India’s pristine tropical frontier. Includes high-speed luxury catamaran cruise (Makruzz/Nautika), 2 nights on Havelock Island with Radhanagar sunset, scuba diving at Elephant beach, and 1 night on Neil Island.",
+  "overview": "Planning an island holiday is easy with an Andaman Tour Package that combines hotels, sightseeing, transfers, and activities in one plan. Whether travelling with family, friends, or your partner, you can choose a package that fits your budget — beautiful beaches, clear waters, peaceful islands, exciting activities, and a memorable vacation without the stress of detailed planning.\n\nThis 6-day itinerary covers the three islands most visitors want: Port Blair as the base, Havelock for Radhanagar Beach and the water sports at Elephant Beach, and Neil Island for a quieter day away from the busier spots. Hotels, inter-island ferries, transfers and sightseeing are arranged in advance; the itinerary, hotel category and activities can all be changed to suit your dates, group size and budget.",
   "highlights": [
     "2 Nights Havelock Island beachfront resort + 1 Night Neil Island + 2 Nights Port Blair",
     "Confirmed Makruzz/Nautika Luxury Catamaran cruise tickets",
@@ -120,5 +120,27 @@
   "isFeatured": true,
   "isPopular": true,
   "seoTitle": "Andaman Tour Package | Best Deals & Affordable Holidays",
-  "seoDescription": "Book an Andaman Tour Package with Safar Trails — Port Blair, Havelock and Neil, with hotels, ferries, transfers, sightseeing and island activities included."
+  "seoDescription": "Book an Andaman Tour Package with Safar Trails and enjoy the best deals on family holidays, island tours, stays, sightseeing, transfers, and exciting activities.",
+  "faqs": [
+    {
+      "question": "What is included in an Andaman tour package?",
+      "answer": "Inclusions depend on the package category, and commonly cover hotel accommodation, airport and hotel transfers, island transfers, sightseeing, ferry tickets, selected meals, local transportation, activity arrangements and tour assistance. Check carefully what is included and what needs an additional payment before booking, so there are no unexpected expenses during the trip."
+    },
+    {
+      "question": "When is the best time to visit Andaman?",
+      "answer": "Choosing the right travel season makes the trip more enjoyable, and the popular months offer pleasant conditions for sightseeing and outdoor activities. Weather can change, so it is worth checking the latest travel information before you travel — particularly if you are planning snorkeling, scuba diving or island hopping, where sea conditions matter."
+    },
+    {
+      "question": "How can I keep an Andaman trip affordable?",
+      "answer": "Compare several packages rather than taking the first one you find, and look at hotel category, inclusions, transport and sightseeing rather than price alone. Book in advance for a better choice of hotels and dates, travel in the less busy season, and pick a package built around the places and activities you actually want instead of paying for services you will not use."
+    },
+    {
+      "question": "Is an Andaman tour package suitable for families?",
+      "answer": "Yes. A package removes the stress of arranging transport and sightseeing between islands, and lets you choose comfortable hotels, convenient transfers and activities that work across different ages. A good family itinerary leaves enough time for both sightseeing and rest."
+    },
+    {
+      "question": "Can the itinerary be customised?",
+      "answer": "Yes. The number of travellers, hotel category, activities and the places you visit can all be adjusted, and the trip can be shortened for a quick escape or extended to cover more islands."
+    }
+  ]
 }

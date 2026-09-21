@@ -52,5 +52,6 @@
   ],
   "season": "All Season",
   "isFeatured": true,
-  "isPopular": true
+  "isPopular": true,
+  "displayOrder": 4
 }
