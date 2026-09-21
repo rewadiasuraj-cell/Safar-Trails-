@@ -100,13 +100,25 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
       <section className="relative w-full bg-[#12302A] text-white pt-6 pb-16 md:pb-24 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
+          {/* The photograph was at opacity-40 UNDER a gradient running 70-90%
+              opaque, so it contributed roughly a tenth of what you saw - every
+              destination hero rendered as a flat green panel with a hint of
+              shape in it. Two scrims stacked, each sized as if it were the
+              only one.
+
+              70% image under a 55% scrim instead. Worst case is a blown-out
+              sky in the photo, which composites to rgb(93,113,109) at the
+              lightest point over the text: white reads 5.18:1 there, clearing
+              4.5:1 for the body copy and 3:1 for the h1. Measured, not judged
+              by eye - which is why the paragraph below is white now rather
+              than stone-200, whose 4.13:1 was what capped the photo. */}
           <img
             src={destination.heroImage}
             alt={destination.name}
-            className="w-full h-full object-cover opacity-40 scale-105"
+            className="w-full h-full object-cover opacity-70 scale-105"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0E2620]/90 via-[#12302A]/70 to-[#12302A]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0E2620]/85 via-[#12302A]/55 to-[#12302A]" />
         </div>
 
         <div className="relative z-10 w-full max-w-7xl xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 space-y-6 pt-4">
@@ -136,15 +148,38 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
           </div>
 
           {/* Large Serif Title with Gold Accent */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-bold text-white tracking-tight leading-tight">
-            {destination.name.split(' ')[0]}{' '}
-            <span className="text-[#E6A024]">
-              {destination.name.split(' ').slice(1).join(' ') || destination.state}
-            </span>
-          </h1>
+          {/* First word white, the rest gold - "Chardham Yatra", "Andaman &
+              Nicobar". A single-word name has no rest, and the fallback was
+              the state, which for Goa, Kerala, Rajasthan and Uttarakhand is
+              the same word: the h1 on those four pages read "Kerala Kerala".
+              Ladakh got "Ladakh UT of Ladakh" and Kashmir "Kashmir Jammu &
+              Kashmir" for the same reason.
+
+              So the state is used only when it actually adds a word neither
+              string already contains. Manali and Shimla still get "Manali
+              Himachal Pradesh"; the six above now render their own name once,
+              which is also what the prerendered h1 and the <title> say. */}
+          {(() => {
+            const [first, ...rest] = destination.name.split(' ');
+            const tail = rest.join(' ');
+            const n = destination.name.toLowerCase();
+            const s = destination.state.toLowerCase();
+            const accent = tail || (s.includes(n) || n.includes(s) ? '' : destination.state);
+            return (
+              <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-bold text-white tracking-tight leading-tight">
+                {first}
+                {accent && (
+                  <>
+                    {' '}
+                    <span className="text-[#E6A024]">{accent}</span>
+                  </>
+                )}
+              </h1>
+            );
+          })()}
 
           {/* Description Paragraph */}
-          <p className="text-stone-200 text-base sm:text-lg max-w-3xl leading-relaxed font-normal">
+          <p className="text-white text-base sm:text-lg max-w-3xl leading-relaxed font-normal">
             {destination.shortDescription || destination.fullOverview.slice(0, 260) + '...'}
           </p>
 
