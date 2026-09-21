@@ -1,0 +1,130 @@
+{
+  "id": "pkg-darjeeling-5d4n",
+  "slug": "darjeeling-tour-package-tiger-hill-toy-train-5d4n",
+  "displayOrder": 4,
+  "title": "Darjeeling Tour Package",
+  "destination": "Darjeeling, West Bengal",
+  "destinationSlug": "northeast-india",
+  "state": "West Bengal",
+  "durationDays": 5,
+  "durationNights": 4,
+  "startingPrice": 13999,
+  "tripType": [
+    "Couple",
+    "Family",
+    "Honeymoon",
+    "Nature"
+  ],
+  "hotelCategory": "Standard 3★",
+  "ratings": 0,
+  "reviewCount": 0,
+  "startingCity": "Bagdogra (IXB) / NJP",
+  "bestFor": "Couples, Families, First-Time Visitors & Slow Travellers",
+  "heroImage": "https://images.unsplash.com/photo-1622308644420-a757e2fa722a?q=80&w=1200&auto=format&fit=crop",
+  "galleryImages": [
+    "https://images.unsplash.com/photo-1622308644420-a757e2fa722a?q=80&w=800&auto=format&fit=crop"
+  ],
+  "overview": "This Darjeeling tour package covers the town properly instead of rushing it — four nights in one hotel, no daily packing, and a private cab that is yours for the whole trip. You land at Bagdogra or step off at New Jalpaiguri, and the drive up is about three and a half hours through the tea gardens.\n\nWhat you actually do: the pre-dawn run to Tiger Hill for sunrise on Kanchenjunga, the toy train to Ghum on the UNESCO-listed Darjeeling Himalayan Railway, Batasia Loop and the Gorkha war memorial, a working tea estate at Happy Valley, the Himalayan Mountaineering Institute and the red pandas next door, and a full day out at Mirik's lake before you fly home.\n\nFour nights is the length that makes Darjeeling work. Two nights means you see Tiger Hill and leave; the town's best hours are the slow ones — a morning at Chowrasta, an afternoon walk down to the Rock Garden, a pot of first flush while the cloud comes and goes off the ridge.",
+  "highlights": [
+    "Tiger Hill at sunrise — Kanchenjunga, the world's third-highest peak, from 2,590 m",
+    "Toy train joy ride to Ghum on the Darjeeling Himalayan Railway, a UNESCO World Heritage line",
+    "Batasia Loop, the spiral railway curve, and the Gorkha war memorial",
+    "Happy Valley Tea Estate — a working garden, not a shop",
+    "Himalayan Mountaineering Institute and the red pandas at Padmaja Naidu Zoological Park",
+    "Full day at Mirik — Sumendu Lake, the orange orchards and Pashupati market",
+    "4 nights in one hotel, private cab throughout, no early-morning packing"
+  ],
+  "inclusions": [
+    "4 nights hotel stay in Darjeeling with daily breakfast",
+    "Private cab for all transfers and sightseeing, yours for the full trip",
+    "Bagdogra Airport or NJP railway station pickup and drop",
+    "Darjeeling local sightseeing and the Mirik day trip",
+    "Tiger Hill sunrise drive with the vehicle permit",
+    "Driver allowance, toll, parking and permit charges",
+    "All applicable taxes"
+  ],
+  "exclusions": [
+    "Flight or train tickets to Bagdogra / NJP",
+    "Toy train joy ride tickets — booked on request, see FAQ",
+    "Entry tickets at Tiger Hill, the zoo, HMI, tea estate and Rock Garden",
+    "Lunch, dinner and personal expenses",
+    "Anything caused by weather, landslides or road closures",
+    "Ropeway, trekking and any activity not listed in the inclusions"
+  ],
+  "itinerary": [
+    {
+      "dayNumber": 1,
+      "title": "Bagdogra / NJP → Darjeeling | Arrival & Chowrasta",
+      "location": "Darjeeling",
+      "description": "Met at Bagdogra Airport or New Jalpaiguri station and driven up to Darjeeling — about 70 km and three and a half hours, climbing through the Kurseong tea gardens. Check in, then take the evening easy at Chowrasta and along the Mall, which is pedestrian-only and the best introduction to the town. Altitude here is 2,042 m, so a slow first evening is the right call.",
+      "stay": "Hotel in Darjeeling",
+      "mealsIncluded": "None on arrival day",
+      "transfers": "Private Cab"
+    },
+    {
+      "dayNumber": 2,
+      "title": "Tiger Hill Sunrise, Batasia Loop & Ghum",
+      "location": "Darjeeling",
+      "description": "An early start — usually around 4 am — for the 11 km drive to Tiger Hill, where on a clear morning the sun comes up on Kanchenjunga and, on the rarest ones, Everest sits on the horizon to the west. On the way back, Batasia Loop, where the railway spirals through 360 degrees around the Gorkha war memorial, and Ghum Monastery. Breakfast at the hotel afterwards, then the afternoon at Happy Valley Tea Estate and the Japanese Peace Pagoda.",
+      "stay": "Hotel in Darjeeling",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private Cab"
+    },
+    {
+      "dayNumber": 3,
+      "title": "Toy Train to Ghum, HMI & the Zoo",
+      "location": "Darjeeling",
+      "description": "The Darjeeling Himalayan Railway joy ride to Ghum and back — about two hours on a line that has run since 1881 and has been a UNESCO World Heritage Site since 1999, with a stop at the Ghum railway museum. Afterwards the Himalayan Mountaineering Institute, founded after the 1953 Everest ascent, and the Padmaja Naidu Himalayan Zoological Park next door, one of the few places to see red pandas and snow leopards. Both are closed on Thursdays, so the day flips with Day 4 if your dates land there.",
+      "stay": "Hotel in Darjeeling",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private Cab"
+    },
+    {
+      "dayNumber": 4,
+      "title": "Mirik Day Trip — Sumendu Lake & Orange Orchards",
+      "location": "Mirik & Darjeeling",
+      "description": "A full day out at Mirik, about 50 km down the ridge — a walk around Sumendu Lake, the Bokar Monastery above it, orange orchards and the Pashupati market at the Nepal border, where the drive back is arguably better than the destination. Back in Darjeeling by evening with time for the Rock Garden or one last hour on the Mall.",
+      "stay": "Hotel in Darjeeling",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private Cab"
+    },
+    {
+      "dayNumber": 5,
+      "title": "Darjeeling → Bagdogra / NJP | Departure",
+      "location": "Darjeeling – Bagdogra",
+      "description": "Breakfast and check-out, then the drive down to Bagdogra Airport or NJP station. Allow four hours for the descent rather than three — the road through Kurseong is slow and there is usually a tea-garden stop worth making. Book flights after 2 pm to be comfortable.",
+      "stay": "—",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private Cab"
+    }
+  ],
+  "season": "March to May & October to early December",
+  "seoTitle": "Darjeeling Tour Package – Tiger Hill & Toy Train, 5 Days",
+  "seoDescription": "Darjeeling tour package from Bagdogra — Tiger Hill sunrise, the toy train to Ghum, Batasia Loop and Mirik. 4 nights, private cab, breakfast, including tax.",
+  "faqs": [
+    {
+      "question": "What is the best time to visit Darjeeling?",
+      "answer": "Mid-March to May and October to early December. Those are the months with the clearest Kanchenjunga views from Tiger Hill, which is the single thing most people come for. June to September is the monsoon — the hills are at their greenest but the peaks are usually behind cloud and landslides can close the Bagdogra road at short notice. January and February are cold and clear but many hotels run on reduced service."
+    },
+    {
+      "question": "Is the toy train included in the package?",
+      "answer": "The joy ride ticket is not included, and that is deliberate rather than a hidden cost. The Darjeeling Himalayan Railway releases a limited number of seats and they sell out weeks ahead in season, so we book it for you the moment your dates are confirmed and add it at the actual fare instead of quoting a seat we cannot promise. Tell us at enquiry if the toy train is the reason you are going — it changes which dates we recommend."
+    },
+    {
+      "question": "How do I reach Darjeeling, and is the transfer included?",
+      "answer": "Bagdogra Airport (IXB) is the nearest airport and New Jalpaiguri (NJP) the nearest major railway station, both about 70 km away. Pickup and drop from either is included, and the drive takes three to three and a half hours going up. For the return, book flights after 2 pm — the descent is slower than people expect."
+    },
+    {
+      "question": "Do I need to book Tiger Hill in advance?",
+      "answer": "Yes, and it is handled for you. Vehicles need a permit to go up for sunrise and entry is ticketed, both of which are limited on peak mornings. The permit is part of this package; the entry ticket is paid on the day. You will be leaving the hotel around 4 am, so carry something warm — it is close to freezing at the viewpoint even in April."
+    },
+    {
+      "question": "Is Darjeeling suitable for families with children or older travellers?",
+      "answer": "Yes, and this itinerary is built for it. Four nights in one hotel means no daily packing, the town is at 2,042 m rather than a high-altitude pass, and the sightseeing is short drives rather than long ones. The one demanding piece is the 4 am Tiger Hill start; it can be dropped without changing the rest of the trip, and the sunrise is also visible from several points nearer town."
+    },
+    {
+      "question": "Can I add Gangtok, Pelling or Kalimpong to this trip?",
+      "answer": "Yes. Gangtok is about four hours from Darjeeling and is the usual addition, either as two extra nights or as part of our seven-night Sikkim and Gangtok itinerary, which covers Gangtok, Pelling and Darjeeling together. Kalimpong adds a single night and suits travellers who want somewhere quieter. Tell us your total number of days and we will lay it out both ways before you decide."
+    }
+  ]
+}
