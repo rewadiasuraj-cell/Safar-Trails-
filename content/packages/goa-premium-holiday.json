@@ -19,9 +19,9 @@
   "reviewCount": 88,
   "startingCity": "Goa (MOPA / Dabolim Airport)",
   "bestFor": "Beach Lovers & Families",
-  "heroImage": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1200&auto=format&fit=crop",
+  "heroImage": "/content/destinations/goa/1.jpg",
   "galleryImages": [
-    "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=800&auto=format&fit=crop"
+    "/content/destinations/goa/1.jpg"
   ],
   "overview": "5 Nights in 5★ South Goa beachfront resort with private beach access, sunset yacht cruise, and spice plantation tour with authentic Goan buffet.",
   "highlights": [

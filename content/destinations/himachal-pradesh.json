@@ -3,8 +3,8 @@
   "name": "Himachal Pradesh",
   "tagline": "One State, Six Very Different Trips — Pick the Right One",
   "state": "Himachal Pradesh",
-  "heroImage": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1600&auto=format&fit=crop",
-  "cardImage": "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=800&auto=format&fit=crop",
+  "heroImage": "/content/destinations/himachal-pradesh/1.jpg",
+  "cardImage": "/content/destinations/himachal-pradesh/2.jpg",
   "shortDescription": "Himachal is not one destination. Shimla and Manali for a first trip, Dharamshala for quiet, Parvati Valley for a slow one, Spiti for the cold desert — this page helps you choose before you book.",
   "fullOverview": "Most people book Himachal before deciding which Himachal they mean, and end up with a week of driving. The state runs from colonial Shimla at 2,200 m to the Tibetan-plateau villages of Spiti above 4,000 m, and the regions are genuinely far apart — Shimla to Kaza is two days on the road, not an afternoon. What they share is that almost everything starts from Delhi or Chandigarh. Shimla and Manali are the first-trip pair, and the easiest to combine. Dharamshala and McLeod Ganj are the quieter option. Parvati Valley suits travellers who want to sit still. Spiti is a different kind of trip altogether, and a seasonal one. Pick the region first, then the itinerary — that decision matters more than the hotel category.",
   "bestTime": "March to June for almost all of the state | December to February for snow, mainly around Manali, Solang and Kufri | July to September is the monsoon, when the hill highways are landslide-prone | Spiti is the exception: June to September via Manali, or Shimla–Kinnaur in the shoulder months",
@@ -41,7 +41,7 @@
     {
       "name": "Dharamshala & McLeod Ganj",
       "description": "The Dalai Lama's residence, Namgyal Monastery, Bhagsu waterfall and the Triund trek above the town. Quieter than Manali and a good choice if the crowds are what put you off Himachal.",
-      "image": "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=600&auto=format&fit=crop"
+      "image": "/content/destinations/himachal-pradesh/1.jpg"
     },
     {
       "name": "Parvati Valley — Kasol, Manikaran & Tosh",
@@ -56,7 +56,7 @@
     {
       "name": "Dalhousie, Khajjiar & Chamba",
       "description": "The north of the state, reached via Pathankot rather than the Kullu highway. Meadows, deodar forest and old Chamba temples, with a fraction of Manali's traffic.",
-      "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop"
+      "image": "/content/destinations/himachal-pradesh/2.jpg"
     },
     {
       "name": "Bir Billing",

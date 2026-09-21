@@ -19,9 +19,9 @@
   "reviewCount": 156,
   "startingCity": "Chandigarh / Delhi",
   "bestFor": "Mountain Lovers & Adventure Enthusiasts",
-  "heroImage": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop",
+  "heroImage": "/content/destinations/himachal-pradesh/1.jpg",
   "galleryImages": [
-    "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=800&auto=format&fit=crop"
+    "/content/destinations/himachal-pradesh/1.jpg"
   ],
   "overview": "Comprehensive Himachal circuit: Shimla Mall Road, Kufri pine forests, Kullu river rafting, Solang Valley paragliding, Atal Tunnel to Sissu waterfall, and Dharamshala Dalai Lama Temple.",
   "highlights": [
