@@ -21,7 +21,7 @@ export const WhatsAppIcon: React.FC<WhatsAppIconProps> = ({
     >
       {/* Outer subtle shadow/border halo if requested */}
       {hasBackground && (
-        <circle cx="50" cy="50" r="48" fill="#F4F4F4" />
+        <circle cx="50" cy="50" r="48" fill="#F1F5F9" />
       )}
       
       {/* Official WhatsApp Green Speech Bubble with pointed corner */}

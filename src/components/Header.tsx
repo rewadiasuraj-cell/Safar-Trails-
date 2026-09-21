@@ -70,7 +70,7 @@ export const Header: React.FC<HeaderProps> = ({
     <>
       <header
         id="main-header"
-        className={`fixed top-0 left-0 right-0 w-full z-40 transition-all duration-200 bg-ivory/95 backdrop-blur-md border-b border-[#E7E2DA] ${
+        className={`fixed top-0 left-0 right-0 w-full z-40 transition-all duration-200 bg-ivory/95 backdrop-blur-md border-b border-[#D9E6F0] ${
           isScrolled
             ? 'shadow-[0_2px_15px_-3px_rgba(0,0,0,0.08)] py-2 sm:py-2.5 md:py-3'
             : 'py-2.5 sm:py-3 md:py-3.5'
@@ -154,7 +154,7 @@ export const Header: React.FC<HeaderProps> = ({
                           onNavigate('destination-detail', dest.slug);
                           setDestinationsDropdown(false);
                         }}
-                        className="text-left px-3 py-2 rounded-xl hover:bg-[#FAF9F6] transition-colors flex group/item cursor-pointer"
+                        className="text-left px-3 py-2 rounded-xl hover:bg-[#F2F8FC] transition-colors flex group/item cursor-pointer"
                       >
                         <span className="text-sm font-semibold text-stone-900 group-hover/item:text-luxury-gold transition-colors whitespace-nowrap">
                           {dest.name}
@@ -285,7 +285,7 @@ export const Header: React.FC<HeaderProps> = ({
                           onNavigate(item.view);
                           setContactDropdown(false);
                         }}
-                        className="text-left px-3 py-2 rounded-xl hover:bg-[#FAF9F6] transition-colors cursor-pointer group/item"
+                        className="text-left px-3 py-2 rounded-xl hover:bg-[#F2F8FC] transition-colors cursor-pointer group/item"
                       >
                         <span className="block text-sm font-semibold text-stone-900 group-hover/item:text-luxury-gold transition-colors">
                           {item.label}
@@ -330,7 +330,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               id="header-whatsapp-btn"
               onClick={handleWhatsAppClick}
-              className="w-7 h-7 sm:w-8.5 sm:h-8.5 md:w-9.5 md:h-9.5 rounded-full border border-[#E7E2DA] hover:border-forest-green bg-white hover:bg-white flex items-center justify-center transition-all shadow-2xs cursor-pointer flex-shrink-0"
+              className="w-7 h-7 sm:w-8.5 sm:h-8.5 md:w-9.5 md:h-9.5 rounded-full border border-[#D9E6F0] hover:border-forest-green bg-white hover:bg-white flex items-center justify-center transition-all shadow-2xs cursor-pointer flex-shrink-0"
               title="Chat with an expert on WhatsApp"
               aria-label="Chat with a Safar Trails travel specialist on WhatsApp"
             >
@@ -350,7 +350,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               id="mobile-menu-toggle-btn"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-1.5 sm:p-2 rounded-xl text-stone-800 hover:bg-stone-200/70 hover:text-stone-900 border border-[#E7E2DA] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-ink cursor-pointer flex items-center justify-center flex-shrink-0 transition-colors"
+              className="lg:hidden p-1.5 sm:p-2 rounded-xl text-stone-800 hover:bg-stone-200/70 hover:text-stone-900 border border-[#D9E6F0] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-ink cursor-pointer flex items-center justify-center flex-shrink-0 transition-colors"
               aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-nav-drawer"
@@ -441,7 +441,7 @@ export const Header: React.FC<HeaderProps> = ({
                       }}
                       aria-current={item.active ? 'page' : undefined}
                       className={`w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors ${
-                        item.active ? 'bg-[#FBF3E6] text-[#9c7a3d]' : 'hover:bg-stone-50'
+                        item.active ? 'bg-[#E4EFF7] text-[#075985]' : 'hover:bg-stone-50'
                       }`}
                     >
                       {item.label}

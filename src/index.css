@@ -1,72 +1,94 @@
 @import "tailwindcss";
 
-/* Palette.
+/* Palette — ocean blue on white.
  *
- * Contrast ratios below were measured against the surfaces each colour is
- * actually used on, following the 14 Sep 2026 audit. WCAG 2.2 AA needs 4.5:1
- * for normal text and 3:1 for large text (>=24px, or >=18.66px bold) and for
- * non-text UI components such as icons and borders.
+ * Every ratio in this file was measured against the surface the colour is
+ * actually used on. WCAG 2.2 AA needs 4.5:1 for normal text, 3:1 for large
+ * text (>=24px, or >=18.66px bold) and for non-text UI such as icons and
+ * borders.
  *
- * No single gold clears 4.5:1 against both white and the dark surface, which is why
- * there are two: luxury-gold for dark surfaces, gold-ink for light ones.
+ * The brief: fresh, energetic and modern. Pure white behind the content so
+ * the destination photographs carry the colour, crisp ocean blue for the
+ * brand, and a bright sunset orange used ONLY on calls to action, so orange
+ * on this site always means "press this". The deep emerald and the gold and
+ * beige it replaces are gone entirely - no token, literal or gradient stop
+ * anywhere in src/ still holds one.
  */
 @theme {
-  /* Warm & earthy, replacing the navy-and-gold scheme.
-   *
-   * The dark anchor is a deep forest rather than a navy, and the cool blue
-   * tints are now sands. The accents did not need replacing - warm-orange and
-   * accent-ink were already terracotta, and their ratios below are unchanged.
-   *
-   * midnight-blue and royal-navy keep their names on purpose. Renaming them
-   * would touch every component in one commit and bury the colour change in a
-   * rename diff; the values are what matter, and the names read as "the darkest
-   * surface" and "the mid dark surface" wherever they are used. */
-  --color-midnight-blue: #12302A;
-  --color-royal-navy: #173F35;
-  --color-deep-emerald: #164A41;
-  --color-forest-green: #1F5D50;
+  /* The teals. midnight-blue and royal-navy keep their names on purpose:
+     renaming them would touch every component in one commit and bury a colour
+     change inside a rename diff. What they mean is "the darkest surface" and
+     "the mid dark surface", and that is still true.
 
-  /* Gold on dark surfaces: 5.84:1 on midnight-blue, 4.81:1 on royal-navy.
-     Only 2.43:1 on white - never use it for text on a light background.
-     royal-navy is #173F35 and not a lighter green because gold falls to
-     4.13:1 by #1A4A3E - measured, not eyeballed. */
-  --color-luxury-gold: #C6A15B;
+     White text: 14.46:1 on midnight-blue, 9.27:1 on royal-navy,
+     5.93:1 on deep-emerald, 4.86:1 on forest-green. */
+  --color-midnight-blue: #062B4A;
+  --color-royal-navy: #0B4A78;
 
-  /* Gold for text on light surfaces: 5.03:1 on white, 4.78:1 on ivory. */
-  --color-gold-ink: #8A6A28;
+  /* The primary button that is NOT a call to action - "Plan with AI",
+     "Quick Book", "Read all guides". forest-green is its hover, and it is
+     lighter rather than darker, which is why it is the tighter ratio. */
+  --color-deep-emerald: #0369A1;
+  --color-forest-green: #0277B6;
 
-  /* Primary CTA — the bright amber from the reference layout.
-   *
-   * It is paired with dark ink, never white. White on this amber is 2.24:1,
-   * which is what the reference itself does and is a fail; the same amber
-   * under #1C1917 is 7.82:1. So the button keeps the reference's colour and
-   * gets legible text, rather than copying an inaccessible pairing.
-   *
-   * Use --color-cta-ink for any text or icon sitting on this. On the dark
-   * greens the amber itself is readable as text: 6.34:1 on midnight-blue,
-   * 5.22:1 on royal-navy.
-   *
-   * (It was #B85C00, chosen when the CTA had white text — a dark brown-orange
-   * that cleared 4.60:1 with white but read nothing like the reference.) */
-  --color-warm-orange: #EE9B3F;
-  --color-cta-ink: #1C1917;
+  /* Accent for dark surfaces only: prices over photographs, eyebrows on the
+     dark panels. This was a gold; a pale sky blue does the same job without
+     bringing the warm scheme back. 9.20:1 on midnight-blue, 5.90:1 on
+     royal-navy. Never on a light surface - it is 1.4:1 on white. */
+  --color-luxury-gold: #93D7FB;
 
-  /* Accent for orange text on white: 5.18:1 (the old #FF6B00 was 2.86:1). */
+  /* Was a brown gold for text on light surfaces. Ocean-blue ink now, so the
+     small uppercase eyebrows carry the brand colour rather than a second
+     unrelated one: 7.56:1 on white, 7.06:1 on soft-blue. The token name is
+     left alone for the reason above. */
+  --color-gold-ink: #075985;
+
+  /* Call to action - a sunset orange, and the ONLY warm colour left on the
+     site, which is what makes it read as the thing to press. Paired with dark
+     ink, never white: white on it is 2.43:1, the ink is 7.36:1. */
+  --color-warm-orange: #FF8534;
+  --color-cta-ink: #0F172A;
+
+  /* Orange as text on a light surface - the active nav item, "Trending".
+     5.04:1 on ivory, 4.89:1 on the canvas. */
   --color-accent-ink: #C2410C;
 
-  /* WhatsApp. The brand green #25D366 gives white text 1.98:1; this is
-     WhatsApp's own darker teal at 5.79:1. */
+  /* WhatsApp's own darker teal. The brand green #25D366 gives white 1.98:1;
+     this is 5.79:1. Kept as it was - it has to stay recognisable. */
   --color-whatsapp: #0F7268;
   --color-whatsapp-hover: #0B5A52;
 
-  /* Were #E6F3FA / #DCEFF8 / #F4FAFD - cool blue tints. Sands now, so section
-     backgrounds sit with the photography instead of against it.
-     Body text #1C1917 clears 14:1 or better on all three.
-     soft-sand is the one limit: accent-ink text on it is 4.22:1, a fail. Use
-     it for surfaces, badges and borders, not for orange text. */
-  --color-light-blue: #F5EFE6;
-  --color-soft-blue: #EFE7DA;
-  --color-ivory: #FBF7F0;
+  /* White is the page. The two tints are for separation only - icon circles,
+     the guides panel, the destinations band - so the photographs are the
+     brightest thing on screen. Body text clears 8.9:1 or better on both. */
+  --color-light-blue: #F2F8FC;
+  --color-soft-blue: #E4EFF7;
+  --color-ivory: #FFFFFF;
+
+  /* Tailwind's stone scale is warm grey, and it is on more than six hundred
+     elements - every text-stone-600, border-stone-200 and bg-stone-50 in the
+     codebase. Warm grey against pearl and teal reads muddy, so the scale
+     itself is retinted to slate here rather than editing six hundred class
+     names. Same move as --font-serif below: change the token, not the usage.
+
+     stone-150 is not a Tailwind shade; three elements ask for it and were
+     silently getting nothing. It is defined now. */
+  --color-stone-50: #F8FAFC;
+  --color-stone-100: #F1F5F9;
+  --color-stone-150: #E9EFF5;
+  --color-stone-200: #E2E8F0;
+  --color-stone-300: #CBD5E1;
+  --color-stone-400: #94A3B8;
+  /* Slate-500 proper is #64748B, which lands at 4.44:1 on the #F2F8FC tint -
+     six hundredths short of AA, and it is the colour of every itinerary-day
+     location line. Two steps darker clears it at 4.95:1 and still reads as
+     the muted step between 400 and 600. */
+  --color-stone-500: #5E6C85;
+  --color-stone-600: #475569;
+  --color-stone-700: #334155;
+  --color-stone-800: #1E293B;
+  --color-stone-900: #0F172A;
+  --color-stone-950: #020617;
 
   /* Type.
    *
@@ -85,22 +107,20 @@
 
 @layer base {
   :root {
-    /* Neutrals warmed to match the palette: the greys were blue-cast (#4B5563,
-       #6B7280, #E5E7EB) and read cold against sand surfaces. These are the
-       stone equivalents at the same or better contrast. */
-    --brand-primary: #1C1917;
-    --brand-secondary: #292524;
+    /* Cool neutrals, to sit with the blue. The
+       warm stone values they replace (#1C1917, #44403C, #57534E) were chosen
+       for the sand scheme and read yellow against a white page.
+       Measured on white: primary 17.85:1, secondary 10.57:1, muted 7.73:1. */
+    --brand-primary: #0F172A;
+    --brand-secondary: #1E293B;
     --brand-accent: #C2410C;
     --brand-accent-hover: #9A3412;
-    --bg-canvas: #FAF9F6;
+    --bg-canvas: #FFFFFF;
     --bg-card: #FFFFFF;
-    --border-subtle: #E7E2DA;
-    --text-primary: #1C1917;
-    /* 16.61:1 on canvas. */
-    --text-secondary: #44403C;
-    /* #9CA3AF gave only 2.54:1 on white - below the 4.5:1 minimum for text.
-       #57534E is 7.25:1 on canvas. */
-    --text-muted: #57534E;
+    --border-subtle: #D9E6F0;
+    --text-primary: #0F172A;
+    --text-secondary: #334155;
+    --text-muted: #475569;
   }
 
   body {
@@ -140,14 +160,14 @@
   height: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #F3F4F6;
+  background: #F1F5F9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D1D5DB;
+  background: #CBD5E1;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #A8A29E;
+  background: #94A3B8;
 }
 
 /* Glassmorphism / Crisp Backdrop utility */
@@ -239,8 +259,8 @@ summary:focus-visible,
 /* The header used to sit on midnight-blue, where the amber ring above drops
    below 3:1, so it was overridden to white. The header is ivory now - white on
    ivory is 1.05:1, invisible - so the override is gone and the amber ring from
-   the rule above applies here like everywhere else: #B45309 on #FBF7F0 is
-   6.42:1. */
+   the rule above applies here like everywhere else: #B45309 on white is
+   4.83:1. */
 
 /* main is focused programmatically by the skip link; it is not a control, so it
    should not draw a ring of its own. */
@@ -283,9 +303,9 @@ summary:focus-visible,
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(7, 26, 51, 0.85) 0%,
-    rgba(7, 26, 51, 0.55) 45%,
-    rgba(7, 26, 51, 0.25) 100%
+    rgba(4, 29, 51, 0.85) 0%,
+    rgba(4, 29, 51, 0.55) 45%,
+    rgba(4, 29, 51, 0.25) 100%
   );
   pointer-events: none;
 }

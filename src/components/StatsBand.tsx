@@ -48,20 +48,20 @@ export const StatsBand: React.FC = () => {
     <section
       id="stats-band"
       aria-label="Safar Trails at a glance"
-      className="w-full bg-ivory border-t border-[#E7E2DA]"
+      className="w-full bg-ivory border-t border-[#D9E6F0]"
     >
       <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-8 sm:py-10">
         <ul className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-6">
           {stats.map(({ icon: Icon, value, label }) => (
             <li key={label} className="flex items-center gap-3">
-              <span className="flex-shrink-0 w-10 h-10 rounded-full bg-white border border-[#E7E2DA] flex items-center justify-center">
+              <span className="flex-shrink-0 w-10 h-10 rounded-full bg-white border border-[#D9E6F0] flex items-center justify-center">
                 <Icon className="w-[18px] h-[18px] text-forest-green" aria-hidden="true" />
               </span>
               <div className="min-w-0">
                 <div className="font-serif text-xl sm:text-2xl font-bold text-stone-900 leading-none">
                   {value}
                 </div>
-                <div className="mt-1 text-[11.5px] sm:text-xs text-[#57534E] leading-snug">
+                <div className="mt-1 text-[11.5px] sm:text-xs text-[#475569] leading-snug">
                   {label}
                 </div>
               </div>

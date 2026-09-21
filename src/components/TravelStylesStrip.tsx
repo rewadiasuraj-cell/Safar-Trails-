@@ -38,7 +38,7 @@ export const TravelStylesStrip: React.FC = () => {
             <li key={tripType} className="shrink-0">
               <Link
                 to={`/packages?style=${encodeURIComponent(tripType)}`}
-                className="group inline-flex items-center gap-2.5 pl-2 pr-4 py-2 rounded-full bg-white border border-[#E7E2DA] hover:border-forest-green shadow-xs transition-colors"
+                className="group inline-flex items-center gap-2.5 pl-2 pr-4 py-2 rounded-full bg-white border border-[#D9E6F0] hover:border-forest-green shadow-xs transition-colors"
               >
                 <span className="w-8 h-8 rounded-full bg-light-blue flex items-center justify-center shrink-0">
                   <Icon className="w-4 h-4 text-forest-green" aria-hidden="true" />
@@ -46,7 +46,7 @@ export const TravelStylesStrip: React.FC = () => {
                 <span className="text-[13px] font-bold text-stone-900 whitespace-nowrap">
                   {label}
                 </span>
-                <span className="text-[11px] font-semibold text-[#57534E] whitespace-nowrap">
+                <span className="text-[11px] font-semibold text-[#475569] whitespace-nowrap">
                   {countFor(tripType)}
                 </span>
               </Link>

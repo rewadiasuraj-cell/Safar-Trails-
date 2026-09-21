@@ -31,7 +31,7 @@ export const FAQSection: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="bg-[#FAF9F6] rounded-2xl border border-stone-200 overflow-hidden shadow-xs transition-all"
+                className="bg-[#F2F8FC] rounded-2xl border border-stone-200 overflow-hidden shadow-xs transition-all"
               >
                 <button
                   onClick={() => toggleFaq(idx)}

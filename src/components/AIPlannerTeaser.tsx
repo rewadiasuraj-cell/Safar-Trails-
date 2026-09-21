@@ -21,7 +21,7 @@ export const AIPlannerTeaser: React.FC = () => {
               <div className="font-serif font-bold text-base sm:text-lg tracking-tight truncate">
                 Plan My Trip with AI
               </div>
-              <div className="text-xs sm:text-sm text-stone-300 truncate">
+              <div className="text-xs sm:text-sm text-stone-200 truncate">
                 Tell us your dates, budget & style — get a custom itinerary in seconds.
               </div>
             </div>

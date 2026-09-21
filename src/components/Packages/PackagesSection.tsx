@@ -176,7 +176,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
 
         {/* Filter Controls Bar */}
         {asPage && (
-        <div className="bg-[#FAF9F6] p-4 sm:p-5 rounded-2xl border border-stone-200/80 shadow-2xs mb-8 space-y-3.5">
+        <div className="bg-[#F2F8FC] p-4 sm:p-5 rounded-2xl border border-stone-200/80 shadow-2xs mb-8 space-y-3.5">
           {/* Destination Pills */}
           <div>
             <span className="text-[10px] font-bold text-stone-400 uppercase tracking-widest block mb-1.5">

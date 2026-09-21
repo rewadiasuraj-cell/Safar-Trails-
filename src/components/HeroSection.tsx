@@ -102,7 +102,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </span>
             </h1>
 
-            <p className="text-sm sm:text-base lg:text-[17px] text-[#44403C] leading-relaxed max-w-lg mb-7">
+            <p className="text-sm sm:text-base lg:text-[17px] text-[#334155] leading-relaxed max-w-lg mb-7">
               Personalized travel planning powered by intelligent AI, refined and
               verified by seasoned human destination specialists.
             </p>
@@ -160,8 +160,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             One row on desktop, stacked on phones, the way the reference lays
             it out. Same three fields and the same handler as before; only the
             arrangement changed. */}
-        <div className="relative mt-8 lg:-mt-4 mb-12 sm:mb-14 lg:mb-16 bg-white rounded-2xl sm:rounded-[1.75rem] border border-[#E7E2DA] shadow-lg p-3 sm:p-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_auto] gap-2.5 lg:gap-0 lg:divide-x lg:divide-[#E7E2DA]">
+        <div className="relative mt-8 lg:-mt-4 mb-12 sm:mb-14 lg:mb-16 bg-white rounded-2xl sm:rounded-[1.75rem] border border-[#D9E6F0] shadow-lg p-3 sm:p-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_auto] gap-2.5 lg:gap-0 lg:divide-x lg:divide-[#D9E6F0]">
             <div className="relative lg:pr-4">
               <label htmlFor="hero-destination" className="block text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-1 pl-10 lg:pl-9">
                 Where to?

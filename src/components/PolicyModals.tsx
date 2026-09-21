@@ -21,15 +21,15 @@ export const PolicyModals: React.FC<PolicyModalsProps> = ({ type, onClose }) => 
           <p>
             At SafarTrails (SafarTrails Private Limited), we respect your personal data and privacy. This Privacy Policy details how we collect, handle, and protect your information when using our website and holiday booking services.
           </p>
-          <h3 className="font-bold text-[#173F35] text-sm">1. Information We Collect</h3>
+          <h3 className="font-bold text-[#0B4A78] text-sm">1. Information We Collect</h3>
           <p>
             We collect personal contact details (Name, Phone Number/WhatsApp, Email Address) solely to prepare travel itineraries, book verified hotel stays, and assign transport chauffeurs.
           </p>
-          <h3 className="font-bold text-[#173F35] text-sm">2. Zero Third-Party Spam</h3>
+          <h3 className="font-bold text-[#0B4A78] text-sm">2. Zero Third-Party Spam</h3>
           <p>
             We do NOT sell, rent, or lease your phone number or email to third-party telemarketers. All interactions remain strictly between you and your assigned SafarTrails Destination Specialist.
           </p>
-          <h3 className="font-bold text-[#173F35] text-sm">3. Data Security</h3>
+          <h3 className="font-bold text-[#0B4A78] text-sm">3. Data Security</h3>
           <p>
             All submitted enquiries and payment records are encrypted with industry-standard 256-bit SSL protocols.
           </p>
@@ -44,15 +44,15 @@ export const PolicyModals: React.FC<PolicyModalsProps> = ({ type, onClose }) => 
           <p>
             <strong>Terms & Conditions of SafarTrails.com</strong>
           </p>
-          <h3 className="font-bold text-[#173F35] text-sm">1. Scope of Service</h3>
+          <h3 className="font-bold text-[#0B4A78] text-sm">1. Scope of Service</h3>
           <p>
             SafarTrails acts as an AI-powered holiday curator and tour organizer. All website package prices are estimated indicative figures based on standard season rates. Exact quotes are finalized with the customer before advance token payment.
           </p>
-          <h3 className="font-bold text-[#173F35] text-sm">2. Hotel Check-in & Identification</h3>
+          <h3 className="font-bold text-[#0B4A78] text-sm">2. Hotel Check-in & Identification</h3>
           <p>
             All guests must present valid Government-issued photo ID cards (Aadhaar, Passport, Driving License) at hotel check-in. PAN cards are not accepted by hotels as proof of address.
           </p>
-          <h3 className="font-bold text-[#173F35] text-sm">3. Force Majeure</h3>
+          <h3 className="font-bold text-[#0B4A78] text-sm">3. Force Majeure</h3>
           <p>
             SafarTrails is not liable for weather-related flight cancellations, landslide road blocks, or government-imposed curfews. In such events, our 24/7 concierge will make reasonable efforts to reschedule stays and reroute transport.
           </p>
@@ -67,7 +67,7 @@ export const PolicyModals: React.FC<PolicyModalsProps> = ({ type, onClose }) => 
           <p>
             We believe in fair, transparent cancellation terms for our travelers.
           </p>
-          <h3 className="font-bold text-[#173F35] text-sm">Standard Domestic Package Cancellation Schedule:</h3>
+          <h3 className="font-bold text-[#0B4A78] text-sm">Standard Domestic Package Cancellation Schedule:</h3>
           <ul className="space-y-2 bg-stone-50 p-4 rounded-xl border border-stone-200">
             <li>• <strong>30+ Days Prior to Travel:</strong> 100% Refund of deposit (minus a modest ₹1,000 administrative processing fee).</li>
             <li>• <strong>15 to 29 Days Prior to Travel:</strong> 75% Refund of total package cost.</li>
@@ -88,7 +88,7 @@ export const PolicyModals: React.FC<PolicyModalsProps> = ({ type, onClose }) => 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
       <div className="bg-white w-full max-w-lg rounded-2xl shadow-2xl border border-stone-200 overflow-hidden flex flex-col my-auto max-h-[80vh]">
-        <div className="bg-[#1C1917] p-5 text-white flex items-center justify-between border-b border-stone-800">
+        <div className="bg-[#0F172A] p-5 text-white flex items-center justify-between border-b border-stone-800">
           <div className="flex items-center gap-2.5">
             <Icon className="w-5 h-5 text-white" />
             <h2 className="font-serif font-bold text-base sm:text-lg tracking-tight">
@@ -103,7 +103,7 @@ export const PolicyModals: React.FC<PolicyModalsProps> = ({ type, onClose }) => 
           </button>
         </div>
 
-        <div className="p-6 overflow-y-auto bg-[#FAF9F6]">
+        <div className="p-6 overflow-y-auto bg-[#F2F8FC]">
           {active.body}
         </div>
 

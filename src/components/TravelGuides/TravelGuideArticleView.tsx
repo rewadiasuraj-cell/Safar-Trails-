@@ -51,7 +51,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
     );
 
   return (
-    <article id="travel-guide-article-page" className="w-full pt-16 pb-24 bg-[#FAF9F6]">
+    <article id="travel-guide-article-page" className="w-full pt-16 pb-24 bg-[#F2F8FC]">
       {/* Top Navigation & Search Bar */}
       <div className="w-full bg-white border-b border-stone-200 py-3.5 sticky top-16 z-20 shadow-2xs">
         <div className="w-full max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">

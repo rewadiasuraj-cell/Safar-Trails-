@@ -72,7 +72,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
             className="bg-white w-full max-w-2xl rounded-2xl shadow-2xl border border-stone-200 overflow-hidden flex flex-col max-h-[80vh]"
           >
         {/* Search Input Box */}
-        <div className="p-4 sm:p-5 border-b border-stone-100 flex items-center gap-3 bg-[#FAF9F6]">
+        <div className="p-4 sm:p-5 border-b border-stone-100 flex items-center gap-3 bg-[#F2F8FC]">
           <Search className="w-5 h-5 text-black flex-shrink-0" />
           <input
             type="text"
@@ -109,7 +109,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                 onStartAIPlan(query);
                 onClose();
               }}
-              className="p-3.5 rounded-2xl bg-[#FAF9F6] border border-stone-200 flex items-center justify-between cursor-pointer hover:border-black transition-all"
+              className="p-3.5 rounded-2xl bg-[#F2F8FC] border border-stone-200 flex items-center justify-between cursor-pointer hover:border-black transition-all"
             >
               <div className="flex items-center gap-2.5">
                 <AIIcon className="w-5 h-5 text-black" />
@@ -141,7 +141,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                       onSelectDestination(d.slug);
                       onClose();
                     }}
-                    className="p-2.5 rounded-xl hover:bg-[#FAF9F6] border border-stone-150 text-left flex items-center gap-3 transition-colors group cursor-pointer"
+                    className="p-2.5 rounded-xl hover:bg-[#F2F8FC] border border-stone-150 text-left flex items-center gap-3 transition-colors group cursor-pointer"
                   >
                     <img src={d.heroImage} alt={d.name} className="w-12 h-12 rounded-lg object-cover" />
                     <div>
@@ -169,7 +169,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                       onSelectPackage(p);
                       onClose();
                     }}
-                    className="w-full p-2.5 rounded-xl hover:bg-[#FAF9F6] border border-stone-150 text-left flex items-center justify-between transition-colors group cursor-pointer"
+                    className="w-full p-2.5 rounded-xl hover:bg-[#F2F8FC] border border-stone-150 text-left flex items-center justify-between transition-colors group cursor-pointer"
                   >
                     <div className="flex items-center gap-3">
                       <img src={p.heroImage} alt={p.title} className="w-12 h-12 rounded-lg object-cover" />
@@ -203,7 +203,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                       onSelectGuide(g);
                       onClose();
                     }}
-                    className="w-full p-2.5 rounded-xl hover:bg-[#FAF9F6] border border-stone-150 text-left flex items-center gap-3 transition-colors group cursor-pointer"
+                    className="w-full p-2.5 rounded-xl hover:bg-[#F2F8FC] border border-stone-150 text-left flex items-center gap-3 transition-colors group cursor-pointer"
                   >
                     <img src={g.heroImage} alt={g.title} className="w-12 h-12 rounded-lg object-cover" />
                     <div>

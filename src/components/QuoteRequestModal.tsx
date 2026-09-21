@@ -171,7 +171,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
     <div className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 animate-in fade-in duration-200">
       <div className="bg-white w-full max-w-lg rounded-2xl shadow-2xl border border-stone-200 overflow-hidden flex flex-col my-auto">
         {/* Header */}
-        <div className="bg-[#1C1917] p-6 text-white relative border-b border-stone-800">
+        <div className="bg-[#0F172A] p-6 text-white relative border-b border-stone-800">
           <button
             onClick={onClose}
             className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
@@ -195,7 +195,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
         {/* Form or Success State */}
         {submittedLead ? (
           /* Success Screen */
-          <div className="p-8 text-center space-y-6 bg-[#FAF9F6]">
+          <div className="p-8 text-center space-y-6 bg-[#F2F8FC]">
             <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-inner">
               <CheckCircle2 className="w-10 h-10" />
             </div>
@@ -237,7 +237,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
           </div>
         ) : (
           /* Input Form */
-          <form onSubmit={handleSubmit} className="p-6 space-y-4 bg-[#FAF9F6]">
+          <form onSubmit={handleSubmit} className="p-6 space-y-4 bg-[#F2F8FC]">
             {errorMsg && (
               <div
                 id="quote-form-error"

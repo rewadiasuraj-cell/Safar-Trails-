@@ -40,7 +40,7 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
     return (
       <section id="travel-guides-section" className="w-full py-10 sm:py-14 bg-ivory">
         <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
-          <div className="bg-light-blue rounded-3xl border border-[#E7E2DA] p-5 sm:p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-6 lg:gap-10 items-center">
+          <div className="bg-light-blue rounded-3xl border border-[#D9E6F0] p-5 sm:p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-6 lg:gap-10 items-center">
             <div>
               <span className="block text-[11px] font-sans-ui font-extrabold uppercase tracking-[0.22em] text-gold-ink mb-2.5">
                 Need inspiration?
@@ -48,7 +48,7 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
               <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] font-bold text-stone-900 tracking-tight leading-tight">
                 Travel Stories &amp; Guides
               </h2>
-              <p className="mt-3 text-sm text-[#44403C] leading-relaxed max-w-sm">
+              <p className="mt-3 text-sm text-[#334155] leading-relaxed max-w-sm">
                 Written by the specialists who plan these trips every week — when to go,
                 what a trip really costs, and the mistakes first-timers make.
               </p>
@@ -66,7 +66,7 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
                 <Link
                   key={guide.slug}
                   to={`/guides/${guide.slug}`}
-                  className="group block bg-white rounded-2xl overflow-hidden border border-[#E7E2DA] shadow-xs hover:shadow-lg transition-shadow"
+                  className="group block bg-white rounded-2xl overflow-hidden border border-[#D9E6F0] shadow-xs hover:shadow-lg transition-shadow"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <img
@@ -81,7 +81,7 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
                     <h3 className="font-serif text-[13px] sm:text-[15px] font-bold text-stone-900 leading-snug line-clamp-2 group-hover:text-gold-ink transition-colors">
                       {guide.title}
                     </h3>
-                    <p className="mt-1.5 flex items-center gap-1.5 text-[11px] text-[#57534E]">
+                    <p className="mt-1.5 flex items-center gap-1.5 text-[11px] text-[#475569]">
                       <Clock className="w-3 h-3 shrink-0" aria-hidden="true" />
                       <span>{guide.readTime}</span>
                     </p>
@@ -96,7 +96,7 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
   }
 
   return (
-    <section id="travel-guides-section" className="w-full py-12 lg:py-20 bg-[#FAF9F6] border-t border-stone-200">
+    <section id="travel-guides-section" className="w-full py-12 lg:py-20 bg-[#F2F8FC] border-t border-stone-200">
       <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Section Header with Single Clean Heading and Search Bar */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6 border-b border-stone-200 pb-8">

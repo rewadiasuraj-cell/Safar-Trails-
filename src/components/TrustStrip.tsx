@@ -50,10 +50,10 @@ export const TrustStrip: React.FC = () => (
     className="w-full bg-ivory"
   >
     <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-6 sm:py-8">
-      <ul className="bg-white rounded-2xl sm:rounded-3xl border border-[#E7E2DA] shadow-xs grid grid-cols-2 lg:grid-cols-4 divide-y divide-x divide-[#E7E2DA] [&>li:nth-child(-n+2)]:border-t-0 lg:[&>li]:border-t-0">
+      <ul className="bg-white rounded-2xl sm:rounded-3xl border border-[#D9E6F0] shadow-xs grid grid-cols-2 lg:grid-cols-4 divide-y divide-x divide-[#D9E6F0] [&>li:nth-child(-n+2)]:border-t-0 lg:[&>li]:border-t-0">
         {PILLARS.map(({ icon: Icon, title, description }) => (
           <li key={title} className="flex items-center sm:items-start gap-3 p-3.5 sm:p-5 lg:p-6">
-            <span className="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-light-blue border border-[#E7E2DA] flex items-center justify-center">
+            <span className="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-light-blue border border-[#D9E6F0] flex items-center justify-center">
               <Icon className="w-4 h-4 sm:w-[18px] sm:h-[18px] text-forest-green" aria-hidden="true" />
             </span>
             <div className="min-w-0">
@@ -66,7 +66,7 @@ export const TrustStrip: React.FC = () => (
                   top of the right-hand column and cover the last one. The
                   headings alone are the scannable version, and the full
                   wording is still on /about-us in TrustSection. */}
-              <p className="hidden sm:block mt-1 text-[11.5px] sm:text-xs text-[#57534E] leading-relaxed">
+              <p className="hidden sm:block mt-1 text-[11.5px] sm:text-xs text-[#475569] leading-relaxed">
                 {description}
               </p>
             </div>

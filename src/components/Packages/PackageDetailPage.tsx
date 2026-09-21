@@ -142,7 +142,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
       </div>
 
       {/* Dynamic Configurator Bar */}
-      <div className="bg-[#FAF9F6] border-b border-stone-200 p-4 sm:p-5 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs flex-shrink-0">
+      <div className="bg-[#F2F8FC] border-b border-stone-200 p-4 sm:p-5 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs flex-shrink-0">
         <div>
           <label className="block text-[10px] font-bold uppercase tracking-widest text-stone-400 mb-1">Hotel Category</label>
           <select
@@ -232,7 +232,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
                 >
                   <button
                     onClick={() => toggleDay(day.dayNumber)}
-                    className="w-full p-4 text-left flex items-center justify-between bg-[#FAF9F6] hover:bg-stone-100 transition-colors cursor-pointer"
+                    className="w-full p-4 text-left flex items-center justify-between bg-[#F2F8FC] hover:bg-stone-100 transition-colors cursor-pointer"
                   >
                     <div className="flex items-center gap-3">
                       <span className="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center font-bold text-xs shrink-0">
@@ -311,19 +311,19 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
 
         {activeTab === 'stays' && (
           <div className="space-y-4 text-xs sm:text-sm text-stone-700">
-            <div className="p-4 rounded-2xl bg-[#FAF9F6] border border-stone-200">
+            <div className="p-4 rounded-2xl bg-[#F2F8FC] border border-stone-200">
               <h3 className="font-serif font-bold text-black mb-1">Handpicked Stays & Houseboats</h3>
               <p className="text-stone-600 leading-relaxed font-normal">
                 We partner directly with boutique properties rated 4.5+ on cleanliness and hospitality. Central heating / electric blankets provided in high altitude mountain stays.
               </p>
             </div>
-            <div className="p-4 rounded-2xl bg-[#FAF9F6] border border-stone-200">
+            <div className="p-4 rounded-2xl bg-[#F2F8FC] border border-stone-200">
               <h3 className="font-serif font-bold text-black mb-1">Dedicated Chauffeur & Sanitized Fleet</h3>
               <p className="text-stone-600 leading-relaxed font-normal">
                 Private commercial tourist cab with experienced mountain driver. Includes all fuel, toll taxes, parking fees, driver night allowances, and state permits.
               </p>
             </div>
-            <div className="p-4 rounded-2xl bg-[#FAF9F6] border border-stone-200">
+            <div className="p-4 rounded-2xl bg-[#F2F8FC] border border-stone-200">
               <h3 className="font-serif font-bold text-black mb-1">Selected Configuration</h3>
               <div className="flex items-center gap-2 text-stone-600">
                 <Calendar className="w-4 h-4 text-stone-400 shrink-0" />
@@ -346,7 +346,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
       {packageData.faqs && packageData.faqs.length > 0 && (
         <section
           aria-labelledby="package-faqs-heading"
-          className="border-t border-stone-200 px-4 sm:px-6 lg:px-8 py-8 sm:py-10 bg-[#FAF9F6]"
+          className="border-t border-stone-200 px-4 sm:px-6 lg:px-8 py-8 sm:py-10 bg-[#F2F8FC]"
         >
           <div className="mx-auto w-full max-w-3xl">
             <h2

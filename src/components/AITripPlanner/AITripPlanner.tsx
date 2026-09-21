@@ -396,7 +396,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
     : allTripTypes.filter(t => t.isPrimary);
 
   return (
-    <section id="ai-trip-planner-section" className="w-full py-12 sm:py-16 bg-[#FAF9F6] border-t border-b border-stone-200/80">
+    <section id="ai-trip-planner-section" className="w-full py-12 sm:py-16 bg-[#F2F8FC] border-t border-b border-stone-200/80">
       <div className="w-full max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         
         {/* Section Heading */}
@@ -423,7 +423,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
               onClick={() => setActiveTab('guided')}
               className={`relative px-5 sm:px-7 py-2 rounded-full text-xs sm:text-[13px] font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                 activeTab === 'guided'
-                  ? 'bg-[#0E2620] text-white shadow-xs'
+                  ? 'bg-[#041D33] text-white shadow-xs'
                   : 'text-stone-600 hover:text-stone-900 bg-transparent'
               }`}
             >
@@ -440,7 +440,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
               onClick={() => setActiveTab('conversational')}
               className={`px-5 sm:px-7 py-2 rounded-full text-xs sm:text-[13px] font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer inline-flex items-center gap-1.5 ${
                 activeTab === 'conversational'
-                  ? 'bg-[#0E2620] text-white shadow-xs'
+                  ? 'bg-[#041D33] text-white shadow-xs'
                   : 'text-stone-600 hover:text-stone-900 bg-transparent'
               }`}
             >
@@ -469,7 +469,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                     value={naturalPrompt}
                     onChange={(e) => setNaturalPrompt(e.target.value)}
                     placeholder="e.g. Couple honeymoon in Goa, 5 days, beach resort, private cab & candlelight dinner"
-                    className="w-full p-3.5 rounded-xl border border-stone-200 text-stone-900 focus:border-[#0E2620] focus:outline-none text-sm resize-none bg-[#FAF9F6]"
+                    className="w-full p-3.5 rounded-xl border border-stone-200 text-stone-900 focus:border-[#041D33] focus:outline-none text-sm resize-none bg-[#F2F8FC]"
                   />
                 </div>
 
@@ -509,7 +509,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                           <span>{preview.transportMode}</span>
                         </span>
                         {preview.budgetTotal && (
-                          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white border border-orange-200 text-[#0E2620] text-xs font-bold shadow-2xs">
+                          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white border border-orange-200 text-[#041D33] text-xs font-bold shadow-2xs">
                             <span>Budget: ₹{preview.budgetTotal.toLocaleString('en-IN')}</span>
                           </span>
                         )}
@@ -542,7 +542,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                   id="generate-conversational-plan-btn"
                   onClick={() => handleGenerate(true)}
                   disabled={loading}
-                  className="w-full py-3.5 rounded-xl bg-[#0E2620] hover:bg-stone-900 text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                  className="w-full py-3.5 rounded-xl bg-[#041D33] hover:bg-stone-900 text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                 >
                   {loading ? (
                     <>
@@ -575,7 +575,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                         id="ai-planner-destination-select"
                         value={destination}
                         onChange={(e) => setDestination(e.target.value)}
-                        className="w-full appearance-none px-3.5 py-2.5 rounded-xl border border-stone-200 bg-white text-stone-900 font-semibold text-sm focus:border-[#0E2620] focus:outline-none cursor-pointer pr-9 shadow-2xs"
+                        className="w-full appearance-none px-3.5 py-2.5 rounded-xl border border-stone-200 bg-white text-stone-900 font-semibold text-sm focus:border-[#041D33] focus:outline-none cursor-pointer pr-9 shadow-2xs"
                       >
                         {destinationsList.map((d) => (
                           <option key={d} value={d}>
@@ -607,7 +607,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                         max={12}
                         value={durationDays}
                         onChange={(e) => setDurationDays(Number(e.target.value))}
-                        className="w-full h-1.5 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-[#0E2620]"
+                        className="w-full h-1.5 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-[#041D33]"
                         style={{
                           background: `linear-gradient(to right, #C2410C 0%, #C2410C ${
                             ((durationDays - 3) / 9) * 100
@@ -705,7 +705,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                             onClick={() => setHotelCategory(tier)}
                             className={`px-2.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer text-center leading-tight whitespace-nowrap ${
                               isSelected
-                                ? 'bg-[#0E2620] text-white border-[#0E2620] shadow-xs'
+                                ? 'bg-[#041D33] text-white border-[#041D33] shadow-xs'
                                 : 'bg-white border-stone-200 text-stone-700 hover:border-stone-300 hover:bg-stone-50/60'
                             }`}
                           >
@@ -727,7 +727,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                               onClick={() => setHotelCategory(tier)}
                               className={`px-2.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer text-center leading-tight ${
                                 isSelected
-                                  ? 'bg-[#0E2620] text-white border-[#0E2620] shadow-xs'
+                                  ? 'bg-[#041D33] text-white border-[#041D33] shadow-xs'
                                   : 'bg-white border-stone-200 text-stone-700 hover:border-stone-300'
                               }`}
                             >
@@ -767,7 +767,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                             onClick={() => setTransportMode(item.mode)}
                             className={`px-2.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer text-center leading-tight whitespace-nowrap ${
                               isSelected
-                                ? 'bg-[#0E2620] text-white border-[#0E2620] shadow-xs'
+                                ? 'bg-[#041D33] text-white border-[#041D33] shadow-xs'
                                 : 'bg-white border-stone-200 text-stone-700 hover:border-stone-300 hover:bg-stone-50/60'
                             }`}
                           >
@@ -787,7 +787,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                             onClick={() => setTransportMode(item.mode)}
                             className={`px-2.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer text-center leading-tight whitespace-nowrap ${
                               isSelected
-                                ? 'bg-[#0E2620] text-white border-[#0E2620] shadow-xs'
+                                ? 'bg-[#041D33] text-white border-[#041D33] shadow-xs'
                                 : 'bg-white border-stone-200 text-stone-700 hover:border-stone-300 hover:bg-stone-50/60'
                             }`}
                           >
@@ -809,7 +809,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                               onClick={() => setTransportMode(item.mode)}
                               className={`px-2.5 py-2 rounded-xl text-xs font-bold border transition-all cursor-pointer text-center leading-tight ${
                                 isSelected
-                                  ? 'bg-[#0E2620] text-white border-[#0E2620] shadow-xs'
+                                  ? 'bg-[#041D33] text-white border-[#041D33] shadow-xs'
                                   : 'bg-white border-stone-200 text-stone-700 hover:border-stone-300'
                               }`}
                             >
@@ -896,7 +896,7 @@ export const AITripPlanner: React.FC<AITripPlannerProps> = ({
                     id="generate-guided-plan-btn"
                     onClick={() => handleGenerate(false)}
                     disabled={loading}
-                    className="w-full px-4 sm:px-6 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-[#0E2620] hover:bg-stone-900 text-white transition-all shadow-md hover:shadow-lg flex items-center justify-between cursor-pointer disabled:opacity-60 active:scale-[0.99]"
+                    className="w-full px-4 sm:px-6 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-[#041D33] hover:bg-stone-900 text-white transition-all shadow-md hover:shadow-lg flex items-center justify-between cursor-pointer disabled:opacity-60 active:scale-[0.99]"
                   >
                     {loading ? (
                       <div className="w-full flex items-center justify-center gap-2">

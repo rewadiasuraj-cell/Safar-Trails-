@@ -60,7 +60,7 @@ export const AITripResultView: React.FC<AITripResultViewProps> = ({
   return (
     <div id="ai-trip-plan-result" className="bg-white rounded-2xl shadow-xs border border-stone-200 overflow-hidden">
       {/* Top Banner Header */}
-      <div className="bg-[#1C1917] p-6 sm:p-8 md:p-10 text-white relative border-b border-stone-800">
+      <div className="bg-[#0F172A] p-6 sm:p-8 md:p-10 text-white relative border-b border-stone-800">
         <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-stone-300 text-xs font-bold uppercase tracking-widest backdrop-blur-xs">
             <AIIcon className="w-3.5 h-3.5 text-white" />
@@ -119,7 +119,7 @@ export const AITripResultView: React.FC<AITripResultViewProps> = ({
 
       <div className="p-6 sm:p-8 md:p-10 space-y-10">
         {/* Estimated Pricing Card */}
-        <div className="bg-[#FAF9F6] border border-stone-200 rounded-2xl p-5 sm:p-6">
+        <div className="bg-[#F2F8FC] border border-stone-200 rounded-2xl p-5 sm:p-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-stone-200">
             <div>
               <div className="text-[10px] font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5">
@@ -184,7 +184,7 @@ export const AITripResultView: React.FC<AITripResultViewProps> = ({
                 <div
                   key={day.dayNumber}
                   className={`border rounded-2xl transition-all overflow-hidden ${
-                    isExpanded ? 'border-black/30 shadow-xs bg-white' : 'border-stone-200 bg-[#FAF9F6]'
+                    isExpanded ? 'border-black/30 shadow-xs bg-white' : 'border-stone-200 bg-[#F2F8FC]'
                   }`}
                 >
                   <button
@@ -261,7 +261,7 @@ export const AITripResultView: React.FC<AITripResultViewProps> = ({
 
         {/* Highlights & Inclusions Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-          <div className="bg-[#FAF9F6] rounded-2xl p-5 border border-stone-200">
+          <div className="bg-[#F2F8FC] rounded-2xl p-5 border border-stone-200">
             <h3 className="text-xs font-bold text-black uppercase tracking-widest mb-3 flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-600" />
               <span>Standard Package Inclusions</span>
@@ -276,7 +276,7 @@ export const AITripResultView: React.FC<AITripResultViewProps> = ({
             </ul>
           </div>
 
-          <div className="bg-[#FAF9F6] rounded-2xl p-5 border border-stone-200">
+          <div className="bg-[#F2F8FC] rounded-2xl p-5 border border-stone-200">
             <h3 className="text-xs font-bold text-black uppercase tracking-widest mb-3 flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-black" />
               <span>Specialist Tips & Packing Advice</span>
@@ -293,7 +293,7 @@ export const AITripResultView: React.FC<AITripResultViewProps> = ({
         </div>
 
         {/* Bottom Conversion Action Bar */}
-        <div className="bg-[#1C1917] rounded-2xl p-6 sm:p-8 text-white flex flex-col lg:flex-row items-center justify-between gap-6 border border-stone-800">
+        <div className="bg-[#0F172A] rounded-2xl p-6 sm:p-8 text-white flex flex-col lg:flex-row items-center justify-between gap-6 border border-stone-800">
           <div>
             <div className="text-[10px] uppercase font-bold text-stone-400 tracking-widest mb-1">
               Ready to Lock Your Dates?

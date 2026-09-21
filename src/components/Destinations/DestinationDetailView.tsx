@@ -65,7 +65,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
   );
 
   return (
-    <div id="destination-detail-page" className="w-full pt-20 pb-24 bg-[#FAF9F6]">
+    <div id="destination-detail-page" className="w-full pt-20 pb-24 bg-[#F2F8FC]">
       {/* Top Breadcrumbs & Back Bar */}
       <div className="w-full bg-white border-b border-stone-200 py-3.5">
         <div className="w-full max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 flex flex-wrap items-center justify-between gap-y-2 gap-x-3">
@@ -97,7 +97,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
       </div>
 
       {/* Hero Visual Section - Curved Bottom with Dark Vignette */}
-      <section className="relative w-full bg-[#12302A] text-white pt-6 pb-16 md:pb-24 overflow-hidden">
+      <section className="relative w-full bg-[#062B4A] text-white pt-6 pb-16 md:pb-24 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           {/* The photograph was at opacity-40 UNDER a gradient running 70-90%
@@ -118,14 +118,14 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
             className="w-full h-full object-cover opacity-70 scale-105"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0E2620]/85 via-[#12302A]/55 to-[#12302A]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#041D33]/85 via-[#062B4A]/55 to-[#062B4A]" />
         </div>
 
         <div className="relative z-10 w-full max-w-7xl xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 space-y-6 pt-4">
           {/* Top Category Badge */}
           <div className="flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-[#173F35]/80 text-[#E6C687] border border-[#E6C687]/40 shadow-sm backdrop-blur-md">
-              <Compass className="w-3.5 h-3.5 text-[#E6C687]" />
+            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-[#0B4A78]/80 text-[#93D7FB] border border-[#93D7FB]/40 shadow-sm backdrop-blur-md">
+              <Compass className="w-3.5 h-3.5 text-[#93D7FB]" />
               <span>{destination.state} DESTINATION</span>
             </span>
             {destination.isTrending && (
@@ -171,7 +171,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                 {accent && (
                   <>
                     {' '}
-                    <span className="text-[#E6A024]">{accent}</span>
+                    <span className="text-[#93D7FB]">{accent}</span>
                   </>
                 )}
               </h1>
@@ -186,22 +186,22 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
           {/* Quick Stats Bar */}
           <div className="pt-2 flex flex-wrap items-center gap-6 sm:gap-10 text-xs sm:text-sm text-stone-300 border-t border-white/10">
             <div className="flex items-center gap-2 pt-4">
-              <Calendar className="w-4 h-4 text-[#E6C687]" />
+              <Calendar className="w-4 h-4 text-[#93D7FB]" />
               <span><strong>Best Season:</strong> {destination.bestTime}</span>
             </div>
             <div className="flex items-center gap-2 pt-4">
-              <Thermometer className="w-4 h-4 text-[#E6C687]" />
+              <Thermometer className="w-4 h-4 text-[#93D7FB]" />
               <span><strong>Weather:</strong> {destination.temperatureRange}</span>
             </div>
             <div className="flex items-center gap-2 pt-4">
-              <MapPin className="w-4 h-4 text-[#E6C687]" />
+              <MapPin className="w-4 h-4 text-[#93D7FB]" />
               <span><strong>Ideal Trip:</strong> {destination.idealDays}</span>
             </div>
           </div>
         </div>
 
         {/* Curved Mask Divider */}
-        <div className="absolute bottom-0 left-0 right-0 h-10 bg-[#FAF9F6] rounded-t-[50%] z-20" />
+        <div className="absolute bottom-0 left-0 right-0 h-10 bg-[#F2F8FC] rounded-t-[50%] z-20" />
       </section>
 
       {/* Main Content Layout */}
@@ -210,19 +210,19 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
         {/* HIGHLIGHTS SECTION (Matching Reference Image) */}
         <section className="space-y-6">
           <div className="flex items-center gap-3">
-            <h2 className="text-xs font-mono font-bold uppercase tracking-widest text-[#B8860B]">
+            <h2 className="text-xs font-mono font-bold uppercase tracking-widest text-[#075985]">
               HIGHLIGHTS
             </h2>
-            <div className="h-[1px] w-24 bg-[#E6C687]/60" />
+            <div className="h-[1px] w-24 bg-[#93D7FB]/60" />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {destination.highlights.map((hl, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl p-5 border border-[#E6E0D4] flex items-start gap-4 shadow-xs hover:shadow-md transition-all group"
+                className="bg-white rounded-2xl p-5 border border-[#D9E6F0] flex items-start gap-4 shadow-xs hover:shadow-md transition-all group"
               >
-                <div className="w-12 h-12 rounded-full bg-[#FFFDF7] border border-[#E6C687] text-[#B8860B] flex items-center justify-center shrink-0 group-hover:bg-[#B8860B] group-hover:text-white transition-colors">
+                <div className="w-12 h-12 rounded-full bg-[#F8FAFC] border border-[#93D7FB] text-[#075985] flex items-center justify-center shrink-0 group-hover:bg-[#075985] group-hover:text-white transition-colors">
                   <CheckCircle2 className="w-5 h-5" />
                 </div>
                 <div className="space-y-1 pt-1">
@@ -239,15 +239,15 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
         <section className="space-y-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <h2 className="text-xs font-mono font-bold uppercase tracking-widest text-[#B8860B]">
+              <h2 className="text-xs font-mono font-bold uppercase tracking-widest text-[#075985]">
                 GALLERY
               </h2>
-              <div className="h-[1px] w-24 bg-[#E6C687]/60" />
+              <div className="h-[1px] w-24 bg-[#93D7FB]/60" />
             </div>
 
             <button
               onClick={() => setActiveTab('attractions')}
-              className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#B8860B] hover:text-[#916705] transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#075985] hover:text-[#075985] transition-colors"
             >
               <span>VIEW ALL</span>
               <ArrowRight className="w-4 h-4" />
@@ -259,7 +259,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
               { name: destination.name, image: destination.heroImage },
               { name: destination.name + ' Sights', image: destination.cardImage }
             ]).slice(0, 4).map((item, i) => (
-              <div key={i} className="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 border border-[#E6E0D4] shadow-xs group relative">
+              <div key={i} className="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 border border-[#D9E6F0] shadow-xs group relative">
                 <img
                   src={item.image}
                   alt={item.name}
@@ -276,10 +276,10 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
         {/* TOUR PACKAGES SECTION (Matching Reference Image) */}
         <section className="space-y-6">
           <div className="flex items-center gap-3">
-            <h2 className="text-xs font-mono font-bold uppercase tracking-widest text-[#B8860B]">
+            <h2 className="text-xs font-mono font-bold uppercase tracking-widest text-[#075985]">
               TOUR PACKAGES FOR {destination.name.toUpperCase()}
             </h2>
-            <div className="h-[1px] w-32 bg-[#E6C687]/60" />
+            <div className="h-[1px] w-32 bg-[#93D7FB]/60" />
           </div>
 
           {destinationPackages.length > 0 ? (
@@ -287,7 +287,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
               {destinationPackages.map((pkg) => (
                 <div
                   key={pkg.id}
-                  className="group bg-white border border-[#E6E0D4] rounded-3xl p-5 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 hover:shadow-md transition-all relative overflow-hidden"
+                  className="group bg-white border border-[#D9E6F0] rounded-3xl p-5 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 hover:shadow-md transition-all relative overflow-hidden"
                 >
                   {/* Left Package Image */}
                   <div className="w-full md:w-1/3 aspect-[4/3] rounded-2xl overflow-hidden shrink-0 relative">
@@ -306,11 +306,11 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                   {/* Package Details */}
                   <div className="flex-1 space-y-4 w-full">
                     <div className="flex items-center justify-between gap-2">
-                      <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-[#FFF8E7] text-[#B8860B] border border-[#E6C687]/60">
+                      <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-[#F2F8FC] text-[#075985] border border-[#93D7FB]/60">
                         MOST POPULAR
                       </span>
                       <div className="flex items-center gap-1.5 text-xs text-stone-500 font-medium">
-                        <Calendar className="w-3.5 h-3.5 text-[#B8860B]" />
+                        <Calendar className="w-3.5 h-3.5 text-[#075985]" />
                         <span>{pkg.durationNights} Nights • {pkg.durationDays} Days</span>
                       </div>
                     </div>
@@ -334,7 +334,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                         the positioned ancestor the inset-0 resolves against. */}
                     <button
                       onClick={() => onSelectPackage(pkg)}
-                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#154238] group-hover:text-[#0b241e] transition-colors cursor-pointer pt-1 after:absolute after:inset-0 after:content-[''] after:rounded-3xl"
+                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0B4A78] group-hover:text-[#041D33] transition-colors cursor-pointer pt-1 after:absolute after:inset-0 after:content-[''] after:rounded-3xl"
                     >
                       <span>VIEW IN PACKAGES</span>
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
@@ -344,7 +344,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
               ))}
             </div>
           ) : (
-            <div className="bg-white border border-[#E6E0D4] rounded-3xl p-8 text-center space-y-4">
+            <div className="bg-white border border-[#D9E6F0] rounded-3xl p-8 text-center space-y-4">
               <h3 className="text-xl font-serif font-bold text-stone-900">
                 Custom {destination.name} Package Available
               </h3>
@@ -353,7 +353,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
               </p>
               <button
                 onClick={() => onOpenQuoteModal(`Custom Tour Request: ${destination.name}`, destination.name)}
-                className="px-6 py-3 rounded-full bg-[#154238] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#0f322a] transition-colors cursor-pointer"
+                className="px-6 py-3 rounded-full bg-[#0B4A78] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#041D33] transition-colors cursor-pointer"
               >
                 Request Custom Itinerary
               </button>
@@ -369,7 +369,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
 
         {/* Overview & How to Reach */}
         <section className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2 space-y-6 bg-white rounded-3xl p-6 sm:p-8 border border-[#E6E0D4] shadow-xs">
+          <div className="lg:col-span-2 space-y-6 bg-white rounded-3xl p-6 sm:p-8 border border-[#D9E6F0] shadow-xs">
             <h2 className="text-2xl font-serif font-bold text-stone-900">
               Overview & Experience
             </h2>
@@ -378,19 +378,19 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
             </p>
           </div>
 
-          <div className="space-y-4 bg-white rounded-3xl p-6 border border-[#E6E0D4] shadow-xs">
+          <div className="space-y-4 bg-white rounded-3xl p-6 border border-[#D9E6F0] shadow-xs">
             <h3 className="text-lg font-serif font-bold text-stone-900">How to Reach {destination.name}</h3>
             <div className="space-y-3 text-xs sm:text-sm text-stone-700">
               <div className="flex items-start gap-2.5">
-                <Plane className="w-4 h-4 text-[#B8860B] shrink-0 mt-0.5" />
+                <Plane className="w-4 h-4 text-[#075985] shrink-0 mt-0.5" />
                 <div><strong>By Air:</strong> {destination.howToReach.air}</div>
               </div>
               <div className="flex items-start gap-2.5">
-                <Train className="w-4 h-4 text-[#B8860B] shrink-0 mt-0.5" />
+                <Train className="w-4 h-4 text-[#075985] shrink-0 mt-0.5" />
                 <div><strong>By Rail:</strong> {destination.howToReach.rail}</div>
               </div>
               <div className="flex items-start gap-2.5">
-                <Car className="w-4 h-4 text-[#B8860B] shrink-0 mt-0.5" />
+                <Car className="w-4 h-4 text-[#075985] shrink-0 mt-0.5" />
                 <div><strong>By Road:</strong> {destination.howToReach.road}</div>
               </div>
             </div>
@@ -405,10 +405,10 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
             </h2>
             <div className="space-y-3">
               {destination.faqs.map((faq, i) => (
-                <div key={i} className="border border-[#E6E0D4] rounded-2xl overflow-hidden bg-white shadow-xs">
+                <div key={i} className="border border-[#D9E6F0] rounded-2xl overflow-hidden bg-white shadow-xs">
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full p-4 text-left font-serif font-bold text-sm sm:text-base text-stone-900 flex items-center justify-between hover:bg-[#FAF9F6] cursor-pointer"
+                    className="w-full p-4 text-left font-serif font-bold text-sm sm:text-base text-stone-900 flex items-center justify-between hover:bg-[#F2F8FC] cursor-pointer"
                   >
                     <span>{faq.question}</span>
                     {openFaq === i ? (
@@ -418,7 +418,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
                     )}
                   </button>
                   {openFaq === i && (
-                    <div className="p-4 pt-2 text-xs sm:text-sm text-stone-600 border-t border-[#E6E0D4] font-normal leading-relaxed">
+                    <div className="p-4 pt-2 text-xs sm:text-sm text-stone-600 border-t border-[#D9E6F0] font-normal leading-relaxed">
                       {faq.answer}
                     </div>
                   )}
@@ -433,7 +433,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
             <button
               onClick={() => onStartAIPlan(destination.name)}
-              className="w-full py-4 px-6 rounded-full bg-[#154238] hover:bg-[#0e2f28] text-white font-bold text-base tracking-wide shadow-lg transition-all flex items-center justify-center gap-2.5 cursor-pointer text-center"
+              className="w-full py-4 px-6 rounded-full bg-[#0B4A78] hover:bg-[#041D33] text-white font-bold text-base tracking-wide shadow-lg transition-all flex items-center justify-center gap-2.5 cursor-pointer text-center"
             >
               <AIIcon className="w-5 h-5 text-white shrink-0" />
               <span>Plan {destination.name} with AI</span>
@@ -441,7 +441,7 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({
 
             <button
               onClick={() => onOpenQuoteModal(`Booking Request for ${destination.name}`, destination.name)}
-              className="w-full py-4 px-6 rounded-full bg-[#D4820A] hover:bg-[#b87007] text-white font-bold text-base tracking-wide shadow-lg transition-all flex items-center justify-center gap-2.5 cursor-pointer text-center"
+              className="w-full py-4 px-6 rounded-full bg-[#FF8534] hover:bg-[#C2410C] text-white font-bold text-base tracking-wide shadow-lg transition-all flex items-center justify-center gap-2.5 cursor-pointer text-center"
             >
               <span>Book Now</span>
               <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">
