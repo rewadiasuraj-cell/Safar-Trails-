@@ -1,0 +1,96 @@
+{
+  "id": "pkg-udaipur-3d2n",
+  "slug": "udaipur-tour-package-city-palace-lake-pichola-3d2n",
+  "displayOrder": 5,
+  "title": "Udaipur Tour Package",
+  "destination": "Udaipur, Rajasthan",
+  "destinationSlug": "rajasthan",
+  "state": "Rajasthan",
+  "durationDays": 3,
+  "durationNights": 2,
+  "startingPrice": 7999,
+  "tripType": [
+    "Couple",
+    "Family",
+    "Solo",
+    "Weekend"
+  ],
+  "hotelCategory": "Budget / 3★",
+  "ratings": 0,
+  "reviewCount": 0,
+  "startingCity": "Delhi",
+  "bestFor": "Couples, Small Families, Solo Travellers & First-Time Visitors",
+  "heroImage": "https://images.unsplash.com/photo-1609920658906-8223bd289001?q=80&w=1200&auto=format&fit=crop",
+  "galleryImages": [
+    "https://images.unsplash.com/photo-1609920658906-8223bd289001?q=80&w=800&auto=format&fit=crop"
+  ],
+  "overview": "Looking for a budget-friendly escape to Rajasthan? Safar Trails brings you an exclusive Udaipur tour package at just ₹7,999 for 2 nights and 3 days, customised for travellers who want the full City of Lakes experience without stretching their wallet. This Udaipur tour package covers comfortable hotel stays, guided sightseeing, and hassle-free transfers — everything bundled into one simple price by a team that knows Udaipur inside out. Udaipur, often called the “Venice of the East,” is one of India's most romantic and photogenic cities. You don't have to worry about planning routes, booking hotels separately, or negotiating with local cabs — everything is arranged so you can simply land, relax, and enjoy.",
+  "highlights": [
+    "City Palace – A blend of Rajasthani and Mughal architecture overlooking Lake Pichola",
+    "Lake Pichola – Best experienced with a sunset boat ride",
+    "Fateh Sagar Lake – Popular for its peaceful surroundings and viewpoints",
+    "Sajjangarh (Monsoon Palace) – Offers the best sunset view in the city",
+    "Saheliyon Ki Bari – A beautifully landscaped garden with fountains",
+    "Jagdish Temple, Gangaur Ghat & Udaipur Local Market"
+  ],
+  "inclusions": [
+    "2 nights' accommodation in a comfortable budget/3-star hotel",
+    "Daily breakfast",
+    "Airport/railway station pickup and drop",
+    "All local sightseeing by private vehicle",
+    "Dedicated Safar Trails support throughout your trip",
+    "All applicable taxes"
+  ],
+  "exclusions": [
+    "Flight or train tickets",
+    "Entry tickets to monuments and attractions",
+    "Boating and adventure activities",
+    "Personal expenses and shopping"
+  ],
+  "itinerary": [
+    {
+      "dayNumber": 1,
+      "title": "Delhi → Udaipur | Arrival & Lake Pichola",
+      "location": "Udaipur",
+      "description": "Morning departure from Delhi by private vehicle, with an en-route breakfast/refreshment break. Arrival in Udaipur and hotel check-in. In the evening, visit Lake Pichola, Gangaur Ghat, the Old City and the local market.",
+      "stay": "Hotel in Udaipur",
+      "mealsIncluded": "Dinner",
+      "transfers": "Private Vehicle"
+    },
+    {
+      "dayNumber": 2,
+      "title": "Udaipur Sightseeing",
+      "location": "Udaipur",
+      "description": "After breakfast at the hotel, visit City Palace, Jagdish Temple, Saheliyon Ki Bari and Fateh Sagar Lake. After a lunch break, visit Sajjangarh (Monsoon Palace), subject to local conditions. The evening is free for shopping, café hopping or leisure. Optional: Lake Pichola boat ride, subject to availability and charges.",
+      "stay": "Hotel in Udaipur",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private Vehicle"
+    },
+    {
+      "dayNumber": 3,
+      "title": "Udaipur → Delhi | Departure",
+      "location": "Udaipur – Delhi",
+      "description": "Breakfast and hotel check-out. Last-minute shopping or an Old City walk if time permits, then departure for Delhi by private vehicle with en-route refreshment breaks. Arrival in Delhi by evening/night, subject to traffic and road conditions.",
+      "stay": "—",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private Vehicle"
+    }
+  ],
+  "season": "October to March",
+  "seoTitle": "Affordable Udaipur Tour Package with Hotels & Sightseeing",
+  "seoDescription": "Explore Udaipur with an affordable tour package including comfortable hotels, sightseeing, and memorable experiences. Plan your perfect Udaipur trip today.",
+  "faqs": [
+    {
+      "question": "Is this Udaipur tour package customizable?",
+      "answer": "Yes, Safar Trails can adjust the itinerary or hotel category on request."
+    },
+    {
+      "question": "Does the package include flight or train tickets?",
+      "answer": "No, the ₹7,999 price covers local stay, transfers, and sightseeing only. Airport/station pickup and drop are included once you arrive."
+    },
+    {
+      "question": "Is this Udaipur tour package suitable for families with kids?",
+      "answer": "Absolutely — the itinerary is relaxed and includes family-friendly attractions like gardens and lakes."
+    }
+  ]
+}
