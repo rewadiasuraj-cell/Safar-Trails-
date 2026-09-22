@@ -133,9 +133,30 @@ export function packageGallery(pkg: Package): Shot[] {
   for (const g of pkg.galleryImages || []) push(g, `${pkg.destination} — ${pkg.title}`);
   for (const a of onThisTrip) push(a.image, `${a.name} — ${a.destination}`, a.name);
 
-  // Only if the trip is still thin: the destination's own photograph.
+  // Only if the trip is still thin: the destination's own photograph - and only
+  // from a destination the trip itself is about.
+  //
+  // Two things disqualify a destination here that do not disqualify it above.
+  // `onRoute` includes the package's destinationSlug, which is a filing
+  // decision rather than a claim about the route: the Nainital trip is filed
+  // under Uttarakhand, and Uttarakhand's photograph is Rishikesh. And the
+  // `destination` label carries the state as a suffix - "Nainital,
+  // Uttarakhand" - so matching on it lets the state back in through the side
+  // door. Matching on the title and the itinerary's own stops is the test that
+  // actually means "this trip goes there": a Kerala or Shimla package passes
+  // it, the Nainital one does not, and its page stays photo-thin until a real
+  // Nainital photograph arrives rather than filling with a temple 300km away.
+  const subject = [
+    pkg.title,
+    ...(pkg.itinerary || []).flatMap((d) => [d.location || '', d.title || '']),
+  ]
+    .join(' | ')
+    .toLowerCase();
+
   if (shots.length < 4) {
     for (const d of onRoute) {
+      const name = d.name.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      if (!new RegExp(`\\b${name}\\b`).test(subject)) continue;
       push(d.heroImage, d.name, d.name);
       push(d.cardImage, d.name, d.name);
     }
