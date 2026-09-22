@@ -158,9 +158,18 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
 
+                {/* Duration on the left, the badge opposite it. Orange,
+                    because nothing else on a card is, and on cta-ink rather
+                    than white - white on this orange is 2.43:1. */}
                 <span className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/95 text-stone-900 leading-none">
                   {pkg.durationDays}D / {pkg.durationNights}N
                 </span>
+
+                {pkg.badge && (
+                  <span className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-warm-orange text-cta-ink leading-none shadow-[0_6px_18px_-6px_rgba(255,133,52,0.9)]">
+                    {pkg.badge}
+                  </span>
+                )}
 
                 <div className="absolute inset-x-2.5 bottom-2.5 sm:inset-x-4 sm:bottom-4">
                   <h3 className="font-serif text-[13px] sm:text-base font-bold text-white tracking-tight leading-snug line-clamp-2">
@@ -302,6 +311,14 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
                       {pkg.durationDays}D / {pkg.durationNights}N
                     </span>
                   </div>
+
+                  {/* On its own line rather than squeezed into the row above,
+                      which already carries the destination and the duration. */}
+                  {pkg.badge && (
+                    <span className="absolute top-12 left-3.5 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-warm-orange text-cta-ink shadow-[0_6px_18px_-6px_rgba(255,133,52,0.9)]">
+                      {pkg.badge}
+                    </span>
+                  )}
 
                   {/* Best for */}
                   <div className="absolute bottom-3 left-3.5 right-3.5 flex items-center text-white text-xs">

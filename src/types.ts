@@ -133,6 +133,20 @@ export interface Package {
    * be occupying the first card.
    */
   displayOrder?: number;
+
+  /**
+   * A short label on the card and the detail hero, e.g. "Trending No.1".
+   *
+   * Free text and set per package in content/, because the thing worth
+   * shouting about changes: it is the season's bestseller in one month and a
+   * new launch the next, and neither is worth a code change. Deliberately not
+   * a boolean called `isTrending` - that would bake one wording into the
+   * components and leave the copy stranded where it cannot be edited.
+   *
+   * Only one package should carry one at a time. A badge on every card is a
+   * badge on none.
+   */
+  badge?: string;
 }
 
 export interface DestinationHighlight {

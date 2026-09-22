@@ -126,6 +126,11 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
             Back button at 390px: unconstrained, the row ran back across the button
             and covered it, so Back could not be read or tapped on a phone. */}
         <div className="absolute top-20 right-4 sm:top-24 sm:right-6 max-w-[55%] sm:max-w-none flex flex-wrap justify-end items-center gap-2 z-10">
+          {packageData.badge && (
+            <span className="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-warm-orange text-cta-ink shadow-[0_6px_18px_-6px_rgba(255,133,52,0.9)]">
+              {packageData.badge}
+            </span>
+          )}
           <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-black/70 text-white shadow-xs border border-white/20">
             {packageData.durationDays} Days / {packageData.durationNights} Nights
           </span>
@@ -154,6 +159,15 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
             onChange={(e) => setSelectedHotelTier(e.target.value)}
             className="w-full p-2.5 rounded-xl border border-stone-200 bg-white font-bold text-stone-900 focus:border-deep-emerald focus:outline-none"
           >
+            {/* "Budget / 3★" is a real hotelCategory - the two ₹7,999 trips use
+                it - and it was missing here. The select fell back to showing
+                "Standard 3★ Hotels" while the state, the price and the quote
+                summary all still said Budget, and once you moved off it there
+                was no way back. It is listed only for the packages sold at
+                that tier, so nothing else grows an option it does not offer. */}
+            {packageData.hotelCategory === 'Budget / 3★' && (
+              <option value="Budget / 3★">Budget / 3★ Hotels</option>
+            )}
             <option value="Standard 3★">Standard 3★ Hotels</option>
             <option value="Deluxe 4★">Deluxe 4★ Resorts</option>
             <option value="Luxury 5★">Luxury 5★ / Heritage</option>

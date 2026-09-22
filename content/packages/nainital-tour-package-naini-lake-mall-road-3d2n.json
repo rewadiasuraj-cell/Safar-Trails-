@@ -1,0 +1,115 @@
+{
+  "id": "pkg-nainital-3d2n",
+  "slug": "nainital-tour-package-naini-lake-mall-road-3d2n",
+  "displayOrder": 1,
+  "badge": "Trending No.1",
+  "title": "Nainital Tour Package",
+  "destination": "Nainital, Uttarakhand",
+  "destinationSlug": "uttarakhand",
+  "state": "Uttarakhand",
+  "durationDays": 3,
+  "durationNights": 2,
+  "startingPrice": 7999,
+  "tripType": [
+    "Couple",
+    "Family",
+    "Friends",
+    "Weekend"
+  ],
+  "hotelCategory": "Budget / 3★",
+  "ratings": 0,
+  "reviewCount": 0,
+  "startingCity": "Nainital",
+  "bestFor": "Couples, Families, Friends & First-Time Hill Travellers",
+  "heroImage": "/content/packages/nainital-tour-package-naini-lake-mall-road-3d2n/hero.jpg",
+  "galleryImages": [
+    "/content/packages/nainital-tour-package-naini-lake-mall-road-3d2n/hero.jpg"
+  ],
+  "overview": "Planning a quick hill trip without burning a hole in your pocket? Safar Trails has you covered. This Nainital tour package is 3 days and 2 nights at ₹7,999 per person, with hotel stay and private cab both included. No running around for bookings, no last-minute tension — pack your bags and we handle the rest. Two nights in a comfortable hotel with breakfast, a private cab for your pickup, drop and all sightseeing, every applicable tax already in the price, and a support team on the phone for the whole trip.",
+  "highlights": [
+    "Mall Road — evening chai, shopping and Naini Lake views",
+    "Naini Lake boating — the shikara ride the town is named for",
+    "Naina Devi Temple — on the northern shore of the lake",
+    "Ropeway to Snow View Point — the Himalayan skyline on a clear day",
+    "Eco Cave Gardens — a short, easy stop the kids tend to enjoy most",
+    "Tiffin Top — the viewpoint above the town, reached by cab or pony"
+  ],
+  "inclusions": [
+    "2 nights' hotel stay with daily breakfast",
+    "Private cab for pickup, drop and all sightseeing",
+    "All applicable taxes",
+    "Safar Trails support team available throughout your trip"
+  ],
+  "exclusions": [
+    "Lunch and dinner",
+    "Entry tickets — boating, ropeway and similar activities",
+    "Personal expenses and shopping"
+  ],
+  "itinerary": [
+    {
+      "dayNumber": 1,
+      "title": "Reach Nainital",
+      "location": "Nainital",
+      "description": "Arrive in Nainital and check in at the hotel. Freshen up, then head straight to Mall Road for evening chai, some shopping and the lake views it is known for. A simple, relaxed start to the trip.",
+      "morningActivity": "Arrival and hotel check-in",
+      "afternoonActivity": "Rest and freshen up",
+      "eveningActivity": "Mall Road — chai, shopping and Naini Lake views",
+      "stay": "Hotel in Nainital",
+      "mealsIncluded": "—",
+      "transfers": "Private Cab"
+    },
+    {
+      "dayNumber": 2,
+      "title": "Sightseeing Day",
+      "location": "Nainital",
+      "description": "A full day out with your cab: Naini Lake boating, Naina Devi Temple, the ropeway to Snow View Point, Eco Cave Gardens and Tiffin Top. The evening is free — do what you like. Boating and ropeway tickets are paid at the gate.",
+      "morningActivity": "Naini Lake boating and Naina Devi Temple",
+      "afternoonActivity": "Ropeway to Snow View Point, Eco Cave Gardens and Tiffin Top",
+      "eveningActivity": "Free — Mall Road, a café, or an early night",
+      "stay": "Hotel in Nainital",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private Cab"
+    },
+    {
+      "dayNumber": 3,
+      "title": "Head Back Home",
+      "location": "Nainital",
+      "description": "Breakfast, hotel check-out, and the drop as scheduled — home with a phone full of photos and a mind full of good memories.",
+      "morningActivity": "Breakfast and check-out",
+      "afternoonActivity": "Departure drop",
+      "eveningActivity": "—",
+      "stay": "—",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private Cab"
+    }
+  ],
+  "season": "March to June & September to November",
+  "seoTitle": "Nainital Tour Package 3D/2N ₹7,999 ★ Hotel + Cab | Safar Trails",
+  "seoDescription": "Nainital trip in your budget? ✔ 3 Days 2 Nights @ ₹7,999 only. Hotel + Cab included. Book with Safar Trails – Travel With Trust. Call now!",
+  "faqs": [
+    {
+      "question": "What exactly does ₹7,999 per person cover?",
+      "answer": "Two nights' hotel stay with daily breakfast, a private cab for your pickup, drop and all sightseeing, and every applicable tax. Lunch and dinner, entry tickets for boating and the ropeway, and personal shopping are not included."
+    },
+    {
+      "question": "Is travel from my city to Nainital included?",
+      "answer": "The cab covers your pickup, drop and sightseeing for this trip. If you also need transport from Delhi, Kathgodam or anywhere else, tell us where you are starting from and we will add it to your quote before you pay anything."
+    },
+    {
+      "question": "Can the itinerary be changed?",
+      "answer": "Yes. The three days above are what most people want on a first Nainital trip, but the hotel category, the sightseeing list and the number of nights can all be adjusted. Tell us what you would rather do."
+    },
+    {
+      "question": "Is this suitable for families with children or elderly parents?",
+      "answer": "Yes. The sightseeing is spread across one relaxed day, the drives are short, and the ropeway means Snow View Point needs no climbing. Tiffin Top can be reached by cab if a pony ride is not wanted."
+    },
+    {
+      "question": "When is the best time to visit Nainital?",
+      "answer": "March to June is the main season, when the plains are hot and the lake town is not. September to November is quieter, clearer and better for the Himalayan views from Snow View Point. December to February is cold, and snow is possible but never guaranteed."
+    },
+    {
+      "question": "Is the price the final amount?",
+      "answer": "The ₹7,999 is per person on the stated inclusions, and all applicable taxes are already in it. Anything you add — a better hotel, extra nights, transport from your city — is quoted before you confirm. What we quote is what you pay."
+    }
+  ]
+}
