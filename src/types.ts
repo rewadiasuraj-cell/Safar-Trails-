@@ -67,7 +67,17 @@ export interface Package {
   startingCity: string;
   bestFor: string;
   heroImage: string;
-  galleryImages: string[];
+  /**
+   * Photographs of the trip, beyond the hero.
+   *
+   * A plain URL where the picture needs no explanation, or
+   * `{ src, caption }` where it does. The caption exists for the honest
+   * awkward case: the Nainital trip has a photograph of Kainchi Dham, which
+   * is near the town and genuinely worth seeing but is not on the three-day
+   * itinerary. Showing it unlabelled implies it is included; captioning it
+   * says what it actually is.
+   */
+  galleryImages: (string | { src: string; caption?: string })[];
   overview: string;
   highlights: string[];
   inclusions: string[];

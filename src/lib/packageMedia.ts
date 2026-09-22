@@ -129,8 +129,24 @@ export function packageGallery(pkg: Package): Shot[] {
     shots.push({ src: upscale(src), alt: known || alt, caption: caption || known });
   };
 
-  push(pkg.heroImage, pkg.title);
-  for (const g of pkg.galleryImages || []) push(g, `${pkg.destination} — ${pkg.title}`);
+  // The hero is skipped when the package has its own folder of photographs and
+  // the hero came out of it. That is the Nainital case: the hero is a wide crop
+  // of naini-lake.jpg made for a very wide strip, and pushing both would open
+  // the gallery with the same view twice, once trimmed. Where a package has no
+  // folder of its own - the Unsplash ones - the hero is still the first shot.
+  const dirOf = (u: string) => u.split('?')[0].replace(/\/[^/]*$/, '');
+  const heroDir = dirOf(pkg.heroImage || '');
+  const heroIsFromOwnFolder =
+    !!heroDir &&
+    (pkg.galleryImages || []).some((g) => dirOf(typeof g === 'string' ? g : g.src) === heroDir);
+
+  if (!heroIsFromOwnFolder) push(pkg.heroImage, pkg.title);
+
+  for (const g of pkg.galleryImages || []) {
+    const src = typeof g === 'string' ? g : g.src;
+    const caption = typeof g === 'string' ? undefined : g.caption;
+    push(src, caption || `${pkg.destination} — ${pkg.title}`, caption);
+  }
   for (const a of onThisTrip) push(a.image, `${a.name} — ${a.destination}`, a.name);
 
   // Only if the trip is still thin: the destination's own photograph - and only

@@ -64,6 +64,13 @@ export const PackageGallery: React.FC<PackageGalleryProps> = ({ shots, destinati
   const tiles = rest.slice(0, 4);
   const current = open === null ? null : shots[open];
 
+  // The grid has to close, whatever the count. The lead photo always takes two
+  // columns and both rows; the rest fill what is left, so the number of columns
+  // follows the number of tiles rather than being fixed at four. With three
+  // tiles that leaves one cell over, and the last tile takes it.
+  const cols = tiles.length <= 2 ? 'sm:grid-cols-3' : 'sm:grid-cols-4';
+  const wideLast = tiles.length === 3;
+
   return (
     <section aria-labelledby="package-gallery-heading" className="w-full bg-white border-b border-stone-200">
       <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
@@ -75,7 +82,7 @@ export const PackageGallery: React.FC<PackageGalleryProps> = ({ shots, destinati
             when the count varies between three and eight. Below sm it is a
             scroll-snap strip: four tiles stacked on a phone is a screen and a
             half of pictures before the itinerary starts. */}
-        <div className="sm:grid sm:grid-cols-4 sm:grid-rows-2 sm:gap-2.5 sm:h-[420px] flex gap-2.5 overflow-x-auto scrollbar-none snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0 sm:overflow-visible">
+        <div className={`sm:grid ${cols} sm:grid-rows-2 sm:gap-2.5 sm:h-[420px] flex gap-2.5 overflow-x-auto scrollbar-none snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0 sm:overflow-visible`}>
           <button
             type="button"
             onClick={() => show(0)}
@@ -109,7 +116,9 @@ export const PackageGallery: React.FC<PackageGalleryProps> = ({ shots, destinati
               key={shot.src}
               type="button"
               onClick={() => show(i + 1)}
-              className="group relative shrink-0 w-[62vw] h-56 sm:w-auto sm:h-auto rounded-2xl overflow-hidden snap-start cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-deep-emerald"
+              className={`group relative shrink-0 w-[62vw] h-56 sm:w-auto sm:h-auto rounded-2xl overflow-hidden snap-start cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-deep-emerald ${
+                wideLast && i === tiles.length - 1 ? 'sm:col-span-2' : ''
+              }`}
             >
               <img
                 src={shot.src}
@@ -137,10 +146,14 @@ export const PackageGallery: React.FC<PackageGalleryProps> = ({ shots, destinati
           ))}
         </div>
 
-        {/* Said plainly, because it is what these are. They are photographs of
-            the places on this itinerary, not of the hotel you will be given. */}
+        {/* Said plainly, because it is what these are: pictures of the place,
+            not of the hotel you will be given. It reads "and around" rather
+            than "on this itinerary" because a package may carry a photograph
+            of something nearby and worth seeing that the days do not cover -
+            Kainchi Dham on the Nainital trip - and the caption on that photo,
+            not this line, is where it says so. */}
         <p className="mt-3 text-[11px] sm:text-xs text-stone-500">
-          Photos of places on this itinerary in {destination}. Your exact hotel and room
+          Photos from {destination} and the area around it. Your exact hotel and room
           photos come with the quote.
         </p>
       </div>

@@ -23,7 +23,15 @@
   "bestFor": "Couples, Families, Friends & First-Time Hill Travellers",
   "heroImage": "/content/packages/nainital-tour-package-naini-lake-mall-road-3d2n/hero.jpg",
   "galleryImages": [
-    "/content/packages/nainital-tour-package-naini-lake-mall-road-3d2n/1.jpg"
+    {
+      "src": "/content/packages/nainital-tour-package-naini-lake-mall-road-3d2n/naini-lake.jpg",
+      "caption": "Naini Lake"
+    },
+    {
+      "src": "/content/packages/nainital-tour-package-naini-lake-mall-road-3d2n/kainchi-dham.jpg",
+      "caption": "Kainchi Dham — near Nainital, can be added on request"
+    },
+    "/content/packages/nainital-tour-package-naini-lake-mall-road-3d2n/lake-valley-view.jpg"
   ],
   "overview": "Planning a quick hill trip without burning a hole in your pocket? Safar Trails has you covered. This Nainital tour package is 3 days and 2 nights at ₹7,999 per person, with hotel stay and private cab both included. No running around for bookings, no last-minute tension — pack your bags and we handle the rest. Two nights in a comfortable hotel with breakfast, a private cab for your pickup, drop and all sightseeing, every applicable tax already in the price, and a support team on the phone for the whole trip.",
   "highlights": [
