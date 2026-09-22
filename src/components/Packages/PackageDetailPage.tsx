@@ -14,6 +14,8 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { openWhatsApp } from '../../lib/contact';
+import { packageGallery } from '../../lib/packageMedia';
+import { PackageGallery } from './PackageGallery';
 
 interface PackageDetailPageProps {
   onStartAIPlan: (promptText?: string, destinationName?: string) => void;
@@ -93,6 +95,8 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
     navigate('/');
   };
 
+  const gallery = packageGallery(packageData);
+
   return (
     <div className="w-full min-h-screen bg-white flex flex-col">
       {/* Hero Banner */}
@@ -111,7 +115,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
         {/* Back Button */}
         <button
           onClick={handleBack}
-          className="absolute top-20 left-4 sm:top-24 sm:left-6 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white/90 hover:bg-white text-black text-xs font-bold uppercase tracking-wide shadow-md cursor-pointer z-10"
+          className="absolute top-20 left-4 sm:top-24 sm:left-6 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white/90 hover:bg-white text-stone-900 text-xs font-bold uppercase tracking-wide shadow-md cursor-pointer z-10"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Back</span>
@@ -135,7 +139,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
           <h1 className="text-2xl sm:text-4xl font-serif font-bold tracking-tight leading-tight">
             {packageData.title}
           </h1>
-          <p className="text-xs sm:text-sm text-stone-300 mt-1 line-clamp-2 font-normal max-w-2xl">
+          <p className="text-xs sm:text-sm text-white mt-1 line-clamp-2 font-normal max-w-2xl">
             {packageData.overview}
           </p>
         </div>
@@ -148,7 +152,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
           <select
             value={selectedHotelTier}
             onChange={(e) => setSelectedHotelTier(e.target.value)}
-            className="w-full p-2.5 rounded-xl border border-stone-200 bg-white font-bold text-black focus:border-black focus:outline-none"
+            className="w-full p-2.5 rounded-xl border border-stone-200 bg-white font-bold text-stone-900 focus:border-deep-emerald focus:outline-none"
           >
             <option value="Standard 3★">Standard 3★ Hotels</option>
             <option value="Deluxe 4★">Deluxe 4★ Resorts</option>
@@ -161,7 +165,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
           <select
             value={selectedVehicle}
             onChange={(e) => setSelectedVehicle(e.target.value)}
-            className="w-full p-2.5 rounded-xl border border-stone-200 bg-white font-bold text-black focus:border-black focus:outline-none"
+            className="w-full p-2.5 rounded-xl border border-stone-200 bg-white font-bold text-stone-900 focus:border-deep-emerald focus:outline-none"
           >
             <option value="Private Sedan (Dzire/Etios)">Private AC Sedan</option>
             <option value="Private SUV (Innova/Crysta)">Private Innova Crysta (+₹1,800/pkg)</option>
@@ -172,7 +176,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
         <div className="bg-white p-2.5 rounded-xl border border-stone-200 flex items-center justify-between shadow-xs">
           <div>
             <span className="text-[10px] font-bold uppercase tracking-widest text-stone-400 block">Est. Starting Cost</span>
-            <span className="text-base font-extrabold text-black">
+            <span className="text-base font-extrabold text-stone-900">
               ₹{estimatedPerPersonPrice.toLocaleString('en-IN')} <span className="text-[10px] font-normal text-stone-500">/ person {GST_NOTE}</span>
             </span>
           </div>
@@ -180,10 +184,18 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
             <span className="text-[10px] text-stone-400 block uppercase tracking-wider">Total ({travellersCount} Guests)</span>
             {/* One figure, because it is now the payable one. This used to print
                 the pre-tax total and a second "with GST" line underneath. */}
-            <span className="text-xs font-bold text-black">₹{estimatedTotalPrice.toLocaleString('en-IN')}</span>
+            <span className="text-xs font-bold text-stone-900">₹{estimatedTotalPrice.toLocaleString('en-IN')}</span>
           </div>
         </div>
       </div>
+
+      {/* Photographs, above the tabs.
+          The page used to be a hero image and then three tabs of text, and that
+          is what buyers were reacting to. It renders nothing when a package has
+          fewer than three distinct photographs, which is still true of six of
+          them - padding that out with the same picture twice would be worse
+          than the gap. */}
+      <PackageGallery shots={gallery} destination={packageData.destination} />
 
       {/* Tabs */}
       <div className="flex border-b border-stone-200 px-4 sm:px-6 bg-white flex-shrink-0 sticky top-16 sm:top-20 z-10 overflow-x-auto">
@@ -191,8 +203,8 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
           onClick={() => setActiveTab('itinerary')}
           className={`py-3 px-3 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap ${
             activeTab === 'itinerary'
-              ? 'border-black text-black'
-              : 'border-transparent text-stone-400 hover:text-black'
+              ? 'border-deep-emerald text-midnight-blue'
+              : 'border-transparent text-stone-500 hover:text-midnight-blue'
           }`}
         >
           Day-by-Day Itinerary ({packageData.itinerary.length} Days)
@@ -201,8 +213,8 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
           onClick={() => setActiveTab('inclusions')}
           className={`py-3 px-3 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap ${
             activeTab === 'inclusions'
-              ? 'border-black text-black'
-              : 'border-transparent text-stone-400 hover:text-black'
+              ? 'border-deep-emerald text-midnight-blue'
+              : 'border-transparent text-stone-500 hover:text-midnight-blue'
           }`}
         >
           Inclusions & Exclusions
@@ -211,8 +223,8 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
           onClick={() => setActiveTab('stays')}
           className={`py-3 px-3 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap ${
             activeTab === 'stays'
-              ? 'border-black text-black'
-              : 'border-transparent text-stone-400 hover:text-black'
+              ? 'border-deep-emerald text-midnight-blue'
+              : 'border-transparent text-stone-500 hover:text-midnight-blue'
           }`}
         >
           Stay & Vehicle Details
@@ -235,11 +247,11 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
                     className="w-full p-4 text-left flex items-center justify-between bg-[#F2F8FC] hover:bg-stone-100 transition-colors cursor-pointer"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center font-bold text-xs shrink-0">
+                      <span className="w-7 h-7 rounded-full bg-deep-emerald text-white flex items-center justify-center font-bold text-xs shrink-0">
                         {day.dayNumber}
                       </span>
                       <div>
-                        <h3 className="text-sm font-serif font-bold text-black">{day.title}</h3>
+                        <h3 className="text-sm font-serif font-bold text-stone-900">{day.title}</h3>
                         <span className="text-xs text-stone-500 font-normal">{day.location}</span>
                       </div>
                     </div>
@@ -248,24 +260,35 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
 
                   {isExpanded && (
                     <div className="p-4 pt-2 text-xs sm:text-sm text-stone-700 bg-white border-t border-stone-100 space-y-3">
+                      {/* Two packages carry a photograph per day and neither
+                          ever showed it. Lazy, because only one day is open at
+                          a time and the rest are below the fold. */}
+                      {day.image && (
+                        <img
+                          src={day.image}
+                          alt={`${day.title} — ${day.location}`}
+                          loading="lazy"
+                          className="w-full h-44 sm:h-56 object-cover rounded-xl"
+                        />
+                      )}
                       <p className="leading-relaxed text-stone-600 font-normal">{day.description}</p>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 bg-stone-50 p-3 rounded-xl text-xs">
                         <div>
-                          <span className="font-bold text-black block">🌅 Morning:</span>
+                          <span className="font-bold text-stone-900 block">🌅 Morning:</span>
                           <span className="text-stone-600">{day.morningActivity}</span>
                         </div>
                         <div>
-                          <span className="font-bold text-black block">☀️ Afternoon:</span>
+                          <span className="font-bold text-stone-900 block">☀️ Afternoon:</span>
                           <span className="text-stone-600">{day.afternoonActivity}</span>
                         </div>
                         <div>
-                          <span className="font-bold text-black block">🌙 Evening:</span>
+                          <span className="font-bold text-stone-900 block">🌙 Evening:</span>
                           <span className="text-stone-600">{day.eveningActivity}</span>
                         </div>
                       </div>
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-xs text-stone-500 pt-2 border-t border-stone-100">
-                        <span>🏨 Stay: <strong className="text-black">{day.stay}</strong></span>
-                        <span>🍽️ Meals: <strong className="text-black">{day.mealsIncluded}</strong></span>
+                        <span>🏨 Stay: <strong className="text-stone-900">{day.stay}</strong></span>
+                        <span>🍽️ Meals: <strong className="text-stone-900">{day.mealsIncluded}</strong></span>
                       </div>
                     </div>
                   )}
@@ -312,19 +335,19 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
         {activeTab === 'stays' && (
           <div className="space-y-4 text-xs sm:text-sm text-stone-700">
             <div className="p-4 rounded-2xl bg-[#F2F8FC] border border-stone-200">
-              <h3 className="font-serif font-bold text-black mb-1">Handpicked Stays & Houseboats</h3>
+              <h3 className="font-serif font-bold text-stone-900 mb-1">Handpicked Stays & Houseboats</h3>
               <p className="text-stone-600 leading-relaxed font-normal">
                 We partner directly with boutique properties rated 4.5+ on cleanliness and hospitality. Central heating / electric blankets provided in high altitude mountain stays.
               </p>
             </div>
             <div className="p-4 rounded-2xl bg-[#F2F8FC] border border-stone-200">
-              <h3 className="font-serif font-bold text-black mb-1">Dedicated Chauffeur & Sanitized Fleet</h3>
+              <h3 className="font-serif font-bold text-stone-900 mb-1">Dedicated Chauffeur & Sanitized Fleet</h3>
               <p className="text-stone-600 leading-relaxed font-normal">
                 Private commercial tourist cab with experienced mountain driver. Includes all fuel, toll taxes, parking fees, driver night allowances, and state permits.
               </p>
             </div>
             <div className="p-4 rounded-2xl bg-[#F2F8FC] border border-stone-200">
-              <h3 className="font-serif font-bold text-black mb-1">Selected Configuration</h3>
+              <h3 className="font-serif font-bold text-stone-900 mb-1">Selected Configuration</h3>
               <div className="flex items-center gap-2 text-stone-600">
                 <Calendar className="w-4 h-4 text-stone-400 shrink-0" />
                 <span>{selectedHotelTier} stay with {selectedVehicle} for {travellersCount} travellers.</span>
@@ -351,14 +374,14 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
           <div className="mx-auto w-full max-w-3xl">
             <h2
               id="package-faqs-heading"
-              className="font-serif text-xl sm:text-2xl font-bold text-black tracking-tight"
+              className="font-serif text-xl sm:text-2xl font-bold text-stone-900 tracking-tight"
             >
               Common questions
             </h2>
             <div className="mt-4 divide-y divide-stone-200 border-y border-stone-200">
               {packageData.faqs.map((faq) => (
                 <details key={faq.question} className="group py-3">
-                  <summary className="flex cursor-pointer items-start justify-between gap-3 list-none text-sm font-bold text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-luxury-gold">
+                  <summary className="flex cursor-pointer items-start justify-between gap-3 list-none text-sm font-bold text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-deep-emerald">
                     <span>{faq.question}</span>
                     <ChevronDown
                       aria-hidden="true"
@@ -380,9 +403,9 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
         <div className="flex items-center gap-2 w-full sm:w-auto">
           <button
             onClick={() => onStartAIPlan(`Customize ${packageData.title}`, packageData.destination)}
-            className="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-black font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer text-center"
+            className="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-900 font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer text-center"
           >
-            <AIIcon className="w-3.5 h-3.5 text-black shrink-0" />
+            <AIIcon className="w-3.5 h-3.5 text-deep-emerald shrink-0" />
             <span className="whitespace-nowrap">Customize in AI Studio</span>
           </button>
 
@@ -397,10 +420,10 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
 
         <button
           onClick={() => onOpenQuoteModal(formattedQuoteSummary, packageData.destination)}
-          className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-black hover:bg-stone-800 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+          className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-warm-orange hover:brightness-105 text-cta-ink font-black text-xs uppercase tracking-wider shadow-[0_8px_26px_-8px_rgba(255,133,52,0.85)] transition-all flex items-center justify-center gap-2 cursor-pointer"
         >
           <span>Get Exact Final Quote</span>
-          <ArrowRight className="w-3.5 h-3.5 text-luxury-gold" />
+          <ArrowRight className="w-3.5 h-3.5 text-cta-ink" />
         </button>
       </div>
     </div>
