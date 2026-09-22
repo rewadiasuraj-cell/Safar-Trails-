@@ -221,7 +221,12 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
               : 'border-transparent text-stone-500 hover:text-midnight-blue'
           }`}
         >
-          Day-by-Day Itinerary ({packageData.itinerary.length} Days)
+          {/* The count is of days actually written, not of the trip's length.
+              Nine packages carry one day for a six-to-ten-day trip, and a tab
+              that said "7 Days" over one card would be the page lying about
+              its own contents. */}
+          Day-by-Day Itinerary ({packageData.itinerary.length}{' '}
+          {packageData.itinerary.length === 1 ? 'Day' : 'Days'})
         </button>
         <button
           onClick={() => setActiveTab('inclusions')}

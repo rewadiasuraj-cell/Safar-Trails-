@@ -19,9 +19,12 @@
   "reviewCount": 135,
   "startingCity": "Bagdogra (IXB) / NJP",
   "bestFor": "Couples, Families & Nature Enthusiasts",
-  "heroImage": "https://images.unsplash.com/photo-1622308644420-a757e2fa722a?q=80&w=1200&auto=format&fit=crop",
+  "heroImage": "/content/packages/sikkim-explorer/hero.jpg",
   "galleryImages": [
-    "https://images.unsplash.com/photo-1622308644420-a757e2fa722a?q=80&w=800&auto=format&fit=crop"
+    {
+      "src": "/content/packages/sikkim-explorer/tsomgo-lake-yak.jpg",
+      "caption": "Tsomgo Lake"
+    }
   ],
   "overview": "Experience the mystical Eastern Himalayas: Gangtok MG Marg, sacred high-altitude Tsomgo Lake (12,400 ft), Nathula Pass (Indo-China border), Pelling glass skywalk, and Darjeeling tea garden sunrise over Kanchenjunga.",
   "highlights": [
