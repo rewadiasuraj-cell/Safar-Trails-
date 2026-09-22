@@ -348,3 +348,33 @@ table {
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
+
+/* Hero entrance.
+   Plain keyframes rather than GSAP: the hero is the largest contentful paint,
+   and making the first thing a visitor sees wait on a 45 KB JavaScript chunk
+   would trade a real metric for a decorative one. GSAP runs the scroll reveals
+   further down, where the wait costs nothing.
+
+   `both` matters. The element holds the from-state before it starts and the
+   to-state after it ends, so nothing flashes at full opacity first and nothing
+   is left invisible afterwards. The reduce-motion block above collapses the
+   duration to 0.01ms, which lands every one of these on its final state at
+   once - which is exactly the right behaviour, not a side effect. */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.hero-in {
+  animation: hero-rise 0.75s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+.hero-in-1 { animation-delay: 0.08s; }
+.hero-in-2 { animation-delay: 0.2s; }
+.hero-in-3 { animation-delay: 0.42s; }
+.hero-in-4 { animation-delay: 0.56s; }

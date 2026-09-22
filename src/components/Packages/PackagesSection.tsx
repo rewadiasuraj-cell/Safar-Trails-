@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { packagesData } from '../../data/packagesData';
 import { GST_NOTE } from '../../lib/seo/siteConfig';
 import { Package } from '../../types';
+import { Reveal } from '../Reveal';
 import {
   Building2,
   Car,
@@ -140,7 +141,8 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
          * The three filter rows below are for /packages. Filtering a list of
          * four was three rows of controls over one row of results. */}
         {!asPage && (
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
+          // The cards arrive one after another rather than as one block.
+          <Reveal stagger={0.08} className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
             {filteredPackages.slice(0, 4).map((pkg) => (
               <Link
                 key={pkg.id}
@@ -171,7 +173,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
                 </div>
               </Link>
             ))}
-          </div>
+          </Reveal>
         )}
 
         {/* Filter Controls Bar */}

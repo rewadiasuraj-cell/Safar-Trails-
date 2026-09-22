@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { Reveal } from '../Reveal';
 import { destinationsData } from '../../data/destinationsData';
 import { Destination } from '../../types';
 import { AIIcon } from '../AIIcon';
@@ -157,7 +158,9 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
          * deliberately not the orange: orange on this site means "press
          * this", and a price is not a button. */}
         {!asPage && (
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
+          // The cards arrive one after another rather than as one block. Reveal
+          // targets its direct children, which here are the four Links.
+          <Reveal stagger={0.08} className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
             {filteredDestinations.slice(0, 4).map((dest) => (
               <Link
                 key={dest.slug}
@@ -200,7 +203,7 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
                 </div>
               </Link>
             ))}
-          </div>
+          </Reveal>
         )}
 
         {/* Destination Grid — /destinations only; the homepage grid is above. */}

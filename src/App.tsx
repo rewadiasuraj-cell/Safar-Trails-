@@ -7,8 +7,8 @@ import { HeroSection } from './components/HeroSection';
 import { TrustStrip } from './components/TrustStrip';
 import { StickyContactWidget } from './components/StickyContactWidget';
 import { Footer } from './components/Footer';
+import { Reveal } from './components/Reveal';
 import { ContactUs } from './components/ContactUs';
-import { AIPlannerTeaser } from './components/AIPlannerTeaser';
 
 import { Package, TravelGuide } from './types';
 import { initGA, trackPageView } from './lib/analytics';
@@ -185,9 +185,20 @@ export default function App() {
                     one a list that had to be edited by hand every time a
                     destination changed. The grid below does the job. */}
 
-                <AIPlannerTeaser onStartAIPlan={(prompt) => handleStartAIPlan(prompt)} />
+                {/* AIPlannerTeaser was here, carrying the same four fields the
+                    hero now carries. Two identical search bars on one page is
+                    two chances to start the same journey and one more thing to
+                    keep in step; the reference design puts the search in the
+                    hero and that is where it went. */}
 
+                {/* Everything below the fold arrives on scroll. Reveal hides
+                    nothing until GSAP is in hand and nothing that is already on
+                    screen, so the prerendered text is never blank for a crawler
+                    and never blank for a slow connection. */}
                 <Suspense fallback={<SectionSkeleton />}>
+                  {/* No wrapper on these two: their card grids reveal their own
+                      children in sequence, and nesting one reveal inside
+                      another just makes the section wait for itself twice. */}
                   <DestinationsSection
                     onSelectDestination={handleSelectDestination}
                     onPlanDestinationWithAI={(destName) => handleStartAIPlan(undefined, destName)}
@@ -196,7 +207,9 @@ export default function App() {
 
                   {/* One row of travel styles between the two grids, each chip
                       carrying a real filter into /packages. */}
-                  <TravelStylesStrip />
+                  <Reveal>
+                    <TravelStylesStrip />
+                  </Reveal>
 
                   <PackagesSection
                     onSelectPackage={handleSelectPackage}
@@ -214,11 +227,15 @@ export default function App() {
                       homepage prerender too, so nothing is left in the markup
                       that the page does not show. */}
 
-                  <TravelGuidesSection
-                    onSelectGuide={handleSelectGuide}
-                  />
+                  <Reveal>
+                    <TravelGuidesSection
+                      onSelectGuide={handleSelectGuide}
+                    />
+                  </Reveal>
 
-                  <SpecialOfferSection />
+                  <Reveal>
+                    <SpecialOfferSection />
+                  </Reveal>
 
                   {/* TrustSection is no longer here - TrustStrip carries it at
                       the top of the page, and the six-pillar version still
@@ -226,16 +243,24 @@ export default function App() {
                       was the site making its own case twice to the same
                       scroll. */}
 
-                  <ReviewsSection />
+                  <Reveal>
+                    <ReviewsSection />
+                  </Reveal>
 
-                  <FAQSection />
+                  <Reveal>
+                    <FAQSection />
+                  </Reveal>
 
-                  <FinalCTASection
-                    onStartAIPlan={() => handleStartAIPlan()}
-                    onOpenQuoteModal={() => handleOpenQuoteModal()}
-                  />
+                  <Reveal>
+                    <FinalCTASection
+                      onStartAIPlan={() => handleStartAIPlan()}
+                      onOpenQuoteModal={() => handleOpenQuoteModal()}
+                    />
+                  </Reveal>
 
-                  <StatsBand />
+                  <Reveal>
+                    <StatsBand />
+                  </Reveal>
                 </Suspense>
               </>
             }
