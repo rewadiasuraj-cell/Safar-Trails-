@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { TravelGuide, Package } from '../../types';
 import { packagesData } from '../../data/packagesData';
 import { AIIcon } from '../AIIcon';
@@ -235,7 +236,9 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
                   </div>
                   <div className="p-5 space-y-2">
                     <h3 className="font-serif font-bold text-base text-stone-900 line-clamp-2 leading-snug">
-                      {pkg.title}
+                      <Link to={`/tour-packages/${pkg.slug}`} className="hover:text-gold-ink transition-colors">
+                        {pkg.title}
+                      </Link>
                     </h3>
                     <div className="text-sm font-black text-stone-900">
                       ₹{pkg.startingPrice.toLocaleString('en-IN')}{' '}
@@ -246,13 +249,19 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
 
                 {/* 2 CTA Buttons: More Info & Book Now */}
                 <div className="p-5 pt-0 grid grid-cols-2 gap-2.5">
-                  <button
+                  {/* A Link, not a button. The prerendered HTML already
+                      carries this as an <a href> in its "Explore more" nav, so
+                      a crawler followed a route from the guide to the package
+                      that a reader could see but no crawler could follow, and
+                      nobody could middle-click. Same navigation, same look. */}
+                  <Link
+                    to={`/tour-packages/${pkg.slug}`}
                     onClick={() => onSelectPackage(pkg)}
                     className="py-2.5 px-3 rounded-xl border border-stone-200 text-stone-800 font-bold text-xs uppercase tracking-wider hover:border-black hover:bg-stone-50 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                   >
                     <Info className="w-3.5 h-3.5 text-stone-600" />
                     <span>More Info</span>
-                  </button>
+                  </Link>
                   <button
                     onClick={() => onOpenQuoteModal(`Booking Inquiry: ${pkg.title} (${pkg.durationDays}D/${pkg.durationNights}N - ₹${pkg.startingPrice})`)}
                     className="py-2.5 px-3 rounded-xl bg-accent-ink text-white font-bold text-xs uppercase tracking-wider hover:bg-[#9A3412] transition-colors shadow-2xs flex items-center justify-center gap-1.5 cursor-pointer"
