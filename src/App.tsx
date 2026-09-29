@@ -326,9 +326,20 @@ export default function App() {
             }
           />
 
-          {/* ROUTE: SINGLE PACKAGE DETAIL (curated Home-page teaser packages, static data) */}
+          {/* ROUTE: SINGLE PACKAGE DETAIL (supports both /tour-packages/:slug and /packages/:slug) */}
           <Route
             path="/tour-packages/:slug"
+            element={
+              <Suspense fallback={<SectionSkeleton />}>
+                <LocalPackageDetailPage
+                  onStartAIPlan={handleStartAIPlan}
+                  onOpenQuoteModal={handleOpenQuoteModal}
+                />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/packages/:slug"
             element={
               <Suspense fallback={<SectionSkeleton />}>
                 <LocalPackageDetailPage
