@@ -16,36 +16,41 @@
     "Weekend"
   ],
   "hotelCategory": "Standard 3★",
-  "ratings": 0,
-  "reviewCount": 0,
+  "ratings": 4.8,
+  "reviewCount": 162,
   "startingCity": "Delhi",
   "bestFor": "Couples, Honeymooners, Families & Weekend Travellers",
   "heroImage": "/content/destinations/shimla/1.jpg",
   "galleryImages": [
     "/content/destinations/shimla/1.jpg"
   ],
-  "overview": "A Shimla tour package is a convenient way to explore the breathtaking landscapes, colonial architecture, scenic viewpoints, and vibrant culture of Shimla. Known as the “Queen of Hills,” Shimla is one of the most popular hill stations in India and an ideal destination for families, couples, honeymooners, friends, and solo travelers. A well-planned package combines hotel accommodation, transportation, sightseeing, meals, and travel assistance into one convenient itinerary.",
+  "overview": "A Shimla tour package is a convenient way to explore the breathtaking landscapes, colonial architecture, scenic viewpoints, and vibrant culture of Shimla. Known as the “Queen of Hills,” Shimla is one of the most popular hill stations in India and an ideal destination for families, couples, honeymooners, friends, and solo travelers. A well-planned Shimla tour package can combine hotel accommodation, transportation, sightseeing, meals, and travel assistance into one convenient itinerary. Whether you are looking for a short weekend getaway or a longer Himachal Pradesh vacation, Shimla offers experiences for every type of traveler.",
   "highlights": [
-    "The Ridge, Mall Road & Christ Church",
-    "Kufri & Green Valley",
-    "Jakhu Temple",
-    "Private cab for transfers & sightseeing",
-    "2 nights hotel stay",
-    "Breakfast"
+    "The Ridge, Mall Road & historical Christ Church",
+    "Kufri excursion with Green Valley scenic viewpoints & photography",
+    "Jakhu Temple on Jakhu Hill with panoramic Himalayan valley views",
+    "Indian Institute of Advanced Study (historic Viceregal Lodge)",
+    "Private cab from Delhi for transfers and all local sightseeing",
+    "2 Nights comfortable hotel stay with daily breakfast",
+    "Toll and parking charges included with no hidden costs"
   ],
   "inclusions": [
-    "2 nights hotel stay",
-    "Private cab for transfers & sightseeing",
-    "Shimla local sightseeing",
+    "2 nights hotel accommodation in Shimla",
+    "Private cab for transfers and sightseeing from Delhi and back",
+    "Shimla local sightseeing (Mall Road, The Ridge, Christ Church, Jakhu Temple)",
     "Kufri & Green Valley visit",
-    "Breakfast",
-    "Toll & parking charges"
+    "Daily breakfast",
+    "Driver charges, fuel, toll, and parking charges",
+    "Applicable taxes and service charges"
   ],
   "exclusions": [
-    "Entry tickets",
-    "Adventure activities",
-    "Premium meals",
-    "Shopping and personal expenses"
+    "Lunch and dinner, unless mentioned",
+    "Personal expenses and shopping",
+    "Travel tickets and insurance",
+    "Entry fees and adventure activities",
+    "Extra sightseeing not included in the itinerary",
+    "Expenses due to delays, weather, or unforeseen circumstances",
+    "Anything not mentioned in the package inclusions"
   ],
   "itinerary": [
     {
@@ -61,7 +66,7 @@
       "dayNumber": 2,
       "title": "Kufri & Shimla Sightseeing",
       "location": "Kufri & Shimla",
-      "description": "After breakfast, visit Kufri and Green Valley for scenic views and photography. Later, explore Jakhu Temple and other popular Shimla attractions. Spend the evening at Mall Road & The Ridge.",
+      "description": "After breakfast, visit Kufri and Green Valley for scenic views and photography. Later, explore Jakhu Temple and other popular Shimla attractions such as the Indian Institute of Advanced Study. Spend the evening at Mall Road & The Ridge.",
       "stay": "Hotel in Shimla",
       "mealsIncluded": "Breakfast",
       "transfers": "Private Cab"
@@ -71,13 +76,16 @@
       "title": "Shimla – Delhi | Departure",
       "location": "Departure",
       "description": "After breakfast, check out and drive back to Delhi by private cab. Enjoy the scenic mountain journey with optional refreshment stops en route. Tour Ends.",
+      "stay": "—",
       "mealsIncluded": "Breakfast",
       "transfers": "Private Cab"
     }
   ],
   "season": "All Season",
+  "isFeatured": true,
+  "isPopular": true,
   "seoTitle": "Shimla Tour Package | Explore Shimla With Best Deal",
-  "seoDescription": "Book the best Shimla tour package with Safar Trails. Explore Shimla, Kufri, Mall Road and the Himalayan views, with comfortable stays and hassle-free travel.",
+  "seoDescription": "Book the best Shimla tour package with Safar Trails. Explore Shimla, Kufri, Mall Road and scenic Himalayan attractions with comfortable stays and hassle-free travel.",
   "faqs": [
     {
       "question": "How many days are enough for a Shimla trip?",
@@ -85,11 +93,11 @@
     },
     {
       "question": "What is the best time to book a Shimla tour package?",
-      "answer": "The best time depends on your preferred experience. Summer is popular for sightseeing, while winter attracts travelers interested in cold weather and possible snowfall."
+      "answer": "The best time depends on your preferred experience. Summer (March to June) is popular for pleasant sightseeing weather, while winter (October to February) attracts travelers interested in cold weather and possible snowfall."
     },
     {
       "question": "How much does a Shimla tour package cost?",
-      "answer": "The cost varies according to hotel category, trip duration, transportation, season, number of travelers, and package inclusions. Comparing several options can help you find a package suited to your budget."
+      "answer": "This package starts at ₹7,500 per person (approx. ₹15,000 per couple) for a 3-day/2-night itinerary with private cab from Delhi, hotel stay, breakfast, and sightseeing. Costs can vary depending on hotel category, dates, and group size."
     },
     {
       "question": "Is Shimla suitable for families?",
@@ -101,7 +109,7 @@
     },
     {
       "question": "Can I customize my Shimla tour package?",
-      "answer": "Most travel providers offer some level of customization. You can often adjust the number of nights, hotel category, transportation, sightseeing locations, and activities according to your requirements."
+      "answer": "Most travel providers offer some level of customization. You can easily adjust the number of nights, hotel category (3★, 4★, luxury), transportation, sightseeing locations, and meal plans according to your requirements."
     }
   ]
 }

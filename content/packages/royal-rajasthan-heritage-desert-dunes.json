@@ -1,6 +1,7 @@
 {
   "id": "pkg-royal-rajasthan",
   "slug": "royal-rajasthan-heritage-desert-dunes",
+  "displayOrder": 5,
   "title": "Rajasthan Tour Package",
   "destination": "Rajasthan",
   "destinationSlug": "rajasthan",
@@ -10,6 +11,7 @@
   "startingPrice": 18999,
   "originalPrice": 24500,
   "tripType": [
+    "Heritage",
     "Family",
     "Couple",
     "Group",
@@ -19,42 +21,46 @@
   "ratings": 4.9,
   "reviewCount": 215,
   "startingCity": "Jaipur (Airport/Station Pickup)",
-  "bestFor": "Heritage Lovers, Families & Stargazers",
+  "bestFor": "Heritage Lovers, Families, Couples & Photographers",
   "heroImage": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop",
   "galleryImages": [
     "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800&auto=format&fit=crop"
+    "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800&auto=format&fit=crop"
   ],
-  "overview": "Embark on a regal circuit through the Golden Triangle of Rajasthan: Jaipur’s majestic hill forts, Jodhpur’s imposing Mehrangarh fortress, and the romantic golden dunes of Jaisalmer with luxury Swiss tent glamping.",
+  "overview": "If you're looking for a Rajasthan tour package, the state rewards travelers who plan around its distances and its climate. Rajasthan is large, its top cities are spread across hundreds of kilometers, and a good package connects together forts, lakes, and desert towns without wasting your days on the road. Safar Trails builds Rajasthan itineraries around realistic pacing rather than cramming in the maximum number of stops — ensuring trained drivers familiar with interstate routes, authentic heritage havelis, luxury Swiss tent glamping in the Sam Sand Dunes, and handpicked local experiences covering Jaipur, Jodhpur, Jaisalmer, and Bikaner.",
   "highlights": [
-    "2 Nights in Jaipur + 1 Night in Jodhpur + 2 Nights in Jaisalmer + 1 Night Bikaner",
-    "Amber Fort Jeep ascent, City Palace, and Hawa Mahal photo stop",
-    "Desert Jeep Safari & Camel ride on Sam Sand Dunes with Kalbeliya dance show",
-    "Stay in authentic heritage Haveli in Jaipur and Jodhpur",
-    "Delicious authentic Rajasthani Dal Baati Churma dinner included"
+    "2 Nights in Jaipur + 1 Night in Jodhpur + 2 Nights in Jaisalmer (including Luxury Desert Camp) + 1 Night in Bikaner",
+    "Amber Fort, City Palace, Jal Mahal & Hawa Mahal photo stop in the Pink City",
+    "Mehrangarh Fort and Jaswant Thada with panoramic Blue City vistas in Jodhpur",
+    "Living Golden Fort (Sonar Qila) & intricately carved Patwon Ki Haveli in Jaisalmer",
+    "Desert Jeep Safari, Camel ride on Sam Sand Dunes & Kalbeliya folk dance with bonfire",
+    "Unvanquished Junagarh Fort in Bikaner with gilded ceilings and royal armory",
+    "Stay in authentic heritage havelis and luxury Swiss desert camps with daily breakfast and dinner",
+    "Dedicated private AC vehicle with experienced interstate chauffeur for the entire 7-day tour"
   ],
   "inclusions": [
     "6 Nights accommodation in handpicked heritage hotels & luxury Swiss desert camp",
-    "Daily Breakfast and Dinner throughout the journey",
-    "Sam Sand Dunes Desert Safari with evening cultural folk performance & buffet",
+    "Daily breakfast and dinner throughout the journey",
+    "Sam Sand Dunes Desert Safari with sunset camel ride, 4x4 Jeep dune safari, and cultural folk performance",
     "Dedicated private AC Sedan/Innova with experienced interstate chauffeur",
-    "All interstate road taxes, toll charges, and parking fees"
+    "Airport or railway station pickup and drop transfers",
+    "All interstate road taxes, toll charges, parking fees, and driver allowances",
+    "All applicable taxes and 24x7 travel assistance"
   ],
   "exclusions": [
-    "Air/Train fares to Jaipur and from Jodhpur/Jaipur",
-    "Monument entry tickets and guide fees at palaces/forts",
-    "Personal camera fees, room service, and personal expenses"
+    "Airfare or long-distance train tickets to Jaipur / Jodhpur",
+    "Monument and fort entry tickets (budgeted separately)",
+    "Camera and video fees at palaces and forts",
+    "Lunch and mid-day snacks",
+    "Personal expenses, room service, laundry, and tips",
+    "Travel and medical insurance"
   ],
   "itinerary": [
     {
       "dayNumber": 1,
-      "title": "Arrival in the Pink City Jaipur & Chokhi Dhani Vibe",
+      "title": "Arrival in the Pink City Jaipur & Heritage Walk",
       "location": "Jaipur",
-      "description": "Arrive at Jaipur Airport/Station and check in to your heritage hotel. In the evening, visit the illuminated Albert Hall Museum and explore the bustling Johari Bazaar.",
-      "morningActivity": "Airport reception & check-in",
-      "afternoonActivity": "Visit Birla Mandir & Albert Hall Museum",
-      "eveningActivity": "Bazaar shopping & traditional Rajasthani dinner",
+      "description": "Arrive at Jaipur Airport/Station where our representative receives you. Check in to your authentic heritage hotel. In the evening, visit the illuminated Albert Hall Museum, Birla Mandir, and take a stroll through the bustling Johari Bazaar. Dinner and overnight stay in Jaipur.",
       "stay": "Shahpura House / Traditional Haveli 4★, Jaipur",
       "mealsIncluded": "Dinner",
       "transfers": "Private AC Cab"
@@ -63,10 +69,7 @@
       "dayNumber": 2,
       "title": "Jaipur Forts: Amber, Jal Mahal, City Palace & Hawa Mahal",
       "location": "Jaipur",
-      "description": "Explore the grand Amber Fort with its mirror palace (Sheesh Mahal). Stop by Jal Mahal floating in Man Sagar Lake, followed by Jaipur City Palace and the iconic honeycomb facade of Hawa Mahal.",
-      "morningActivity": "Amber Fort exploration & Jal Mahal photo stop",
-      "afternoonActivity": "Jaipur City Palace & Jantar Mantar observatory",
-      "eveningActivity": "Sunset view from Nahargarh Fort overlooking Jaipur city",
+      "description": "After breakfast, explore the grand Amber Fort with its mirror palace (Sheesh Mahal). Stop by Jal Mahal floating in Man Sagar Lake, followed by Jaipur City Palace, Jantar Mantar astronomical observatory, and the iconic honeycomb facade of Hawa Mahal. Enjoy sunset views from Nahargarh Fort overlooking the city. Overnight stay in Jaipur.",
       "stay": "Shahpura House / Traditional Haveli 4★, Jaipur",
       "mealsIncluded": "Breakfast & Dinner",
       "transfers": "Private AC Cab"
@@ -75,10 +78,7 @@
       "dayNumber": 3,
       "title": "Jaipur to the Blue City Jodhpur & Mehrangarh Fort",
       "location": "Jodhpur",
-      "description": "Drive from Jaipur to Jodhpur (approx. 5.5 hrs). Check in and visit the colossal Mehrangarh Fort, Jaswant Thada marble cenotaph, and take a stroll in the indigo-painted Brahmin alleyways.",
-      "morningActivity": "Highway drive to Jodhpur with lunch stop",
-      "afternoonActivity": "Tour of Mehrangarh Fort and Jaswant Thada",
-      "eveningActivity": "Explore Clock Tower market and taste famous Mirchi Vada",
+      "description": "Drive from Jaipur to Jodhpur (approx. 5.5 hrs). Check in and visit the colossal Mehrangarh Fort perched 400 feet above the city, Jaswant Thada marble cenotaph, and take a walk in the indigo-painted Brahmin alleyways around the Clock Tower market. Dinner and overnight stay in Jodhpur.",
       "stay": "Ranbanka Palace / Heritage Haveli 4★, Jodhpur",
       "mealsIncluded": "Breakfast & Dinner",
       "transfers": "Private AC Cab"
@@ -87,10 +87,7 @@
       "dayNumber": 4,
       "title": "Jodhpur to the Golden Desert City Jaisalmer",
       "location": "Jaisalmer",
-      "description": "Drive across the Thar Desert to Jaisalmer (approx. 4.5 hrs). Visit the mysterious abandoned village of Kuldhara. Check into your boutique hotel within view of the Golden Fort.",
-      "morningActivity": "Drive to Jaisalmer with Kuldhara village stop",
-      "afternoonActivity": "Check-in and visit Gadisar Lake at sunset",
-      "eveningActivity": "Rooftop dinner overlooking the illuminated golden fort",
+      "description": "Drive across the Thar Desert to Jaisalmer (approx. 4.5 hrs). Stop at the eerie abandoned village of Kuldhara. Check into your boutique hotel with views of the Golden Fort and visit Gadisar Lake for a peaceful desert sunset. Dinner and overnight stay in Jaisalmer.",
       "stay": "Fort Rajwada / Sairafort 4★, Jaisalmer",
       "mealsIncluded": "Breakfast & Dinner",
       "transfers": "Private AC Cab"
@@ -99,10 +96,7 @@
       "dayNumber": 5,
       "title": "Jaisalmer Fort, Patwon Ki Haveli & Sam Sand Dunes Safari",
       "location": "Sam Sand Dunes",
-      "description": "Tour the living Sonar Qila (Golden Fort) and intricately carved Patwon Ki Haveli. In the afternoon, head to Sam Sand Dunes. Enjoy thrilling dune bashing, sunset camel ride, bonfire, folk music, and Kalbeliya dance under the stars.",
-      "morningActivity": "Living Fort walking tour & Jain temples",
-      "afternoonActivity": "Transfer to Luxury Swiss Desert Camp at Sam Dunes",
-      "eveningActivity": "4x4 Jeep safari, camel ride, folk music & dinner buffet",
+      "description": "Tour the living Sonar Qila (Golden Fort) and intricately carved Patwon Ki Haveli. In the afternoon, head to Sam Sand Dunes. Check into your luxury Swiss desert camp and enjoy thrilling 4x4 dune bashing, a sunset camel ride, bonfire, folk music, and Kalbeliya dance under the starlit desert sky. Dinner buffet and overnight stay in Luxury Swiss Camp.",
       "stay": "Luxury Swiss Desert Camp, Sam Dunes",
       "mealsIncluded": "Breakfast & Dinner",
       "transfers": "Private AC Cab"
@@ -111,10 +105,7 @@
       "dayNumber": 6,
       "title": "Sam Dunes to Bikaner & Junagarh Fort",
       "location": "Bikaner",
-      "description": "After sunrise over the dunes, drive to Bikaner (approx. 5 hrs). Visit the unvanquished Junagarh Fort with its gilded gold-leaf ceilings, followed by a visit to the National Camel Breeding Farm.",
-      "morningActivity": "Drive to Bikaner via Pokhran",
-      "afternoonActivity": "Tour Junagarh Fort and Lalgarh Palace",
-      "eveningActivity": "Taste authentic Bikaneri Bhujia and sweets",
+      "description": "After sunrise over the dunes and breakfast, drive to Bikaner (approx. 5 hrs). Visit the unvanquished Junagarh Fort with its gilded gold-leaf ceilings, followed by a visit to the National Camel Breeding Farm. Taste authentic Bikaneri delicacies in the local market. Dinner and overnight stay in Bikaner.",
       "stay": "Narendra Bhawan / Heritage 4★, Bikaner",
       "mealsIncluded": "Breakfast & Dinner",
       "transfers": "Private AC Cab"
@@ -123,14 +114,41 @@
       "dayNumber": 7,
       "title": "Bikaner to Jaipur / Jodhpur Departure",
       "location": "Jaipur / Jodhpur Departure",
-      "description": "Enjoy breakfast and drive back to Jaipur/Jodhpur Airport for onward flight with royal memories.",
-      "morningActivity": "Breakfast & return highway drive",
-      "afternoonActivity": "Airport drop off",
+      "description": "Enjoy breakfast and take the return drive to Jaipur or Jodhpur Airport / Station for your onward journey with unforgettable memories of royal forts, palaces, and desert dunes. Tour Ends.",
+      "stay": "—",
       "mealsIncluded": "Breakfast",
       "transfers": "Private AC Cab"
     }
   ],
-  "season": "Winter",
+  "season": "October to March",
   "isFeatured": true,
-  "isPopular": true
+  "isPopular": true,
+  "seoTitle": "Rajasthan Tour Package | Explore Royal Rajasthan",
+  "seoDescription": "Explore Rajasthan with our Rajasthan tour packages covering royal palaces, forts, vibrant culture, desert adventures, and unforgettable experiences.",
+  "faqs": [
+    {
+      "question": "How many days do I need for a Rajasthan tour package?",
+      "answer": "A meaningful trip covering 3 to 4 major cities (such as Jaipur, Jodhpur, Jaisalmer, and Bikaner or Udaipur) needs at least 6 to 7 days, accounting for travel distances between destinations. Shorter 3 to 4 day trips work best if focused on one or two cities like Jaipur or Udaipur."
+    },
+    {
+      "question": "Is Rajasthan safe for solo female travelers and families?",
+      "answer": "Yes. Rajasthan is one of India's most popular and well-managed tourist circuits. Traveling with a dedicated private vehicle and pre-arranged trusted heritage stays adds a reliable layer of comfort and security."
+    },
+    {
+      "question": "What is the best time to plan a Rajasthan tour?",
+      "answer": "October to March is the most comfortable season, with pleasant daytime temperatures and cool evenings. December and January bring cold desert nights in Jaisalmer and Bikaner, so packing warm layers is recommended."
+    },
+    {
+      "question": "Can I customize the destinations (e.g., add Udaipur or Pushkar)?",
+      "answer": "Yes. Safar Trails customizes Rajasthan itineraries based on your preferences — whether you want the classic Desert Circuit (Jaipur–Jodhpur–Jaisalmer–Bikaner) or the Lake & Heritage Circuit (Jaipur–Pushkar–Udaipur)."
+    },
+    {
+      "question": "Are monument entry tickets included?",
+      "answer": "Standard packages exclude monument entry tickets and camera fees so guests have flexibility in which interior galleries they enter. Entry tickets can be purchased directly at monument ticket counters or online via state tourism portals."
+    },
+    {
+      "question": "What should I pack for a Rajasthan trip?",
+      "answer": "Comfortable cotton clothes for daytime sightseeing, walking shoes for fort ramparts, sunglasses, sunscreen, and warm jackets/shawls for chilly winter mornings and desert nights."
+    }
+  ]
 }

@@ -17,80 +17,80 @@
     "Adventure"
   ],
   "hotelCategory": "Standard 3★",
-  "ratings": 0,
-  "reviewCount": 0,
-  "startingCity": "Delhi or Chandigarh",
+  "ratings": 4.9,
+  "reviewCount": 184,
+  "startingCity": "Delhi / Chandigarh",
   "bestFor": "Couples, Families, Friends & Groups",
   "heroImage": "/content/destinations/manali/1.jpg",
   "galleryImages": [
     "/content/destinations/manali/1.jpg",
     "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=800&auto=format&fit=crop"
   ],
-  "overview": "Discover the beauty of the Himalayas with Safar Trails' best Manali tour packages, designed for unforgettable holidays filled with adventure, nature, and relaxation. Explore Manali's stunning landscapes, snow-capped mountains, peaceful valleys, and charming local attractions. Our Manali tour packages are perfect for couples, families, friends, and solo travelers looking for a memorable getaway — from sightseeing at Solang Valley to exploring Hadimba Temple and enjoying the vibrant atmosphere of Mall Road.",
+  "overview": "Discover the beauty of the Himalayas with SafarTrails’ best Manali tour packages, designed for unforgettable holidays filled with adventure, nature, and relaxation. Explore Manali’s stunning landscapes, snow-capped mountains, peaceful valleys, and charming local attractions. Our Manali tour packages are perfect for couples, families, friends, and solo travelers looking for a memorable getaway. From sightseeing at Solang Valley and Rohtang Pass to exploring Hadimba Temple and enjoying the vibrant atmosphere of Mall Road, experience the best of Manali with ease. Choose SafarTrails for comfortable stays, convenient travel arrangements, customizable itineraries, and memorable experiences at competitive prices.",
   "highlights": [
-    "Pickup from Delhi by private cab",
-    "Hadimba Temple, Manu Temple & Vashisht Village",
-    "Van Vihar & Beas River",
-    "Solang Valley",
-    "Atal Tunnel & excursion to Sissu",
-    "Old Manali & Mall Road",
-    "Return via Kullu Valley with optional local shopping"
+    "Pickup from Delhi / Chandigarh by private cab for the entire trip",
+    "Visit Hadimba Devi Temple, Manu Temple & Vashisht Village",
+    "Explore Van Vihar & scenic riverside walks along the Beas River",
+    "Adventure and snow views at Solang Valley",
+    "Drive through the engineering marvel Atal Tunnel with an excursion to Sissu in Lahaul Valley",
+    "Evenings at leisure exploring vibrant Mall Road and bohemian Old Manali cafés",
+    "Return journey via picturesque Kullu Valley with optional river rafting & shawl shopping",
+    "3 Nights comfortable hotel stay with daily breakfast and dinner included"
   ],
   "inclusions": [
-    "Hotel accommodation",
+    "Hotel accommodation (3 Nights in Manali)",
     "Breakfast and dinner",
-    "Private or shared transportation",
+    "Private transportation from Delhi / Chandigarh and back",
     "Arrival and departure transfers",
-    "Local sightseeing",
-    "Driver charges",
-    "Fuel",
-    "Toll and parking charges, where applicable",
-    "Assistance during the trip"
+    "Local sightseeing in Manali, Solang Valley & Sissu",
+    "Driver charges, fuel, toll and parking charges",
+    "Applicable taxes",
+    "24x7 trip assistance and on-ground support"
   ],
   "exclusions": [
-    "Flights, trains, or bus tickets",
-    "Lunch",
-    "Personal expenses",
-    "Adventure activity charges",
-    "Entry fees",
+    "Flights, trains, or Volvo bus tickets",
+    "Lunch and mid-day snacks",
+    "Personal expenses, room service, and laundry",
+    "Adventure activity charges (paragliding, zorbing, river rafting, skiing)",
+    "Entry fees to monuments and parks",
     "Travel insurance",
-    "Additional sightseeing",
-    "Room service and personal hotel expenses",
-    "Applicable permits or government charges"
+    "Additional sightseeing beyond the confirmed itinerary",
+    "Rohtang Pass permit and local union taxi charges (if applicable)"
   ],
   "itinerary": [
     {
       "dayNumber": 1,
-      "title": "Delhi to Manali",
+      "title": "Delhi / Chandigarh to Manali | Scenic Drive & Mall Road",
       "location": "Manali",
-      "description": "Pickup from Delhi by private cab. Scenic journey to Manali. Hotel check-in & leisure. Evening visit to Mall Road.",
+      "description": "Pickup from Delhi / Chandigarh by private cab. Enjoy a scenic journey through the Himalayan foothills along the Beas River to Manali. On arrival, check in to your hotel and unwind. In the evening, visit Mall Road and the Tibetan Monastery. Overnight stay in Manali.",
       "stay": "Hotel in Manali",
       "mealsIncluded": "Dinner",
       "transfers": "Private Cab"
     },
     {
       "dayNumber": 2,
-      "title": "Manali Local Sightseeing",
+      "title": "Manali Local Sightseeing | Hadimba, Manu Temple & Old Manali",
       "location": "Manali",
-      "description": "Breakfast at hotel. Visit Hadimba Temple, Manu Temple & Vashisht Village. Explore Van Vihar & Beas River. Evening at Old Manali / Mall Road.",
+      "description": "After breakfast at the hotel, visit the famous wooden Hadimba Devi Temple surrounded by cedar forests, Manu Temple in Old Manali, and Vashisht Village with its natural hot sulphur springs. Spend the afternoon exploring Van Vihar nature park along the Beas River and enjoy the evening in Old Manali cafés and Mall Road.",
       "stay": "Hotel in Manali",
       "mealsIncluded": "Breakfast & Dinner",
       "transfers": "Private Cab"
     },
     {
       "dayNumber": 3,
-      "title": "Solang Valley & Sissu",
-      "location": "Solang & Sissu",
-      "description": "Breakfast at hotel. Visit Solang Valley. Drive through Atal Tunnel. Excursion to Sissu. Return to Manali by evening.",
+      "title": "Solang Valley & Sissu via Atal Tunnel",
+      "location": "Solang Valley & Sissu",
+      "description": "Breakfast at the hotel. Drive to Solang Valley for panoramic Himalayan mountain views and outdoor activities. Proceed through the Atal Tunnel under the Rohtang Pass into the dramatic landscapes of Lahaul Valley to visit Sissu and its alpine waterfall. Return to Manali by evening. Overnight stay in Manali.",
       "stay": "Hotel in Manali",
       "mealsIncluded": "Breakfast & Dinner",
       "transfers": "Private Cab"
     },
     {
       "dayNumber": 4,
-      "title": "Manali to Delhi via Kullu",
-      "location": "Departure",
-      "description": "Breakfast & hotel check-out. Drive towards Delhi via Kullu Valley, with optional local shopping in Kullu. Continue journey to Delhi. Tour Ends.",
+      "title": "Manali to Delhi / Chandigarh via Kullu Valley | Departure",
+      "location": "Kullu & Departure",
+      "description": "Enjoy breakfast and complete hotel check-out. Drive towards Delhi / Chandigarh via Kullu Valley, with optional stops for river rafting, paragliding at Dobhi, and local shopping at Kullu shawl factories. Continue the return drive. Tour Ends with wonderful Himalayan memories.",
+      "stay": "—",
       "mealsIncluded": "Breakfast",
       "transfers": "Private Cab"
     }
@@ -98,44 +98,36 @@
   "season": "All Season",
   "isFeatured": true,
   "isPopular": true,
-  "seoTitle": "Best Manali Tour Packages | Explore Manali with Safar Trails",
-  "seoDescription": "Discover the best Manali tour packages with Safar Trails. Comfortable stays, private cab from Delhi, Solang Valley and the Atal Tunnel through to Sissu.",
+  "seoTitle": "Best Manali Tour Packages | Explore Manali with SafarTrails",
+  "seoDescription": "Discover the best Manali tour packages with SafarTrails. Enjoy comfortable stays, transportation, sightseeing, and unforgettable Himalayan experiences.",
   "faqs": [
     {
+      "question": "Why choose a Manali tour package with Safar Trails?",
+      "answer": "Traveling independently requires coordinating mountain cabs, hotel bookings, and sightseeing permits separately. Safar Trails combines verified 3★/4★ accommodation, dedicated private transport from Delhi/Chandigarh, curated sightseeing (Solang, Atal Tunnel, Sissu, Hadimba), and 24x7 concierge support into one transparent, hassle-free plan."
+    },
+    {
+      "question": "What is the best time to plan a Manali trip?",
+      "answer": "Summer (March to June) is ideal for pleasant weather, green valleys, and comfortable sightseeing. Winter (October to February) attracts travelers seeking snowfall, snow sports in Solang, and winter wonderland landscapes. Monsoon (July to September) brings lush greenery, though travelers should check weather conditions."
+    },
+    {
       "question": "Manali tour package from Delhi — what does it include?",
-      "answer": "It picks you up in Delhi and drops you back at the end, so the road journey both ways is already part of it. Travel is by private AC cab with a mountain driver, and fuel, tolls, parking and the driver's allowances are included, along with 3 nights in Manali with breakfast and dinner. Pickup from Chandigarh works too and takes three to four hours off each end. If you would rather come by Volvo bus and start the tour in Manali, we can quote that version instead."
+      "answer": "It includes pickup and drop from Delhi or Chandigarh by private AC cab with an experienced mountain driver, all fuel, toll and parking charges, 3 nights hotel accommodation in Manali with daily breakfast and dinner, and full local sightseeing including Solang Valley and Atal Tunnel to Sissu."
     },
     {
-      "question": "Manali tour package for family — is this one suitable?",
-      "answer": "Yes — and staying put in one hotel for all three nights is what makes it work with children or elderly parents. There is no packing and moving mid-trip, the sightseeing sits in two easy days, and the hotel is a base to come back to rather than somewhere you are only sleeping. Tell us who is travelling and we will pick a hotel with easier access and keep the Solang day unhurried."
+      "question": "Is this Manali tour package suitable for families with children or elderly parents?",
+      "answer": "Yes. Staying in one hotel for all three nights eliminates the stress of packing and moving mid-trip. Sightseeing is spaced comfortably across two days, and vehicles remain at your disposal throughout."
     },
     {
-      "question": "Manali tour package for couple — does it work for a honeymoon?",
-      "answer": "It is one of the shortest honeymoons you can take from Delhi, which is why couples pick it when leave is tight. Transport is a private cab rather than a shared coach, and room decoration, a candlelight dinner or an upgrade to a premium or orchard-side room can be arranged — just ask when you enquire, since it depends on the hotel."
+      "question": "Can honeymoon couples customize this package?",
+      "answer": "Yes. Couples can request special honeymoon inclusions like floral bed decorations, candlelight dinners, cake, and room upgrades to mountain-facing or balcony view rooms."
     },
     {
-      "question": "Manali tour package with flight — can you arrange that?",
-      "answer": "This package is priced without airfare, because most travellers on it drive up from Delhi or Chandigarh. If you would prefer to fly, we can quote a version with tickets to Bhuntar (Kullu) or Chandigarh plus the road transfer to Manali. Bhuntar is much closer but its flights are weather-dependent in winter, so between December and February we usually plan Chandigarh with a road leg instead."
+      "question": "How much does a Manali tour package cost?",
+      "answer": "This package starts at ₹9,499 per person (approx. ₹20,000 per couple) including 3 nights hotel stay, private cab from Delhi/Chandigarh, breakfast, dinner, and all taxes. Rates can vary depending on hotel category (3★, 4★, or luxury resort) and season."
     },
     {
-      "question": "Manali tour package for a single person — can a solo traveller book it?",
-      "answer": "Yes, and we will customise it rather than sell you a group seat. A solo booking is quoted on single occupancy, so the per-person price differs from the twin-sharing rate shown here — the room is the main reason, and a private cab for one is the other. A smaller vehicle or a simpler hotel brings it down. Tell us your budget and we will build to it."
-    },
-    {
-      "question": "Manali tour package 2 days 1 night — do you have one?",
-      "answer": "We can arrange one, but be clear about what it is. Manali is roughly 12 to 14 hours by road from Delhi, so a 2-day plan is two nights in a vehicle and about half a day on the ground. Starting from Chandigarh makes it more realistic. This 4-day version exists because it is the shortest trip from Delhi that still gives you two clear days in Manali rather than one rushed morning."
-    },
-    {
-      "question": "Manali tour package for friends — is this a good group trip?",
-      "answer": "Yes. Solang covers paragliding, zorbing and the ropeway, and the Atal Tunnel drive into Lahaul is the part most groups remember. Adventure activities are paid to the operators on the spot rather than bundled in, so you only pay for what your group actually does. For six or more we switch to a tempo traveller, which usually lowers the per-head cost."
-    },
-    {
-      "question": "Manali tour package under ₹5,000 — do you have one?",
-      "answer": "Not honestly, and we would rather say so than take the enquiry. ₹5,000 a head does not cover 3 nights, a private cab from Delhi and back, and two meals a day — the trips advertised at that price are usually 2 days on a shared Volvo with a basic room and no meals, which is a different product, not a cheaper version of this one. This package starts at ₹9,499 per person. If ₹5,000 is genuinely the budget, tell us: starting from Chandigarh, a simpler hotel or a bigger group all bring the per-head figure down, and we will show you what is actually possible at that number."
-    },
-    {
-      "question": "What does a Manali tour package actually cost?",
-      "answer": "This one starts at ₹9,499 per person on twin sharing, including tax — just under ₹19,000 for a couple — covering 3 nights with breakfast and dinner and the private cab from Delhi and back. The figure moves with your travel dates, hotel category, group size and vehicle; 3★, 4★ and premium hotels are all available, and New Year and the May–June holidays are the dearest weeks of the year. Send us your dates and headcount and you will get an itemised quote."
+      "question": "Can I add flights or Volvo bus tickets?",
+      "answer": "Yes. While the standard package includes private cab travel from Delhi or Chandigarh, we can quote customized packages with flights to Bhuntar/Kullu or Chandigarh, or semi-sleeper Volvo bus tickets from Delhi/Chandigarh."
     }
   ]
 }

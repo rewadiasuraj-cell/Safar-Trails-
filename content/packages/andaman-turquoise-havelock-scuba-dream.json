@@ -16,44 +16,49 @@
     "Adventure"
   ],
   "hotelCategory": "Luxury 5★",
-  "ratings": 5,
+  "ratings": 4.9,
   "reviewCount": 178,
   "startingCity": "Port Blair (Airport Pickup)",
-  "bestFor": "Honeymooners, Divers & Island Explorers",
+  "bestFor": "Honeymooners, Families & Island Explorers",
   "heroImage": "/content/destinations/andaman/1.jpg",
   "galleryImages": [
     "/content/destinations/andaman/1.jpg",
     "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&auto=format&fit=crop"
   ],
-  "overview": "Planning an island holiday is easy with an Andaman Tour Package that combines hotels, sightseeing, transfers, and activities in one plan. Whether travelling with family, friends, or your partner, you can choose a package that fits your budget — beautiful beaches, clear waters, peaceful islands, exciting activities, and a memorable vacation without the stress of detailed planning.\n\nThis 6-day itinerary covers the three islands most visitors want: Port Blair as the base, Havelock for Radhanagar Beach and the water sports at Elephant Beach, and Neil Island for a quieter day away from the busier spots. Hotels, inter-island ferries, transfers and sightseeing are arranged in advance; the itinerary, hotel category and activities can all be changed to suit your dates, group size and budget.",
+  "overview": "Planning an island holiday is easy with an Andaman Tour Package that combines hotels, sightseeing, transfers, and activities in one plan. Whether travelling with family, friends, or your partner, you can choose a package that fits your budget. Enjoy beautiful beaches, clear waters, peaceful islands, exciting activities, and a memorable vacation without the stress of detailed planning. An Andaman Tour Package is designed to make your island vacation comfortable and well-organized — covering Port Blair's historic sites, Havelock Island's world-renowned Radhanagar and Elephant beaches, and Neil Island's tranquil lagoons and natural coral formations.",
   "highlights": [
     "2 Nights Havelock Island beachfront resort + 1 Night Neil Island + 2 Nights Port Blair",
-    "Confirmed Makruzz/Nautika Luxury Catamaran cruise tickets",
-    "Visit Radhanagar Beach (Asia’s Best Beach) and Elephant Beach water sports",
-    "Cellular Jail Light & Sound Show + Corbyn’s Cove Beach",
-    "Natural Rock Formation & coral glass-bottom boat at Neil Island"
+    "Confirmed Makruzz/Nautika Luxury High-Speed Catamaran cruise tickets between islands",
+    "Visit Radhanagar Beach (Beach No. 7 - Asia’s Best Beach) for golden sunset views",
+    "Speedboat excursion to Elephant Beach with live coral reef snorkeling and water sports",
+    "Historic Cellular Jail Light & Sound Show + Corbyn’s Cove Beach",
+    "Natural Rock Formation (Howrah Bridge), Bharatpur Beach & Laxmanpur sunset at Neil Island",
+    "Dedicated on-ground island coordinators at all airport and jetty arrival points"
   ],
   "inclusions": [
-    "5 Nights stay in premium beach resorts with daily buffet breakfast",
-    "All inter-island ferry tickets in Premium AC Catamaran (Port Blair - Havelock - Neil - Port Blair)",
-    "All private AC transfers on Port Blair, Havelock, and Neil Island",
-    "Cellular Jail entry tickets and light & sound show passes",
-    "Dedicated island coordinators at every jetty"
+    "5 Nights accommodation in handpicked beach resorts and premium hotels",
+    "Daily buffet breakfast at hotels",
+    "Airport pickup and drop transfers in Port Blair by private AC cab",
+    "All inter-island ferry tickets in Premium AC Catamaran (Port Blair – Havelock – Neil – Port Blair)",
+    "All private AC transfers on Port Blair, Havelock Island, and Neil Island",
+    "Cellular Jail entry tickets and evening Light & Sound show passes",
+    "Sightseeing tours as per itinerary with local island assistance",
+    "All applicable taxes, toll, parking, and jetty charges"
   ],
   "exclusions": [
-    "Flight tickets to Port Blair",
-    "Scuba diving, sea walk, parasailing, and jet ski activity fees",
-    "Personal tips and expenses"
+    "Airfare to and from Port Blair",
+    "Water sports and activity fees (Scuba diving, sea walk, parasailing, jet ski)",
+    "Lunch and dinners, unless specifically mentioned",
+    "Personal expenses, room service, laundry, and tips",
+    "Camera fees at monuments",
+    "Travel and medical insurance"
   ],
   "itinerary": [
     {
       "dayNumber": 1,
       "title": "Port Blair Arrival, Corbyn’s Cove & Cellular Jail Light & Sound",
       "location": "Port Blair",
-      "description": "Arrive at Port Blair Airport and transfer to hotel. Visit Corbyn’s Cove Beach for coconut water, followed by Cellular Jail and its moving evening Light & Sound presentation.",
-      "morningActivity": "Airport pickup & hotel check-in",
-      "afternoonActivity": "Relaxation at Corbyn’s Cove palm-fringed coast",
-      "eveningActivity": "Historic Cellular Jail tour & evening Light & Sound show",
+      "description": "Arrive at Port Blair Airport where our representative receives you and transfers you to the hotel. In the afternoon, visit Corbyn’s Cove Beach for coconut water and coastal views, followed by the historic Cellular Jail and its moving evening Light & Sound presentation. Overnight stay in Port Blair.",
       "stay": "Sinclairs Bayview / Symphony Samudra 4★, Port Blair",
       "mealsIncluded": "Breakfast",
       "transfers": "Private AC Cab"
@@ -62,10 +67,7 @@
       "dayNumber": 2,
       "title": "High-Speed Ferry to Havelock Island & Radhanagar Sunset",
       "location": "Havelock Island (Swaraj Dweep)",
-      "description": "Board the luxury Makruzz catamaran to Havelock Island. Check in to your beach resort. Later, witness the world-famous golden sunset at Radhanagar Beach (Beach No. 7).",
-      "morningActivity": "Catamaran cruise across azure waters to Havelock",
-      "afternoonActivity": "Check-in to beachfront resort & pool dip",
-      "eveningActivity": "Spectacular sunset at Radhanagar Beach",
+      "description": "Board the luxury Makruzz / Nautika catamaran to Havelock Island across azure seas. Check in to your beach resort. Later, witness the world-famous sunset at Radhanagar Beach (Beach No. 7). Overnight stay in Havelock.",
       "stay": "Barefoot at Havelock / Symphony Palms Beach Resort 4★, Havelock",
       "mealsIncluded": "Breakfast",
       "transfers": "Luxury Catamaran + Private Cab"
@@ -74,10 +76,7 @@
       "dayNumber": 3,
       "title": "Elephant Beach Scuba, Snorkeling & Water Sports",
       "location": "Havelock Island",
-      "description": "Speedboat ride to Elephant Beach. Indulge in snorkeling among live corals, sea walking, or discover scuba diving with certified dive instructors.",
-      "morningActivity": "Speedboat transfer to Elephant Beach",
-      "afternoonActivity": "Underwater coral viewing, sea walk or scuba diving",
-      "eveningActivity": "Candlelight beachside dinner (optional add-on for couples)",
+      "description": "Speedboat ride to Elephant Beach. Indulge in snorkeling among vibrant live corals, sea walking, or discover scuba diving with certified dive instructors. Spend the afternoon relaxing at the resort. Overnight stay in Havelock.",
       "stay": "Barefoot at Havelock / Symphony Palms Beach Resort 4★, Havelock",
       "mealsIncluded": "Breakfast",
       "transfers": "Speedboat + Private Cab"
@@ -86,22 +85,16 @@
       "dayNumber": 4,
       "title": "Havelock to Neil Island (Shaheed Dweep) & Natural Bridge",
       "location": "Neil Island",
-      "description": "Cruise to the peaceful island of Neil. Visit the famous Howrah Bridge (natural living rock formation), Bharatpur Beach for shallow reef swimming, and Laxmanpur Beach for sunset.",
-      "morningActivity": "Morning ferry to Neil Island and check-in",
-      "afternoonActivity": "Explore Natural Coral Rock Formation & Bharatpur reef",
-      "eveningActivity": "Sunset at Laxmanpur Beach Point 1",
+      "description": "Cruise to the serene island of Neil. Visit the famous Howrah Bridge (natural living coral rock formation), Bharatpur Beach for shallow reef swimming, and Laxmanpur Beach for a breathtaking sunset. Overnight stay in Neil Island.",
       "stay": "Summer Sands Beach Resort / Pearl Park 4★, Neil Island",
       "mealsIncluded": "Breakfast",
       "transfers": "Luxury Catamaran + Private Cab"
     },
     {
       "dayNumber": 5,
-      "title": "Neil Island to Port Blair & Local Souvenir Market",
+      "title": "Neil Island to Port Blair & Local Handicraft Market",
       "location": "Port Blair",
-      "description": "Board return ferry back to Port Blair. Visit Sagarika Emporium for pearl jewellery and shell handicrafts. Enjoy a farewell coastal seafood dinner.",
-      "morningActivity": "Return ferry to Port Blair",
-      "afternoonActivity": "Sagarika Handicraft Emporium & Chatham Saw Mill",
-      "eveningActivity": "Fine dining dinner at harbor view lounge",
+      "description": "Board the return catamaran ferry back to Port Blair. In the afternoon, visit Sagarika Government Emporium for pearl jewellery and seashell handicrafts, with time for a farewell seafood dinner. Overnight stay in Port Blair.",
       "stay": "Sinclairs Bayview / Symphony Samudra 4★, Port Blair",
       "mealsIncluded": "Breakfast",
       "transfers": "Luxury Catamaran + Private Cab"
@@ -110,13 +103,13 @@
       "dayNumber": 6,
       "title": "Port Blair Airport Departure",
       "location": "Port Blair Departure",
-      "description": "Transfer to Port Blair Airport for your flight back home with memories of emerald waters and white sands.",
-      "morningActivity": "Breakfast & airport transfer",
+      "description": "Enjoy breakfast and transfer to Port Blair Airport for your flight back home with unforgettable memories of tropical turquoise waters and pristine beaches.",
+      "stay": "—",
       "mealsIncluded": "Breakfast",
       "transfers": "Private Airport Cab"
     }
   ],
-  "season": "All Season",
+  "season": "October to May",
   "isFeatured": true,
   "isPopular": true,
   "seoTitle": "Andaman Tour Package | Best Deals & Affordable Holidays",
@@ -124,23 +117,23 @@
   "faqs": [
     {
       "question": "What is included in an Andaman tour package?",
-      "answer": "Inclusions depend on the package category, and commonly cover hotel accommodation, airport and hotel transfers, island transfers, sightseeing, ferry tickets, selected meals, local transportation, activity arrangements and tour assistance. Check carefully what is included and what needs an additional payment before booking, so there are no unexpected expenses during the trip."
+      "answer": "A standard Andaman tour package includes hotel and beach resort accommodation, airport transfers, inter-island high-speed catamaran ferry tickets (Port Blair, Havelock, Neil), private vehicle transfers on every island, sightseeing tours (Cellular Jail, Radhanagar Beach, Elephant Beach, Natural Bridge), daily breakfast, and dedicated island coordinators at every jetty."
     },
     {
       "question": "When is the best time to visit Andaman?",
-      "answer": "Choosing the right travel season makes the trip more enjoyable, and the popular months offer pleasant conditions for sightseeing and outdoor activities. Weather can change, so it is worth checking the latest travel information before you travel — particularly if you are planning snorkeling, scuba diving or island hopping, where sea conditions matter."
+      "answer": "The best time to visit Andaman is from October to May when the weather is pleasant, the skies are clear, and the sea is calm — perfect for scuba diving, snorkeling, sea walks, and inter-island cruising."
     },
     {
-      "question": "How can I keep an Andaman trip affordable?",
-      "answer": "Compare several packages rather than taking the first one you find, and look at hotel category, inclusions, transport and sightseeing rather than price alone. Book in advance for a better choice of hotels and dates, travel in the less busy season, and pick a package built around the places and activities you actually want instead of paying for services you will not use."
+      "question": "How can I save money on an Andaman trip?",
+      "answer": "Book 60 to 90 days in advance to get lower flight fares to Port Blair, choose combo island packages that bundle catamaran ferries with local transfers, and select hotels that include breakfast. Travelling in October or early March also offers great value without peak season hotel surcharges."
     },
     {
       "question": "Is an Andaman tour package suitable for families?",
-      "answer": "Yes. A package removes the stress of arranging transport and sightseeing between islands, and lets you choose comfortable hotels, convenient transfers and activities that work across different ages. A good family itinerary leaves enough time for both sightseeing and rest."
+      "answer": "Yes. Andaman is extremely safe and well-organized for families. Pre-arranged private cabs and reserved high-speed ferries eliminate logistics stress, and beaches like Radhanagar and Bharatpur have gentle waves suitable for children and older family members."
     },
     {
-      "question": "Can the itinerary be customised?",
-      "answer": "Yes. The number of travellers, hotel category, activities and the places you visit can all be adjusted, and the trip can be shortened for a quick escape or extended to cover more islands."
+      "question": "Can I customize activities like Scuba Diving or Candlelight Dinners?",
+      "answer": "Yes. We can pre-book PADI-certified discover scuba diving (with underwater photos/video), underwater sea walks, parasailing, and private candlelight beach dinners on Havelock Island."
     }
   ]
 }

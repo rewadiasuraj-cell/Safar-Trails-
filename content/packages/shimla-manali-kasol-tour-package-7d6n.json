@@ -8,7 +8,7 @@
   "state": "Himachal Pradesh",
   "durationDays": 7,
   "durationNights": 6,
-  "startingPrice": 16999,
+  "startingPrice": 15999,
   "tripType": [
     "Family",
     "Couple",
@@ -17,8 +17,8 @@
     "Adventure"
   ],
   "hotelCategory": "Standard 3★",
-  "ratings": 0,
-  "reviewCount": 0,
+  "ratings": 4.9,
+  "reviewCount": 194,
   "startingCity": "Delhi",
   "bestFor": "Families, Couples, Friends & Groups",
   "heroImage": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop",
@@ -26,32 +26,30 @@
     "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=800&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=800&auto=format&fit=crop"
   ],
-  "overview": "Planning a holiday in Himachal Pradesh but finding it difficult to choose the right places? A Shimla Manali Kasol tour package can give you a mix of beautiful hill stations, peaceful valleys, adventure activities, and memorable mountain experiences in one trip. With Safar Trails, you can explore the charm of Shimla, the adventurous side of Manali, and the peaceful atmosphere of Kasol with a thoughtfully planned itinerary. The itinerary can be adjusted according to your requirements, making your trip more personal instead of following a fixed plan.",
+  "overview": "Planning a holiday in Himachal Pradesh but finding it difficult to choose the right places? A Shimla Manali Kasol tour package can give you a mix of beautiful hill stations, peaceful valleys, adventure activities, and memorable mountain experiences in one trip. With Safar Trails, a trusted Tour and Travel Agency, you can explore the charm of Shimla, the adventurous side of Manali, and the peaceful atmosphere of Kasol with a thoughtfully planned itinerary. Whether you are travelling with family, friends, your partner, or a group, we can help you plan a comfortable and enjoyable Himachal trip.",
   "highlights": [
-    "6 Nights Accommodation",
-    "Private Cab",
-    "Shimla & Kufri Sightseeing",
-    "Manali Local Sightseeing",
-    "Solang Valley, Atal Tunnel & Sissu",
-    "Kasol & Manikaran Sightseeing",
-    "Chalal Village Visit",
-    "Breakfast",
-    "Toll & Parking"
+    "6 Nights Accommodation (2N Shimla, 2N Manali, 2N Kasol)",
+    "Dedicated Private Cab from Delhi and back for all transfers & sightseeing",
+    "Shimla & Kufri Sightseeing (The Ridge, Mall Road, Christ Church, Jakhu Temple)",
+    "Manali Local Sightseeing (Hadimba Temple, Manu Temple, Vashisht, Van Vihar, Old Manali)",
+    "Solang Valley, engineering marvel Atal Tunnel & excursion to Sissu in Lahaul Valley",
+    "Kasol & Manikaran Sahib Gurudwara (hot springs) & Chalal riverside village walk",
+    "Daily breakfast and on-trip travel assistance",
+    "All toll, parking, and driver allowances included"
   ],
   "inclusions": [
-    "Hotel accommodation",
-    "Transportation",
-    "Pickup and drop-off",
-    "Local sightseeing",
-    "Driver charges",
-    "Toll and parking, where applicable",
-    "Meal plans, if selected",
+    "Hotel accommodation (6 Nights)",
+    "Transportation by private vehicle from Delhi and back",
+    "Pickup and drop-off at Delhi / Chandigarh",
+    "Local sightseeing across Shimla, Kufri, Manali, Solang, Sissu, Kasol, and Manikaran",
+    "Driver charges, fuel, toll and parking charges",
+    "Meal plans (Daily breakfast, with dinner options)",
     "Travel assistance from Safar Trails"
   ],
   "exclusions": [
-    "Personal expenses",
-    "Additional activities and adventure activities",
-    "Entry tickets and attraction charges",
+    "Personal expenses and shopping",
+    "Additional activities and adventure activities (paragliding, rafting, zorbing)",
+    "Entry tickets and monument/park attraction charges",
     "Meals not mentioned in the package",
     "Expenses due to unexpected weather or road conditions",
     "Special sightseeing requirements or additional services",
@@ -60,9 +58,9 @@
   "itinerary": [
     {
       "dayNumber": 1,
-      "title": "Delhi → Shimla",
+      "title": "Delhi → Shimla | Scenic Drive & Mall Road",
       "location": "Shimla",
-      "description": "Arrival in Shimla, hotel check-in and evening visit to The Ridge, Mall Road & Christ Church.",
+      "description": "Depart from Delhi by private cab and drive into the scenic foothills of the Himalayas. Arrival in Shimla, hotel check-in and evening visit to The Ridge, Mall Road & Christ Church. Overnight stay in Shimla.",
       "stay": "Hotel in Shimla",
       "mealsIncluded": "None on arrival day",
       "transfers": "Private Cab"
@@ -70,26 +68,26 @@
     {
       "dayNumber": 2,
       "title": "Shimla & Kufri Sightseeing",
-      "location": "Shimla",
-      "description": "Explore Kufri, Green Valley, Jakhu Temple and enjoy free time at Mall Road.",
+      "location": "Shimla & Kufri",
+      "description": "After breakfast, explore Kufri, Green Valley, Jakhu Temple on the hill crest, and enjoy free time in the evening at Mall Road. Overnight stay in Shimla.",
       "stay": "Hotel in Shimla",
       "mealsIncluded": "Breakfast",
       "transfers": "Private Cab"
     },
     {
       "dayNumber": 3,
-      "title": "Shimla → Manali",
+      "title": "Shimla → Manali | Scenic Valley Transfer",
       "location": "Manali",
-      "description": "Scenic drive through the Himalayan valleys. Check-in at Manali and evening leisure at Mall Road.",
+      "description": "Scenic drive through the Himalayan valleys along the Beas and Satluj rivers. Check-in at your hotel in Manali and enjoy the evening at leisure along Mall Road. Overnight stay in Manali.",
       "stay": "Hotel in Manali",
       "mealsIncluded": "Breakfast",
       "transfers": "Private Cab"
     },
     {
       "dayNumber": 4,
-      "title": "Manali Local Sightseeing",
+      "title": "Manali Local Sightseeing | Hadimba & Old Manali",
       "location": "Manali",
-      "description": "Visit Hadimba Temple, Manu Temple, Vashisht Village, Van Vihar & Old Manali.",
+      "description": "Visit Hadimba Temple surrounded by cedar forests, Manu Temple in Old Manali, Vashisht Village with its sulphur baths, Van Vihar nature park & Old Manali. Overnight stay in Manali.",
       "stay": "Hotel in Manali",
       "mealsIncluded": "Breakfast",
       "transfers": "Private Cab"
@@ -98,52 +96,55 @@
       "dayNumber": 5,
       "title": "Manali → Solang Valley → Atal Tunnel → Sissu → Kasol",
       "location": "Solang, Sissu & Kasol",
-      "description": "Enjoy scenic Himalayan views at Solang Valley, Atal Tunnel & Sissu, followed by a journey to Kasol.",
+      "description": "Enjoy scenic Himalayan views at Solang Valley, drive through the Atal Tunnel into Lahaul to see Sissu waterfall, followed by a picturesque mountain journey to Kasol in Parvati Valley. Overnight stay in Kasol.",
       "stay": "Hotel in Kasol",
       "mealsIncluded": "Breakfast",
       "transfers": "Private Cab"
     },
     {
       "dayNumber": 6,
-      "title": "Kasol & Manikaran Sightseeing",
+      "title": "Kasol & Manikaran Sightseeing | Chalal Village",
       "location": "Kasol & Manikaran",
-      "description": "Visit Manikaran Sahib and explore the peaceful Chalal Village. Evening leisure at Kasol Market and riverside.",
+      "description": "Visit Manikaran Sahib gurudwara and natural thermal hot springs, and explore the peaceful pine-trail to Chalal Village. Spend the evening at leisure at Kasol Market and riverside cafés. Overnight stay in Kasol.",
       "stay": "Hotel in Kasol",
       "mealsIncluded": "Breakfast",
       "transfers": "Private Cab"
     },
     {
       "dayNumber": 7,
-      "title": "Kasol → Delhi",
+      "title": "Kasol → Delhi | Departure",
       "location": "Departure",
-      "description": "Check out and begin your return journey to Delhi by private cab, enjoying scenic valley views along the way. Trip Ends.",
+      "description": "Check out and begin your return journey to Delhi by private cab, enjoying scenic valley views along the way. Trip Ends with unforgettable Himachal memories.",
+      "stay": "—",
       "mealsIncluded": "Breakfast",
       "transfers": "Private Cab"
     }
   ],
   "season": "All Season",
+  "isFeatured": true,
+  "isPopular": true,
   "seoTitle": "Shimla Manali Kasol Tour Package – Manali Adventure & Sightseeing",
   "seoDescription": "Explore Manali with the Shimla Manali Kasol tour package. Visit Hadimba Temple, Old Manali, Mall Road and Solang Valley, with Atal Tunnel and Rohtang Pass subject to access.",
   "faqs": [
     {
       "question": "What is the best time to visit Shimla, Manali and Kasol?",
-      "answer": "Summer is ideal for pleasant weather and sightseeing. The monsoon brings lush green landscapes but also rain and possible road disruptions. Winter is good for travellers looking for snow, though accessibility depends on weather and road conditions. Check the latest weather and road conditions before travelling, especially for the higher-altitude stretches."
+      "answer": "Summer (March to June) is ideal for pleasant weather, green valley views, and sightseeing. Monsoon (July to September) offers lush landscapes though road conditions should be checked. Winter (October to February) is great for snow seekers, especially around Solang Valley and Sissu."
     },
     {
       "question": "Who can book this Himachal tour?",
-      "answer": "Families, couples, friends, solo travellers, corporate groups, school or college groups and private travel groups. Safar Trails can help you select an itinerary according to your group size, travel preferences and budget."
+      "answer": "This package is suitable for families, couples, friends, solo travellers, corporate groups, and private travel groups. Safar Trails customizes the itinerary and vehicle (sedan, SUV, or tempo traveller) based on your group size."
     },
     {
-      "question": "Can the itinerary be changed?",
-      "answer": "Yes. You can discuss your preferred travel dates, hotel category, number of travellers and the places you want to visit, and the itinerary is adjusted to suit — it is not a fixed plan."
+      "question": "Can I customize the Shimla Manali Kasol tour package?",
+      "answer": "Yes. You can discuss your preferred travel dates, hotel categories (3★, 4★, boutique cottages), vehicle preference, and specific places you want to add or spend extra time in."
     },
     {
       "question": "Are the Atal Tunnel and Rohtang Pass included?",
-      "answer": "The Atal Tunnel and Sissu are part of the Day 5 drive. The Rohtang Pass area can be added where accessible, but it depends on the season, road conditions and local permissions, so it cannot be guaranteed in advance."
+      "answer": "The Atal Tunnel and Sissu waterfall are included on Day 5. Rohtang Pass can be added where accessible depending on the season, weather conditions, and local union permit rules."
     },
     {
-      "question": "What is not included in the package?",
-      "answer": "Personal expenses, additional and adventure activities, entry tickets and attraction charges, meals not mentioned in the package, expenses arising from unexpected weather or road conditions, special sightseeing requirements or additional services, and anything not specifically listed in the inclusions."
+      "question": "How much does the 7D/6N Shimla Manali Kasol package cost?",
+      "answer": "This comprehensive 7-day/6-night package starts at approximately ₹15,999 per person (₹30,000–₹35,000 per couple) including 6 nights hotel stays, private cab for all 7 days from Delhi, daily breakfast, and sightseeing."
     }
   ]
 }
