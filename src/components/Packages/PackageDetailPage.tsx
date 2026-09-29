@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import React, { useState, useMemo } from 'react';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { packagesData } from '../../data/packagesData';
 import { GST_NOTE } from '../../lib/seo/siteConfig';
 import { WhatsAppIcon } from '../WhatsAppIcon';
@@ -20,7 +20,18 @@ import {
   Utensils,
   Sparkles,
   Clock,
-  Layers
+  Users,
+  Share2,
+  Check,
+  Star,
+  Info,
+  PhoneCall,
+  Sun,
+  Sunrise,
+  Moon,
+  Lightbulb,
+  ExternalLink,
+  ChevronRight
 } from 'lucide-react';
 import { openWhatsApp } from '../../lib/contact';
 import { packageGallery } from '../../lib/packageMedia';
@@ -31,25 +42,6 @@ interface PackageDetailPageProps {
   onOpenQuoteModal: (summary?: string, destinationName?: string) => void;
 }
 
-/**
- * Organic torn paper edge divider for the adventure/expedition theme
- */
-const TornPaperDivider: React.FC<{ flip?: boolean; className?: string; color?: string }> = ({
-  flip = false,
-  className = '',
-  color = 'text-[#FBF9F5]'
-}) => (
-  <div className={`w-full overflow-hidden leading-none pointer-events-none ${className} ${flip ? 'rotate-180' : ''}`}>
-    <svg
-      viewBox="0 0 1200 24"
-      preserveAspectRatio="none"
-      className={`w-full h-4 sm:h-6 ${color} fill-current block`}
-    >
-      <path d="M0,0 L0,12 Q25,20 50,11 Q75,4 100,16 Q130,24 160,9 Q190,2 220,15 Q255,23 285,8 Q315,1 345,18 Q380,24 410,10 Q440,3 470,16 Q505,23 535,9 Q565,2 595,19 Q630,24 660,11 Q690,3 720,16 Q755,23 785,9 Q815,2 845,17 Q880,24 910,11 Q940,3 970,16 Q1005,23 1035,8 Q1065,1 1095,18 Q1130,24 1160,9 Q1185,3 1200,14 L1200,24 L0,24 Z" />
-    </svg>
-  </div>
-);
-
 export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
   onStartAIPlan,
   onOpenQuoteModal
@@ -59,26 +51,32 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
   const targetSlug = pkgSlug || slug;
   const packageData = packagesData.find((p) => p.slug === targetSlug || p.id === targetSlug);
 
-  const [activeTab, setActiveTab] = useState<'itinerary' | 'inclusions' | 'stays'>('itinerary');
+  const [activeTab, setActiveTab] = useState<'itinerary' | 'stays' | 'inclusions' | 'faqs'>('itinerary');
   const [selectedHotelTier, setSelectedHotelTier] = useState<string>(packageData?.hotelCategory || 'Standard 3★');
-  const [selectedVehicle, setSelectedVehicle] = useState<string>('Private Sedan (Dzire/Etios)');
-  const [travellersCount] = useState<number>(2);
-  const [expandedDay, setExpandedDay] = useState<number | null>(1);
+  const [selectedVehicle, setSelectedVehicle] = useState<string>('Private AC Sedan (Dzire / Etios)');
+  const [travellersCount, setTravellersCount] = useState<number>(2);
+  const [expandedDays, setExpandedDays] = useState<Record<number, boolean>>({ 1: true });
+  const [copiedLink, setCopiedLink] = useState(false);
 
   if (!packageData) {
     return (
-      <div className="w-full max-w-2xl mx-auto px-4 py-24 text-center">
-        <h1 className="text-2xl font-serif font-bold text-stone-900 mb-3">Package not found</h1>
-        <p className="text-sm text-stone-500 mb-6">
-          No tour package with slug "{slug}" exists.
-        </p>
-        <button
-          onClick={() => navigate('/')}
-          className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-midnight-blue text-white text-xs font-bold uppercase tracking-wide cursor-pointer"
-        >
-          <ArrowLeft className="w-3.5 h-3.5" />
-          <span>Back to Home</span>
-        </button>
+      <div className="w-full min-h-[70vh] flex items-center justify-center bg-stone-50 px-4 py-24 text-center">
+        <div className="max-w-md w-full bg-white p-8 rounded-3xl shadow-xl border border-stone-200">
+          <div className="w-16 h-16 bg-rose-50 text-rose-500 rounded-2xl flex items-center justify-center mx-auto mb-4 font-black text-2xl">
+            404
+          </div>
+          <h1 className="text-2xl font-serif font-black text-stone-900 mb-2">Package Not Found</h1>
+          <p className="text-xs sm:text-sm text-stone-600 mb-6">
+            The tour package you are looking for "{targetSlug}" is not available or has moved.
+          </p>
+          <button
+            onClick={() => navigate('/packages')}
+            className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-midnight-blue hover:bg-royal-navy text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md cursor-pointer"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>Explore All Tour Packages</span>
+          </button>
+        </div>
       </div>
     );
   }
@@ -94,564 +92,728 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
   let vehicleSurcharge = 0;
   if (selectedVehicle.includes('Innova') || selectedVehicle.includes('SUV')) {
     vehicleSurcharge = 1800;
+  } else if (selectedVehicle.includes('Tempo')) {
+    vehicleSurcharge = 4500;
   }
 
   const estimatedPerPersonPrice = Math.round(
-    packageData.startingPrice * tierMultiplier + (vehicleSurcharge / travellersCount)
+    packageData.startingPrice * tierMultiplier + (vehicleSurcharge / Math.max(1, travellersCount))
   );
   const estimatedTotalPrice = estimatedPerPersonPrice * travellersCount;
 
   const toggleDay = (dayNum: number) => {
-    setExpandedDay(expandedDay === dayNum ? null : dayNum);
+    setExpandedDays((prev) => ({
+      ...prev,
+      [dayNum]: !prev[dayNum]
+    }));
   };
+
+  const toggleAllDays = (expand: boolean) => {
+    const next: Record<number, boolean> = {};
+    packageData.itinerary.forEach((d) => {
+      next[d.dayNumber] = expand;
+    });
+    setExpandedDays(next);
+  };
+
+  const areAllExpanded = useMemo(() => {
+    return packageData.itinerary.every((d) => !!expandedDays[d.dayNumber]);
+  }, [expandedDays, packageData.itinerary]);
+
+  const handleCopyShare = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: `${packageData.title} | Safar Trails`,
+        text: `Check out this holiday package: ${packageData.title} (${packageData.durationDays}D/${packageData.durationNights}N) starting at ₹${packageData.startingPrice.toLocaleString('en-IN')}`,
+        url: window.location.href
+      }).catch(() => {});
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      setCopiedLink(true);
+      setTimeout(() => setCopiedLink(false), 2500);
+    }
+  };
+
+  const formattedQuoteSummary = `${packageData.title} (${packageData.durationDays}D/${packageData.durationNights}N) - ${selectedHotelTier} stay with ${selectedVehicle} for ${travellersCount} guests (Est. ₹${estimatedTotalPrice.toLocaleString('en-IN')})`;
 
   const handleWhatsApp = () => {
-    const summary = `*SafarTrails Expedition: ${packageData.title}*\n` +
-      `📍 Destination: ${packageData.destination} (${packageData.durationDays}D/${packageData.durationNights}N)\n` +
-      `🏨 Selected Stay: ${selectedHotelTier}\n` +
-      `🚗 Transport: ${selectedVehicle}\n` +
-      `👥 Travellers: ${travellersCount}\n` +
-      `💰 Est. Price: ₹${estimatedPerPersonPrice.toLocaleString('en-IN')}/person (Total: ₹${estimatedTotalPrice.toLocaleString('en-IN')})\n\n` +
-      `Please provide the final quote and verified hotel options for this itinerary!`;
+    const summary = `*SafarTrails Expedition Booking Enquiry*\n\n` +
+      `📦 *Package:* ${packageData.title}\n` +
+      `📍 *Destination:* ${packageData.destination} (${packageData.durationDays}D/${packageData.durationNights}N)\n` +
+      `🏨 *Stay Tier:* ${selectedHotelTier}\n` +
+      `🚗 *Transport:* ${selectedVehicle}\n` +
+      `👥 *Travellers:* ${travellersCount} Guests\n` +
+      `💰 *Estimated Cost:* ₹${estimatedPerPersonPrice.toLocaleString('en-IN')}/person (Total: ₹${estimatedTotalPrice.toLocaleString('en-IN')})\n\n` +
+      `_Please confirm hotel availability, custom dates, and provide the exact final quote!_`;
 
     openWhatsApp(summary, 'package_detail', packageData.destination);
-  };
-
-  const formattedQuoteSummary = `${packageData.title} (${packageData.durationDays}D/${packageData.durationNights}N) - ${selectedHotelTier} stay & ${selectedVehicle} for ${travellersCount} guests`;
-
-  const handleBack = () => {
-    navigate('/');
   };
 
   const gallery = packageGallery(packageData);
 
   return (
-    <div className="w-full min-h-screen bg-[#FBF9F5] text-stone-900 flex flex-col selection:bg-warm-orange/20 selection:text-stone-900">
-      {/* Cinematic Adventure Hero */}
-      <section className="relative w-full h-[380px] sm:h-[460px] lg:h-[500px] flex flex-col justify-between overflow-hidden bg-stone-950">
-        {/* Background Image */}
-        <img
-          src={packageData.heroImage}
-          alt={packageData.title}
-          className="absolute inset-0 w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000 ease-out"
-        />
+    <div className="w-full min-h-screen bg-[#FBF9F5] text-stone-900 selection:bg-warm-orange/25 selection:text-stone-900">
+      
+      {/* TOP HEADER / BREADCRUMB STRIP */}
+      <header className="bg-white border-b border-stone-200 sticky top-0 z-30 shadow-xs">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-2 text-xs sm:text-sm text-stone-500 overflow-x-auto whitespace-nowrap">
+            <button
+              onClick={() => navigate(-1)}
+              className="inline-flex items-center gap-1.5 text-stone-700 hover:text-midnight-blue font-bold px-2 py-1 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer mr-1"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              <span className="hidden sm:inline">Back</span>
+            </button>
+            <span className="text-stone-300">/</span>
+            <Link to="/" className="hover:text-midnight-blue transition-colors">Home</Link>
+            <span className="text-stone-300">/</span>
+            <Link to="/packages" className="hover:text-midnight-blue transition-colors">Tour Packages</Link>
+            <span className="text-stone-300">/</span>
+            <span className="font-semibold text-stone-900 truncate max-w-[200px] sm:max-w-xs">{packageData.title}</span>
+          </div>
 
-        {/* Artistic Atmospheric Gradients & Scrim */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/60 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-warm-orange/20 via-transparent to-transparent pointer-events-none" />
+          <div className="flex items-center gap-2 shrink-0">
+            <button
+              onClick={handleCopyShare}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-stone-200 bg-stone-50 hover:bg-stone-100 text-stone-700 text-xs font-semibold transition-all cursor-pointer"
+              title="Share package"
+            >
+              {copiedLink ? (
+                <>
+                  <Check className="w-3.5 h-3.5 text-emerald-600" />
+                  <span className="text-emerald-700">Copied</span>
+                </>
+              ) : (
+                <>
+                  <Share2 className="w-3.5 h-3.5 text-stone-600" />
+                  <span className="hidden sm:inline">Share</span>
+                </>
+              )}
+            </button>
 
-        {/* Top Floating Navigation & Badges */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8 flex items-center justify-between gap-4">
-          <button
-            onClick={handleBack}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 hover:bg-white/35 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md cursor-pointer border border-white/20"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span>Back to Tours</span>
-          </button>
+            <button
+              onClick={handleWhatsApp}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 text-xs font-bold transition-all cursor-pointer"
+            >
+              <WhatsAppIcon className="w-4 h-4" />
+              <span className="hidden sm:inline">Chat Expert</span>
+            </button>
+          </div>
+        </div>
+      </header>
 
-          <div className="flex items-center gap-2 flex-wrap justify-end">
+      {/* HERO TITLE & BADGES BAR */}
+      <section className="bg-white border-b border-stone-200 pt-6 pb-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center gap-2 mb-3">
             {packageData.badge && (
-              <span className="px-3.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest bg-warm-orange text-cta-ink shadow-[0_4px_16px_rgba(255,133,52,0.8)] border border-warm-orange/50">
+              <span className="px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-warm-orange text-cta-ink shadow-xs">
                 {packageData.badge}
               </span>
             )}
-            <span className="px-3.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-black/60 backdrop-blur-md text-white border border-white/20">
-              <Compass className="w-3 h-3 inline mr-1 text-luxury-gold" />
-              {packageData.durationDays}D / {packageData.durationNights}N
+            <span className="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-stone-100 text-midnight-blue border border-stone-200 flex items-center gap-1">
+              <Compass className="w-3.5 h-3.5 text-warm-orange" />
+              {packageData.durationDays} Days / {packageData.durationNights} Nights
             </span>
-            <span className="hidden sm:inline-flex px-3.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white/20 backdrop-blur-md text-white border border-white/20">
-              <MapPin className="w-3 h-3 inline mr-1 text-warm-orange" />
+            <span className="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-light-blue text-deep-emerald border border-light-blue flex items-center gap-1">
+              <MapPin className="w-3.5 h-3.5 text-deep-emerald" />
               {packageData.destination}
             </span>
-          </div>
-        </div>
-
-        {/* Hero Title & Script Accent */}
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 pb-8 text-center sm:text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[11px] font-semibold tracking-widest uppercase text-luxury-gold mb-3">
-            <Sparkles className="w-3 h-3 text-warm-orange" />
-            <span>Safar Trails Signature Route</span>
+            <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 flex items-center gap-1 ml-auto">
+              <Star className="w-3.5 h-3.5 fill-emerald-600 text-emerald-600" />
+              <span>{packageData.ratings || 4.9} ({packageData.reviewCount || 128} reviews)</span>
+            </span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-black text-white tracking-tight leading-none drop-shadow-md mb-3">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-serif font-black text-stone-900 tracking-tight leading-tight mb-3">
             {packageData.title}
           </h1>
 
-          <p className="text-xs sm:text-sm md:text-base text-stone-200/90 font-normal max-w-3xl leading-relaxed line-clamp-3 drop-shadow">
+          <p className="text-xs sm:text-sm md:text-base text-stone-600 font-normal max-w-4xl leading-relaxed">
             {packageData.overview}
           </p>
 
-          <div className="mt-4 flex flex-wrap items-center justify-center sm:justify-start gap-3 text-xs text-stone-300">
-            <span className="flex items-center gap-1.5 bg-black/40 backdrop-blur-xs px-3 py-1 rounded-lg border border-white/10">
-              <Car className="w-3.5 h-3.5 text-warm-orange" />
-              <span>Dedicated Chauffeur</span>
+          {/* Quick Features Row */}
+          <div className="mt-5 flex flex-wrap items-center gap-3 pt-4 border-t border-stone-100 text-xs font-semibold text-stone-700">
+            <span className="flex items-center gap-1.5 bg-stone-50 px-3 py-1.5 rounded-xl border border-stone-200/80">
+              <Car className="w-4 h-4 text-warm-orange" />
+              <span>Private Dedicated Cab</span>
             </span>
-            <span className="flex items-center gap-1.5 bg-black/40 backdrop-blur-xs px-3 py-1 rounded-lg border border-white/10">
-              <Hotel className="w-3.5 h-3.5 text-luxury-gold" />
-              <span>Handpicked Stays</span>
+            <span className="flex items-center gap-1.5 bg-stone-50 px-3 py-1.5 rounded-xl border border-stone-200/80">
+              <Hotel className="w-4 h-4 text-deep-emerald" />
+              <span>Handpicked Verified Stays</span>
             </span>
-            <span className="flex items-center gap-1.5 bg-black/40 backdrop-blur-xs px-3 py-1 rounded-lg border border-white/10">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-              <span>100% Verified Circuit</span>
+            <span className="flex items-center gap-1.5 bg-stone-50 px-3 py-1.5 rounded-xl border border-stone-200/80">
+              <Utensils className="w-4 h-4 text-warm-orange" />
+              <span>Daily Breakfast & Dinner</span>
+            </span>
+            <span className="flex items-center gap-1.5 bg-stone-50 px-3 py-1.5 rounded-xl border border-stone-200/80">
+              <Sparkles className="w-4 h-4 text-deep-emerald" />
+              <span>100% Customizable Route</span>
+            </span>
+            <span className="flex items-center gap-1.5 bg-emerald-50 text-emerald-800 px-3 py-1.5 rounded-xl border border-emerald-200">
+              <ShieldCheck className="w-4 h-4 text-emerald-600" />
+              <span>Zero Hidden Surcharges</span>
             </span>
           </div>
-        </div>
-
-        {/* Torn Edge Transition to Body */}
-        <TornPaperDivider className="relative z-10" />
-      </section>
-
-      {/* Interactive Expedition Ledger / Configurator Bar */}
-      <section className="relative z-20 -mt-2 max-w-6xl mx-auto px-4 sm:px-6 w-full">
-        <div className="bg-white rounded-3xl p-5 sm:p-6 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.08)] border border-stone-200/80 grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
-          
-          {/* Hotel Tier Selector */}
-          <div className="md:col-span-4 space-y-1.5">
-            <label className="flex items-center gap-1.5 text-[10px] font-extrabold uppercase tracking-widest text-stone-400">
-              <Hotel className="w-3.5 h-3.5 text-deep-emerald" />
-              <span>Hotel Category</span>
-            </label>
-            <select
-              value={selectedHotelTier}
-              onChange={(e) => setSelectedHotelTier(e.target.value)}
-              className="w-full p-3 rounded-2xl border border-stone-200 bg-[#FBF9F5] font-bold text-xs sm:text-sm text-stone-900 focus:border-deep-emerald focus:bg-white focus:outline-none transition-colors cursor-pointer shadow-xs"
-            >
-              {packageData.hotelCategory === 'Budget / 3★' && (
-                <option value="Budget / 3★">Budget / 3★ Stays</option>
-              )}
-              <option value="Standard 3★">Standard 3★ Hotels</option>
-              <option value="Deluxe 4★">Deluxe 4★ Boutique Resorts</option>
-              <option value="Luxury 5★">Luxury 5★ / Royal Heritage</option>
-            </select>
-          </div>
-
-          {/* Transport Selector */}
-          <div className="md:col-span-4 space-y-1.5">
-            <label className="flex items-center gap-1.5 text-[10px] font-extrabold uppercase tracking-widest text-stone-400">
-              <Car className="w-3.5 h-3.5 text-deep-emerald" />
-              <span>Dedicated Transport</span>
-            </label>
-            <select
-              value={selectedVehicle}
-              onChange={(e) => setSelectedVehicle(e.target.value)}
-              className="w-full p-3 rounded-2xl border border-stone-200 bg-[#FBF9F5] font-bold text-xs sm:text-sm text-stone-900 focus:border-deep-emerald focus:bg-white focus:outline-none transition-colors cursor-pointer shadow-xs"
-            >
-              <option value="Private Sedan (Dzire/Etios)">Private AC Sedan (Dzire / Etios)</option>
-              <option value="Private SUV (Innova/Crysta)">Private Innova Crysta (+₹1,800/pkg)</option>
-              <option value="Tempo Traveller">Tempo Traveller (For Groups / Families)</option>
-            </select>
-          </div>
-
-          {/* Price Calculation Card */}
-          <div className="md:col-span-4 bg-gradient-to-br from-[#062B4A] to-[#0B4A78] rounded-2xl p-4 text-white shadow-md flex items-center justify-between">
-            <div>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-luxury-gold block">
-                Estimated Price
-              </span>
-              <div className="flex items-baseline gap-1">
-                <span className="text-xl sm:text-2xl font-black text-white">
-                  ₹{estimatedPerPersonPrice.toLocaleString('en-IN')}
-                </span>
-                <span className="text-[10px] text-stone-300 font-normal">/ person</span>
-              </div>
-              <span className="text-[9px] text-stone-300/80 block">{GST_NOTE}</span>
-            </div>
-
-            <div className="text-right border-l border-white/15 pl-4">
-              <span className="text-[10px] text-luxury-gold font-bold uppercase tracking-wider block">
-                Total ({travellersCount} Guests)
-              </span>
-              <span className="text-sm sm:text-base font-black text-warm-orange">
-                ₹{estimatedTotalPrice.toLocaleString('en-IN')}
-              </span>
-              <button
-                onClick={() => onOpenQuoteModal(formattedQuoteSummary, packageData.destination)}
-                className="mt-1 text-[10px] font-bold text-white underline hover:text-luxury-gold transition-colors block"
-              >
-                Lock This Rate →
-              </button>
-            </div>
-          </div>
-
         </div>
       </section>
 
-      {/* Gallery Strip */}
-      <div className="max-w-6xl mx-auto w-full px-4 sm:px-6 mt-8">
-        <PackageGallery shots={gallery} destination={packageData.destination} />
-      </div>
-
-      {/* Expedition Navigation Tabs */}
-      <div className="sticky top-16 sm:top-20 z-30 bg-[#FBF9F5]/95 backdrop-blur-md border-b border-stone-200 mt-8">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 flex items-center justify-center sm:justify-start gap-2 overflow-x-auto py-2">
-          <button
-            onClick={() => setActiveTab('itinerary')}
-            className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap flex items-center gap-2 ${
-              activeTab === 'itinerary'
-                ? 'bg-midnight-blue text-white shadow-md'
-                : 'bg-white/80 text-stone-600 hover:bg-white hover:text-midnight-blue border border-stone-200/80'
-            }`}
-          >
-            <Compass className="w-3.5 h-3.5 text-warm-orange" />
-            <span>Trail Itinerary ({packageData.itinerary.length} {packageData.itinerary.length === 1 ? 'Day' : 'Days'})</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTab('inclusions')}
-            className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap flex items-center gap-2 ${
-              activeTab === 'inclusions'
-                ? 'bg-midnight-blue text-white shadow-md'
-                : 'bg-white/80 text-stone-600 hover:bg-white hover:text-midnight-blue border border-stone-200/80'
-            }`}
-          >
-            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Inclusions & Gear</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTab('stays')}
-            className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap flex items-center gap-2 ${
-              activeTab === 'stays'
-                ? 'bg-midnight-blue text-white shadow-md'
-                : 'bg-white/80 text-stone-600 hover:bg-white hover:text-midnight-blue border border-stone-200/80'
-            }`}
-          >
-            <Hotel className="w-3.5 h-3.5 text-luxury-gold" />
-            <span>Stays & Fleet</span>
-          </button>
-        </div>
-      </div>
-
-      {/* Main Tab Content Canvas */}
-      <main className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-10 flex-1">
-        
-        {/* TAB 1: THE SIGNATURE EXPEDITION TRAIL */}
-        {activeTab === 'itinerary' && (
-          <div className="relative">
-            
-            {/* Trail Intro Header */}
-            <div className="text-center mb-12">
-              <span className="text-[11px] font-extrabold uppercase tracking-widest text-deep-emerald bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200/60 inline-flex items-center gap-1.5 mb-2">
-                <Compass className="w-3 h-3" />
-                <span>Expedition Route Map</span>
-              </span>
-              <h2 className="text-2xl sm:text-4xl font-serif font-black text-stone-900 tracking-tight">
-                Day-by-Day Expedition Trail
-              </h2>
-              <p className="text-xs sm:text-sm text-stone-500 max-w-xl mx-auto mt-1.5">
-                Follow the winding trail crafted for relaxed pacing, scenic stops, and unforgettable moments.
-              </p>
-            </div>
-
-            {/* Continuous Vertical Map Trail Guide */}
-            <div className="relative">
-              {/* Central Winding Trail Line (Desktop: Center, Mobile: Left) */}
-              <div className="absolute top-8 bottom-8 left-6 sm:left-1/2 -translate-x-1/2 w-0.5 border-l-2 border-dashed border-stone-300 z-0 pointer-events-none" />
-
-              <div className="space-y-10 sm:space-y-14 relative z-10">
-                {packageData.itinerary.map((day, idx) => {
-                  const isExpanded = expandedDay === day.dayNumber;
-                  const isEven = idx % 2 === 0;
-
-                  return (
-                    <div
-                      key={day.dayNumber}
-                      className={`relative flex flex-col sm:flex-row items-center gap-6 sm:gap-10 ${
-                        isEven ? 'sm:flex-row' : 'sm:flex-row-reverse'
-                      }`}
-                    >
-                      {/* Waypoint Marker on the Trail */}
-                      <div className="absolute left-6 sm:left-1/2 -translate-x-1/2 top-4 w-9 h-9 rounded-full bg-white border-2 border-deep-emerald shadow-md flex items-center justify-center font-black text-xs text-midnight-blue z-20">
-                        <span className="w-2.5 h-2.5 rounded-full bg-warm-orange animate-pulse" />
-                      </div>
-
-                      {/* Content Card */}
-                      <div
-                        className={`w-full sm:w-[calc(50%-2rem)] pl-14 sm:pl-0 ${
-                          isEven ? 'sm:text-right' : 'sm:text-left'
-                        }`}
-                      >
-                        <div className="bg-white rounded-3xl p-5 sm:p-6 shadow-[0_12px_35px_-10px_rgba(0,0,0,0.06)] border border-stone-200/90 relative overflow-hidden transition-all duration-300 hover:shadow-[0_20px_45px_-12px_rgba(0,0,0,0.1)] group text-left">
-                          
-                          {/* Large Number Watermark */}
-                          <span className="absolute -bottom-4 right-4 text-7xl sm:text-8xl font-serif font-black text-stone-100 select-none pointer-events-none transition-colors group-hover:text-stone-150">
-                            {String(day.dayNumber).padStart(2, '0')}
-                          </span>
-
-                          {/* Card Header & Location */}
-                          <div className="flex items-center justify-between gap-3 mb-2 relative z-10">
-                            <span className="px-3 py-1 rounded-full bg-[#062B4A] text-white text-[10px] font-black tracking-wider uppercase">
-                              Day {day.dayNumber}
-                            </span>
-                            <span className="text-xs font-semibold text-stone-500 flex items-center gap-1">
-                              <MapPin className="w-3 h-3 text-warm-orange shrink-0" />
-                              <span>{day.location}</span>
-                            </span>
-                          </div>
-
-                          {/* Day Title */}
-                          <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900 leading-snug mb-2 relative z-10">
-                            {day.title}
-                          </h3>
-
-                          {/* Day Image (if present) */}
-                          {day.image && (
-                            <div className="my-3 rounded-2xl overflow-hidden shadow-xs relative z-10">
-                              <img
-                                src={day.image}
-                                alt={`${day.title} — ${day.location}`}
-                                loading="lazy"
-                                className="w-full h-44 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                              />
-                            </div>
-                          )}
-
-                          {/* Story Description */}
-                          <p className="text-xs sm:text-sm text-stone-600 font-normal leading-relaxed mb-4 relative z-10">
-                            {day.description}
-                          </p>
-
-                          {/* Activity Logs (Morning / Afternoon / Evening) */}
-                          {(day.morningActivity || day.afternoonActivity || day.eveningActivity) && (
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 bg-[#FBF9F5] p-3 rounded-2xl text-[11px] mb-4 border border-stone-200/60 relative z-10">
-                              {day.morningActivity && (
-                                <div>
-                                  <span className="font-extrabold text-stone-900 block flex items-center gap-1">
-                                    🌅 Morning
-                                  </span>
-                                  <span className="text-stone-600 line-clamp-2">{day.morningActivity}</span>
-                                </div>
-                              )}
-                              {day.afternoonActivity && (
-                                <div>
-                                  <span className="font-extrabold text-stone-900 block flex items-center gap-1">
-                                    ☀️ Afternoon
-                                  </span>
-                                  <span className="text-stone-600 line-clamp-2">{day.afternoonActivity}</span>
-                                </div>
-                              )}
-                              {day.eveningActivity && (
-                                <div>
-                                  <span className="font-extrabold text-stone-900 block flex items-center gap-1">
-                                    🌙 Evening
-                                  </span>
-                                  <span className="text-stone-600 line-clamp-2">{day.eveningActivity}</span>
-                                </div>
-                              )}
-                            </div>
-                          )}
-
-                          {/* Stay & Meal Ledger Badges */}
-                          <div className="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-stone-100 text-[11px] text-stone-500 relative z-10">
-                            <span className="flex items-center gap-1 font-medium">
-                              <Hotel className="w-3.5 h-3.5 text-deep-emerald" />
-                              <span>{day.stay}</span>
-                            </span>
-                            <span className="flex items-center gap-1 font-medium">
-                              <Utensils className="w-3.5 h-3.5 text-warm-orange" />
-                              <span>{day.mealsIncluded}</span>
-                            </span>
-                          </div>
-
-                        </div>
-                      </div>
-
-                      {/* Spacer for opposite side on desktop */}
-                      <div className="hidden sm:block sm:w-[calc(50%-2rem)]" />
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-          </div>
-        )}
-
-        {/* TAB 2: INCLUSIONS & GEAR */}
-        {activeTab === 'inclusions' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            {/* Inclusions Box */}
-            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-emerald-200/80 shadow-[0_12px_35px_-10px_rgba(0,0,0,0.05)] relative overflow-hidden">
-              <div className="flex items-center gap-2.5 mb-5">
-                <div className="w-9 h-9 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
-                  <CheckCircle2 className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-base font-serif font-bold text-stone-900">What's Covered in Package</h3>
-                  <span className="text-xs text-stone-500">Zero hidden surcharges</span>
-                </div>
-              </div>
-
-              <ul className="space-y-3 text-xs sm:text-sm text-stone-700">
-                {packageData.inclusions.map((inc, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
-                      ✓
-                    </span>
-                    <span className="leading-relaxed">{inc}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Exclusions Box */}
-            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-rose-200/80 shadow-[0_12px_35px_-10px_rgba(0,0,0,0.05)] relative overflow-hidden">
-              <div className="flex items-center gap-2.5 mb-5">
-                <div className="w-9 h-9 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center font-bold">
-                  <XCircle className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-base font-serif font-bold text-stone-900">Out-of-Pocket / Exclusions</h3>
-                  <span className="text-xs text-stone-500">Personal & optional choices</span>
-                </div>
-              </div>
-
-              <ul className="space-y-3 text-xs sm:text-sm text-stone-700">
-                {packageData.exclusions.map((exc, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="w-5 h-5 rounded-full bg-rose-50 text-rose-500 flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
-                      ✕
-                    </span>
-                    <span className="leading-relaxed">{exc}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-          </div>
-        )}
-
-        {/* TAB 3: STAYS & VEHICLE FLEET */}
-        {activeTab === 'stays' && (
-          <div className="space-y-6">
-            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-stone-200 shadow-sm flex flex-col sm:flex-row items-start gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#F2F8FC] text-deep-emerald flex items-center justify-center shrink-0">
-                <Hotel className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-lg font-serif font-bold text-stone-900 mb-1">
-                  Handpicked Stays & Heritage Havelis
-                </h3>
-                <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal mb-3">
-                  We partner directly with verified boutique properties rated 4.5+ on cleanliness and hospitality. Central heating / electric blankets provided in high altitude mountain stays.
-                </p>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold">
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                  <span>Verified 4.5★ Guest Rating Standard</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-stone-200 shadow-sm flex flex-col sm:flex-row items-start gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#F2F8FC] text-deep-emerald flex items-center justify-center shrink-0">
-                <Car className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-lg font-serif font-bold text-stone-900 mb-1">
-                  Dedicated Chauffeur & Sanitized Fleet
-                </h3>
-                <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal mb-3">
-                  Private commercial tourist cab with an experienced mountain driver. Includes all fuel, interstate road taxes, toll charges, parking fees, driver night allowances, and state permits.
-                </p>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
-                  <span>All Toll, Fuel & Chauffeur Allowances Included</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-[#062B4A] text-white p-6 sm:p-8 rounded-3xl shadow-md flex items-center justify-between flex-wrap gap-4">
-              <div>
-                <span className="text-[10px] font-extrabold uppercase tracking-widest text-luxury-gold block mb-1">
-                  Active Expedition Configuration
-                </span>
-                <h4 className="text-base sm:text-lg font-serif font-bold">
-                  {selectedHotelTier} stay with {selectedVehicle}
-                </h4>
-                <p className="text-xs text-stone-300 mt-0.5">Calculated for {travellersCount} travellers on twin-sharing basis.</p>
-              </div>
-
-              <button
-                onClick={() => onOpenQuoteModal(formattedQuoteSummary, packageData.destination)}
-                className="px-6 py-2.5 rounded-full bg-warm-orange text-cta-ink font-bold text-xs uppercase tracking-wider hover:brightness-105 transition-all shadow-md cursor-pointer"
-              >
-                Book This Configuration
-              </button>
-            </div>
-          </div>
-        )}
-
-      </main>
-
-      {/* FAQs Section */}
-      {packageData.faqs && packageData.faqs.length > 0 && (
-        <section
-          aria-labelledby="package-faqs-heading"
-          className="border-t border-stone-200/80 px-4 sm:px-6 lg:px-8 py-12 sm:py-16 bg-white"
-        >
-          <div className="mx-auto w-full max-w-4xl">
-            <div className="text-center mb-8">
-              <span className="text-[10px] font-extrabold uppercase tracking-widest text-deep-emerald bg-emerald-50 px-3 py-1 rounded-full inline-block mb-1.5">
-                Need to Know
-              </span>
-              <h2
-                id="package-faqs-heading"
-                className="font-serif text-2xl sm:text-3xl font-black text-stone-900 tracking-tight"
-              >
-                Frequently Asked Questions
-              </h2>
-            </div>
-
-            <div className="divide-y divide-stone-200 border-y border-stone-200">
-              {packageData.faqs.map((faq) => (
-                <details key={faq.question} className="group py-4">
-                  <summary className="flex cursor-pointer items-start justify-between gap-3 list-none text-sm sm:text-base font-serif font-bold text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-deep-emerald">
-                    <span>{faq.question}</span>
-                    <ChevronDown
-                      aria-hidden="true"
-                      className="mt-1 h-4 w-4 shrink-0 text-stone-400 transition-transform group-open:rotate-180"
-                    />
-                  </summary>
-                  <p className="mt-2 pr-7 text-xs sm:text-sm leading-relaxed text-stone-600 font-normal">
-                    {faq.answer}
-                  </p>
-                </details>
-              ))}
-            </div>
-          </div>
+      {/* PHOTO GALLERY SHOWCASE */}
+      {gallery.length > 0 && (
+        <section className="bg-white border-b border-stone-200">
+          <PackageGallery shots={gallery} destination={packageData.destination} />
         </section>
       )}
 
-      {/* Sticky Bottom Action Bar */}
-      <div className="sticky bottom-0 bg-white/95 backdrop-blur-md border-t border-stone-200 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-3 z-40 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
-        <div className="flex items-center gap-2 w-full sm:w-auto">
-          <button
-            onClick={() => onStartAIPlan(`Customize ${packageData.title}`, packageData.destination)}
-            className="flex-1 sm:flex-initial px-4 py-2.5 rounded-2xl bg-stone-100 hover:bg-stone-200 text-stone-900 font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center justify-center gap-2 cursor-pointer text-center shadow-xs"
-          >
-            <AIIcon className="w-3.5 h-3.5 text-deep-emerald shrink-0" />
-            <span className="whitespace-nowrap">Customize with AI</span>
-          </button>
+      {/* MAIN CONTENT + STICKY BOOKING CONSOLE */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          {/* LEFT COLUMN: ITINERARY, DETAILS, STAYS, INCLUSIONS (8 COLS) */}
+          <div className="lg:col-span-8 space-y-8">
+            
+            {/* TRIP HIGHLIGHTS BENTO */}
+            {packageData.highlights && packageData.highlights.length > 0 && (
+              <div className="bg-white p-6 sm:p-7 rounded-3xl border border-stone-200 shadow-sm">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-8 h-8 rounded-xl bg-warm-orange/15 text-warm-orange flex items-center justify-center">
+                    <Sparkles className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h2 className="text-lg sm:text-xl font-serif font-black text-stone-900">
+                      Key Journey Highlights
+                    </h2>
+                    <p className="text-xs text-stone-500">Carefully curated experiences crafted for this route</p>
+                  </div>
+                </div>
 
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {packageData.highlights.map((hl, i) => (
+                    <div
+                      key={i}
+                      className="flex items-start gap-2.5 p-3 rounded-2xl bg-[#FBF9F5] border border-stone-200/80"
+                    >
+                      <span className="w-5 h-5 rounded-full bg-warm-orange/20 text-warm-orange flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
+                        ✓
+                      </span>
+                      <span className="text-xs sm:text-sm font-medium text-stone-800 leading-snug">
+                        {hl}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* STICKY TAB NAVIGATION */}
+            <div className="sticky top-14 sm:top-16 z-20 bg-white/95 backdrop-blur-md p-2 rounded-2xl border border-stone-200 shadow-sm flex items-center gap-1.5 overflow-x-auto scrollbar-none">
+              <button
+                onClick={() => setActiveTab('itinerary')}
+                className={`flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                  activeTab === 'itinerary'
+                    ? 'bg-midnight-blue text-white shadow-sm'
+                    : 'text-stone-600 hover:bg-stone-100 hover:text-stone-900'
+                }`}
+              >
+                <Compass className="w-3.5 h-3.5 text-warm-orange" />
+                <span>Itinerary ({packageData.itinerary.length} Days)</span>
+              </button>
+
+              <button
+                onClick={() => setActiveTab('inclusions')}
+                className={`flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                  activeTab === 'inclusions'
+                    ? 'bg-midnight-blue text-white shadow-sm'
+                    : 'text-stone-600 hover:bg-stone-100 hover:text-stone-900'
+                }`}
+              >
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Inclusions & Exclusions</span>
+              </button>
+
+              {packageData.faqs && packageData.faqs.length > 0 && (
+                <button
+                  onClick={() => setActiveTab('faqs')}
+                  className={`flex-1 min-w-[90px] py-2.5 px-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                    activeTab === 'faqs'
+                      ? 'bg-midnight-blue text-white shadow-sm'
+                      : 'text-stone-600 hover:bg-stone-100 hover:text-stone-900'
+                  }`}
+                >
+                  <Info className="w-3.5 h-3.5 text-deep-emerald" />
+                  <span>FAQs</span>
+                </button>
+              )}
+            </div>
+
+            {/* TAB 1: DAY BY DAY ITINERARY */}
+            {activeTab === 'itinerary' && (
+              <div className="space-y-6">
+                <div className="flex items-center justify-between bg-white p-4 rounded-2xl border border-stone-200">
+                  <div>
+                    <h2 className="text-base sm:text-lg font-serif font-black text-stone-900">
+                      Detailed Itinerary
+                    </h2>
+                    <p className="text-xs text-stone-500">Day-by-day sightseeing and route schedule</p>
+                  </div>
+                  <button
+                    onClick={() => toggleAllDays(!areAllExpanded)}
+                    className="text-xs font-bold text-deep-emerald hover:text-royal-navy underline cursor-pointer px-2 py-1"
+                  >
+                    {areAllExpanded ? 'Collapse All' : 'Expand All'}
+                  </button>
+                </div>
+
+                {/* Timeline Cards */}
+                <div className="relative pl-6 sm:pl-8 space-y-6 before:content-[''] before:absolute before:left-3 sm:before:left-4 before:top-4 before:bottom-4 before:w-0.5 before:bg-stone-200">
+                  {packageData.itinerary.map((day) => {
+                    const isOpen = !!expandedDays[day.dayNumber];
+                    return (
+                      <div
+                        key={day.dayNumber}
+                        className="relative bg-white rounded-3xl border border-stone-200 shadow-sm overflow-hidden transition-all duration-200 hover:border-stone-300"
+                      >
+                        {/* Timeline Pin Marker */}
+                        <div className="absolute -left-6 sm:-left-8 top-5 w-6 h-6 rounded-full bg-white border-2 border-deep-emerald flex items-center justify-center shadow-xs z-10">
+                          <span className="w-2 h-2 rounded-full bg-warm-orange" />
+                        </div>
+
+                        {/* Accordion Header */}
+                        <button
+                          type="button"
+                          onClick={() => toggleDay(day.dayNumber)}
+                          className="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 cursor-pointer focus:outline-none"
+                        >
+                          <div className="space-y-1.5 flex-1">
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <span className="px-2.5 py-0.5 rounded-md bg-midnight-blue text-white text-[11px] font-black uppercase tracking-wider">
+                                Day {day.dayNumber}
+                              </span>
+                              {day.location && (
+                                <span className="text-xs font-semibold text-stone-500 flex items-center gap-1">
+                                  <MapPin className="w-3.5 h-3.5 text-warm-orange" />
+                                  <span>{day.location}</span>
+                                </span>
+                              )}
+                            </div>
+                            <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900 leading-snug">
+                              {day.title}
+                            </h3>
+                          </div>
+
+                          <div className="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center shrink-0 text-stone-600">
+                            {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                          </div>
+                        </button>
+
+                        {/* Expandable Content Body */}
+                        {isOpen && (
+                          <div className="px-5 sm:px-6 pb-6 pt-0 border-t border-stone-100 space-y-4">
+                            
+                            {/* Day Image if available */}
+                            {day.image && (
+                              <div className="mt-4 rounded-2xl overflow-hidden max-h-60 sm:max-h-72 shadow-xs">
+                                <img
+                                  src={day.image}
+                                  alt={day.title}
+                                  loading="lazy"
+                                  className="w-full h-full object-cover"
+                                />
+                              </div>
+                            )}
+
+                            {/* Description narrative */}
+                            {day.description && (
+                              <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal pt-3 whitespace-pre-line">
+                                {day.description}
+                              </p>
+                            )}
+
+                            {/* Morning / Afternoon / Evening Activity Grid (only if present in data) */}
+                            {(day.morningActivity || day.afternoonActivity || day.eveningActivity) && (
+                              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 bg-[#FBF9F5] p-3.5 rounded-2xl border border-stone-200/80 text-xs">
+                                {day.morningActivity && (
+                                  <div className="space-y-1">
+                                    <div className="flex items-center gap-1 font-bold text-stone-900 text-[11px] uppercase tracking-wider text-warm-orange">
+                                      <Sunrise className="w-3.5 h-3.5" />
+                                      <span>Morning</span>
+                                    </div>
+                                    <p className="text-stone-600 text-[11px] leading-relaxed">{day.morningActivity}</p>
+                                  </div>
+                                )}
+                                {day.afternoonActivity && (
+                                  <div className="space-y-1">
+                                    <div className="flex items-center gap-1 font-bold text-stone-900 text-[11px] uppercase tracking-wider text-deep-emerald">
+                                      <Sun className="w-3.5 h-3.5" />
+                                      <span>Afternoon</span>
+                                    </div>
+                                    <p className="text-stone-600 text-[11px] leading-relaxed">{day.afternoonActivity}</p>
+                                  </div>
+                                )}
+                                {day.eveningActivity && (
+                                  <div className="space-y-1">
+                                    <div className="flex items-center gap-1 font-bold text-stone-900 text-[11px] uppercase tracking-wider text-purple-600">
+                                      <Moon className="w-3.5 h-3.5" />
+                                      <span>Evening</span>
+                                    </div>
+                                    <p className="text-stone-600 text-[11px] leading-relaxed">{day.eveningActivity}</p>
+                                  </div>
+                                )}
+                              </div>
+                            )}
+
+                            {/* Insider Tip if present */}
+                            {day.insiderTip && (
+                              <div className="flex items-start gap-2.5 p-3 rounded-2xl bg-amber-50/80 border border-amber-200 text-xs text-amber-900">
+                                <Lightbulb className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                                <div>
+                                  <strong className="font-bold block">Trip Note:</strong>
+                                  <span>{day.insiderTip}</span>
+                                </div>
+                              </div>
+                            )}
+
+                            {/* Stay & Meal Details Bar */}
+                            {(day.stay || day.mealsIncluded || day.transfers) && (
+                              <div className="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-stone-100 text-xs text-stone-600">
+                                {day.stay && (
+                                  <span className="flex items-center gap-1.5 font-medium">
+                                    <Hotel className="w-4 h-4 text-deep-emerald" />
+                                    <span>Stay: <strong>{day.stay}</strong></span>
+                                  </span>
+                                )}
+                                {day.mealsIncluded && (
+                                  <span className="flex items-center gap-1.5 font-medium">
+                                    <Utensils className="w-4 h-4 text-warm-orange" />
+                                    <span>Meals: <strong>{day.mealsIncluded}</strong></span>
+                                  </span>
+                                )}
+                                {day.transfers && (
+                                  <span className="flex items-center gap-1.5 font-medium">
+                                    <Car className="w-4 h-4 text-stone-500" />
+                                    <span>Transfer: <strong>{day.transfers}</strong></span>
+                                  </span>
+                                )}
+                              </div>
+                            )}
+
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* TAB 2: INCLUSIONS & EXCLUSIONS */}
+            {activeTab === 'inclusions' && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                {/* Inclusions */}
+                <div className="bg-white p-6 sm:p-7 rounded-3xl border border-emerald-200 shadow-sm space-y-4">
+                  <div className="flex items-center gap-2.5 pb-2 border-b border-emerald-100">
+                    <div className="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
+                      <CheckCircle2 className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-serif font-bold text-stone-900">What is Included</h3>
+                      <span className="text-[11px] text-emerald-700">Covered in package</span>
+                    </div>
+                  </div>
+
+                  <ul className="space-y-2.5">
+                    {packageData.inclusions.map((inc, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-stone-700">
+                        <span className="w-4 h-4 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 text-[10px] font-bold mt-0.5">
+                          ✓
+                        </span>
+                        <span className="leading-relaxed">{inc}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Exclusions */}
+                <div className="bg-white p-6 sm:p-7 rounded-3xl border border-rose-200 shadow-sm space-y-4">
+                  <div className="flex items-center gap-2.5 pb-2 border-b border-rose-100">
+                    <div className="w-8 h-8 rounded-xl bg-rose-100 text-rose-800 flex items-center justify-center font-bold">
+                      <XCircle className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-serif font-bold text-stone-900">What is Excluded</h3>
+                      <span className="text-[11px] text-rose-700">Personal & optional expenses</span>
+                    </div>
+                  </div>
+
+                  <ul className="space-y-2.5">
+                    {packageData.exclusions.map((exc, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-stone-700">
+                        <span className="w-4 h-4 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center shrink-0 text-[10px] font-bold mt-0.5">
+                          ✕
+                        </span>
+                        <span className="leading-relaxed">{exc}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+              </div>
+            )}
+
+            {/* TAB 4: FAQS */}
+            {activeTab === 'faqs' && packageData.faqs && packageData.faqs.length > 0 && (
+              <div className="bg-white p-6 sm:p-8 rounded-3xl border border-stone-200 shadow-sm space-y-4">
+                <div className="flex items-center gap-2.5 mb-2">
+                  <div className="w-8 h-8 rounded-xl bg-stone-100 text-midnight-blue flex items-center justify-center font-bold">
+                    <Info className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900">
+                      Frequently Asked Questions
+                    </h3>
+                    <span className="text-xs text-stone-500">Everything you need to know before you travel</span>
+                  </div>
+                </div>
+
+                <div className="divide-y divide-stone-200 border-t border-stone-200">
+                  {packageData.faqs.map((faq, idx) => (
+                    <details key={idx} className="group py-3.5">
+                      <summary className="flex cursor-pointer items-start justify-between gap-3 list-none text-xs sm:text-sm font-bold text-stone-900 focus:outline-none">
+                        <span>{faq.question}</span>
+                        <ChevronDown className="mt-0.5 h-4 w-4 shrink-0 text-stone-400 transition-transform group-open:rotate-180" />
+                      </summary>
+                      <p className="mt-2 pr-4 text-xs sm:text-sm leading-relaxed text-stone-600 font-normal">
+                        {faq.answer}
+                      </p>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            )}
+
+          </div>
+
+          {/* RIGHT COLUMN: STICKY PRICE & BOOKING CONSOLE (4 COLS) */}
+          <div className="lg:col-span-4 sticky top-16 space-y-4">
+            
+            <div className="bg-white rounded-3xl border border-stone-200 shadow-xl overflow-hidden">
+              
+              {/* Card Header with Price */}
+              <div className="bg-gradient-to-br from-midnight-blue to-royal-navy p-6 text-white">
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-luxury-gold">
+                    Live Calculated Pricing
+                  </span>
+                  {packageData.originalPrice && (
+                    <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-bold">
+                      Special Rate
+                    </span>
+                  )}
+                </div>
+
+                <div className="flex items-baseline gap-1.5 mt-1">
+                  <span className="text-3xl sm:text-4xl font-serif font-black text-white">
+                    ₹{estimatedPerPersonPrice.toLocaleString('en-IN')}
+                  </span>
+                  <span className="text-xs text-stone-300 font-normal">/ person</span>
+                </div>
+
+                {packageData.originalPrice && (
+                  <div className="text-xs text-stone-300 line-through mt-0.5">
+                    Original Price: ₹{(packageData.originalPrice * tierMultiplier).toLocaleString('en-IN')}/person
+                  </div>
+                )}
+
+                <div className="mt-2 pt-2 border-t border-white/15 flex items-center justify-between text-xs">
+                  <span className="text-stone-300">Total for {travellersCount} {travellersCount === 1 ? 'Guest' : 'Guests'}:</span>
+                  <span className="text-base font-black text-warm-orange">
+                    ₹{estimatedTotalPrice.toLocaleString('en-IN')}
+                  </span>
+                </div>
+                <span className="text-[10px] text-stone-300/80 block mt-1">{GST_NOTE}</span>
+              </div>
+
+              {/* Interactive Selectors Body */}
+              <div className="p-5 sm:p-6 space-y-4">
+                
+                {/* Hotel Tier Selector */}
+                <div className="space-y-1.5">
+                  <label className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-stone-500">
+                    <Hotel className="w-3.5 h-3.5 text-deep-emerald" />
+                    <span>Hotel Category</span>
+                  </label>
+                  <select
+                    value={selectedHotelTier}
+                    onChange={(e) => setSelectedHotelTier(e.target.value)}
+                    className="w-full p-3 rounded-2xl border border-stone-200 bg-[#FBF9F5] font-semibold text-xs sm:text-sm text-stone-900 focus:border-deep-emerald focus:bg-white focus:outline-none transition-colors cursor-pointer"
+                  >
+                    {packageData.hotelCategory === 'Budget / 3★' && (
+                      <option value="Budget / 3★">Budget / 3★ Hotels</option>
+                    )}
+                    <option value="Standard 3★">Standard 3★ Hotels (Included)</option>
+                    <option value="Deluxe 4★">Deluxe 4★ Boutique Resorts (+25%)</option>
+                    <option value="Luxury 5★">Luxury 5★ Heritage / Lake View (+65%)</option>
+                  </select>
+                </div>
+
+                {/* Transport Selector */}
+                <div className="space-y-1.5">
+                  <label className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-stone-500">
+                    <Car className="w-3.5 h-3.5 text-deep-emerald" />
+                    <span>Dedicated Transport</span>
+                  </label>
+                  <select
+                    value={selectedVehicle}
+                    onChange={(e) => setSelectedVehicle(e.target.value)}
+                    className="w-full p-3 rounded-2xl border border-stone-200 bg-[#FBF9F5] font-semibold text-xs sm:text-sm text-stone-900 focus:border-deep-emerald focus:bg-white focus:outline-none transition-colors cursor-pointer"
+                  >
+                    <option value="Private AC Sedan (Dzire / Etios)">Private AC Sedan (Dzire / Etios)</option>
+                    <option value="Private Innova Crysta SUV">Private Innova Crysta (+₹1,800/pkg)</option>
+                    <option value="Tempo Traveller (Group)">Tempo Traveller (12/17-Seater)</option>
+                  </select>
+                </div>
+
+                {/* Number of Travellers Counter */}
+                <div className="space-y-1.5">
+                  <label className="flex items-center justify-between text-[11px] font-bold uppercase tracking-wider text-stone-500">
+                    <span className="flex items-center gap-1.5">
+                      <Users className="w-3.5 h-3.5 text-deep-emerald" />
+                      <span>Number of Travellers</span>
+                    </span>
+                    <span className="text-stone-400 font-normal">Twin sharing</span>
+                  </label>
+                  
+                  <div className="flex items-center justify-between p-2 rounded-2xl border border-stone-200 bg-[#FBF9F5]">
+                    <button
+                      type="button"
+                      onClick={() => setTravellersCount((c) => Math.max(1, c - 1))}
+                      className="w-9 h-9 rounded-xl bg-white text-stone-700 hover:bg-stone-200 font-black text-base flex items-center justify-center shadow-xs cursor-pointer"
+                      disabled={travellersCount <= 1}
+                    >
+                      -
+                    </button>
+                    <span className="font-serif font-black text-stone-900 text-sm sm:text-base">
+                      {travellersCount} {travellersCount === 1 ? 'Guest' : 'Guests'}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setTravellersCount((c) => Math.min(20, c + 1))}
+                      className="w-9 h-9 rounded-xl bg-white text-stone-700 hover:bg-stone-200 font-black text-base flex items-center justify-center shadow-xs cursor-pointer"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+
+                {/* Primary Action Button: Lock Rate / Get Final Quote */}
+                <button
+                  type="button"
+                  onClick={() => onOpenQuoteModal(formattedQuoteSummary, packageData.destination)}
+                  className="w-full py-3.5 px-4 rounded-2xl bg-warm-orange hover:brightness-105 text-cta-ink font-black text-xs sm:text-sm uppercase tracking-wider shadow-[0_8px_24px_-6px_rgba(255,133,52,0.85)] transition-all flex items-center justify-center gap-2 cursor-pointer mt-2"
+                >
+                  <span>Get Exact Final Quote</span>
+                  <ArrowRight className="w-4 h-4 text-cta-ink" />
+                </button>
+
+                {/* WhatsApp Enquiry Button */}
+                <button
+                  type="button"
+                  onClick={handleWhatsApp}
+                  className="w-full py-3 px-4 rounded-2xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <WhatsAppIcon className="w-4 h-4 text-emerald-600" />
+                  <span>Instant WhatsApp Quote</span>
+                </button>
+
+                {/* AI Trip Customizer Button */}
+                <button
+                  type="button"
+                  onClick={() => onStartAIPlan(`Customize ${packageData.title} in ${packageData.destination} for ${travellersCount} travellers`, packageData.destination)}
+                  className="w-full py-2.5 px-3 rounded-2xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                >
+                  <AIIcon className="w-3.5 h-3.5 text-deep-emerald" />
+                  <span>Customize this route in AI Studio</span>
+                </button>
+
+              </div>
+
+              {/* Trust Assurances Footer */}
+              <div className="bg-stone-50 p-4 border-t border-stone-200 space-y-2 text-[11px] text-stone-600">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                  <span>100% Verified Local Driver & 4.5★ Stays</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-deep-emerald shrink-0" />
+                  <span>Free Date Changes up to 7 Days before travel</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <PhoneCall className="w-3.5 h-3.5 text-warm-orange shrink-0" />
+                  <span>Dedicated 24/7 Safar Trails On-Trip Concierge</span>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Need Customization Banner */}
+            <div className="p-5 rounded-3xl bg-gradient-to-br from-midnight-blue to-deep-emerald text-white shadow-md">
+              <span className="text-[10px] font-extrabold uppercase tracking-widest text-luxury-gold block mb-1">
+                Custom Group or Honeymoon?
+              </span>
+              <h4 className="text-base font-serif font-bold mb-1">
+                Need extra days or special arrangements?
+              </h4>
+              <p className="text-xs text-stone-200 leading-relaxed mb-3">
+                Talk directly to our destination specialists for candle-light dinners, floral bed decors, and flight connections.
+              </p>
+              <button
+                onClick={handleWhatsApp}
+                className="w-full py-2.5 rounded-xl bg-white text-midnight-blue font-bold text-xs uppercase tracking-wider hover:bg-stone-100 transition-colors cursor-pointer"
+              >
+                Talk to Destination Specialist
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      {/* STICKY BOTTOM BAR (Mobile Viewport) */}
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-stone-200 p-3.5 z-40 shadow-[0_-8px_24px_rgba(0,0,0,0.1)] flex items-center justify-between gap-3">
+        <div>
+          <span className="text-[10px] text-stone-500 font-bold uppercase tracking-wider block">Est. Cost</span>
+          <div className="flex items-baseline gap-1">
+            <span className="text-lg font-black text-midnight-blue">
+              ₹{estimatedPerPersonPrice.toLocaleString('en-IN')}
+            </span>
+            <span className="text-[10px] text-stone-500">/ person</span>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2">
           <button
             onClick={handleWhatsApp}
-            className="p-2.5 rounded-2xl bg-emerald-50 text-emerald-600 hover:bg-emerald-100 transition-colors inline-flex items-center justify-center cursor-pointer shrink-0 border border-emerald-200/60"
+            className="p-2.5 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200 cursor-pointer"
             title="Chat on WhatsApp"
           >
             <WhatsAppIcon className="w-5 h-5" />
           </button>
-        </div>
 
-        <button
-          onClick={() => onOpenQuoteModal(formattedQuoteSummary, packageData.destination)}
-          className="w-full sm:w-auto px-7 py-3 rounded-2xl bg-warm-orange hover:brightness-105 text-cta-ink font-black text-xs uppercase tracking-widest shadow-[0_8px_26px_-8px_rgba(255,133,52,0.85)] transition-all flex items-center justify-center gap-2 cursor-pointer"
-        >
-          <span>Get Exact Final Quote</span>
-          <ArrowRight className="w-4 h-4 text-cta-ink" />
-        </button>
+          <button
+            onClick={() => onOpenQuoteModal(formattedQuoteSummary, packageData.destination)}
+            className="px-5 py-2.5 rounded-xl bg-warm-orange text-cta-ink font-black text-xs uppercase tracking-wider shadow-sm cursor-pointer flex items-center gap-1.5"
+          >
+            <span>Get Final Quote</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+        </div>
       </div>
+
     </div>
   );
 };
+
