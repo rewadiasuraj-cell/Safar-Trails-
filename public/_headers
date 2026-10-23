@@ -1,0 +1,26 @@
+# Cloudflare Pages Custom Headers Configuration
+# Optimized caching & security headers for Safar Trails
+
+# Static assets with content-hashed filenames in /assets/ (immutable cache for 1 year)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Static media and brand assets in /content/ and root
+/content/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/*.svg
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/*.jpg
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/*.png
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+# Security and caching headers for all routes
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
