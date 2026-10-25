@@ -225,7 +225,24 @@ export const Header: React.FC<HeaderProps> = ({
               <span className="whitespace-nowrap">Plan with AI</span>
             </button>
 
-            {/* 4. Contact Us, carrying About Us with it.
+            {/* 4. Blog */}
+            <button
+              id="nav-link-blog"
+              onClick={() => {
+                onNavigate('guides');
+                setDestinationsDropdown(false);
+                setContactDropdown(false);
+              }}
+              className={`py-1.5 transition-colors inline-flex items-center cursor-pointer select-none whitespace-nowrap ${
+                currentView === 'guides' || currentView === 'guide-detail' || currentView === 'blog'
+                  ? 'text-accent-ink font-bold underline decoration-2 underline-offset-8 decoration-accent-ink'
+                  : 'text-stone-800 hover:text-accent-ink'
+              }`}
+            >
+              <span className="whitespace-nowrap">Blog</span>
+            </button>
+
+            {/* 5. Contact Us, carrying About Us with it.
                 Right-aligned because this is the last item before the button
                 cluster - a left-aligned panel would run off the viewport. */}
             <div className="relative group">
@@ -429,12 +446,14 @@ export const Header: React.FC<HeaderProps> = ({
                 </div>
                 <div className="space-y-1 text-sm font-medium text-stone-800">
                   {[
-                    { label: 'Travel Guides', view: 'guides', active: currentView === 'guides' || currentView === 'guide-detail' },
-                    { label: 'About Us', view: 'why-us', active: currentView === 'why-us' },
-                    { label: 'Contact Us', view: 'contact-us', active: currentView === 'contact-us' },
+                    { label: 'Blog', id: 'mobile-nav-blog', view: 'guides', active: currentView === 'guides' || currentView === 'guide-detail' || currentView === 'blog' },
+                    { label: 'Travel Guides', id: 'mobile-nav-guides', view: 'guides', active: currentView === 'guides' || currentView === 'guide-detail' },
+                    { label: 'About Us', id: 'mobile-nav-about', view: 'why-us', active: currentView === 'why-us' },
+                    { label: 'Contact Us', id: 'mobile-nav-contact', view: 'contact-us', active: currentView === 'contact-us' },
                   ].map((item) => (
                     <button
-                      key={item.view}
+                      key={item.id}
+                      id={item.id}
                       onClick={() => {
                         onNavigate(item.view);
                         setMobileMenuOpen(false);

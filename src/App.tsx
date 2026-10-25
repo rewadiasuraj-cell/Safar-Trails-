@@ -1,5 +1,5 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation, Navigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { Header } from './components/Header';
 import { MobileBottomNav } from './components/MobileBottomNav';
@@ -52,6 +52,7 @@ const VIEW_TO_PATH: Record<string, string> = {
   packages: '/packages',
   'ai-planner': '/ai-planner',
   guides: '/guides',
+  blog: '/guides',
   'why-us': '/about-us',
   'contact-us': '/contact-us',
 };
@@ -63,8 +64,8 @@ function pathToView(pathname: string): string {
   if (pathname.startsWith('/destinations/')) return 'destination-detail';
   if (pathname === '/packages') return 'packages';
   if (pathname === '/ai-planner') return 'ai-planner';
-  if (pathname === '/guides') return 'guides';
-  if (pathname.startsWith('/guides/')) return 'guide-detail';
+  if (pathname === '/guides' || pathname === '/blog') return 'guides';
+  if (pathname.startsWith('/guides/') || pathname.startsWith('/blog/')) return 'guide-detail';
   if (pathname === '/about-us') return 'why-us';
   if (pathname === '/contact-us') return 'contact-us';
   return 'home';
@@ -395,6 +396,9 @@ export default function App() {
               </div>
             }
           />
+
+          {/* ROUTE: BLOG (Navigates to existing Travel Guides & Blogs hub) */}
+          <Route path="/blog" element={<Navigate to="/guides" replace />} />
 
           {/* ROUTE: SINGLE TRAVEL GUIDE ARTICLE */}
           <Route
