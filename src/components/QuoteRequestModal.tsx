@@ -41,6 +41,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
   const [travellers, setTravellers] = useState('2 Adults (Couple/Honeymoon)');
   const [budget, setBudget] = useState('Standard (₹15k–₹25k/person)');
   const [notes, setNotes] = useState(initialSummary);
+  const [honeypot, setHoneypot] = useState('');
 
   /**
    * The audit measured this form at seven fields and recommended four. Only name
@@ -96,7 +97,8 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
         travellers,
         budget,
         specialNotes: notes,
-        itinerarySummary: initialSummary
+        itinerarySummary: initialSummary,
+        website_hp: honeypot
       })
     }).catch((err) => {
       console.error('Quote email notification failed (enquiry was still submitted):', err);
@@ -127,7 +129,8 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
           travellers,
           budget,
           itinerarySummary: initialSummary,
-          specialNotes: notes
+          specialNotes: notes,
+          website_hp: honeypot
         })
       });
 
@@ -238,6 +241,20 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
         ) : (
           /* Input Form */
           <form onSubmit={handleSubmit} className="p-6 space-y-4 bg-[#F2F8FC]">
+            {/* Anti-spam honeypot - hidden from real visitors */}
+            <div className="sr-only" aria-hidden="true" style={{ display: 'none' }}>
+              <label htmlFor="quote-website-hp">Leave this field blank</label>
+              <input
+                id="quote-website-hp"
+                type="text"
+                name="website_hp"
+                tabIndex={-1}
+                autoComplete="off"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+              />
+            </div>
+
             {errorMsg && (
               <div
                 id="quote-form-error"

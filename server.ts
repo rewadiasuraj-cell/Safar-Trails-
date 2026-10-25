@@ -3,7 +3,13 @@ import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
 import compression from 'compression';
-import { sendQuoteEmail } from './src/lib/email/sendQuoteEmail';
+import {
+  sendQuoteEmail,
+  sanitizeInput,
+  EMAIL_REGEX,
+  SimpleRateLimiter,
+  type QuoteLead,
+} from './src/lib/email/sendQuoteEmail';
 import { generateTripPlan } from './src/lib/ai/generateTripPlan';
 
 dotenv.config();
@@ -21,75 +27,122 @@ import { LEAD_NOTIFICATION_EMAIL } from './src/lib/seo/siteConfig';
 
 const QUOTE_NOTIFY_EMAIL = LEAD_NOTIFICATION_EMAIL;
 
+// Rate limiter: 5 submissions per 10 minutes per IP
+const quotesRateLimiter = new SimpleRateLimiter(5, 10 * 60 * 1000);
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', brand: 'SafarTrails', timestamp: new Date().toISOString() });
 });
 
 // Lead Submission / Quote Request endpoint
-app.post('/api/quotes', (req, res) => {
+app.post('/api/quotes', async (req, res) => {
   try {
-    const { name, phone, email, destination, travelDates, travellers, budget, itinerarySummary, specialNotes } = req.body;
-    
-    if (!name || !phone) {
-      return res.status(400).json({ error: 'Name and Phone number are required' });
+    const clientIp = (req.ip || req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1') as string;
+
+    if (quotesRateLimiter.isRateLimited(clientIp)) {
+      return res.status(429).json({
+        error: 'Too many enquiries from this network. Please wait a few minutes or contact us on WhatsApp.',
+      });
     }
 
-    const lead = {
-      id: `ST-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
+    const {
+      name: rawName,
+      phone: rawPhone,
+      email: rawEmail,
+      destination: rawDest,
+      travelDates: rawDates,
+      travellers: rawTravellers,
+      budget: rawBudget,
+      itinerarySummary: rawSummary,
+      specialNotes: rawNotes,
+      website_hp: honeypot,
+    } = req.body || {};
+
+    // Honeypot bot protection
+    if (honeypot && String(honeypot).trim().length > 0) {
+      return res.json({
+        success: true,
+        leadId: `ST-${Date.now().toString().slice(-6)}`,
+        message: 'Enquiry received.',
+      });
+    }
+
+    const name = sanitizeInput(rawName, 100);
+    const phone = sanitizeInput(rawPhone, 30);
+    const email = sanitizeInput(rawEmail, 120);
+
+    if (!name || name.length < 2) {
+      return res.status(400).json({ error: 'Please provide your full name (minimum 2 characters).' });
+    }
+
+    const cleanPhone = phone.replace(/[^0-9+]/g, '');
+    if (!cleanPhone || cleanPhone.length < 8) {
+      return res.status(400).json({ error: 'Please provide a valid phone or WhatsApp number (minimum 8 digits).' });
+    }
+
+    if (email && !EMAIL_REGEX.test(email)) {
+      return res.status(400).json({ error: 'Please provide a valid email address.' });
+    }
+
+    const destination = sanitizeInput(rawDest, 100) || 'India Custom';
+    const travelDates = sanitizeInput(rawDates, 100) || 'Flexible';
+    const travellers = sanitizeInput(rawTravellers, 100) || '2 Adults';
+    const budget = sanitizeInput(rawBudget, 100) || 'Standard';
+    const itinerarySummary = sanitizeInput(rawSummary, 1000);
+    const specialNotes = sanitizeInput(rawNotes, 1000);
+    const submittedAt = new Date().toISOString();
+
+    const lead: QuoteLead = {
+      leadId: `ST-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
       name,
       phone,
-      email: email || '',
-      destination: destination || 'India Custom',
-      travelDates: travelDates || 'Flexible',
-      travellers: travellers || '2 Adults',
-      budget: budget || 'Standard',
-      itinerarySummary: itinerarySummary || '',
-      specialNotes: specialNotes || '',
-      createdAt: new Date().toISOString(),
-      status: 'NEW_ENQUIRY'
+      email: email || undefined,
+      destination,
+      travelDates,
+      travellers,
+      budget,
+      itinerarySummary: itinerarySummary || undefined,
+      specialNotes: specialNotes || undefined,
+      submittedAt,
     };
 
     submittedLeads.unshift(lead);
-    console.log(`[SafarTrails Lead Created] ID: ${lead.id}, Name: ${lead.name}, Destination: ${lead.destination}`);
+    console.log(`[SafarTrails Lead Created] ID: ${lead.leadId}, Name: ${lead.name}, Destination: ${lead.destination}`);
 
     // Contextual WhatsApp link generator
     const encodedMsg = encodeURIComponent(
-      `Hi SafarTrails Expert! I just submitted an enquiry (#${lead.id}) for ${lead.destination}.\n` +
+      `Hi SafarTrails Expert! I just submitted an enquiry (#${lead.leadId}) for ${lead.destination}.\n` +
       `Dates: ${lead.travelDates} | Travellers: ${lead.travellers}\n` +
       `Name: ${lead.name} (${lead.phone})\n` +
       `Please provide the final verified quote & hotel options.`
     );
     const whatsappUrl = `https://wa.me/918076665782?text=${encodedMsg}`;
 
-    // Fire-and-forget: never awaited, and a failure here must never affect the
-    // response below - the enquiry itself and the WhatsApp link already succeeded.
+    // Email delivery via Resend
+    let emailDelivered = false;
     if (process.env.RESEND_API_KEY) {
-      sendQuoteEmail({
+      const emailResult = await sendQuoteEmail({
         apiKey: process.env.RESEND_API_KEY,
         fromEmail: process.env.RESEND_FROM_EMAIL,
         toEmail: QUOTE_NOTIFY_EMAIL,
-        lead: {
-          leadId: lead.id,
-          name: lead.name,
-          phone: lead.phone,
-          email: lead.email,
-          destination: lead.destination,
-          travelDates: lead.travelDates,
-          travellers: lead.travellers,
-          budget: lead.budget,
-          specialNotes: lead.specialNotes,
-          itinerarySummary: lead.itinerarySummary,
-        },
-      }).then((result) => {
-        if (!result.ok) console.error('[SafarTrails Quote Email] Failed to send:', result.error);
+        lead,
       });
+
+      if (emailResult.ok) {
+        emailDelivered = true;
+      } else {
+        console.error('[SafarTrails Quote Email] Delivery failed:', emailResult.error);
+      }
+    } else {
+      console.warn('[SafarTrails Quote Email] RESEND_API_KEY is not set in environment.');
     }
 
     return res.json({
       success: true,
-      leadId: lead.id,
+      leadId: lead.leadId,
       whatsappUrl,
+      emailDelivered,
       message: 'Your enquiry has been assigned to a Senior SafarTrails Destination Specialist.'
     });
   } catch (error: any) {
