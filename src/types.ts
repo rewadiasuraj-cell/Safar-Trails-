@@ -168,6 +168,20 @@ export interface Package {
   bestTimeToVisit?: { season: string; description: string }[];
   /** Why choose Safar Trails key points */
   whyChooseSafarTrails?: string[];
+  /** Duration options / variations for this destination */
+  packageDurations?: {
+    duration: string;
+    description: string;
+    highlights: string[];
+    bestFor: string;
+  }[];
+  /** Custom final call to action section */
+  finalCta?: {
+    title: string;
+    subtitle?: string;
+    description: string;
+    actionLabel?: string;
+  };
 }
 
 export interface DestinationHighlight {

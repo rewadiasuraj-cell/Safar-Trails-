@@ -51,7 +51,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
   const targetSlug = pkgSlug || slug;
   const packageData = packagesData.find((p) => p.slug === targetSlug || p.id === targetSlug);
 
-  const [activeTab, setActiveTab] = useState<'itinerary' | 'stays' | 'inclusions' | 'places' | 'faqs'>('itinerary');
+  const [activeTab, setActiveTab] = useState<'itinerary' | 'stays' | 'inclusions' | 'places' | 'durations' | 'faqs'>('itinerary');
   const [selectedHotelTier, setSelectedHotelTier] = useState<string>(packageData?.hotelCategory || 'Standard 3★');
   const [selectedVehicle, setSelectedVehicle] = useState<string>('Private AC Sedan (Dzire / Etios)');
   const [travellersCount, setTravellersCount] = useState<number>(2);
@@ -347,6 +347,20 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
                 </button>
               )}
 
+              {packageData.packageDurations && packageData.packageDurations.length > 0 && (
+                <button
+                  onClick={() => setActiveTab('durations')}
+                  className={`flex-1 min-w-[125px] py-2.5 px-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                    activeTab === 'durations'
+                      ? 'bg-midnight-blue text-white shadow-sm'
+                      : 'text-stone-600 hover:bg-stone-100 hover:text-stone-900'
+                  }`}
+                >
+                  <Clock className="w-3.5 h-3.5 text-deep-emerald" />
+                  <span>Duration Options</span>
+                </button>
+              )}
+
               {packageData.hotelsAndStays && (
                 <button
                   onClick={() => setActiveTab('stays')}
@@ -439,22 +453,9 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
                         {/* Expandable Content Body */}
                         {isOpen && (
                           <div className="px-5 sm:px-6 pb-6 pt-0 border-t border-stone-100 space-y-4">
-                            
-                            {/* Day Image if available */}
-                            {day.image && (
-                              <div className="mt-4 rounded-2xl overflow-hidden max-h-60 sm:max-h-72 shadow-xs">
-                                <img
-                                  src={day.image}
-                                  alt={day.title}
-                                  loading="lazy"
-                                  className="w-full h-full object-cover"
-                                />
-                              </div>
-                            )}
-
                             {/* Description narrative */}
                             {day.description && (
-                              <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal pt-3 whitespace-pre-line">
+                              <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal pt-4 whitespace-pre-line">
                                 {day.description}
                               </p>
                             )}
@@ -665,6 +666,57 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
               </div>
             )}
 
+            {/* TAB: PACKAGE DURATIONS */}
+            {activeTab === 'durations' && packageData.packageDurations && packageData.packageDurations.length > 0 && (
+              <div className="space-y-6">
+                <div className="bg-white p-6 sm:p-7 rounded-3xl border border-stone-200 shadow-sm space-y-4">
+                  <div className="flex items-center gap-2.5 pb-2 border-b border-stone-100">
+                    <div className="w-8 h-8 rounded-xl bg-deep-emerald/15 text-deep-emerald flex items-center justify-center font-bold">
+                      <Clock className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900">
+                        Explore Our {packageData.destination} Tour Packages
+                      </h3>
+                      <p className="text-xs text-stone-500">Choose a package based on the places you want to visit, your available time, and your preferred accommodation</p>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
+                    {packageData.packageDurations.map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="p-5 rounded-2xl bg-[#FBF9F5] border border-stone-200/80 hover:border-deep-emerald/40 transition-colors flex flex-col justify-between"
+                      >
+                        <div className="space-y-2.5">
+                          <div className="flex items-center justify-between gap-2">
+                            <span className="px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-midnight-blue text-white">
+                              {item.duration}
+                            </span>
+                          </div>
+                          <p className="text-xs sm:text-sm text-stone-700 leading-relaxed font-normal">
+                            {item.description}
+                          </p>
+                          <ul className="space-y-1.5 pt-1">
+                            {item.highlights.map((h, hIdx) => (
+                              <li key={hIdx} className="flex items-start gap-2 text-xs text-stone-600">
+                                <span className="text-deep-emerald font-bold mt-0.5">•</span>
+                                <span>{h}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div className="mt-4 pt-3 border-t border-stone-200/60 flex items-center justify-between text-xs">
+                          <span className="text-stone-500 font-semibold">Best for:</span>
+                          <span className="font-bold text-deep-emerald text-right">{item.bestFor}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* TAB 4: HOTELS & STAY OPTIONS */}
             {activeTab === 'stays' && packageData.hotelsAndStays && (
               <div className="bg-white p-6 sm:p-8 rounded-3xl border border-stone-200 shadow-sm space-y-6">
@@ -818,13 +870,13 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
             <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-midnight-blue via-royal-navy to-deep-emerald text-white shadow-lg space-y-4">
               <div className="space-y-1.5">
                 <span className="text-[10px] font-extrabold uppercase tracking-widest text-luxury-gold">
-                  Explore Nainital • Create Memories • Travel With Safar Trails
+                  {packageData.finalCta?.subtitle || `Explore ${packageData.destination} • Create Memories • Travel With Safar Trails`}
                 </span>
                 <h3 className="text-xl sm:text-2xl font-serif font-black leading-snug">
-                  Plan Your Nainital Getaway With Safar Trails
+                  {packageData.finalCta?.title || `Plan Your ${packageData.destination} Getaway With Safar Trails`}
                 </h3>
-                <p className="text-xs sm:text-sm text-stone-200 leading-relaxed max-w-2xl font-normal">
-                  From peaceful lakes and mountain views to charming markets and scenic sightseeing, Nainital offers plenty of opportunities for a memorable hill holiday. Contact us with your travel dates, group size, and hotel preferences to receive an accurate, customized quote.
+                <p className="text-xs sm:text-sm text-stone-200 leading-relaxed max-w-2xl font-normal whitespace-pre-line">
+                  {packageData.finalCta?.description || `From peaceful lakes and mountain views to charming markets and scenic sightseeing, ${packageData.destination} offers plenty of opportunities for a memorable holiday. Contact us with your travel dates, group size, and hotel preferences to receive an accurate, customized quote.`}
                 </p>
               </div>
 
@@ -834,7 +886,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
                   onClick={() => onOpenQuoteModal(formattedQuoteSummary, packageData.destination)}
                   className="px-5 py-3 rounded-xl bg-warm-orange text-cta-ink font-bold text-xs uppercase tracking-wider shadow-sm hover:brightness-105 transition-all flex items-center gap-2 cursor-pointer"
                 >
-                  <span>Get A Personalized Tour Quote</span>
+                  <span>{packageData.finalCta ? 'Get A Free Quote' : 'Get A Personalized Tour Quote'}</span>
                   <ArrowRight className="w-4 h-4 text-cta-ink" />
                 </button>
 
@@ -844,7 +896,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
                   className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold text-xs uppercase tracking-wider transition-colors flex items-center gap-2 cursor-pointer"
                 >
                   <WhatsAppIcon className="w-4 h-4 text-emerald-400" />
-                  <span>Chat With Hill Specialist</span>
+                  <span>Chat With Destination Specialist</span>
                 </button>
               </div>
             </div>
