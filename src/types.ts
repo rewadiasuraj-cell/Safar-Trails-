@@ -157,6 +157,17 @@ export interface Package {
    * badge on none.
    */
   badge?: string;
+
+  /** Top attractions covered or featured in this package */
+  topPlacesToVisit?: { name: string; description: string }[];
+  /** Activities and leisure experiences */
+  thingsToDo?: string[];
+  /** Overview of hotel and stay options */
+  hotelsAndStays?: string;
+  /** Best time to visit seasonal details */
+  bestTimeToVisit?: { season: string; description: string }[];
+  /** Why choose Safar Trails key points */
+  whyChooseSafarTrails?: string[];
 }
 
 export interface DestinationHighlight {

@@ -18,126 +18,225 @@ export const packagesData: Package[] = [
     "slug": "nainital-tour-package-naini-lake-mall-road-3d2n",
     "displayOrder": 1,
     "badge": "Trending No.1",
-    "title": "Nainital Tour Package",
+    "title": "Nainital Escape – Scenic Getaway, Hotels & Sightseeing",
     "destination": "Nainital, Uttarakhand",
     "destinationSlug": "uttarakhand",
     "state": "Uttarakhand",
-    "durationDays": 3,
-    "durationNights": 2,
+    "durationDays": 4,
+    "durationNights": 3,
     "startingPrice": 7999,
     "tripType": [
       "Couple",
       "Family",
       "Friends",
-      "Weekend"
+      "Weekend",
+      "Group",
+      "Nature"
     ],
-    "hotelCategory": "Budget / 3★",
-    "ratings": 0,
-    "reviewCount": 0,
-    "startingCity": "Nainital",
-    "bestFor": "Couples, Families, Friends & First-Time Hill Travellers",
+    "hotelCategory": "Standard 3★",
+    "ratings": 4.9,
+    "reviewCount": 148,
+    "startingCity": "Delhi",
+    "bestFor": "Couples, Families, Friends, Group Holidays & Mountain Getaways",
     "heroImage": "/content/packages/nainital-tour-package-naini-lake-mall-road-3d2n/hero.jpg",
     "galleryImages": [
       {
         "src": "/content/packages/nainital-tour-package-naini-lake-mall-road-3d2n/naini-lake.jpg",
-        "caption": "Naini Lake"
+        "caption": "Naini Lake & Scenic Lake Circuit"
       },
       {
-        "src": "/content/packages/nainital-tour-package-naini-lake-mall-road-3d2n/kainchi-dham.jpg",
-        "caption": "Kainchi Dham"
-      },
-      "/content/packages/nainital-tour-package-naini-lake-mall-road-3d2n/lake-valley-view.jpg"
+        "src": "/content/packages/nainital-tour-package-naini-lake-mall-road-3d2n/lake-valley-view.jpg",
+        "caption": "Panoramic Views of Kumaon Himalayas"
+      }
     ],
-    "overview": "Planning a quick hill trip without burning a hole in your pocket? Safar Trails has you covered. This Nainital tour package is 3 days and 2 nights at ₹7,999 per person, with hotel stay and private cab both included. No running around for bookings, no last-minute tension — pack your bags and we handle the rest. Two nights in a comfortable hotel with breakfast, a private cab for your pickup, drop and all sightseeing, every applicable tax already in the price, and a support team on the phone for the whole trip.",
+    "overview": "Planning a refreshing mountain holiday? A Nainital Tour Package is a wonderful way to explore the peaceful lakes, scenic hills, charming markets, and beautiful viewpoints of Nainital. Surrounded by the Kumaon Himalayas, Nainital offers a relaxing combination of nature, sightseeing, local culture, and memorable experiences. With a thoughtfully planned Nainital Tour Package, you can enjoy comfortable accommodation, convenient transfers, sightseeing, and a customized itinerary without the stress of arranging every part of your trip yourself. Whether you are planning a family vacation, romantic getaway, friends' trip, or group holiday, Nainital has something for every traveler. Safar Trails can customize your holiday plan according to your travel dates, budget, preferred hotel category, and sightseeing requirements.",
     "highlights": [
-      "Kainchi Dham — darshan at the Neem Karoli Baba ashram outside town",
-      "Mall Road — evening chai, shopping and Naini Lake views",
-      "Naini Lake boating — the shikara ride the town is named for",
-      "Naina Devi Temple — on the northern shore of the lake",
-      "Ropeway to Snow View Point — the Himalayan skyline on a clear day",
-      "Eco Cave Gardens — a short, easy stop the kids tend to enjoy most",
-      "Tiffin Top — the viewpoint above the town, reached by cab or pony"
+      "Scenic views of the Kumaon Himalayas",
+      "Naini Lake and boating experience",
+      "Mall Road exploration & evening lakeside walks",
+      "Naina Devi Temple visit",
+      "Snow View Point panoramic sightseeing",
+      "Eco Cave Gardens rocky caves exploration",
+      "Nainital Zoo high-altitude wildlife",
+      "Nearby lake destinations — Bhimtal, Sattal & Naukuchiatal",
+      "Comfortable hotel accommodation with daily breakfast",
+      "Local sightseeing and private transportation from Delhi",
+      "100% customizable travel itinerary with Safar Trails"
     ],
     "inclusions": [
-      "2 nights' hotel stay with daily breakfast",
-      "Private cab for pickup, drop and all sightseeing",
-      "All applicable taxes",
-      "Safar Trails support team available throughout your trip"
+      "Hotel accommodation (Comfortable hotel stays in Nainital)",
+      "Daily breakfast, where applicable",
+      "Local transportation for all sightseeing according to the itinerary",
+      "Designated pickup and drop-off (Delhi to Nainital & drive back to Delhi)",
+      "Sightseeing covering Naini Lake, Mall Road, Naina Devi Temple, Snow View Point, Eco Cave Gardens, Tiffin Top, Lands End, Bhimtal, Sattal & Naukuchiatal",
+      "Driver or vehicle services including tolls, parking, and driver allowances",
+      "Trip planning assistance & trip coordination from Safar Trails",
+      "Applicable taxes, where specified"
     ],
     "exclusions": [
-      "Lunch and dinner",
-      "Entry tickets — boating, ropeway and similar activities",
-      "Personal expenses and shopping"
+      "Flights or train tickets",
+      "Personal expenses & shopping",
+      "Lunch and dinner unless specifically mentioned",
+      "Entry tickets (boating, cable car/ropeway, caves, zoo)",
+      "Adventure or activity charges",
+      "Additional transportation beyond the confirmed itinerary",
+      "Travel insurance",
+      "Expenses arising from itinerary changes or unforeseen conditions",
+      "Anything not specifically mentioned in the inclusions"
     ],
     "itinerary": [
       {
         "dayNumber": 1,
-        "title": "Reach Nainital",
-        "location": "Nainital",
-        "description": "Arrive in Nainital and check in at the hotel. Freshen up, then head straight to Mall Road for evening chai, some shopping and the lake views it is known for. A simple, relaxed start to the trip.",
-        "morningActivity": "Arrival and hotel check-in",
-        "afternoonActivity": "Rest and freshen up",
-        "eveningActivity": "Mall Road — chai, shopping and Naini Lake views",
-        "stay": "Hotel in Nainital",
-        "mealsIncluded": "—",
-        "transfers": "Private Cab"
+        "title": "Delhi → Nainital | Arrival & Leisure Evening",
+        "location": "Delhi → Nainital",
+        "description": "Begin your journey from Delhi to Nainital by private transportation. Upon arrival, proceed to your hotel and complete the check-in formalities.\n\nAfter settling in, spend the evening exploring the charming surroundings of Nainital. Enjoy a relaxing walk along Mall Road, followed by a visit to the picturesque Naini Lake and Naina Devi Temple.",
+        "morningActivity": "Departure from Delhi by private transportation",
+        "afternoonActivity": "Arrival in Nainital, hotel check-in & freshen up",
+        "eveningActivity": "Relaxing walk along Mall Road, visit Naini Lake & Naina Devi Temple",
+        "stay": "Overnight Stay: Nainital",
+        "mealsIncluded": "As per selected package",
+        "transfers": "Private Transportation (Delhi to Nainital)",
+        "insiderTip": "Take a stroll along Mall Road in the cool evening breeze to soak in the lakeside ambiance and local hillside shops."
       },
       {
         "dayNumber": 2,
-        "title": "Sightseeing Day",
+        "title": "Nainital Local Sightseeing | Explore Scenic Attractions",
         "location": "Nainital",
-        "description": "A full day out with your cab: Naini Lake boating, Naina Devi Temple, the ropeway to Snow View Point, Eco Cave Gardens and Tiffin Top. The evening is free — do what you like. Boating and ropeway tickets are paid at the gate.",
-        "morningActivity": "Naini Lake boating and Naina Devi Temple",
-        "afternoonActivity": "Ropeway to Snow View Point, Eco Cave Gardens and Tiffin Top",
-        "eveningActivity": "Free — Mall Road, a café, or an early night",
-        "stay": "Hotel in Nainital",
-        "mealsIncluded": "Breakfast",
-        "transfers": "Private Cab"
+        "description": "After breakfast, get ready for a full day of local sightseeing. Discover some of Nainital's popular viewpoints and natural attractions while enjoying the beautiful Himalayan surroundings.\n\nVisit Snow View Point, Eco Cave Gardens, Tiffin Top, and Lands End. Continue your exploration with time around Naina Devi Temple and Mall Road, allowing you to experience the local atmosphere at your own pace. After completing the day's sightseeing, return to your hotel and relax.",
+        "morningActivity": "Snow View Point & Eco Cave Gardens exploration",
+        "afternoonActivity": "Scenic heights of Tiffin Top & Lands End",
+        "eveningActivity": "Leisure time at Naina Devi Temple & Mall Road, return to hotel",
+        "stay": "Overnight Stay: Nainital",
+        "mealsIncluded": "Daily Breakfast",
+        "transfers": "Private Dedicated Cab",
+        "insiderTip": "Snow View Point offers panoramic views of the Himalayan peaks on clear days; carry comfortable footwear for walking in Eco Cave Gardens."
       },
       {
         "dayNumber": 3,
-        "title": "Kainchi Dham & Head Back Home",
-        "location": "Nainital & Kainchi Dham",
-        "description": "Breakfast and hotel check-out, then out to Kainchi Dham — the Neem Karoli Baba ashram — for darshan before your onward drop. Go early if you can: it fills up as the morning goes on. Home with a phone full of photos and a mind full of good memories.",
-        "morningActivity": "Breakfast, check-out and drive to Kainchi Dham",
-        "afternoonActivity": "Darshan at Kainchi Dham, then the departure drop",
-        "eveningActivity": "—",
-        "stay": "—",
-        "mealsIncluded": "Breakfast",
-        "transfers": "Private Cab"
+        "title": "Bhimtal & Lake Tour | Discover Nainital's Beautiful Lake Circuit",
+        "location": "Bhimtal, Sattal & Naukuchiatal",
+        "description": "After breakfast, embark on a scenic excursion to the beautiful lake destinations surrounding Nainital.\n\nBegin with Bhimtal Lake, known for its peaceful surroundings and picturesque setting. Continue towards Sattal, a beautiful cluster of interconnected lakes surrounded by greenery. Next, visit Naukuchiatal, another serene destination known for its tranquil atmosphere and scenic landscapes. Enjoy local sightseeing and leisure time before returning to Nainital in the evening.",
+        "morningActivity": "Scenic excursion to Bhimtal Lake & peaceful surroundings",
+        "afternoonActivity": "Interconnected lakes of Sattal & tranquil Naukuchiatal",
+        "eveningActivity": "Local sightseeing, leisure time & return to Nainital",
+        "stay": "Overnight Stay: Nainital",
+        "mealsIncluded": "Daily Breakfast",
+        "transfers": "Private Dedicated Cab",
+        "insiderTip": "The lake circuit is much calmer than the main town — ideal for photography, peaceful nature walks, and lakeside tea."
+      },
+      {
+        "dayNumber": 4,
+        "title": "Nainital → Delhi | Departure & Journey Back Home",
+        "location": "Nainital → Delhi",
+        "description": "Enjoy breakfast at the hotel before checking out.\n\nDepending on your departure schedule, enjoy some leisure time or explore the local market for shopping and souvenirs.\n\nLater, begin your drive back to Delhi with beautiful memories of your Nainital escape.",
+        "morningActivity": "Breakfast at the hotel & hotel check-out",
+        "afternoonActivity": "Leisure / shopping time in local market for souvenirs",
+        "eveningActivity": "Drive back to Delhi via private transportation; tour concludes",
+        "stay": "Tour concludes with wonderful memories",
+        "mealsIncluded": "Daily Breakfast",
+        "transfers": "Private Transportation (Nainital to Delhi)",
+        "insiderTip": "Pick up handmade aromatic candles, pine cone art, and local fruit preserves from the mall road markets before leaving."
       }
     ],
-    "season": "March to June & September to November",
-    "seoTitle": "Nainital Tour Package 3D/2N ₹7,999 ★ Hotel + Cab | Safar Trails",
-    "seoDescription": "Nainital trip in your budget? ✔ 3 Days 2 Nights @ ₹7,999 only. Hotel + Cab included. Book with Safar Trails – Travel With Trust. Call now!",
+    "topPlacesToVisit": [
+      {
+        "name": "Naini Lake",
+        "description": "Naini Lake is one of the most recognizable attractions in Nainital. Surrounded by hills, the lake provides a peaceful setting for sightseeing and leisure activities."
+      },
+      {
+        "name": "Mall Road",
+        "description": "Mall Road is a popular area for shopping, dining, walking, and enjoying the lively atmosphere of Nainital. It is an easy addition to most Nainital Tour Package itineraries."
+      },
+      {
+        "name": "Naina Devi Temple",
+        "description": "Located near Naini Lake, Naina Devi Temple is an important religious destination and a popular place for visitors exploring the city."
+      },
+      {
+        "name": "Snow View Point",
+        "description": "Snow View Point offers panoramic views of the surrounding mountain landscape. Weather and visibility can affect the views, so travelers should consider local conditions while planning their visit."
+      },
+      {
+        "name": "Eco Cave Gardens",
+        "description": "Eco Cave Gardens offer visitors an opportunity to explore naturally formed rocky caves and landscaped surroundings. It can be an interesting stop for families and leisure travelers."
+      },
+      {
+        "name": "Nainital Zoo",
+        "description": "Nainital Zoo is another attraction that can be included in a sightseeing itinerary, subject to operating days and local conditions."
+      },
+      {
+        "name": "Naina Peak",
+        "description": "Naina Peak is known for its elevated location and views of the surrounding landscape. Travelers should consider weather, accessibility, and their preferred activity level before including it in their itinerary."
+      }
+    ],
+    "thingsToDo": [
+      "Boating on Naini Lake",
+      "Exploring Mall Road",
+      "Enjoying local food & hill cafés",
+      "Shopping for handmade candles & souvenirs",
+      "Taking scenic photographs at mountain viewpoints",
+      "Exploring nearby lakes (Bhimtal, Sattal & Naukuchiatal)",
+      "Enjoying panoramic mountain views of the Kumaon Himalayas",
+      "Visiting local temples and cultural attractions",
+      "Spending relaxed evenings in the cool hill town"
+    ],
+    "hotelsAndStays": "Choosing the right accommodation is an important part of your Nainital Tour Package. Travelers can select accommodation according to their budget, preferred location, room requirements, and available facilities. Hotel options may range from comfortable budget stays to premium properties. Couples may prefer scenic or centrally located hotels, while families may prioritize spacious rooms and convenient access to sightseeing locations. When booking a Nainital holiday package, ask about room category, meal plan, check-in and check-out timings, parking availability, and other hotel-specific facilities before confirming your reservation.",
+    "bestTimeToVisit": [
+      {
+        "season": "March to June",
+        "description": "The weather is generally pleasant for sightseeing and outdoor activities. This period is commonly preferred by travelers looking for a comfortable hill-station escape."
+      },
+      {
+        "season": "July to September",
+        "description": "The monsoon season can bring rainfall and lush greenery. Travelers should check weather and road conditions before planning their journey during this period."
+      },
+      {
+        "season": "October to February",
+        "description": "The colder months offer a different side of Nainital, with chilly weather and winter scenery. Travelers should pack suitable warm clothing and check local weather conditions before departure."
+      }
+    ],
+    "whyChooseSafarTrails": [
+      "Customized itineraries matching your preferred travel dates and pace",
+      "Handpicked hotel selection ranging from budget to premium stays",
+      "Private local transportation with verified dedicated drivers",
+      "Comprehensive sightseeing planning across Nainital and the lake circuit",
+      "End-to-end travel assistance and on-ground coordination",
+      "Transparent package quotations tailored to your exact group requirements"
+    ],
+    "season": "March to June & September to February",
+    "seoTitle": "Nainital Escape Tour Package 4D/3N | Delhi to Nainital | Safar Trails",
+    "seoDescription": "Book your 4D/3N Nainital Escape tour package with Safar Trails. Covers Naini Lake, Mall Road, Snow View Point, Bhimtal, Sattal, private cab & hotel stay.",
     "faqs": [
       {
-        "question": "What exactly does ₹7,999 per person cover?",
-        "answer": "Two nights' hotel stay with daily breakfast, a private cab for your pickup, drop and all sightseeing, and every applicable tax. Lunch and dinner, entry tickets for boating and the ropeway, and personal shopping are not included."
+        "question": "How many days are enough for a Nainital trip?",
+        "answer": "A 3 to 4-night trip can provide enough time to explore major attractions in Nainital and nearby destinations. The ideal duration depends on your interests and travel schedule."
       },
       {
-        "question": "Is travel from my city to Nainital included?",
-        "answer": "The cab covers your pickup, drop and sightseeing for this trip. If you also need transport from Delhi, Kathgodam or anywhere else, tell us where you are starting from and we will add it to your quote before you pay anything."
+        "question": "What is the best time to visit Nainital?",
+        "answer": "Nainital can be visited throughout much of the year. March to June is generally suitable for pleasant-weather sightseeing, while winter offers a colder mountain experience. Monsoon travelers should check current weather and road conditions."
       },
       {
-        "question": "Is Kainchi Dham included in this Nainital package?",
-        "answer": "Yes. Kainchi Dham is on day 3 — breakfast, check-out, and then out to the Neem Karoli Baba ashram for darshan before your onward drop. The drive is covered by the same private cab, at no extra cost. It gets busy as the morning goes on, so an early start is worth it."
+        "question": "What places are covered in a Nainital sightseeing package?",
+        "answer": "Popular attractions include Naini Lake, Mall Road, Naina Devi Temple, Snow View Point, Eco Cave Gardens, Nainital Zoo, and nearby destinations such as Bhimtal and Sattal."
       },
       {
-        "question": "Can the itinerary be changed?",
-        "answer": "Yes. The three days above are what most people want on a first Nainital trip, but the hotel category, the sightseeing list and the number of nights can all be adjusted. Tell us what you would rather do."
+        "question": "Can I customize my Nainital Tour Package?",
+        "answer": "Yes. Depending on availability, your itinerary can be customized according to travel dates, hotel preferences, transportation, sightseeing requirements, and trip duration."
       },
       {
-        "question": "Is this suitable for families with children or elderly parents?",
-        "answer": "Yes. The sightseeing is spread across one relaxed day, the drives are short, and the ropeway means Snow View Point needs no climbing. Tiffin Top can be reached by cab if a pony ride is not wanted."
+        "question": "Is Nainital suitable for families?",
+        "answer": "Nainital offers sightseeing, lake experiences, markets, nature attractions, and leisure activities that can be included in a family holiday itinerary."
       },
       {
-        "question": "When is the best time to visit Nainital?",
-        "answer": "March to June is the main season, when the plains are hot and the lake town is not. September to November is quieter, clearer and better for the Himalayan views from Snow View Point. December to February is cold, and snow is possible but never guaranteed."
+        "question": "Is Nainital suitable for couples?",
+        "answer": "Yes. Couples can create a relaxed itinerary featuring scenic viewpoints, lakeside experiences, comfortable accommodation, and local sightseeing."
       },
       {
-        "question": "Is the price the final amount?",
-        "answer": "The ₹7,999 is per person on the stated inclusions, and all applicable taxes are already in it. Anything you add — a better hotel, extra nights, transport from your city — is quoted before you confirm. What we quote is what you pay."
+        "question": "Can nearby destinations be added to my package?",
+        "answer": "Nearby destinations such as Bhimtal, Sattal, and Naukuchiatal can potentially be included depending on your available time, transportation plan, and package itinerary."
+      },
+      {
+        "question": "How can I book a Nainital tour package?",
+        "answer": "Contact Safar Trails with your travel dates, number of travelers, preferred duration, and hotel requirements. The team can then help prepare a suitable quotation."
       }
     ]
   },

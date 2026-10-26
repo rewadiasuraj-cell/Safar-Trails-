@@ -51,7 +51,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
   const targetSlug = pkgSlug || slug;
   const packageData = packagesData.find((p) => p.slug === targetSlug || p.id === targetSlug);
 
-  const [activeTab, setActiveTab] = useState<'itinerary' | 'stays' | 'inclusions' | 'faqs'>('itinerary');
+  const [activeTab, setActiveTab] = useState<'itinerary' | 'stays' | 'inclusions' | 'places' | 'faqs'>('itinerary');
   const [selectedHotelTier, setSelectedHotelTier] = useState<string>(packageData?.hotelCategory || 'Standard 3★');
   const [selectedVehicle, setSelectedVehicle] = useState<string>('Private AC Sedan (Dzire / Etios)');
   const [travellersCount, setTravellersCount] = useState<number>(2);
@@ -333,6 +333,34 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
                 <span>Inclusions & Exclusions</span>
               </button>
 
+              {(packageData.topPlacesToVisit || packageData.thingsToDo) && (
+                <button
+                  onClick={() => setActiveTab('places')}
+                  className={`flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                    activeTab === 'places'
+                      ? 'bg-midnight-blue text-white shadow-sm'
+                      : 'text-stone-600 hover:bg-stone-100 hover:text-stone-900'
+                  }`}
+                >
+                  <MapPin className="w-3.5 h-3.5 text-warm-orange" />
+                  <span>Places & Activities</span>
+                </button>
+              )}
+
+              {packageData.hotelsAndStays && (
+                <button
+                  onClick={() => setActiveTab('stays')}
+                  className={`flex-1 min-w-[110px] py-2.5 px-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                    activeTab === 'stays'
+                      ? 'bg-midnight-blue text-white shadow-sm'
+                      : 'text-stone-600 hover:bg-stone-100 hover:text-stone-900'
+                  }`}
+                >
+                  <Hotel className="w-3.5 h-3.5 text-deep-emerald" />
+                  <span>Hotels & Stays</span>
+                </button>
+              )}
+
               {packageData.faqs && packageData.faqs.length > 0 && (
                 <button
                   onClick={() => setActiveTab('faqs')}
@@ -343,7 +371,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
                   }`}
                 >
                   <Info className="w-3.5 h-3.5 text-deep-emerald" />
-                  <span>FAQs</span>
+                  <span>FAQs & Info</span>
                 </button>
               )}
             </div>
@@ -563,36 +591,263 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
               </div>
             )}
 
-            {/* TAB 4: FAQS */}
-            {activeTab === 'faqs' && packageData.faqs && packageData.faqs.length > 0 && (
-              <div className="bg-white p-6 sm:p-8 rounded-3xl border border-stone-200 shadow-sm space-y-4">
-                <div className="flex items-center gap-2.5 mb-2">
-                  <div className="w-8 h-8 rounded-xl bg-stone-100 text-midnight-blue flex items-center justify-center font-bold">
-                    <Info className="w-4 h-4" />
+            {/* TAB 3: TOP PLACES TO VISIT & THINGS TO DO */}
+            {activeTab === 'places' && (
+              <div className="space-y-6">
+                {/* Top Places to Visit */}
+                {packageData.topPlacesToVisit && packageData.topPlacesToVisit.length > 0 && (
+                  <div className="bg-white p-6 sm:p-7 rounded-3xl border border-stone-200 shadow-sm space-y-4">
+                    <div className="flex items-center gap-2.5 pb-2 border-b border-stone-100">
+                      <div className="w-8 h-8 rounded-xl bg-warm-orange/15 text-warm-orange flex items-center justify-center font-bold">
+                        <MapPin className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900">
+                          Top Places to Visit in {packageData.startingCity === 'Delhi' ? 'Nainital' : packageData.destination}
+                        </h3>
+                        <span className="text-xs text-stone-500">Key attractions and viewpoints featured on this route</span>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 pt-1">
+                      {packageData.topPlacesToVisit.map((place, idx) => (
+                        <div
+                          key={idx}
+                          className="p-4 rounded-2xl bg-[#FBF9F5] border border-stone-200/80 hover:border-warm-orange/40 transition-colors"
+                        >
+                          <div className="flex items-center gap-2 mb-1.5">
+                            <span className="w-6 h-6 rounded-lg bg-warm-orange/15 text-warm-orange flex items-center justify-center font-bold text-xs">
+                              {idx + 1}
+                            </span>
+                            <h4 className="font-serif font-bold text-stone-900 text-sm sm:text-base">
+                              {place.name}
+                            </h4>
+                          </div>
+                          <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
+                            {place.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Things to Do */}
+                {packageData.thingsToDo && packageData.thingsToDo.length > 0 && (
+                  <div className="bg-white p-6 sm:p-7 rounded-3xl border border-stone-200 shadow-sm space-y-4">
+                    <div className="flex items-center gap-2.5 pb-2 border-b border-stone-100">
+                      <div className="w-8 h-8 rounded-xl bg-deep-emerald/15 text-deep-emerald flex items-center justify-center font-bold">
+                        <Sparkles className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900">
+                          Things to Do in {packageData.startingCity === 'Delhi' ? 'Nainital' : packageData.destination}
+                        </h3>
+                        <span className="text-xs text-stone-500">Unforgettable hill station experiences & leisure activities</span>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                      {packageData.thingsToDo.map((act, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-center gap-3 p-3.5 rounded-2xl bg-[#FBF9F5] border border-stone-200/80 text-xs sm:text-sm font-medium text-stone-800"
+                        >
+                          <span className="w-5 h-5 rounded-full bg-deep-emerald/15 text-deep-emerald flex items-center justify-center shrink-0 text-xs font-bold">
+                            ✓
+                          </span>
+                          <span>{act}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* TAB 4: HOTELS & STAY OPTIONS */}
+            {activeTab === 'stays' && packageData.hotelsAndStays && (
+              <div className="bg-white p-6 sm:p-8 rounded-3xl border border-stone-200 shadow-sm space-y-6">
+                <div className="flex items-center gap-2.5 pb-2 border-b border-stone-100">
+                  <div className="w-8 h-8 rounded-xl bg-deep-emerald/15 text-deep-emerald flex items-center justify-center font-bold">
+                    <Hotel className="w-4 h-4" />
                   </div>
                   <div>
                     <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900">
-                      Frequently Asked Questions
+                      Hotels & Stay Options
                     </h3>
-                    <span className="text-xs text-stone-500">Everything you need to know before you travel</span>
+                    <span className="text-xs text-stone-500">Accommodation choices tailored to your preferences & budget</span>
                   </div>
                 </div>
 
-                <div className="divide-y divide-stone-200 border-t border-stone-200">
-                  {packageData.faqs.map((faq, idx) => (
-                    <details key={idx} className="group py-3.5">
-                      <summary className="flex cursor-pointer items-start justify-between gap-3 list-none text-xs sm:text-sm font-bold text-stone-900 focus:outline-none">
-                        <span>{faq.question}</span>
-                        <ChevronDown className="mt-0.5 h-4 w-4 shrink-0 text-stone-400 transition-transform group-open:rotate-180" />
-                      </summary>
-                      <p className="mt-2 pr-4 text-xs sm:text-sm leading-relaxed text-stone-600 font-normal">
-                        {faq.answer}
-                      </p>
-                    </details>
+                <div className="p-4 rounded-2xl bg-[#FBF9F5] border border-stone-200/80">
+                  <p className="text-xs sm:text-sm text-stone-700 leading-relaxed font-normal whitespace-pre-line">
+                    {packageData.hotelsAndStays}
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                  <div className="p-4 rounded-2xl border border-stone-200 bg-white">
+                    <span className="text-xs font-bold uppercase tracking-wider text-deep-emerald block mb-1">
+                      Budget & 3★ Stays
+                    </span>
+                    <p className="text-xs text-stone-600 leading-relaxed">
+                      Clean, comfortable hotels with essential amenities, hot water, and pleasant mountain hospitality.
+                    </p>
+                  </div>
+                  <div className="p-4 rounded-2xl border border-warm-orange/30 bg-warm-orange/5">
+                    <span className="text-xs font-bold uppercase tracking-wider text-warm-orange block mb-1">
+                      Standard & Deluxe 4★
+                    </span>
+                    <p className="text-xs text-stone-600 leading-relaxed">
+                      Spacious rooms, scenic valley or lake proximity, multi-cuisine dining, and room service.
+                    </p>
+                  </div>
+                  <div className="p-4 rounded-2xl border border-stone-200 bg-white">
+                    <span className="text-xs font-bold uppercase tracking-wider text-midnight-blue block mb-1">
+                      Premium & Heritage Stays
+                    </span>
+                    <p className="text-xs text-stone-600 leading-relaxed">
+                      Colonial heritage boutique properties with panoramic hill vistas, lush lawns, and luxury amenities.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* TAB 5: FAQS & BEST TIME */}
+            {activeTab === 'faqs' && (
+              <div className="space-y-6">
+                {/* Best Time to Visit if present */}
+                {packageData.bestTimeToVisit && packageData.bestTimeToVisit.length > 0 && (
+                  <div className="bg-white p-6 sm:p-7 rounded-3xl border border-stone-200 shadow-sm space-y-4">
+                    <div className="flex items-center gap-2.5 pb-2 border-b border-stone-100">
+                      <div className="w-8 h-8 rounded-xl bg-warm-orange/15 text-warm-orange flex items-center justify-center font-bold">
+                        <Calendar className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900">
+                          Best Time to Visit
+                        </h3>
+                        <span className="text-xs text-stone-500">Seasonal guide for sightseeing & hill experiences</span>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 pt-1">
+                      {packageData.bestTimeToVisit.map((item, idx) => (
+                        <div key={idx} className="p-4 rounded-2xl bg-[#FBF9F5] border border-stone-200/80">
+                          <span className="font-serif font-bold text-stone-900 text-sm block mb-1">
+                            {item.season}
+                          </span>
+                          <p className="text-xs text-stone-600 leading-relaxed font-normal">
+                            {item.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Frequently Asked Questions */}
+                {packageData.faqs && packageData.faqs.length > 0 && (
+                  <div className="bg-white p-6 sm:p-8 rounded-3xl border border-stone-200 shadow-sm space-y-4">
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className="w-8 h-8 rounded-xl bg-stone-100 text-midnight-blue flex items-center justify-center font-bold">
+                        <Info className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900">
+                          Frequently Asked Questions
+                        </h3>
+                        <span className="text-xs text-stone-500">Everything you need to know before you travel</span>
+                      </div>
+                    </div>
+
+                    <div className="divide-y divide-stone-200 border-t border-stone-200">
+                      {packageData.faqs.map((faq, idx) => (
+                        <details key={idx} className="group py-3.5">
+                          <summary className="flex cursor-pointer items-start justify-between gap-3 list-none text-xs sm:text-sm font-bold text-stone-900 focus:outline-none">
+                            <span>{faq.question}</span>
+                            <ChevronDown className="mt-0.5 h-4 w-4 shrink-0 text-stone-400 transition-transform group-open:rotate-180" />
+                          </summary>
+                          <p className="mt-2 pr-4 text-xs sm:text-sm leading-relaxed text-stone-600 font-normal">
+                            {faq.answer}
+                          </p>
+                        </details>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* WHY CHOOSE SAFAR TRAILS BANNER */}
+            {packageData.whyChooseSafarTrails && packageData.whyChooseSafarTrails.length > 0 && (
+              <div className="bg-white p-6 sm:p-7 rounded-3xl border border-stone-200 shadow-sm space-y-4">
+                <div className="flex items-center gap-2.5 pb-2 border-b border-stone-100">
+                  <div className="w-8 h-8 rounded-xl bg-deep-emerald/15 text-deep-emerald flex items-center justify-center font-bold">
+                    <ShieldCheck className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900">
+                      Why Choose Safar Trails?
+                    </h3>
+                    <p className="text-xs text-stone-500">Dedicated holiday planners committed to seamless travel</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                  {packageData.whyChooseSafarTrails.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-start gap-2.5 p-3 rounded-2xl bg-[#FBF9F5] border border-stone-200/80"
+                    >
+                      <span className="w-5 h-5 rounded-full bg-deep-emerald/15 text-deep-emerald flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
+                        ✓
+                      </span>
+                      <span className="text-xs sm:text-sm font-medium text-stone-800 leading-snug">
+                        {item}
+                      </span>
+                    </div>
                   ))}
                 </div>
               </div>
             )}
+
+            {/* PLAN YOUR GETAWAY CTA STRIP */}
+            <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-midnight-blue via-royal-navy to-deep-emerald text-white shadow-lg space-y-4">
+              <div className="space-y-1.5">
+                <span className="text-[10px] font-extrabold uppercase tracking-widest text-luxury-gold">
+                  Explore Nainital • Create Memories • Travel With Safar Trails
+                </span>
+                <h3 className="text-xl sm:text-2xl font-serif font-black leading-snug">
+                  Plan Your Nainital Getaway With Safar Trails
+                </h3>
+                <p className="text-xs sm:text-sm text-stone-200 leading-relaxed max-w-2xl font-normal">
+                  From peaceful lakes and mountain views to charming markets and scenic sightseeing, Nainital offers plenty of opportunities for a memorable hill holiday. Contact us with your travel dates, group size, and hotel preferences to receive an accurate, customized quote.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <button
+                  type="button"
+                  onClick={() => onOpenQuoteModal(formattedQuoteSummary, packageData.destination)}
+                  className="px-5 py-3 rounded-xl bg-warm-orange text-cta-ink font-bold text-xs uppercase tracking-wider shadow-sm hover:brightness-105 transition-all flex items-center gap-2 cursor-pointer"
+                >
+                  <span>Get A Personalized Tour Quote</span>
+                  <ArrowRight className="w-4 h-4 text-cta-ink" />
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleWhatsApp}
+                  className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold text-xs uppercase tracking-wider transition-colors flex items-center gap-2 cursor-pointer"
+                >
+                  <WhatsAppIcon className="w-4 h-4 text-emerald-400" />
+                  <span>Chat With Hill Specialist</span>
+                </button>
+              </div>
+            </div>
 
           </div>
 
