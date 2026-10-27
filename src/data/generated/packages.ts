@@ -515,111 +515,333 @@ export const packagesData: Package[] = [
   {
     "id": "pkg-romantic-goa-boutique",
     "slug": "romantic-goa-boutique-beach-backwater",
-    "title": "Goa Tour Package",
+    "title": "Goa Tour Package: Explore Beaches & Enjoy Your Vacation",
     "destination": "Goa",
     "destinationSlug": "goa",
     "state": "Goa",
-    "durationDays": 5,
-    "durationNights": 4,
+    "durationDays": 4,
+    "durationNights": 3,
     "startingPrice": 12999,
     "originalPrice": 16500,
     "tripType": [
-      "Couple",
+      "Family",
       "Honeymoon",
-      "Friends",
-      "Weekend"
+      "Couple",
+      "Weekend",
+      "Adventure"
     ],
-    "hotelCategory": "Deluxe 4★",
+    "hotelCategory": "Standard 3★",
     "ratings": 4.8,
     "reviewCount": 312,
-    "startingCity": "Goa (Mopa or Dabolim Airport Pickup)",
-    "bestFor": "Couples, Young Travelers & Foodies",
-    "heroImage": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1200&auto=format&fit=crop",
+    "startingCity": "Goa (Airport or Railway Station)",
+    "bestFor": "Beach Lovers, Families, Couples & Weekend Getaways",
+    "heroImage": "/content/destinations/goa/1.jpg",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop"
+      "/content/destinations/goa/1.jpg",
+      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop"
     ],
-    "overview": "The quintessential Goa holiday designed with balance: relax in luxury South Goa resorts, walk through vibrant Portuguese heritage streets in Fontainhas, and explore North Goa’s chic cafes and sunset cruises.",
+    "overview": "Planning a relaxing holiday by the sea? Goa is a wonderful destination for travelers who love beautiful beaches, exciting nightlife, delicious food, and rich culture. Whether you are planning a family vacation, a romantic getaway, or a fun trip with friends, Goa has something for everyone.\n\nChoosing the right Goa tour package can make your trip easier and more enjoyable. From comfortable hotel stays to local sightseeing, a well-planned package helps you explore the best of Goa without worrying about every travel detail.",
     "highlights": [
-      "4 Nights in 4★ Boutique Beach Resort with daily buffet breakfast",
-      "Private sunset river cruise on Mandovi with Goan live folk music",
-      "Guided walking photography tour of Fontainhas Latin Quarter",
-      "Day trip to South Goa beaches (Palolem, Agonda & Cabo de Rama Fort)",
-      "Dedicated private AC cab for all tours and transfers"
+      "3 nights of hotel accommodation in Goa",
+      "Arrival and departure transfers, as per the confirmed package",
+      "North Goa beach and fort sightseeing",
+      "South Goa heritage and cultural sightseeing",
+      "Visits to popular beaches, historic churches, and scenic viewpoints",
+      "Leisure time for shopping, beach walks, and optional activities"
     ],
     "inclusions": [
-      "4 Nights stay in 4★ boutique beach resort",
-      "Daily breakfast at hotel",
-      "Private airport pickup and drop off (GOX or GOI)",
-      "Full day North Goa sightseeing & Full day South Goa beaches tour",
-      "Sunset Mandovi river cruise passes"
+      "Hotel accommodation for the confirmed number of nights",
+      "Daily breakfast or other meals, as specified",
+      "Airport, railway station, or bus station transfers, if included",
+      "Local sightseeing according to the itinerary",
+      "Transportation for scheduled sightseeing tours",
+      "Applicable taxes and service charges, where specified",
+      "Assistance from the tour operator during the trip, if offered"
     ],
     "exclusions": [
-      "Flight tickets to Goa",
-      "Water sports activity packages (can be booked at jetty)",
-      "Club entry fees and alcohol"
+      "Travel tickets: Flights, trains, and intercity bus tickets",
+      "Meals: Lunch, dinner, snacks, and beverages not listed in the package",
+      "Personal expenses: Shopping, laundry, telephone calls, and room service",
+      "Adventure activities: Water sports, equipment rental, and optional experiences",
+      "Entry charges: Attraction tickets, guide fees, and optional excursions",
+      "Hotel extras: Early check-in, late check-out, and additional room services",
+      "Travel insurance: Insurance premiums and related expenses",
+      "Tips and gratuities: Payments to drivers, guides, or service staff",
+      "Unexpected expenses: Costs caused by weather disruptions, schedule changes, or other unforeseen circumstances",
+      "Unlisted services: Any service not specifically mentioned in the confirmed package inclusions"
     ],
     "itinerary": [
       {
         "dayNumber": 1,
-        "title": "Arrival in Goa & Sunset Beach Walk",
+        "title": "DAY 01 | ARRIVAL IN GOA & BEACH LEISURE",
         "location": "Goa Arrival",
-        "description": "Warm pickup at Mopa (GOX) or Dabolim (GOI) airport. Transfer to your beach resort. Relax by the pool and take a leisurely sunset walk along the beach.",
-        "morningActivity": "Airport pickup & check-in",
-        "afternoonActivity": "Poolside relaxation and tropical welcome drink",
-        "eveningActivity": "Sunset walk at Candolim/Benaulim beach shack",
-        "stay": "Hard Rock Hotel / Heritage Village Resort 4★, Goa",
-        "mealsIncluded": "Breakfast",
-        "transfers": "Private AC Cab"
+        "description": "Welcome to Goa!\n\n• Arrive at Goa Airport or Railway Station.\n• Meet and greet by a representative of Safar Trails.\n• Enjoy a private transfer to your hotel and complete the check-in formalities.\n• Relax at the hotel after your journey.\n• In the evening, visit Baga Beach or Calangute Beach to enjoy the coastal atmosphere and beautiful sunset views.\n• Spend some leisure time exploring the beach and nearby surroundings.\n• Return to the hotel for dinner and an overnight stay in Goa.",
+        "morningActivity": "Arrival at Goa Airport or Railway Station & meet Safar Trails representative",
+        "afternoonActivity": "Private transfer to hotel, check-in formalities & relaxation",
+        "eveningActivity": "Visit Baga or Calangute Beach for coastal sunset & beach leisure walks",
+        "stay": "Overnight stay in Goa",
+        "mealsIncluded": "Dinner",
+        "transfers": "Private Transfer from Airport / Railway Station",
+        "insiderTip": "Relax after your journey and soak in the evening sunset breeze along the beach shacks."
       },
       {
         "dayNumber": 2,
-        "title": "North Goa Forts, Water Sports & Mandovi Sunset Cruise",
+        "title": "DAY 02 | NORTH GOA SIGHTSEEING",
         "location": "North Goa",
-        "description": "Visit Aguada Fort overlooking the Arabian Sea, Sinquerim beach for parasailing and jet skiing, followed by a romantic sunset catamaran cruise on the Mandovi River.",
-        "morningActivity": "Aguada Fort & Sinquerim lighthouse tour",
-        "afternoonActivity": "Water sports at Calangute/Baga coast",
-        "eveningActivity": "Sunset Mandovi River Cruise with live DJ and folk dance",
-        "stay": "Hard Rock Hotel / Heritage Village Resort 4★, Goa",
-        "mealsIncluded": "Breakfast",
-        "transfers": "Private AC Cab"
+        "description": "Explore Goa's Famous Beaches & Historic Forts\n\n• Enjoy breakfast at the hotel.\n• Begin your North Goa sightseeing tour with a visit to the historic Fort Aguada.\n• Continue to Sinquerim Beach and enjoy the scenic coastal views.\n• Visit the popular beaches of Candolim, Calangute, and Baga.\n• Explore Anjuna Beach, known for its relaxed atmosphere and vibrant surroundings.\n• Proceed to Vagator Beach and visit Chapora Fort for panoramic views of the coastline.\n• Spend the evening enjoying leisure time at a beach or exploring a local market, depending on your preference and available time.\n• Return to the hotel for dinner and an overnight stay.",
+        "morningActivity": "Breakfast at hotel, visit historic Fort Aguada & Sinquerim Beach",
+        "afternoonActivity": "Explore Candolim, Calangute, Baga, and Anjuna Beach",
+        "eveningActivity": "Chapora Fort panoramic coastline views & leisure time at Vagator Beach or local market",
+        "stay": "Overnight stay in Goa",
+        "mealsIncluded": "Breakfast & Dinner",
+        "transfers": "Transportation for Scheduled Sightseeing",
+        "insiderTip": "Chapora Fort offers breathtaking panoramic views of the surrounding coastline during sunset."
       },
       {
         "dayNumber": 3,
-        "title": "Fontainhas Latin Quarter & Old Goa Heritage Churches",
-        "location": "Panaji & Old Goa",
-        "description": "Explore the UNESCO heritage Basilica of Bom Jesus and Se Cathedral in Old Goa. Afterwards, walk through the colourful Portuguese Latin Quarter of Fontainhas and taste warm Bebinca at a 100-year-old bakery.",
-        "morningActivity": "Old Goa churches & history walk",
-        "afternoonActivity": "Guided photography walk through Fontainhas",
-        "eveningActivity": "Dinner at quaint Goan-Portuguese courtyard bistro in Assagao",
-        "stay": "Hard Rock Hotel / Heritage Village Resort 4★, Goa",
-        "mealsIncluded": "Breakfast",
-        "transfers": "Private AC Cab"
+        "title": "DAY 03 | SOUTH GOA SIGHTSEEING & HERITAGE",
+        "location": "South Goa & Panjim",
+        "description": "Discover Goa's Cultural Heritage & Scenic Attractions\n\n• Enjoy breakfast at the hotel.\n• Visit the Basilica of Bom Jesus, one of Goa's most renowned historic churches.\n• Explore Se Cathedral and the heritage landmarks of Old Goa.\n• Continue to Miramar Beach for a relaxing coastal experience.\n• Visit Dona Paula Viewpoint to enjoy scenic views of the surrounding waters.\n• Explore Panjim City and stroll through the colourful Fontainhas heritage quarter, known for its distinctive architecture and charming streets.\n• Enjoy some free time in the evening or opt for a sunset cruise at an additional cost, subject to availability.\n• Return to the hotel for dinner and an overnight stay.",
+        "morningActivity": "Breakfast, Basilica of Bom Jesus, Se Cathedral & Old Goa heritage landmarks",
+        "afternoonActivity": "Miramar Beach, Dona Paula Viewpoint & colorful Fontainhas heritage walk",
+        "eveningActivity": "Free time in Panjim or optional sunset cruise (subject to availability)",
+        "stay": "Overnight stay in Goa",
+        "mealsIncluded": "Breakfast & Dinner",
+        "transfers": "Transportation for Scheduled Sightseeing",
+        "insiderTip": "Fontainhas is celebrated for its distinctive Portuguese architecture and vibrant heritage photo spots."
       },
       {
         "dayNumber": 4,
-        "title": "Pristine South Goa: Cabo de Rama Fort & Palolem Beach",
-        "location": "South Goa",
-        "description": "Head to the untamed beauty of South Goa. Clamber up the cliffside ruins of Cabo de Rama Fort for turquoise sea panoramas, followed by dolphin watching and kayaking at Palolem beach.",
-        "morningActivity": "Drive to Cabo de Rama cliff viewpoint",
-        "afternoonActivity": "Kayaking & beach shacks at Palolem and Agonda",
-        "eveningActivity": "Sunset cocktail at clifftop cafe",
-        "stay": "Hard Rock Hotel / Heritage Village Resort 4★, Goa",
-        "mealsIncluded": "Breakfast",
-        "transfers": "Private AC Cab"
-      },
-      {
-        "dayNumber": 5,
-        "title": "Goa Souvenirs & Airport Departure",
+        "title": "DAY 04 | DEPARTURE FROM GOA",
         "location": "Goa Departure",
-        "description": "Breakfast, morning dip in the sea, and transfer to airport with sun-kissed memories.",
-        "morningActivity": "Breakfast & cashew/feni souvenir shopping",
-        "afternoonActivity": "Airport drop off",
+        "description": "Bid Farewell to Goa\n\n• Enjoy breakfast at the hotel.\n• Complete the hotel check-out formalities.\n• Depending on your departure schedule, enjoy some free time for shopping or a short visit to a nearby beach, if time permits.\n• Proceed to Goa Airport or Railway Station via private transfer.\n• Depart with wonderful memories of Goa's beaches, heritage, and unforgettable experiences.",
+        "morningActivity": "Breakfast at the hotel & hotel check-out formalities",
+        "afternoonActivity": "Leisure time for shopping or short beach visit if departure schedule permits",
+        "eveningActivity": "Private transfer to Goa Airport or Railway Station; departure",
+        "stay": "Tour concludes with unforgettable memories",
         "mealsIncluded": "Breakfast",
-        "transfers": "Private AC Cab"
+        "transfers": "Private Transfer to Airport / Railway Station",
+        "insiderTip": "Ensure check-out formalities and departure transit are scheduled in advance according to flight or train times."
       }
     ],
-    "season": "All Season",
+    "topPlacesToVisit": [
+      {
+        "name": "Baga Beach",
+        "description": "Popular for its lively atmosphere, restaurants, and nightlife. A vibrant coastal hub in North Goa."
+      },
+      {
+        "name": "Calangute Beach",
+        "description": "A busy beach with shopping, food, and seasonal water sports, ideal for enjoying coastal vibes."
+      },
+      {
+        "name": "Candolim Beach",
+        "description": "A good option for travelers looking for a beachside stay near popular restaurants and leisure spots."
+      },
+      {
+        "name": "Palolem Beach",
+        "description": "Known for its scenic coastline and relaxed atmosphere in South Goa, perfect for peaceful beach walks."
+      },
+      {
+        "name": "Colva Beach",
+        "description": "A popular South Goa destination known for scenic beach walks, white sands, and local food."
+      },
+      {
+        "name": "Basilica of Bom Jesus",
+        "description": "One of Goa's most renowned historic churches in Old Goa, discovering important examples of historic religious architecture."
+      },
+      {
+        "name": "Se Cathedral",
+        "description": "Majestic historic religious architecture and important cultural heritage landmarks of Old Goa."
+      },
+      {
+        "name": "Fort Aguada",
+        "description": "A well-known 17th-century Portuguese fortress offering commanding coastal views and a glimpse into Goa's past."
+      },
+      {
+        "name": "Chapora Fort",
+        "description": "Popular destination for breathtaking panoramic views of Vagator Beach and the surrounding coastline."
+      },
+      {
+        "name": "Fontainhas Latin Quarter",
+        "description": "The colourful historic quarter in Panjim, renowned for its distinctive Portuguese architecture and charming streets."
+      },
+      {
+        "name": "Popular Markets & Bazaars",
+        "description": "Local markets for clothing, souvenirs, handicrafts, beachwear, and regional products around Anjuna, Mapusa, and Panaji."
+      }
+    ],
+    "thingsToDo": [
+      "Enjoy Water Sports (parasailing, kayaking, boat rides subject to season & local conditions)",
+      "Experience Goa's Nightlife (restaurants, music venues, and clubs in North Goa)",
+      "Explore Goan Cuisine (fish curry rice, fresh seafood & traditional vegetarian specialties)",
+      "Visit Spice Plantations & Nature Attractions (lush gardens and serene nature walks)",
+      "Enjoy Cruises and Boat Rides (scenic coastal boat trips and Mandovi River cruises)",
+      "Tour Historic Churches and Heritage Sites in Old Goa",
+      "Explore Scenic Coastal Forts & Sunset Points (Fort Aguada & Chapora Fort)",
+      "Shop at Vibrant Flea Markets for Souvenirs, Clothing & Beachwear",
+      "Relax on Sun-Kissed Beaches and Enjoy Golden Hour Sunset Strolls"
+    ],
+    "hotelsAndStays": "Choosing the right Goa tour package helps you organize your accommodation according to your travel needs. Travelers can select from comfortable budget hotels, beach resorts, and luxury properties.\n\nWhen booking, check the travel time between sightseeing spots and ask whether meals and transfers are included. For couples, scenic resorts create a lovely setting for a honeymoon. For a more peaceful trip, South Goa and its quieter coastal areas offer relaxed resort stays.\n\nCheck whether add-ons are included in your package or charged separately, and compare total package value for a hassle-free holiday.",
+    "bestTimeToVisit": [
+      {
+        "season": "Goa in Winter (November to February)",
+        "description": "The winter season, broadly from November to February, is popular for beach holidays and outdoor sightseeing. The weather is generally more comfortable for exploring, but accommodation and travel costs may be higher during busy periods. Book early if you plan to travel during holidays or festivals."
+      },
+      {
+        "season": "Goa in Summer (March to May)",
+        "description": "The summer months, especially from March to May, can be hot and humid. This period may suit travelers looking for a quieter holiday, depending on their preferred activities and accommodation choices. Plan outdoor sightseeing for cooler parts of the day and stay hydrated."
+      },
+      {
+        "season": "Goa During the Monsoon (June to September)",
+        "description": "The monsoon season generally runs from June to September. The landscape becomes lush and green, offering a different side of Goa. However, heavy rain may affect outdoor activities, road travel, and access to certain attractions. Check weather forecasts and activity availability before traveling."
+      }
+    ],
+    "packageDurations": [
+      {
+        "duration": "Goa Family Tour Package",
+        "description": "A family holiday in Goa can include beach visits, cultural attractions, local markets, and relaxing resort stays.",
+        "highlights": [
+          "Miramar Beach, Fort Aguada, and Old Goa",
+          "Family-friendly accommodation with easy access to major attractions",
+          "Convenient transfers and balanced sightseeing pace"
+        ],
+        "bestFor": "Families & Multigenerational Groups"
+      },
+      {
+        "duration": "Goa Honeymoon Tour Package",
+        "description": "A popular choice for couples looking for a romantic holiday with beautiful sunsets, quiet beaches, and scenic resorts.",
+        "highlights": [
+          "Sunset walks and relaxing beachside experiences",
+          "Private dinners offered by selected resorts",
+          "Quiet South Goa coastal exploration"
+        ],
+        "bestFor": "Couples & Honeymooners"
+      },
+      {
+        "duration": "Goa Weekend Tour Package",
+        "description": "Short on time? A weekend trip is a great way to enjoy Goa's main attractions without taking a long vacation.",
+        "highlights": [
+          "Two-night or three-night stay with key beach visits",
+          "Local sightseeing and shopping",
+          "Time to savor authentic Goan cuisine"
+        ],
+        "bestFor": "Short Breaks & Weekend Travelers"
+      },
+      {
+        "duration": "Goa Adventure Tour Package",
+        "description": "For travelers who enjoy outdoor activities and excitement along Goa's coastline and waterways.",
+        "highlights": [
+          "Kayaking, parasailing, and boat trips",
+          "Exciting seasonal water sports with safety arrangements",
+          "Coastal fort explorations and outdoor excursions"
+        ],
+        "bestFor": "Adventure Seekers & Friends"
+      },
+      {
+        "duration": "Goa Budget Tour Package",
+        "description": "Traveling on a budget does not mean missing out on Goa's best experiences.",
+        "highlights": [
+          "Standard accommodation and selected sightseeing",
+          "Shared or cost-effective transportation",
+          "Affordable options during quieter travel periods"
+        ],
+        "bestFor": "Budget Travelers & Solo Backpackers"
+      }
+    ],
+    "regionComparison": {
+      "title": "North Goa vs. South Goa: Which Is Better?",
+      "description": "Both regions offer memorable experiences, but the best choice depends on your travel style.",
+      "regions": [
+        {
+          "name": "North Goa",
+          "description": "North Goa is known for its lively beaches, restaurants, shopping areas, and nightlife. It may suit travelers who want to combine sightseeing with entertainment and a busy holiday atmosphere.",
+          "popularPlaces": [
+            "Baga Beach",
+            "Calangute Beach",
+            "Candolim Beach",
+            "Anjuna Beach"
+          ]
+        },
+        {
+          "name": "South Goa",
+          "description": "South Goa is often preferred by travelers seeking a slower pace and quieter coastal surroundings. It offers scenic beaches, relaxed resort stays, and opportunities to spend more time away from crowded tourist areas.",
+          "popularPlaces": [
+            "Palolem Beach",
+            "Colva Beach"
+          ]
+        }
+      ],
+      "howToChoose": "Choose North Goa if you prefer a lively atmosphere and easy access to entertainment.\nChoose South Goa if you prefer a more relaxed holiday with scenic beaches and peaceful stays.\nIf you have enough time, you can explore both regions during the same trip."
+    },
+    "importantTravelInfo": [
+      "The itinerary may be adjusted according to arrival and departure timings, traffic, weather, and local conditions.",
+      "Sightseeing order may change depending on operational requirements.",
+      "Optional activities, including sunset cruises, may involve additional charges.",
+      "Early check-in, late check-out, and services not specifically mentioned in the confirmed package may incur extra costs.",
+      "Please confirm the final itinerary and inclusions with Safar Trails before booking."
+    ],
+    "tipsForChoosing": [
+      "Set your budget: Decide how much you want to spend on accommodation, transport, meals, and activities.",
+      "Choose your travel dates: Prices and availability can change during holidays and peak season.",
+      "Check the hotel location: Staying near your preferred attractions may reduce travel time.",
+      "Compare package details: Review inclusions, exclusions, and optional charges.",
+      "Read booking conditions: Check cancellation rules, refund terms, and payment schedules.",
+      "Confirm transport: Ask whether airport transfers and sightseeing vehicles are private or shared.",
+      "Customize when needed: Request changes if you have specific interests, dietary requirements, or accessibility needs.",
+      "Look beyond price: Do not choose a package based on price alone. Comfort, location, transparent terms, and suitable travel arrangements matter too."
+    ],
+    "whyChooseSafarTrails": [
+      "Customized Packages: Travel plans tailored to your needs",
+      "Comfortable Stays: Accommodation options for different budgets",
+      "Easy Transfers: Convenient transportation and sightseeing arrangements",
+      "Affordable Options: Packages to suit different budgets",
+      "Personalized Assistance: Support throughout your trip planning",
+      "Popular Attractions: Explore Goa's beaches, forts, churches, and local markets"
+    ],
+    "faqs": [
+      {
+        "question": "What is the cost of a Goa tour package?",
+        "answer": "The price depends on your travel dates, number of travelers, trip duration, accommodation category, and included services. Request a detailed quotation to understand the total cost."
+      },
+      {
+        "question": "How many days are enough to explore Goa?",
+        "answer": "Two to three days can cover a short visit to selected attractions. Four to five days allow more time for beaches, sightseeing, local food, and relaxation."
+      },
+      {
+        "question": "Which month is best for a Goa trip?",
+        "answer": "November to February is popular for beach holidays and sightseeing. The monsoon months offer greener scenery, but rain may affect outdoor plans."
+      },
+      {
+        "question": "Is Goa suitable for family vacations?",
+        "answer": "Yes. Families can enjoy beaches, cultural attractions, local markets, and resort stays. Choose activities and accommodation that suit everyone's needs."
+      },
+      {
+        "question": "Are hotels and transportation included in a Goa tour package?",
+        "answer": "Many packages include accommodation and selected transfers, but the exact services vary. Check the package itinerary and inclusions before booking."
+      },
+      {
+        "question": "What is excluded from a Goa tour package?",
+        "answer": "Common exclusions include travel tickets, meals not listed, personal expenses, optional activities, and entry fees not specified as included. Always confirm the actual exclusions with your operator."
+      },
+      {
+        "question": "Can I customize my Goa tour package?",
+        "answer": "Many travel providers offer customizable itineraries. You can ask about changing hotel categories, trip duration, sightseeing plans, and transfer arrangements."
+      },
+      {
+        "question": "Is North Goa or South Goa better for a holiday?",
+        "answer": "North Goa may suit travelers who enjoy lively beaches and nightlife. South Goa may appeal to those seeking quieter surroundings and a more relaxed pace."
+      }
+    ],
+    "finalCta": {
+      "title": "Book Your Goa Tour Package Today",
+      "subtitle": "Explore Goa • Create Memories • Travel With Safar Trails",
+      "description": "From scenic beaches and historic landmarks to local food and exciting outdoor activities, Goa offers a holiday experience for many kinds of travelers.\n\nThe right itinerary can help you enjoy your trip while keeping your travel plans organized. Compare available options, review the package details, and choose services that fit your budget and preferences.\n\nReady to plan your next holiday? Explore our Goa tour packages and start planning your beach getaway today.",
+      "actionLabel": "Explore Our Goa Tour Packages"
+    },
+    "season": "All Season (Nov-Feb Winter, Mar-May Summer, Jun-Sep Monsoon)",
+    "seoTitle": "Goa Tour Package: Explore Beaches & Enjoy Your Vacation",
+    "seoDescription": "Explore Goa with a tour package featuring beautiful beaches, top attractions, local experiences, suggested itineraries, and helpful booking tips.",
     "isFeatured": true,
     "isPopular": true,
     "displayOrder": 4

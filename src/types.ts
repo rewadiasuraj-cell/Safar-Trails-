@@ -182,6 +182,21 @@ export interface Package {
     description: string;
     actionLabel?: string;
   };
+  /** Tips for choosing the best tour package */
+  tipsForChoosing?: string[];
+  /** Important travel information and terms */
+  importantTravelInfo?: string[];
+  /** Regional comparison, e.g. North vs South Goa */
+  regionComparison?: {
+    title: string;
+    description?: string;
+    regions: {
+      name: string;
+      description: string;
+      popularPlaces?: string[];
+    }[];
+    howToChoose: string;
+  };
 }
 
 export interface DestinationHighlight {

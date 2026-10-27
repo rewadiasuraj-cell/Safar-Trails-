@@ -333,7 +333,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
                 <span>Inclusions & Exclusions</span>
               </button>
 
-              {(packageData.topPlacesToVisit || packageData.thingsToDo) && (
+              {(packageData.topPlacesToVisit || packageData.thingsToDo || packageData.regionComparison) && (
                 <button
                   onClick={() => setActiveTab('places')}
                   className={`flex-1 min-w-[120px] py-2.5 px-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
@@ -534,6 +534,34 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
                     );
                   })}
                 </div>
+
+                {/* Important Travel Information if present */}
+                {packageData.importantTravelInfo && packageData.importantTravelInfo.length > 0 && (
+                  <div className="bg-white p-6 sm:p-7 rounded-3xl border border-stone-200 shadow-sm space-y-4">
+                    <div className="flex items-center gap-2.5 pb-2 border-b border-stone-100">
+                      <div className="w-8 h-8 rounded-xl bg-amber-500/15 text-amber-700 flex items-center justify-center font-bold">
+                        <Info className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900">
+                          Important Travel Information
+                        </h3>
+                        <p className="text-xs text-stone-500">Essential itinerary guidelines and operational terms</p>
+                      </div>
+                    </div>
+
+                    <ul className="space-y-2.5 pt-1">
+                      {packageData.importantTravelInfo.map((info, idx) => (
+                        <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-stone-700">
+                          <span className="w-5 h-5 rounded-full bg-amber-500/15 text-amber-700 flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
+                            •
+                          </span>
+                          <span className="leading-relaxed">{info}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             )}
 
@@ -604,7 +632,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
                       </div>
                       <div>
                         <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900">
-                          Top Places to Visit in {packageData.startingCity === 'Delhi' ? 'Nainital' : packageData.destination}
+                          Top Places to Visit in {packageData.destination}
                         </h3>
                         <span className="text-xs text-stone-500">Key attractions and viewpoints featured on this route</span>
                       </div>
@@ -642,9 +670,9 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
                       </div>
                       <div>
                         <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900">
-                          Things to Do in {packageData.startingCity === 'Delhi' ? 'Nainital' : packageData.destination}
+                          Things to Do in {packageData.destination}
                         </h3>
-                        <span className="text-xs text-stone-500">Unforgettable hill station experiences & leisure activities</span>
+                        <span className="text-xs text-stone-500">Unforgettable experiences & leisure activities</span>
                       </div>
                     </div>
 
@@ -661,6 +689,69 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
                         </div>
                       ))}
                     </div>
+                  </div>
+                )}
+
+                {/* Regional Comparison if present (e.g. North Goa vs South Goa) */}
+                {packageData.regionComparison && (
+                  <div className="bg-white p-6 sm:p-7 rounded-3xl border border-stone-200 shadow-sm space-y-5">
+                    <div className="flex items-center gap-2.5 pb-2 border-b border-stone-100">
+                      <div className="w-8 h-8 rounded-xl bg-midnight-blue text-white flex items-center justify-center font-bold">
+                        <Compass className="w-4 h-4 text-warm-orange" />
+                      </div>
+                      <div>
+                        <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900">
+                          {packageData.regionComparison.title}
+                        </h3>
+                        {packageData.regionComparison.description && (
+                          <span className="text-xs text-stone-500">{packageData.regionComparison.description}</span>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {packageData.regionComparison.regions.map((reg, idx) => (
+                        <div
+                          key={idx}
+                          className="p-5 rounded-2xl bg-[#FBF9F5] border border-stone-200/80 space-y-3"
+                        >
+                          <h4 className="font-serif font-bold text-base text-stone-900">
+                            {reg.name}
+                          </h4>
+                          <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
+                            {reg.description}
+                          </p>
+                          {reg.popularPlaces && reg.popularPlaces.length > 0 && (
+                            <div className="pt-2 border-t border-stone-200/60">
+                              <span className="text-[11px] font-bold uppercase tracking-wider text-stone-500 block mb-1.5">
+                                Popular Places:
+                              </span>
+                              <div className="flex flex-wrap gap-1.5">
+                                {reg.popularPlaces.map((pl, pIdx) => (
+                                  <span
+                                    key={pIdx}
+                                    className="px-2.5 py-1 rounded-lg bg-white border border-stone-200 text-xs font-medium text-stone-800"
+                                  >
+                                    {pl}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+
+                    {packageData.regionComparison.howToChoose && (
+                      <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-200/80 text-xs sm:text-sm text-stone-800 space-y-1">
+                        <span className="font-bold text-amber-900 block text-xs uppercase tracking-wider">
+                          How to Choose:
+                        </span>
+                        <p className="leading-relaxed whitespace-pre-line text-stone-700">
+                          {packageData.regionComparison.howToChoose}
+                        </p>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
@@ -744,7 +835,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
                       Budget & 3★ Stays
                     </span>
                     <p className="text-xs text-stone-600 leading-relaxed">
-                      Clean, comfortable hotels with essential amenities, hot water, and pleasant mountain hospitality.
+                      Clean, comfortable hotels with essential amenities, hot water, and pleasant hospitality.
                     </p>
                   </div>
                   <div className="p-4 rounded-2xl border border-warm-orange/30 bg-warm-orange/5">
@@ -752,7 +843,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
                       Standard & Deluxe 4★
                     </span>
                     <p className="text-xs text-stone-600 leading-relaxed">
-                      Spacious rooms, scenic valley or lake proximity, multi-cuisine dining, and room service.
+                      Spacious rooms, scenic surroundings or beach/lake proximity, multi-cuisine dining, and room service.
                     </p>
                   </div>
                   <div className="p-4 rounded-2xl border border-stone-200 bg-white">
@@ -760,7 +851,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
                       Premium & Heritage Stays
                     </span>
                     <p className="text-xs text-stone-600 leading-relaxed">
-                      Colonial heritage boutique properties with panoramic hill vistas, lush lawns, and luxury amenities.
+                      Premium boutique properties and luxury heritage resorts with panoramic vistas, lush grounds, and luxury amenities.
                     </p>
                   </div>
                 </div>
@@ -781,7 +872,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
                         <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900">
                           Best Time to Visit
                         </h3>
-                        <span className="text-xs text-stone-500">Seasonal guide for sightseeing & hill experiences</span>
+                        <span className="text-xs text-stone-500">Seasonal guide for sightseeing & holiday experiences</span>
                       </div>
                     </div>
 
@@ -826,6 +917,39 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
                             {faq.answer}
                           </p>
                         </details>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Tips for Choosing Package if present */}
+                {packageData.tipsForChoosing && packageData.tipsForChoosing.length > 0 && (
+                  <div className="bg-white p-6 sm:p-7 rounded-3xl border border-stone-200 shadow-sm space-y-4">
+                    <div className="flex items-center gap-2.5 pb-2 border-b border-stone-100">
+                      <div className="w-8 h-8 rounded-xl bg-warm-orange/15 text-warm-orange flex items-center justify-center font-bold">
+                        <Lightbulb className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900">
+                          Tips for Choosing the Best {packageData.destination} Tour Package
+                        </h3>
+                        <p className="text-xs text-stone-500">Key considerations before confirming your holiday booking</p>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                      {packageData.tipsForChoosing.map((tip, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-start gap-2.5 p-3 rounded-2xl bg-[#FBF9F5] border border-stone-200/80"
+                        >
+                          <span className="w-5 h-5 rounded-full bg-warm-orange/20 text-warm-orange flex items-center justify-center shrink-0 text-xs font-bold mt-0.5">
+                            ✓
+                          </span>
+                          <span className="text-xs sm:text-sm font-medium text-stone-800 leading-snug">
+                            {tip}
+                          </span>
+                        </div>
                       ))}
                     </div>
                   </div>
