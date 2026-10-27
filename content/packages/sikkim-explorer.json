@@ -1,59 +1,330 @@
 {
   "id": "pkg-sikkim-explorer",
   "slug": "sikkim-explorer",
-  "title": "Sikkim & Gangtok Himalayan Explorer",
-  "destination": "Northeast India",
+  "title": "Sikkim Tour Package – Plan Your Perfect Sikkim Trip",
+  "destination": "Sikkim",
   "destinationSlug": "northeast-india",
   "state": "Sikkim",
-  "durationDays": 7,
-  "durationNights": 6,
-  "startingPrice": 22999,
-  "originalPrice": 29000,
+  "durationDays": 6,
+  "durationNights": 5,
+  "startingPrice": 16999,
+  "originalPrice": 22500,
   "tripType": [
-    "Adventure",
+    "Couple",
     "Family",
-    "Nature"
+    "Friends",
+    "Nature",
+    "Adventure"
   ],
-  "hotelCategory": "Deluxe 4★",
+  "hotelCategory": "Standard 3★",
   "ratings": 4.9,
-  "reviewCount": 135,
-  "startingCity": "Bagdogra (IXB) / NJP",
-  "bestFor": "Couples, Families & Nature Enthusiasts",
+  "reviewCount": 146,
+  "startingCity": "Bagdogra Airport (IXB) / NJP Railway Station",
+  "bestFor": "Families, Couples, Friends & Himalayan Explorers",
   "heroImage": "/content/packages/sikkim-explorer/hero.jpg",
   "galleryImages": [
     {
+      "src": "/content/packages/sikkim-explorer/hero.jpg",
+      "caption": "Panoramic Views of Sikkim's Himalayan Valleys"
+    },
+    {
       "src": "/content/packages/sikkim-explorer/tsomgo-lake-yak.jpg",
-      "caption": "Tsomgo Lake"
+      "caption": "Glacial Tsomgo (Changu) Lake & High Altitude Excursions"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop",
+      "caption": "Majestic Snow-Capped Kanchenjunga Mountain Views"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1626014303757-656c1d473489?q=80&w=1200&auto=format&fit=crop",
+      "caption": "Historic Monasteries & Buddhist Prayer Flags in Sikkim"
     }
   ],
-  "overview": "Experience the mystical Eastern Himalayas: Gangtok MG Marg, sacred high-altitude Tsomgo Lake (12,400 ft), Nathula Pass (Indo-China border), Pelling glass skywalk, and Darjeeling tea garden sunrise over Kanchenjunga.",
+  "overview": "Sikkim is one of the most beautiful Himalayan destinations in India. From peaceful monasteries and snow-covered mountains to scenic valleys and charming local markets, the state offers a refreshing escape from everyday life.\n\nA well-planned Sikkim Tour Package makes it easier to explore the region without worrying about every small travel detail. With comfortable stays, private transportation, sightseeing, and travel assistance, you can focus more on enjoying your holiday.\n\nOur Sikkim Tour Package follows a carefully planned 5 Nights / 6 Days route covering Gangtok, Tsomgo Lake, Baba Harbhajan Singh Memorial, Pelling, and Siliguri. The journey starts from Bagdogra or NJP and ends at Bagdogra or NJP.",
+  "packageDetails": [
+    {
+      "label": "Destination",
+      "value": "Gangtok, Tsomgo Lake, Pelling & Siliguri (Sikkim & West Bengal)"
+    },
+    {
+      "label": "Duration",
+      "value": "5 Nights / 6 Days"
+    },
+    {
+      "label": "Route",
+      "value": "Bagdogra / NJP → Gangtok (3N) → Pelling (1N) → Siliguri (1N) → Bagdogra / NJP"
+    },
+    {
+      "label": "Accommodation",
+      "value": "Hotel stay in selected category (3-Star, 4-Star or Premium options)"
+    },
+    {
+      "label": "Sightseeing",
+      "value": "Gangtok Local, Tsomgo Lake, Baba Mandir, Nathula Pass (Optional), Pelling Highlights"
+    },
+    {
+      "label": "Transfers",
+      "value": "Private dedicated vehicle for all transfers and sightseeing along planned route"
+    },
+    {
+      "label": "Meals",
+      "value": "Daily breakfast included at hotels (customizable meal plans available)"
+    },
+    {
+      "label": "Travel style",
+      "value": "Scenic Himalayan landscapes, monastery heritage, and mountain relaxation"
+    },
+    {
+      "label": "Ideal for",
+      "value": "Couples, families, friends, and small travel groups"
+    }
+  ],
   "highlights": [
-    "3 Nights Gangtok + 1 Night Pelling + 2 Nights Darjeeling",
-    "Excursion to Tsomgo Lake & Nathula Pass (Indo-China Border)",
-    "Darjeeling Tiger Hill early morning Kanchenjunga sunrise view"
+    "Carefully planned 5 Nights / 6 Days route covering Gangtok, Tsomgo Lake, Baba Harbhajan Singh Memorial, Pelling, and Siliguri.",
+    "Private vehicle for transfers and sightseeing according to the planned travel route.",
+    "Explore Gangtok: visit Tashi View Point, Ganesh Tok, Hanuman Tok, Enchey Monastery, Namgyal Institute of Tibetology, Do Drul Chorten, and the Flower Exhibition Centre.",
+    "Enjoy relaxing leisure evenings strolling around MG Marg and exploring the local market.",
+    "Excursion to high-altitude East Sikkim visiting sacred Tsomgo Lake and Baba Harbhajan Singh Memorial.",
+    "Option to include Nathula Pass at the Indo-China border (subject to permit, weather, and road conditions).",
+    "Discover Pelling in West Sikkim, known for its peaceful surroundings, slower pace, and beautiful mountain views.",
+    "Pelling sightseeing covering Pemayangtse Monastery, Rabdentse Ruins, SkyWalk / Chenrezig Statue, Khecheopalri Lake, and Kanchenjunga viewpoints.",
+    "Hotel categories selectable according to your requirements, including 3-star, 4-star, and premium options.",
+    "Stress-free end-to-end travel assistance, experienced mountain drivers, fuel, toll, and all standard permits included."
   ],
   "inclusions": [
-    "6 Nights 4★ Resort Stay",
-    "Daily Breakfast & Dinner",
-    "Private SUV Transfer & Permits"
+    "Hotel stay in selected category (3 Nights Gangtok, 1 Night Pelling, 1 Night Siliguri)",
+    "Daily breakfast at hotels",
+    "Private vehicle for sightseeing and transfers according to the planned travel route",
+    "Pickup and drop from Bagdogra Airport (IXB) or NJP Railway Station",
+    "Gangtok local sightseeing (full day)",
+    "Tsomgo Lake & Baba Mandir visit",
+    "Pelling sightseeing tour",
+    "Gangtok to Pelling and Pelling to Siliguri inter-city transfers",
+    "Driver allowance, fuel, parking, and road charges",
+    "All standard inner-line permits and 24x7 Safar Trails travel assistance"
   ],
   "exclusions": [
-    "Airfare to Bagdogra"
+    "Flight or train tickets",
+    "Nathula Pass permit and extra charges (subject to permit availability and weather)",
+    "Entry fees to sightseeing places, monasteries, and monuments",
+    "Lunch, dinner, and extra meals not included in the selected plan",
+    "Personal expenses and shopping",
+    "Travel insurance and medical expenses",
+    "Extra activities or services",
+    "Expenses due to bad weather or road conditions",
+    "Anything not mentioned in the inclusions"
+  ],
+  "importantTravelInfo": [
+    "Mountain travel may be affected by weather and road conditions.",
+    "Nathula Pass requires a special permit and is subject to permit availability, weather, and road conditions.",
+    "Sightseeing plans may change depending on local conditions and administrative guidelines.",
+    "Travel time may vary due to mountain roads and weather.",
+    "Keeping some flexibility in your schedule will help make your Sikkim Tour Package more comfortable and enjoyable.",
+    "Indian tourists require valid government photo ID (Voter ID or Passport is mandatory for Nathula Pass and East Sikkim permits; Aadhaar is accepted for general travel) and 2 passport-size photographs per person."
   ],
   "itinerary": [
     {
       "dayNumber": 1,
       "title": "Bagdogra / NJP to Gangtok",
       "location": "Gangtok",
-      "description": "Drive along Teesta River valley up to Gangtok.",
-      "morningActivity": "Bagdogra pickup",
-      "eveningActivity": "Stroll along MG Marg Gangtok",
-      "stay": "The Elgin Nor-Khill / Lemon Tree 4★, Gangtok",
-      "mealsIncluded": "Dinner",
-      "transfers": "Private SUV"
+      "description": "Your Sikkim Tour Package begins with arrival at Bagdogra Airport or NJP Railway Station. Meet your driver and proceed towards Gangtok. Enjoy the scenic Himalayan drive along the Teesta River before arriving at your hotel. Check in, relax, and spend the night in Gangtok.",
+      "morningActivity": "Arrival and pickup from Bagdogra Airport or NJP Railway Station",
+      "afternoonActivity": "Scenic Himalayan drive along the winding Teesta River valley",
+      "eveningActivity": "Hotel check-in, relax, and spend the night in Gangtok",
+      "stay": "Hotel stay in selected category (Gangtok)",
+      "mealsIncluded": "None on arrival day",
+      "transfers": "Private dedicated vehicle",
+      "insiderTip": "Keep a light sweater handy during the drive as temperatures decrease as you ascend toward Gangtok."
+    },
+    {
+      "dayNumber": 2,
+      "title": "Gangtok Local Sightseeing",
+      "location": "Gangtok",
+      "description": "After breakfast, begin your full-day Gangtok sightseeing tour. Visit Tashi View Point, Ganesh Tok, Hanuman Tok, Enchey Monastery, Namgyal Institute of Tibetology, Do Drul Chorten, and the Flower Exhibition Centre. Later, enjoy leisure time at MG Marg and explore the local market before returning to your hotel.",
+      "morningActivity": "Visit Tashi View Point, Ganesh Tok, Hanuman Tok, and Enchey Monastery",
+      "afternoonActivity": "Explore Namgyal Institute of Tibetology, Do Drul Chorten, and Flower Exhibition Centre",
+      "eveningActivity": "Spend relaxed leisure time around MG Marg and explore the local market",
+      "stay": "Hotel stay in selected category (Gangtok)",
+      "mealsIncluded": "Daily breakfast",
+      "transfers": "Private dedicated vehicle",
+      "insiderTip": "MG Marg is a pedestrian-only zone with inviting benches, bakeries, and shops — great for an evening stroll."
+    },
+    {
+      "dayNumber": 3,
+      "title": "Tsomgo Lake, Baba Mandir & Nathula Pass",
+      "location": "East Sikkim (Tsomgo & Baba Mandir)",
+      "description": "After breakfast, head towards East Sikkim. Visit Tsomgo Lake and Baba Harbhajan Singh Memorial. Nathula Pass can also be covered subject to the required permit and suitable weather and road conditions. Return to Gangtok by evening and relax at your hotel.",
+      "morningActivity": "Excursion to high-altitude glacial Tsomgo (Changu) Lake (12,400 ft)",
+      "afternoonActivity": "Visit Baba Harbhajan Singh Memorial (optional Nathula Pass excursion)",
+      "eveningActivity": "Scenic drive back to Gangtok and relax at your hotel",
+      "stay": "Hotel stay in selected category (Gangtok)",
+      "mealsIncluded": "Daily breakfast",
+      "transfers": "Private dedicated vehicle (East Sikkim permit cab)",
+      "insiderTip": "Tsomgo Lake sits at 12,400 ft where air is thin and temperatures are chilly. Warm woolens and gloves are recommended."
+    },
+    {
+      "dayNumber": 4,
+      "title": "Gangtok to Pelling",
+      "location": "Pelling",
+      "description": "After breakfast, check out and drive towards Pelling. Enjoy the beautiful mountain landscapes of West Sikkim during the journey. On arrival, check in at the hotel and relax. Nearby attractions may be visited depending on the available time and local conditions.",
+      "morningActivity": "Breakfast, hotel check-out, and scenic mountain drive towards Pelling",
+      "afternoonActivity": "Arrival in Pelling, hotel check-in, and relax amidst peaceful mountain surroundings",
+      "eveningActivity": "Unwind with magnificent sunset views of the Kanchenjunga range",
+      "stay": "Hotel stay in selected category (Pelling)",
+      "mealsIncluded": "Daily breakfast",
+      "transfers": "Private dedicated vehicle",
+      "insiderTip": "Pelling is quieter and less crowded than Gangtok, providing a peaceful contrast and spectacular mountain panoramas."
+    },
+    {
+      "dayNumber": 5,
+      "title": "Pelling Sightseeing to Siliguri",
+      "location": "Pelling & Siliguri",
+      "description": "After breakfast, start your Pelling sightseeing. Visit Pemayangtse Monastery, Rabdentse Ruins, SkyWalk / Chenrezig Statue, Khecheopalri Lake, and Kanchenjunga viewpoints, depending on the route and available time. Later, continue towards Siliguri. Check in to your hotel and relax for the evening.",
+      "morningActivity": "Visit Pemayangtse Monastery, Rabdentse Ruins, and Pelling SkyWalk / Chenrezig Statue",
+      "afternoonActivity": "Visit Khecheopalri Lake (route permitting) and scenic drive down to Siliguri",
+      "eveningActivity": "Check in to your hotel in Siliguri and relax for the evening",
+      "stay": "Hotel stay in selected category (Siliguri)",
+      "mealsIncluded": "Daily breakfast",
+      "transfers": "Private dedicated vehicle",
+      "insiderTip": "Staying overnight in Siliguri ensures a smooth, worry-free morning transfer to Bagdogra Airport or NJP Station."
+    },
+    {
+      "dayNumber": 6,
+      "title": "Siliguri to Bagdogra / NJP",
+      "location": "Siliguri / Bagdogra / NJP",
+      "description": "After breakfast, check out from the hotel and proceed towards Bagdogra Airport or NJP Railway Station for your onward journey. Your Sikkim holiday comes to an end with beautiful memories of the Himalayan landscapes and local experiences.",
+      "morningActivity": "Breakfast and check-out from your Siliguri hotel",
+      "afternoonActivity": "Short transfer and drop-off at Bagdogra Airport (IXB) or NJP Railway Station",
+      "eveningActivity": "Board flight or train for your onward journey with fond Sikkim memories",
+      "stay": "Tour concludes",
+      "mealsIncluded": "Daily breakfast",
+      "transfers": "Private dedicated vehicle",
+      "insiderTip": "Allow around 2 hours prior to flight departure when arriving at Bagdogra Airport."
     }
   ],
-  "season": "All Season",
+  "topPlacesToVisit": [
+    {
+      "name": "Tsomgo Lake & Baba Mandir",
+      "description": "One of the key highlights of East Sikkim, Tsomgo Lake is a high-altitude glacial lake at 12,400 ft surrounded by rugged mountains, accompanied by the revered Baba Harbhajan Singh Memorial."
+    },
+    {
+      "name": "Gangtok Viewpoints & Monasteries",
+      "description": "Gangtok combines Himalayan scenery and Buddhist culture with viewpoints like Tashi View Point, Ganesh Tok, and Hanuman Tok, alongside Enchey Monastery, Do Drul Chorten, and the Namgyal Institute of Tibetology."
+    },
+    {
+      "name": "MG Marg, Gangtok",
+      "description": "The lively heart of Gangtok, this pedestrian-only promenade features welcoming benches, cafés, handicraft stores, and local markets, making it ideal for evening relaxation."
+    },
+    {
+      "name": "Pelling SkyWalk & Chenrezig Statue",
+      "description": "A major highlight in Pelling featuring India's first glass skywalk perched at a thrilling height leading up to the giant, golden Chenrezig Statue."
+    },
+    {
+      "name": "Pemayangtse Monastery & Rabdentse Ruins",
+      "description": "Pemayangtse is one of Sikkim's oldest premier monasteries, while nearby Rabdentse Ruins showcase the ancient stone palace walls and throne of Sikkim's former royal capital."
+    },
+    {
+      "name": "Khecheopalri Lake",
+      "description": "A sacred wish-fulfilling lake revered by both Buddhists and Hindus, nestled peacefully amidst virgin Himalayan forests in West Sikkim."
+    },
+    {
+      "name": "Nathula Pass (Optional)",
+      "description": "Located on the Indo-China border at 14,140 ft, this historic Silk Route mountain pass can be visited on Day 3, subject to permit availability, weather, and road conditions."
+    }
+  ],
+  "thingsToDo": [
+    "Admire panoramic views of Mount Kanchenjunga from Tashi View Point, Ganesh Tok & Pelling viewpoints",
+    "Spend a relaxed evening strolling around the pedestrian-only promenade of MG Marg",
+    "Experience the high-altitude mountain scenery and glacial waters of Tsomgo Lake at 12,400 ft",
+    "Pay homage at the revered Baba Harbhajan Singh Memorial in the rugged heights of East Sikkim",
+    "Walk the transparent glass floor of the Pelling SkyWalk leading to the Chenrezig Statue",
+    "Explore the ancient stone palace walls and historical heritage of Rabdentse Ruins",
+    "Visit centuries-old Tibetan Buddhist monasteries including Pemayangtse and Enchey",
+    "Discover the sacred wish-fulfilling waters of Khecheopalri Lake surrounded by dense greenery",
+    "Enjoy the picturesque drive along the winding Teesta River through the Himalayan foothills"
+  ],
+  "hotelsAndStays": "Hotel Categories for Your Sikkim Holiday:\n\nA well-planned Sikkim Tour Package makes it easier to explore the region with comfortable stays. Hotel categories can be selected according to your requirements, including 3-star, 4-star, and premium options.\n\n• 3-Star Hotels (Standard Comfort): Clean, well-maintained rooms with private en-suite bathrooms, hot water / geyser facilities, room heaters (on request/seasonal), Wi-Fi, and in-house restaurants serving hygienic multi-cuisine meals.\n• 4-Star Hotels (Deluxe & Valley-Facing): Spacious accommodations with scenic valley or mountain views, tea/coffee makers, elevator access, multi-cuisine dining, and personalized service.\n• Premium & Boutique Properties: Upscale mountain retreats and heritage properties offering front-row views of Mount Kanchenjunga, serene landscaped grounds, premium hospitality, and gourmet dining.\n\nStay Locations on This Itinerary:\n• Gangtok (3 Nights): Central or scenic hillside locations providing convenient access to MG Marg and sightseeing routes.\n• Pelling (1 Night): Peaceful surroundings and beautiful mountain views, providing a pleasant contrast to the sightseeing experience in Gangtok.\n• Siliguri (1 Night): Comfortable city transit hotel, ensuring a convenient and relaxed morning departure to Bagdogra Airport or NJP Station.\n\nSafar Trails helps you customize accommodation according to your preferred hotel category, room configuration, and travel budget.",
+  "bestTimeToVisit": [
+    {
+      "season": "Spring & Autumn (March to May & October to November)",
+      "description": "Spring and autumn are popular for comfortable weather and scenic mountain views. Spring brings blooming rhododendrons and pleasant temperatures, while autumn provides crystal-clear skies with the best visibility of Mount Kanchenjunga."
+    },
+    {
+      "season": "Summer (May to June)",
+      "description": "Summer can also be a pleasant time for sightseeing and exploring the region, offering a refreshing mountain escape from the heat of the plains."
+    },
+    {
+      "season": "Winter (December to February)",
+      "description": "Winter offers a colder Himalayan experience, although weather and road conditions can affect travel plans. For destinations such as Nathula Pass and Tsomgo Lake, weather and road conditions are particularly important."
+    }
+  ],
+  "tipsForChoosing": [
+    "Couples can enjoy peaceful mountain surroundings, scenic drives, and romantic viewpoints in Gangtok and Pelling.",
+    "Families can explore the region comfortably with planned private transportation and pre-arranged accommodation.",
+    "Friends and small groups can enjoy Gangtok's markets, mountain viewpoints, monasteries, and scenic destinations with customizable route options.",
+    "Book permits in advance: Keep valid government photo IDs and passport-size photographs ready for East Sikkim and Nathula Pass permits.",
+    "Carry warm layered clothing: High-altitude locations like Tsomgo Lake and Baba Mandir are cold throughout the year.",
+    "Maintain schedule flexibility: Mountain roads and high-altitude weather can cause minor delays; keeping flexibility ensures a relaxed trip."
+  ],
+  "whyChooseSafarTrails": [
+    "Simple, Comfortable & Memorable: At Safar Trails, we focus on making your holiday simple, comfortable, and memorable by bringing together accommodation, breakfast, private transportation, sightseeing, and travel assistance in one organized plan.",
+    "Tailored to Your Expectations: We understand that every traveler has different expectations. That's why the package can be customized according to your preferred hotel category, vehicle, meal plan, and travel requirements.",
+    "Private Vehicle Throughout: Includes a private vehicle for transfers and sightseeing according to the planned travel route, ensuring comfort and privacy.",
+    "Less Hassle, More Holiday: Whether you are planning a family holiday, a couple's getaway, or a trip with friends, Safar Trails can help you plan your Sikkim journey with less hassle and more time to enjoy the destination.",
+    "Carefully Planned 5N/6D Route: Groups Gangtok, Tsomgo Lake, Baba Mandir, Pelling, and Siliguri into a balanced, well-paced circuit starting and ending at Bagdogra or NJP.",
+    "24x7 Trip Assistance: Dedicated local travel coordinators ensure smooth coordination from pickup at Bagdogra/NJP until departure."
+  ],
+  "finalCta": {
+    "title": "Plan Your Sikkim Trip Today",
+    "subtitle": "5 Nights / 6 Days • Gangtok, Tsomgo Lake, Baba Mandir, Pelling & Siliguri",
+    "description": "Sikkim is more than just a mountain destination. It is a combination of peaceful landscapes, cultural experiences, scenic roads, monasteries, and unforgettable Himalayan views.\n\nWith the right Sikkim Tour Package, you can explore the highlights of Gangtok and Pelling while enjoying a comfortable and organized journey.\n\nIf Sikkim is on your travel list, start planning your trip with Safar Trails and create a holiday that matches your travel style and budget.\n\nGet in touch with Safar Trails today to plan your perfect Sikkim trip.",
+    "actionLabel": "Plan Your Sikkim Trip Today"
+  },
+  "faqs": [
+    {
+      "question": "What is included in this Sikkim Tour Package?",
+      "answer": "The package includes hotel accommodation in your selected category (3 Nights Gangtok, 1 Night Pelling, 1 Night Siliguri), daily breakfast, a private vehicle for all sightseeing and transfers according to the planned route, Bagdogra/NJP pickup and drop, Gangtok sightseeing, Tsomgo Lake & Baba Mandir excursion, Pelling sightseeing, inter-city transfers, driver allowances, tolls, parking, and all standard permits."
+    },
+    {
+      "question": "Why choose a Sikkim Tour Package instead of planning independently?",
+      "answer": "Planning a Himalayan trip independently can take a lot of time. You need to arrange hotels, transportation, sightseeing, permits, and transfers separately. With a Sikkim Tour Package, these important travel arrangements can be planned together, making the overall journey more convenient, especially for families, couples, and groups."
+    },
+    {
+      "question": "What places are covered during Gangtok local sightseeing?",
+      "answer": "Your full-day Gangtok sightseeing tour includes visits to Tashi View Point, Ganesh Tok, Hanuman Tok, Enchey Monastery, Namgyal Institute of Tibetology, Do Drul Chorten, and the Flower Exhibition Centre. In the evening, you can spend relaxed leisure time around MG Marg exploring the local market."
+    },
+    {
+      "question": "Can Nathula Pass be visited during the Tsomgo Lake excursion?",
+      "answer": "Yes. The East Sikkim excursion includes Tsomgo Lake and the Baba Harbhajan Singh Memorial. If permits and local conditions allow, the trip can also include Nathula Pass at the Indo-China border. Nathula Pass requires special permits and is subject to permit availability, weather, and road conditions, so access cannot always be guaranteed."
+    },
+    {
+      "question": "What attractions are included in Pelling sightseeing?",
+      "answer": "During your Pelling sightseeing, you can visit Pemayangtse Monastery, Rabdentse Ruins, SkyWalk / Chenrezig Statue, Khecheopalri Lake, and Kanchenjunga viewpoints. Khecheopalri Lake can be included depending on the sightseeing route and available time."
+    },
+    {
+      "question": "Why does the tour include an overnight stay in Siliguri on Day 5?",
+      "answer": "Staying in Siliguri on Day 5 after Pelling sightseeing allows you to descend from the mountains comfortably in the evening, ensuring a smooth, short, and hassle-free 30 to 45-minute drive to Bagdogra Airport or NJP Railway Station on Day 6 without worrying about mountain road delays."
+    },
+    {
+      "question": "What is the best time to plan a Sikkim trip?",
+      "answer": "Sikkim offers a different experience throughout the year. Spring (March to May) and autumn (October to November) are popular for comfortable weather and scenic mountain views. Summer is also pleasant for sightseeing and exploring the region. Winter offers a colder Himalayan experience with snow at high altitudes, though weather and road conditions can affect travel plans."
+    },
+    {
+      "question": "Who can choose this Sikkim Tour Package?",
+      "answer": "A Sikkim Tour Package can be a great option for different types of travelers. Couples can enjoy peaceful mountain surroundings and scenic drives. Families can explore the region comfortably with planned transportation and accommodation. Friends and small groups can also enjoy Gangtok's markets, mountain viewpoints, monasteries, and scenic destinations. The itinerary can be customized according to your travel preferences."
+    },
+    {
+      "question": "Can hotel categories and vehicles be customized?",
+      "answer": "Yes. At Safar Trails, hotel categories can be selected according to your requirements, including 3-star, 4-star, and premium options. You can also customize your preferred vehicle (such as an Innova Crysta), meal plans, and additional days."
+    },
+    {
+      "question": "What documents are required for Sikkim travel permits?",
+      "answer": "Indian travelers need a valid government-issued photo ID (Voter ID card or Passport is mandatory for East Sikkim and Nathula Pass permits; Aadhaar card is accepted for general entry) along with two passport-size photographs per traveler. Safar Trails manages permit formalities for you."
+    }
+  ],
+  "season": "March to May (Spring) & October to December (Autumn)",
+  "seoTitle": "Sikkim Tour Package (5N/6D) | Safar Trails",
+  "seoDescription": "Book 5N/6D Sikkim Tour Package covering Gangtok, Tsomgo Lake, Pelling & Siliguri. Includes private vehicle transfers, comfortable hotel stays and daily breakfast.",
   "isFeatured": true,
   "isPopular": true,
   "displayOrder": 11
