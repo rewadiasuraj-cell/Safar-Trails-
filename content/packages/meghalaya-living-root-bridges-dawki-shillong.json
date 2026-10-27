@@ -1,122 +1,330 @@
 {
   "id": "pkg-meghalaya-living-roots",
   "slug": "meghalaya-living-root-bridges-dawki-shillong",
-  "title": "Meghalaya Tour Package",
-  "destination": "Northeast India",
+  "title": "Meghalaya Tour Package – Explore, Experience & Book Now",
+  "destination": "Meghalaya",
   "destinationSlug": "northeast-india",
   "state": "Meghalaya",
   "durationDays": 6,
   "durationNights": 5,
-  "startingPrice": 19499,
-  "originalPrice": 25000,
+  "startingPrice": 18999,
+  "originalPrice": 24500,
   "tripType": [
-    "Adventure",
     "Nature",
-    "Group",
-    "Couple"
+    "Adventure",
+    "Family",
+    "Couple",
+    "Group"
   ],
-  "hotelCategory": "Deluxe 4★",
+  "hotelCategory": "Standard 3★",
   "ratings": 4.9,
-  "reviewCount": 142,
-  "startingCity": "Guwahati (Airport Pickup)",
-  "bestFor": "Trekkers, Photographers & Nature Lovers",
+  "reviewCount": 148,
+  "startingCity": "Guwahati (Airport / Railway Station)",
+  "bestFor": "Families, Couples, Friends & Nature Lovers",
   "heroImage": "https://images.unsplash.com/photo-1622308644420-a757e2fa722a?q=80&w=1200&auto=format&fit=crop",
   "galleryImages": [
-    "https://images.unsplash.com/photo-1622308644420-a757e2fa722a?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1609137144813-7d9921338f24?q=80&w=800&auto=format&fit=crop"
+    {
+      "src": "https://images.unsplash.com/photo-1622308644420-a757e2fa722a?q=80&w=800&auto=format&fit=crop",
+      "caption": "Double Decker Living Root Bridges of Nongriat, Meghalaya"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1609137144813-7d9921338f24?q=80&w=800&auto=format&fit=crop",
+      "caption": "Crystal-Clear Umngot River Boating in Dawki"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800&auto=format&fit=crop",
+      "caption": "Misty Hills and Cascading Waterfalls of Cherrapunji"
+    }
   ],
-  "overview": "Discover the Abode of Clouds: trek to the bio-engineered Double Decker Living Root Bridge, boat on the crystal-clear Umngot river in Dawki, stand before soaring waterfalls in Cherrapunji, and experience Scotland of the East in Shillong.",
+  "overview": "Imagine waking up to misty hills, lush green valleys, beautiful waterfalls, and peaceful villages. That is the magic of Meghalaya.\n\nKnown as the “Abode of Clouds,” Meghalaya is perfect for travelers who love nature, adventure, culture, and scenic road trips. A well-planned Meghalaya Tour Package makes your journey easier by taking care of accommodation, transportation, sightseeing, and other important travel arrangements.\n\nWhether you are traveling with family, your partner, or friends, Meghalaya offers experiences you will remember for years. From the vibrant pine hills of Shillong to the dramatic waterfalls of Cherrapunji, peaceful villages of Mawlynnong, and the crystal-clear waters of Dawki, every destination offers something unique.",
+  "packageDetails": [
+    {
+      "label": "Destination",
+      "value": "Meghalaya (Shillong, Cherrapunji, Dawki, Mawlynnong & Guwahati)"
+    },
+    {
+      "label": "Duration",
+      "value": "5 Nights / 6 Days"
+    },
+    {
+      "label": "Route",
+      "value": "Guwahati → Shillong (2N) → Cherrapunji (1N) → Dawki & Mawlynnong → Shillong (2N) → Guwahati"
+    },
+    {
+      "label": "Accommodation",
+      "value": "Comfortable hotel stay in selected category (3-Star, 4-Star or Premium options)"
+    },
+    {
+      "label": "Sightseeing",
+      "value": "Shillong, Cherrapunji, Dawki Umngot River, Mawlynnong Village & Living Root Bridges"
+    },
+    {
+      "label": "Transfers",
+      "value": "Private dedicated vehicle for all airport pickups, inter-city drives & sightseeing"
+    },
+    {
+      "label": "Meals",
+      "value": "Daily breakfast included at hotels (customizable meal plans available)"
+    },
+    {
+      "label": "Travel style",
+      "value": "Scenic hill drives, living root bridges, dramatic waterfalls, and cultural immersion"
+    },
+    {
+      "label": "Ideal for",
+      "value": "Families, couples, friends, and nature enthusiasts"
+    }
+  ],
   "highlights": [
-    "2 Nights Cherrapunji + 1 Night Shnongpdeng / Dawki + 2 Nights Shillong",
-    "Double Decker Living Root Bridge trek in Nongriat",
-    "Boating on glass-like clear Umngot River in Dawki",
-    "Nohkalikai Falls, Mawsmai Cave, and Seven Sisters Falls",
-    "Cleanest village Mawlynnong and Umiam Lake boat ride"
+    "Explore popular attractions across Meghalaya without complicated planning, from Shillong to Dawki.",
+    "Enjoy comfortable accommodation tailored to your budget and travel preferences.",
+    "Travel conveniently with a private dedicated vehicle for transfers and sightseeing.",
+    "Experience full-day Shillong sightseeing: Shillong Peak, Elephant Falls, Ward's Lake, Cathedral, and Police Bazaar.",
+    "Discover dramatic Cherrapunji (Sohra): Mawkdok Dympep Valley, Nohkalikai Falls, Mawsmai Cave, and Seven Sisters Falls.",
+    "Visit Dawki and the famous Umngot River, celebrated for its emerald crystal-clear waters.",
+    "Explore Mawlynnong Village, renowned for its peaceful surroundings, and visit the Bamboo Watchtower.",
+    "Walk across traditional Living Root Bridges bio-engineered by local Khasi communities.",
+    "Flexible itineraries customizable for families, couples, friends, and special interest groups.",
+    "Visit Guwahati's revered Kamakhya Temple en route to your return flight or train."
   ],
   "inclusions": [
-    "5 Nights stay in premium hill resorts and riverside eco-camps",
-    "Daily breakfast at all stays",
-    "Dedicated private AC cab from Guwahati to Guwahati",
-    "All toll, fuel, parking, and driver allowances"
+    "5 Nights hotel accommodation in selected category (4 Nights Shillong, 1 Night Cherrapunji)",
+    "Daily breakfast at all hotels",
+    "Private dedicated vehicle for local transportation and all sightseeing transfers",
+    "Airport or railway station pickup and drop-off services at Guwahati",
+    "Full-day Shillong local sightseeing covering key city attractions",
+    "Cherrapunji excursion covering Mawkdok Dympep Valley, Nohkalikai Falls, Mawsmai Cave & Seven Sisters Falls",
+    "Excursion to Dawki Umngot River and Mawlynnong Village",
+    "Traditional Living Root Bridge nature walk and village experience",
+    "Professional driver assistance, fuel, tolls, and parking charges",
+    "Customized travel arrangements and 24x7 Safar Trails customer assistance"
   ],
   "exclusions": [
-    "Airfare to Guwahati",
-    "Boating fees in Dawki and entry fees at caves and waterfalls",
-    "Guide fee for root bridge trek (can be arranged on spot)"
+    "Flights or train tickets to and from Guwahati",
+    "Personal expenses (shopping, laundry, telephone calls, etc.)",
+    "Lunch and dinner, unless specifically mentioned under the selected meal plan",
+    "Entry fees to sightseeing monuments, viewpoints, and caves",
+    "Adventure or activity charges (trekking guides, zip-lining, water activities)",
+    "Boating charges on the Umngot River or Umiam Lake",
+    "Camera or photography fees at certain attractions",
+    "Travel insurance and personal medical expenses",
+    "Tips and gratuities for drivers and hotel staff",
+    "Room service or other hotel extras",
+    "Expenses caused by flight delays, bad weather, or unforeseen road closures",
+    "Anything not specifically mentioned under the package inclusions"
+  ],
+  "importantTravelInfo": [
+    "Road travel is an essential part of exploring Meghalaya. Keep some flexibility in your schedule because journeys through hilly areas can take longer than expected.",
+    "Weather can change quickly, especially during the rainy season. Check the weather forecast, confirm road conditions, keep rain protection handy, and allow extra travel time.",
+    "Reaching living root bridges requires walking down stone steps; comfortable walking shoes and adequate hydration are important.",
+    "Responsible tourism: Help protect Meghalaya's natural beauty by avoiding littering, respecting local customs, following local guidelines, avoiding damage to natural attractions, and supporting local businesses.",
+    "Airport transfer planning: Guwahati serves as the primary arrival gateway; coordinate your flight or train schedule with the 3 to 4-hour scenic road journey to Shillong."
   ],
   "itinerary": [
     {
       "dayNumber": 1,
-      "title": "Guwahati Arrival, Umiam Lake & Drive to Shillong",
-      "location": "Shillong",
-      "description": "Pickup at Guwahati Airport and drive to Shillong. Stop at the vast, serene Umiam Lake (Barapani) for watersports and photography. Check in to your boutique hotel in Shillong.",
-      "morningActivity": "Guwahati Airport pickup",
-      "afternoonActivity": "Umiam Lake watersports and panoramic viewpoint",
-      "eveningActivity": "Police Bazar shopping and live music cafe in Shillong",
-      "stay": "Heritage Club / Ri Kynjai 4★, Shillong",
-      "mealsIncluded": "Breakfast",
-      "transfers": "Private AC Cab"
+      "title": "Guwahati to Shillong | Arrival, Umiam Lake & Shillong Check-in",
+      "location": "Guwahati & Shillong",
+      "description": "Arrive at Guwahati Airport/Railway Station, where you will be warmly welcomed by a Safar Trails representative. Begin your scenic journey towards Shillong, the beautiful capital of Meghalaya. En-route visit Umiam Lake and enjoy panoramic views of the surrounding hills. Continue the picturesque drive towards Shillong. On arrival, check in to your hotel. Evening at leisure to explore the local market and Police Bazaar. Overnight stay in Shillong.",
+      "morningActivity": "Warm welcome by Safar Trails representative at Guwahati Airport or Railway Station",
+      "afternoonActivity": "Scenic hill drive with an en-route stop at panoramic Umiam Lake (Barapani)",
+      "eveningActivity": "Check-in at your Shillong hotel and leisure stroll through Police Bazaar",
+      "stay": "Hotel stay in selected category (Shillong)",
+      "mealsIncluded": "None on arrival day",
+      "transfers": "Private dedicated vehicle",
+      "insiderTip": "Stop by the Umiam Lake viewpoint for tea, fresh pineapples, and stunning photographs of the reservoir."
     },
     {
       "dayNumber": 2,
-      "title": "Shillong to Cherrapunji (Sohra) Waterfalls & Caves",
-      "location": "Cherrapunji",
-      "description": "Drive along cloud-covered mountain ridges to Cherrapunji. Visit Elephant Falls, the roaring Nohkalikai Falls (tallest plunge waterfall in India), Mawsmai limestone cave, and Seven Sisters Falls.",
-      "morningActivity": "Drive to Cherrapunji with Elephant Falls stop",
-      "afternoonActivity": "Nohkalikai Falls viewpoint and Mawsmai cave exploration",
-      "eveningActivity": "Check-in to resort overlooking the gorge & campfire",
-      "stay": "Polo Orchid Resort / Jiva Resort 4★, Cherrapunji",
-      "mealsIncluded": "Breakfast & Dinner",
-      "transfers": "Private AC Cab"
+      "title": "Shillong Local Sightseeing | Viewpoints, Waterfalls & Culture",
+      "location": "Shillong",
+      "description": "After breakfast, proceed for a full-day exploration of Shillong. Visit Shillong Peak for panoramic views of the city (subject to weather and local access), followed by Elephant Falls, one of Shillong’s most popular and scenic waterfalls. Take a peaceful walk around Ward’s Lake, visit the prominent Cathedral of Mary Help of Christians, and enjoy leisure time in Police Bazaar for shopping and experiencing local food. Return to the hotel after sightseeing. Overnight stay in Shillong.",
+      "morningActivity": "Visit Shillong Peak and the multi-tiered cascades of Elephant Falls",
+      "afternoonActivity": "Peaceful walk around Ward’s Lake and visit Cathedral of Mary Help of Christians",
+      "eveningActivity": "Leisure shopping for local handicrafts, woolens, and café hopping around Police Bazaar",
+      "stay": "Hotel stay in selected category (Shillong)",
+      "mealsIncluded": "Daily breakfast",
+      "transfers": "Private dedicated vehicle",
+      "insiderTip": "Ward's Lake features charming wooden footbridges and feeding points for friendly ducks and carp."
     },
     {
       "dayNumber": 3,
-      "title": "Double Decker Living Root Bridge & Rainbow Falls Trek",
-      "location": "Nongriat & Cherrapunji",
-      "description": "Trek down into the rainforest to witness the extraordinary Double Decker Living Root Bridge grown over centuries by the Khasi tribe. Optional trek extension to the turquoise pool of Rainbow Falls.",
-      "morningActivity": "Morning descent through Tyrna village to Nongriat",
-      "afternoonActivity": "Swim in natural pools and admire the living bridge",
-      "eveningActivity": "Ascend back and relax with hot tea at your resort",
-      "stay": "Polo Orchid Resort / Jiva Resort 4★, Cherrapunji",
-      "mealsIncluded": "Breakfast & Dinner",
-      "transfers": "Private AC Cab"
+      "title": "Shillong to Cherrapunji | Canyons, Caves & Soaring Waterfalls",
+      "location": "Cherrapunji (Sohra)",
+      "description": "After breakfast, check out from the hotel and proceed towards Cherrapunji, one of Meghalaya’s most scenic destinations. En route, stop at Mawkdok Dympep Valley Viewpoint for breathtaking valley views and continue through picturesque landscapes. Visit Nohkalikai Falls (subject to weather and visibility), explore Mawsmai Cave and its fascinating limestone formations, and visit Seven Sisters Falls (subject to seasonal water flow). Later, check in to your hotel/resort and relax. Overnight stay in Cherrapunji.",
+      "morningActivity": "Breathtaking views at Mawkdok Dympep Valley Viewpoint and drive to Sohra",
+      "afternoonActivity": "Explore awe-inspiring Nohkalikai Falls and walk through limestone passages at Mawsmai Cave",
+      "eveningActivity": "View Seven Sisters Falls and check in to your scenic Cherrapunji resort",
+      "stay": "Hotel stay in selected category (Cherrapunji)",
+      "mealsIncluded": "Daily breakfast",
+      "transfers": "Private dedicated vehicle",
+      "insiderTip": "Carry a light windbreaker or raincoat, as Cherrapunji's mountain ridges often welcome sudden misty clouds and showers."
     },
     {
       "dayNumber": 4,
-      "title": "Mawlynnong Clean Village & Dawki Umngot River Boating",
-      "location": "Dawki & Shnongpdeng",
-      "description": "Visit Mawlynnong, celebrated as Asia’s cleanest village. Continue to Dawki on the Indo-Bangladesh border for boating on the crystal-clear Umngot River. Stay in cozy riverside luxury tents in Shnongpdeng.",
-      "morningActivity": "Mawlynnong village walk & single living root bridge",
-      "afternoonActivity": "Boating on transparent waters of Umngot River",
-      "eveningActivity": "Bonfire and riverside camping under the stars",
-      "stay": "Riverside Luxury Glamping / Resort, Shnongpdeng",
-      "mealsIncluded": "Breakfast & Dinner",
-      "transfers": "Private AC Cab"
+      "title": "Cherrapunji to Dawki & Mawlynnong to Shillong | River & Village",
+      "location": "Dawki, Mawlynnong & Shillong",
+      "description": "After breakfast, proceed towards Dawki through the scenic landscapes of Meghalaya. Visit Dawki and the famous Umngot River, renowned for its clear waters (subject to weather and river conditions). Optional boating and river activities may be arranged at an additional cost. Continue towards Mawlynnong, known for its picturesque village surroundings, explore the village pathways, and visit the Mawlynnong Sky View Bamboo Watchtower (subject to local access). Later, proceed towards Shillong, check in to the hotel, and relax. Overnight stay in Shillong.",
+      "morningActivity": "Drive to Dawki and admire the transparent emerald waters of the Umngot River",
+      "afternoonActivity": "Explore clean pathways of Mawlynnong Village and climb the Bamboo Sky Watchtower",
+      "eveningActivity": "Scenic return drive to Shillong, hotel check-in, and relaxing evening",
+      "stay": "Hotel stay in selected category (Shillong)",
+      "mealsIncluded": "Daily breakfast",
+      "transfers": "Private dedicated vehicle",
+      "insiderTip": "During the drier winter and spring months, the Umngot River is so clear that country boats appear to float in mid-air."
     },
     {
       "dayNumber": 5,
-      "title": "Laitlum Canyons & Return to Shillong",
-      "location": "Shillong",
-      "description": "Drive back to Shillong via the dramatic rolling abyss of Laitlum Grand Canyons. Visit Don Bosco Museum of Indigenous Cultures and Cathedral of Mary Help of Christians.",
-      "morningActivity": "Scenic morning drive to Laitlum Canyons",
-      "afternoonActivity": "Don Bosco Cultural Museum in Shillong",
-      "eveningActivity": "Cafe evening at Dylan’s Cafe or Cloud 9 lounge",
-      "stay": "Heritage Club / Ri Kynjai 4★, Shillong",
-      "mealsIncluded": "Breakfast",
-      "transfers": "Private AC Cab"
+      "title": "Shillong | Living Root Bridge & Local Experience",
+      "location": "Shillong & Khasi Hills",
+      "description": "After breakfast, proceed for a memorable nature and local experience excursion. Visit a traditional Living Root Bridge (subject to route, weather, and local conditions), enjoy a scenic walk through the lush surroundings of Meghalaya, and experience the natural beauty of forests, streams, and traditional village landscapes. Return to Shillong by evening, with free time for shopping, café hopping, or exploring the city. Overnight stay in Shillong.",
+      "morningActivity": "Excursion to a traditional bio-engineered Living Root Bridge and forested trails",
+      "afternoonActivity": "Nature walk alongside crystal mountain streams and traditional village communities",
+      "eveningActivity": "Return to Shillong for leisure time, live music cafés, and café hopping",
+      "stay": "Hotel stay in selected category (Shillong)",
+      "mealsIncluded": "Daily breakfast",
+      "transfers": "Private dedicated vehicle",
+      "insiderTip": "Wear comfortable walking shoes with good grip for the stone pathways leading to the living root bridges."
     },
     {
       "dayNumber": 6,
-      "title": "Shillong to Kamakhya Temple & Guwahati Departure",
+      "title": "Shillong to Guwahati | Kamakhya Temple & Departure",
       "location": "Guwahati Departure",
-      "description": "Drive down to Guwahati. Visit the sacred Kamakhya Devi Temple on Nilachal Hill before drop-off at Guwahati Airport.",
-      "morningActivity": "Downhill highway drive to Guwahati",
-      "afternoonActivity": "Kamakhya Temple darshan & airport drop",
-      "mealsIncluded": "Breakfast",
-      "transfers": "Private AC Cab"
+      "description": "After breakfast, check out from the hotel and proceed towards Guwahati. Depending on your departure schedule, visit the sacred Kamakhya Temple (subject to temple timings and local conditions). Later, proceed to Guwahati Airport or Railway Station for your onward journey. Tour ends with beautiful memories of Meghalaya!",
+      "morningActivity": "Breakfast, hotel check-out, and scenic downhill drive towards Guwahati",
+      "afternoonActivity": "Visit the sacred Kamakhya Temple on Nilachal Hill (timing permitting)",
+      "eveningActivity": "Drop-off at Guwahati Airport (GAU) or Railway Station for onward journey",
+      "stay": "Tour concludes",
+      "mealsIncluded": "Daily breakfast",
+      "transfers": "Private dedicated vehicle",
+      "insiderTip": "Allow ample buffer time for the 3 to 4-hour highway drive from Shillong to Guwahati Airport."
     }
   ],
-  "season": "All Season",
+  "topPlacesToVisit": [
+    {
+      "name": "Shillong",
+      "description": "Often the starting point for Meghalaya trips, Shillong is a great introduction to the state's culture and natural beauty with local markets, scenic viewpoints, cafés, local food, and nearby waterfalls."
+    },
+    {
+      "name": "Cherrapunji (Sohra)",
+      "description": "Locally known as Sohra, Cherrapunji is famous for dramatic landscapes, Nohkalikai Falls, Mawsmai Cave, Seven Sisters Falls, living root bridges, and beautiful valley views."
+    },
+    {
+      "name": "Dawki & Umngot River",
+      "description": "Famous for the crystal-clear Umngot River where visitors can enjoy boat rides, admire transparent waters, take scenic photographs, and relax beside the river along the Indo-Bangladesh border."
+    },
+    {
+      "name": "Mawlynnong Village",
+      "description": "Known for its peaceful village atmosphere, clean paved lanes, lush greenery, nature walks, warm local hospitality, and the Bamboo Sky Watchtower overlooking the plains."
+    },
+    {
+      "name": "Nongriat & Double Decker Root Bridge",
+      "description": "Especially popular with adventure lovers, Nongriat is home to the famous Double Decker Living Root Bridge reached via an invigorating trek through dense rainforest."
+    },
+    {
+      "name": "Mawsynram",
+      "description": "Known globally for heavy rainfall, vibrant green landscapes, peaceful surroundings, natural beauty, and scenic village areas beyond the usual tourist circuit."
+    },
+    {
+      "name": "Jowai",
+      "description": "A wonderful destination for travelers looking for beautiful natural surroundings, waterfalls, placid lakes, rolling green hills, and quieter attractions suitable for longer itineraries."
+    }
+  ],
+  "thingsToDo": [
+    "Walk across living root bridges ingeniously trained from rubber tree roots across forest streams",
+    "Explore the natural limestone passages and stalactites of Mawsmai Cave",
+    "Visit spectacular waterfalls including Nohkalikai Falls, Elephant Falls, and Seven Sisters Falls",
+    "Enjoy a peaceful boat ride over the transparent glass-like waters of the Umngot River in Dawki",
+    "Explore bustling local markets and sample traditional regional food in Police Bazaar, Shillong",
+    "Take in breathtaking panoramic views from Mawkdok Dympep Valley Viewpoint and Shillong Peak",
+    "Stroll through the floral gardens, wooden bridges, and serene waters of Ward's Lake",
+    "Discover local Khasi culture and peaceful community living in Mawlynnong Village",
+    "Enjoy scenic mountain highway drives through misty pine hills and cloud-covered valleys",
+    "Seek blessings at the sacred Kamakhya Temple in Guwahati before catching your flight or train"
+  ],
+  "hotelsAndStays": "Accommodation Options for Your Meghalaya Holiday:\n\nA well-planned Meghalaya Tour Package takes care of comfortable accommodation tailored to your budget and travel preferences.\n\nHotel Categories Available:\n• Standard 3-Star Hotels: Clean, comfortable, well-located properties offering warm hospitality, private attached bathrooms, hot water / geyser facilities, Wi-Fi, and in-house dining serving fresh and hygienic multi-cuisine meals.\n• Deluxe 4-Star Hotels & Hill Resorts: Spacious accommodations with scenic valley or pine forest views, tea/coffee makers, multi-cuisine dining, attentive room service, and modern amenities.\n• Premium & Heritage Boutique Stays: Upscale hillside retreats, eco-luxury resorts overlooking Cherrapunji gorges, and serene properties offering panoramic nature views, local architectural charm, and fine hospitality.\n\nStay Locations on This Itinerary:\n• Shillong (4 Nights): Centrally located or tranquil hillside stays within easy reach of Police Bazaar, local cafés, viewpoints, and transit routes.\n• Cherrapunji / Sohra (1 Night): Scenic cliffside or valley-facing resorts offering peaceful overnight stays amidst mist and roaring waterfalls.\n\nSafar Trails helps you customize accommodation according to your preferred hotel category, room configuration, and travel budget.",
+  "bestTimeToVisit": [
+    {
+      "season": "Summer (April to June) – Sightseeing & Hill Drives",
+      "description": "Summer can be a comfortable time for sightseeing, scenic road trips, nature walks, and exploring waterfalls and viewpoints away from the heat of the plains."
+    },
+    {
+      "season": "Monsoon (July to September) – Cascading Waterfalls & Lush Hills",
+      "description": "Monsoon brings Meghalaya's landscapes to life with lush greenery, fuller roaring waterfalls, misty hills, and dramatic scenery. Heavy rain can affect road conditions, so flexibility in travel plans is important."
+    },
+    {
+      "season": "Autumn (October to November) – Pleasant Outdoor Exploration",
+      "description": "Autumn offers pleasant conditions for sightseeing and exploring the outdoors. It is a great option for travelers who want a balance between vibrant greenery and comfortable travel."
+    },
+    {
+      "season": "Winter (December to March) – Crisp Weather & Clear Rivers",
+      "description": "Winter brings cooler weather, clear blue skies, and optimal conditions for sightseeing, photography, exploring markets, scenic drives, relaxing outdoors, and crystal-clear river waters at Dawki."
+    }
+  ],
+  "tipsForChoosing": [
+    "What to pack: Carry comfortable walking shoes, lightweight clothing, rain protection (umbrella or raincoat), a small day backpack, personal medicines, a reusable water bottle, and a power bank.",
+    "Local transportation: Road travel is an important part of exploring Meghalaya. Keep some flexibility in your schedule because journeys through hilly areas can take longer than expected.",
+    "Weather considerations: Weather can change quickly, especially during the rainy season. Check the weather forecast, confirm road conditions, keep rain protection with you, and allow extra travel time.",
+    "Responsible tourism: Help protect Meghalaya's natural beauty by avoiding littering, respecting local customs, following local guidelines, avoiding damage to natural attractions, and supporting local businesses.",
+    "Major city connections: Travelers from Delhi, Kolkata, Mumbai, Bangalore, and Guwahati can easily plan a Meghalaya holiday, utilizing Guwahati as the primary arrival gateway by air or rail.",
+    "Root bridge treks: Walking down to living root bridges involves descending and ascending stone paths; wear sturdy footwear and allow sufficient time for the excursion."
+  ],
+  "whyChooseSafarTrails": [
+    "Explore Without Complicated Planning: A well-planned Meghalaya Tour Package takes care of accommodation, transportation, sightseeing, and other important travel arrangements so you can focus on enjoying your trip.",
+    "Comfortable Accommodation: Handpicked stays across Shillong and Cherrapunji tailored to your comfort and budget preferences.",
+    "Convenient Dedicated Transportation: Private vehicle for seamless transfers between destinations and scenic sightseeing at a relaxed pace.",
+    "Customizable to Your Needs: Don't want to follow a fixed itinerary? Customize your destinations, number of days, hotel category, transportation, activities, and sightseeing preferences.",
+    "Perfect for Every Traveler: Thoughtfully designed for families, couples, friends, and travelers with specific adventure or cultural interests.",
+    "24x7 Travel Assistance: Dedicated local travel coordinators ensure smooth coordination from arrival at Guwahati Airport/Railway Station until departure."
+  ],
+  "finalCta": {
+    "title": "Book Your Meghalaya Tour Package Today",
+    "subtitle": "5 Nights / 6 Days • Shillong, Cherrapunji, Dawki, Mawlynnong & Living Root Bridges",
+    "description": "Meghalaya is the kind of destination where the journey can be just as beautiful as the destination.\n\nFrom misty mountains and roaring waterfalls to peaceful villages and crystal-clear rivers, there is plenty to experience.\n\nWhether you are planning a short getaway or a week-long adventure, a thoughtfully planned Meghalaya Tour Package can make your journey comfortable and enjoyable.\n\nReady to explore Meghalaya?\n• Choose your preferred itinerary\n• Customize your travel experience\n• Get a package that fits your budget\n• Plan your sightseeing\n• Get a Quote and Book Your Meghalaya Trip Today!",
+    "actionLabel": "Book Your Meghalaya Trip Today"
+  },
+  "faqs": [
+    {
+      "question": "How many days are enough for a Meghalaya trip?",
+      "answer": "Around 5 to 7 days can give you enough time to explore several major destinations at a comfortable pace, including Shillong, Cherrapunji, Dawki, Mawlynnong, and Living Root Bridges. Shorter trips are also possible if you have limited time."
+    },
+    {
+      "question": "What is the best month to visit Meghalaya?",
+      "answer": "The ideal month depends on your preferences. For lush greenery and roaring waterfalls, consider the rainy season (July to September). For cooler weather and crystal-clear waters at Dawki, consider winter (December to February). For comfortable outdoor exploration and balanced greenery, autumn (October to November) and summer (April to June) are excellent."
+    },
+    {
+      "question": "How much does a Meghalaya Tour Package cost?",
+      "answer": "The price depends on the trip duration, number of travelers, hotel category (3-star, 4-star, or premium resort), transportation type, travel season, meal plans, and additional activities. Safar Trails offers transparent, customizable packages to match your preferences and budget."
+    },
+    {
+      "question": "Which places should I visit in Meghalaya?",
+      "answer": "Popular destinations include Shillong (capital with viewpoints and markets), Cherrapunji/Sohra (waterfalls, caves, and canyons), Dawki (crystal-clear Umngot River), Mawlynnong (peaceful village and bamboo watchtower), Nongriat (Double Decker Living Root Bridge), Mawsynram (green village landscapes), and Jowai (serene waterfalls and lakes)."
+    },
+    {
+      "question": "Is Meghalaya suitable for a family trip?",
+      "answer": "Yes. Families can enjoy scenic drives, waterfalls, viewpoints, peaceful villages, and rich cultural experiences. The itinerary can be adjusted according to the ages and comfort levels of family members, ensuring relaxed travel and comfortable hotel stays."
+    },
+    {
+      "question": "Is Meghalaya good for a honeymoon?",
+      "answer": "Meghalaya can be an appealing choice for couples who enjoy nature, scenic hill drives, peaceful surroundings, cascading waterfalls, unique experiences, and photography. The misty weather and romantic boutique resorts make it a memorable getaway."
+    },
+    {
+      "question": "How can I book a Meghalaya Tour Package with Safar Trails?",
+      "answer": "Start by selecting your travel dates and preferred destinations. Then choose the number of days, compare package inclusions, select your preferred accommodation, customize the itinerary if needed, and confirm the booking with Safar Trails."
+    },
+    {
+      "question": "What should I pack for a Meghalaya trip?",
+      "answer": "Carry comfortable walking shoes with good grip, lightweight clothing, rain protection (umbrella or raincoat), a small day backpack, personal medicines, a reusable water bottle, and a power bank. If visiting in winter, pack light to medium woolens."
+    },
+    {
+      "question": "Can I book a Meghalaya tour package from major cities like Delhi, Kolkata, Mumbai, or Bangalore?",
+      "answer": "Yes. Travelers from all major Indian cities can easily plan a Meghalaya holiday. Guwahati (GAU) serves as the primary arrival airport and railway hub with direct flights and trains, where your private Safar Trails cab and driver will receive you."
+    }
+  ],
+  "season": "October to May (Clear Skies & Outdoor Exploration) & Monsoon for Waterfalls",
+  "seoTitle": "Meghalaya Tour Package (5N/6D) | Safar Trails",
+  "seoDescription": "Book 5N/6D Meghalaya Tour Package covering Shillong, Cherrapunji, Dawki, Mawlynnong & Living Root Bridges with private cab, hotel stays & daily breakfast.",
   "isFeatured": true,
-  "isPopular": true
+  "isPopular": true,
+  "displayOrder": 12
 }
