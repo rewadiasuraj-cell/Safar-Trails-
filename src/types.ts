@@ -197,6 +197,11 @@ export interface Package {
     }[];
     howToChoose: string;
   };
+  /** Structured package details/specifications (e.g. Destination, Duration, Accommodation, Sightseeing, Transfers, Meals, Travel Style, Ideal For) */
+  packageDetails?: {
+    label: string;
+    value: string;
+  }[];
 }
 
 export interface DestinationHighlight {

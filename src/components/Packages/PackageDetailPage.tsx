@@ -230,7 +230,7 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
             {packageData.title}
           </h1>
 
-          <p className="text-xs sm:text-sm md:text-base text-stone-600 font-normal max-w-4xl leading-relaxed">
+          <p className="text-xs sm:text-sm md:text-base text-stone-600 font-normal max-w-4xl leading-relaxed whitespace-pre-line">
             {packageData.overview}
           </p>
 
@@ -274,6 +274,38 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
           {/* LEFT COLUMN: ITINERARY, DETAILS, STAYS, INCLUSIONS (8 COLS) */}
           <div className="lg:col-span-8 space-y-8">
             
+            {/* PACKAGE DETAILS QUICK SPECS */}
+            {packageData.packageDetails && packageData.packageDetails.length > 0 && (
+              <div className="bg-white p-6 sm:p-7 rounded-3xl border border-stone-200 shadow-sm">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-8 h-8 rounded-xl bg-midnight-blue/10 text-midnight-blue flex items-center justify-center">
+                    <Info className="w-4 h-4 text-midnight-blue" />
+                  </div>
+                  <div>
+                    <h2 className="text-lg sm:text-xl font-serif font-black text-stone-900">
+                      Package Quick Details
+                    </h2>
+                    <p className="text-xs text-stone-500">Trip summary and essential holiday details</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {packageData.packageDetails.map((item, i) => (
+                    <div
+                      key={i}
+                      className="p-3.5 rounded-2xl bg-[#FBF9F5] border border-stone-200/80 flex items-start gap-2.5"
+                    >
+                      <span className="w-2 h-2 rounded-full bg-deep-emerald shrink-0 mt-2" />
+                      <div className="text-xs sm:text-sm">
+                        <span className="font-bold text-stone-900 block">{item.label}</span>
+                        <span className="text-stone-600 font-normal leading-snug">{item.value}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* TRIP HIGHLIGHTS BENTO */}
             {packageData.highlights && packageData.highlights.length > 0 && (
               <div className="bg-white p-6 sm:p-7 rounded-3xl border border-stone-200 shadow-sm">

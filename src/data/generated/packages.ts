@@ -2355,55 +2355,316 @@ export const packagesData: Package[] = [
   {
     "id": "pkg-goa-premium-holiday",
     "slug": "goa-premium-holiday",
-    "title": "Goa Premium Beach Resort Retreat",
+    "title": "Goa Premium Beach Resort Retreat Tour Package",
     "destination": "Goa",
     "destinationSlug": "goa",
     "state": "Goa",
-    "durationDays": 6,
-    "durationNights": 5,
+    "durationDays": 5,
+    "durationNights": 4,
     "startingPrice": 18500,
     "originalPrice": 24000,
     "tripType": [
       "Couple",
       "Family",
-      "Luxury"
+      "Friends",
+      "Luxury",
+      "Relaxation"
     ],
     "hotelCategory": "Luxury 5★",
     "ratings": 4.9,
     "reviewCount": 88,
-    "startingCity": "Goa (MOPA / Dabolim Airport)",
-    "bestFor": "Beach Lovers & Families",
+    "startingCity": "Goa (Airport or Railway Station)",
+    "bestFor": "Couples, Families, Friends & Leisure Travellers",
     "heroImage": "/content/destinations/goa/1.jpg",
     "galleryImages": [
-      "/content/destinations/goa/1.jpg"
+      {
+        "src": "/content/destinations/goa/1.jpg",
+        "caption": "Scenic Coastal Shoreline & Tropical Palms"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1200&auto=format&fit=crop",
+        "caption": "Fontainhas Latin Quarter & Portuguese Heritage Architecture"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop",
+        "caption": "Pristine Sands & Coastal Sunset Views"
+      }
     ],
-    "overview": "5 Nights in 5★ South Goa beachfront resort with private beach access, sunset yacht cruise, and spice plantation tour with authentic Goan buffet.",
+    "overview": "The Goa Premium Beach Resort Retreat Tour Package offers a relaxing 5-day getaway with four nights at a premium beach resort. Explore North Goa’s famous beaches and forts, discover South Goa’s historic churches and scenic attractions, and enjoy a dedicated leisure day at the resort. With private transfers as arranged and optional activities, this package combines sightseeing, comfort, and beachside relaxation for a memorable Goa holiday.",
+    "packageDetails": [
+      {
+        "label": "Destination",
+        "value": "Goa, India"
+      },
+      {
+        "label": "Duration",
+        "value": "4 Nights / 5 Days"
+      },
+      {
+        "label": "Accommodation",
+        "value": "Premium beach resort, subject to confirmation"
+      },
+      {
+        "label": "Sightseeing",
+        "value": "North Goa and South Goa"
+      },
+      {
+        "label": "Transfers",
+        "value": "Private arrival and departure transfers, plus sightseeing transfers as arranged"
+      },
+      {
+        "label": "Meals",
+        "value": "As selected in the package"
+      },
+      {
+        "label": "Travel style",
+        "value": "Beach holiday, heritage exploration, and resort leisure"
+      },
+      {
+        "label": "Ideal for",
+        "value": "Couples, families, friends, and leisure travellers"
+      }
+    ],
     "highlights": [
-      "5 Nights in 5★ Taj / Alila Diwa South Goa Beach Resort",
-      "Private luxury sunset yacht cruise on Mandovi River",
-      "Private AC transfers for North & South Goa sightseeing"
+      "Enjoy a four-night stay at a premium beach resort.",
+      "Explore North Goa's popular beaches, including Calangute, Baga, Anjuna, and Vagator.",
+      "Visit the historic Fort Aguada and Chapora Fort.",
+      "Discover the Basilica of Bom Jesus and Se Cathedral in Old Goa.",
+      "Walk through the colourful heritage streets of Fontainhas in Panjim.",
+      "Enjoy coastal views at Miramar Beach and Dona Paula Viewpoint.",
+      "Spend a dedicated day relaxing at the resort.",
+      "Choose optional spa treatments, water sports, or a sunset cruise at additional cost.",
+      "Enjoy private transfers as specified in the confirmed itinerary.",
+      "Experience a balanced holiday combining sightseeing, beach time, and relaxation."
     ],
     "inclusions": [
-      "5 Nights 5★ Resort stay with breakfast",
-      "Private AC SUV transfers"
+      "Four nights of resort accommodation, subject to the confirmed booking.",
+      "Arrival transfer from Goa Airport or Railway Station.",
+      "Departure transfer to Goa Airport or Railway Station.",
+      "North Goa sightseeing covering the attractions listed in the itinerary.",
+      "South Goa sightseeing covering the attractions listed in the itinerary.",
+      "Private transfers for sightseeing, as arranged in the confirmed package.",
+      "Meals according to the selected meal plan."
     ],
     "exclusions": [
-      "Flight tickets to Goa"
+      "Flights or train tickets to and from Goa, unless specifically included.",
+      "Spa treatments, water sports, and sunset cruises.",
+      "Personal expenses such as shopping, laundry, and additional beverages.",
+      "Entry fees, guide charges, and activity costs unless specifically included.",
+      "Meals outside the selected meal plan.",
+      "Early check-in, late check-out, and other hotel extras.",
+      "Any service not explicitly mentioned in the confirmed package inclusions."
+    ],
+    "importantTravelInfo": [
+      "The original itinerary does not specify the resort name, exact meal plan, entry fees, or the detailed transport arrangements for every sightseeing stop. Please confirm these details with Safar Trails before booking.",
+      "Suggested sightseeing plan: North Goa attractions are covered on Day 2, while Old Goa, Panjim, Miramar Beach, and Dona Paula are included on Day 3. The South Goa beach stop will depend on the final sightseeing arrangements."
     ],
     "itinerary": [
       {
         "dayNumber": 1,
-        "title": "Goa Arrival & Beachfront Welcome",
-        "location": "South Goa",
-        "description": "Airport pickup and transfer to 5★ South Goa beachfront resort.",
-        "morningActivity": "Airport pickup",
-        "eveningActivity": "Sunset cocktail at resort beach lounge",
-        "stay": "Alila Diwa / Taj Exotica South Goa 5★",
-        "mealsIncluded": "Breakfast",
-        "transfers": "Private AC SUV"
+        "title": "Arrival in Goa & Premium Beach Resort Check-in",
+        "location": "Goa Arrival",
+        "description": "Arrive at Goa Airport or Railway Station and meet your private transfer to proceed to your confirmed premium beach resort. Complete check-in formalities, unwind after your journey, and spend the evening relaxing by the pool or enjoying the beachside atmosphere.",
+        "morningActivity": "Arrival transfer from Goa Airport or Railway Station",
+        "afternoonActivity": "Resort check-in formalities and relaxation",
+        "eveningActivity": "Leisure time at the resort or nearby beachside",
+        "stay": "Premium beach resort, subject to confirmation",
+        "mealsIncluded": "As selected in the package",
+        "transfers": "Private arrival transfer as arranged",
+        "insiderTip": "Take time to settle in and enjoy the peaceful resort ambiance on your first evening."
+      },
+      {
+        "dayNumber": 2,
+        "title": "North Goa Sightseeing – Historic Forts & Vibrant Beaches",
+        "location": "North Goa",
+        "description": "Set out for a full day exploring North Goa's top coastal and historic attractions. Visit historic Fort Aguada overlooking the Arabian Sea, followed by scenic Sinquerim Beach and Candolim Beach. Continue to the lively sands of Calangute Beach and Baga Beach, known for their bustling atmosphere and seaside cafés. In the afternoon, discover the distinctive coastal scenery of Anjuna Beach, and visit Vagator Beach and Chapora Fort for panoramic coastal views.",
+        "morningActivity": "Visit Fort Aguada, Sinquerim Beach & Candolim Beach",
+        "afternoonActivity": "Explore Calangute Beach, Baga Beach & Anjuna Beach",
+        "eveningActivity": "Panoramic coastline views at Chapora Fort & Vagator Beach",
+        "stay": "Premium beach resort, subject to confirmation",
+        "mealsIncluded": "As selected in the package",
+        "transfers": "Private sightseeing transfers as arranged",
+        "insiderTip": "Chapora Fort offers panoramic views of the surrounding landscape and coastline."
+      },
+      {
+        "dayNumber": 3,
+        "title": "South Goa Heritage, Culture & Coastal Viewpoints",
+        "location": "South Goa & Panjim",
+        "description": "Discover Goa's rich heritage architecture and scenic coastal vantage points. Explore Old Goa's renowned Basilica of Bom Jesus and Se Cathedral, celebrated for their religious significance and historic architecture. Head to Panjim for a relaxed walk through the colourful Portuguese-influenced streets of Fontainhas. Continue to Miramar Beach for sea views and visit Dona Paula Viewpoint for picturesque coastal panoramas. Conclude with a South Goa beach stop depending on your final sightseeing arrangements. Optional sunset cruise available at additional cost.",
+        "morningActivity": "Discover the Basilica of Bom Jesus & Se Cathedral in Old Goa",
+        "afternoonActivity": "Walk through colourful Fontainhas, Miramar Beach & Dona Paula Viewpoint",
+        "eveningActivity": "South Goa beach stop / optional sunset cruise (at additional cost)",
+        "stay": "Premium beach resort, subject to confirmation",
+        "mealsIncluded": "As selected in the package",
+        "transfers": "Private sightseeing transfers as arranged",
+        "insiderTip": "Fontainhas is famous for its colourful buildings, narrow streets, and Portuguese-influenced architecture."
+      },
+      {
+        "dayNumber": 4,
+        "title": "Dedicated Leisure Day at the Resort",
+        "location": "Resort Leisure",
+        "description": "Spend a dedicated full day unwinding at your premium beach resort. Enjoy a leisurely morning, relax by the swimming pool, and take advantage of the resort's leisure amenities and dining facilities. Guests may choose optional activities such as spa and wellness treatments, beach water sports, or an evening sunset cruise at additional cost.",
+        "morningActivity": "Leisurely breakfast and pool relaxation at the resort",
+        "afternoonActivity": "Resort amenities, beachside walk, or optional spa treatments",
+        "eveningActivity": "Sunset coastal relaxation or optional dining experience",
+        "stay": "Premium beach resort, subject to confirmation",
+        "mealsIncluded": "As selected in the package",
+        "transfers": "Resort leisure day (transfers as arranged)",
+        "insiderTip": "Unlike busy sightseeing trips, this dedicated resort day allows you to truly recharge and unwind at your own pace."
+      },
+      {
+        "dayNumber": 5,
+        "title": "Departure from Goa",
+        "location": "Goa Departure",
+        "description": "Enjoy breakfast at the resort and complete check-out formalities. Depending on your departure timings, spend your remaining time relaxing before your private departure transfer to Goa Airport or Railway Station for your journey home.",
+        "morningActivity": "Breakfast at the resort and check-out formalities",
+        "afternoonActivity": "Private departure transfer to Goa Airport or Railway Station",
+        "eveningActivity": "Departure with cherished memories of your Goa holiday",
+        "stay": "Tour concludes",
+        "mealsIncluded": "As selected in the package",
+        "transfers": "Private departure transfer as arranged",
+        "insiderTip": "Confirm your departure transfer timing with your driver in advance based on your flight or train schedule."
       }
     ],
-    "season": "All Season",
+    "topPlacesToVisit": [
+      {
+        "name": "Fort Aguada",
+        "description": "Fort Aguada is a historic coastal fort offering views of the Arabian Sea. It is an excellent stop for travellers interested in Goa's history, architecture, and scenic landscapes."
+      },
+      {
+        "name": "Sinquerim Beach & Candolim Beach",
+        "description": "These coastal destinations offer opportunities to enjoy sea views and a relaxing beach atmosphere. They are included in the North Goa sightseeing programme."
+      },
+      {
+        "name": "Calangute Beach",
+        "description": "Calangute Beach is one of Goa's well-known beach destinations. Visitors can enjoy a coastal walk, explore nearby cafés, or spend time taking in the lively surroundings."
+      },
+      {
+        "name": "Baga Beach",
+        "description": "Baga Beach is popular for its energetic atmosphere, dining options, and nearby entertainment. It is also a convenient place to enjoy free time during the evening."
+      },
+      {
+        "name": "Anjuna Beach",
+        "description": "Anjuna is known for its distinctive beach culture and coastal scenery. It is a great addition to a North Goa sightseeing day."
+      },
+      {
+        "name": "Vagator Beach & Chapora Fort",
+        "description": "Vagator Beach is known for its striking coastline, while Chapora Fort offers panoramic views of the surrounding landscape. Both are memorable stops for visitors exploring North Goa."
+      },
+      {
+        "name": "Basilica of Bom Jesus",
+        "description": "Located in Old Goa, the Basilica of Bom Jesus is an important historic church known for its religious significance and heritage architecture."
+      },
+      {
+        "name": "Se Cathedral",
+        "description": "Se Cathedral is another major heritage attraction in Old Goa. Its impressive architecture makes it a worthwhile stop for travellers interested in the region's history."
+      },
+      {
+        "name": "Fontainhas, Panjim",
+        "description": "Fontainhas is famous for its colourful buildings, narrow streets, and Portuguese-influenced architecture. Enjoy a relaxed walk and discover a different side of Goa beyond its beaches."
+      },
+      {
+        "name": "Miramar Beach",
+        "description": "Located near Panjim, Miramar Beach offers a pleasant coastal setting for enjoying sea views and a peaceful break during sightseeing."
+      },
+      {
+        "name": "Dona Paula Viewpoint",
+        "description": "Dona Paula Viewpoint is a popular coastal attraction known for its scenic views. It is an excellent stop for photographs and enjoying Goa's natural beauty."
+      }
+    ],
+    "thingsToDo": [
+      "Enjoy a four-night stay and leisurely pool time at a premium beach resort",
+      "Explore historic coastal forts including Fort Aguada and Chapora Fort",
+      "Visit iconic North Goa beaches: Calangute, Baga, Candolim, Anjuna & Vagator",
+      "Discover the heritage architecture of Basilica of Bom Jesus and Se Cathedral in Old Goa",
+      "Take a relaxed walk through the colourful Portuguese quarters of Fontainhas in Panjim",
+      "Admire coastal sea views at Miramar Beach and Dona Paula Viewpoint",
+      "Dedicate a relaxing day to resort leisure, swimming, and beach walks",
+      "Optional spa treatments, wellness therapies, or water sports (at additional cost)",
+      "Optional sunset cruise on Goan waters (at additional cost)"
+    ],
+    "hotelsAndStays": "Premium Beach Resort Stay: Enjoy a comfortable base for your trip, with opportunities to unwind after exploring Goa's beaches and heritage attractions.\n\nDepending on the selected property, facilities may include:\n• Comfortable guest rooms\n• Swimming pool\n• On-site restaurant or dining facilities\n• Resort leisure areas\n• Beach access or proximity to the coastline\n• Optional spa and wellness facilities\n\nFacilities vary by property, and direct beach access should not be assumed unless confirmed.\n\nChoose the Right Stay for Your Holiday:\n• For couples: Consider a resort with a peaceful atmosphere, comfortable rooms, and opportunities to enjoy sunset views.\n• For families: Look for suitable room configurations, family-friendly facilities, and convenient access to sightseeing locations.\n• For friends: A resort with easy access to popular beaches, restaurants, and entertainment areas may be a suitable choice.\n• For a relaxing retreat: Prioritise swimming pool access, dining facilities, and resort amenities that allow you to enjoy a leisurely day.\n\nSafar Trails can help you explore suitable accommodation options based on your travel dates, budget, preferred location, and room requirements.\n\nThe specific resort name, room category, amenities, and final accommodation price must be confirmed before booking.",
+    "bestTimeToVisit": [
+      {
+        "season": "October to February – Best for Beach Holidays",
+        "description": "This is generally the most popular period for a Goa trip. The weather is usually more comfortable for sightseeing, beach visits, and outdoor activities. It is a good choice for travellers planning the Goa Premium Beach Resort Retreat Tour Package, particularly if they want to explore both North Goa and South Goa."
+      },
+      {
+        "season": "March to May – Summer Getaway",
+        "description": "Summer brings warmer and more humid conditions. This period may suit travellers who prefer spending more time at their resort, relaxing by the swimming pool, and enjoying indoor facilities during the hotter hours."
+      },
+      {
+        "season": "June to September – Monsoon Travel",
+        "description": "The monsoon season transforms Goa's landscapes with lush greenery and dramatic coastal scenery. However, rain can affect sightseeing plans and the availability of certain water sports. Travellers visiting during this period should allow flexibility in their schedule."
+      }
+    ],
+    "tipsForChoosing": [
+      "For couples: Consider a resort with a peaceful atmosphere, comfortable rooms, and opportunities to enjoy sunset views.",
+      "For families: Look for suitable room configurations, family-friendly facilities, and convenient access to sightseeing locations.",
+      "For friends: A resort with easy access to popular beaches, restaurants, and entertainment areas may be a suitable choice.",
+      "For a relaxing retreat: Prioritise swimming pool access, dining facilities, and resort amenities that allow you to enjoy a leisurely day.",
+      "Travel tip: October to February is a popular choice for a balanced beach and sightseeing holiday. Book accommodation in advance during peak travel periods and festive dates.",
+      "Please note: The original itinerary does not specify the resort name, exact meal plan, entry fees, or detailed transport arrangements for every stop. Confirm these details with Safar Trails before booking."
+    ],
+    "whyChooseSafarTrails": [
+      "A Well-Planned Itinerary: The five-day programme groups popular North Goa and South Goa attractions into dedicated sightseeing days, helping you plan your time more conveniently.",
+      "A Balance of Sightseeing & Relaxation: Unlike an itinerary focused entirely on sightseeing, this package includes a dedicated resort leisure day so you can enjoy time at your own pace.",
+      "Private Transfers as Arranged: The itinerary includes private arrival and departure transfers, along with sightseeing transfers as specified in the confirmed package.",
+      "Flexible Optional Experiences: You can explore optional activities such as spa treatments, water sports, and sunset cruises according to your interests and budget.",
+      "Support with Travel Planning: Share your dates, traveller details, accommodation preferences, and budget with Safar Trails to clarify available options before confirming your holiday.",
+      "Clear Package Information: Understanding accommodation, meal plans, transfers, and exclusions before payment helps you make an informed booking decision. Choose Safar Trails for a thoughtfully planned Goa holiday, with the important details confirmed before you travel."
+    ],
+    "finalCta": {
+      "title": "Book Your Goa Tour Package Today",
+      "subtitle": "4 Nights / 5 Days • Premium Beach Resort Stay • North & South Goa",
+      "description": "Ready to enjoy the beaches, heritage attractions, and relaxing resort atmosphere of Goa? The Goa Premium Beach Resort Retreat Tour Package offers a 4-night, 5-day escape combining North Goa sightseeing, South Goa heritage, scenic coastal views, and time to unwind at your resort.\n\nWhether you are planning a couple's getaway, a family holiday, or a trip with friends, Safar Trails can help you explore suitable options for your travel plans.\n\nContact Safar Trails to customise your Goa holiday. To receive your package quotation, share:\n• Preferred travel dates\n• Number of adults and children\n• Departure city\n• Preferred resort category or budget\n• Room requirements\n• Meal preferences and optional activities\n\nGet in touch with Safar Trails to confirm availability, accommodation, inclusions, and pricing for your preferred dates.\n\nYour Goa getaway starts with the right plan. Discover the coast, explore the heritage, and enjoy time to unwind.\n\nSafar Trails – Plan your Goa escape with comfort, discovery, and memorable experiences.",
+      "actionLabel": "Customise Your Goa Holiday"
+    },
+    "faqs": [
+      {
+        "question": "What is included in the Goa Premium Beach Resort Retreat Tour Package?",
+        "answer": "The itinerary includes four nights of planned resort accommodation, North Goa and South Goa sightseeing, private arrival and departure transfers, sightseeing transfers as arranged, and meals according to the selected package. Final inclusions should be confirmed before booking."
+      },
+      {
+        "question": "How many days are enough for this Goa tour?",
+        "answer": "This package covers 4 nights and 5 days. It provides time to explore major attractions in North and South Goa while keeping one full day for resort relaxation."
+      },
+      {
+        "question": "Is this Goa tour package suitable for couples?",
+        "answer": "Yes. The combination of beach visits, scenic viewpoints, comfortable resort time, and optional sunset experiences makes it a suitable option for couples."
+      },
+      {
+        "question": "Can families book this Goa holiday package?",
+        "answer": "Yes. Families can consider this package for a mix of sightseeing and leisure. Room suitability, child policies, and any additional charges should be confirmed with the selected resort."
+      },
+      {
+        "question": "Are flights or train tickets included?",
+        "answer": "Flights and train tickets are not specified as included in the itinerary. Please confirm the final package inclusions with Safar Trails."
+      },
+      {
+        "question": "Are water sports and sunset cruises included?",
+        "answer": "No. The itinerary lists spa treatments, water sports, and sunset cruises as optional activities available at an additional cost, subject to availability and operating conditions."
+      },
+      {
+        "question": "Which places are covered in North Goa?",
+        "answer": "The itinerary includes Fort Aguada, Sinquerim Beach, Candolim Beach, Calangute Beach, Baga Beach, Anjuna Beach, Vagator Beach, and Chapora Fort."
+      },
+      {
+        "question": "Which places are covered in South Goa?",
+        "answer": "The itinerary includes the Basilica of Bom Jesus, Se Cathedral, Fontainhas in Panjim, Miramar Beach, Dona Paula Viewpoint, and a South Goa beach stop."
+      },
+      {
+        "question": "What is the best month to book a Goa beach holiday?",
+        "answer": "October to February is generally popular for beach visits and sightseeing. The best dates depend on your budget, weather preferences, and availability."
+      },
+      {
+        "question": "How can I book the Goa Premium Beach Resort Retreat Tour Package?",
+        "answer": "Contact Safar Trails with your preferred travel dates, number of travellers, room requirements, and departure city. The team can help you confirm the available resort, package price, meal plan, and services."
+      }
+    ],
+    "season": "October to February (Best for Beach Holidays) & Year-round",
+    "seoTitle": "Goa Premium Beach Resort Retreat (4N/5D) | Safar Trails",
+    "seoDescription": "Book the Goa Premium Beach Resort Retreat Tour Package (4N/5D). Includes premium beach resort stay, North & South Goa sightseeing, leisure day, and private transfers.",
     "isFeatured": true,
     "isPopular": true
   },
