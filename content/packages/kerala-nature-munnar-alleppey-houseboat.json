@@ -2,6 +2,7 @@
   "id": "pkg-kerala-grand-nature",
   "slug": "kerala-nature-munnar-alleppey-houseboat",
   "title": "Kerala Tour Package",
+  "badge": "Best Deals & Holiday Offers",
   "destination": "Kerala",
   "destinationSlug": "kerala",
   "state": "Kerala",
@@ -12,115 +13,261 @@
   "tripType": [
     "Couple",
     "Family",
+    "Friends",
     "Honeymoon",
+    "Nature",
     "Relaxation"
   ],
   "hotelCategory": "Deluxe 4★",
   "ratings": 4.8,
   "reviewCount": 289,
-  "startingCity": "Kochi (Airport/Station Pickup)",
-  "bestFor": "Couples, Families & Wellness Seekers",
+  "startingCity": "Cochin",
+  "bestFor": "Couples, Families, Friends & Leisure Travellers",
   "heroImage": "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=1200&auto=format&fit=crop",
   "galleryImages": [
-    "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=800&auto=format&fit=crop"
+    {
+      "src": "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=800&auto=format&fit=crop",
+      "caption": "Munnar Tea Estates & Western Ghats Views"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=800&auto=format&fit=crop",
+      "caption": "Traditional Alleppey Backwater Houseboat Cruise"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=800&auto=format&fit=crop",
+      "caption": "Lush Spice Plantations & Hills of Thekkady"
+    }
   ],
-  "overview": "Indulge in God’s Own Country: traverse aromatic tea gardens in Munnar, encounter wild elephants in Thekkady’s Periyar lake, and spend a night cruising peaceful palm-lined canals in a private Alleppey houseboat.",
+  "overview": "The Kerala Tour Package is a 6-day journey covering four popular destinations: Cochin, Munnar, Thekkady, and Alleppey. Designed to combine nature, sightseeing, local culture, and relaxation, this itinerary offers a varied experience of Kerala in one convenient holiday.\n\nBegin your journey in Cochin and drive through scenic landscapes to Munnar, known for its tea plantations, waterfalls, and mountain views. Continue to Thekkady for a spice plantation experience and optional cultural performances. In Alleppey, enjoy a traditional Kerala houseboat stay surrounded by coconut palms, paddy fields, and tranquil backwaters. Finish your trip in Cochin with heritage sightseeing before departure.",
+  "packageDetails": [
+    {
+      "label": "Duration",
+      "value": "5 Nights / 6 Days"
+    },
+    {
+      "label": "Tour Route",
+      "value": "Cochin → Munnar → Thekkady → Alleppey → Cochin"
+    },
+    {
+      "label": "Arrival and Departure",
+      "value": "Cochin"
+    },
+    {
+      "label": "Accommodation",
+      "value": "Hotels and a traditional Kerala houseboat, as per the confirmed package"
+    },
+    {
+      "label": "Transfers",
+      "value": "Private transfers and sightseeing as confirmed"
+    },
+    {
+      "label": "Signature Experience",
+      "value": "Overnight houseboat stay in Alleppey"
+    },
+    {
+      "label": "Meals",
+      "value": "As selected in the package, with freshly prepared meals onboard the houseboat"
+    },
+    {
+      "label": "Ideal For",
+      "value": "Couples, families, friends, and leisure travellers"
+    }
+  ],
   "highlights": [
-    "2 Nights in Munnar with Cheeyappara Waterfalls & Tea Museum",
-    "1 Night in Thekkady with Spice Plantation & Periyar Boat Safari",
-    "1 Night in Private Alleppey AC Houseboat with traditional Kerala Feast",
-    "1 Night in historic Fort Kochi with Chinese Fishing Nets",
-    "Authentic Ayurvedic wellness consultation voucher"
+    "Munnar Drive: Enjoy tea gardens, waterfalls, and lush greenery.",
+    "Munnar Sightseeing: Visit Mattupetty Dam, Echo Point, and Kundala Lake.",
+    "Thekkady Experience: Explore spice plantations and Kerala’s culture.",
+    "Cultural Shows: Enjoy optional Kathakali or Kalaripayattu performances.",
+    "Alleppey Houseboat: Cruise through scenic backwaters and villages.",
+    "Cochin Tour: Discover Fort Kochi and the Chinese Fishing Nets.",
+    "Private Transfers: Enjoy convenient travel and sightseeing.",
+    "Relaxing Holiday: Experience Kerala’s nature, culture, and beauty in 6 days."
   ],
   "inclusions": [
-    "5 Nights accommodation in curated 3★/4★ resorts + exclusive Houseboat",
-    "All meals on Houseboat (Lunch, Evening Tea & Snacks, Dinner, Breakfast)",
-    "Daily Breakfast at Munnar, Thekkady, and Kochi hotels",
-    "Private air-conditioned Sedan/Ertiga/Innova throughout trip",
-    "Spice plantation tour tickets in Thekkady",
-    "All toll, parking, driver charges, and 24/7 SafarTrails concierge"
+    "Accommodation: Hotel stays and a traditional Kerala houseboat as per confirmed package.",
+    "Private Transfers: Airport, intercity, and sightseeing transfers.",
+    "Sightseeing: Itinerary-based visits, subject to availability.",
+    "Houseboat Experience: Scenic backwater cruise with onboard meals.",
+    "Meals: As per your selected package (with freshly prepared meals onboard the houseboat)."
   ],
   "exclusions": [
-    "Flights/train tickets to Kochi",
-    "Periyar boat safari tickets (booked at sanctuary counter/online)",
-    "Kathakali/Kalaripayattu show tickets (optional add-on)",
-    "Personal laundry, beverages, and tips"
+    "Flights & Train Tickets: Travel to and from Cochin.",
+    "Entry Fees: Attraction and museum tickets, unless included.",
+    "Optional Activities: Cultural shows (Kathakali, Kalaripayattu) and extra activities.",
+    "Personal Expenses: Shopping, tips, and laundry.",
+    "Additional Services: Extra meals, upgrades, and unlisted sightseeing.",
+    "Unforeseen Expenses: Weather-related or travel change costs, where applicable."
+  ],
+  "importantTravelInfo": [
+    "Hotel category, houseboat type, meal plan, entry fees, taxes, and cancellation terms should be confirmed in your final quotation. Services should be treated as included only when explicitly listed in the booking confirmation.",
+    "Visits to Cheeyappara and Valara Waterfalls, Tea Museum, and Mattancherry Palace are subject to available time, weather conditions, opening days, and timings.",
+    "Kathakali and Kalaripayattu cultural performances are optional experiences subject to availability and additional charges."
   ],
   "itinerary": [
     {
       "dayNumber": 1,
-      "title": "Kochi Arrival & Scenic Drive to Munnar Hills",
-      "location": "Kochi to Munnar",
-      "description": "Pickup from Kochi Airport/Railway station. Embark on a breathtaking drive to Munnar. En route, stop at the cascading Cheeyappara and Valara waterfalls. Check in at your tea-valley resort in Munnar.",
-      "morningActivity": "Airport reception & highway drive into the Western Ghats",
-      "afternoonActivity": "Cheeyappara waterfalls stop & spice garden stroll",
-      "eveningActivity": "Check-in to mountain resort & evening campfire",
-      "stay": "Misty Mountain Resort / Amber Dale 4★, Munnar",
-      "mealsIncluded": "Dinner",
-      "transfers": "Private AC Cab"
+      "title": "Cochin Arrival – Scenic Drive to Munnar",
+      "location": "Cochin to Munnar",
+      "description": "Arrive at Cochin International Airport or Railway Station, where a Safar Trails representative will welcome you and assist with your onward transfer to Munnar.\n\nEnjoy a scenic drive through Kerala's lush countryside, with views of green hills, waterfalls, and tea plantations along the route. En route, visit Cheeyappara and Valara Waterfalls, subject to available time and weather conditions.\n\nUpon arrival in Munnar, check in to your hotel and relax after the journey. Spend the evening at leisure.",
+      "morningActivity": "Arrival at Cochin International Airport or Railway Station & meet Safar Trails representative",
+      "afternoonActivity": "Scenic drive through Western Ghats, Cheeyappara & Valara Waterfalls (time/weather permitting)",
+      "eveningActivity": "Check in to your hotel in Munnar & evening at leisure",
+      "stay": "Munnar",
+      "mealsIncluded": "As selected in the package",
+      "transfers": "Private onward transfer to Munnar"
     },
     {
       "dayNumber": 2,
-      "title": "Munnar Tea Estates, Eravikulam & Mattupetty Dam",
+      "title": "Munnar Local Sightseeing – Tea Gardens and Mountain Views",
       "location": "Munnar",
-      "description": "Full day of Munnar sightseeing. Visit Eravikulam National Park (habitat of Nilgiri Tahr), Tata Tea Museum with tea tasting, Mattupetty Dam, Echo Point, and Kundala Lake.",
-      "morningActivity": "Eravikulam National Park safari",
-      "afternoonActivity": "Tea factory tour & boating at Mattupetty Dam",
-      "eveningActivity": "Stroll in Munnar town and shop for pure spices & cocoa",
-      "stay": "Misty Mountain Resort / Amber Dale 4★, Munnar",
-      "mealsIncluded": "Breakfast & Dinner",
-      "transfers": "Private AC Cab"
+      "description": "After breakfast, proceed for a full day of sightseeing in Munnar.\n\nVisit Mattupetty Dam, Echo Point, and Kundala Lake, where you can enjoy scenic surroundings and panoramic views of the Western Ghats. Explore Munnar's beautiful tea gardens and discover the region's tea-growing heritage.\n\nYou may also visit a tea museum, subject to its opening days and timings.\n\nReturn to the hotel and enjoy a relaxed evening.",
+      "morningActivity": "Breakfast & visit to Mattupetty Dam, Echo Point, and Kundala Lake",
+      "afternoonActivity": "Explore Munnar's tea gardens & optional Tea Museum visit (subject to timings)",
+      "eveningActivity": "Return to hotel and enjoy a relaxed evening in Munnar",
+      "stay": "Munnar",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private sightseeing transfers"
     },
     {
       "dayNumber": 3,
-      "title": "Munnar to Thekkady Spice Hills & Periyar Sanctuary",
+      "title": "Munnar to Thekkady – Spice Plantation Experience",
       "location": "Thekkady",
-      "description": "Drive through cardamom and pepper hills to Thekkady. Take a guided tour of a certified organic spice plantation. Later, enjoy a boat safari on Periyar Lake inside the tiger reserve.",
-      "morningActivity": "Scenic drive to Thekkady (approx. 3 hrs)",
-      "afternoonActivity": "Guided spice plantation walk & Periyar boat ride",
-      "eveningActivity": "Watch traditional Kathakali and Kalaripayattu performance",
-      "stay": "Cardamom County / Poetree Sarovar 4★, Thekkady",
+      "description": "After breakfast, check out from your hotel and proceed towards Thekkady, enjoying a scenic drive through the Western Ghats.\n\nUpon arrival, check in to your hotel. Later, visit a spice plantation to learn about Kerala's famous spices and their cultivation.\n\nIn the evening, you may opt to attend a traditional Kathakali performance or Kalaripayattu show, subject to availability and additional charges.\n\nReturn to the hotel for dinner and an overnight stay.",
+      "morningActivity": "Breakfast, check out from Munnar hotel & scenic drive through Western Ghats to Thekkady",
+      "afternoonActivity": "Check-in at hotel and guided visit to a spice plantation",
+      "eveningActivity": "Optional traditional Kathakali or Kalaripayattu show; dinner at hotel",
+      "stay": "Thekkady",
       "mealsIncluded": "Breakfast & Dinner",
-      "transfers": "Private AC Cab"
+      "transfers": "Private intercity transfer & sightseeing"
     },
     {
       "dayNumber": 4,
-      "title": "Thekkady to Alleppey Private Houseboat Cruise",
+      "title": "Thekkady to Alleppey – Kerala Houseboat Experience",
       "location": "Alleppey Backwaters",
-      "description": "Descend the hills to Alleppey backwaters. Board your private traditionally crafted Kettuvallam houseboat around 12:30 PM. Cruise along serene canals, lush paddy fields, and backwater villages while enjoying freshly prepared Kerala delicacies.",
-      "morningActivity": "Drive to Alleppey jetty & welcome tender coconut drink",
-      "afternoonActivity": "Houseboat cruise with fresh Karimeen fish / Veg Kerala lunch",
-      "eveningActivity": "Anchor at tranquil backwater village for sunset walk",
-      "stay": "Private Deluxe AC Houseboat, Alleppey",
-      "mealsIncluded": "Breakfast, Lunch, Evening Snacks & Dinner",
-      "transfers": "Private AC Cab + Houseboat"
+      "description": "After breakfast, check out from your hotel and proceed towards Alleppey, famous for its scenic backwaters and traditional houseboats.\n\nUpon arrival, board your houseboat and begin a relaxing cruise through Kerala's beautiful waterways. Enjoy views of coconut palms, paddy fields, village life, and peaceful canals as you experience the charm of the backwaters.\n\nEnjoy freshly prepared meals onboard and spend the evening relaxing on the houseboat.",
+      "morningActivity": "Breakfast, check-out, and scenic transfer to Alleppey backwaters",
+      "afternoonActivity": "Board traditional Kerala houseboat & cruise through waterways, canals, and paddy fields",
+      "eveningActivity": "Freshly prepared dinner onboard and overnight stay on the houseboat",
+      "stay": "Alleppey Houseboat",
+      "mealsIncluded": "Freshly prepared meals onboard the houseboat",
+      "transfers": "Private transfer to Alleppey jetty & houseboat cruise"
     },
     {
       "dayNumber": 5,
-      "title": "Alleppey to Fort Kochi Heritage Exploration",
-      "location": "Fort Kochi",
-      "description": "Enjoy sunrise breakfast on the houseboat sundeck. Disembark at 9:00 AM and drive to Fort Kochi. Explore the historic Jew Town, Paradesi Synagogue, Santa Cruz Basilica, and the iconic Chinese Fishing Nets at sunset.",
-      "morningActivity": "Backwater disembarkation and transfer to Kochi",
-      "afternoonActivity": "Heritage walk in Fort Kochi & Jew Street antiques",
-      "eveningActivity": "Sunset at Fort Kochi beach & seafood dining",
-      "stay": "Brunton Boatyard / Dutch Bungalow Heritage 4★, Kochi",
-      "mealsIncluded": "Breakfast",
-      "transfers": "Private AC Cab"
+      "title": "Alleppey to Cochin – Heritage and City Sightseeing",
+      "location": "Cochin",
+      "description": "After breakfast, check out from the houseboat and proceed towards Cochin.\n\nExplore the historic charm of Fort Kochi, including the iconic Chinese Fishing Nets, St. Francis Church, and the heritage streets of the area.\n\nLater, visit Mattancherry Palace, subject to opening days and timings. Spend the evening at leisure, exploring local markets or shopping for souvenirs.\n\nCheck in to your hotel for dinner and an overnight stay.",
+      "morningActivity": "Breakfast on houseboat, check-out, and transfer to Cochin",
+      "afternoonActivity": "Explore Fort Kochi, Chinese Fishing Nets, St. Francis Church & Mattancherry Palace",
+      "eveningActivity": "Leisure time at local markets for souvenirs; check in to hotel for dinner",
+      "stay": "Cochin",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private transfer & city sightseeing"
     },
     {
       "dayNumber": 6,
-      "title": "Kochi Souvenir Shopping & Departure",
-      "location": "Kochi Departure",
-      "description": "Breakfast at hotel followed by transfer to Kochi International Airport / Ernakulam Railway Station for onward journey.",
-      "morningActivity": "Breakfast & Lulu Mall or local banana chips shopping",
-      "afternoonActivity": "Airport drop with unforgettable Kerala memories",
+      "title": "Cochin Departure",
+      "location": "Cochin Departure",
+      "description": "After breakfast, check out from your hotel. Depending on your departure schedule, enjoy some free time in Cochin.\n\nA private transfer will take you to Cochin International Airport or Railway Station for your onward journey.\n\nDepart with wonderful memories of Kerala's tea-covered hills, spice plantations, peaceful backwaters, and cultural heritage.\n\nYour Kerala holiday concludes with Safar Trails.",
+      "morningActivity": "Breakfast at hotel, check-out & optional free time depending on schedule",
+      "afternoonActivity": "Private transfer to Cochin International Airport or Railway Station for onward journey",
+      "eveningActivity": "Holiday concludes with memorable experiences of God's Own Country",
+      "stay": "Tour Concludes",
       "mealsIncluded": "Breakfast",
-      "transfers": "Private AC Cab"
+      "transfers": "Private departure transfer"
     }
   ],
-  "season": "All Season",
+  "topPlacesToVisit": [
+    {
+      "name": "Cochin – Heritage, Culture and Coastal Charm",
+      "description": "Cochin (Kochi) combines historic architecture, local markets, and coastal scenery. Places to explore include Fort Kochi, Chinese Fishing Nets, St. Francis Church, Mattancherry Palace, and historic streets and local markets. Recommended experience: Explore Fort Kochi's heritage area and discover local crafts and souvenirs."
+    },
+    {
+      "name": "Munnar – Tea Plantations and Scenic Hills",
+      "description": "Munnar is known for its rolling tea gardens, misty mountain landscapes, and beautiful viewpoints. Places to explore include Mattupetty Dam, Echo Point, Kundala Lake, Munnar Tea Gardens, Tea Museum (subject to timings), and Cheeyappara and Valara Waterfalls en route. Recommended experience: Enjoy scenic drives and panoramic views across the tea-covered hills."
+    },
+    {
+      "name": "Thekkady – Spice Plantations and Cultural Experiences",
+      "description": "Thekkady introduces visitors to Kerala's spice-growing heritage and cultural traditions. Visit a spice plantation to learn about Kerala's famous spices, or opt for a traditional Kathakali performance or Kalaripayattu martial arts show (subject to availability)."
+    },
+    {
+      "name": "Alleppey – Backwaters and Traditional Houseboats",
+      "description": "Alleppey (Alappuzha) is famous for its tranquil backwaters, coconut-lined canals, and traditional houseboats. Experience highlights include an overnight houseboat stay, scenic backwater cruise, views of villages and paddy fields, and freshly prepared meals onboard as per the confirmed package."
+    }
+  ],
+  "thingsToDo": [
+    "Cruise through tranquil canals and paddy fields on an Alleppey houseboat",
+    "Enjoy freshly prepared traditional Kerala meals onboard the houseboat",
+    "Drive through misty hills and rolling tea plantations in Munnar",
+    "Visit Mattupetty Dam, Echo Point, and Kundala Lake in Munnar",
+    "Discover tea-growing heritage at a Munnar tea museum",
+    "See Cheeyappara and Valara Waterfalls along the hill route",
+    "Take a guided tour of a spice plantation in Thekkady",
+    "Attend optional Kathakali dance or Kalaripayattu martial arts performances",
+    "Watch the iconic Chinese Fishing Nets in Fort Kochi",
+    "Explore St. Francis Church and Mattancherry Palace heritage architecture",
+    "Shop for authentic Kerala spices, tea, and local handicrafts"
+  ],
+  "hotelsAndStays": "Accommodation: Hotels and a traditional Kerala houseboat, as per the confirmed package.\n\n• Curated Route Stays: 2 Nights in Munnar (Nights 1 & 2), 1 Night in Thekkady (Night 3), 1 Night in a traditional Alleppey Houseboat (Night 4), and 1 Night in Cochin (Night 5).\n• Authentic Houseboat Experience: An overnight houseboat stay surrounded by coconut palms, paddy fields, and tranquil backwaters with freshly prepared meals onboard.\n• Tailored Selection: Hotel category, houseboat type (deluxe or premium), meal plan, and room configurations are confirmed in your detailed quotation before booking.",
+  "faqs": [
+    {
+      "question": "How many days are enough for a Kerala tour?",
+      "answer": "A 5 Nights / 6 Days Kerala tour package gives you time to explore Cochin, Munnar, Thekkady, and Alleppey, including tea gardens, spice plantations, heritage sightseeing, and a houseboat stay."
+    },
+    {
+      "question": "Which destinations are covered in this Kerala holiday package?",
+      "answer": "The itinerary covers Cochin, Munnar, Thekkady, and Alleppey, starting and ending in Cochin."
+    },
+    {
+      "question": "Is a houseboat stay included in the Kerala tour package?",
+      "answer": "The itinerary includes a traditional houseboat stay in Alleppey. The houseboat category and exact meal arrangements should be confirmed in the final quotation."
+    },
+    {
+      "question": "Are meals included in the package?",
+      "answer": "Meals are provided according to the selected package plan. Freshly prepared meals are served onboard the houseboat as described in the itinerary. Confirm the exact hotel meal plan before booking."
+    },
+    {
+      "question": "Is this Kerala tour package suitable for families?",
+      "answer": "Yes, the itinerary may suit families looking for a mix of nature, sightseeing, cultural experiences, and a houseboat stay. Confirm room arrangements and any specific requirements when requesting a quote."
+    },
+    {
+      "question": "Can couples book this Kerala holiday package?",
+      "answer": "Yes. The scenic tea gardens of Munnar and the relaxing houseboat experience in Alleppey may appeal to couples planning a getaway."
+    },
+    {
+      "question": "Are Kathakali and Kalaripayattu shows included?",
+      "answer": "These performances are listed as optional experiences and are subject to availability. Ask Safar Trails whether tickets can be added to your package quotation."
+    },
+    {
+      "question": "Are flights included in the Kerala package?",
+      "answer": "Flights and train tickets are not listed as confirmed inclusions. Transfers to and from Cochin Airport or Railway Station are arranged as stated in your confirmed package."
+    },
+    {
+      "question": "Can I customise my Kerala tour itinerary?",
+      "answer": "You can enquire about travel dates, accommodation preferences, and additional requirements. Changes depend on availability and confirmation by Safar Trails."
+    },
+    {
+      "question": "How can I book a Kerala tour package with Safar Trails?",
+      "answer": "Share your travel dates, number of travellers, preferred accommodation, and room requirements. Safar Trails can provide a quotation for review before you confirm your booking."
+    }
+  ],
+  "whyChooseSafarTrails": [
+    "Well-Planned Itinerary: Explore Cochin, Munnar, Thekkady, and Alleppey in 6 days.",
+    "Convenient Travel: Enjoy organised stays, transfers, and sightseeing.",
+    "Houseboat Experience: Relax amid Alleppey's scenic backwaters.",
+    "Transparent Pricing: Know the inclusions, exclusions, and extra costs.",
+    "Personalised Planning: Customise your trip based on your dates and preferences.",
+    "Seamless Service: Safar Trails helps you enjoy a seamless Kerala holiday filled with nature, culture, and unforgettable experiences."
+  ],
+  "finalCta": {
+    "title": "Book Your Kerala Tour Package with Safar Trails",
+    "subtitle": "5 Nights / 6 Days • Cochin, Munnar, Thekkady & Alleppey",
+    "description": "Your Kerala Holiday Starts Here!\n\nExplore Munnar’s tea gardens, Thekkady’s spice plantations, Alleppey’s backwaters, and Cochin’s heritage with our 5 Nights / 6 Days Kerala Tour Package.\n\nEnjoy a memorable getaway with comfortable stays, sightseeing, and convenient travel arrangements planned by Safar Trails.\n\nReady to Explore Kerala? Share your travel dates, group size, and accommodation preferences to get your personalised tour quote.\n\nContact Safar Trails Today and Discover Kerala!",
+    "actionLabel": "Get Your Personalised Tour Quote"
+  },
+  "season": "September to March (Pleasant) & All Season",
+  "seoTitle": "Kerala Tour Package – Best Deals & Offers | Safar Trails",
+  "seoDescription": "Book a 5N/6D Kerala Tour Package with Safar Trails. Explore Cochin, Munnar tea hills, Thekkady spice plantations, and an Alleppey backwater houseboat cruise.",
   "isFeatured": true,
   "isPopular": true
 }
