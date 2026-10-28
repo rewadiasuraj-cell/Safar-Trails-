@@ -4181,10 +4181,10 @@ export const packagesData: Package[] = [
     "reviewCount": 112,
     "startingCity": "Srinagar",
     "bestFor": "Couples, Families & Leisure Travellers",
-    "heroImage": "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1200&auto=format&fit=crop",
+    "heroImage": "https://images.unsplash.com/photo-1593417376544-4c4201061e22?q=80&w=1200&auto=format&fit=crop",
     "galleryImages": [
       {
-        "src": "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=800&auto=format&fit=crop",
+        "src": "https://images.unsplash.com/photo-1593417376544-4c4201061e22?q=80&w=800&auto=format&fit=crop",
         "caption": "Snow-Capped Peaks & Alpine Meadows of Gulmarg"
       },
       {
