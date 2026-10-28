@@ -442,7 +442,7 @@ export const destinationsData: Destination[] = [
       {
         "name": "Betaab & Aru Valley, Pahalgam",
         "description": "Verdant riverbanks surrounded by dense deodar forests, ideal for trekking and quiet picnics.",
-        "image": "https://images.unsplash.com/photo-1626014303757-658c3a119760?q=80&w=600&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1643449415972-87d4cfe882a1?q=80&w=600&auto=format&fit=crop"
       },
       {
         "name": "Sonamarg & Thajiwas Glacier",
