@@ -4466,9 +4466,9 @@ export const packagesData: Package[] = [
     "reviewCount": 164,
     "startingCity": "Cochin",
     "bestFor": "Families & Nature Lovers",
-    "heroImage": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=1200&auto=format&fit=crop",
+    "heroImage": "/content/destinations/kerala/2.avif",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=800&auto=format&fit=crop"
+      "/content/destinations/kerala/2.avif"
     ],
     "overview": "Grand Kerala 7-Day Experience: Cochin Chinese Fishing Nets, tea gardens of Munnar, Periyar Wildlife Sanctuary in Thekkady, Alleppey Private Houseboat cruise, and Kovalam cliff beaches.",
     "highlights": [
