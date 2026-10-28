@@ -2,55 +2,255 @@
   "id": "pkg-auli-himalayan-retreat",
   "slug": "auli-himalayan-retreat",
   "title": "Auli Skiing & Himalayan Retreat",
+  "badge": "Exclusive Tour Deals",
   "destination": "Uttarakhand",
   "destinationSlug": "uttarakhand",
   "state": "Uttarakhand",
-  "durationDays": 6,
-  "durationNights": 5,
+  "durationDays": 5,
+  "durationNights": 4,
   "startingPrice": 19999,
   "originalPrice": 26000,
   "tripType": [
     "Adventure",
     "Couple",
-    "Nature"
+    "Family",
+    "Nature",
+    "Relaxation"
   ],
   "hotelCategory": "Deluxe 4★",
   "ratings": 4.9,
   "reviewCount": 114,
-  "startingCity": "Dehradun / Haridwar",
-  "bestFor": "Skiers, Couples & Snow Enthusiasts",
+  "startingCity": "Delhi",
+  "bestFor": "Families, Couples & Nature Lovers",
   "heroImage": "https://images.unsplash.com/photo-1601821139366-eb14f3628e26?q=80&w=1200&auto=format&fit=crop",
   "galleryImages": [
-    "https://images.unsplash.com/photo-1601821139366-eb14f3628e26?q=80&w=800&auto=format&fit=crop"
+    {
+      "src": "https://images.unsplash.com/photo-1601821139366-eb14f3628e26?q=80&w=800&auto=format&fit=crop",
+      "caption": "Auli Snow-Covered Himalayan Slopes & Panoramic Peaks"
+    }
   ],
-  "overview": "Ascend to India’s premier ski resort: take the Joshimath-Auli cable car (longest ropeway in Asia) surrounded by 180° views of Nanda Devi peak (25,645 ft) and artificial lake.",
+  "overview": "Experience the Himalayas with Safar Trails’ Auli Skiing & Himalayan Retreat – 4 Nights / 5 Days. Enjoy scenic mountain drives, seasonal skiing, breathtaking Himalayan views, and visits to Rishikesh, Devprayag, Badrinath Temple, and Mana Village, subject to weather and accessibility.\n\nWith comfortable stays, transfers, and meals as selected, this package offers the perfect blend of adventure, relaxation, and Himalayan exploration.",
+  "packageDetails": [
+    {
+      "label": "Duration",
+      "value": "4 Nights / 5 Days"
+    },
+    {
+      "label": "Starting Point",
+      "value": "Delhi"
+    },
+    {
+      "label": "Destinations",
+      "value": "Rishikesh, Devprayag, Joshimath, Auli, Badrinath and Mana Village"
+    },
+    {
+      "label": "Experiences",
+      "value": "Seasonal skiing, Himalayan sightseeing, scenic drives and optional ropeway experience"
+    },
+    {
+      "label": "Accommodation",
+      "value": "Hotels or resorts as per the selected package"
+    },
+    {
+      "label": "Meals",
+      "value": "As selected in the package"
+    },
+    {
+      "label": "Ideal For",
+      "value": "Families, couples, and nature lovers"
+    }
+  ],
   "highlights": [
-    "Asia’s longest 4 km cable car ride from Joshimath to Auli",
-    "Panoramic 180-degree view of snow-capped Nanda Devi & Mana Parvat peaks",
-    "Skiing lessons and snow activities on slopes"
+    "Enjoy a scenic drive from Delhi via Rishikesh and Devprayag.",
+    "Explore Auli’s Himalayan landscapes and mountain slopes.",
+    "Experience skiing with a local instructor, subject to conditions.",
+    "Enjoy an optional ropeway ride and panoramic mountain views.",
+    "Visit Gorson Bugyal, weather and accessibility permitting.",
+    "Explore Badrinath Temple and Mana Village, subject to accessibility.",
+    "Enjoy comfortable stays, private transfers, and meals as selected."
   ],
   "inclusions": [
-    "5 Nights 4★ Resort stay in Auli & Rishikesh",
-    "Daily Breakfast & Dinner",
-    "Private Mountain SUV"
+    "Accommodation: Comfortable hotel or resort stays in Joshimath and Auli as per confirmed package.",
+    "Transfers: Travel arrangements between Delhi, Rishikesh, Joshimath, and Auli.",
+    "Sightseeing: Planned excursions and attractions, subject to weather and accessibility.",
+    "Meals: Meals as per your selected package."
   ],
   "exclusions": [
-    "Skiing gear rental"
+    "Travel Tickets: Train and flight tickets.",
+    "Skiing & Activities: Ski equipment, instructor fees, ropeway tickets, and optional activities.",
+    "Entry & Guide Fees: Attraction tickets, local guides, and pony rides.",
+    "Extra Meals: Meals and beverages outside the confirmed plan.",
+    "Personal Expenses: Shopping, tips, laundry, and travel insurance.",
+    "Unforeseen Costs: Expenses due to weather, road closures, or itinerary changes.",
+    "Other Services: Anything not listed in the confirmed inclusions."
+  ],
+  "importantTravelInfo": [
+    "Mountain travel times, skiing, ropeway operations, Gorson Bugyal access and Badrinath visits depend on weather, snow, road conditions, local regulations and seasonal opening schedules.",
+    "Badrinath Temple visits depend on official seasonal opening schedules and local travel conditions.",
+    "Mana Village and Gorson Bugyal excursions are subject to local permissions, weather, snow, trail conditions, and available time.",
+    "Confirm accommodation, meals, vehicle type, skiing arrangements, and ropeway charges with Safar Trails before booking."
   ],
   "itinerary": [
     {
       "dayNumber": 1,
-      "title": "Dehradun / Haridwar to Rishikesh",
-      "location": "Rishikesh",
-      "description": "Pickup and drive to Rishikesh for evening Ganga Aarti.",
-      "morningActivity": "Pickup in private SUV",
-      "eveningActivity": "Ganga Aarti",
-      "stay": "Aloft / Taj Rishikesh 4★",
+      "title": "Delhi – Rishikesh – Joshimath",
+      "location": "Delhi to Joshimath",
+      "description": "Begin your Himalayan holiday with an early-morning departure from Delhi towards Joshimath. Enjoy a scenic drive through the mountains, passing through Rishikesh and Devprayag along the way.\n\nContinue your journey through Uttarakhand’s picturesque Himalayan roads before arriving in Joshimath. Check in to your hotel, relax after the long journey and enjoy dinner.",
+      "morningActivity": "Early-morning departure from Delhi & scenic drive towards the mountains",
+      "afternoonActivity": "Drive via Rishikesh and Devprayag along picturesque Himalayan roads",
+      "eveningActivity": "Arrival in Joshimath, hotel check-in, relaxation, and dinner",
+      "stay": "Joshimath",
       "mealsIncluded": "Dinner",
-      "transfers": "Private Mountain SUV"
+      "transfers": "Private mountain transfer from Delhi"
+    },
+    {
+      "dayNumber": 2,
+      "title": "Joshimath – Auli",
+      "location": "Joshimath to Auli",
+      "description": "After breakfast, proceed from Joshimath to Auli. Depending on operational status and weather conditions, enjoy a scenic mountain drive or an optional ropeway experience.\n\nOn arrival, check in to your hotel or resort and explore the beautiful surroundings. Take in the panoramic Himalayan views and enjoy the peaceful mountain atmosphere.\n\nDuring the snow season, you can opt for skiing and other snow activities at an additional cost, subject to snow conditions and local availability. Spend the evening at leisure before dinner.",
+      "morningActivity": "Breakfast & scenic mountain drive or optional ropeway experience to Auli",
+      "afternoonActivity": "Check in to hotel or resort & explore panoramic Himalayan surroundings",
+      "eveningActivity": "Optional seasonal snow activities & evening at leisure before dinner",
+      "stay": "Auli",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Transfer to Auli (drive or optional ropeway)"
+    },
+    {
+      "dayNumber": 3,
+      "title": "Auli Skiing & Himalayan Experience",
+      "location": "Auli & Gorson Bugyal",
+      "description": "After breakfast, spend the day exploring Auli and enjoying its mountain scenery. During suitable snow conditions, experience skiing with a local instructor and discover the excitement of this popular winter activity.\n\nYou can also enjoy seasonal snow activities, take scenic walks around the Auli slopes and admire views of Nanda Devi and other Himalayan peaks when the weather allows.\n\nAn optional visit to Gorson Bugyal may be arranged, subject to weather, snow and local accessibility. Return to your hotel in the evening for dinner and a relaxing overnight stay.",
+      "morningActivity": "Breakfast & skiing with a local instructor (during suitable snow conditions)",
+      "afternoonActivity": "Scenic walks around Auli slopes, Nanda Devi views & optional Gorson Bugyal excursion",
+      "eveningActivity": "Relaxing evening at the hotel followed by dinner and overnight stay",
+      "stay": "Auli",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Local excursions as arranged"
+    },
+    {
+      "dayNumber": 4,
+      "title": "Auli – Badrinath – Mana Village – Joshimath",
+      "location": "Badrinath & Mana Village Excursion",
+      "description": "After breakfast, check out and proceed towards Badrinath. Visit the revered Badrinath Temple, subject to its opening dates, road access and local conditions.\n\nContinue towards Mana Village, known for its Himalayan setting near the India–Tibet border. Explore the village and nearby attractions wherever access is permitted.\n\nLater, drive back to Joshimath and check in to your hotel. Relax after the day’s sightseeing and enjoy dinner.",
+      "morningActivity": "Breakfast, check-out from Auli, and drive to Badrinath Temple (subject to opening dates & access)",
+      "afternoonActivity": "Excursion to Mana Village near the India–Tibet border and local sightseeing",
+      "eveningActivity": "Scenic drive back to Joshimath, hotel check-in, relaxation, and dinner",
+      "stay": "Joshimath",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private excursion transfers"
+    },
+    {
+      "dayNumber": 5,
+      "title": "Joshimath – Rishikesh – Delhi",
+      "location": "Joshimath to Delhi",
+      "description": "After breakfast, check out from your hotel and begin the return journey towards Delhi via Rishikesh. Enjoy the scenic Himalayan route as you travel back from Uttarakhand’s mountains to the capital.\n\nOn arrival in Delhi, you will be dropped at your desired location. Your Auli Skiing & Himalayan Retreat concludes with memorable experiences of mountain scenery, seasonal adventure and Himalayan culture.",
+      "morningActivity": "Breakfast, check-out from Joshimath hotel & begin scenic drive back",
+      "afternoonActivity": "Scenic drive via Rishikesh and mountain foothills towards Delhi",
+      "eveningActivity": "Drop-off at desired location in Delhi; tour concludes",
+      "stay": "Tour Concludes (Delhi)",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private return transfer to Delhi"
     }
   ],
-  "season": "All Season",
+  "topPlacesToVisit": [
+    {
+      "name": "Auli",
+      "description": "Auli is the main destination of this holiday, offering beautiful mountain scenery, open slopes and seasonal snow experiences. It is ideal for travellers who want to enjoy Himalayan landscapes and try skiing when conditions are suitable. Top experiences: Seasonal skiing, snow activities, scenic walks and mountain photography."
+    },
+    {
+      "name": "Joshimath",
+      "description": "Joshimath serves as an important base for exploring Auli and nearby Himalayan destinations. Enjoy the surrounding mountain scenery and use your stay to relax between excursions. Top experiences: Mountain views, local exploration and access to Auli."
+    },
+    {
+      "name": "Rishikesh",
+      "description": "Located along the route from Delhi, Rishikesh is known for its spiritual atmosphere and Himalayan foothill scenery. The itinerary includes passing through the town during the onward and return journeys. Top experiences: Scenic views along the route and glimpses of the town, depending on travel time."
+    },
+    {
+      "name": "Devprayag",
+      "description": "Devprayag is a scenic stop along the journey towards Joshimath, known for its river confluence and mountain surroundings. Top experiences: Scenic drive and views of the Himalayan river landscape."
+    },
+    {
+      "name": "Badrinath Temple",
+      "description": "Visit Badrinath Temple during the scheduled excursion on Day 4. Access depends on temple opening dates, road conditions and local arrangements. Top experiences: Temple visit and spiritual sightseeing when open."
+    },
+    {
+      "name": "Mana Village",
+      "description": "Explore Mana Village and its nearby attractions during the excursion from Badrinath to Joshimath. Visits are subject to local permissions, accessibility and available time. Top experiences: Village exploration, mountain scenery and local cultural experiences."
+    },
+    {
+      "name": "Gorson Bugyal",
+      "description": "Gorson Bugyal is an optional excursion from Auli, offering an opportunity to explore a beautiful Himalayan meadow. The visit depends on weather, snow, trail conditions and accessibility. Top experiences: Nature walks, landscape photography and mountain views."
+    }
+  ],
+  "thingsToDo": [
+    "Experience seasonal skiing with a local instructor on Auli's slopes",
+    "Enjoy scenic walks around Auli with panoramic views of Nanda Devi",
+    "Take an optional ropeway cable car ride with Himalayan mountain views",
+    "Visit Gorson Bugyal alpine meadow (weather and trail permitting)",
+    "Take a scenic mountain drive via Rishikesh and Devprayag river confluence",
+    "Explore the revered Badrinath Temple (subject to seasonal opening)",
+    "Discover Mana Village near the India–Tibet border",
+    "Capture breathtaking mountain photography across the Garhwal Himalayas"
+  ],
+  "hotelsAndStays": "Accommodation: Comfortable hotel or resort stays in Joshimath and Auli as per the selected package.\n\n• Stays in Joshimath & Auli: Stays are split between Joshimath (Nights 1 & 4) as a strategic transit and base station, and Auli (Nights 2 & 3) right in the alpine mountain setting.\n• Practical Himalayan Planning: Accommodations are selected with mountain-ready amenities, heating arrangements where available, and convenient access to local sightseeing.\n• Customise Your Stay: Discuss your preferred travel dates, accommodation category (standard, deluxe, or luxury resort), and room requirements with Safar Trails for confirmed details in your final quotation.",
+  "faqs": [
+    {
+      "question": "How many days are required for the Auli Skiing & Himalayan Retreat?",
+      "answer": "This Safar Trails itinerary is designed for 4 Nights / 5 Days, starting and ending in Delhi."
+    },
+    {
+      "question": "What is included in the Auli tour package?",
+      "answer": "The itinerary covers the planned transfers, hotel or resort stays, sightseeing and meals as selected. The final quotation should specify the exact inclusions, accommodation category, meal plan and vehicle arrangements."
+    },
+    {
+      "question": "Is skiing included in the Auli package?",
+      "answer": "Skiing is listed as an optional activity at an additional cost. It depends on snow conditions, seasonal availability and local arrangements. Confirm instructor fees and equipment rental before booking."
+    },
+    {
+      "question": "When is the best time to book an Auli skiing tour?",
+      "answer": "For a skiing-focused trip, choose a winter travel window and confirm current snow conditions before finalising dates. Snowfall and ski operations vary from season to season, so skiing cannot be guaranteed on every departure."
+    },
+    {
+      "question": "Is the Auli ropeway included?",
+      "answer": "The itinerary mentions a possible ropeway experience, subject to operation and weather conditions. Ropeway tickets and charges should be confirmed in your package quotation."
+    },
+    {
+      "question": "Can we visit Gorson Bugyal during this trip?",
+      "answer": "An optional visit is included in the itinerary. Actual access depends on weather, snow, trail conditions and local accessibility."
+    },
+    {
+      "question": "Is Badrinath Temple open throughout the year?",
+      "answer": "No. Temple visits depend on the official seasonal opening schedule and local travel conditions. Confirm the planned travel dates before booking."
+    },
+    {
+      "question": "Does the package include a visit to Mana Village?",
+      "answer": "Yes, the itinerary includes a visit to Mana Village on Day 4, subject to local permissions, road conditions and accessibility."
+    },
+    {
+      "question": "Is this Auli tour package suitable for families and couples?",
+      "answer": "The trip can suit families, couples and nature lovers interested in mountain scenery and seasonal activities. Travellers should consider winter temperatures, road journeys and the physical requirements of optional walks or skiing."
+    },
+    {
+      "question": "How can I book the Auli Skiing & Himalayan Retreat with Safar Trails?",
+      "answer": "Contact Safar Trails with your preferred travel dates, number of travellers and accommodation preferences. Request a customised quotation with confirmed inclusions, optional activity costs and applicable booking terms."
+    }
+  ],
+  "whyChooseSafarTrails": [
+    "Carefully Planned Himalayan Itinerary: Explore Auli, Joshimath, Badrinath and Mana Village through a structured 5-day itinerary designed to combine scenery, adventure and cultural experiences.",
+    "Flexible Travel Options: Discuss your preferred travel dates, accommodation category and group requirements with Safar Trails to request a package tailored to your needs.",
+    "Clear Package Details: Get clarity on accommodation, transfers, meal plans, optional skiing, ropeway charges and other activity costs before confirming your booking.",
+    "Adventure with Practical Planning: The itinerary accounts for seasonal skiing, weather-dependent excursions and changing mountain-road conditions, helping you plan with realistic expectations.",
+    "Support Before Your Journey: Speak with the Safar Trails team to confirm travel arrangements, seasonal access, activity availability and the details required for a smoother holiday."
+  ],
+  "finalCta": {
+    "title": "Book Your Auli Himalayan Retreat with Safar Trails",
+    "subtitle": "4 Nights / 5 Days • Delhi – Joshimath – Auli – Badrinath",
+    "description": "Experience breathtaking mountain views, seasonal skiing, and scenic Himalayan drives with our Auli Skiing & Himalayan Retreat – 4 Nights / 5 Days.\n\nContact Safar Trails for a customised quotation and share your travel dates, group size, and activity preferences.\n\nBook Your Auli Adventure Today! Get your itinerary, package inclusions, and pricing details before confirming your trip.",
+    "actionLabel": "Get Your Customised Quotation"
+  },
+  "season": "November to March (Skiing & Snow) & Year-round Mountain Scenery",
+  "seoTitle": "Auli Skiing & Himalayan Retreat (4N/5D) | Safar Trails",
+  "seoDescription": "Book the 4N/5D Auli Skiing & Himalayan Retreat with Safar Trails from Delhi. Explore Rishikesh, Devprayag, Joshimath, Auli slopes, Badrinath & Mana Village.",
   "isFeatured": true,
   "isPopular": true
 }
