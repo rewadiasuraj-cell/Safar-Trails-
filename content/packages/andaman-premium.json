@@ -2,55 +2,257 @@
   "id": "pkg-andaman-premium",
   "slug": "andaman-premium",
   "title": "Andaman Premium Island Retreat",
+  "badge": "Luxury Island Escape",
   "destination": "Andaman",
   "destinationSlug": "andaman",
   "state": "Andaman & Nicobar",
-  "durationDays": 7,
-  "durationNights": 6,
+  "durationDays": 6,
+  "durationNights": 5,
   "startingPrice": 29999,
   "originalPrice": 38000,
   "tripType": [
-    "Honeymoon",
     "Luxury",
-    "Couple"
+    "Couple",
+    "Family",
+    "Honeymoon",
+    "Relaxation"
   ],
   "hotelCategory": "Luxury 5★",
   "ratings": 5,
   "reviewCount": 92,
   "startingCity": "Port Blair",
-  "bestFor": "Luxury Island Honeymooners",
+  "bestFor": "Couples, Families & Luxury Island Travellers",
   "heroImage": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1200&auto=format&fit=crop",
   "galleryImages": [
     "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&auto=format&fit=crop"
   ],
-  "overview": "7-Day Ultra-Luxury Andaman Experience: Barefoot Resort Havelock, private sunset cruise, complimentary Scuba Diving session, and candlelight beach dinner.",
+  "overview": "The Andaman Premium Island Retreat is a 6-day island holiday package that takes you through Port Blair, Havelock Island, and Neil Island. The itinerary balances historical sightseeing, relaxing beach visits, optional water activities, and leisure time.\n\nBegin your journey in Port Blair with a visit to the historic Cellular Jail and its evening Light and Sound Show. Continue to Havelock Island, where Radhanagar Beach and the Elephant Beach excursion introduce you to the islands' beautiful coastal scenery. Your journey then continues to Neil Island for the Natural Bridge and time at Bharatpur Beach and/or Laxmanpur Beach, before returning to Port Blair for departure.\n\nThis Andaman luxury tour package is planned to make island travel easier by bringing accommodation, inter-island ferry transfers, and sightseeing arrangements together in one itinerary.",
+  "packageDetails": [
+    {
+      "label": "Duration",
+      "value": "5 Nights / 6 Days"
+    },
+    {
+      "label": "Arrival and Departure",
+      "value": "Port Blair"
+    },
+    {
+      "label": "Island Route",
+      "value": "Port Blair → Havelock Island → Neil Island → Port Blair"
+    },
+    {
+      "label": "Accommodation",
+      "value": "Hotels and resorts as per the confirmed package"
+    },
+    {
+      "label": "Transfers",
+      "value": "Inter-island ferry transfers and private local transfers as specified"
+    },
+    {
+      "label": "Meals",
+      "value": "As selected in the package"
+    },
+    {
+      "label": "Optional Experiences",
+      "value": "Snorkelling and other water activities at additional cost"
+    }
+  ],
   "highlights": [
-    "Complimentary Discover Scuba Diving session with PADI instructor",
-    "3 Nights Havelock Island Barefoot Resort + 1 Night Neil Island + 2 Nights Port Blair",
-    "Confirmed Executive Class Makruzz Catamaran ferry seats"
+    "Port Blair: Explore the historic Cellular Jail.",
+    "Light & Sound Show: Discover India's freedom struggle.",
+    "Radhanagar Beach: Enjoy scenic beach views and sunsets.",
+    "Elephant Beach: Explore the beach and optional water sports.",
+    "Neil Island: Visit Natural Bridge and beautiful beaches.",
+    "Island Hopping: Ferry transfers between three destinations.",
+    "Leisure Time: Relax and enjoy your island stay.",
+    "Travel Convenience: Accommodation, transfers, and sightseeing as per package."
   ],
   "inclusions": [
-    "6 Nights 5★ Beach Resort Stays",
-    "Daily Breakfast & Dinner",
-    "Private AC Cabs & Ferry"
+    "Accommodation: 5 nights in hotels/resorts as per confirmed package.",
+    "Ferry Transfers: Inter-island ferry transfers connecting Port Blair, Havelock & Neil Island.",
+    "Local Transfers: Private transfers and sightseeing as specified.",
+    "Meals: As per selected package plan.",
+    "Airport Transfers: Arrival and departure in Port Blair."
   ],
   "exclusions": [
-    "Airfare to Port Blair"
+    "Flights: To and from Port Blair.",
+    "Water Sports: Snorkelling and optional activities at additional cost.",
+    "Personal Expenses: Shopping and other personal costs.",
+    "Additional Services: Extra meals, upgrades, and unlisted sightseeing.",
+    "Extra Charges: Costs due to travel plan changes."
+  ],
+  "importantTravelInfo": [
+    "Entry fees, ferry class, hotel category, taxes, cancellation policies, and optional activities are subject to confirmation in the final quotation.",
+    "Water activities depend on weather, sea conditions, local regulations, and operator availability.",
+    "Visits to coastal formations and beaches may be affected by tides, timings, weather, and local access conditions.",
+    "Ferry journeys connect the three destinations in your itinerary. Timings and operators depend on confirmed travel arrangements, availability, and sea conditions."
   ],
   "itinerary": [
     {
       "dayNumber": 1,
-      "title": "Port Blair Arrival & Beachfront Resort Welcome",
+      "title": "Arrival in Port Blair – Cellular Jail and Light and Sound Show",
       "location": "Port Blair",
-      "description": "Private luxury transfer to 5★ oceanfront resort in Port Blair.",
-      "morningActivity": "Airport pickup",
-      "eveningActivity": "Cellular Jail VIP Light & Sound show",
-      "stay": "Symphony Samudra 5★, Port Blair",
+      "description": "Arrive at Veer Savarkar International Airport in Port Blair, where a Safar Trails representative will welcome you and assist with your transfer to the hotel.\n\nAfter check-in, take some time to relax. Later, visit Cellular Jail, a significant historical landmark associated with India's freedom struggle.\n\nIn the evening, attend the Light and Sound Show at Cellular Jail, subject to the scheduled show timings and availability. Return to the hotel for dinner and an overnight stay.",
+      "morningActivity": "Arrival at Veer Savarkar International Airport & transfer to hotel",
+      "afternoonActivity": "Check-in, relaxation, and visit to historic Cellular Jail",
+      "eveningActivity": "Light and Sound Show at Cellular Jail (subject to timings and availability)",
+      "stay": "Port Blair",
       "mealsIncluded": "Dinner",
-      "transfers": "Private Luxury SUV"
+      "transfers": "Airport arrival transfer & local sightseeing transfers"
+    },
+    {
+      "dayNumber": 2,
+      "title": "Port Blair to Havelock Island – Radhanagar Beach",
+      "location": "Havelock Island (Swaraj Dweep)",
+      "description": "After breakfast, check out from your hotel and transfer to the jetty for your ferry journey to Swaraj Dweep, also known as Havelock Island.\n\nUpon arrival, transfer to your resort and complete the check-in formalities. Later, visit Radhanagar Beach, known for its scenic shoreline, soft sand, and beautiful coastal views.\n\nSpend a relaxing evening by the beach and enjoy the sunset, subject to weather and local conditions. Return to the resort for dinner and an overnight stay.",
+      "morningActivity": "Breakfast, checkout, and jetty transfer for ferry to Havelock Island",
+      "afternoonActivity": "Resort check-in formalities and visit to Radhanagar Beach",
+      "eveningActivity": "Relaxing evening by the beach, sunset views, and dinner at the resort",
+      "stay": "Havelock Island",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Ferry transfer to Havelock & local transfers"
+    },
+    {
+      "dayNumber": 3,
+      "title": "Elephant Beach Excursion – Beach Leisure",
+      "location": "Havelock Island",
+      "description": "After breakfast, proceed for an excursion to Elephant Beach, subject to weather, sea conditions, and operational availability.\n\nEnjoy the beach surroundings and explore the available optional water activities. Snorkelling and other activities may be available at an additional cost and depend on local conditions.\n\nAfter the excursion, return to your resort and spend the remainder of the day at leisure. Relax, enjoy the resort facilities, or take in the peaceful island atmosphere.\n\nDinner and overnight stay at the resort.",
+      "morningActivity": "Breakfast and excursion to Elephant Beach (subject to weather & sea conditions)",
+      "afternoonActivity": "Beach surroundings exploration & optional water activities / snorkelling",
+      "eveningActivity": "Leisure time at the resort, relaxing atmosphere, dinner, and overnight stay",
+      "stay": "Havelock Island",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Elephant Beach excursion transfers as specified"
+    },
+    {
+      "dayNumber": 4,
+      "title": "Havelock Island to Neil Island – Natural Bridge and Beaches",
+      "location": "Neil Island (Shaheed Dweep)",
+      "description": "After breakfast, check out from the resort and transfer to the jetty for your ferry to Shaheed Dweep, also known as Neil Island.\n\nUpon arrival, transfer to your hotel and complete check-in. Later, visit the Natural Bridge, a distinctive natural rock formation along the island's coast. The visit is subject to suitable tides, access, and local conditions.\n\nContinue with leisure time at Bharatpur Beach and/or Laxmanpur Beach, depending on available timings and local conditions.\n\nReturn to the hotel for dinner and an overnight stay.",
+      "morningActivity": "Breakfast, checkout, and ferry journey to Neil Island (Shaheed Dweep)",
+      "afternoonActivity": "Check-in and visit to Natural Bridge coastal rock formation (subject to tides)",
+      "eveningActivity": "Leisure time at Bharatpur Beach / Laxmanpur Beach, dinner, and overnight stay",
+      "stay": "Neil Island",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Ferry to Neil Island & local hotel transfers"
+    },
+    {
+      "dayNumber": 5,
+      "title": "Neil Island to Port Blair – Leisure and Shopping",
+      "location": "Port Blair",
+      "description": "After breakfast, check out from your hotel and transfer to the jetty for your return ferry to Port Blair.\n\nOn arrival, transfer to your hotel and check in. The remainder of the day is at leisure. You may explore local markets, browse for souvenirs, or relax at the hotel after your island journey.\n\nEnjoy dinner and an overnight stay in Port Blair.",
+      "morningActivity": "Breakfast, hotel checkout, and return ferry transfer to Port Blair",
+      "afternoonActivity": "Arrival in Port Blair, hotel check-in, and relaxation",
+      "eveningActivity": "Leisure time to explore local markets and souvenirs; dinner at hotel",
+      "stay": "Port Blair",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Return ferry to Port Blair & local transfers"
+    },
+    {
+      "dayNumber": 6,
+      "title": "Departure from Port Blair",
+      "location": "Port Blair Departure",
+      "description": "After breakfast, check out from the hotel and transfer to Veer Savarkar International Airport for your onward journey.\n\nDepart with memorable experiences of the Andaman Islands, from historic landmarks and scenic beaches to peaceful island escapes.\n\nYour Andaman Premium Island Retreat concludes with Safar Trails.",
+      "morningActivity": "Breakfast at the hotel and check-out formalities",
+      "afternoonActivity": "Transfer to Veer Savarkar International Airport for onward departure",
+      "eveningActivity": "Tour concludes with memorable experiences of the Andaman Islands",
+      "stay": "Tour Concludes",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private airport departure transfer"
     }
   ],
-  "season": "All Season",
+  "topPlacesToVisit": [
+    {
+      "name": "Port Blair – Cellular Jail & Light and Sound Show",
+      "description": "Port Blair is the starting point for this Andaman island holiday. Explore its historical heritage and learn about the region's role in India's freedom struggle. Featured experience: Cellular Jail and its Light and Sound Show."
+    },
+    {
+      "name": "Havelock Island (Swaraj Dweep) – Radhanagar Beach",
+      "description": "Havelock Island is a key stop for travellers seeking beautiful beaches and a relaxed tropical atmosphere. Radhanagar Beach is known for its scenic shoreline, soft sand, and beautiful coastal views, with beach relaxation and sunset views."
+    },
+    {
+      "name": "Elephant Beach Excursion (Havelock Island)",
+      "description": "Excursion to explore beach surroundings and available optional water activities, including snorkelling. Water activities depend on weather, sea conditions, local regulations, and operator availability."
+    },
+    {
+      "name": "Neil Island (Shaheed Dweep) – Natural Bridge",
+      "description": "Neil Island offers a slower-paced island experience with distinctive coastal formations and inviting beach scenery. Visit the Natural Bridge, a distinctive natural rock formation along the island's coast (subject to suitable tides, access, and local conditions)."
+    },
+    {
+      "name": "Neil Island – Bharatpur Beach & Laxmanpur Beach",
+      "description": "Enjoy leisure time at Bharatpur Beach and/or Laxmanpur Beach, depending on available timings and local conditions."
+    },
+    {
+      "name": "Island-Hopping by Ferry",
+      "description": "Ferry journeys connect the three destinations in your itinerary (Port Blair, Havelock Island, and Neil Island). Timings and operators depend on the confirmed travel arrangements, availability, and sea conditions."
+    }
+  ],
+  "thingsToDo": [
+    "Explore the historic Cellular Jail and learn about India's freedom struggle",
+    "Attend the evening Light and Sound Show at Cellular Jail",
+    "Enjoy scenic beach views, soft sand, and sunsets at Radhanagar Beach",
+    "Take an excursion to Elephant Beach on Havelock Island",
+    "Try optional snorkelling and other available water activities (at additional cost)",
+    "Visit the distinctive Natural Bridge rock formation on Neil Island",
+    "Spend leisure time at Bharatpur Beach and Laxmanpur Beach",
+    "Experience inter-island ferry journeys between Port Blair, Havelock, and Neil Island",
+    "Explore local markets and browse for souvenirs in Port Blair"
+  ],
+  "hotelsAndStays": "Accommodation: Hotels and resorts as per the confirmed package across Port Blair, Havelock Island, and Neil Island.\n\n• 5 Nights Accommodation: 2 Nights in Port Blair (Nights 1 & 5), 2 Nights in Havelock Island (Nights 2 & 3), and 1 Night in Neil Island (Night 4).\n• Travel Convenience: This package is planned to make island travel easier by bringing accommodation, inter-island ferry transfers, and sightseeing arrangements together in one itinerary.\n• Tailored to Your Preference: You can enquire about your preferred travel dates, accommodation category (budget, standard, or luxury resorts), and room requirements. Hotel categories, taxes, cancellation policies, and any special arrangements are confirmed in your final quotation.",
+  "faqs": [
+    {
+      "question": "How many days are enough for an Andaman island holiday?",
+      "answer": "A 5 Nights / 6 Days itinerary offers time to explore Port Blair, Havelock Island, and Neil Island. It combines historical sightseeing, beach visits, and inter-island travel in one holiday."
+    },
+    {
+      "question": "What is covered in the Andaman Premium Island Retreat?",
+      "answer": "The itinerary includes Port Blair, Cellular Jail, the Light and Sound Show, Radhanagar Beach, an Elephant Beach excursion, Neil Island's Natural Bridge, and time at Bharatpur Beach and/or Laxmanpur Beach. Accommodation, transfers, ferry arrangements, and meals are provided according to the confirmed package."
+    },
+    {
+      "question": "Is this Andaman tour package suitable for couples?",
+      "answer": "Yes. The itinerary offers beach time, scenic coastal locations, and leisure periods that may appeal to couples. Hotel categories and any special arrangements should be confirmed when requesting a quote."
+    },
+    {
+      "question": "Is the package suitable for families?",
+      "answer": "The itinerary may suit families who enjoy sightseeing and relaxed beach holidays. Families should confirm room arrangements, child rates, ferry suitability, and age or safety requirements for optional activities before booking."
+    },
+    {
+      "question": "Are flights included in the Andaman package?",
+      "answer": "Flights are not listed among the package's stated inclusions. Confirm flight arrangements and costs with Safar Trails before finalising your booking."
+    },
+    {
+      "question": "Are water sports and snorkelling included?",
+      "answer": "Snorkelling and other water activities are optional and may involve additional charges. Availability depends on weather, sea conditions, local rules, and the activity operator."
+    },
+    {
+      "question": "What is the best time to visit the Andaman Islands?",
+      "answer": "Travel conditions vary by season. Before booking, check the expected weather, ferry operations, and availability of your preferred activities for your travel dates. Safar Trails can help you plan around your intended travel period."
+    },
+    {
+      "question": "Can I customise the Andaman Premium Island Retreat?",
+      "answer": "You can enquire about your preferred travel dates, accommodation category, and additional requirements. Any changes to the itinerary, services, or package price will depend on availability and confirmation."
+    },
+    {
+      "question": "How do I book an Andaman tour package with Safar Trails?",
+      "answer": "Share your intended travel dates, number of travellers, room requirements, and preferred accommodation category with Safar Trails. Request a detailed quotation and review the inclusions, exclusions, payment conditions, and cancellation policy before confirming."
+    }
+  ],
+  "whyChooseSafarTrails": [
+    "Well-Planned Itinerary: Explore Port Blair, Havelock, and Neil Island with a balanced mix of sightseeing, beach relaxation, and leisure time.",
+    "Travel Convenience: Accommodation, ferry transfers, and sightseeing arrangements brought together in one seamless itinerary.",
+    "Flexible Packages: Options based on your preferred travel dates, room requirements, and accommodation preferences.",
+    "Transparent Details: Clear inclusions, exclusions, and additional charges so you can book with confidence.",
+    "Travel Assistance: Dedicated support for planning your comfortable and well-organised island getaway."
+  ],
+  "finalCta": {
+    "title": "Book Your Andaman Premium Island Retreat with Safar Trails",
+    "subtitle": "5 Nights / 6 Days • Port Blair, Havelock & Neil Island",
+    "description": "Your Dream Island Escape Awaits!\n\nExplore the beautiful beaches of Port Blair, Havelock, and Neil Island with our 5 Nights / 6 Days Andaman Tour Package.\n\nReady to Explore Andaman? Get Your Personalised Quote Today!\n\nShare your travel dates and preferences with Safar Trails to plan your perfect island getaway.\n\nContact Safar Trails Today – Your Andaman Adventure Starts Here!",
+    "actionLabel": "Get Your Personalised Quote Today"
+  },
+  "season": "October to May & All Season",
+  "seoTitle": "Andaman Premium Island Retreat (5N/6D) | Safar Trails",
+  "seoDescription": "Book the 5N/6D Andaman Premium Island Retreat with Safar Trails. Explore Port Blair, Cellular Jail, Havelock, Radhanagar Beach, Neil Island & Natural Bridge.",
   "isFeatured": true,
   "isPopular": true
 }
