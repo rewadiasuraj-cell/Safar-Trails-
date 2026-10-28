@@ -2,6 +2,7 @@
   "id": "pkg-kashmir-premium-escape",
   "slug": "kashmir-premium-escape",
   "title": "Kashmir Premium Luxury Escape",
+  "badge": "Premium Holiday Deals",
   "destination": "Kashmir",
   "destinationSlug": "kashmir",
   "state": "Jammu & Kashmir",
@@ -10,48 +11,279 @@
   "startingPrice": 24999,
   "originalPrice": 32000,
   "tripType": [
-    "Honeymoon",
+    "Luxury",
     "Couple",
-    "Luxury"
+    "Family",
+    "Honeymoon",
+    "Nature",
+    "Relaxation"
   ],
   "hotelCategory": "Luxury 5★",
   "ratings": 5,
   "reviewCount": 112,
   "startingCity": "Srinagar",
-  "bestFor": "Honeymooners & Luxury Travellers",
+  "bestFor": "Couples, Families & Leisure Travellers",
   "heroImage": "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1200&auto=format&fit=crop",
   "galleryImages": [
-    "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=800&auto=format&fit=crop"
+    {
+      "src": "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=800&auto=format&fit=crop",
+      "caption": "Snow-Capped Peaks & Alpine Meadows of Gulmarg"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=800&auto=format&fit=crop",
+      "caption": "Serene Dal Lake Shikara Ride in Srinagar"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1626014303757-658c3a119760?q=80&w=800&auto=format&fit=crop",
+      "caption": "Pristine Betaab Valley & Pine Forests of Pahalgam"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1588661799793-7da9f7336798?q=80&w=800&auto=format&fit=crop",
+      "caption": "Alpine Landscapes & Thajiwas Glacier in Sonamarg"
+    }
   ],
-  "overview": "7 Days of unmatched Kashmiri luxury: Stay at Khyber Himalayan Resort in Gulmarg, heritage houseboat on Nigeen Lake, and luxury pine cottages in Pahalgam.",
+  "overview": "The Kashmir Premium Luxury Escape is a 7-day holiday designed for travellers who want to explore Kashmir's famous destinations while enjoying comfortable stays and convenient travel arrangements.\n\nStarting and ending in Srinagar, this Kashmir luxury tour package features the region's iconic lakes, gardens, mountain meadows, and scenic valleys. Enjoy a private Shikara ride on Dal Lake, explore Srinagar's Mughal gardens, and take day excursions to Gulmarg, Pahalgam, and Sonamarg.\n\nWhether you are planning a romantic holiday, a family vacation, or a relaxing Himalayan escape, this itinerary combines sightseeing, leisure, and optional premium experiences.",
+  "packageDetails": [
+    {
+      "label": "Duration",
+      "value": "6 Nights / 7 Days"
+    },
+    {
+      "label": "Destinations",
+      "value": "Srinagar, Gulmarg, Pahalgam, and Sonamarg"
+    },
+    {
+      "label": "Arrival and Departure",
+      "value": "Srinagar"
+    },
+    {
+      "label": "Accommodation",
+      "value": "Premium hotel or luxury houseboat, as confirmed"
+    },
+    {
+      "label": "Transfers",
+      "value": "Private transfers and sightseeing as per package"
+    },
+    {
+      "label": "Signature Experience",
+      "value": "Private Shikara ride on Dal Lake"
+    },
+    {
+      "label": "Optional Activities",
+      "value": "Gondola ride, pony rides, snow activities, and spa experiences"
+    },
+    {
+      "label": "Ideal For",
+      "value": "Couples, families, and leisure travellers"
+    }
+  ],
   "highlights": [
-    "1 Night Khyber Himalayan Resort & Spa, Gulmarg",
-    "Confirmed Gondola Phase 1 & Phase 2 tickets included",
-    "Romantic Shikara ride with flower decor & Wazwan dinner"
+    "Premium Stay: Relax in a premium hotel or luxury houseboat.",
+    "Dal Lake Shikara Ride: Enjoy a private ride across Srinagar's iconic lake.",
+    "Srinagar Sightseeing: Explore Mughal gardens, shrines, and local markets.",
+    "Gulmarg Excursion: Discover scenic meadows and optional Gondola experiences.",
+    "Pahalgam Valley Tour: Visit Betaab Valley and Aru Valley.",
+    "Sonamarg Excursion: Explore mountain scenery and the Thajiwas Glacier area.",
+    "Kashmiri Shopping: Browse local handicrafts, dry fruits, and traditional products.",
+    "Private Transfers: Enjoy planned transport and sightseeing arrangements."
   ],
   "inclusions": [
-    "6 Nights stay in 5★ Luxury resorts & heritage houseboats",
-    "Daily breakfast & dinner with traditional Kashmiri Wazwan",
-    "Private Innova Crysta with luxury chauffeur"
+    "Accommodation: 6 nights in a premium hotel or luxury houseboat, as confirmed.",
+    "Airport Transfers: Arrival and departure transfers in Srinagar.",
+    "Private Transfers: Local transportation and sightseeing as per the confirmed itinerary.",
+    "Shikara Ride: Private Shikara experience on Dal Lake.",
+    "Sightseeing: Visits to the destinations and attractions listed in the itinerary.",
+    "Meals: As per the selected package plan."
   ],
   "exclusions": [
-    "Airfare to Srinagar"
+    "Flights: Airfare to and from Srinagar.",
+    "Optional Activities: Gondola tickets, pony rides, snow activities, and spa sessions.",
+    "Entry Fees: Garden, monument, temple, and other attraction tickets unless specified.",
+    "Personal Expenses: Shopping, tips, laundry, and other personal costs.",
+    "Additional Services: Extra meals, upgrades, and sightseeing not listed in the confirmed package.",
+    "Unforeseen Expenses: Additional costs arising from weather disruptions, road closures, or changes to travel arrangements, where applicable under the booking terms."
+  ],
+  "importantTravelInfo": [
+    "Accommodation category, meal plan, entry fees, optional activities, taxes, and cancellation policies should be confirmed in the final quotation.",
+    "The Gondola ride is listed as an optional experience; tickets, availability, weather conditions, and applicable charges should be confirmed before travel.",
+    "Visits to Chandanwari, Shankaracharya Temple, and Thajiwas Glacier are subject to weather, local road conditions, and access regulations."
   ],
   "itinerary": [
     {
       "dayNumber": 1,
-      "title": "Arrival in Srinagar & Nigeen Lake Houseboat",
-      "location": "Srinagar",
-      "description": "VIP pickup from Srinagar Airport and check-in to heritage houseboat on Nigeen Lake.",
-      "morningActivity": "Airport pickup",
-      "eveningActivity": "Shikara sunset ride",
-      "stay": "Sukhoon Heritage Houseboat, Nigeen Lake",
+      "title": "Arrival in Srinagar – Luxury Stay and Shikara Ride",
+      "location": "Srinagar & Dal Lake",
+      "description": "Arrive at Srinagar Airport, where a Safar Trails representative will welcome you and arrange a private transfer to your premium hotel or luxury houseboat.\n\nAfter check-in, relax and enjoy the peaceful surroundings. In the evening, experience a private Shikara ride on Dal Lake, taking in the beautiful lake views and surrounding mountains. You can also explore the scenic Boulevard Road area.\n\nReturn to your accommodation for dinner and an overnight stay.",
+      "morningActivity": "Arrival at Srinagar Airport & private transfer to premium hotel or luxury houseboat",
+      "afternoonActivity": "Check-in, relaxation, and taking in the peaceful surroundings",
+      "eveningActivity": "Private Shikara ride on Dal Lake & scenic Boulevard Road walk",
+      "stay": "Srinagar (Premium hotel or luxury houseboat)",
       "mealsIncluded": "Dinner",
-      "transfers": "Private Innova Crysta"
+      "transfers": "Private airport arrival transfer"
+    },
+    {
+      "dayNumber": 2,
+      "title": "Srinagar Sightseeing – Mughal Gardens and Heritage",
+      "location": "Srinagar",
+      "description": "After breakfast, explore Srinagar's famous Mughal gardens and cultural landmarks.\n\nVisit Nishat Bagh, Shalimar Bagh, Chashme Shahi, and Pari Mahal, admired for their landscaped gardens and scenic settings. Continue to Shankaracharya Temple, subject to access and local conditions, followed by Hazratbal Shrine.\n\nSpend the evening exploring local markets and shopping for Kashmiri handicrafts and traditional souvenirs.\n\nReturn to your accommodation for dinner and an overnight stay.",
+      "morningActivity": "Breakfast & visit to Mughal Gardens (Nishat Bagh, Shalimar Bagh, Chashme Shahi, Pari Mahal)",
+      "afternoonActivity": "Visit to Shankaracharya Temple (subject to access) & Hazratbal Shrine",
+      "eveningActivity": "Exploring local markets for Kashmiri handicrafts & traditional souvenirs",
+      "stay": "Srinagar",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private sightseeing transfers"
+    },
+    {
+      "dayNumber": 3,
+      "title": "Srinagar to Gulmarg – Scenic Mountain Excursion",
+      "location": "Gulmarg Excursion",
+      "description": "After breakfast, drive to Gulmarg through the beautiful landscapes of the Kashmir Valley.\n\nExplore Gulmarg's picturesque meadows and enjoy views of the surrounding Himalayan mountains. You may opt for the famous Gondola cable car ride, subject to ticket availability, weather, and operational conditions.\n\nSeasonal snow activities and pony rides may also be available at an additional cost. Later, return to Srinagar for dinner and an overnight stay.",
+      "morningActivity": "Breakfast & scenic drive through Kashmir Valley landscapes to Gulmarg",
+      "afternoonActivity": "Explore picturesque meadows, mountain views & optional Gondola ride",
+      "eveningActivity": "Return to Srinagar for dinner and an overnight stay",
+      "stay": "Srinagar",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private excursion transfers"
+    },
+    {
+      "dayNumber": 4,
+      "title": "Srinagar to Pahalgam – Luxury Valley Experience",
+      "location": "Pahalgam Excursion",
+      "description": "After breakfast, depart for Pahalgam and enjoy the scenic countryside along the route. En route, visit the saffron fields of Pampore, subject to the season.\n\nUpon arrival, explore the beautiful landscapes of Pahalgam and visit Betaab Valley and Aru Valley. A visit to Chandanwari may also be arranged, depending on road conditions, weather, and local vehicle regulations.\n\nReturn to Srinagar in the evening for dinner and an overnight stay.",
+      "morningActivity": "Breakfast, drive to Pahalgam & visit saffron fields of Pampore (seasonal)",
+      "afternoonActivity": "Explore Betaab Valley, Aru Valley & Chandanwari (access permitting)",
+      "eveningActivity": "Return to Srinagar for dinner and an overnight stay",
+      "stay": "Srinagar",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private excursion transfers"
+    },
+    {
+      "dayNumber": 5,
+      "title": "Srinagar to Sonamarg – Himalayan Scenic Excursion",
+      "location": "Sonamarg Excursion",
+      "description": "After breakfast, proceed towards Sonamarg, enjoying spectacular mountain views along the way.\n\nExplore the scenic valley and visit the Thajiwas Glacier area, subject to weather and local accessibility. Optional pony rides may be arranged locally, depending on availability and conditions.\n\nSpend some leisure time surrounded by Kashmir's natural beauty before returning to Srinagar.\n\nDinner and overnight stay at your accommodation.",
+      "morningActivity": "Breakfast & drive to Sonamarg with spectacular mountain views",
+      "afternoonActivity": "Explore the scenic valley & visit Thajiwas Glacier area (subject to accessibility)",
+      "eveningActivity": "Leisure time in nature and return to Srinagar for dinner & overnight stay",
+      "stay": "Srinagar",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Private excursion transfers"
+    },
+    {
+      "dayNumber": 6,
+      "title": "Srinagar Leisure – Premium Experiences and Shopping",
+      "location": "Srinagar Leisure",
+      "description": "After breakfast, enjoy a relaxed day in Srinagar at your own pace.\n\nExplore local markets for Kashmiri handicrafts, dry fruits, and traditional products. You may also choose optional experiences such as a spa session, an additional Shikara ride, or a private cultural experience, subject to availability and additional charges.\n\nEnjoy a leisurely evening before returning to your accommodation for dinner and an overnight stay.",
+      "morningActivity": "Breakfast & relaxed morning in Srinagar at your own pace",
+      "afternoonActivity": "Browse local markets for Kashmiri handicrafts, dry fruits, and traditional products",
+      "eveningActivity": "Optional spa session, Shikara ride, or cultural experience; dinner at accommodation",
+      "stay": "Srinagar",
+      "mealsIncluded": "Breakfast & Dinner",
+      "transfers": "Local leisure day"
+    },
+    {
+      "dayNumber": 7,
+      "title": "Departure from Srinagar",
+      "location": "Srinagar Departure",
+      "description": "After breakfast, check out from your hotel or houseboat and enjoy a private transfer to Srinagar Airport for your onward journey.\n\nDepart with wonderful memories of Kashmir's scenic valleys, peaceful lakes, beautiful gardens, and unforgettable Himalayan landscapes.\n\nYour Kashmir Premium Luxury Escape concludes with Safar Trails.",
+      "morningActivity": "Breakfast at accommodation and check-out formalities",
+      "afternoonActivity": "Private transfer to Srinagar Airport for onward journey",
+      "eveningActivity": "Tour concludes with wonderful Himalayan memories",
+      "stay": "Tour Concludes",
+      "mealsIncluded": "Breakfast",
+      "transfers": "Private airport departure transfer"
     }
   ],
-  "season": "All Season",
+  "topPlacesToVisit": [
+    {
+      "name": "Srinagar – Lakes, Gardens and Heritage",
+      "description": "Srinagar is the starting point of your Kashmir holiday, offering a blend of scenic lake views, historic gardens, religious landmarks, and local culture. Places to explore include Dal Lake, Boulevard Road, Nishat Bagh, Shalimar Bagh, Chashme Shahi, Pari Mahal, Shankaracharya Temple, and Hazratbal Shrine. Recommended experience: A private Shikara ride on Dal Lake."
+    },
+    {
+      "name": "Gulmarg – Mountain Meadows and Gondola Ride",
+      "description": "Gulmarg is known for its scenic meadows and impressive Himalayan surroundings. It is a popular stop for travellers seeking mountain views and seasonal outdoor experiences. Explore the Gulmarg meadows, enjoy panoramic mountain scenery, and opt for a Gondola cable car ride (subject to availability)."
+    },
+    {
+      "name": "Pahalgam – Scenic Valleys and Nature",
+      "description": "Pahalgam offers beautiful valley landscapes and peaceful natural surroundings, making it a highlight of many Kashmir holiday itineraries. Places to explore include Betaab Valley, Aru Valley, Chandanwari (subject to local access conditions), and the saffron fields of Pampore when in season."
+    },
+    {
+      "name": "Sonamarg – Himalayan Landscapes and Glacier Views",
+      "description": "Sonamarg is a scenic mountain destination known for its valley views and access to the Thajiwas Glacier area. Enjoy scenic mountain drives, explore the Sonamarg valley, visit the Thajiwas Glacier area (subject to accessibility), or opt for a local pony ride if available."
+    },
+    {
+      "name": "Kashmiri Shopping and Local Experiences",
+      "description": "During your stay in Srinagar, explore local markets for traditional handicrafts, dry fruits, and Kashmiri products. Optional cultural experiences and spa sessions may be arranged according to availability and your preferences."
+    }
+  ],
+  "thingsToDo": [
+    "Experience a private Shikara ride on Dal Lake",
+    "Explore iconic Mughal gardens: Nishat Bagh, Shalimar Bagh, Chashme Shahi & Pari Mahal",
+    "Visit Shankaracharya Temple and Hazratbal Shrine",
+    "Admire Gulmarg's mountain meadows and enjoy panoramic Himalayan scenery",
+    "Opt for the famous Gulmarg Gondola cable car ride (subject to ticket availability)",
+    "Discover Betaab Valley, Aru Valley & Chandanwari in Pahalgam",
+    "See the famous saffron fields of Pampore along the route to Pahalgam",
+    "Explore Sonamarg valley and the Thajiwas Glacier area",
+    "Shop for traditional Kashmiri handicrafts, dry fruits, and souvenirs in Srinagar markets",
+    "Enjoy optional spa sessions, pony rides, or private cultural experiences"
+  ],
+  "hotelsAndStays": "Accommodation: 6 Nights in a premium hotel or luxury houseboat, as confirmed.\n\n• Premium Stay Experience: Enjoy comfortable stays in quality hotels or traditional luxury houseboats on Srinagar's serene waters.\n• Well-Planned Routing: Stays are arranged with Srinagar as your central base for convenient access to city attractions and day excursions to Gulmarg, Pahalgam, and Sonamarg.\n• Custom Selection: Enquire about your preferred accommodation category, room configurations, and amenities. Accommodation category, meal plan, and special arrangements will be confirmed in your detailed quotation.",
+  "faqs": [
+    {
+      "question": "How many days are enough for a Kashmir luxury holiday?",
+      "answer": "A 6 Nights / 7 Days itinerary offers time to explore Srinagar, Gulmarg, Pahalgam, and Sonamarg, with sightseeing, a Shikara ride, and leisure time."
+    },
+    {
+      "question": "What is included in the Kashmir Premium Luxury Escape?",
+      "answer": "The package is planned around accommodation, private transfers, sightseeing, a private Shikara ride, and meals as selected. The final quotation will confirm the exact inclusions."
+    },
+    {
+      "question": "Is this Kashmir tour package suitable for couples?",
+      "answer": "Yes. The scenic valleys, premium accommodation options, peaceful lake experiences, and optional spa or cultural activities can make this itinerary suitable for couples."
+    },
+    {
+      "question": "Is the Kashmir Premium Luxury Escape suitable for families?",
+      "answer": "The itinerary may suit families looking for sightseeing, nature, and comfortable travel arrangements. Confirm room configurations, children's rates, and any specific accessibility needs before booking."
+    },
+    {
+      "question": "Is the Gondola ride included in the Kashmir package?",
+      "answer": "The Gondola ride is listed as an optional experience. Tickets, availability, weather conditions, and applicable charges should be confirmed before travel."
+    },
+    {
+      "question": "What is the best time to book a Kashmir tour package?",
+      "answer": "Your preferred season depends on whether you want garden visits, green valleys, mountain scenery, or snow activities. Check weather conditions and access to seasonal attractions for your intended travel dates before booking."
+    },
+    {
+      "question": "Are flights included in the Kashmir luxury tour package?",
+      "answer": "Flights are not listed as a confirmed inclusion in the supplied itinerary. Please check the final quotation for airfare arrangements."
+    },
+    {
+      "question": "Can I customise my Kashmir holiday package?",
+      "answer": "You can enquire about accommodation preferences, travel dates, and additional experiences. Any customisation will depend on availability and confirmation by Safar Trails."
+    },
+    {
+      "question": "How do I book the Kashmir Premium Luxury Escape?",
+      "answer": "Share your travel dates, number of travellers, preferred accommodation, and special requirements with Safar Trails. Review the quotation, inclusions, exclusions, payment terms, and cancellation policy before confirming your booking."
+    }
+  ],
+  "whyChooseSafarTrails": [
+    "Well-Planned Itinerary: Explore Srinagar, Gulmarg, Pahalgam, and Sonamarg in 7 days.",
+    "Premium Stays: Choose from quality hotels and luxury houseboats.",
+    "Convenient Travel: Enjoy private transfers and sightseeing arrangements.",
+    "Transparent Pricing: Know the inclusions, exclusions, and additional costs.",
+    "Personalised Planning: Customise your trip based on your dates and preferences.",
+    "Seamless Experience: Safar Trails helps you enjoy a seamless Kashmir holiday filled with scenic beauty and unforgettable experiences."
+  ],
+  "finalCta": {
+    "title": "Book Your Kashmir Premium Luxury Escape with Safar Trails",
+    "subtitle": "6 Nights / 7 Days • Srinagar, Gulmarg, Pahalgam & Sonamarg",
+    "description": "Your Dream Kashmir Holiday Awaits!\n\nExplore Srinagar, Gulmarg, Pahalgam, and Sonamarg with our Kashmir Premium Luxury Escape – 6 Nights / 7 Days. Enjoy scenic valleys, a private Shikara ride, beautiful gardens, and unforgettable Himalayan views.\n\nReady to Explore Kashmir? Contact Safar Trails for a personalised tour quote. Share your travel dates, group size, and accommodation preferences to plan your perfect Kashmir getaway.\n\nBook Your Kashmir Escape with Safar Trails Today!",
+    "actionLabel": "Get Your Personalised Quote Today"
+  },
+  "season": "All Season (April to October Greenery & Winter Snow)",
+  "seoTitle": "Kashmir Premium Luxury Escape (6N/7D) | Safar Trails",
+  "seoDescription": "Book the 6N/7D Kashmir Premium Luxury Escape with Safar Trails. Explore Srinagar, Dal Lake Shikara ride, Gulmarg, Pahalgam, and Sonamarg with luxury stays.",
   "isFeatured": true,
   "isPopular": true
 }
