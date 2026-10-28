@@ -3869,56 +3869,288 @@ export const packagesData: Package[] = [
   {
     "id": "pkg-rajasthan-heritage-tour",
     "slug": "rajasthan-heritage-tour",
-    "title": "Grand Rajasthan Heritage Tour",
+    "title": "Grand Rajasthan Heritage Tour Package",
     "destination": "Rajasthan",
     "destinationSlug": "rajasthan",
     "state": "Rajasthan",
-    "durationDays": 9,
-    "durationNights": 8,
+    "durationDays": 7,
+    "durationNights": 6,
     "startingPrice": 24500,
     "originalPrice": 32000,
     "tripType": [
       "Heritage",
+      "Cultural",
       "Family",
-      "Cultural"
+      "Couple",
+      "Group"
     ],
     "hotelCategory": "Deluxe 4★",
     "ratings": 4.9,
     "reviewCount": 198,
-    "startingCity": "Jaipur",
-    "bestFor": "Culture Enthusiasts & Families",
+    "startingCity": "Jaipur (Airport / Railway Station)",
+    "bestFor": "Families, couples, groups and cultural travellers",
     "heroImage": "https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=1200&auto=format&fit=crop",
     "galleryImages": [
-      "https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=800&auto=format&fit=crop"
+      {
+        "src": "https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=800&auto=format&fit=crop",
+        "caption": "Amber Fort and Jal Mahal in Jaipur"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800&auto=format&fit=crop",
+        "caption": "Mehrangarh Fort Overlooking the Blue City of Jodhpur"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800&auto=format&fit=crop",
+        "caption": "Golden Sand Dunes and Desert Camp at Sam Sand Dunes, Jaisalmer"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=800&auto=format&fit=crop",
+        "caption": "Lake Pichola and Grand City Palace in Udaipur"
+      }
     ],
-    "overview": "Explore the Pink City Jaipur, Blue City Jodhpur, Golden Desert City Jaisalmer, Lake City Udaipur, and sacred Pushkar lake over 9 memorable days.",
+    "overview": "Discover the royal charm of Rajasthan with the Grand Rajasthan Heritage Tour Package by Safar Trails, a memorable 7-day journey through Jaipur, Jodhpur, Jaisalmer and Udaipur. Explore magnificent forts, historic palaces, colourful markets, traditional Rajasthani culture and the golden sand dunes of the Thar Desert.\n\nWhether you are planning a family holiday, a cultural getaway or a memorable trip with friends, this Rajasthan tour package combines heritage sightseeing, desert experiences and comfortable stays in one thoughtfully planned itinerary.\n\nThe Grand Rajasthan Heritage Tour Package offers an opportunity to experience Rajasthan's fascinating history, architecture and local traditions across four iconic destinations. Begin your journey in Jaipur, the Pink City, known for its royal palaces, historic observatories and vibrant bazaars. Continue to Jodhpur, the Blue City, where the impressive Mehrangarh Fort overlooks the old town. In Jaisalmer, discover golden sandstone architecture and enjoy an unforgettable evening at Sam Sand Dunes. Conclude your holiday in Udaipur, the City of Lakes, famous for its palaces, temples and scenic lake views.\n\nSafar Trails helps make your journey convenient with planned sightseeing, transfers, hotel or resort accommodation and meals as selected in your package. This 7-day Rajasthan holiday package is ideal for travellers looking to discover the state's architectural heritage, desert landscapes, cultural experiences and traditional hospitality in a single trip.",
+    "packageDetails": [
+      {
+        "label": "Duration",
+        "value": "6 Nights / 7 Days"
+      },
+      {
+        "label": "Destinations Covered",
+        "value": "Jaipur – Jodhpur – Jaisalmer – Udaipur"
+      },
+      {
+        "label": "Tour Type",
+        "value": "Heritage, Cultural & Desert Holiday"
+      },
+      {
+        "label": "Best For",
+        "value": "Families, couples, groups and cultural travellers"
+      },
+      {
+        "label": "Starting Point",
+        "value": "Jaipur (Airport / Railway Station)"
+      },
+      {
+        "label": "Ending Point",
+        "value": "Udaipur (Airport / Railway Station)"
+      },
+      {
+        "label": "Accommodation",
+        "value": "Hotel or resort accommodation & desert camp at Sam Sand Dunes"
+      },
+      {
+        "label": "Transfers & Sightseeing",
+        "value": "Private transfers and planned sightseeing visits"
+      }
+    ],
     "highlights": [
-      "Sam Sand Dunes luxury desert glamping with camel safari & Kalbeliya folk dance",
-      "Elephant / Jeep ride at Amber Fort Jaipur & City Palace Udaipur lake view",
-      "Visit Mehrangarh Fort, Umaid Bhawan Palace, and Jaisalmer Fort"
+      "Explore Jaipur's iconic Hawa Mahal, City Palace and Jantar Mantar.",
+      "Discover the magnificent Amber Fort and the scenic Jal Mahal.",
+      "Visit Mehrangarh Fort and Jaswant Thada in Jodhpur.",
+      "Explore Jaisalmer Fort, Patwon Ki Haveli and Gadisar Lake.",
+      "Experience the golden desert landscapes of Sam Sand Dunes.",
+      "Enjoy an optional camel safari or jeep safari, subject to availability.",
+      "Experience traditional Rajasthani cultural performances at the desert camp.",
+      "Discover Udaipur's City Palace, Jagdish Temple and Saheliyon Ki Bari.",
+      "Enjoy an optional sunset boat ride on Lake Pichola, subject to availability and weather.",
+      "Travel through four of Rajasthan's most celebrated heritage destinations."
     ],
     "inclusions": [
-      "8 Nights 4★ Heritage Hotels & Desert Camp stay",
-      "Daily Breakfast & Dinner",
-      "Private AC Cab"
+      "Hotel or resort accommodation as selected in the confirmed package.",
+      "Desert camp accommodation at Sam Sand Dunes.",
+      "Private transfers and sightseeing as specified in the confirmed package.",
+      "Meals as selected in the booking plan.",
+      "Sightseeing visits outlined in the agreed itinerary."
     ],
     "exclusions": [
-      "Monument entry fees"
+      "Airfare, train tickets and other transportation to the tour's starting point.",
+      "Monument entrance fees and camera charges, where applicable.",
+      "Optional camel safaris and jeep safaris.",
+      "Optional boat rides on Lake Pichola.",
+      "Personal expenses, shopping, laundry and beverages.",
+      "Additional meals or services not included in the selected plan.",
+      "Travel insurance and other personal travel expenses.",
+      "Anything not specifically listed under the confirmed inclusions."
+    ],
+    "importantTravelInfo": [
+      "Final inclusions, exclusions, hotel categories and applicable charges will be specified in your Safar Trails booking confirmation.",
+      "Camel and jeep safaris in Jaisalmer are optional activities and are subject to availability and applicable charges. Confirm details with Safar Trails before booking.",
+      "Optional sunset boat rides on Lake Pichola in Udaipur are subject to availability and weather conditions.",
+      "The itinerary includes cultural attractions, historic forts, local markets and scenic experiences, making it suitable for families, couples and groups. Travellers should consider the long road journeys when planning with young children or elderly family members.",
+      "The cooler months, generally October to March, are often preferred for sightseeing and desert experiences. Weather conditions vary by destination and season."
     ],
     "itinerary": [
       {
         "dayNumber": 1,
-        "title": "Jaipur Arrival & Pink City Heritage Walk",
+        "title": "Arrival in Jaipur – Pink City Tour",
         "location": "Jaipur",
-        "description": "Pickup at Jaipur Airport / Station. Visit Hawa Mahal, City Palace, and local bazaar.",
-        "morningActivity": "Jaipur pickup",
-        "eveningActivity": "Hawa Mahal photo stop and bazaar shopping",
-        "stay": "Shahpura House / Alsisar Haveli 4★, Jaipur",
-        "mealsIncluded": "Dinner",
-        "transfers": "Private AC Cab"
+        "description": "Arrive at Jaipur Airport/Railway Station and transfer to the hotel. After check-in, visit City Palace, Jantar Mantar and Hawa Mahal. Explore local markets in the evening.",
+        "morningActivity": "Arrive at Jaipur Airport/Railway Station and transfer to hotel for check-in",
+        "eveningActivity": "Visit City Palace, Jantar Mantar and Hawa Mahal; explore local markets in the evening",
+        "stay": "Hotel in Jaipur",
+        "mealsIncluded": "As per selected plan",
+        "transfers": "Private transfer from Airport/Railway Station and sightseeing cab"
+      },
+      {
+        "dayNumber": 2,
+        "title": "Jaipur Sightseeing – Amber Fort",
+        "location": "Jaipur",
+        "description": "After breakfast, visit Amber Fort, Jal Mahal, Albert Hall Museum and Birla Mandir. Enjoy shopping for traditional handicrafts, jewellery and textiles.",
+        "morningActivity": "Visit Amber Fort and scenic Jal Mahal",
+        "eveningActivity": "Visit Albert Hall Museum, Birla Mandir and shopping for handicrafts, jewellery and textiles",
+        "stay": "Hotel in Jaipur",
+        "mealsIncluded": "Breakfast",
+        "transfers": "Private sightseeing cab in Jaipur"
+      },
+      {
+        "dayNumber": 3,
+        "title": "Jaipur to Jodhpur – Blue City",
+        "location": "Jodhpur",
+        "description": "After breakfast, drive to Jodhpur and check in at the hotel. Visit Mehrangarh Fort, Jaswant Thada and explore the Clock Tower market.",
+        "morningActivity": "Drive from Jaipur to Jodhpur and check in at the hotel",
+        "eveningActivity": "Visit Mehrangarh Fort, Jaswant Thada and explore the Clock Tower market",
+        "stay": "Hotel in Jodhpur",
+        "mealsIncluded": "Breakfast",
+        "transfers": "Intercity road transfer from Jaipur to Jodhpur"
+      },
+      {
+        "dayNumber": 4,
+        "title": "Jodhpur to Jaisalmer – Golden City",
+        "location": "Jaisalmer",
+        "description": "After breakfast, proceed to Jaisalmer through Rajasthan's scenic landscapes. Check in at the hotel and enjoy the evening at leisure.",
+        "morningActivity": "Drive from Jodhpur to Jaisalmer through Rajasthan's scenic landscapes",
+        "eveningActivity": "Check in at the hotel and enjoy the evening at leisure",
+        "stay": "Hotel in Jaisalmer",
+        "mealsIncluded": "Breakfast",
+        "transfers": "Intercity road transfer from Jodhpur to Jaisalmer"
+      },
+      {
+        "dayNumber": 5,
+        "title": "Jaisalmer Sightseeing & Desert Safari",
+        "location": "Jaisalmer & Sam Sand Dunes",
+        "description": "Visit Jaisalmer Fort, Patwon Ki Haveli, Salim Singh Ki Haveli and Gadisar Lake. Later, head to Sam Sand Dunes for sunset, optional camel/jeep safari, cultural performances and dinner.",
+        "morningActivity": "Visit Jaisalmer Fort, Patwon Ki Haveli, Salim Singh Ki Haveli and Gadisar Lake",
+        "eveningActivity": "Sunset at Sam Sand Dunes, optional camel/jeep safari, traditional Rajasthani cultural performances and dinner",
+        "stay": "Desert camp at Sam Sand Dunes",
+        "mealsIncluded": "Breakfast & Dinner",
+        "transfers": "Sightseeing and transfer to desert camp at Sam Sand Dunes"
+      },
+      {
+        "dayNumber": 6,
+        "title": "Jaisalmer to Udaipur – City of Lakes",
+        "location": "Udaipur",
+        "description": "After breakfast, drive to Udaipur and check in at the hotel. Spend the evening at leisure or enjoy an optional boat ride on Lake Pichola, subject to availability and weather.",
+        "morningActivity": "Breakfast and drive from Jaisalmer to Udaipur; check in at the hotel",
+        "eveningActivity": "Spend the evening at leisure or enjoy an optional sunset boat ride on Lake Pichola (subject to availability and weather)",
+        "stay": "Hotel in Udaipur",
+        "mealsIncluded": "Breakfast",
+        "transfers": "Intercity road transfer from Jaisalmer to Udaipur"
+      },
+      {
+        "dayNumber": 7,
+        "title": "Udaipur Sightseeing & Departure",
+        "location": "Udaipur",
+        "description": "Visit City Palace, Jagdish Temple, Saheliyon Ki Bari and Fateh Sagar Lake. Later, transfer to Udaipur Airport/Railway Station for your onward journey.",
+        "morningActivity": "Visit City Palace, Jagdish Temple, Saheliyon Ki Bari and Fateh Sagar Lake",
+        "eveningActivity": "Transfer to Udaipur Airport/Railway Station for your onward journey (Tour concludes: Udaipur)",
+        "mealsIncluded": "Breakfast",
+        "transfers": "Sightseeing and departure transfer to Udaipur Airport/Railway Station"
       }
     ],
-    "season": "All Season",
+    "topPlacesToVisit": [
+      {
+        "name": "Jaipur – The Pink City",
+        "description": "Explore Rajasthan's royal capital, known for its historic palaces, traditional markets and distinctive architecture. Places to visit: Amber Fort, City Palace, Hawa Mahal, Jantar Mantar, Jal Mahal, Albert Hall Museum and Birla Mandir."
+      },
+      {
+        "name": "Jodhpur – The Blue City",
+        "description": "Discover the historic charm of Jodhpur, with its imposing fort, blue-painted houses and lively old-city streets. Places to visit: Mehrangarh Fort, Jaswant Thada and the Clock Tower market area."
+      },
+      {
+        "name": "Jaisalmer – The Golden City",
+        "description": "Experience the sandstone architecture and desert atmosphere that make Jaisalmer one of Rajasthan's most distinctive destinations. Places to visit: Jaisalmer Fort, Patwon Ki Haveli, Salim Singh Ki Haveli, Gadisar Lake and Sam Sand Dunes."
+      },
+      {
+        "name": "Udaipur – The City of Lakes",
+        "description": "Conclude your journey in Udaipur, known for its lakeside scenery, historic palaces and cultural landmarks. Places to visit: City Palace, Jagdish Temple, Saheliyon Ki Bari, Fateh Sagar Lake and the Lake Pichola area."
+      }
+    ],
+    "thingsToDo": [
+      "Heritage sightseeing, local shopping, photography and exploring traditional handicrafts in Jaipur",
+      "Fort exploration, city photography and local market visits in Jodhpur",
+      "Heritage sightseeing, sunset viewing, optional camel safari, optional jeep safari and cultural performances at the desert camp in Jaisalmer",
+      "Palace sightseeing, lakeside photography and an optional sunset boat ride, subject to availability and weather conditions in Udaipur"
+    ],
+    "hotelsAndStays": "Hotel or resort accommodation and a desert camp stay are part of the planned itinerary. The exact properties, room categories and inclusions depend on the confirmed package.\n\nSafar Trails helps make your journey convenient with planned sightseeing, transfers, hotel or resort accommodation and meals as selected in your package.",
+    "bestTimeToVisit": [
+      {
+        "season": "October to March (Recommended)",
+        "description": "The cooler months, generally October to March, are often preferred for sightseeing and desert experiences across Jaipur, Jodhpur, Jaisalmer and Udaipur."
+      },
+      {
+        "season": "April to June (Summer)",
+        "description": "Warmer temperatures; early morning and evening sightseeing is recommended for pleasant visits to palaces and forts."
+      },
+      {
+        "season": "July to September (Monsoon)",
+        "description": "Pleasant monsoon showers bring lush greenery to Udaipur's lakes and the surrounding Aravalli hills."
+      }
+    ],
+    "whyChooseSafarTrails": [
+      "Well-planned itineraries: Explore four iconic Rajasthan destinations in one structured journey.",
+      "Convenient travel arrangements: Coordinate transfers and sightseeing according to your confirmed plan.",
+      "Flexible travel options: Discuss accommodation preferences and itinerary requirements with the team.",
+      "Heritage and cultural experiences: Discover historic forts, palaces, traditional markets and desert landscapes.",
+      "Clear package details: Review the final quotation for accommodation, meals, inclusions and exclusions before confirming your booking.",
+      "Personalised assistance: Share your travel requirements with the team to help plan a trip that suits your group."
+    ],
+    "faqs": [
+      {
+        "question": "How many days are required for the Grand Rajasthan Heritage Tour Package?",
+        "answer": "The itinerary is planned for 7 days and 6 nights, covering Jaipur, Jodhpur, Jaisalmer and Udaipur."
+      },
+      {
+        "question": "Which destinations are covered in this Rajasthan tour package?",
+        "answer": "The tour covers Jaipur, Jodhpur, Jaisalmer and Udaipur, including major heritage attractions and a desert camp experience at Sam Sand Dunes."
+      },
+      {
+        "question": "Is this Rajasthan holiday package suitable for families?",
+        "answer": "Yes. The itinerary includes cultural attractions, historic forts, local markets and scenic experiences, making it suitable for families, couples and groups. Travellers should consider the long road journeys when planning with young children or elderly family members."
+      },
+      {
+        "question": "Does the package include a camel safari in Jaisalmer?",
+        "answer": "Camel and jeep safaris are optional activities and are subject to availability and applicable charges. Confirm the details with Safar Trails before booking."
+      },
+      {
+        "question": "Is accommodation included in the tour package?",
+        "answer": "Hotel or resort accommodation and a desert camp stay are part of the planned itinerary. The exact properties, room categories and inclusions depend on the confirmed package."
+      },
+      {
+        "question": "Are meals included in the Rajasthan tour package?",
+        "answer": "Meals are provided according to the selected package plan. Please check the final quotation for the exact meal arrangement."
+      },
+      {
+        "question": "What is the best time to visit Rajasthan?",
+        "answer": "The cooler months, generally October to March, are often preferred for sightseeing and desert experiences. Weather conditions vary by destination and season, so travellers should check conditions before departure."
+      },
+      {
+        "question": "Can the itinerary be customised?",
+        "answer": "Contact Safar Trails to discuss your preferred travel dates, accommodation category, sightseeing priorities and other requirements. Any customisation will depend on availability and the agreed package arrangements."
+      },
+      {
+        "question": "How can I book the Grand Rajasthan Heritage Tour Package?",
+        "answer": "You can contact Safar Trails with your travel dates, number of travellers and accommodation preferences to request package details and a customised quotation."
+      }
+    ],
+    "finalCta": {
+      "title": "Book Your Grand Rajasthan Heritage Tour Package with Safar Trails",
+      "subtitle": "Ready to explore the royal heritage of Rajasthan?",
+      "description": "From Jaipur's grand palaces and Jodhpur's historic fort to Jaisalmer's golden dunes and Udaipur's scenic lakes, this 7-day Rajasthan tour package brings together some of the region's most memorable experiences.\n\nContact Safar Trails to check availability, discuss your travel dates and receive a quotation for your Rajasthan holiday.\n\nPlan your Rajasthan journey today!\n\nShare your preferred travel dates, number of adults and children, room requirements and any special requests so the team can help you plan your trip.",
+      "actionLabel": "Request Your Tour Quote"
+    },
+    "seoTitle": "Grand Rajasthan Heritage Tour Package – 7 Days",
+    "seoDescription": "Explore Jaipur, Jodhpur, Jaisalmer and Udaipur with the Grand Rajasthan Heritage Tour Package by Safar Trails. Discover royal forts, desert camps and cultural attractions.",
+    "season": "October to March",
     "isFeatured": true,
     "isPopular": true
   },

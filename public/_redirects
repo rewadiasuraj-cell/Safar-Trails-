@@ -62,6 +62,8 @@ http://www.safartrails.co.in/* https://safartrails.co.in/:splat 301!
 # then served as the static file it is, with no rule involved.
 /packages/chardham-yatra-package  /tour-packages/chardham-yatra-haridwar-yamunotri-gangotri-kedarnath-badrinath-10d9n  301
 /packages/:slug                   /tour-packages/:slug                                                                 301
+/tour-packages/grand-rajasthan-heritage-tour   /tour-packages/rajasthan-heritage-tour                                               301
+/tour-packages/grand-rajasthan-heritage-tour/  /tour-packages/rajasthan-heritage-tour                                               301
 
 # /tour-packages has no listing of its own - /packages is it. Without these, the
 # SPA fallback below answers 200 with the app shell for a URL that names nothing,
