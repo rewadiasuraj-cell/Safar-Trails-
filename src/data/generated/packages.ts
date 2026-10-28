@@ -3856,55 +3856,303 @@ export const packagesData: Package[] = [
     "id": "pkg-himachal-adventure-tour",
     "slug": "himachal-adventure-tour",
     "title": "Himachal Grand Adventure Tour",
+    "badge": "Explore Amazing Deals & Offers",
     "destination": "Himachal Pradesh",
     "destinationSlug": "himachal-pradesh",
     "state": "Himachal Pradesh",
-    "durationDays": 8,
-    "durationNights": 7,
+    "durationDays": 7,
+    "durationNights": 6,
     "startingPrice": 19500,
     "originalPrice": 26000,
     "tripType": [
       "Adventure",
+      "Family",
+      "Couple",
       "Group",
-      "Family"
+      "Nature"
     ],
     "hotelCategory": "Deluxe 4★",
     "ratings": 4.8,
     "reviewCount": 156,
-    "startingCity": "Chandigarh / Delhi",
-    "bestFor": "Mountain Lovers & Adventure Enthusiasts",
+    "startingCity": "Delhi / Chandigarh",
+    "bestFor": "Families, Couples & Adventure Lovers",
     "heroImage": "/content/destinations/himachal-pradesh/1.jpg",
     "galleryImages": [
-      "/content/destinations/himachal-pradesh/1.jpg"
+      {
+        "src": "/content/destinations/himachal-pradesh/1.jpg",
+        "caption": "Panoramic Himalayan Valleys & Mountain Peaks of Himachal"
+      },
+      {
+        "src": "/content/destinations/himachal-pradesh/2.jpg",
+        "caption": "Scenic Mountain Slopes & Pine Forests"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=800&auto=format&fit=crop",
+        "caption": "Solang Valley Mountain Views & Snow Landscapes"
+      }
     ],
-    "overview": "Comprehensive Himachal circuit: Shimla Mall Road, Kufri pine forests, Kullu river rafting, Solang Valley paragliding, Atal Tunnel to Sissu waterfall, and Dharamshala Dalai Lama Temple.",
+    "overview": "Discover the Himalayas with Safar Trails’ Himachal Grand Adventure Tour – 6 Nights / 7 Days. Explore Shimla, Manali, Kufri, Solang Valley, Kasol, and Manikaran through scenic mountain drives, cultural attractions, and optional adventure activities.\n\nWith comfortable stays, transfers, sightseeing, and meals as selected, this package is ideal for families, couples, and adventure lovers seeking a memorable Himachal getaway.",
+    "packageDetails": [
+      {
+        "label": "Duration",
+        "value": "6 Nights / 7 Days"
+      },
+      {
+        "label": "Starting and Ending Points",
+        "value": "Delhi or Chandigarh"
+      },
+      {
+        "label": "Destinations",
+        "value": "Shimla, Kufri, Manali, Solang Valley, Atal Tunnel, Sissu, Kasol and Manikaran"
+      },
+      {
+        "label": "Accommodation",
+        "value": "Hotel stays as per the confirmed package"
+      },
+      {
+        "label": "Transfers",
+        "value": "Route transfers and sightseeing as per the itinerary"
+      },
+      {
+        "label": "Meals",
+        "value": "As selected in the package"
+      },
+      {
+        "label": "Activities",
+        "value": "Sightseeing, mountain exploration and optional adventure activities"
+      },
+      {
+        "label": "Ideal For",
+        "value": "Families, couples, and adventure lovers"
+      }
+    ],
     "highlights": [
-      "2 Nights Shimla + 3 Nights Manali + 2 Nights Dharamshala / McLeod Ganj",
-      "Atal Tunnel 9.02 km mountain drive to Sissu, Lahaul Valley",
-      "Paragliding in Solang Valley & River Rafting in Kullu"
+      "Explore Shimla’s Mall Road, The Ridge, and Christ Church.",
+      "Visit Kufri, Green Valley, and Jakhoo Temple.",
+      "Enjoy a scenic drive from Shimla to Manali.",
+      "Discover Hadimba Devi Temple, Vashisht Springs, and local markets.",
+      "Admire mountain views at Solang Valley.",
+      "Visit Atal Tunnel and Sissu, subject to road conditions.",
+      "Explore Kasol, Parvati Valley, and Manikaran Gurudwara.",
+      "Enjoy Himalayan sightseeing, cultural experiences, and optional adventures.",
+      "Travel comfortably with planned transfers and personalised arrangements by Safar Trails."
     ],
     "inclusions": [
-      "7 Nights 3★/4★ Resort stays",
-      "Daily Breakfast & Dinner",
-      "Private AC Cab"
+      "Accommodation: Hotel stays for 6 nights as per the confirmed plan.",
+      "Transfers: Travel between Delhi/Chandigarh, Shimla, and Manali.",
+      "Sightseeing: Itinerary-based visits, subject to accessibility.",
+      "Meals: As per the selected package."
     ],
     "exclusions": [
-      "Adventure activities tickets"
+      "Travel Tickets: Flights, trains, or buses to and from the starting point.",
+      "Extra Meals: Lunches, snacks, and meals not included in the plan.",
+      "Adventure Activities: Optional activities in Solang Valley and other destinations.",
+      "Entry & Transport Fees: Entry tickets, guides, permits, and special vehicles.",
+      "Personal Expenses: Shopping, laundry, tips, and beverages.",
+      "Insurance & Medical: Travel insurance and medical expenses.",
+      "Extra Accommodation: Additional hotel nights or itinerary changes.",
+      "Unforeseen Expenses: Costs due to bad weather, road closures, or travel disruptions.",
+      "Other Services: Anything not listed in the confirmed inclusions."
+    ],
+    "importantTravelInfo": [
+      "Access to Atal Tunnel and Sissu may be affected by snowfall, road closures, traffic restrictions and local regulations. The route is not guaranteed in all seasons.",
+      "Adventure activities in Solang Valley are optional, available at additional cost, and subject to weather and local operating conditions.",
+      "Before confirming your Himachal tour package, ask Safar Trails to specify the hotel category, night-wise accommodation, meal plan, vehicle type, sightseeing coverage and charges for optional activities."
     ],
     "itinerary": [
       {
         "dayNumber": 1,
         "title": "Delhi/Chandigarh to Shimla",
-        "location": "Shimla",
-        "description": "Highway drive up Shivalik hills to Shimla.",
-        "morningActivity": "Highway pickup",
-        "eveningActivity": "Shimla Ridge walk",
-        "stay": "Snow Valley Resorts 4★, Shimla",
+        "location": "Delhi/Chandigarh to Shimla",
+        "description": "Begin your Himachal Grand Adventure Tour with departure from Delhi or Chandigarh towards Shimla. Enjoy a scenic drive through the Himalayan foothills, with changing landscapes and mountain views along the way.\n\nOn arrival in Shimla, check in to your hotel and relax after the journey. In the evening, explore Mall Road and The Ridge at your leisure. Enjoy the pleasant hill-station atmosphere before returning to your hotel for dinner and an overnight stay.",
+        "morningActivity": "Departure from Delhi or Chandigarh & scenic drive through Himalayan foothills",
+        "afternoonActivity": "Arrival in Shimla, hotel check-in, and relaxation after the journey",
+        "eveningActivity": "Leisurely exploration of Mall Road and The Ridge; dinner at hotel",
+        "stay": "Shimla",
         "mealsIncluded": "Dinner",
-        "transfers": "Private AC Cab"
+        "transfers": "Private transfers from Delhi/Chandigarh to Shimla"
+      },
+      {
+        "dayNumber": 2,
+        "title": "Shimla and Kufri Sightseeing",
+        "location": "Shimla & Kufri",
+        "description": "After breakfast, proceed for a sightseeing tour of Shimla and Kufri. Visit Kufri, known for its mountain scenery, followed by Green Valley and Himalayan Nature Park, subject to opening hours and local access.\n\nContinue to Jakhoo Temple, an important local attraction. Later, explore The Ridge and Christ Church before spending some free time on Mall Road for shopping, cafés and local exploration.\n\nReturn to your hotel in the evening. Enjoy dinner and a relaxing overnight stay in Shimla.",
+        "morningActivity": "Breakfast & excursion to Kufri, Green Valley and Himalayan Nature Park",
+        "afternoonActivity": "Visit Jakhoo Temple, The Ridge, and historic Christ Church",
+        "eveningActivity": "Free time on Mall Road for shopping and cafés; dinner and overnight stay",
+        "stay": "Shimla",
+        "mealsIncluded": "Breakfast & Dinner",
+        "transfers": "Private sightseeing transfers"
+      },
+      {
+        "dayNumber": 3,
+        "title": "Shimla to Manali",
+        "location": "Shimla to Manali",
+        "description": "After breakfast, check out from your hotel and begin your journey towards Manali. Enjoy a scenic drive through Himalayan valleys, taking in beautiful mountain and river views along the route.\n\nOn arrival in Manali, check in to your hotel and relax after the journey. The evening is free for leisure, allowing you to enjoy the surroundings or explore nearby areas depending on arrival time.\n\nReturn to the hotel for dinner and an overnight stay.",
+        "morningActivity": "Breakfast, check out from Shimla hotel & scenic mountain drive towards Manali",
+        "afternoonActivity": "Scenic valley drive with beautiful mountain and river views along the route",
+        "eveningActivity": "Check in to Manali hotel, relaxation, evening leisure, and dinner",
+        "stay": "Manali",
+        "mealsIncluded": "Breakfast & Dinner",
+        "transfers": "Private intercity transfer from Shimla to Manali"
+      },
+      {
+        "dayNumber": 4,
+        "title": "Manali Local Sightseeing",
+        "location": "Manali",
+        "description": "After breakfast, begin your local sightseeing tour of Manali. Visit Hadimba Devi Temple, known for its distinctive architecture and forest setting, followed by Manu Temple.\n\nContinue to Vashisht Temple and the nearby hot water springs. Explore Van Vihar and visit the Tibetan Monastery to experience another side of Manali’s cultural character.\n\nLater, spend time at Mall Road and the local market, where you can browse shops, cafés and regional products.\n\nReturn to the hotel for dinner and an overnight stay.",
+        "morningActivity": "Breakfast & visit to Hadimba Devi Temple and Manu Temple",
+        "afternoonActivity": "Visit Vashisht hot springs, Van Vihar, and Tibetan Monastery",
+        "eveningActivity": "Explore Mall Road and local markets for souvenirs and cafés; dinner at hotel",
+        "stay": "Manali",
+        "mealsIncluded": "Breakfast & Dinner",
+        "transfers": "Private local sightseeing transfers"
+      },
+      {
+        "dayNumber": 5,
+        "title": "Solang Valley – Atal Tunnel – Sissu",
+        "location": "Solang Valley, Atal Tunnel & Sissu",
+        "description": "After breakfast, set out for a full-day excursion towards Solang Valley, a popular destination for Himalayan scenery and outdoor experiences. Enjoy the mountain views and consider optional adventure activities, available at additional cost and subject to weather and local operating conditions.\n\nContinue towards Atal Tunnel and Sissu if road access, weather and local travel conditions permit. Spend time admiring the surrounding landscapes and taking photographs at suitable locations.\n\nLater, return to Manali by evening for dinner and an overnight stay.",
+        "morningActivity": "Breakfast & excursion to Solang Valley for mountain views & optional adventure sports",
+        "afternoonActivity": "Drive through Atal Tunnel to Sissu (subject to road, weather & access conditions)",
+        "eveningActivity": "Scenic return drive to Manali; dinner and overnight stay",
+        "stay": "Manali",
+        "mealsIncluded": "Breakfast & Dinner",
+        "transfers": "Private excursion transfers"
+      },
+      {
+        "dayNumber": 6,
+        "title": "Manali – Manikaran – Kasol – Manali",
+        "location": "Kasol, Manikaran & Parvati Valley",
+        "description": "After breakfast, proceed towards Kasol and Manikaran for a day of scenic exploration. Enjoy the landscapes of the Parvati Valley and spend some leisure time exploring Kasol’s local market.\n\nContinue to Manikaran and visit the famous Gurudwara and hot springs. Take time to appreciate the area’s spiritual atmosphere and surrounding mountain scenery.\n\nAfter sightseeing, return to Manali in the evening. Enjoy dinner and your final overnight stay in Manali.",
+        "morningActivity": "Breakfast & drive into Parvati Valley towards Kasol",
+        "afternoonActivity": "Explore Kasol local market, visit Manikaran Gurudwara & natural hot springs",
+        "eveningActivity": "Scenic return to Manali, dinner, and final overnight stay",
+        "stay": "Manali",
+        "mealsIncluded": "Breakfast & Dinner",
+        "transfers": "Private full-day excursion transfers"
+      },
+      {
+        "dayNumber": 7,
+        "title": "Manali to Delhi/Chandigarh Departure",
+        "location": "Manali to Delhi / Chandigarh",
+        "description": "After breakfast, check out from your hotel and begin the return journey towards Delhi or Chandigarh. Enjoy the scenic Himalayan route as you travel back from the mountains.\n\nOn arrival, you will be dropped at the agreed departure location, concluding your Himachal Grand Adventure Tour with memorable experiences of Shimla, Manali, Solang Valley, Kasol and the surrounding Himalayan landscapes.",
+        "morningActivity": "Breakfast at hotel, check-out & begin return journey",
+        "afternoonActivity": "Scenic drive down through mountain valleys towards plains",
+        "eveningActivity": "Drop-off at agreed departure location in Delhi or Chandigarh; tour concludes",
+        "stay": "Tour Concludes",
+        "mealsIncluded": "Breakfast",
+        "transfers": "Private return transfer to Delhi/Chandigarh"
       }
     ],
-    "season": "All Season",
+    "topPlacesToVisit": [
+      {
+        "name": "Shimla",
+        "description": "Shimla is a charming hill station known for its mountain scenery, heritage attractions and lively shopping areas. It is the first destination on this tour and provides a relaxing introduction to Himachal Pradesh. Top places and experiences: Mall Road, The Ridge, Christ Church, local shopping and cafés, scenic walks and mountain views."
+      },
+      {
+        "name": "Kufri",
+        "description": "Kufri is a popular excursion from Shimla, known for its surrounding hills and outdoor attractions. The visit offers an opportunity to enjoy the landscape beyond the main town. Top places and experiences: Kufri sightseeing, Himalayan Nature Park (subject to opening and access), Green Valley, and mountain photography."
+      },
+      {
+        "name": "Manali",
+        "description": "Manali combines Himalayan landscapes, cultural attractions, temples and a lively town centre. It serves as the base for several sightseeing excursions during the tour. Top places and experiences: Hadimba Devi Temple, Manu Temple, Vashisht Temple and hot water springs, Van Vihar, Tibetan Monastery, Mall Road and local markets."
+      },
+      {
+        "name": "Solang Valley",
+        "description": "Solang Valley is known for its open mountain scenery and seasonal outdoor activities. It is a major highlight for visitors seeking nature and adventure experiences near Manali. Top places and experiences: Mountain viewpoints, photography, seasonal snow experiences, and optional adventure activities at additional cost."
+      },
+      {
+        "name": "Atal Tunnel and Sissu",
+        "description": "The Atal Tunnel–Sissu excursion offers dramatic mountain scenery and a chance to explore landscapes beyond Manali. Access depends on road conditions, weather and local restrictions. Top places and experiences: Scenic mountain drive, Atal Tunnel route (subject to access), Sissu landscape and viewpoints, photography and sightseeing."
+      },
+      {
+        "name": "Kasol",
+        "description": "Kasol is a scenic destination in the Parvati Valley, popular for its mountain setting and relaxed atmosphere. The itinerary includes leisure time to explore the local market. Top places and experiences: Parvati Valley scenery, local market exploration, cafés and leisure time, and photography."
+      },
+      {
+        "name": "Manikaran",
+        "description": "Manikaran is known for its Gurudwara and hot springs, making it an important cultural and spiritual stop during the excursion from Manali. Top places and experiences: Manikaran Gurudwara, hot springs, local exploration, and views of the surrounding valley."
+      }
+    ],
+    "thingsToDo": [
+      "Stroll along Mall Road and The Ridge in Shimla",
+      "Admire historic Christ Church and panoramic hill views in Shimla",
+      "Visit Kufri, Green Valley viewpoints, and Himalayan Nature Park",
+      "Discover the ancient architecture of Hadimba Devi Temple and Manu Temple in Manali",
+      "Take a dip in the natural hot sulphur springs at Vashisht Temple",
+      "Explore open mountain viewpoints and try seasonal adventure sports in Solang Valley",
+      "Drive through the engineering marvel of Atal Tunnel to Sissu (subject to conditions)",
+      "Experience the vibrant bohemian culture, cafés, and markets of Kasol in Parvati Valley",
+      "Seek blessings and see the natural hot water springs at Manikaran Gurudwara"
+    ],
+    "hotelsAndStays": "Accommodation: Hotel stays for 6 nights as per the confirmed plan.\n\n• Route Stays: 2 Nights in Shimla (Nights 1 & 2) and 4 Nights in Manali (Nights 3, 4, 5 & 6) as a central base for local sightseeing, Solang Valley/Atal Tunnel excursions, and the Kasol-Manikaran day trip.\n• Comfortable Hill Accommodations: Properties are chosen for comfort, mountain scenery, hospitality, and easy connectivity to local sightseeing routes.\n• Tailored Selection: Before confirming your Himachal tour package, ask Safar Trails to specify the hotel category, night-wise accommodation, meal plan, vehicle type, sightseeing coverage and charges for optional activities.",
+    "faqs": [
+      {
+        "question": "How many days are needed for the Himachal Grand Adventure Tour?",
+        "answer": "The itinerary covers 6 Nights / 7 Days, with visits to Shimla, Kufri, Manali, Solang Valley, Atal Tunnel, Sissu, Kasol and Manikaran."
+      },
+      {
+        "question": "Can I start this Himachal tour package from Delhi or Chandigarh?",
+        "answer": "Yes. The supplied itinerary offers departure from Delhi or Chandigarh, with the return drop at the agreed location."
+      },
+      {
+        "question": "Which destinations are covered in the Himachal Grand Adventure Tour?",
+        "answer": "The tour covers Shimla, Kufri, Manali, Solang Valley, the Atal Tunnel–Sissu route, Kasol and Manikaran."
+      },
+      {
+        "question": "Is accommodation included in the tour package?",
+        "answer": "The itinerary specifies hotel stays. The final quotation should confirm the hotel category, property details, room type and number of nights in each destination."
+      },
+      {
+        "question": "Are meals included in the Himachal tour package?",
+        "answer": "Meals are listed as selected. Please confirm the exact meal plan and whether breakfast, dinner or other meals are included in your quotation."
+      },
+      {
+        "question": "Are adventure activities included in Solang Valley?",
+        "answer": "Adventure activities are optional and subject to local conditions. Their availability, prices and inclusion in your package should be confirmed before booking."
+      },
+      {
+        "question": "Can we visit Atal Tunnel and Sissu throughout the year?",
+        "answer": "Access depends on weather, snowfall, road conditions and local restrictions. The excursion may need to be modified or cancelled if travel is unsafe or the route is closed."
+      },
+      {
+        "question": "What can I see in Shimla and Kufri?",
+        "answer": "The itinerary includes Mall Road, The Ridge, Christ Church, Kufri, Green Valley, Himalayan Nature Park and Jakhoo Temple, subject to access and opening hours."
+      },
+      {
+        "question": "What are the main attractions in Manali?",
+        "answer": "The itinerary includes Hadimba Devi Temple, Manu Temple, Vashisht Temple and hot water springs, Van Vihar, the Tibetan Monastery, Mall Road and the local market."
+      },
+      {
+        "question": "Is this tour suitable for families and couples?",
+        "answer": "Yes, the mix of sightseeing, cultural attractions and scenic drives can suit families, couples and groups. Travellers should consider the long mountain journeys and seasonal weather when planning."
+      },
+      {
+        "question": "What is the best time to book a Himachal holiday?",
+        "answer": "The suitable travel period depends on your priorities, such as pleasant weather, greenery or snow experiences. Conditions vary by destination and season, particularly around Solang Valley, Atal Tunnel and Sissu. Confirm the latest conditions before finalising your trip."
+      },
+      {
+        "question": "How do I book the Himachal Grand Adventure Tour with Safar Trails?",
+        "answer": "Share your travel dates, starting point, number of travellers, room preferences and preferred hotel category with Safar Trails. Request a detailed quotation showing the final itinerary, inclusions, exclusions and optional activity costs."
+      }
+    ],
+    "whyChooseSafarTrails": [
+      "Well-Planned Itinerary: Explore Shimla, Manali, Kasol and nearby attractions in one memorable trip.",
+      "Flexible Packages: Customise travel dates, group size and accommodation preferences.",
+      "Clear Pricing: Understand package inclusions, exclusions and optional activity costs before booking.",
+      "Scenic Experiences: Enjoy Himalayan views, cultural attractions and adventure opportunities.",
+      "Travel Assistance: Get support with itinerary details and booking arrangements."
+    ],
+    "finalCta": {
+      "title": "Book Your Himachal Grand Adventure Tour with Safar Trails",
+      "subtitle": "6 Nights / 7 Days • Delhi/Chandigarh – Shimla – Manali – Kasol",
+      "description": "Explore Shimla, Manali, Kasol, and the scenic Himalayan valleys with our Himachal Grand Adventure Tour – 6 Nights / 7 Days. Enjoy mountain drives, cultural attractions, sightseeing, and optional adventure activities.\n\nWhether travelling with family or friends, Safar Trails helps you plan a memorable holiday based on your dates and budget.\n\nGet Your Personalised Tour Quote Today!\n• Share your travel dates and starting point (Delhi/Chandigarh).\n• Confirm the number of travellers and room requirements.\n• Choose your hotel category and meal plan.\n• Check optional activities and seasonal excursions.\n• Review the itinerary, inclusions, exclusions, and booking terms before confirming.\n\nContact Safar Trails Today to plan your perfect Himachal getaway!",
+      "actionLabel": "Get Your Personalised Tour Quote"
+    },
+    "season": "Year-round (March to June Pleasant & Winter Snow)",
+    "seoTitle": "Himachal Grand Adventure Tour (6N/7D) | Safar Trails",
+    "seoDescription": "Book the 6N/7D Himachal Grand Adventure Tour with Safar Trails from Delhi/Chandigarh. Explore Shimla, Manali, Solang Valley, Sissu, Kasol & Manikaran.",
     "isFeatured": true,
     "isPopular": true
   },
