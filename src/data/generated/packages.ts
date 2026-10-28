@@ -4778,120 +4778,301 @@ export const packagesData: Package[] = [
     "id": "pkg-ladakh-high-passes-pangong",
     "slug": "ladakh-pangong-nubra-khardungla",
     "title": "Ladakh Tour Package",
+    "badge": "Best Deals & Offers",
     "destination": "Ladakh",
     "destinationSlug": "ladakh",
     "state": "Ladakh",
-    "durationDays": 6,
-    "durationNights": 5,
+    "durationDays": 7,
+    "durationNights": 6,
     "startingPrice": 22999,
     "originalPrice": 29000,
     "tripType": [
       "Adventure",
+      "Family",
       "Couple",
-      "Group"
+      "Group",
+      "Nature"
     ],
     "hotelCategory": "Deluxe 4★",
     "ratings": 4.9,
     "reviewCount": 228,
-    "startingCity": "Leh (Airport Pickup)",
-    "bestFor": "Couples, Road Trippers & Adventure Seekers",
+    "startingCity": "Leh Airport",
+    "bestFor": "Families, Couples & Friends",
     "heroImage": "/content/destinations/ladakh/1.jpg",
     "galleryImages": [
-      "/content/destinations/ladakh/1.jpg",
-      "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?q=80&w=800&auto=format&fit=crop"
+      {
+        "src": "/content/destinations/ladakh/1.jpg",
+        "caption": "Dramatic Landscapes, Monasteries and Valleys of Ladakh"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?q=80&w=800&auto=format&fit=crop",
+        "caption": "Pangong Lake’s Stunning Blue Waters & Mountain Setting"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=800&auto=format&fit=crop",
+        "caption": "Nubra Valley Sand Dunes & Mountain Passes"
+      }
     ],
-    "overview": "Embark on the ultimate Trans-Himalayan odyssey: cross Khardung La (17,982 ft), ride double-humped camels through the cold desert dunes of Nubra Valley, gaze upon the shifting blue hues of Pangong Tso, and find tranquility in ancient Buddhist gompas with emergency oxygen backup throughout.",
+    "overview": "Explore the breathtaking Himalayas with Safar Trails’ Ladakh Tour Package – 6 Nights / 7 Days. Discover Leh’s cultural landmarks, including Leh Palace, Shanti Stupa, and Thiksey Monastery, before travelling to Nubra Valley via Khardung La.\n\nExperience Diskit Monastery, Hunder’s sand dunes, Turtuk village, and the stunning blue waters of Pangong Lake. With planned transfers, hotel or camp stays, and meals as selected, this package offers a memorable Himalayan adventure.\n\nIdeal for families, couples, and friends, your Ladakh journey can be planned around your preferred travel dates and requirements.",
+    "packageDetails": [
+      {
+        "label": "Duration",
+        "value": "6 Nights / 7 Days"
+      },
+      {
+        "label": "Route",
+        "value": "Leh – Nubra Valley – Turtuk – Pangong Lake – Leh"
+      },
+      {
+        "label": "Arrival and Departure",
+        "value": "Leh Airport"
+      },
+      {
+        "label": "Accommodation",
+        "value": "Hotels, camps or resorts as per the confirmed package"
+      },
+      {
+        "label": "Meals",
+        "value": "As selected in the package"
+      },
+      {
+        "label": "Key Experiences",
+        "value": "Leh sightseeing, Khardung La, Hunder Sand Dunes, Turtuk Village and Pangong Lake"
+      },
+      {
+        "label": "Travel Style",
+        "value": "Sightseeing and scenic mountain journeys"
+      },
+      {
+        "label": "Ideal For",
+        "value": "Families, couples, and friends"
+      }
+    ],
     "highlights": [
-      "1 Night in Luxury Swiss Camp at Pangong Tso (14,270 ft)",
-      "1 Night in Organic Farm Cottages at Nubra Valley + 3 Nights in Leh",
-      "Drive across world’s legendary Khardung La and Chang La passes",
-      "Bactrian Camel Safari in Hunder Sand Dunes & Diskit Giant Buddha",
-      "Inner Line Permits and portable medical oxygen cylinder in vehicle"
+      "Leh Acclimatisation: Rest and adjust to the high altitude.",
+      "Leh Sightseeing: Visit Shanti Stupa, Leh Palace, monasteries, and Leh Market.",
+      "Cultural Exploration: Discover Thiksey Monastery and Shey Palace.",
+      "Khardung La Drive: Travel to Nubra Valley, weather permitting.",
+      "Nubra Valley: Explore Diskit Monastery, Hunder’s sand dunes, and scenic landscapes.",
+      "Camel Ride: Enjoy an optional Bactrian camel ride at Hunder.",
+      "Turtuk Village: Experience local culture, subject to access and permits.",
+      "Pangong Lake: Admire its stunning waters and scenic sunrise or sunset views.",
+      "Comfortable Stays: Enjoy hotels, camps, or resorts as confirmed.",
+      "Planned Travel: Transfers, sightseeing, and meals as selected."
     ],
     "inclusions": [
-      "5 Nights accommodation in 3★/4★ boutique hotels & luxury heated camps",
-      "Daily Breakfast & Dinner at all hotels and camps",
-      "Dedicated private Non-AC Innova / Scorpio with seasoned mountain driver",
-      "All Protected Area Inner Line Permits and wildlife environmental fees",
-      "Emergency Oxygen Cylinder and first-aid medical kit in vehicle"
+      "Hotel accommodation in Leh as per the confirmed booking.",
+      "Hotel or camp accommodation in Nubra Valley.",
+      "Camp or resort accommodation near Pangong Lake.",
+      "Transfers and sightseeing along the confirmed itinerary.",
+      "Airport pickup and departure transfer in Leh.",
+      "Meals as selected in the package."
     ],
     "exclusions": [
-      "Airfare to Leh",
-      "Camel ride charges at Hunder and monument entrance fees",
-      "Personal snacks, hot drinks outside meals, and tipping"
+      "Travel: Flights and tickets to/from Leh.",
+      "Meals: Extra meals and snacks.",
+      "Permits & Fees: Permits, environmental charges, and entry tickets.",
+      "Activities: Optional camel rides and other experiences.",
+      "Personal Expenses: Shopping, guides, and miscellaneous costs.",
+      "Medical & Insurance: Travel insurance, medical care, and oxygen services.",
+      "Accommodation: Extra nights, upgrades, and special requests.",
+      "Unforeseen Costs: Weather disruptions, road closures, and permit restrictions.",
+      "Other Services: Anything not listed in the confirmed inclusions."
+    ],
+    "importantTravelInfo": [
+      "Important travel note: This itinerary is subject to weather, road conditions, permits, local regulations and high-altitude conditions. The schedule should allow adequate acclimatisation before higher-altitude excursions. Changes may be necessary for safety.",
+      "Before booking: Ask Safar Trails to confirm the hotel and camp categories, night-wise accommodation, vehicle type, meal plan, permits, entry fees and optional activity costs in writing.",
+      "Acclimatisation notice: Day 1 is reserved for rest and acclimatisation in Leh. This is important because Ladakh’s high altitude can cause altitude-related illness. Follow local health advisories and seek medical advice if you have concerns about high-altitude travel."
     ],
     "itinerary": [
       {
         "dayNumber": 1,
-        "title": "Leh Arrival & Mandatory Acclimatization",
-        "location": "Leh Town",
-        "description": "Land at Kushok Bakula Rimpochee Airport, Leh (11,562 ft). Transfer to your hotel. Strict complete rest for the entire day to acclimatize to high altitude. Evening gentle walk to Leh Main Market.",
-        "morningActivity": "Airport pickup and warm reception with traditional Khatak",
-        "afternoonActivity": "Complete rest and hydration in hotel room",
-        "eveningActivity": "Gentle stroll in Leh Market & Shanti Stupa sunset viewpoint",
-        "stay": "The Grand Dragon / Spic N Span 4★, Leh",
-        "mealsIncluded": "Dinner",
-        "transfers": "Private Mountain Cab"
+        "title": "Arrival in Leh – Acclimatisation",
+        "location": "Leh",
+        "description": "Arrive at Kushok Bakula Rimpochee Airport in Leh, where a Safar Trails representative will welcome you and arrange your transfer to the hotel. After check-in, spend the day resting and allowing your body to adjust to Ladakh’s high altitude. Avoid strenuous activities, stay hydrated according to your needs and follow appropriate medical guidance for high-altitude travel. The evening is free for rest and relaxation. Enjoy dinner at the hotel as per your selected meal plan.",
+        "morningActivity": "Arrival at Kushok Bakula Rimpochee Airport in Leh, Safar Trails reception and hotel transfer",
+        "afternoonActivity": "Check-in and mandatory rest to acclimatise to Ladakh's high altitude",
+        "eveningActivity": "Rest and relaxation at the hotel followed by dinner as per selected meal plan",
+        "stay": "Hotel in Leh",
+        "mealsIncluded": "Dinner as per selected meal plan",
+        "transfers": "Airport to hotel private transfer"
       },
       {
         "dayNumber": 2,
-        "title": "Sham Valley: Magnetic Hill, Sangam & Hall of Fame",
-        "location": "Sham Valley & Leh",
-        "description": "Excursion along the Indus River: experience the optical illusion at Magnetic Hill, witness the confluence (Sangam) of turquoise Indus and muddy Zanskar rivers, and visit the Hall of Fame war museum.",
-        "morningActivity": "Drive to Magnetic Hill and Gurudwara Pathar Sahib",
-        "afternoonActivity": "Indus-Zanskar Sangam and Spituk Monastery",
-        "eveningActivity": "Visit Hall of Fame and local Ladakhi tea cafe",
-        "stay": "The Grand Dragon / Spic N Span 4★, Leh",
-        "mealsIncluded": "Breakfast & Dinner",
-        "transfers": "Private Mountain Cab"
+        "title": "Leh Local Sightseeing",
+        "location": "Leh & Indus Valley",
+        "description": "After breakfast, explore Leh’s cultural and historical attractions. Visit Shanti Stupa for panoramic views, followed by Leh Palace and Namgyal Tsemo Monastery. Continue to the local market to explore shops and experience the atmosphere of Leh town. Later, visit Thiksey Monastery and Shey Palace, subject to opening hours and local access. Enjoy views of the Indus Valley before returning to your hotel for dinner and an overnight stay.",
+        "morningActivity": "Visit Shanti Stupa for panoramic views, Leh Palace, and Namgyal Tsemo Monastery",
+        "afternoonActivity": "Explore Leh local market, followed by Thiksey Monastery and Shey Palace",
+        "eveningActivity": "Admire Indus Valley views, return to hotel for dinner and an overnight stay",
+        "stay": "Hotel in Leh",
+        "mealsIncluded": "Breakfast & Dinner as per selected meal plan",
+        "transfers": "Sightseeing vehicle"
       },
       {
         "dayNumber": 3,
-        "title": "Leh to Nubra Valley via Khardung La Pass (17,982 ft)",
-        "location": "Nubra Valley (Hunder / Diskit)",
-        "description": "Scale one of the highest motorable passes on earth — Khardung La. Descend into the picturesque Nubra Valley. Visit the 106-ft Maitreya Buddha at Diskit Monastery and ride double-humped camels in Hunder Dunes.",
-        "morningActivity": "Epic drive over snow-draped Khardung La Pass",
-        "afternoonActivity": "Diskit Monastery & Maitreya Buddha statue",
-        "eveningActivity": "Double-humped Bactrian camel safari in Hunder Sand Dunes",
-        "stay": "Organic Apple Orchard Resort / Luxury Swiss Camp 4★, Nubra",
-        "mealsIncluded": "Breakfast & Dinner",
-        "transfers": "Private Mountain Cab"
+        "title": "Leh to Nubra Valley via Khardung La",
+        "location": "Khardung La & Nubra Valley",
+        "description": "After breakfast, check out and begin your journey towards Nubra Valley via Khardung La, one of Ladakh’s famous high mountain passes. The route offers dramatic mountain scenery and panoramic views, subject to road and weather conditions. Continue to Nubra Valley and check in to your hotel or camp. Later, visit Diskit Monastery and admire the surrounding valley landscapes. Explore Hunder Village and its sand dunes. If available, you may opt for a double-humped Bactrian camel ride at an additional cost. Return to your accommodation for dinner and an overnight stay.",
+        "morningActivity": "Drive towards Nubra Valley crossing Khardung La pass with dramatic mountain views",
+        "afternoonActivity": "Check in to hotel or camp in Nubra Valley, then visit Diskit Monastery",
+        "eveningActivity": "Explore Hunder Village & sand dunes with optional Bactrian camel ride, dinner at stay",
+        "stay": "Hotel or camp in Nubra Valley",
+        "mealsIncluded": "Breakfast & Dinner as per selected meal plan",
+        "transfers": "Scenic mountain transfer to Nubra Valley via Khardung La"
       },
       {
         "dayNumber": 4,
-        "title": "Nubra Valley to Pangong Tso via Shyok River Route",
-        "location": "Pangong Tso (Spangmik)",
-        "description": "Drive along the rugged, scenic Shyok River gorge directly to Pangong Tso. Arrive at the high-altitude lake as its waters transition between turquoise, royal blue, and indigo. Stargaze under zero light pollution.",
-        "morningActivity": "Scenic off-road drive along Shyok River canyon",
-        "afternoonActivity": "Arrive at Pangong Lake (14,270 ft) & photography session",
-        "eveningActivity": "Witness dramatic sunset over the lake & stargazing",
-        "stay": "Deluxe Swiss Cottage Camp with attached heated bath, Pangong",
-        "mealsIncluded": "Breakfast & Dinner",
-        "transfers": "Private Mountain Cab"
+        "title": "Nubra Valley – Turtuk – Nubra Valley",
+        "location": "Turtuk Village & Nubra Valley",
+        "description": "After breakfast, proceed towards Turtuk Village, subject to permit requirements, road accessibility and weather conditions. Explore this picturesque village and experience its distinctive local culture, traditional surroundings and beautiful landscapes. Enjoy time for sightseeing and photography, depending on the day’s schedule and local access. Later, return towards Nubra Valley and spend the evening at leisure at your hotel or camp. Enjoy dinner and an overnight stay.",
+        "morningActivity": "Excursion drive to Turtuk Village along scenic mountain landscapes",
+        "afternoonActivity": "Explore Turtuk village, discover local culture, traditional architecture and photography",
+        "eveningActivity": "Return to Nubra Valley, evening at leisure at hotel or camp, followed by dinner",
+        "stay": "Hotel or camp in Nubra Valley",
+        "mealsIncluded": "Breakfast & Dinner as per selected meal plan",
+        "transfers": "Excursion transfer to Turtuk and return to Nubra Valley"
       },
       {
         "dayNumber": 5,
-        "title": "Pangong Sunrise & Return to Leh via Chang La Pass",
-        "location": "Leh via Chang La",
-        "description": "Witness an unforgettable sunrise reflecting off Pangong Lake. Journey back to Leh crossing Chang La Pass (17,590 ft). Visit the majestic 12-storey Thiksey Monastery on the return.",
-        "morningActivity": "Golden hour sunrise walk along Pangong shoreline",
-        "afternoonActivity": "Cross Chang La pass and visit Thiksey Monastery & Shey Palace",
-        "eveningActivity": "Farewell dinner and souvenir shopping in Leh",
-        "stay": "The Grand Dragon / Spic N Span 4★, Leh",
-        "mealsIncluded": "Breakfast & Dinner",
-        "transfers": "Private Mountain Cab"
+        "title": "Nubra Valley to Pangong Lake",
+        "location": "Pangong Lake",
+        "description": "After breakfast, check out and begin your journey from Nubra Valley towards Pangong Lake. Enjoy the dramatic mountain scenery and changing landscapes along the route. On arrival, check in to your camp or resort near Pangong Lake. Spend the evening enjoying the peaceful lakeside setting and the lake’s changing shades of blue, subject to weather and light conditions. Take photographs and enjoy the sunset views if visibility permits. Dinner and overnight stay near the lake.",
+        "morningActivity": "Check out and begin journey from Nubra Valley towards Pangong Lake",
+        "afternoonActivity": "Arrival and check-in at camp or resort near Pangong Lake",
+        "eveningActivity": "Lakeside sightseeing, changing shades of blue, sunset views & dinner near lake",
+        "stay": "Camp or resort near Pangong Lake",
+        "mealsIncluded": "Breakfast & Dinner as per selected meal plan",
+        "transfers": "Transfer from Nubra Valley to Pangong Lake"
       },
       {
         "dayNumber": 6,
-        "title": "Leh Airport Departure",
-        "location": "Leh Departure",
-        "description": "Early morning transfer to Leh Airport for your scenic flight over the snow-capped Himalayan ranges.",
-        "morningActivity": "Transfer to Leh Airport with cherished memories",
-        "mealsIncluded": "Breakfast",
-        "transfers": "Private Mountain Cab"
+        "title": "Pangong Lake to Leh",
+        "location": "Pangong Lake to Leh",
+        "description": "Wake up early to enjoy the morning scenery around Pangong Lake. After breakfast, check out and begin the scenic drive back to Leh. On arrival, check in to your hotel and relax after the mountain journey. The evening is free for shopping, exploring Leh Market or enjoying leisure time, depending on your arrival schedule. Enjoy dinner and your final overnight stay in Leh.",
+        "morningActivity": "Early morning scenery and photography around Pangong Lake, breakfast and check-out",
+        "afternoonActivity": "Scenic drive back to Leh and check-in to hotel to relax after journey",
+        "eveningActivity": "Free time for shopping, exploring Leh Market, or leisure, followed by farewell dinner",
+        "stay": "Hotel in Leh",
+        "mealsIncluded": "Breakfast & Dinner as per selected meal plan",
+        "transfers": "Scenic return transfer to Leh"
+      },
+      {
+        "dayNumber": 7,
+        "title": "Leh Departure",
+        "location": "Leh Airport",
+        "description": "After breakfast, check out from your hotel. A private transfer will take you to Leh Airport for your onward journey. Your Ladakh tour concludes with memories of mountain passes, beautiful valleys, monasteries, traditional villages and the spectacular Pangong Lake.",
+        "morningActivity": "Breakfast at hotel, check out, and private transfer to Leh Airport",
+        "stay": "Tour ends at Leh Airport",
+        "mealsIncluded": "Breakfast as per selected meal plan",
+        "transfers": "Private departure transfer to Leh Airport"
       }
     ],
-    "season": "Summer",
+    "topPlacesToVisit": [
+      {
+        "name": "Leh",
+        "description": "Leh is the starting and ending point of the tour and offers a combination of Himalayan scenery, historic landmarks, monasteries and local markets. Top places and experiences: Shanti Stupa, Leh Palace, Namgyal Tsemo Monastery, Leh Market, and Indus Valley views."
+      },
+      {
+        "name": "Nubra Valley",
+        "description": "Nubra Valley is known for its striking mountain landscapes, wide-open scenery and the sand dunes around Hunder. It is one of the main highlights of a Ladakh sightseeing tour. Top places and experiences: Diskit Monastery, Hunder Village, Hunder Sand Dunes, optional double-humped Bactrian camel ride, and valley viewpoints and photography."
+      },
+      {
+        "name": "Khardung La",
+        "description": "Khardung La is a well-known high mountain pass on the route towards Nubra Valley. The drive offers dramatic Himalayan scenery, but access depends on road conditions, weather and local restrictions. Top experiences: Scenic mountain drive, mountain photography at permitted stopping points, and panoramic views when visibility permits."
+      },
+      {
+        "name": "Turtuk Village",
+        "description": "Turtuk is a picturesque village known for its distinctive local culture, traditional village setting and surrounding mountain landscapes. The visit is subject to the required permits and local access conditions. Top experiences: Village exploration, cultural and landscape photography, and local surroundings and traditional architecture, where accessible."
+      },
+      {
+        "name": "Pangong Lake",
+        "description": "Pangong Lake is one of the most memorable stops on this itinerary. Its vast mountain setting and changing water colours make it a popular destination for photography and quiet scenic moments. Top experiences: Lakeside sightseeing, sunrise and sunset views (weather permitting), landscape photography, and overnight stay near the lake."
+      },
+      {
+        "name": "Thiksey Monastery and Shey Palace",
+        "description": "Located in the Leh region, these attractions offer insight into Ladakh’s cultural and historic heritage. Their inclusion in the itinerary depends on opening hours and local access. Top experiences: Monastery architecture, heritage sightseeing, and views of the surrounding valley."
+      }
+    ],
+    "thingsToDo": [
+      "Dedicate Day 1 to rest and proper hydration for vital high-altitude acclimatisation in Leh",
+      "Admire 360-degree panoramic views of Leh town and mountains from the iconic Shanti Stupa",
+      "Discover royal Ladakhi heritage at Leh Palace and Namgyal Tsemo Monastery",
+      "Wander through vibrant Leh Market for local handicrafts, pashmina, and souvenirs",
+      "Marvel at the multi-storey architecture of Thiksey Monastery and historic Shey Palace",
+      "Experience the thrilling ascent over Khardung La pass towards the dramatic Nubra Valley",
+      "Explore the historic Diskit Monastery with its towering Buddha statue overlooking Nubra",
+      "Witness the cold desert sand dunes of Hunder and take an optional Bactrian camel ride",
+      "Travel to the culturally distinctive border village of Turtuk amidst apricot orchards (subject to permits)",
+      "Watch the changing turquoise and deep blue shades of Pangong Lake at sunset and sunrise"
+    ],
+    "hotelsAndStays": "Accommodation: Hotels, camps, or resorts for 6 nights as per the confirmed package.\n\n• Leh (Nights 1, 2, and 6): Hotel accommodation in Leh for initial high-altitude acclimatisation, local cultural exploration, and the final night before airport transfer.\n• Nubra Valley (Nights 3 and 4): Hotel or camp accommodation in Nubra Valley conveniently situated for Diskit Monastery, Hunder Sand Dunes, and the Turtuk day excursion.\n• Pangong Lake (Night 5): Camp or resort accommodation near the shores of Pangong Lake for an authentic lakeside experience and mountain views.\n\n• Tailored Selection: Ask Safar Trails to confirm hotel and camp categories, night-wise accommodation, vehicle type, meal plan, permits, entry fees and optional activity costs in writing before booking.",
+    "faqs": [
+      {
+        "question": "How many days are required for the Ladakh Tour Package?",
+        "answer": "This Safar Trails itinerary covers 6 Nights / 7 Days, including Leh, Nubra Valley, Turtuk and Pangong Lake."
+      },
+      {
+        "question": "Where does the Ladakh tour begin and end?",
+        "answer": "The tour begins with arrival at Leh Airport and ends with a departure transfer to Leh Airport."
+      },
+      {
+        "question": "What places are covered in this Ladakh itinerary?",
+        "answer": "The itinerary includes Leh, Shanti Stupa, Leh Palace, Namgyal Tsemo Monastery, Thiksey Monastery, Shey Palace, Khardung La, Nubra Valley, Diskit Monastery, Hunder Sand Dunes, Turtuk Village and Pangong Lake."
+      },
+      {
+        "question": "Is acclimatisation included in the Ladakh tour package?",
+        "answer": "Yes. Day 1 is reserved for rest and acclimatisation in Leh. This is important because Ladakh’s high altitude can cause altitude-related illness. Follow local health advisories and seek medical advice if you have concerns about high-altitude travel."
+      },
+      {
+        "question": "Is the Bactrian camel ride included in the package?",
+        "answer": "The camel ride at Hunder is optional and subject to local availability. Confirm the applicable charges with Safar Trails before booking."
+      },
+      {
+        "question": "Can we visit Turtuk Village during this tour?",
+        "answer": "Yes, Turtuk Village is included in the itinerary, subject to permit requirements, road conditions, weather and local access."
+      },
+      {
+        "question": "Is accommodation near Pangong Lake included?",
+        "answer": "The itinerary includes an overnight stay near Pangong Lake. The exact camp or resort, facilities and room type should be confirmed in the booking quotation."
+      },
+      {
+        "question": "What is the best time to book a Ladakh holiday?",
+        "answer": "The suitable travel period depends on road access, weather and the destinations you want to visit. Conditions can change quickly in high-altitude areas, so confirm the latest route accessibility and accommodation availability before booking."
+      },
+      {
+        "question": "Are permits and entry fees included?",
+        "answer": "The supplied itinerary does not confirm whether permit fees, environmental charges or monument entry fees are included. Ask Safar Trails to list these items clearly in the final quotation."
+      },
+      {
+        "question": "Is the Ladakh Tour Package suitable for families and first-time visitors?",
+        "answer": "It may suit travellers who are comfortable with long mountain journeys and high-altitude travel. First-time visitors should pay particular attention to acclimatisation and discuss any health concerns with a qualified medical professional before travelling."
+      },
+      {
+        "question": "What should I pack for a Ladakh trip?",
+        "answer": "Pack clothing suitable for changing temperatures, warm layers, comfortable footwear, sun protection and personal essentials. Requirements vary by season, so check the forecast and seek advice for your selected travel dates."
+      },
+      {
+        "question": "How can I book the Ladakh Tour Package with Safar Trails?",
+        "answer": "Share your travel dates, number of travellers, preferred accommodation and any special requirements with Safar Trails. Request a detailed quotation with confirmed inclusions, exclusions, permits and activity charges before confirming your booking."
+      }
+    ],
+    "whyChooseSafarTrails": [
+      "Well-Planned Itinerary: Explore Leh, Nubra Valley, Turtuk and Pangong Lake in one organised trip.",
+      "Flexible Travel Options: Discuss your dates, group size and accommodation preferences.",
+      "Clear Package Details: Confirm inclusions, exclusions, permits and optional activity costs before booking.",
+      "Memorable Experiences: Enjoy Himalayan scenery, cultural attractions and beautiful lakeside landscapes.",
+      "Travel Assistance: Get support with itinerary details and booking arrangements."
+    ],
+    "finalCta": {
+      "title": "Book Your Ladakh Tour Package with Safar Trails",
+      "subtitle": "6 Nights / 7 Days • Leh – Nubra Valley – Turtuk – Pangong Lake – Leh",
+      "description": "Explore Leh, Nubra Valley, Turtuk, and Pangong Lake with our Ladakh Tour Package – 6 Nights / 7 Days. Discover ancient monasteries, high mountain passes, peaceful villages, and breathtaking Himalayan landscapes.\n\nGet Your Personalised Tour Quote Today!\n• Share your travel dates, group size, and room requirements.\n• Choose your preferred hotel or camp category.\n• Confirm permits, meals, transfers, and optional activities.\n• Review the final itinerary and booking terms before confirming.\n\nContact Safar Trails Today to plan your unforgettable Ladakh adventure!",
+      "actionLabel": "Get Your Personalised Tour Quote"
+    },
+    "season": "May to October (Peak Season for High Passes & Lakes)",
+    "seoTitle": "Ladakh Tour Package (6N/7D) – Best Deals & Offers | Safar Trails",
+    "seoDescription": "Book the 6N/7D Ladakh Tour Package with Safar Trails. Explore Leh, Khardung La, Nubra Valley, Turtuk Village & Pangong Lake with transfers, stays & sightseeing.",
     "isFeatured": true,
     "isPopular": true
   },
