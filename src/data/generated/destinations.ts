@@ -46,7 +46,7 @@ export const destinationsData: Destination[] = [
       {
         "name": "Port Blair",
         "description": "Often the starting point for an Andaman tour package. Home to several important attractions and a convenient base for exploring nearby destinations — historical sites, local markets and the waterfront.",
-        "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=600&auto=format&fit=crop"
+        "image": "/content/destinations/andaman/2.jpg"
       },
       {
         "name": "Havelock Island",
