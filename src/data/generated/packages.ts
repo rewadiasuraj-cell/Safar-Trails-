@@ -3570,7 +3570,7 @@ export const packagesData: Package[] = [
         "caption": "Fontainhas Latin Quarter & Portuguese Heritage Architecture"
       },
       {
-        "src": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop",
+        "src": "/content/destinations/goa/3.jpg",
         "caption": "Pristine Sands & Coastal Sunset Views"
       }
     ],
