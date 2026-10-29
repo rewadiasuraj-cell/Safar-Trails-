@@ -2,121 +2,332 @@
   "id": "pkg-uttarakhand-rishikesh-corbett",
   "slug": "uttarakhand-rishikesh-mussoorie-corbett",
   "title": "Uttarakhand Tour Package",
+  "badge": "Explore the Beauty of the Himalayas",
   "destination": "Uttarakhand",
   "destinationSlug": "uttarakhand",
   "state": "Uttarakhand",
-  "durationDays": 6,
-  "durationNights": 5,
+  "durationDays": 10,
+  "durationNights": 9,
   "startingPrice": 13999,
   "originalPrice": 18500,
   "tripType": [
-    "Adventure",
     "Family",
+    "Friends",
+    "Nature",
     "Group",
-    "Couple"
+    "Adventure"
   ],
   "hotelCategory": "Deluxe 4★",
   "ratings": 4.9,
   "reviewCount": 310,
-  "startingCity": "Delhi / Dehradun (Pickup)",
-  "bestFor": "Rafters, Wildlife Lovers & Families",
+  "startingCity": "Kathgodam Railway Station",
+  "bestFor": "Families, Friends & Nature Lovers",
   "heroImage": "/content/destinations/uttarakhand/1.jpg",
   "galleryImages": [
-    "/content/destinations/uttarakhand/1.jpg",
-    "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?q=80&w=800&auto=format&fit=crop"
+    {
+      "src": "/content/destinations/uttarakhand/1.jpg",
+      "caption": "Panoramic Himalayan Landscapes & Mountain Trails of Uttarakhand"
+    },
+    {
+      "src": "/content/packages/nainital-tour-package-naini-lake-mall-road-3d2n/naini-lake.jpg",
+      "caption": "Naini Lake & Scenic Kumaon Lake Circuit"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1601821139366-eb14f3628e26?q=80&w=800&auto=format&fit=crop",
+      "caption": "Snow-Covered Peaks & Alpine Slopes of Auli"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?q=80&w=800&auto=format&fit=crop",
+      "caption": "Bengal Tiger in the Wilderness of Jim Corbett National Park"
+    }
   ],
-  "overview": "The ultimate Garhwal & Kumaon getaway: experience thrilling Grade-III white water rafting in Rishikesh, attend the divine sunset Ganga Aarti at Triveni Ghat, take leisurely strolls on the Mall Road in Mussoorie, and embark on an open 4x4 Jeep Safari in Jim Corbett National Park.",
+  "overview": "Explore Uttarakhand with Safar Trails on a 9 nights / 10 days tour package. Discover Nainital’s lakes, Bhimtal’s scenic beauty, Ranikhet’s peaceful hills, Kausani’s Himalayan views, Chopta’s mountain trails, Auli’s landscapes and Jim Corbett’s wildlife. Ideal for families, friends and nature lovers seeking a memorable Himalayan getaway.",
+  "packageDetails": [
+    {
+      "label": "Duration",
+      "value": "9 Nights / 10 Days"
+    },
+    {
+      "label": "Route",
+      "value": "Kathgodam – Nainital – Bhimtal – Ranikhet – Kausani – Chopta – Auli/Joshimath – Jim Corbett"
+    },
+    {
+      "label": "Starting Point",
+      "value": "Kathgodam Railway Station"
+    },
+    {
+      "label": "Travel Style",
+      "value": "Hill stations, lakes, Himalayan viewpoints, nature and optional wildlife experiences"
+    },
+    {
+      "label": "Accommodation",
+      "value": "Hotel stays as per the confirmed itinerary"
+    },
+    {
+      "label": "Customisation",
+      "value": "Contact Safar Trails to discuss travel dates, accommodation preferences and package arrangements"
+    },
+    {
+      "label": "Ideal For",
+      "value": "Families, friends and nature lovers seeking a memorable Himalayan getaway"
+    }
+  ],
   "highlights": [
-    "16 km White Water River Rafting through Shivpuri rapids with cliff jumping",
-    "Soulful sunset Ganga Aarti at Parmarth Niketan / Triveni Ghat",
-    "Open 4x4 Jeep Safari in Jim Corbett National Park (Bijrani / Jhirna zone)",
-    "Scenic Kempty Falls & Gun Hill cable car in Mussoorie",
-    "Stay in luxury riverside glamping tents & jungle wilderness lodges"
+    "Nainital Sightseeing: Visit Naini Lake, Naina Devi Temple, Mall Road and Snow View Point.",
+    "Kumaon Lake Circuit: Explore Bhimtal, Sattal and Naukuchiatal.",
+    "Ranikhet Exploration: Enjoy scenic mountain views and visit Chaubatia Gardens.",
+    "Kausani Attractions: Discover Anasakti Ashram, Kausani Tea Estate and Himalayan viewpoints.",
+    "Chopta Nature Escape: Experience peaceful mountain landscapes and natural beauty.",
+    "Optional Tungnath Trek: Enjoy a scenic trek, subject to weather and trail conditions.",
+    "Auli Mountain Views: Admire panoramic Himalayan landscapes.",
+    "Optional Auli Ropeway: Enjoy a cable car ride, subject to operation and ticket availability."
   ],
   "inclusions": [
-    "5 Nights accommodation in 3★/4★ luxury resorts & riverside camps",
-    "Daily breakfast & dinner (MAP plan)",
-    "16 km River Rafting session with certified river guides & safety gear",
-    "1 Open 4x4 Jeep Safari in Jim Corbett with naturalist guide & park permits",
-    "Dedicated private Sedan/Innova for all transfers and sightseeing"
+    "Accommodation at destinations as per the confirmed itinerary.",
+    "Pickup from Kathgodam Railway Station.",
+    "Transfers between destinations as per the final route.",
+    "Sightseeing and local transfers included in the package.",
+    "Departure transfer to the agreed location on Day 10.",
+    "Meals, vehicle type, driver charges and other services as specified in the final quotation."
   ],
   "exclusions": [
-    "Personal expenses, cafe visits, and adventure activities not mentioned above",
-    "Monument and ropeway tickets"
+    "Flights, train tickets and travel to Kathgodam.",
+    "Meals not specified in the package.",
+    "Naini Lake boating charges.",
+    "Attraction entry fees and applicable permits.",
+    "Optional Tungnath trek services and guide charges.",
+    "Optional Auli ropeway or cable car tickets.",
+    "Optional Jim Corbett jungle safari and permit charges.",
+    "Personal expenses, shopping, laundry, tips and beverages.",
+    "Travel insurance and other unlisted services.",
+    "Additional expenses due to delays, route changes or unforeseen circumstances."
+  ],
+  "importantTravelInfo": [
+    "Quotation Note: The final package price, hotel names, meal plan, vehicle category and included activities must be confirmed in the booking quotation.",
+    "Itinerary Note: This is a suggested itinerary. The route and sightseeing sequence may change depending on travel dates, weather, road conditions, opening hours and local activity availability. The exact departure point and transfer arrangements should be confirmed before booking.",
+    "Preparation Note: Plan suitable clothing for changing mountain weather, carry essential personal medicines, keep some flexibility for road and weather changes, and confirm the operating status of optional activities before travelling."
   ],
   "itinerary": [
     {
       "dayNumber": 1,
-      "title": "Delhi to Rishikesh & Sunset Ganga Aarti",
-      "location": "Rishikesh",
-      "description": "Morning pickup from Delhi/NCR or Dehradun Airport and drive to Rishikesh. Check in to your riverside resort. In the evening, witness the iconic sunset Ganga Aarti ceremony.",
-      "morningActivity": "Drive via Delhi-Meerut expressway to Rishikesh",
-      "afternoonActivity": "Check-in to resort and explore Ram Jhula / Lakshman Jhula",
-      "eveningActivity": "Spiritual Ganga Aarti ceremony with floating lamps",
-      "stay": "Riverside Glamping Resort 4★, Rishikesh",
-      "mealsIncluded": "Dinner",
-      "transfers": "Private AC Cab"
+      "title": "Kathgodam to Nainital – Begin Your Himalayan Holiday",
+      "location": "Kathgodam to Nainital",
+      "description": "Meet your driver at Kathgodam Railway Station and transfer to Nainital. After arriving at your hotel, complete check-in and take time to relax after your journey. If time permits, spend the evening exploring Mall Road or enjoying the atmosphere around the town. Keep the first day relaxed so you can settle into your holiday.",
+      "morningActivity": "Meet driver at Kathgodam Railway Station and scenic uphill transfer to Nainital",
+      "afternoonActivity": "Hotel check-in and relaxation after your journey",
+      "eveningActivity": "Optional evening stroll along Mall Road and lakeside town exploration",
+      "stay": "Hotel in Nainital",
+      "mealsIncluded": "As specified in booking quotation",
+      "transfers": "Station pickup and transfer to Nainital"
     },
     {
       "dayNumber": 2,
-      "title": "White Water Rafting & Cliff Jumping",
-      "location": "Rishikesh (Shivpuri to Nim Beach)",
-      "description": "Gear up for an exhilarating 16 km white water rafting expedition tackling rapids like Roller Coaster, Golf Course, and Club House. Enjoy cliff jumping and body surfing.",
-      "morningActivity": "Safety briefing and 16 km rafting from Shivpuri",
-      "afternoonActivity": "Cafe hopping at Little Buddha Cafe or Beatles Ashram",
-      "eveningActivity": "Bonfire by the river stream at your camp",
-      "stay": "Riverside Glamping Resort 4★, Rishikesh",
-      "mealsIncluded": "Breakfast & Dinner",
-      "transfers": "Private AC Cab"
+      "title": "Nainital Local Sightseeing – Lakes and Mountain Views",
+      "location": "Nainital",
+      "description": "Spend the day exploring Nainital's popular attractions. Visit Naini Lake, where you may enjoy boating if the service is available. Continue to Naina Devi Temple and Mall Road. You may also visit Snow View Point depending on local access and weather conditions. After sightseeing, return to your hotel and enjoy the evening at leisure.",
+      "morningActivity": "Visit Naini Lake with optional boating and explore sacred Naina Devi Temple",
+      "afternoonActivity": "Stroll along Mall Road and visit Snow View Point (weather permitting)",
+      "eveningActivity": "Return to hotel and enjoy a relaxed evening at leisure",
+      "stay": "Hotel in Nainital",
+      "mealsIncluded": "As specified in booking quotation",
+      "transfers": "Local sightseeing vehicle"
     },
     {
       "dayNumber": 3,
-      "title": "Rishikesh to Mussoorie (\"Queen of the Hills\")",
-      "location": "Mussoorie",
-      "description": "Scenic hill drive to Mussoorie. Visit Kempty Falls and enjoy the cool mountain mist. Take a cable car to Gun Hill for panoramic views of Doon Valley and Himalayan ranges.",
-      "morningActivity": "Drive from Rishikesh up to Mussoorie",
-      "afternoonActivity": "Kempty Falls & Gun Hill ropeway",
-      "eveningActivity": "Stroll along the historic Mall Road and Library Bazaar",
-      "stay": "Fortune Resort Grace / Jaypee Residency 4★, Mussoorie",
-      "mealsIncluded": "Breakfast & Dinner",
-      "transfers": "Private AC Cab"
+      "title": "Nainital – Bhimtal – Sattal – Naukuchiatal – Ranikhet",
+      "location": "Kumaon Lakes & Ranikhet",
+      "description": "After breakfast, check out and begin your journey through Uttarakhand's scenic lake region. Visit Bhimtal Lake, followed by Sattal and Naukuchiatal. Enjoy the peaceful surroundings and take photographs during suitable stops along the route. Continue to Ranikhet and check in to your hotel. Spend the rest of the day relaxing after the drive.",
+      "morningActivity": "Breakfast, check-out and excursion through Bhimtal, Sattal, and Naukuchiatal",
+      "afternoonActivity": "Scenic mountain drive towards Ranikhet with photography stops",
+      "eveningActivity": "Check-in at Ranikhet hotel and relax in the quiet mountain ambiance",
+      "stay": "Hotel in Ranikhet",
+      "mealsIncluded": "As specified in booking quotation",
+      "transfers": "Intercity transfer via lake circuit"
     },
     {
       "dayNumber": 4,
-      "title": "Mussoorie to Jim Corbett National Park",
-      "location": "Jim Corbett",
-      "description": "Drive down from Mussoorie to the wilderness fringes of Jim Corbett National Park. Check in to your nature lodge by the Kosi River.",
-      "morningActivity": "Scenic downhill drive through foothills",
-      "afternoonActivity": "Check in to Corbett resort & Garjiya Devi temple visit",
-      "eveningActivity": "Nature walk along Kosi River and wildlife documentary screening",
-      "stay": "Corbett River Creek / The Den Resort 4★, Jim Corbett",
-      "mealsIncluded": "Breakfast & Dinner",
-      "transfers": "Private AC Cab"
+      "title": "Ranikhet to Kausani – Scenic Mountain Roads",
+      "location": "Ranikhet to Kausani",
+      "description": "Explore the surroundings of Ranikhet and visit Chaubatia Gardens if it is open and accessible on your travel date. Later, drive to Kausani through scenic mountain roads. On arrival, settle into your accommodation and enjoy the surrounding landscapes. If weather and visibility permit, take in the Himalayan views around sunset.",
+      "morningActivity": "Explore Ranikhet and visit Chaubatia Gardens (subject to accessibility)",
+      "afternoonActivity": "Scenic mountain drive to Kausani and check-in to accommodation",
+      "eveningActivity": "Witness panoramic Himalayan sunset views over snow peaks (weather permitting)",
+      "stay": "Hotel in Kausani",
+      "mealsIncluded": "As specified in booking quotation",
+      "transfers": "Intercity transfer to Kausani"
     },
     {
       "dayNumber": 5,
-      "title": "Jim Corbett Open 4x4 Jeep Safari",
-      "location": "Jim Corbett Tiger Reserve",
-      "description": "Early morning open 4x4 Gypsy safari into the dense Sal forests of Bijrani/Jhirna zone to track Royal Bengal Tigers, Asiatic elephants, spotted deer, and rare birds.",
-      "morningActivity": "Dawn 4x4 Jeep Safari with forest naturalist",
-      "afternoonActivity": "Corbett Waterfall visit and Corbett Museum in Kaladhungi",
-      "eveningActivity": "Barbecue dinner and leisure by the resort pool",
-      "stay": "Corbett River Creek / The Den Resort 4★, Jim Corbett",
-      "mealsIncluded": "Breakfast & Dinner",
-      "transfers": "Private AC Cab"
+      "title": "Kausani Sightseeing – Viewpoints and Local Attractions",
+      "location": "Kausani",
+      "description": "Discover Kausani's peaceful atmosphere and mountain scenery. Visit Anasakti Ashram and Kausani Tea Estate, subject to opening hours. Explore local viewpoints and enjoy the views when the weather is clear. Keep the evening free for relaxation and time at your accommodation.",
+      "morningActivity": "Visit historic Anasakti Ashram and explore Kausani Tea Estate",
+      "afternoonActivity": "Discover scenic local viewpoints overlooking the Himalayan ranges",
+      "eveningActivity": "Evening at leisure for relaxation at your accommodation",
+      "stay": "Hotel in Kausani",
+      "mealsIncluded": "As specified in booking quotation",
+      "transfers": "Local sightseeing vehicle"
     },
     {
       "dayNumber": 6,
-      "title": "Corbett to Delhi / Dehradun Departure",
-      "location": "Delhi Departure",
-      "description": "After a relaxed breakfast, drive back to Delhi or Dehradun Airport for your onward journey with unforgettable mountain memories.",
-      "morningActivity": "Leisurely breakfast and check out",
-      "afternoonActivity": "Highway drive back to Delhi Airport / Railway Station",
-      "mealsIncluded": "Breakfast",
-      "transfers": "Private AC Cab"
+      "title": "Kausani to Chopta – Into the Mountain Landscape",
+      "location": "Kausani to Chopta",
+      "description": "After check-out, drive towards Chopta. Enjoy the changing scenery along the route, with scenic stops depending on available time and road conditions. On arrival, check in to your accommodation and relax. Enjoy the natural surroundings and prepare for the next day's mountain experience.",
+      "morningActivity": "Breakfast, check-out and drive towards Chopta through alpine valleys",
+      "afternoonActivity": "Scenic stops along the route as you enter the high Garhwal Himalayas",
+      "eveningActivity": "Arrival and check-in at Chopta accommodation; rest in natural surroundings",
+      "stay": "Accommodation in Chopta",
+      "mealsIncluded": "As specified in booking quotation",
+      "transfers": "Intercity transfer to Chopta"
+    },
+    {
+      "dayNumber": 7,
+      "title": "Chopta to Auli/Joshimath – Mountain Adventure and Scenic Travel",
+      "location": "Chopta & Auli / Joshimath",
+      "description": "Spend the morning enjoying the natural surroundings of Chopta. An optional Tungnath trek may be considered only if the trail is open and weather, fitness and local conditions permit. Afterwards, continue towards Joshimath or Auli. Travel time and routing may vary according to road conditions. Check in to your accommodation and enjoy the evening at leisure.",
+      "morningActivity": "Explore natural surroundings of Chopta (optional Tungnath trek, subject to trail/weather)",
+      "afternoonActivity": "Drive onwards to Joshimath or Auli according to mountain road conditions",
+      "eveningActivity": "Check in to accommodation and relax amidst magnificent mountain views",
+      "stay": "Hotel in Auli or Joshimath (as arranged)",
+      "mealsIncluded": "As specified in booking quotation",
+      "transfers": "Transfer to Auli/Joshimath"
+    },
+    {
+      "dayNumber": 8,
+      "title": "Auli Sightseeing – Panoramic Himalayan Scenery",
+      "location": "Auli",
+      "description": "Explore Auli's mountain viewpoints and enjoy panoramic Himalayan scenery when visibility permits. An optional ropeway or cable car experience may be available, depending on operations, weather and ticket availability. Confirm the service before making plans around it. Spend the rest of the day relaxing and enjoying the mountain atmosphere.",
+      "morningActivity": "Explore Auli's viewpoints with panoramic views of Nanda Devi and Himalayan peaks",
+      "afternoonActivity": "Optional Auli ropeway or cable car experience (subject to operation and tickets)",
+      "eveningActivity": "Relax and soak in the crisp high-altitude mountain atmosphere",
+      "stay": "Hotel in Auli or Joshimath (as arranged)",
+      "mealsIncluded": "As specified in booking quotation",
+      "transfers": "Sightseeing vehicle"
+    },
+    {
+      "dayNumber": 9,
+      "title": "Auli to Jim Corbett – Journey Through Uttarakhand",
+      "location": "Auli to Jim Corbett",
+      "description": "After breakfast, check out and begin the road journey towards the Jim Corbett area. This is a long transfer day, so an early start is recommended. On arrival, check in to your hotel and relax. Keep the evening free after the journey.",
+      "morningActivity": "Early morning breakfast, check-out and long scenic drive down to the foothills",
+      "afternoonActivity": "Travel through scenic mountain valleys towards the Jim Corbett wilderness area",
+      "eveningActivity": "Check in to hotel in Jim Corbett area and unwind after the journey",
+      "stay": "Hotel in Jim Corbett area",
+      "mealsIncluded": "As specified in booking quotation",
+      "transfers": "Long-distance transfer to Jim Corbett"
+    },
+    {
+      "dayNumber": 10,
+      "title": "Jim Corbett – Optional Jungle Safari and Departure",
+      "location": "Jim Corbett & Departure",
+      "description": "You may choose an optional jungle safari in the Jim Corbett area. Safari participation depends on advance permit booking, zone availability and the required reporting time. After the activity, transfer to your agreed departure point. Allow sufficient time for onward travel when planning your departure.",
+      "morningActivity": "Optional morning jungle safari in Jim Corbett (subject to advance permits & zone availability)",
+      "afternoonActivity": "Transfer to your agreed departure point for onward travel",
+      "stay": "Tour ends at agreed departure point",
+      "mealsIncluded": "Breakfast (as confirmed)",
+      "transfers": "Departure transfer to agreed location"
     }
   ],
-  "season": "All Season",
+  "topPlacesToVisit": [
+    {
+      "name": "Nainital – Lakes, Temples and Local Markets",
+      "description": "Nainital is the first destination of this Uttarakhand tour, offering lakeside scenery and popular local attractions. Places and activities: Visit Naini Lake, enjoy boating if available, explore Naina Devi Temple, walk along Mall Road, and visit Snow View Point when accessible and weather permits."
+    },
+    {
+      "name": "Bhimtal, Sattal and Naukuchiatal – The Kumaon Lake Region",
+      "description": "Explore three scenic lake destinations while travelling from Nainital towards Ranikhet. Places and activities: Visit Bhimtal Lake, explore Sattal, stop at Naukuchiatal, and enjoy the natural scenery and photography opportunities."
+    },
+    {
+      "name": "Ranikhet – Gardens and Mountain Scenery",
+      "description": "Ranikhet offers a quieter mountain atmosphere and scenic surroundings. Places and activities: Explore the local surroundings, visit Chaubatia Gardens if open and accessible, and enjoy scenic stops along the route."
+    },
+    {
+      "name": "Kausani – Himalayan Viewpoints and Tea Estate",
+      "description": "Kausani is known for its mountain scenery and peaceful setting. Places and activities: Visit Anasakti Ashram, explore Kausani Tea Estate (subject to opening hours), visit local viewpoints, and enjoy Himalayan views when weather and visibility permit."
+    },
+    {
+      "name": "Chopta – Nature and Optional Trekking",
+      "description": "Chopta is a key stop for travellers seeking mountain scenery and outdoor experiences. Places and activities: Enjoy the natural surroundings, take photographs at suitable scenic stops, and consider the optional Tungnath trek only when the trail and conditions allow."
+    },
+    {
+      "name": "Auli and Joshimath – Panoramic Mountain Views",
+      "description": "Auli offers mountain viewpoints and opportunities to enjoy Himalayan scenery. Places and activities: Explore Auli's viewpoints, enjoy panoramic scenery when visibility permits, consider an optional ropeway or cable car if operating and tickets are available, and relax and explore the local surroundings."
+    },
+    {
+      "name": "Jim Corbett – Optional Wildlife Experience",
+      "description": "The final destination provides an opportunity to unwind and consider a jungle safari. Places and activities: Stay in the Jim Corbett area, consider an optional jungle safari, and confirm safari zone availability, permits and reporting times in advance."
+    }
+  ],
+  "thingsToDo": [
+    "Visit Naini Lake, sacred Naina Devi Temple, and vibrant Mall Road in Nainital",
+    "Explore the scenic Kumaon lake circuit covering Bhimtal, Sattal, and Naukuchiatal",
+    "Admire Himalayan vistas and stroll through Chaubatia Gardens in Ranikhet",
+    "Visit historic Anasakti Ashram and Kausani Tea Estate overlooking Himalayan peaks",
+    "Immerse in the pristine alpine meadows and tranquil forest atmosphere of Chopta",
+    "Consider an optional trek to the world's highest Shiva temple at Tungnath (conditions permitting)",
+    "Experience panoramic views of Nanda Devi and snow-draped slopes in Auli",
+    "Take an optional ride on the iconic Auli ropeway / cable car (subject to operation)",
+    "Consider an exhilarating open jungle safari to spot wildlife in Jim Corbett National Park"
+  ],
+  "hotelsAndStays": "Accommodation: Hotel stays for 9 nights as per the confirmed itinerary.\n\n• Nainital (Nights 1 & 2): Comfortable lakeside or hill resort in Nainital for town sightseeing and lake exploration.\n• Ranikhet (Night 3): Quiet hill retreat in Ranikhet surrounded by pine forests and mountain views.\n• Kausani (Nights 4 & 5): Scenic mountain resort in Kausani offering uninterrupted Himalayan peak views.\n• Chopta (Night 6): Natural eco-resort or camp accommodation in the high-altitude meadows of Chopta.\n• Auli / Joshimath (Nights 7 & 8): Mountain lodge in Auli or Joshimath convenient for viewpoint exploration and ropeway access.\n• Jim Corbett (Night 9): Nature resort in the Corbett area ideal for relaxing and optional morning jungle safaris.\n\n• Customisation Note: The final package price, hotel names, meal plan, vehicle category and included activities must be confirmed in the booking quotation.",
+  "faqs": [
+    {
+      "question": "How many days are required for this Uttarakhand tour?",
+      "answer": "The Uttarakhand Complete Grand Tour is planned for 9 nights and 10 days, covering Nainital, Bhimtal, Ranikhet, Kausani, Chopta, Auli/Joshimath and the Jim Corbett area."
+    },
+    {
+      "question": "Where does the Uttarakhand tour package start?",
+      "answer": "The supplied itinerary starts with a pickup from Kathgodam Railway Station. Travellers should confirm their arrival timing and the final transfer arrangements with Safar Trails."
+    },
+    {
+      "question": "Which destinations are covered in the package?",
+      "answer": "The itinerary covers Kathgodam, Nainital, Bhimtal, Sattal, Naukuchiatal, Ranikhet, Kausani, Chopta, Auli or Joshimath, and the Jim Corbett area."
+    },
+    {
+      "question": "Is this Uttarakhand holiday package suitable for families?",
+      "answer": "The package combines sightseeing, lake destinations, mountain viewpoints and leisure time. Families should discuss the ages, mobility needs and preferences of their travellers with Safar Trails, particularly when considering long road transfers or optional trekking."
+    },
+    {
+      "question": "Is the Tungnath trek included?",
+      "answer": "The itinerary lists the Tungnath trek as optional. It should only be attempted if the trail is open and weather, fitness and local conditions permit. Confirm arrangements and any additional costs before departure."
+    },
+    {
+      "question": "Is the Auli ropeway included in the package?",
+      "answer": "The ropeway or cable car is listed as optional and is subject to operation, weather and ticket availability. Confirm whether tickets are included in your quotation."
+    },
+    {
+      "question": "Does the package include a Jim Corbett jungle safari?",
+      "answer": "The itinerary offers an optional safari on Day 10. Safari permits, zone availability, reporting times and charges must be checked in advance. Do not assume the safari is included unless it is stated in your booking confirmation."
+    },
+    {
+      "question": "What is included in the Uttarakhand tour package price?",
+      "answer": "Inclusions depend on the final package quotation. Confirm the accommodation, transport, meal plan, sightseeing, driver charges, permits and entry tickets before making payment."
+    },
+    {
+      "question": "Can the Uttarakhand tour package be customised?",
+      "answer": "Contact Safar Trails to discuss your travel dates, accommodation preferences and sightseeing requirements. Changes depend on route feasibility, availability and the final quotation."
+    },
+    {
+      "question": "What is the best way to prepare for this trip?",
+      "answer": "Plan suitable clothing for changing mountain weather, carry essential personal medicines, keep some flexibility for road and weather changes, and confirm the operating status of optional activities before travelling."
+    }
+  ],
+  "whyChooseSafarTrails": [
+    "Well-Planned Himalayan Circuit: Explore Nainital, Ranikhet, Kausani, Chopta, Auli and Jim Corbett in one seamless 10-day itinerary.",
+    "Diverse Travel Experiences: Experience lakes, serene hill stations, Himalayan viewpoints, alpine trails and wildlife reserves.",
+    "Flexible & Customisable: Contact Safar Trails to discuss preferred travel dates, accommodation categories and trip requirements.",
+    "Transparent Inclusions: Clearly understand package inclusions, exclusions and optional activity costs before booking.",
+    "Dedicated Travel Assistance: Receive expert assistance and planned transfer coordination throughout your Uttarakhand journey."
+  ],
+  "finalCta": {
+    "title": "Book Your Uttarakhand Tour Package with Safar Trails",
+    "subtitle": "9 Nights / 10 Days • Nainital – Kausani – Chopta – Auli – Jim Corbett",
+    "description": "Your Himalayan Holiday Starts Here\n\nDiscover the beauty of Uttarakhand with Safar Trails’ 9 Nights / 10 Days Tour Package. Explore Nainital’s lakes, Kausani’s Himalayan views, Chopta’s mountain landscapes, Auli’s scenic viewpoints and Jim Corbett’s wildlife.\n\nContact Safar Trails for a personalised quote. Share your travel dates, group size and accommodation preferences to plan your ideal Himalayan getaway.\n\nStart your Uttarakhand adventure with Safar Trails!",
+    "actionLabel": "Get Your Personalised Quote Today"
+  },
+  "season": "Year-round (March to June & September to November Pleasant)",
+  "seoTitle": "Uttarakhand Tour Package (9N/10D) – Explore the Himalayas | Safar Trails",
+  "seoDescription": "Book the 9N/10D Uttarakhand Tour Package with Safar Trails from Kathgodam. Discover Nainital, Kumaon lakes, Ranikhet, Kausani, Chopta, Auli & Jim Corbett.",
   "isFeatured": true,
   "isPopular": true
 }
