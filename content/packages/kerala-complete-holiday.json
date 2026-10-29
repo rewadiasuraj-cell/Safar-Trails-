@@ -2,55 +2,332 @@
   "id": "pkg-kerala-complete-holiday",
   "slug": "kerala-complete-holiday",
   "title": "Kerala Complete Grand Tour",
+  "badge": "Explore God’s Own Country",
   "destination": "Kerala",
   "destinationSlug": "kerala",
   "state": "Kerala",
-  "durationDays": 7,
-  "durationNights": 6,
+  "durationDays": 10,
+  "durationNights": 9,
   "startingPrice": 22499,
   "originalPrice": 28000,
   "tripType": [
     "Family",
     "Couple",
-    "Nature"
+    "Nature",
+    "Group"
   ],
   "hotelCategory": "Deluxe 4★",
   "ratings": 4.9,
   "reviewCount": 164,
-  "startingCity": "Cochin",
-  "bestFor": "Families & Nature Lovers",
+  "startingCity": "Kochi Airport / Railway Station",
+  "bestFor": "Families, Friends & Travellers Seeking a Memorable South India Holiday",
   "heroImage": "/content/destinations/kerala/2.avif",
   "galleryImages": [
-    "/content/destinations/kerala/2.avif"
+    {
+      "src": "/content/destinations/kerala/2.avif",
+      "caption": "Scenic Landscapes & Backwaters of Kerala"
+    },
+    {
+      "src": "/content/destinations/kerala/1.jpg",
+      "caption": "Tea Plantations & Mist-Covered Hills of Munnar"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=800&auto=format&fit=crop",
+      "caption": "Traditional Alleppey Houseboat Cruise in the Backwaters"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=800&auto=format&fit=crop",
+      "caption": "Lighthouse Beach & Coastal Palm Groves of Kovalam"
+    }
   ],
-  "overview": "Grand Kerala 7-Day Experience: Cochin Chinese Fishing Nets, tea gardens of Munnar, Periyar Wildlife Sanctuary in Thekkady, Alleppey Private Houseboat cruise, and Kovalam cliff beaches.",
+  "overview": "Explore the Best of Kerala in 9 Nights / 10 Days.\n\nExplore Kerala with Safar Trails on a 9 nights / 10 days Kerala Complete Grand Tour. Discover Kochi’s cultural heritage, Munnar’s tea plantations, Thekkady’s spice gardens, Alleppey’s backwaters and houseboat experience, Kovalam’s beaches, and Trivandrum’s attractions. Perfect for families, friends, and travellers seeking a memorable South India holiday.",
+  "packageDetails": [
+    {
+      "label": "Duration",
+      "value": "9 Nights / 10 Days"
+    },
+    {
+      "label": "Route",
+      "value": "Kochi – Munnar – Thekkady – Alleppey – Kovalam – Trivandrum"
+    },
+    {
+      "label": "Starting Point",
+      "value": "Kochi Airport or Railway Station"
+    },
+    {
+      "label": "Departure Point",
+      "value": "Trivandrum Airport or Railway Station"
+    },
+    {
+      "label": "Travel Style",
+      "value": "Scenic sightseeing, nature, backwaters, culture and beach leisure"
+    },
+    {
+      "label": "Accommodation",
+      "value": "Hotel stays and one overnight houseboat stay, as arranged in the confirmed package"
+    },
+    {
+      "label": "Customisation",
+      "value": "Request your preferred travel dates, accommodation category and trip requirements from Safar Trails"
+    },
+    {
+      "label": "Ideal For",
+      "value": "Families, friends, and travellers seeking a memorable South India holiday"
+    }
+  ],
   "highlights": [
-    "2 Nights Munnar + 1 Night Thekkady + 1 Night Alleppey Houseboat + 2 Nights Kovalam",
-    "Exclusive private AC Deluxe Houseboat with traditional Kerala meals",
-    "Periyar boat safari & spice plantation walk"
+    "Kochi Heritage: Explore Fort Kochi, Chinese Fishing Nets and Marine Drive.",
+    "Munnar Hills: Enjoy scenic drives, tea plantations and Cheeyappara Waterfalls.",
+    "Munnar Sightseeing: Visit Mattupetty Dam and Echo Point.",
+    "Thekkady Nature: Discover Periyar Lake and local spice plantations.",
+    "Alleppey Houseboat: Experience an overnight cruise through Kerala’s beautiful backwaters.",
+    "Kovalam Beaches: Relax at Lighthouse Beach and Hawa Beach.",
+    "Poovar Excursion: Opt for a scenic backwater boat ride.",
+    "Trivandrum Tour: Explore selected temples and museums.",
+    "Complete Kerala Experience: Discover hill stations, culture, nature, backwaters and beaches in one 10-day tour."
   ],
   "inclusions": [
-    "6 Nights 4★ Resort & Houseboat stay",
-    "Daily Breakfast & Dinner",
-    "Private AC Sedan"
+    "Hotel accommodation at all destinations as per the confirmed itinerary.",
+    "Overnight houseboat stay in Alleppey.",
+    "Pickup from Kochi Airport or Railway Station.",
+    "Intercity transfers as per the tour itinerary.",
+    "Drop-off at Trivandrum Airport or Railway Station.",
+    "Sightseeing and local transfers included in the package.",
+    "Meals, vehicle type and other services as specified in the booking confirmation."
   ],
   "exclusions": [
-    "Airfare to Cochin / Trivandrum"
+    "Flights and train tickets.",
+    "Meals not specified in the package.",
+    "Entry fees, attraction tickets and camera charges.",
+    "Optional Periyar boating and nature activities.",
+    "Cultural programmes in Thekkady.",
+    "Optional Poovar backwater boat excursion.",
+    "Eravikulam National Park tickets or permits, if applicable.",
+    "Personal expenses, shopping, tips and laundry.",
+    "Travel insurance and other unlisted services.",
+    "Additional costs due to itinerary changes, delays or unforeseen circumstances."
+  ],
+  "importantTravelInfo": [
+    "Booking Note: The final price, accommodation names, meal plan, vehicle arrangements and confirmed inclusions should be shared with the traveller before booking.",
+    "Itinerary Note: This is a suggested route. The final sightseeing sequence and activities may change according to travel dates, weather, road conditions, attraction opening hours and local availability.",
+    "Safety Guidance: Follow local safety guidance and swim only in areas considered safe by local authorities when exploring Kovalam's beaches."
   ],
   "itinerary": [
     {
       "dayNumber": 1,
-      "title": "Cochin Arrival & Scenic Drive to Munnar",
+      "title": "Arrival in Kochi – Welcome to Kerala",
+      "location": "Kochi",
+      "description": "Arrive at Kochi Airport or Railway Station, where your transfer to the hotel will be arranged. After check-in, relax and settle in after your journey. Depending on your arrival time, you may explore Fort Kochi, see the iconic Chinese Fishing Nets and enjoy a walk along Marine Drive. If you arrive late, keep the day relaxed and enjoy the hotel facilities.",
+      "morningActivity": "Arrival at Kochi Airport or Railway Station, greeting and hotel transfer",
+      "afternoonActivity": "Hotel check-in and relaxation after your journey",
+      "eveningActivity": "Optional exploration of Fort Kochi, Chinese Fishing Nets, or Marine Drive stroll",
+      "stay": "Hotel in Kochi",
+      "mealsIncluded": "As per confirmed booking",
+      "transfers": "Arrival transfer"
+    },
+    {
+      "dayNumber": 2,
+      "title": "Kochi to Munnar – A Scenic Hill Journey",
+      "location": "Kochi to Munnar",
+      "description": "After breakfast, check out from your hotel and begin the drive to Munnar. As you leave Kochi behind, enjoy changing landscapes and the scenic route towards Kerala's famous hill station. En route, you may stop at Cheeyappara Waterfalls and nearby viewpoints if weather conditions, road access and available time allow. On arrival in Munnar, check in at your hotel and enjoy a peaceful evening surrounded by the hill-country atmosphere.",
+      "morningActivity": "Breakfast, check-out and scenic mountain drive from Kochi towards Munnar",
+      "afternoonActivity": "En route stop at Cheeyappara Waterfalls and panoramic hill viewpoints",
+      "eveningActivity": "Check in at Munnar hotel and peaceful leisure evening in the hills",
+      "stay": "Hotel in Munnar",
+      "mealsIncluded": "Breakfast (meals as confirmed)",
+      "transfers": "Intercity transfer to Munnar"
+    },
+    {
+      "dayNumber": 3,
+      "title": "Munnar Sightseeing – Tea Gardens and Mountain Views",
       "location": "Munnar",
-      "description": "Pickup from Cochin Airport and drive through Cheeyappara & Valara waterfalls to Munnar.",
-      "morningActivity": "Cochin pickup & waterfall stops",
-      "eveningActivity": "Check in to Munnar tea resort",
-      "stay": "Blanket Hotel & Spa / Tea County 4★, Munnar",
-      "mealsIncluded": "Dinner",
-      "transfers": "Private AC Cab"
+      "description": "Spend the day exploring Munnar's scenic surroundings. Visit tea plantations and viewpoints to appreciate the region's green slopes and mountain scenery. Continue to Mattupetty Dam and Echo Point, two popular stops on a Munnar sightseeing trip. Eravikulam National Park may also be included, subject to opening schedules, permits and ticket availability. Advance planning may be required for this visit. Return to your hotel after sightseeing and enjoy the rest of the evening at leisure.",
+      "morningActivity": "Explore Munnar's vast tea plantations and mountain viewpoints",
+      "afternoonActivity": "Visit Mattupetty Dam and Echo Point (Eravikulam National Park subject to permits)",
+      "eveningActivity": "Return to hotel and enjoy the rest of the evening at leisure",
+      "stay": "Hotel in Munnar",
+      "mealsIncluded": "Breakfast (meals as confirmed)",
+      "transfers": "Sightseeing vehicle"
+    },
+    {
+      "dayNumber": 4,
+      "title": "Munnar to Thekkady – Into Kerala's Spice Country",
+      "location": "Munnar to Thekkady",
+      "description": "After breakfast, check out and drive towards Thekkady. Enjoy the changing scenery as the journey takes you from Munnar's hills into a region known for spice plantations and nature experiences. Depending on your preferences and local availability, visit a spice plantation. You may also choose an optional cultural programme in the evening, depending on show timings and booking arrangements.",
+      "morningActivity": "Breakfast, check-out and drive from Munnar to Thekkady through spice-growing hills",
+      "afternoonActivity": "Check in to Thekkady hotel and visit a local spice plantation",
+      "eveningActivity": "Optional cultural programme (Kathakali or Kalaripayattu, subject to schedule)",
+      "stay": "Hotel in Thekkady",
+      "mealsIncluded": "Breakfast (meals as confirmed)",
+      "transfers": "Intercity transfer to Thekkady"
+    },
+    {
+      "dayNumber": 5,
+      "title": "Thekkady Sightseeing – Periyar Lake and Local Markets",
+      "location": "Thekkady",
+      "description": "Explore the Periyar Lake area and its natural surroundings. If available, you may choose an optional boating or nature-based activity, subject to operating schedules, permits and availability. Later, explore the local market, where you can browse regional spices and souvenirs. Keep some free time to relax or enjoy the atmosphere of Thekkady before returning to your accommodation.",
+      "morningActivity": "Explore Periyar Lake surroundings with optional boating or nature activities",
+      "afternoonActivity": "Browse the vibrant local market for aromatic Kerala spices and souvenirs",
+      "eveningActivity": "Free time to relax and absorb the serene ambiance of Thekkady",
+      "stay": "Hotel in Thekkady",
+      "mealsIncluded": "Breakfast (meals as confirmed)",
+      "transfers": "Sightseeing vehicle"
+    },
+    {
+      "dayNumber": 6,
+      "title": "Thekkady to Alleppey – Overnight Houseboat Experience",
+      "location": "Thekkady to Alleppey",
+      "description": "After breakfast, travel to Alleppey, one of Kerala's best-known backwater destinations. On arrival, board your houseboat according to the confirmed check-in time. Settle in and enjoy the backwater scenery as the boat moves through canals, waterways and areas surrounded by village life. Observe the peaceful landscapes from the water and enjoy a slower pace of travel. Houseboat meal arrangements and cruise timings depend on the selected boat and booking confirmation.",
+      "morningActivity": "Breakfast, check-out and journey to the world-famous Alleppey backwaters",
+      "afternoonActivity": "Board the traditional Kerala houseboat and start peaceful backwater cruise",
+      "eveningActivity": "Observe canal village life, sunset over waterways, dinner and overnight houseboat stay",
+      "stay": "Overnight Houseboat in Alleppey",
+      "mealsIncluded": "Houseboat meals as confirmed (Lunch, Dinner & Breakfast)",
+      "transfers": "Transfer to Alleppey & Houseboat cruise"
+    },
+    {
+      "dayNumber": 7,
+      "title": "Alleppey to Kovalam – Journey to the Coast",
+      "location": "Alleppey to Kovalam",
+      "description": "After the houseboat check-out, continue your journey towards Kovalam. A stop in Trivandrum may be possible if time and your travel schedule permit. On arrival in Kovalam, check in to your hotel and spend the remaining time relaxing near the beach area. Enjoy the coastal atmosphere and prepare for a more leisurely day by the sea.",
+      "morningActivity": "Morning cruise, breakfast on houseboat, check-out and drive south towards Kovalam",
+      "afternoonActivity": "Optional stop in Trivandrum en route if time permits; check in at Kovalam hotel",
+      "eveningActivity": "Relax near the beach area and enjoy the refreshing coastal sea breeze",
+      "stay": "Hotel in Kovalam",
+      "mealsIncluded": "Breakfast (meals as confirmed)",
+      "transfers": "Intercity transfer to Kovalam"
+    },
+    {
+      "dayNumber": 8,
+      "title": "Kovalam Sightseeing – Beaches and Leisure",
+      "location": "Kovalam",
+      "description": "Explore Kovalam's popular coastal attractions, including Lighthouse Beach and Hawa Beach. Enjoy the shoreline, take photographs and spend time at leisure. You can keep the day relaxed, with time to enjoy the surroundings or explore nearby areas at your own pace. Follow local safety guidance and swim only in areas considered safe by local authorities. Return to your hotel after sightseeing.",
+      "morningActivity": "Visit picturesque Lighthouse Beach and stroll along the crescent coastline",
+      "afternoonActivity": "Explore Hawa Beach, relax at seaside cafes, and take scenic photos",
+      "eveningActivity": "Watch the sunset over the Arabian Sea and return to your hotel",
+      "stay": "Hotel in Kovalam",
+      "mealsIncluded": "Breakfast (meals as confirmed)",
+      "transfers": "Local sightseeing transfer"
+    },
+    {
+      "dayNumber": 9,
+      "title": "Optional Poovar Excursion and Trivandrum Exploration",
+      "location": "Poovar & Trivandrum",
+      "description": "Depending on availability, begin the day with an optional Poovar backwater boat excursion. This can add another scenic water-based experience to your Kerala holiday. Later, explore selected Trivandrum attractions, such as local temples or museums, depending on your interests, opening hours and entry requirements. Your overnight arrangement will be in Kovalam or Trivandrum, depending on your departure schedule.",
+      "morningActivity": "Optional scenic backwater boat excursion through the mangrove estuaries of Poovar",
+      "afternoonActivity": "Explore selected Trivandrum cultural attractions, local temples or museums",
+      "eveningActivity": "Leisure time, farewell dinner, and overnight stay in Kovalam or Trivandrum",
+      "stay": "Hotel in Kovalam or Trivandrum (as arranged)",
+      "mealsIncluded": "Breakfast (meals as confirmed)",
+      "transfers": "Sightseeing and excursion vehicle"
+    },
+    {
+      "dayNumber": 10,
+      "title": "Departure from Trivandrum – End of Your Kerala Holiday",
+      "location": "Trivandrum",
+      "description": "Enjoy breakfast and check out from your accommodation. A transfer to Trivandrum Airport or Railway Station will be arranged according to your confirmed departure schedule. Leave Kerala with memories of its green hills, scenic backwaters, cultural attractions and relaxing coastline.",
+      "morningActivity": "Breakfast, check-out from hotel, and private transfer to Trivandrum Airport or Railway Station",
+      "stay": "Tour ends in Trivandrum",
+      "mealsIncluded": "Breakfast (meals as confirmed)",
+      "transfers": "Departure transfer to Trivandrum Airport / Railway Station"
     }
   ],
-  "season": "All Season",
+  "topPlacesToVisit": [
+    {
+      "name": "Kochi – Heritage and Waterfront Attractions",
+      "description": "Begin your holiday in Kochi, a coastal city known for its historic neighbourhoods and waterfront atmosphere. Places and activities: Explore Fort Kochi, see the Chinese Fishing Nets, walk around Marine Drive, and enjoy local markets and the city atmosphere."
+    },
+    {
+      "name": "Munnar – Tea Plantations and Hill Scenery",
+      "description": "Munnar offers green tea-covered slopes, scenic viewpoints and a refreshing hill-station setting. Places and activities: Explore tea plantations, visit Mattupetty Dam, spend time at Echo Point, enjoy scenic viewpoints, and visit Eravikulam National Park if open and available."
+    },
+    {
+      "name": "Thekkady – Nature and Spice Experiences",
+      "description": "Thekkady is a key stop for travellers interested in the Periyar Lake area, local spice culture and optional nature activities. Places and activities: Explore the Periyar Lake surroundings, consider optional boating or nature activities, visit a spice plantation, browse local markets for spices and souvenirs, and attend an optional cultural programme."
+    },
+    {
+      "name": "Alleppey – Backwaters and Houseboat Stay",
+      "description": "Alleppey is one of the signature experiences of this Kerala holiday, offering an overnight stay on a houseboat. Places and activities: Enjoy a houseboat cruise, view backwater canals and village scenery, relax aboard the boat, and experience meals according to your selected houseboat package."
+    },
+    {
+      "name": "Kovalam – Beaches and Coastal Leisure",
+      "description": "Kovalam provides time to slow down after the hill stations and backwaters. Places and activities: Visit Lighthouse Beach, explore Hawa Beach, enjoy coastal views and leisure time, and follow local guidance for beach and swimming safety."
+    },
+    {
+      "name": "Poovar and Trivandrum – Optional Excursions",
+      "description": "Use your final full day to explore selected attractions in the southern part of Kerala. Places and activities: Consider a Poovar backwater boat excursion, visit selected Trivandrum temples or museums, and plan sightseeing around opening hours and your departure arrangements."
+    }
+  ],
+  "thingsToDo": [
+    "Explore historic Fort Kochi, the Chinese Fishing Nets, and vibrant Marine Drive",
+    "Take a scenic mountain drive to Munnar with a photo stop at Cheeyappara Waterfalls",
+    "Wander through rolling tea plantations, Mattupetty Dam, and Echo Point in Munnar",
+    "Visit a fragrant spice plantation in Thekkady and attend an optional cultural Kathakali show",
+    "Explore Periyar Lake surroundings with optional boating and nature activities",
+    "Spend a magical night aboard a traditional private houseboat cruising Alleppey's backwaters",
+    "Unwind by the Arabian Sea at Lighthouse Beach and Hawa Beach in Kovalam",
+    "Opt for a tranquil country boat cruise through the mangrove backwaters of Poovar",
+    "Discover Trivandrum's iconic heritage, architectural landmarks, and local museums"
+  ],
+  "hotelsAndStays": "Accommodation: Hotel stays and one overnight houseboat stay for 9 nights as per the confirmed package.\n\n• Kochi (Night 1): Comfortable hotel in Kochi for initial arrival, waterfront walks, and heritage exploration.\n• Munnar (Nights 2 & 3): Hill resort situated amidst the tea-covered slopes and mountain viewpoints of Munnar.\n• Thekkady (Nights 4 & 5): Nature resort or boutique stay convenient for Periyar Lake and spice plantations.\n• Alleppey (Night 6): Traditional Kerala backwater houseboat with private bedrooms, sundeck, and dedicated crew.\n• Kovalam / Trivandrum (Nights 7, 8 & 9): Coastal beach resort in Kovalam or city stay in Trivandrum convenient for departure.\n\n• Customisation: Request your preferred travel dates, accommodation category and trip requirements from Safar Trails before booking.",
+  "faqs": [
+    {
+      "question": "How many days are needed for the Kerala Complete Grand Tour?",
+      "answer": "This package is planned for 9 nights and 10 days, allowing you to visit Kochi, Munnar, Thekkady, Alleppey, Kovalam and Trivandrum."
+    },
+    {
+      "question": "Which destinations are covered in this Kerala tour package?",
+      "answer": "The route covers Kochi, Munnar, Thekkady, Alleppey, Kovalam and Trivandrum, with sightseeing and optional activities as outlined in the itinerary."
+    },
+    {
+      "question": "Does the Kerala package include an Alleppey houseboat stay?",
+      "answer": "Yes, the itinerary includes an overnight houseboat stay in Alleppey. The selected boat, meal arrangements, cruise timings and any additional inclusions should be confirmed when booking."
+    },
+    {
+      "question": "Is this Kerala tour package suitable for families?",
+      "answer": "The itinerary offers a mix of scenic drives, sightseeing, nature, backwaters and beaches, which may suit families. Share the ages and needs of your travellers with Safar Trails to check suitability and customise the arrangements."
+    },
+    {
+      "question": "Can couples book the Kerala Complete Grand Tour?",
+      "answer": "Yes. Couples can enquire about this itinerary and request suitable accommodation and travel arrangements according to their preferences and budget."
+    },
+    {
+      "question": "Are all sightseeing tickets and activities included?",
+      "answer": "Not necessarily. The itinerary lists certain optional activities and attractions subject to availability. Confirm entry fees, permits, boating, cultural shows and other activity costs in your final quotation."
+    },
+    {
+      "question": "Can I customise the Kerala tour itinerary?",
+      "answer": "You can contact Safar Trails to discuss preferred travel dates, accommodation options and sightseeing preferences. Any changes will depend on feasibility, availability and the final package quotation."
+    },
+    {
+      "question": "Where does the Kerala tour start and end?",
+      "answer": "The planned arrival transfer is from Kochi Airport or Railway Station. The tour concludes with a transfer to Trivandrum Airport or Railway Station."
+    },
+    {
+      "question": "Is the Poovar backwater excursion included?",
+      "answer": "The supplied itinerary lists Poovar as an optional excursion. Its availability and cost should be confirmed before booking."
+    },
+    {
+      "question": "What should I confirm before booking this Kerala holiday package?",
+      "answer": "Confirm the total price, accommodation details, meal plan, transport, sightseeing schedule, entry tickets, optional activities, cancellation terms and any additional charges."
+    }
+  ],
+  "whyChooseSafarTrails": [
+    "Well-Planned Travel: Follow a structured route covering Kerala's hills, backwaters and beaches.",
+    "Multiple Destinations: Explore Kochi, Munnar, Thekkady, Alleppey, Kovalam and Trivandrum in one holiday.",
+    "Flexible Arrangements: Discuss your travel dates, accommodation preferences and sightseeing requirements.",
+    "Transparent Package Details: Review the inclusions, exclusions and optional costs before confirming your booking.",
+    "Personalised Assistance: Get help understanding your itinerary and planning the arrangements for your trip."
+  ],
+  "finalCta": {
+    "title": "Book Your Kerala Complete Grand Tour with Safar Trails",
+    "subtitle": "9 Nights / 10 Days • Kochi – Munnar – Thekkady – Alleppey – Kovalam – Trivandrum",
+    "description": "Your Kerala Holiday Starts Here\n\nExplore God’s Own Country with Safar Trails’ Kerala Complete Grand Tour (9 Nights / 10 Days). Discover Munnar’s tea gardens, Alleppey’s backwaters, Thekkady’s natural beauty and Kovalam’s scenic beaches.\n\nContact our team for a personalised quote. Share your travel dates, group size and accommodation preferences to customise your Kerala holiday.\n\nPlan your Kerala getaway with Safar Trails!",
+    "actionLabel": "Get Your Personalised Quote Today"
+  },
+  "season": "All Season (October to March Peak Season)",
+  "seoTitle": "Kerala Complete Grand Tour (9N/10D) – Explore God’s Own Country | Safar Trails",
+  "seoDescription": "Book the 9N/10D Kerala Complete Grand Tour with Safar Trails. Explore Kochi, Munnar, Thekkady, Alleppey houseboat, Kovalam beaches & Trivandrum with custom options.",
   "isFeatured": true,
   "isPopular": true
 }
