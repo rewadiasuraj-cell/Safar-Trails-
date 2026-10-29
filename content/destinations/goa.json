@@ -30,7 +30,7 @@
     {
       "name": "Palolem & Agonda Beaches",
       "description": "Crescent-shaped serene white sands in South Goa, perfect for dolphin watching and calm swimming.",
-      "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=600&auto=format&fit=crop"
+      "image": "/content/destinations/goa/4.avif"
     },
     {
       "name": "Fontainhas Latin Quarter",
@@ -40,7 +40,7 @@
     {
       "name": "Dudhsagar Waterfalls & Spice Plantation",
       "description": "Spectacular 310m milky white cascade nestled inside Bhagwan Mahaveer Wildlife Sanctuary.",
-      "image": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=600&auto=format&fit=crop"
+      "image": "/content/destinations/goa/5.avif"
     }
   ],
   "stayCategories": [
