@@ -1197,7 +1197,7 @@ export const packagesData: Package[] = [
         "caption": "Mehrangarh Fort Overlooking the Blue City of Jodhpur"
       },
       {
-        "src": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=800&auto=format&fit=crop",
+        "src": "/content/destinations/rajasthan/3.jpg",
         "caption": "Lake Pichola & City Palace Panorama in Udaipur"
       }
     ],
