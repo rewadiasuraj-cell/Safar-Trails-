@@ -5082,8 +5082,8 @@ export const packagesData: Package[] = [
         "caption": "Dramatic Landscapes, Monasteries and Valleys of Ladakh"
       },
       {
-        "src": "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?q=80&w=800&auto=format&fit=crop",
-        "caption": "Pangong Lake’s Stunning Blue Waters & Mountain Setting"
+        "src": "/content/destinations/ladakh/2.jpg",
+        "caption": "Historic Hill Monastery & Snow-Capped Himalayan Peaks in Leh"
       },
       {
         "src": "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=800&auto=format&fit=crop",
