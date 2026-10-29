@@ -1942,9 +1942,9 @@ export const packagesData: Package[] = [
     "reviewCount": 184,
     "startingCity": "Delhi / Chandigarh",
     "bestFor": "Couples, Families, Friends & Groups",
-    "heroImage": "/content/destinations/manali/1.jpg",
+    "heroImage": "/content/destinations/manali/2.avif",
     "galleryImages": [
-      "/content/destinations/manali/1.jpg",
+      "/content/destinations/manali/2.avif",
       "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=800&auto=format&fit=crop"
     ],
     "overview": "Discover the beauty of the Himalayas with SafarTrails’ best Manali tour packages, designed for unforgettable holidays filled with adventure, nature, and relaxation. Explore Manali’s stunning landscapes, snow-capped mountains, peaceful valleys, and charming local attractions. Our Manali tour packages are perfect for couples, families, friends, and solo travelers looking for a memorable getaway. From sightseeing at Solang Valley and Rohtang Pass to exploring Hadimba Temple and enjoying the vibrant atmosphere of Mall Road, experience the best of Manali with ease. Choose SafarTrails for comfortable stays, convenient travel arrangements, customizable itineraries, and memorable experiences at competitive prices.",
