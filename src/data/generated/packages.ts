@@ -1186,10 +1186,10 @@ export const packagesData: Package[] = [
     "reviewCount": 215,
     "startingCity": "Jaipur (Airport / Railway Station Pickup)",
     "bestFor": "Heritage Lovers, Families, Couples & Photographers",
-    "heroImage": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop",
+    "heroImage": "/content/destinations/rajasthan/2.jpg",
     "galleryImages": [
       {
-        "src": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800&auto=format&fit=crop",
+        "src": "/content/destinations/rajasthan/2.jpg",
         "caption": "Majestic Amber Fort & Royal Palaces of Jaipur"
       },
       {
