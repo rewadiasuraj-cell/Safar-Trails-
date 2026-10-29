@@ -22,10 +22,10 @@
   "reviewCount": 310,
   "startingCity": "Kathgodam Railway Station",
   "bestFor": "Families, Friends & Nature Lovers",
-  "heroImage": "/content/destinations/uttarakhand/1.jpg",
+  "heroImage": "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=1200&auto=format&fit=crop",
   "galleryImages": [
     {
-      "src": "/content/destinations/uttarakhand/1.jpg",
+      "src": "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=800&auto=format&fit=crop",
       "caption": "Panoramic Himalayan Landscapes & Mountain Trails of Uttarakhand"
     },
     {
@@ -37,8 +37,8 @@
       "caption": "Snow-Covered Peaks & Alpine Slopes of Auli"
     },
     {
-      "src": "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?q=80&w=800&auto=format&fit=crop",
-      "caption": "Bengal Tiger in the Wilderness of Jim Corbett National Park"
+      "src": "https://images.unsplash.com/photo-1637387568999-92c68bdee212?q=80&w=800&auto=format&fit=crop",
+      "caption": "Masoori"
     }
   ],
   "overview": "Explore Uttarakhand with Safar Trails on a 9 nights / 10 days tour package. Discover Nainital’s lakes, Bhimtal’s scenic beauty, Ranikhet’s peaceful hills, Kausani’s Himalayan views, Chopta’s mountain trails, Auli’s landscapes and Jim Corbett’s wildlife. Ideal for families, friends and nature lovers seeking a memorable Himalayan getaway.",
