@@ -4814,8 +4814,8 @@ export const packagesData: Package[] = [
         "caption": "Traditional Alleppey Backwater Houseboat Cruise"
       },
       {
-        "src": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=800&auto=format&fit=crop",
-        "caption": "Lush Spice Plantations & Hills of Thekkady"
+        "src": "/content/destinations/kerala/3.jpg",
+        "caption": "Lush Tea Plantations & Rolling Hills of Munnar"
       }
     ],
     "overview": "The Kerala Tour Package is a 6-day journey covering four popular destinations: Cochin, Munnar, Thekkady, and Alleppey. Designed to combine nature, sightseeing, local culture, and relaxation, this itinerary offers a varied experience of Kerala in one convenient holiday.\n\nBegin your journey in Cochin and drive through scenic landscapes to Munnar, known for its tea plantations, waterfalls, and mountain views. Continue to Thekkady for a spice plantation experience and optional cultural performances. In Alleppey, enjoy a traditional Kerala houseboat stay surrounded by coconut palms, paddy fields, and tranquil backwaters. Finish your trip in Cochin with heritage sightseeing before departure.",
