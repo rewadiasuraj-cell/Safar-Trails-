@@ -532,7 +532,7 @@ export const destinationsData: Destination[] = [
       {
         "name": "Varkala Clifftop Beach",
         "description": "Unique red laterite cliffs bordering the Arabian Sea with bohemian cafes and yoga retreats.",
-        "image": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=600&auto=format&fit=crop"
+        "image": "/content/destinations/kerala/4.jpg"
       }
     ],
     "stayCategories": [
