@@ -343,7 +343,7 @@ export const guidesData: TravelGuide[] = [
       "avatar": "/favicon.svg"
     },
     "publishedDate": "2026-09-25T00:00:00Z",
-    "heroImage": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop",
+    "heroImage": "/content/guides/first-time-rajasthan-guide-forts-deserts/1.jpg",
     "category": "Itinerary",
     "excerpt": "If you're looking for a Rajasthan tour package, the state rewards travelers who plan around its distances and its climate — how to connect forts, lakes, and desert towns without wasting days on the road.",
     "contentSections": [
