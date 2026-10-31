@@ -245,10 +245,6 @@ export default function App() {
                       scroll. */}
 
                   <Reveal>
-                    <ReviewsSection />
-                  </Reveal>
-
-                  <Reveal>
                     <FAQSection />
                   </Reveal>
 
