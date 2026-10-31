@@ -146,7 +146,17 @@ function checkSitemapIsServable(built: string[]): string[] {
   }
 
   for (const url of built) {
-    const urlPath = url.replace(SITE, '') || '/';
+    const urlPath = url.replace(SITE, '').replace(/\/+$/, '') || '/';
+
+    // Directory index files are served at /path/ by Pages. Redirecting that
+    // address back to /path creates a 308 -> 301 loop, even though both
+    // spellings represent the same page. This took About and Contact offline.
+    if (urlPath !== '/' && fs.existsSync(path.join(ROOT, 'dist', urlPath, 'index.html'))) {
+      const directoryRule = rules.find((rule) => rule.pattern.test(`${urlPath}/`));
+      if (directoryRule && /^3\d\d$/.test(directoryRule.status) && directoryRule.target === urlPath) {
+        problems.push(`${urlPath}/ redirects to its slashless directory URL and loops on Pages`);
+      }
+    }
 
     /*
      * Both spellings, because the edge moves between them on its own.
@@ -165,10 +175,7 @@ function checkSitemapIsServable(built: string[]): string[] {
         ({ rule }) =>
           rule &&
           /^3\d\d$/.test(rule.status) &&
-          // A trailing-slash rule that points back at this same path is
-          // canonicalisation, not shadowing - /about-us/ -> /about-us is
-          // exactly what we want. Only a redirect to somewhere ELSE is a bug.
-          rule.target !== urlPath,
+          rule.target.replace(/\/+$/, '') !== urlPath,
       );
 
     if (shadowed?.rule) {
@@ -226,14 +233,14 @@ function main(): void {
     .map((line) => line.trim())
     .filter(Boolean);
 
-  const built = new Set(readBuiltUrls());
+  const built = new Set(readBuiltUrls().map((url) => url.replace(/\/+$/, '')));
   const patterns = readRedirectPatterns();
 
   const missing: string[] = [];
   const redirected: string[] = [];
 
   for (const url of baseline) {
-    if (built.has(url)) continue;
+    if (built.has(url.replace(/\/+$/, ''))) continue;
     const urlPath = url.replace(SITE, '') || '/';
     if (patterns.some((pattern) => pattern.test(urlPath))) {
       redirected.push(url);

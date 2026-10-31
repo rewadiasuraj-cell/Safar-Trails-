@@ -1,3 +1,4 @@
+import { pathToView } from './lib/pathToView';
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Routes, Route, useNavigate, useLocation, Navigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
@@ -56,20 +57,6 @@ const VIEW_TO_PATH: Record<string, string> = {
   'why-us': '/about-us',
   'contact-us': '/contact-us',
 };
-
-// Maps the current URL back to the legacy view id used for nav active-state highlighting
-function pathToView(pathname: string): string {
-  if (pathname === '/') return 'home';
-  if (pathname === '/destinations') return 'destinations';
-  if (pathname.startsWith('/destinations/')) return 'destination-detail';
-  if (pathname === '/packages') return 'packages';
-  if (pathname === '/ai-planner') return 'ai-planner';
-  if (pathname === '/guides' || pathname === '/blog') return 'guides';
-  if (pathname.startsWith('/guides/') || pathname.startsWith('/blog/')) return 'guide-detail';
-  if (pathname === '/about-us') return 'why-us';
-  if (pathname === '/contact-us') return 'contact-us';
-  return 'home';
-}
 
 export default function App() {
   const navigate = useNavigate();

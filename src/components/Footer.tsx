@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { SafarLogo } from './SafarLogo';
 import { 
   Phone, 
@@ -29,7 +30,6 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({
-  onNavigate,
   onOpenPolicyModal
 }) => {
   const popularDestinations = [
@@ -49,15 +49,14 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
           {/* Column 1: Brand & Identity */}
           <div className="lg:col-span-2 space-y-4">
-            <div 
-              onClick={() => onNavigate('home')}
+            <Link to="/" aria-label="Safar Trails home"
               className="cursor-pointer inline-flex items-center"
             >
               <SafarLogo 
                 variant="dark" 
                 size="lg" 
               />
-            </div>
+            </Link>
             
             {/* Was "India's premier AI-powered domestic travel agency" - a
                 superlative nobody can substantiate, and the line Google was
@@ -122,12 +121,12 @@ export const Footer: React.FC<FooterProps> = ({
             <ul className="space-y-2 text-stone-300">
               {popularDestinations.slice(0, 6).map((d) => (
                 <li key={d.slug}>
-                  <button
-                    onClick={() => onNavigate('destination-detail', d.slug)}
+                  <Link
+                    to={`/destinations/${d.slug}/`}
                     className="hover:text-luxury-gold transition-colors text-left cursor-pointer"
                   >
                     {d.name}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -140,57 +139,57 @@ export const Footer: React.FC<FooterProps> = ({
             </h3>
             <ul className="space-y-2 text-stone-300">
               <li>
-                <button
-                  onClick={() => onNavigate('home')}
+                <Link
+                  to="/"
                   className="hover:text-luxury-gold transition-colors cursor-pointer"
                 >
                   Home
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => onNavigate('ai-planner')}
+                <Link
+                  to="/ai-planner/"
                   className="hover:text-luxury-gold transition-colors flex items-center gap-1.5 cursor-pointer"
                 >
                   <AIIcon className="w-3 h-3 text-white" />
                   <span>AI Trip Studio</span>
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => onNavigate('packages')}
+                <Link
+                  to="/packages/"
                   className="hover:text-luxury-gold transition-colors cursor-pointer"
                 >
                   Curated Holiday Packages
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => onNavigate('guides')}
+                <Link
+                  to="/guides/"
                   className="hover:text-luxury-gold transition-colors cursor-pointer"
                 >
                   Travel Guides & Insights
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => onNavigate('why-us')}
+                <Link
+                  to="/about-us/"
                   className="hover:text-luxury-gold transition-colors cursor-pointer"
                 >
                   Why SafarTrails
-                </button>
+                </Link>
               </li>
               {/* Contact Us left the header nav when it was cut from seven
                   links to three. /contact-us is in SITE_NAV_LINKS and so is
                   prerendered on every page; this is the React link that keeps
                   that honest. */}
               <li>
-                <button
-                  onClick={() => onNavigate('contact-us')}
+                <Link
+                  to="/contact-us/"
                   className="hover:text-luxury-gold transition-colors cursor-pointer"
                 >
                   Contact Us
-                </button>
+                </Link>
               </li>
             </ul>
           </div>

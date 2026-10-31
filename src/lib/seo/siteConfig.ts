@@ -164,3 +164,9 @@ export function absoluteUrl(pathname: string): string {
   const path = pathname.startsWith('/') ? pathname : `/${pathname}`;
   return path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}`;
 }
+
+/** Pages serves prerendered directories at trailing-slash URLs. Assets use absoluteUrl. */
+export function canonicalPageUrl(pathname: string): string {
+  const path = pathname.replace(/\/+$/, '');
+  return absoluteUrl(`${path}/`);
+}
