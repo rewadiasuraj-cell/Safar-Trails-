@@ -23,6 +23,7 @@ import {
   SITE_URL,
   SOCIAL_PROFILES,
   absoluteUrl,
+  canonicalPageUrl,
 } from './siteConfig';
 
 export type JsonLd = Record<string, unknown>;
@@ -84,7 +85,7 @@ export function breadcrumbSchema(trail: { name: string; path: string }[]): JsonL
       '@type': 'ListItem',
       position: index + 1,
       name: crumb.name,
-      item: absoluteUrl(crumb.path),
+      item: canonicalPageUrl(crumb.path),
     })),
   };
 }
@@ -107,7 +108,7 @@ export function faqSchema(faqs: { question: string; answer: string }[]): JsonLd 
  * No aggregateRating — see the note above touristTripSchema.
  */
 export function touristDestinationSchema(destination: Destination): JsonLd {
-  const url = absoluteUrl(`/destinations/${destination.slug}`);
+  const url = canonicalPageUrl(`/destinations/${destination.slug}`);
   const schema: JsonLd = {
     '@type': 'TouristDestination',
     '@id': `${url}#destination`,
@@ -155,7 +156,7 @@ export function touristDestinationSchema(destination: Destination): JsonLd {
  * (LocalBusiness) block, via ORGANIZATION_RATING_ENABLED in siteConfig.ts.
  */
 export function touristTripSchema(pkg: Package, canonicalPath: string): JsonLd {
-  const url = absoluteUrl(canonicalPath);
+  const url = canonicalPageUrl(canonicalPath);
   const schema: JsonLd = {
     '@type': 'TouristTrip',
     '@id': `${url}#trip`,
@@ -209,7 +210,7 @@ export function touristTripSchema(pkg: Package, canonicalPath: string): JsonLd {
 }
 
 export function guideArticleSchema(guide: TravelGuide): JsonLd {
-  const url = absoluteUrl(`/guides/${guide.slug}`);
+  const url = canonicalPageUrl(`/guides/${guide.slug}`);
   return {
     '@type': 'Article',
     '@id': `${url}#article`,

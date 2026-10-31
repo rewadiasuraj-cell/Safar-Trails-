@@ -17,7 +17,7 @@ import { destinationsData } from '../../data/destinationsData';
 import { guidesData } from '../../data/guidesData';
 import { packagesData } from '../../data/packagesData';
 import { Destination, Package, TravelGuide } from '../../types';
-import { DEFAULT_OG_IMAGE, absoluteUrl } from './siteConfig';
+import { DEFAULT_OG_IMAGE, absoluteUrl, canonicalPageUrl } from './siteConfig';
 import {
   breadcrumbSchema,
   buildGraph,
@@ -147,7 +147,7 @@ const STATIC_PAGES: StaticPageSpec[] = [
     path: '/',
     title: 'Custom India Tour Packages – AI Trip Planner | Safar Trails',
     description:
-      'Custom Kashmir, Kerala, Himachal & Rajasthan tour packages, planned by AI and refined by real travel experts. 24x7 support, transparent pricing. Get a free itinerary!',
+      'Plan custom Kashmir, Kerala, Himachal and Rajasthan holidays with Safar Trails. Expert itineraries, clear pricing and 24x7 support. Get a free quote.',
     h1: 'Custom India Tour Packages · AI Plans, Experts Perfect — Your Journey. Our Passion.',
     intro:
       'Safar Trails builds hand-planned holiday packages across India — Kashmir houseboats, Kerala backwaters, Himachal road trips, Rajasthan forts, Andaman beaches and the Chardham Yatra. Every itinerary starts from your dates, budget and travel style, is checked by a destination specialist, and comes with verified stays, trained drivers and 24x7 on-trip support. Travel with Trust.',
@@ -347,7 +347,7 @@ function staticRoute(spec: StaticPageSpec): RouteSeo {
     path: spec.path,
     title: spec.title,
     description: fitDescription(spec.description),
-    canonical: absoluteUrl(spec.path),
+    canonical: canonicalPageUrl(spec.path),
     ogImage: DEFAULT_OG_IMAGE,
     ogType: 'website',
     robots: spec.robots ?? INDEX_FOLLOW,
@@ -401,7 +401,7 @@ function destinationRoute(destination: Destination): RouteSeo {
       DESTINATION_TITLE_OVERRIDES[destination.slug] ??
       fitTitle(`${destination.name} Tour Packages`),
     description: fitDescription(destination.seoDescription || destination.shortDescription),
-    canonical: absoluteUrl(path),
+    canonical: canonicalPageUrl(path),
     ogImage: absoluteUrl(destination.heroImage),
     ogType: 'website',
     robots: INDEX_FOLLOW,
@@ -478,7 +478,7 @@ function packageRoute(pkg: Package): RouteSeo {
       pkg.seoDescription ??
         `${pkg.overview} Starting ₹${pkg.startingPrice.toLocaleString('en-IN')} per person from ${pkg.startingCity}.`,
     ),
-    canonical: absoluteUrl(path),
+    canonical: canonicalPageUrl(path),
     ogImage: absoluteUrl(pkg.heroImage),
     ogType: 'website',
     robots: INDEX_FOLLOW,
@@ -526,13 +526,21 @@ function packageRoute(pkg: Package): RouteSeo {
   };
 }
 
+const GUIDE_TITLE_OVERRIDES: Record<string, string> = {
+  'best-time-to-visit-kashmir': 'Best Time to Visit Kashmir: Seasons & Snow | Safar Trails',
+  'chardham-yatra-package-cost-guide-2026': 'Chardham Yatra Cost 2026: Budget & Inclusions | Safar Trails',
+  'kashmir-trip-cost-guide-2026': 'Kashmir Trip Cost 2026: Budget Guide | Safar Trails',
+  'kerala-5-day-itinerary-munnar-alleppey': '5-Day Kerala Itinerary: Munnar & Alleppey | Safar Trails',
+  'rishikesh-mussoorie-corbett-weekend-guide': 'Rishikesh, Mussoorie & Corbett Travel Guide | Safar Trails',
+};
+
 function guideRoute(guide: TravelGuide): RouteSeo {
   const path = `/guides/${guide.slug}`;
   return {
     path,
-    title: fitTitle(guide.title.replace(/\s*\(\d{4}\)\s*$/, '')),
+    title: GUIDE_TITLE_OVERRIDES[guide.slug] ?? fitTitle(guide.title.replace(/\s*\(\d{4}\)\s*$/, '')),
     description: fitDescription(guide.excerpt),
-    canonical: absoluteUrl(path),
+    canonical: canonicalPageUrl(path),
     ogImage: absoluteUrl(guide.heroImage),
     ogType: 'article',
     robots: INDEX_FOLLOW,

@@ -31,7 +31,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { allStaticRoutes, RouteSeo, sitemapRoutes } from '../src/lib/seo/routes';
-import { BRAND_NAME, SITE_URL, absoluteUrl } from '../src/lib/seo/siteConfig';
+import { BRAND_NAME, SITE_URL, canonicalPageUrl } from '../src/lib/seo/siteConfig';
 import { escapeHtml } from '../src/lib/seo/textUtils';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -124,7 +124,7 @@ function renderFaqs(seo: RouteSeo): string {
 function renderLinks(seo: RouteSeo): string {
   if (!seo.relatedLinks.length) return '';
   const items = seo.relatedLinks
-    .map((link) => `<li><a href="${escapeHtml(link.href)}">${escapeHtml(link.label)}</a></li>`)
+    .map((link) => `<li><a href="${escapeHtml(new URL(canonicalPageUrl(link.href)).pathname)}">${escapeHtml(link.label)}</a></li>`)
     .join('');
   return `<nav aria-label="Related pages"><h2>Explore more</h2><ul>${items}</ul></nav>`;
 }
@@ -169,11 +169,12 @@ function applyBody(html: string, seo: RouteSeo): string {
  * ------------------------------------------------------------------ */
 
 function renderSitemap(routes: RouteSeo[]): string {
-  const lastmod = new Date().toISOString().slice(0, 10);
+  // Omit lastmod until content carries a reliable modification date. A deploy
+  // does not mean every guide and package was substantively updated.
   const urls = routes
     .map(
       (route) =>
-        `  <url>\n    <loc>${absoluteUrl(route.path)}</loc>\n    <lastmod>${lastmod}</lastmod>\n` +
+        `  <url>\n    <loc>${route.canonical}</loc>\n` +
         `    <changefreq>${route.changefreq}</changefreq>\n    <priority>${route.priority.toFixed(2)}</priority>\n  </url>`,
     )
     .join('\n');
@@ -219,7 +220,7 @@ function main() {
   // elsewhere is reachable but must not be submitted - asking Google to index a
   // URL that the page's own tag disowns is a contradictory signal.
   const indexable = sitemapRoutes().filter(
-    (route) => !route.robots.startsWith('noindex') && absoluteUrl(route.path) === route.canonical,
+    (route) => !route.robots.startsWith('noindex') && canonicalPageUrl(route.path) === route.canonical,
   );
   const deduped = [...new Map(indexable.map((route) => [route.path, route])).values()].sort((a, b) =>
     b.priority - a.priority || a.path.localeCompare(b.path),
