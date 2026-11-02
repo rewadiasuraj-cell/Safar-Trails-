@@ -267,13 +267,14 @@ export interface TravelGuide {
   };
   publishedDate: string;
   heroImage: string;
-  category: 'Itinerary' | 'Cost Breakdown' | 'Best Time' | 'Offbeat' | 'Honeymoon' | 'Food & Culture';
+  category: 'Itinerary' | 'Cost Breakdown' | 'Best Time' | 'Offbeat' | 'Honeymoon' | 'Food & Culture' | 'Blog';
   excerpt: string;
   contentSections: {
     heading: string;
     content: string;
     bulletPoints?: string[];
     highlightQuote?: string;
+    image?: string;
   }[];
   relatedPackageSlugs: string[];
 }

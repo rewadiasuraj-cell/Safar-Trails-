@@ -88,6 +88,12 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
       <header className="w-full max-w-4xl xl:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-6">
         <div className="flex items-center gap-2 text-xs text-luxury-gold font-bold uppercase tracking-wider mb-3">
           <span>{guide.destinationName} Travel Guide</span>
+          {guide.category && (
+            <>
+              <span className="text-stone-300">•</span>
+              <span className="text-stone-600 font-semibold">{guide.category}</span>
+            </>
+          )}
         </div>
 
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-stone-900 tracking-tight leading-[1.2]">
@@ -163,6 +169,17 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
                   </li>
                 ))}
               </ul>
+            )}
+
+            {sec.image && (
+              <div className="my-5 rounded-2xl overflow-hidden border border-stone-200 shadow-2xs">
+                <img
+                  src={sec.image}
+                  alt={sec.heading}
+                  className="w-full h-64 sm:h-80 lg:h-96 object-cover"
+                  loading="lazy"
+                />
+              </div>
             )}
 
             {sec.highlightQuote && (

@@ -24,6 +24,7 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
     const matchesSearch = g.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       g.destinationName.toLowerCase().includes(searchQuery.toLowerCase()) ||
       g.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (g.category && g.category.toLowerCase().includes(searchQuery.toLowerCase())) ||
       g.author.name.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesSearch;
   });
@@ -168,6 +169,11 @@ export const TravelGuidesSection: React.FC<TravelGuidesSectionProps> = ({
                       <span className="px-3 py-1 rounded-full text-[11px] font-bold tracking-wide bg-black/80 text-white backdrop-blur-xs">
                         {guide.destinationName}
                       </span>
+                      {guide.category && (
+                        <span className="px-3 py-1 rounded-full text-[11px] font-bold tracking-wide bg-white/95 text-stone-900 backdrop-blur-xs shadow-2xs">
+                          {guide.category}
+                        </span>
+                      )}
                     </div>
 
                     <div className="absolute bottom-3 left-3.5 text-stone-200 text-xs flex items-center gap-1.5 font-medium">
