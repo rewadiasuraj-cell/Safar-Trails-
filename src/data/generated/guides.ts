@@ -80,7 +80,7 @@ export const guidesData: TravelGuide[] = [
       {
         "heading": "Srinagar: Start Here",
         "content": "Most Kashmir trips begin in Srinagar, and it deserves at least two nights. Take a shikara ride on Dal Lake early in the morning, when the water is still and the floating vegetable boats are out. Spend one night on a houseboat, even if you usually avoid touristy things. The rooms are cozy, the food is homemade, and people remember it long after the trip.\n\nSet aside an afternoon for the Mughal Gardens. Shalimar Bagh, Nishat Bagh and Chashme Shahi are close enough to see in one go. After that, walk through the old city for shawls, saffron and walnut wood crafts. Bargain politely, and ask what is truly handmade.",
-        "image": "https://images.unsplash.com/photo-1593417376544-4c4201061e22?q=80&w=1200&auto=format&fit=crop"
+        "image": "https://images.pexels.com/photos/29090768/pexels-photo-29090768.jpeg?auto=compress&cs=tinysrgb&w=1200"
       },
       {
         "heading": "Gulmarg: Green Meadows or Fresh Snow",
