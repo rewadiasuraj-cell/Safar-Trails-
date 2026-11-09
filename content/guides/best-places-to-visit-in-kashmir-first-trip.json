@@ -81,12 +81,72 @@
     },
     {
       "heading": "Frequently Asked Questions",
-      "content": "Key answers for travelers planning their first Kashmir holiday:",
+      "content": "Get answers to the most common questions about planning your first visit to Kashmir, from seasonal highlights and family travel to top destinations and ideal trip durations."
+    },
+    {
+      "heading": "1. What are the best places to visit in Kashmir in winter?",
+      "content": "Winter transforms Kashmir into a breathtaking snowy wonderland, offering magnificent views and thrilling winter sports. Key highlights include:",
       "bulletPoints": [
-        "What is the best time to visit Kashmir? April to October suits most travelers for pleasant weather and green meadows. Choose December to February if snow and winter sports are your primary goal.",
-        "How many days are enough for Kashmir? Five to six days comfortably covers Srinagar, Gulmarg, Pahalgam, and Sonamarg without feeling rushed.",
-        "Is Kashmir safe for tourists? Tourism is active and millions of travelers visit safely every year. Conditions can fluctuate, so always check advisories and travel with a reputable, licensed local tour operator."
-      ],
+        "Gulmarg: World-famous for its pristine powder snow, premium skiing, and the iconic Gulmarg Gondola ride offering panoramic views of snow-capped peaks.",
+        "Pahalgam: Features snow-covered pine forests, serene riverbanks, and scenic winter treks around Aru and Betaab Valleys.",
+        "Srinagar & Dal Lake: Experience tranquil Shikara rides on mist-shrouded waters and comfortable cozy stays in luxury houseboats.",
+        "Sonamarg: Known as the \"Meadow of Gold\", perfect for witnessing dramatic winter snowscapes."
+      ]
+    },
+    {
+      "heading": "2. What are the best places to visit in Kashmir with family?",
+      "content": "Kashmir offers welcoming and easy-to-navigate experiences tailored for families traveling with children or elders:",
+      "bulletPoints": [
+        "Srinagar: Enjoy historic Mughal Gardens (Shalimar Bagh, Nishat Bagh) and gentle Shikara rides on Dal Lake.",
+        "Pahalgam: Safe horse riding trails, easy riverside walks along the Lidder River, and picnicking in Betaab Valley.",
+        "Gulmarg: Family-friendly cable car rides (Gondola Phase 1) and introductory sledding activities."
+      ]
+    },
+    {
+      "heading": "3. What are the top 5 tourist places in Kashmir?",
+      "content": "The five essential destinations that define the Kashmir experience are:",
+      "bulletPoints": [
+        "Srinagar: The summer capital, famous for houseboats, Shikaras, and heritage gardens.",
+        "Gulmarg: Premier hill station renowned for high-altitude Gondola rides and skiing slopes.",
+        "Pahalgam: Picturesque valley known as the valley of shepherds, surrounded by lush pine woods.",
+        "Sonamarg: Gateway to Thajiwas Glacier and alpine trekking adventures.",
+        "Doodhpathri: An unspoiled alpine meadow featuring rolling green pastures and rushing streams."
+      ]
+    },
+    {
+      "heading": "4. What are some unique places to visit in Kashmir?",
+      "content": "For travelers seeking off-the-beaten-path experiences away from main crowds:",
+      "bulletPoints": [
+        "Gurez Valley: A secluded valley with traditional wooden homes and dramatic mountain backdrops.",
+        "Doodhpathri (\"Valley of Milk\"): Serene pastures and clear mountain rivers offering calm natural beauty.",
+        "Yusmarg: Known as the \"Meadow of Jesus\", perfect for quiet nature walks and trekking.",
+        "Sinthan Top: A high mountain pass offering 360-degree snow views year-round."
+      ]
+    },
+    {
+      "heading": "5. What are the most beautiful places to visit in Kashmir in January?",
+      "content": "January brings peak winter snow across the region, making these locations magical:",
+      "bulletPoints": [
+        "Gulmarg Phase 2 Gondola: Experience deep snow layers and alpine peaks at Mt. Apharwat.",
+        "Betaab Valley in Pahalgam: Striking contrast of turquoise rivers amidst heavy snowfall.",
+        "Dal Lake (Srinagar): Frequently freezes along the edges in January, creating serene winter photography opportunities."
+      ]
+    },
+    {
+      "heading": "6. Is 2 days enough for a Kashmir trip?",
+      "content": "No, 2 days is generally too brief to fully experience Kashmir due to travel times between destinations. While a 2-day trip allows for a quick visit to Srinagar (Dal Lake and Mughal Gardens), exploring key highlights like Gulmarg or Pahalgam ideally requires a minimum of 5 to 7 days."
+    },
+    {
+      "heading": "7. Is Pahalgam better or Gulmarg?",
+      "content": "Both offer unique attractions depending on your travel preferences:",
+      "bulletPoints": [
+        "Gulmarg: Ideal for adventure enthusiasts, snow sports, skiing, and high-altitude cable car rides.",
+        "Pahalgam: Best suited for relaxing stays, pine valley views, river walks, and gentle family outings."
+      ]
+    },
+    {
+      "heading": "8. Which place in Kashmir is the most beautiful?",
+      "content": "Beauty in Kashmir varies by region and season. Pahalgam is celebrated for its verdant valleys and peaceful rivers, Gulmarg for snow-capped peaks and meadows, and Srinagar for its timeless charm on Dal Lake. Unspoiled locations like Doodhpathri and Gurez are often considered the most pristine.",
       "highlightQuote": "Kashmir is the kind of place that looks better in person than in any photo. Once you know the best places to visit, the next step is choosing your dates."
     }
   ],
@@ -95,4 +155,3 @@
     "kashmir-premium-escape"
   ]
 }
-
