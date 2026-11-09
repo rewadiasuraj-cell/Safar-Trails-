@@ -42,7 +42,7 @@
       "caption": "Alpine Meadows of Sonamarg"
     }
   ],
-  "overview": "Discover the beauty of Kashmir with a holiday filled with stunning mountain views, peaceful lakes, lush green valleys, and memorable local experiences. Our Kashmir tour package options help you plan a trip that suits your budget, travel dates, and interests. Whether you are planning a family vacation, a romantic honeymoon, or an adventure with friends, Kashmir offers something special in every season. Explore famous destinations, choose comfortable hotels, and enjoy a well-planned itinerary with flexible travel options. Ready to plan your Kashmir holiday? Explore our packages and find the right trip for your next getaway.",
+  "overview": "Discover the beauty of Kashmir with a holiday filled with stunning mountain views, peaceful lakes, lush green valleys, and memorable local experiences. Our Kashmir tour package options help you plan a trip that suits your budget, travel dates, and interests. Whether you are planning a family vacation, a romantic honeymoon, or an adventure with friends, Kashmir offers something special in every season. Explore famous destinations, choose comfortable hotels, and enjoy a well-planned itinerary with flexible travel options. Ready to plan your Kashmir holiday? Explore our packages and find the right trip for your next getaway.\n\nFirst time visiting the valley? Check our in-depth guide on the [Best Places to Visit in Kashmir for First-Time Travelers](/guides/best-places-to-visit-in-kashmir-first-trip) for seasonal recommendations and travel tips.",
   "packageDurations": [
     {
       "duration": "3 Nights / 4 Days",
@@ -311,6 +311,10 @@
     {
       "question": "When should I book my Kashmir holiday?",
       "answer": "Booking early can give you more accommodation and transport choices during busy travel periods. However, the right booking time depends on your dates, budget, and cancellation flexibility."
+    },
+    {
+      "question": "Which are the best places to visit on a first Kashmir trip?",
+      "answer": "Essential destinations include Srinagar with its Dal Lake houseboats and Mughal Gardens, Gulmarg for snow peaks and cable car rides, and Pahalgam for scenic river valleys. Check our dedicated Kashmir travel guide for complete first-time traveler tips."
     }
   ]
 }

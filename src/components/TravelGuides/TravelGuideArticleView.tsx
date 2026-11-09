@@ -179,8 +179,8 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
       </header>
 
       {/* Hero Image */}
-      <div className="w-full max-w-4xl xl:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-        <div className="rounded-2xl overflow-hidden shadow-xs h-[340px] sm:h-[440px] border border-stone-200">
+      <div className="w-full max-w-2xl sm:max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <div className="rounded-2xl overflow-hidden shadow-xs h-[200px] sm:h-[260px] md:h-[280px] border border-stone-200">
           <img
             src={guide.heroImage}
             alt={guide.title}
@@ -217,11 +217,11 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
             )}
 
             {sec.image && (
-              <div className="my-5 rounded-2xl overflow-hidden border border-stone-200 shadow-2xs">
+              <div className="my-4 max-w-lg sm:max-w-xl mx-auto rounded-xl overflow-hidden border border-stone-200 shadow-2xs">
                 <img
                   src={sec.image}
                   alt={sec.heading}
-                  className="w-full h-64 sm:h-80 lg:h-96 object-cover"
+                  className="w-full h-44 sm:h-52 md:h-56 object-cover"
                   loading="lazy"
                 />
               </div>
@@ -316,11 +316,11 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
                         )}
 
                         {item.image && (
-                          <div className="my-3 rounded-xl overflow-hidden border border-stone-200">
+                          <div className="my-3 max-w-md mx-auto rounded-xl overflow-hidden border border-stone-200">
                             <img
                               src={item.image}
                               alt={item.heading}
-                              className="w-full h-48 sm:h-64 object-cover"
+                              className="w-full h-36 sm:h-44 object-cover"
                               loading="lazy"
                             />
                           </div>

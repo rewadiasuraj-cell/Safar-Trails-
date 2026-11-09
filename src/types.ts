@@ -269,6 +269,12 @@ export interface TravelGuide {
   heroImage: string;
   category: 'Itinerary' | 'Cost Breakdown' | 'Best Time' | 'Offbeat' | 'Honeymoon' | 'Food & Culture' | 'Blog';
   excerpt: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  focusKeyword?: string;
+  secondaryKeywords?: string[];
+  robots?: string;
+  canonical?: string;
   contentSections: {
     heading: string;
     content: string;

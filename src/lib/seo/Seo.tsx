@@ -64,6 +64,9 @@ export function Seo() {
 
     upsertMeta('meta[name="description"]', { name: 'description', content: seo.description });
     upsertMeta('meta[name="robots"]', { name: 'robots', content: seo.robots });
+    if (seo.keywords) {
+      upsertMeta('meta[name="keywords"]', { name: 'keywords', content: seo.keywords });
+    }
 
     upsertMeta('meta[property="og:title"]', { property: 'og:title', content: seo.title });
     upsertMeta('meta[property="og:description"]', {

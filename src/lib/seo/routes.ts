@@ -43,6 +43,7 @@ export interface RouteSeo {
   title: string;
   description: string;
   canonical: string;
+  keywords?: string;
   ogImage: string;
   ogType: 'website' | 'article';
   robots: string;
@@ -520,6 +521,14 @@ function packageRoute(pkg: Package): RouteSeo {
       ...(destination
         ? [{ label: `${destination.name} travel guide`, href: `/destinations/${destination.slug}` }]
         : []),
+      ...guidesData
+        .filter(
+          (guide) =>
+            guide.destinationSlug === pkg.destinationSlug ||
+            guide.destinationName.toLowerCase() === pkg.destination.toLowerCase() ||
+            guide.relatedPackageSlugs?.includes(pkg.slug),
+        )
+        .map((guide) => ({ label: guide.title, href: `/guides/${guide.slug}` })),
     ]),
     priority: 0.8,
     changefreq: 'weekly',
@@ -528,14 +537,16 @@ function packageRoute(pkg: Package): RouteSeo {
 
 function guideRoute(guide: TravelGuide): RouteSeo {
   const path = `/guides/${guide.slug}`;
+  const kwList = [guide.focusKeyword, ...(guide.secondaryKeywords ?? [])].filter(Boolean);
   return {
     path,
-    title: fitTitle(guide.title.replace(/\s*\(\d{4}\)\s*$/, '')),
-    description: fitDescription(guide.excerpt),
-    canonical: absoluteUrl(path),
+    title: guide.seoTitle ?? fitTitle(guide.title.replace(/\s*\(\d{4}\)\s*$/, '')),
+    description: guide.seoDescription ?? fitDescription(guide.excerpt),
+    canonical: guide.canonical ?? absoluteUrl(path),
+    keywords: kwList.length > 0 ? kwList.join(', ') : undefined,
     ogImage: absoluteUrl(guide.heroImage),
     ogType: 'article',
-    robots: INDEX_FOLLOW,
+    robots: guide.robots ?? INDEX_FOLLOW,
     jsonLd: organizationGraph([
       guideArticleSchema(guide),
       breadcrumbSchema([

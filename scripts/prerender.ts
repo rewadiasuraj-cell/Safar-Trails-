@@ -63,6 +63,14 @@ function applyHead(template: string, seo: RouteSeo): string {
     `<meta name="robots" content="${escapeHtml(seo.robots)}" />`,
   );
 
+  if (seo.keywords) {
+    html = replaceTag(
+      html,
+      /<meta\s+name="keywords"[^>]*>/,
+      `<meta name="keywords" content="${escapeHtml(seo.keywords)}" />`,
+    );
+  }
+
   html = replaceTag(
     html,
     /<link\s+rel="canonical"[^>]*>/,

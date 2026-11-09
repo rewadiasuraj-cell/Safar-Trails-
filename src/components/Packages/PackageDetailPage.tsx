@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { packagesData } from '../../data/packagesData';
+import { guidesData } from '../../data/guidesData';
 import { GST_NOTE } from '../../lib/seo/siteConfig';
 import { WhatsAppIcon } from '../WhatsAppIcon';
 import { AIIcon } from '../AIIcon';
@@ -48,6 +49,20 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
 }) => {
   const navigate = useNavigate();
   const { slug = '', pkgSlug = '' } = useParams<{ slug?: string; pkgSlug?: string }>();
+
+  // Destination travel guides for internal linking and context
+  const relatedGuides = useMemo(() => {
+    const currentPkg = packagesData.find(
+      (p) => p.slug === (slug || pkgSlug)
+    );
+    if (!currentPkg) return [];
+    return guidesData.filter(
+      (g) =>
+        g.relatedPackageSlugs?.includes(currentPkg.slug) ||
+        g.destinationSlug === currentPkg.destinationSlug ||
+        g.destinationName.toLowerCase() === currentPkg.destination.toLowerCase()
+    );
+  }, [slug, pkgSlug]);
   const targetSlug = pkgSlug || slug;
   const packageData = packagesData.find((p) => p.slug === targetSlug || p.id === targetSlug);
 
@@ -1017,6 +1032,51 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
                         {item}
                       </span>
                     </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* RELATED TRAVEL GUIDES SECTION */}
+            {relatedGuides.length > 0 && (
+              <div className="bg-white p-6 sm:p-7 rounded-3xl border border-stone-200 shadow-sm space-y-4">
+                <div className="flex items-center gap-2.5 pb-2 border-b border-stone-100">
+                  <div className="w-8 h-8 rounded-xl bg-luxury-gold/15 text-luxury-gold flex items-center justify-center font-bold">
+                    <Compass className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900">
+                      Travel Guides & Sightseeing Tips
+                    </h3>
+                    <p className="text-xs text-stone-500">
+                      Helpful planning advice for your {packageData.destination} holiday
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                  {relatedGuides.map((guide) => (
+                    <Link
+                      key={guide.slug}
+                      to={`/guides/${guide.slug}`}
+                      className="group p-3.5 rounded-2xl bg-[#FBF9F5] border border-stone-200/80 hover:border-luxury-gold hover:bg-stone-50 transition-all flex flex-col justify-between"
+                    >
+                      <div>
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-luxury-gold block mb-1">
+                          {guide.category || 'Travel Guide'}
+                        </span>
+                        <h4 className="text-xs sm:text-sm font-bold text-stone-900 group-hover:text-black line-clamp-2">
+                          {guide.title}
+                        </h4>
+                        <p className="text-xs text-stone-500 line-clamp-2 mt-1">
+                          {guide.excerpt}
+                        </p>
+                      </div>
+                      <span className="text-xs font-bold text-luxury-gold flex items-center gap-1 mt-2.5">
+                        <span>Read Guide</span>
+                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </Link>
                   ))}
                 </div>
               </div>

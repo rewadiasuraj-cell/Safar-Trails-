@@ -2,7 +2,7 @@
   "slug": "best-places-to-visit-in-kashmir-first-trip",
   "destinationSlug": "kashmir",
   "destinationName": "Kashmir",
-  "title": "Best Places to Visit in Kashmir: A Practical Guide for Your First Trip",
+  "title": "Best Places to Visit in Kashmir for First-Time Travelers",
   "subtitle": "The places worth your time, when to go, and how to plan without stress on your first trip to Kashmir.",
   "readTime": "7 min read",
   "author": {
@@ -11,29 +11,29 @@
     "avatar": "/favicon.svg"
   },
   "publishedDate": "2026-11-02T00:00:00Z",
-  "heroImage": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=1200&auto=format&fit=crop",
+  "heroImage": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=800&auto=format&fit=crop",
   "category": "Blog",
-  "excerpt": "Ask ten travelers about Kashmir and you will get ten different favorite spots. Fitting them into the right number of days is where most people get stuck. This guide covers the places worth your time, when to go, and how to plan without stress.",
+  "excerpt": "Explore the best places to visit in Kashmir, including Srinagar, Gulmarg, Pahalgam and Sonamarg. Discover travel tips and plan your first trip.",
   "contentSections": [
     {
       "heading": "Srinagar: Start Here",
       "content": "Most Kashmir trips begin in Srinagar, and it deserves at least two nights. Take a shikara ride on Dal Lake early in the morning, when the water is still and the floating vegetable boats are out. Spend one night on a houseboat, even if you usually avoid touristy things. The rooms are cozy, the food is homemade, and people remember it long after the trip.\n\nSet aside an afternoon for the Mughal Gardens. Shalimar Bagh, Nishat Bagh and Chashme Shahi are close enough to see in one go. After that, walk through the old city for shawls, saffron and walnut wood crafts. Bargain politely, and ask what is truly handmade.",
-      "image": "https://images.pexels.com/photos/29090768/pexels-photo-29090768.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      "image": "https://images.pexels.com/photos/29090768/pexels-photo-29090768.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       "heading": "Gulmarg: Green Meadows or Fresh Snow",
       "content": "Gulmarg is around two hours from Srinagar by road. The Gulmarg Gondola lifts you high above the slopes, and on a clear day the views are worth the wait in line. Come in winter for skiing and snow play, or in summer for flower-covered meadows and pony rides. Book gondola tickets online in advance, because queues get long in peak season.",
-      "image": "https://images.pexels.com/photos/26110236/pexels-photo-26110236.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      "image": "https://images.pexels.com/photos/26110236/pexels-photo-26110236.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       "heading": "Pahalgam and Betaab Valley",
       "content": "Pahalgam sits beside the Lidder River and feels slower and greener than the city. Use it as a base for Betaab Valley, Aru Valley and Chandanwari. Stay two nights if you enjoy easy walks, and give yourself time to just sit by the river with a cup of kahwa.",
-      "image": "https://images.pexels.com/photos/37241100/pexels-photo-37241100.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      "image": "https://images.pexels.com/photos/37241100/pexels-photo-37241100.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       "heading": "Sonamarg: The Meadow of Gold",
       "content": "Sonamarg means \"meadow of gold,\" and in late spring the name makes sense. The main draw is the trip toward Thajiwas Glacier, which you can do on foot or by pony. Most travelers visit Sonamarg as a day trip from Srinagar. The road also leads toward Ladakh and can close after heavy snow, so check conditions before you leave.",
-      "image": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&w=1200&auto=format&fit=crop"
+      "image": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&w=800&auto=format&fit=crop"
     },
     {
       "heading": "Offbeat Picks: Doodhpathri, Yusmarg and Gurez",
@@ -42,7 +42,7 @@
     {
       "heading": "Tulip Garden and the Lakes",
       "content": "The Tulip Garden in Srinagar blooms roughly from late March to April, though the exact dates shift with the weather. If spring is your plan, ask your tour operator for the current bloom status. For a slower itinerary, Wular Lake and Mansar Lake are peaceful places to break up a long drive.",
-      "image": "https://images.pexels.com/photos/31777310/pexels-photo-31777310.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      "image": "https://images.pexels.com/photos/31777310/pexels-photo-31777310.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       "heading": "Best Time to Visit Kashmir",
@@ -153,5 +153,19 @@
   "relatedPackageSlugs": [
     "kashmir-escape-houseboat-bliss",
     "kashmir-premium-escape"
-  ]
+  ],
+  "seoTitle": "Best Places to Visit in Kashmir for First-Time Travelers",
+  "seoDescription": "Explore the best places to visit in Kashmir, including Srinagar, Gulmarg, Pahalgam and Sonamarg. Discover travel tips and plan your first trip.",
+  "focusKeyword": "best places to visit in Kashmir",
+  "secondaryKeywords": [
+    "Kashmir tourist places",
+    "Places to visit in Kashmir",
+    "Kashmir travel guide",
+    "Kashmir trip itinerary",
+    "Best time to visit Kashmir",
+    "Kashmir sightseeing places",
+    "Kashmir tourism"
+  ],
+  "robots": "index, follow",
+  "canonical": "https://safartrails.co.in/guides/best-places-to-visit-in-kashmir-first-trip/"
 }
