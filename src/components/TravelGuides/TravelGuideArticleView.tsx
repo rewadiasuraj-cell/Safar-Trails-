@@ -10,7 +10,9 @@ import {
   Search,
   Sparkles,
   Info,
-  Send
+  Send,
+  ChevronDown,
+  HelpCircle
 } from 'lucide-react';
 import { formatPublishedDate } from '../../lib/seo/textUtils';
 import { openWhatsApp } from '../../lib/contact';
@@ -32,6 +34,49 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
   onOpenQuoteModal
 }) => {
   const [quickSearch, setQuickSearch] = useState('');
+  const [openFaqs, setOpenFaqs] = useState<Record<number, boolean>>({ 0: true });
+
+  // Partition contentSections into standard article sections and FAQ accordion sections
+  const faqHeaderIndex = guide.contentSections.findIndex(
+    (sec) =>
+      sec.heading.toLowerCase().includes('frequently asked questions') ||
+      sec.heading.toLowerCase() === 'faqs'
+  );
+
+  const mainSections = faqHeaderIndex === -1
+    ? guide.contentSections
+    : guide.contentSections.slice(0, faqHeaderIndex);
+
+  const faqHeaderSection = faqHeaderIndex !== -1
+    ? guide.contentSections[faqHeaderIndex]
+    : null;
+
+  const faqItems = faqHeaderIndex !== -1
+    ? guide.contentSections.slice(faqHeaderIndex + 1)
+    : [];
+
+  const hasFaqAccordion = faqHeaderIndex !== -1 && faqItems.length > 0;
+  const sectionsToRender = hasFaqAccordion ? mainSections : guide.contentSections;
+
+  const toggleFaq = (idx: number) => {
+    setOpenFaqs((prev) => ({
+      ...prev,
+      [idx]: !prev[idx],
+    }));
+  };
+
+  const allFaqsOpen = faqItems.length > 0 && faqItems.every((_, i) => openFaqs[i]);
+  const toggleAllFaqs = () => {
+    if (allFaqsOpen) {
+      setOpenFaqs({});
+    } else {
+      const next: Record<number, boolean> = {};
+      faqItems.forEach((_, i) => {
+        next[i] = true;
+      });
+      setOpenFaqs(next);
+    }
+  };
 
   // Find Category Related Packages matching destination or category tags
   const categoryRelatedPackages = packagesData.filter((p) =>
@@ -151,7 +196,7 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
           "{guide.excerpt}"
         </p>
 
-        {guide.contentSections.map((sec, idx) => (
+        {sectionsToRender.map((sec, idx) => (
           <section key={idx} className="space-y-4 pt-2">
             <h2 className="text-2xl font-serif font-bold text-stone-900 tracking-tight">
               {sec.heading}
@@ -189,6 +234,111 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
             )}
           </section>
         ))}
+
+        {/* Clickable FAQ Accordion Section */}
+        {hasFaqAccordion && faqHeaderSection && (
+          <section className="pt-8 border-t border-stone-200 space-y-6">
+            <div className="space-y-2">
+              <div className="flex items-center justify-between gap-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-100 text-stone-800 text-[10px] font-bold uppercase tracking-widest">
+                  <HelpCircle className="w-3.5 h-3.5 text-luxury-gold" />
+                  <span>Frequently Asked Questions</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={toggleAllFaqs}
+                  className="text-xs font-semibold text-luxury-gold hover:text-stone-900 transition-colors cursor-pointer"
+                >
+                  {allFaqsOpen ? 'Collapse All' : 'Expand All'}
+                </button>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-stone-900 tracking-tight">
+                {faqHeaderSection.heading}
+              </h2>
+              {faqHeaderSection.content && (
+                <p className="text-stone-600 text-sm sm:text-base font-normal leading-relaxed">
+                  {faqHeaderSection.content}
+                </p>
+              )}
+            </div>
+
+            <div className="space-y-3">
+              {faqItems.map((item, idx) => {
+                const isOpen = Boolean(openFaqs[idx]);
+                return (
+                  <div
+                    key={idx}
+                    className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
+                      isOpen
+                        ? 'bg-white border-luxury-gold/60 shadow-sm'
+                        : 'bg-white/90 border-stone-200 hover:border-stone-300 shadow-2xs'
+                    }`}
+                  >
+                    <button
+                      type="button"
+                      onClick={() => toggleFaq(idx)}
+                      className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none select-none hover:bg-stone-50/60 transition-colors"
+                      aria-expanded={isOpen}
+                    >
+                      <span className="font-serif font-bold text-base sm:text-lg text-stone-900 tracking-tight">
+                        {item.heading}
+                      </span>
+                      <div
+                        className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors ${
+                          isOpen ? 'bg-luxury-gold/15 text-luxury-gold' : 'bg-stone-100 text-stone-500'
+                        }`}
+                      >
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform duration-200 ${
+                            isOpen ? 'rotate-180' : ''
+                          }`}
+                        />
+                      </div>
+                    </button>
+
+                    {isOpen && (
+                      <div className="px-4 sm:px-5 pb-5 pt-1 border-t border-stone-100 space-y-3 animate-in fade-in duration-200">
+                        {item.content && (
+                          <p className="text-stone-700 text-sm sm:text-base leading-relaxed font-normal">
+                            {item.content}
+                          </p>
+                        )}
+
+                        {item.bulletPoints && item.bulletPoints.length > 0 && (
+                          <ul className="space-y-2 bg-[#F2F8FC] p-4 rounded-xl border border-stone-200/80 text-xs sm:text-sm text-stone-700 font-normal">
+                            {item.bulletPoints.map((bp, bpIdx) => (
+                              <li key={bpIdx} className="flex items-start gap-2.5">
+                                <span className="text-luxury-gold font-bold text-base leading-none mt-0.5">•</span>
+                                <span className="leading-relaxed">{bp}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+
+                        {item.image && (
+                          <div className="my-3 rounded-xl overflow-hidden border border-stone-200">
+                            <img
+                              src={item.image}
+                              alt={item.heading}
+                              className="w-full h-48 sm:h-64 object-cover"
+                              loading="lazy"
+                            />
+                          </div>
+                        )}
+
+                        {item.highlightQuote && (
+                          <div className="p-3.5 rounded-xl bg-orange-50/70 text-stone-900 text-xs sm:text-sm font-semibold border-l-3 border-luxury-gold">
+                            💡 {item.highlightQuote}
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        )}
 
         {/* Embedded Interactive AI Trip Planner Box */}
         <div className="my-10 bg-stone-900 text-white p-6 sm:p-8 rounded-2xl shadow-sm border border-stone-800 space-y-4">
