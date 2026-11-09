@@ -180,11 +180,11 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
 
       {/* Hero Image */}
       <div className="w-full max-w-2xl sm:max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-        <div className="rounded-2xl overflow-hidden shadow-xs h-[200px] sm:h-[260px] md:h-[280px] border border-stone-200">
+        <div className="rounded-2xl overflow-hidden shadow-xs border border-stone-200 bg-stone-100 flex items-center justify-center">
           <img
             src={guide.heroImage}
             alt={guide.title}
-            className="w-full h-full object-cover"
+            className="w-full h-auto max-h-[420px] object-contain block rounded-2xl"
           />
         </div>
       </div>
@@ -217,11 +217,11 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
             )}
 
             {sec.image && (
-              <div className="my-4 max-w-lg sm:max-w-xl mx-auto rounded-xl overflow-hidden border border-stone-200 shadow-2xs">
+              <div className="my-5 max-w-md sm:max-w-lg mx-auto rounded-2xl overflow-hidden border border-stone-200 shadow-2xs bg-stone-100 flex items-center justify-center">
                 <img
                   src={sec.image}
                   alt={sec.heading}
-                  className="w-full h-44 sm:h-52 md:h-56 object-cover"
+                  className="w-full h-auto max-h-[460px] object-contain block rounded-2xl"
                   loading="lazy"
                 />
               </div>
@@ -316,11 +316,11 @@ export const TravelGuideArticleView: React.FC<TravelGuideArticleViewProps> = ({
                         )}
 
                         {item.image && (
-                          <div className="my-3 max-w-md mx-auto rounded-xl overflow-hidden border border-stone-200">
+                          <div className="my-3 max-w-md mx-auto rounded-xl overflow-hidden border border-stone-200 bg-stone-100 flex items-center justify-center">
                             <img
                               src={item.image}
                               alt={item.heading}
-                              className="w-full h-36 sm:h-44 object-cover"
+                              className="w-full h-auto max-h-[380px] object-contain block rounded-xl"
                               loading="lazy"
                             />
                           </div>
