@@ -190,6 +190,14 @@ export const destinationsData: Destination[] = [
       {
         "question": "How many days does the Chardham Yatra take?",
         "answer": "A complete Chardham Yatra covering Yamunotri, Gangotri, Kedarnath and Badrinath typically takes 9 Nights / 10 Days starting and ending in Haridwar, though it can be customized based on your travel dates and pace."
+      },
+      {
+        "question": "What does a Chardham Yatra package cost?",
+        "answer": "A 10D/9N Chardham road package with comfortable stays, pure vegetarian meals (breakfast & dinner), private vehicle with mountain-experienced driver, toll, and permits starts around ₹28,500 to ₹42,000 per person depending on vehicle and hotel class."
+      },
+      {
+        "question": "Can Kedarnath be done by helicopter?",
+        "answer": "Yes, Safar Trails assists with Kedarnath helicopter shuttle tickets from Phata, Guptkashi, or Sersi helipads, as well as complete VIP Chardham by helicopter packages from Dehradun."
       }
     ],
     "seoTitle": "Chardham Yatra Packages 2026 | Yamunotri, Gangotri, Kedarnath & Badrinath",
@@ -555,7 +563,19 @@ export const destinationsData: Destination[] = [
     "faqs": [
       {
         "question": "What is the classic route for a 6-day Kerala holiday?",
-        "answer": "The most popular route is Kochi (1N) → Munnar (2N) → Thekkady (1N) → Alleppey Houseboat (1N) → Departure from Kochi."
+        "answer": "The most popular route is Kochi (1N) → Munnar (2N) → Thekkady (1N) → Alleppey Houseboat (1N) → Departure from Kochi. It balances misty tea hills, wildlife safaris, and tranquil backwaters."
+      },
+      {
+        "question": "What is the average cost of a Kerala tour package?",
+        "answer": "A comfortable 6D/5N Kerala package with 3-4 star stays, private sanitized cab, breakfast, and a private Alleppey houseboat stay with all meals starts around ₹15,499 to ₹22,000 per person on twin sharing."
+      },
+      {
+        "question": "What is the best time to visit Kerala?",
+        "answer": "September to March offers pleasant weather ideal for backwaters, hills, and beaches. For Ayurvedic rejuvenation and monsoon waterfalls, June to August is best."
+      },
+      {
+        "question": "How do private houseboats in Alleppey work?",
+        "answer": "Safar Trails books 100% private houseboats equipped with private bedrooms, ensuite bathrooms, dedicated chef, captain, and sundeck. All meals (lunch, evening tea/snacks, dinner, breakfast) are prepared fresh on board."
       }
     ],
     "seoTitle": "Kerala Tour Packages 2026 | Munnar Hills, Alleppey Houseboat & Spice Tours",
@@ -880,7 +900,19 @@ export const destinationsData: Destination[] = [
     "faqs": [
       {
         "question": "Which cities should be covered in a 7-day Rajasthan trip?",
-        "answer": "A balanced 7-day royal circuit covers Jaipur (2N) → Jodhpur (2N) → Udaipur (2N) or Jaipur (2N) → Jodhpur (1N) → Jaisalmer (2N) → Bikaner (1N)."
+        "answer": "A balanced 7-day royal circuit covers Jaipur (2N) → Jodhpur (2N) → Udaipur (2N) for palaces and lakes, or Jaipur (2N) → Jodhpur (1N) → Jaisalmer (2N) → Bikaner (1N) for fortresses and desert sand dunes."
+      },
+      {
+        "question": "What is the estimated cost of a Rajasthan tour package?",
+        "answer": "A comfortable 7D/6N royal Rajasthan package with heritage haveli stays, private sanitized cab, breakfast, sightseeing, and a luxury Thar desert camp stay with cultural dance and dinner starts around ₹18,999 to ₹28,000 per person on twin sharing."
+      },
+      {
+        "question": "What is the best time to visit Rajasthan?",
+        "answer": "October to March is the ideal season when the days are pleasantly warm and nights are crisp and cool, perfect for desert safaris and fort explorations."
+      },
+      {
+        "question": "What is included in the Jaisalmer desert camp stay?",
+        "answer": "Safar Trails desert packages at Sam Sand Dunes include private luxury Swiss tent with attached bathroom, evening camel / jeep dune safari, sunset photography, traditional Rajasthani folk dance, bonfire, and authentic buffet dinner."
       }
     ],
     "seoTitle": "Rajasthan Tour Packages 2026 | Jaipur, Udaipur, Jaisalmer Desert Camps",
